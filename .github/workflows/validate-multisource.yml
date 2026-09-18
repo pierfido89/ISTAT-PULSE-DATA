@@ -43,4 +43,11 @@ jobs:
           assert feed['source_family'].nunique()>=2
           assert 'BES dei territori — ISTAT' in set(feed['source_family'])
           assert manifest.get('feed_events')==len(feed)
+          sdmx=json.load(open('app/src/main/assets/pulse_sdmx_meta.json',encoding='utf-8'))
+          print('SDMX_MONITORED',sdmx.get('monitored_series'))
+          print('SDMX_CONNECTED',sdmx.get('connected_series'))
+          print('SDMX_LATEST',sdmx.get('latest_period'))
+          assert sdmx.get('monitored_series',0) >= 15
+          assert sdmx.get('connected_series',0) >= 10
+          assert __import__('os').path.exists('app/src/main/assets/sources_catalog.json')
           PY
