@@ -338,7 +338,13 @@ def load_sources():
         parts.append(data)
         source_info.append(info)
 
-    _, by_code, province_codes = _territory_lookup()
+    _, by_code, current_province_codes = _territory_lookup()
+    # 2025 predates the 2026 Sardinian supra-municipal reorganisation.
+    # Query it with the province codes actually present in the official 2024
+    # DEMO archive; using the current registry silently drops Sardinia.
+    province_codes_2024 = sorted(
+        parts[-1]["Codice provincia"].dropna().astype(str).str.zfill(3).unique().tolist()
+    )
     for year in range(2025, date.today().year + 1):
         latest_month = _latest_api_month(year)
         if latest_month is None:
@@ -347,8 +353,9 @@ def load_sources():
                 continue
             raise RuntimeError(f"DEMO ISTAT {year}: no data returned by official API")
 
+        fetch_province_codes = province_codes_2024 if year == 2025 else current_province_codes
         data = _load_demo_api_year(
-            year, latest_month, by_code, province_codes
+            year, latest_month, by_code, fetch_province_codes
         )
         parts.append(data)
         source_info.append({
