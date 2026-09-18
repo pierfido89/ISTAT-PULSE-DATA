@@ -1,0 +1,46 @@
+name: Probe ISTATData SDMX
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/probe-sdmx.yml'
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Inspect ISTATData dataflows
+        run: |
+          python - <<'PY'
+          import urllib.request, xml.etree.ElementTree as ET, re
+          url='https://esploradati.istat.it/SDMXWS/rest/v1/dataflow/IT1/all/latest'
+          req=urllib.request.Request(url, headers={
+              'User-Agent':'ISTAT-PULSE/0.6',
+              'Accept':'application/vnd.sdmx.structure+xml;version=2.1'
+          })
+          with urllib.request.urlopen(req, timeout=120) as r:
+              raw=r.read()
+              print('HTTP', r.status, 'bytes', len(raw), 'content-type', r.headers.get('content-type'))
+          root=ET.fromstring(raw)
+          keywords=['lavor','occup','disoccup','prezz','consum','impres','istruz','salut','ambient','mobil','reddit']
+          found=[]
+          for elem in root.iter():
+              tag=elem.tag.rsplit('}',1)[-1]
+              if tag!='Dataflow':
+                  continue
+              rid=elem.attrib.get('id','')
+              agency=elem.attrib.get('agencyID','')
+              version=elem.attrib.get('version','')
+              names=[]
+              for ch in elem:
+                  if ch.tag.rsplit('}',1)[-1]=='Name' and (ch.text or '').strip():
+                      names.append((ch.text or '').strip())
+              label=' | '.join(names)
+              low=label.lower()
+              if any(k in low for k in keywords):
+                  found.append((rid,agency,version,label))
+          print('MATCHES',len(found))
+          for row in found[:250]:
+              print('\t'.join(row))
+          PY
