@@ -2,6 +2,14 @@ name: Update PULSE Data
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '17 5 * * 1,4'
+  push:
+    branches: [ main ]
+    paths:
+      - 'scripts/**'
+      - 'requirements.txt'
+      - '.github/workflows/update-data.yml'
 
 permissions:
   contents: write
