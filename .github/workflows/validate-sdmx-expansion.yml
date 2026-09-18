@@ -1,0 +1,37 @@
+name: Validate SDMX Expansion
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/validate-sdmx-expansion.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
+      - name: Generate expanded IstatData feed
+        run: python scripts/generate_sdmx_events.py
+      - name: Validate coverage
+        run: |
+          python - <<'PY'
+          import json, pandas as pd
+          meta=json.load(open('app/src/main/assets/pulse_sdmx_meta.json',encoding='utf-8'))
+          print('MONITORED',meta['monitored_series'])
+          print('CONNECTED',meta['connected_series'])
+          print('SIGNALS',meta['events'])
+          print('LATEST',meta['latest_period'])
+          for s in meta['sources']:
+              print(s['status'],'|',s['area'],'|',s['name'],'|',s['latest_period'],'|',s['series_key'])
+          assert meta['monitored_series'] >= 15
+          assert meta['connected_series'] >= 10
+          assert meta['latest_period'] >= '2026-06'
+          assert __import__('os').path.exists('app/src/main/assets/sources_catalog.json')
+          PY
