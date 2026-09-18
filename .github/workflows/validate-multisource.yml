@@ -1,0 +1,45 @@
+name: Validate Multi-Source PULSE
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/validate-multisource.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
+      - name: Generate territory registry
+        run: python scripts/generate_territories.py
+      - name: Generate DEMO feed
+        run: |
+          python scripts/generate_pulse_events.py
+          cp app/src/main/assets/pulse_events.tsv app/src/main/assets/pulse_events_demo.tsv
+      - name: Generate BES feed
+        run: python scripts/generate_bes_events.py
+      - name: Generate SDMX feed
+        run: python scripts/generate_sdmx_events.py
+      - name: Merge and validate
+        run: |
+          python scripts/merge_pulse_feeds.py
+          python - <<'PY'
+          import json, pandas as pd
+          feed=pd.read_csv('app/src/main/assets/pulse_events.tsv',sep='\t')
+          manifest=json.load(open('app/src/main/assets/pulse_manifest.json',encoding='utf-8'))
+          print('TOTAL',len(feed))
+          print('SOURCES',feed['source_family'].value_counts().to_dict())
+          print('LATEST',manifest.get('latest_period'))
+          print('DEMO_ROWS_2025_GUARD',manifest.get('quality_A_municipalities'))
+          assert len(feed)>265
+          assert feed['source_family'].nunique()>=2
+          assert 'BES dei territori — ISTAT' in set(feed['source_family'])
+          assert manifest.get('feed_events')==len(feed)
+          PY
