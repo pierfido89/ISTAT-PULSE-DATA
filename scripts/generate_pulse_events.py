@@ -16,6 +16,7 @@ import hashlib
 import io
 import json
 import time
+import unicodedata
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -174,6 +175,52 @@ def _territory_lookup():
     return territory, by_code, province_codes
 
 
+def _name_key(value: str) -> str:
+    value = unicodedata.normalize("NFKD", str(value or ""))
+    value = "".join(ch for ch in value if not unicodedata.combining(ch))
+    return "".join(ch for ch in value.casefold() if ch.isalnum())
+
+
+def _historical_lookup_2025(legacy_2024: pd.DataFrame, current_territory: pd.DataFrame) -> pd.DataFrame:
+    """Map 2025's pre-reform municipality codes to current canonical codes by name/region."""
+    current = current_territory.copy()
+    current["_key"] = current.apply(
+        lambda r: _name_key(r["municipality"]) + "|" + _name_key(r["region"]), axis=1
+    )
+    current_by_name = {
+        key: row for key, row in current.set_index("_key").iterrows()
+    }
+
+    legacy = legacy_2024[
+        ["Codice comune", "Comune", "Provincia", "Regione"]
+    ].drop_duplicates("Codice comune").copy()
+    records = []
+    mapped = 0
+    for _, row in legacy.iterrows():
+        old_code = str(row["Codice comune"]).zfill(6)
+        key = _name_key(row["Comune"]) + "|" + _name_key(row["Regione"])
+        match = current_by_name.get(key)
+        if match is not None:
+            mapped += 1
+            records.append({
+                "municipality_code": old_code,
+                "canonical_code": str(match["municipality_code"]).zfill(6),
+                "municipality": str(match["municipality"]),
+                "area": str(match["area"]),
+                "region": str(match["region"]),
+            })
+        else:
+            records.append({
+                "municipality_code": old_code,
+                "canonical_code": old_code,
+                "municipality": str(row["Comune"]),
+                "area": str(row["Provincia"]),
+                "region": str(row["Regione"]),
+            })
+    print(f"2025 historical municipality crosswalk: {mapped}/{len(records)} names mapped to current codes.")
+    return pd.DataFrame(records).set_index("municipality_code")
+
+
 def _fetch_api_slice(
     year: int,
     month: int,
@@ -209,14 +256,15 @@ def _fetch_api_slice(
         if sex != 9:
             continue
 
-        code = str(row.get("codistat", "")).strip().zfill(6)
-        if code not in by_code.index:
+        raw_code = str(row.get("codistat", "")).strip().zfill(6)
+        if raw_code not in by_code.index:
             continue
 
-        t = by_code.loc[code]
+        t = by_code.loc[raw_code]
         if isinstance(t, pd.DataFrame):
             t = t.iloc[0]
         region = str(t["region"]).strip()
+        canonical_code = str(t.get("canonical_code", raw_code)).strip().zfill(6)
         region_code = REGION_CODES.get(region)
         if region_code is None:
             raise RuntimeError(f"Unknown region mapping for {region!r}")
@@ -234,9 +282,9 @@ def _fetch_api_slice(
             "Unità in più/meno dovute a variazioni territoriali": float(row.get("var_terr", 0) or 0),
             "Popolazione inizio periodo": float(row.get("pop_iniziale", 0) or 0),
             "Popolazione fine periodo": float(row.get("pop_finale", 0) or 0),
-            "Codice comune": code,
+            "Codice comune": canonical_code,
             "Comune": str(row.get("denominazione", "") or t["municipality"]).strip(),
-            "Codice provincia": province_code,
+            "Codice provincia": canonical_code[:3],
             "Provincia": str(t["area"]).strip(),
             "Codice regione": region_code,
             "Regione": region,
@@ -338,7 +386,8 @@ def load_sources():
         parts.append(data)
         source_info.append(info)
 
-    _, by_code, current_province_codes = _territory_lookup()
+    current_territory, by_code, current_province_codes = _territory_lookup()
+    by_code_2025 = _historical_lookup_2025(parts[-1], current_territory)
     # 2025 predates the 2026 Sardinian supra-municipal reorganisation.
     # Query it with the province codes actually present in the official 2024
     # DEMO archive; using the current registry silently drops Sardinia.
@@ -354,8 +403,9 @@ def load_sources():
             raise RuntimeError(f"DEMO ISTAT {year}: no data returned by official API")
 
         fetch_province_codes = province_codes_2024 if year == 2025 else current_province_codes
+        fetch_lookup = by_code_2025 if year == 2025 else by_code
         data = _load_demo_api_year(
-            year, latest_month, by_code, fetch_province_codes
+            year, latest_month, fetch_lookup, fetch_province_codes
         )
         parts.append(data)
         source_info.append({
