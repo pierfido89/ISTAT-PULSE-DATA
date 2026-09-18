@@ -1,0 +1,104 @@
+{
+  "version": "0.5",
+  "generated_at": "2026-09-18T18:36:14.600425+00:00",
+  "feed_sha256": "4ec11fa8bb1d8300d3f81c5b9aa9a743a75468675d03139459d4ff84da8068d0",
+  "source_period": "2019-2026-06",
+  "complete_years": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "annual_radar_years": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "latest_period": "2026-06",
+  "latest_period_provisional": true,
+  "quality_A_municipalities": 7490,
+  "feed_events": 265,
+  "indicators": [
+    "Emigrati per altro comune",
+    "Emigrati per l'estero",
+    "Immigrati da altro comune",
+    "Immigrati dall'estero",
+    "Morti",
+    "Nati vivi"
+  ],
+  "sources": [
+    {
+      "year": 2019,
+      "url": "https://demo.istat.it/data/d7b/D7B2019.csv.zip",
+      "method": "legacy_zip",
+      "sha256": "8441755f9f396680d2d7e03bdd2bead2c45779ede3441f3f4289ee91e15fdcef",
+      "bytes": 4312514,
+      "months": 12
+    },
+    {
+      "year": 2020,
+      "url": "https://demo.istat.it/data/d7b/D7B2020.csv.zip",
+      "method": "legacy_zip",
+      "sha256": "cf6c46dd6d990a921c1e0afe5fc486561f6e84a6bd78bafc4a624a6bfcdf588a",
+      "bytes": 4276476,
+      "months": 12
+    },
+    {
+      "year": 2021,
+      "url": "https://demo.istat.it/data/d7b/D7B2021.csv.zip",
+      "method": "legacy_zip",
+      "sha256": "1f068b9d52e24ec52368f69281edf25e67227efb6fe330c0ebc1a8f8a6cca6d0",
+      "bytes": 4298885,
+      "months": 12
+    },
+    {
+      "year": 2022,
+      "url": "https://demo.istat.it/data/d7b/D7B2022.csv.zip",
+      "method": "legacy_zip",
+      "sha256": "e274fe1f054e58e36d7d2123a217fad9d0920c0a9089c9019f1e330a70c53be4",
+      "bytes": 4327591,
+      "months": 12
+    },
+    {
+      "year": 2023,
+      "url": "https://demo.istat.it/data/d7b/D7B2023.csv.zip",
+      "method": "legacy_zip",
+      "sha256": "ef72938c79f5a150ad8bde0aad7571a3996cda502a5cf090f419762fee97d221",
+      "bytes": 4315968,
+      "months": 12
+    },
+    {
+      "year": 2024,
+      "url": "https://demo.istat.it/data/d7b/D7B2024.csv.zip",
+      "method": "legacy_zip",
+      "sha256": "eec56606b16958531c7e8241e5b71bfbf26a0e8137dc29ec4b126c9a70609599",
+      "bytes": 4313199,
+      "months": 12
+    },
+    {
+      "year": 2025,
+      "url": "https://demo.istat.it/app/?a=2025&i=D7B&l=it",
+      "endpoint": "https://demo.istat.it/app/RPCCerca.php",
+      "method": "official_query_api",
+      "months": 12,
+      "provisional": true,
+      "municipality_month_rows": 90192
+    },
+    {
+      "year": 2026,
+      "url": "https://demo.istat.it/app/?a=2026&i=D7B&l=it",
+      "endpoint": "https://demo.istat.it/app/RPCCerca.php",
+      "method": "official_query_api",
+      "months": 6,
+      "provisional": true,
+      "municipality_month_rows": 47364
+    }
+  ],
+  "disclaimer": "Prototipo indipendente basato su dati pubblici ISTAT. Non è un prodotto ufficiale ISTAT."
+}
