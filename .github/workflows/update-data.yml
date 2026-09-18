@@ -27,8 +27,19 @@ jobs:
       - name: Generate official territory registry
         run: python scripts/generate_territories.py
 
-      - name: Generate current PULSE package
-        run: python scripts/generate_pulse_events.py
+      - name: Generate DEMO demographic PULSE package
+        run: |
+          python scripts/generate_pulse_events.py
+          cp app/src/main/assets/pulse_events.tsv app/src/main/assets/pulse_events_demo.tsv
+
+      - name: Generate BES Territories PULSE package
+        run: python scripts/generate_bes_events.py
+
+      - name: Generate IstatData SDMX PULSE package
+        run: python scripts/generate_sdmx_events.py
+
+      - name: Merge multi-source PULSE feed
+        run: python scripts/merge_pulse_feeds.py
 
       - name: Publish current data files
         run: |
