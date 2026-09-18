@@ -1,0 +1,49 @@
+name: Probe SDMX Selected
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/probe-sdmx-selected.yml'
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Inspect selected ISTATData payloads
+        run: |
+          python - <<'PY'
+          import urllib.request, xml.etree.ElementTree as ET
+          flows=[
+            ('NIC','167_745_DF_DCSP_NIC1B2025_1'),
+            ('INDUSTRY_PRICES','145_360_DF_DCSC_PREZZPIND_1_4'),
+            ('PAYROLL_JOBS','149_577_DF_DCSC_OROS_1_3'),
+          ]
+          for label,flow in flows:
+              print('\n====',label,flow,'====')
+              url=f'https://esploradati.istat.it/SDMXWS/rest/v1/data/{flow}/all/IT1?startPeriod=2025&endPeriod=2026'
+              req=urllib.request.Request(url,headers={'User-Agent':'ISTAT-PULSE/0.6','Accept':'application/vnd.sdmx.genericdata+xml;version=2.1'})
+              with urllib.request.urlopen(req,timeout=120) as r:
+                  raw=r.read(); print('HTTP',r.status,'bytes',len(raw))
+              root=ET.fromstring(raw)
+              shown=0
+              for series in root.iter():
+                  if series.tag.rsplit('}',1)[-1] != 'Series': continue
+                  key=[]; obs=[]
+                  for child in series:
+                      tag=child.tag.rsplit('}',1)[-1]
+                      if tag=='SeriesKey':
+                          key=[(v.attrib.get('id'),v.attrib.get('value')) for v in child]
+                      elif tag=='Obs':
+                          tm=val=None
+                          for v in child:
+                              t=v.tag.rsplit('}',1)[-1]
+                              if t=='ObsDimension': tm=v.attrib.get('value')
+                              elif t=='ObsValue': val=v.attrib.get('value')
+                          if tm and val: obs.append((tm,val))
+                  if obs:
+                      print('KEY',key)
+                      print('OBS',obs[-4:])
+                      shown+=1
+                      if shown>=8: break
+          PY
