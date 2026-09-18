@@ -1,0 +1,25 @@
+name: Probe BES Territories
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/probe-bes.yml'
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Inspect official BES Territories 2025 package
+        run: |
+          python - <<'PY'
+          import io, urllib.request, zipfile
+          url='https://www.istat.it/wp-content/uploads/2025/06/Bes_dei_territori_edizione_2025.zip'
+          req=urllib.request.Request(url, headers={'User-Agent':'ISTAT-PULSE/0.6'})
+          with urllib.request.urlopen(req, timeout=120) as r:
+              raw=r.read()
+              print('HTTP', r.status, 'bytes', len(raw), 'content-type', r.headers.get('content-type'))
+          with zipfile.ZipFile(io.BytesIO(raw)) as z:
+              for info in z.infolist():
+                  print(info.filename, info.file_size)
+          PY
