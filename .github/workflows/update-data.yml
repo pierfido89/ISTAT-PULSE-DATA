@@ -8,6 +8,7 @@ on:
     branches: [ main ]
     paths:
       - 'scripts/**'
+      - 'requirements.txt'
       - '.github/workflows/update-data.yml'
 
 permissions:
@@ -29,7 +30,7 @@ jobs:
           cache: pip
 
       - name: Install dependencies
-        run: python -m pip install --disable-pip-version-check pandas numpy scipy
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
 
       - name: Generate official territory registry
         run: python scripts/generate_territories.py
