@@ -1,0 +1,169 @@
+{
+  "version": 1,
+  "title": "Fonti dati di ISTAT PULSE",
+  "sources": [
+    {
+      "name": "DEMO ISTAT — Bilancio demografico mensile",
+      "level": "Comunale",
+      "frequency": "Mensile",
+      "provides": [
+        "Nati vivi",
+        "Morti",
+        "Immigrati da altro comune",
+        "Emigrati per altro comune",
+        "Immigrati dall'estero",
+        "Emigrati per l'estero"
+      ],
+      "official": true,
+      "notes": "Dati comunali DEMO. Per le annualità più recenti ISTAT può indicare i dati come provvisori."
+    },
+    {
+      "name": "BES dei territori — ISTAT",
+      "level": "Regionale e provinciale",
+      "frequency": "Annuale",
+      "provides": [
+        "Salute",
+        "Istruzione e formazione",
+        "Lavoro e conciliazione dei tempi di vita",
+        "Benessere economico",
+        "Relazioni sociali",
+        "Politica e istituzioni",
+        "Sicurezza",
+        "Paesaggio e patrimonio culturale",
+        "Ambiente",
+        "Innovazione, ricerca e creatività",
+        "Qualità dei servizi"
+      ],
+      "official": true,
+      "notes": "Indicatori territoriali BES pubblicati da ISTAT."
+    },
+    {
+      "name": "IstatData SDMX — ISTAT",
+      "level": "Prevalentemente nazionale",
+      "frequency": "Mensile e trimestrale",
+      "provides": [
+        {
+          "area": "Prezzi e consumi",
+          "series": "Prezzi al consumo NIC",
+          "description": "Indice generale mensile dei prezzi al consumo per l'intera collettività.",
+          "latest_period": "2026-08",
+          "status": "ok"
+        },
+        {
+          "area": "Lavoro e redditi",
+          "series": "Tasso di disoccupazione",
+          "description": "Tasso di disoccupazione mensile nazionale.",
+          "latest_period": "2026-07",
+          "status": "ok"
+        },
+        {
+          "area": "Lavoro e redditi",
+          "series": "Tasso di occupazione",
+          "description": "Tasso di occupazione mensile nazionale.",
+          "latest_period": "2026-07",
+          "status": "ok"
+        },
+        {
+          "area": "Lavoro e redditi",
+          "series": "Occupati",
+          "description": "Numero mensile di occupati a livello nazionale.",
+          "latest_period": "2026-07",
+          "status": "ok"
+        },
+        {
+          "area": "Lavoro e redditi",
+          "series": "Posizioni lavorative dipendenti",
+          "description": "Indice trimestrale delle posizioni lavorative dipendenti.",
+          "latest_period": "2026-Q2",
+          "status": "ok"
+        },
+        {
+          "area": "Imprese",
+          "series": "Produzione industriale",
+          "description": "Indice mensile della produzione industriale, base 2021.",
+          "latest_period": "2026-07",
+          "status": "ok"
+        },
+        {
+          "area": "Imprese",
+          "series": "Fatturato industriale",
+          "description": "Indice mensile del valore del fatturato industriale, base 2021.",
+          "latest_period": "2026-06",
+          "status": "ok"
+        },
+        {
+          "area": "Imprese",
+          "series": "Fatturato dei servizi",
+          "description": "Indice mensile del fatturato dei servizi, base 2021.",
+          "latest_period": "2026-06",
+          "status": "ok"
+        },
+        {
+          "area": "Prezzi e consumi",
+          "series": "Vendite al dettaglio",
+          "description": "Indice mensile del volume delle vendite al dettaglio, base 2021.",
+          "latest_period": "2026-07",
+          "status": "ok"
+        },
+        {
+          "area": "Imprese",
+          "series": "Clima di fiducia delle imprese",
+          "description": "Indice mensile sintetico del clima di fiducia delle imprese.",
+          "latest_period": "2026-08",
+          "status": "ok"
+        },
+        {
+          "area": "Imprese",
+          "series": "Fiducia delle costruzioni",
+          "description": "Indice mensile di fiducia delle imprese delle costruzioni.",
+          "latest_period": "2026-08",
+          "status": "ok"
+        },
+        {
+          "area": "Imprese",
+          "series": "Fiducia del commercio",
+          "description": "Indice mensile di fiducia delle imprese del commercio al dettaglio.",
+          "latest_period": "2026-08",
+          "status": "ok"
+        },
+        {
+          "area": "Prezzi e consumi",
+          "series": "Fiducia dei consumatori",
+          "description": "Indice mensile del clima di fiducia dei consumatori.",
+          "latest_period": "2026-08",
+          "status": "ok"
+        },
+        {
+          "area": "Prezzi e consumi",
+          "series": "Prezzi alla produzione dell'industria",
+          "description": "Indice mensile dei prezzi alla produzione dell'industria, base 2021.",
+          "latest_period": "2026-07",
+          "status": "ok"
+        },
+        {
+          "area": "Prezzi e consumi",
+          "series": "Prezzi all'importazione",
+          "description": "Indice mensile dei prezzi all'importazione, base 2021.",
+          "latest_period": "2026-07",
+          "status": "ok"
+        },
+        {
+          "area": "Turismo e mobilità",
+          "series": "Arrivi turistici",
+          "description": "Arrivi mensili negli esercizi ricettivi italiani.",
+          "latest_period": "2026-07",
+          "status": "ok"
+        },
+        {
+          "area": "Turismo e mobilità",
+          "series": "Presenze turistiche",
+          "description": "Presenze mensili negli esercizi ricettivi italiani.",
+          "latest_period": "2026-07",
+          "status": "ok"
+        }
+      ],
+      "official": true,
+      "notes": "Serie congiunturali ufficiali interrogate tramite servizio SDMX IstatData."
+    }
+  ]
+}
