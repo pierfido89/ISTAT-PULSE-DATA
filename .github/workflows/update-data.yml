@@ -48,6 +48,7 @@ jobs:
           mkdir -p data
           cp app/src/main/assets/pulse_events.tsv data/pulse_events.tsv
           cp app/src/main/assets/pulse_manifest.json data/pulse_manifest.json
+          cp app/src/main/assets/sources_catalog.json data/sources_catalog.json
 
       - name: Commit updated data if changed
         run: |
