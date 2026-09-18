@@ -1,0 +1,52 @@
+name: Probe SDMX Expansion
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/probe-sdmx-expansion.yml'
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Search current ISTATData catalogue for PULSE expansion
+        run: |
+          python - <<'PY'
+          import urllib.request, xml.etree.ElementTree as ET
+          url='https://esploradati.istat.it/SDMXWS/rest/v1/dataflow/IT1/all/latest'
+          req=urllib.request.Request(url, headers={
+              'User-Agent':'ISTAT-PULSE/0.6',
+              'Accept':'application/vnd.sdmx.structure+xml;version=2.1'
+          })
+          with urllib.request.urlopen(req, timeout=180) as r:
+              raw=r.read()
+          root=ET.fromstring(raw)
+          flows=[]
+          for elem in root.iter():
+              if elem.tag.rsplit('}',1)[-1] != 'Dataflow':
+                  continue
+              rid=elem.attrib.get('id','')
+              names=[]
+              for ch in elem:
+                  if ch.tag.rsplit('}',1)[-1]=='Name' and (ch.text or '').strip():
+                      names.append((ch.text or '').strip())
+              label=' | '.join(names)
+              flows.append((rid,label))
+          groups={
+            'LAVORO':['employment rate','tasso di occupazione','employed - monthly','occupati - mensili','unemployment rate','tasso di disoccupazione','payroll jobs','posizioni lavorative'],
+            'IMPRESE':['business confidence','fiducia delle imprese','industrial production','produzione industriale','turnover','fatturato','retail trade','commercio al dettaglio'],
+            'PREZZI_CONSUMI':['consumer prices','prezzi al consumo','producer prices','prezzi alla produzione','retail trade','vendite al dettaglio'],
+            'TURISMO_MOBILITA':['tourist','turismo','occupancy in collective tourist','movimento dei clienti','transport','trasporto','mobility','mobilità'],
+            'CONSUMATORI':['consumer confidence','fiducia dei consumatori'],
+          }
+          for group,keys in groups.items():
+              print('\n###',group)
+              seen=set()
+              for rid,label in flows:
+                  low=label.lower()
+                  if any(k in low for k in keys):
+                      if rid in seen: continue
+                      seen.add(rid)
+                      print(rid+'\t'+label)
+          PY
