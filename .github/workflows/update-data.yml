@@ -1,0 +1,56 @@
+name: Update PULSE Data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 5 * * 1,4'
+  push:
+    branches: [ main ]
+    paths:
+      - 'scripts/**'
+      - '.github/workflows/update-data.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pulse-data-update
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check pandas numpy scipy
+
+      - name: Generate official territory registry
+        run: python scripts/generate_territories.py
+
+      - name: Generate current PULSE package
+        run: python scripts/generate_pulse_events.py
+
+      - name: Publish current data files
+        run: |
+          mkdir -p data
+          cp app/src/main/assets/pulse_events.tsv data/pulse_events.tsv
+          cp app/src/main/assets/pulse_manifest.json data/pulse_manifest.json
+
+      - name: Commit updated data if changed
+        run: |
+          git config user.name "ISTAT PULSE Data Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/pulse_events.tsv data/pulse_manifest.json
+          if git diff --cached --quiet; then
+            echo "No new ISTAT data to publish."
+          else
+            git commit -m "data: refresh PULSE package"
+            git push
+          fi
