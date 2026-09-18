@@ -1,0 +1,62 @@
+name: Probe SDMX Candidate Series
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/probe-sdmx-candidates.yml'
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Inspect candidate current series
+        run: |
+          python - <<'PY'
+          import urllib.request, xml.etree.ElementTree as ET
+          flows=[
+            ('EMP_RATE','150_872_DF_DCCV_TAXOCCUMENS1_1'),
+            ('EMPLOYED','150_875_DF_DCCV_OCCUPATIMENS1_1'),
+            ('TOURISM','122_54_DF_DCSC_TUR_3'),
+            ('IMPORT_PRICES','143_222_DF_DCSC_PREIMPIND_2'),
+            ('PAYROLL_JOBS','149_577_DF_DCSC_OROS_1_3'),
+            ('CONSTRUCTION_CONF','111_40'),
+            ('SERVICES_CONF','117_262'),
+            ('RETAIL_CONF','117_266'),
+          ]
+          def local(tag): return tag.rsplit('}',1)[-1]
+          for label,flow in flows:
+              print('\n====',label,flow,'====')
+              url=f'https://esploradati.istat.it/SDMXWS/rest/v1/data/{flow}/all/IT1?startPeriod=2024&endPeriod=2026'
+              req=urllib.request.Request(url,headers={'User-Agent':'ISTAT-PULSE/0.6','Accept':'application/vnd.sdmx.genericdata+xml;version=2.1'})
+              try:
+                  with urllib.request.urlopen(req,timeout=120) as r:
+                      raw=r.read(); print('HTTP',r.status,'bytes',len(raw))
+              except Exception as e:
+                  print('ERROR',repr(e)); continue
+              root=ET.fromstring(raw)
+              shown=0
+              for series in root.iter():
+                  if local(series.tag)!='Series': continue
+                  key={}; obs=[]
+                  for child in series:
+                      t=local(child.tag)
+                      if t=='SeriesKey':
+                          key={v.attrib.get('id'):v.attrib.get('value') for v in child}
+                      elif t=='Obs':
+                          tm=val=None
+                          for v in child:
+                              vt=local(v.tag)
+                              if vt=='ObsDimension': tm=v.attrib.get('value')
+                              elif vt=='ObsValue': val=v.attrib.get('value')
+                          if tm and val:
+                              try: obs.append((tm,float(val)))
+                              except: pass
+                  if not obs: continue
+                  # prioritise national totals and current periods; print enough to identify a headline series
+                  if key.get('REF_AREA') not in (None,'IT'): continue
+                  print('KEY',key)
+                  print('LAST',obs[-4:])
+                  shown+=1
+                  if shown>=12: break
+          PY
