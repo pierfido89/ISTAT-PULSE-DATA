@@ -11,6 +11,7 @@ import hashlib
 import json
 import math
 import urllib.request
+import time
 import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
@@ -222,8 +223,16 @@ def fetch(dataset: dict) -> tuple[bytes,str]:
             "Accept":"application/vnd.sdmx.genericdata+xml;version=2.1",
         },
     )
-    with urllib.request.urlopen(req,timeout=180) as response:
-        return response.read(),url
+    last=None
+    for attempt in range(1,4):
+        try:
+            with urllib.request.urlopen(req,timeout=240) as response:
+                return response.read(),url
+        except Exception as exc:
+            last=exc
+            if attempt<3:
+                time.sleep(3*attempt)
+    raise last
 
 def parse_series(raw: bytes) -> list[dict]:
     root=ET.fromstring(raw)
@@ -432,13 +441,34 @@ def main():
 
     OUT.parent.mkdir(parents=True,exist_ok=True)
     pd.DataFrame(events,columns=COLUMNS).to_csv(OUT,sep="\t",index=False)
+    def period_key(value: str):
+        value=str(value or "")
+        if "-Q" in value:
+            year,q=value.split("-Q",1)
+            return (int(year),int(q)*3,0)
+        if "-" in value:
+            year,month=value.split("-",1)[:2]
+            try:
+                return (int(year),int(month),1)
+            except ValueError:
+                pass
+        try:
+            return (int(value),12,0)
+        except ValueError:
+            return (0,0,0)
+
+    latest_period=max(
+        (s["latest_period"] for s in sources if s["latest_period"]),
+        key=period_key,
+        default="",
+    )
     meta={
         "source_family":"IstatData SDMX — ISTAT",
         "events":len(events),
         "monitored_series":len(DATASETS),
         "connected_series":sum(1 for s in sources if s["status"] in {"ok","monitored_no_signal"}),
         "sources":sources,
-        "latest_period":max((s["latest_period"] for s in sources if s["latest_period"]),default=""),
+        "latest_period":latest_period,
     }
     META.write_text(json.dumps(meta,ensure_ascii=False,indent=2),encoding="utf-8")
 
