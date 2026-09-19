@@ -38,3 +38,18 @@ with zipfile.ZipFile(io.BytesIO(data)) as z:
                     print("TEXT ENCODING",encoding,"SAMPLE",lines[:5])
                     break
                 except UnicodeError: continue
+
+    for nested_name in ["Sanità e Salute.zip","Istruzione.zip","Condizioni economiche delle famiglie.zip","Turismo.zip"]:
+        nested=zipfile.ZipFile(io.BytesIO(z.read(nested_name)))
+        filenames=nested.namelist()
+        print("### NESTED ZIP",nested_name,"FILES",len(filenames))
+        for filename in filenames[:16]:
+            print("NESTED ENTRY",filename,nested.getinfo(filename).file_size)
+            if filename.lower().endswith((".csv",".txt",".tsv")):
+                raw=nested.read(filename)
+                for encoding in ("utf-8-sig","cp1252","latin1"):
+                    try:
+                        lines=raw.decode(encoding).splitlines()
+                        print("NESTED TEXT",encoding,repr(lines[:4]))
+                        break
+                    except UnicodeError: continue
