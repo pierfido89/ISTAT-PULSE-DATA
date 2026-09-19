@@ -18,3 +18,23 @@ for tag in soup.select("[onclick]"):
     onclick=tag.get("onclick","")
     if any(x in onclick.casefold() for x in ["download","zip","excel","csv","db"]):
         print("ONCLICK",tag.get_text(" ",strip=True)[:80],onclick[:180])
+
+import io, zipfile
+database="https://noi-italia.istat.it/documenti/Dati.zip"
+req=urllib.request.Request(database,headers={"User-Agent":"ISTAT-PULSE/0.9"})
+with urllib.request.urlopen(req,timeout=120) as r:
+    data=r.read()
+    print("NOI ITALIA ARCHIVE",r.status,len(data),"bytes",r.url)
+with zipfile.ZipFile(io.BytesIO(data)) as z:
+    names=z.namelist()
+    print("ARCHIVE FILE COUNT",len(names))
+    for entry in names[:35]:
+        print("ARCHIVE ENTRY",entry,z.getinfo(entry).file_size)
+        if entry.lower().endswith((".csv",".txt")):
+            raw=z.read(entry)
+            for encoding in ("utf-8-sig","cp1252","latin1"):
+                try:
+                    lines=raw.decode(encoding).splitlines()
+                    print("TEXT ENCODING",encoding,"SAMPLE",lines[:5])
+                    break
+                except UnicodeError: continue
