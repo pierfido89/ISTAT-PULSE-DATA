@@ -53,3 +53,17 @@ with zipfile.ZipFile(io.BytesIO(data)) as z:
                         print("NESTED TEXT",encoding,repr(lines[:4]))
                         break
                     except UnicodeError: continue
+
+    import pandas as pd
+    for named in ["Sanità e Salute.zip","Istruzione.zip","Condizioni economiche delle famiglie.zip","Ambiente.zip"]:
+        nested=zipfile.ZipFile(io.BytesIO(z.read(named)))
+        filenames=[x for x in nested.namelist() if x.lower().endswith(".xlsx")]
+        if not filenames: continue
+        file=next((x for x in filenames if "altri dati" not in x.lower() and "altri dat" not in x.lower()),filenames[0])
+        raw=nested.read(file)
+        excel=pd.ExcelFile(io.BytesIO(raw))
+        print("### WORKBOOK",named,file,"SHEETS",excel.sheet_names)
+        for tab in excel.sheet_names[:2]:
+            df=pd.read_excel(io.BytesIO(raw),sheet_name=tab,header=None,nrows=9,dtype=str)
+            print("### TABLE",tab)
+            print(df.iloc[:9,:12].to_string(index=False,header=False))
