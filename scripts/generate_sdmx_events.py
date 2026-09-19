@@ -486,20 +486,7 @@ def main():
                     "Immigrati dall'estero","Emigrati per l'estero"
                 ],
                 "official":True,
-                "notes":"Dati comunali DEMO; per le annualità più recenti ISTAT può indicare i dati come provvisori."
-            },
-            {
-                "name":"BES dei territori — ISTAT",
-                "level":"Regionale e provinciale",
-                "frequency":"Annuale",
-                "provides":[
-                    "Salute","Istruzione e formazione","Lavoro e conciliazione dei tempi di vita",
-                    "Benessere economico","Relazioni sociali","Politica e istituzioni","Sicurezza",
-                    "Paesaggio e patrimonio culturale","Ambiente","Innovazione, ricerca e creatività",
-                    "Qualità dei servizi"
-                ],
-                "official":True,
-                "notes":"Indicatori territoriali BES pubblicati da ISTAT."
+                "notes":"Fonte attiva nel feed corrente. I dati comunali più recenti possono essere indicati da ISTAT come provvisori."
             },
             {
                 "name":"IstatData SDMX — ISTAT",
@@ -511,7 +498,7 @@ def main():
                     for s in sources
                 ],
                 "official":True,
-                "notes":"Serie congiunturali ufficiali interrogate tramite servizio SDMX IstatData."
+                "notes":"Fonte attiva nel feed corrente. Serie congiunturali ufficiali interrogate tramite servizio SDMX IstatData."
             },
         ],
     }
