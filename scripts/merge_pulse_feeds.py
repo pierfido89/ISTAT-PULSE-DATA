@@ -40,7 +40,7 @@ def main():
 
     # The home feed is a CURRENT radar, not an historical archive.
     # Keep only events whose trigger period belongs to the latest year available.
-    combined["_year"]=combined["period"].astype(str).str.extract(r"^(\\d{4})",expand=False)
+    combined["_year"]=combined["period"].astype(str).str.extract(r"^(\d{4})",expand=False)
     valid_years=pd.to_numeric(combined["_year"],errors="coerce").dropna()
     if valid_years.empty:
         raise RuntimeError("No valid event years found in PULSE feed")
