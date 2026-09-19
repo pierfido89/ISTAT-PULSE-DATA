@@ -62,11 +62,14 @@ def main():
         code = clean(item["W_GEO"])
         matched = re.fullmatch(r"\d{2}-(\d{2})-000", code)
         if matched is None: continue
-        region_code = matched.group(1)
-        canonical = REGIONS.get(region_code)
+        # W_GEO's second field is a source grouping code, NOT the Italian
+        # administrative region code (e.g. 01-03-000 denotes Liguria here).
+        # Resolve only verified region labels from the source. Never guess.
         territory = clean(item["TERRITORIO"])
-        if canonical is None or norm(canonical) != norm(territory):
-            raise RuntimeError(f"BesT region mismatch: W_GEO={code}, {territory!r}, expected {canonical!r}")
+        region_lookup = {norm(name): name for name in REGIONS.values()}
+        canonical = region_lookup.get(norm(territory))
+        if canonical is None:
+            raise RuntimeError(f"Unknown regional total in official BesT: W_GEO={code}, {territory!r}")
         indicator = clean(item["INDICATORE"])
         if not indicator: continue
         recent = [(year, number(item.get(f"V{year}"))) for year in years]
@@ -74,10 +77,10 @@ def main():
         if not recent: continue
         year, value = recent[-1]
         if year > 2026: raise RuntimeError(f"Future BES value? {year} {indicator}")
-        key = (region_code, indicator)
+        key = (canonical, indicator)
         if key in seen: continue
         seen.add(key)
-        region_codes.add(region_code)
+        region_codes.add(canonical)
         detail = clean(item.get("NOTA", ""))
         rows.append({
             "area": categorise(clean(item["DOMINIO"]), indicator),
