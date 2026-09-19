@@ -502,6 +502,47 @@ def main():
             },
         ],
     }
+
+    # I portali storici e complementari restano accessibili come fonti:
+    # non dichiariamo che alimentino il feed se non sono acquisiti dal Radar.
+    urls = {
+        "DEMO ISTAT": ("https://demo.istat.it/app/?i=D7B", "Attiva nel Radar · notizie riferite all'anno del fenomeno"),
+        "IstatData SDMX": ("https://esploradati.istat.it/SDMXWS/", "Attiva nel Radar"),
+    }
+    for source in catalog["sources"]:
+        for prefix, (url, status) in urls.items():
+            if source["name"].startswith(prefix):
+                source["url"] = url
+                source["feed_status"] = status
+    catalog["sources"].extend([
+        {
+            "name": "BES dei territori — ISTAT",
+            "level": "Regionale e provinciale", "frequency": "Annuale",
+            "provides": ["Benessere, salute, istruzione, lavoro, ambiente e qualità dei servizi."],
+            "official": True,
+            "url": "https://www.istat.it/comunicato-territoriale/il-benessere-equo-e-sostenibile-dei-territori-report-regionali-anno-2025/",
+            "feed_status": "Archivio ufficiale consultabile · fuori dal feed corrente",
+            "notes": "I dati annuali del 2024/2025 non vengono presentati come notizie attuali."
+        },
+        {
+            "name": "A misura di Comune — ISTAT",
+            "level": "Comunale, provinciale e regionale", "frequency": "Secondo indicatore",
+            "provides": ["Indicatori socio-demografici, economici, ambientali e territoriali."],
+            "official": True,
+            "url": "https://www.istat.it/statistica-sperimentale/aggiornamento-degli-indicatori-del-sistema-informativo-a-misura-di-comune/",
+            "feed_status": "Database consultabile · integrazione nel Radar da sviluppare",
+            "notes": "Portale ufficiale esterno, non ancora acquisito automaticamente dalla pipeline."
+        },
+        {
+            "name": "Noi Italia — ISTAT",
+            "level": "Italia, regioni ed Europa", "frequency": "Annuale",
+            "provides": ["Oltre 100 statistiche tematiche sull'Italia e sui suoi territori."],
+            "official": True,
+            "url": "https://noi-italia.istat.it/home.php",
+            "feed_status": "Database consultabile · integrazione nel Radar da sviluppare",
+            "notes": "Portale ufficiale esterno, non ancora acquisito automaticamente dalla pipeline."
+        }
+    ])
     CATALOG.write_text(json.dumps(catalog,ensure_ascii=False,indent=2),encoding="utf-8")
 
     print(f"IstatData monitored series: {len(DATASETS)}")
