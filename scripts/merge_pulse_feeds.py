@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Merge DEMO, BES Territories and IstatData SDMX PULSE feeds."""
+"""Merge only current-year DEMO and IstatData SDMX PULSE feeds."""
 from __future__ import annotations
 
 import hashlib
@@ -11,11 +11,9 @@ import pandas as pd
 
 ASSETS=Path("app/src/main/assets")
 DEMO=ASSETS/"pulse_events_demo.tsv"
-BES=ASSETS/"pulse_events_bes.tsv"
 SDMX=ASSETS/"pulse_events_sdmx.tsv"
 OUT=ASSETS/"pulse_events.tsv"
 MANIFEST=ASSETS/"pulse_manifest.json"
-BES_META=ASSETS/"pulse_bes_meta.json"
 SDMX_META=ASSETS/"pulse_sdmx_meta.json"
 
 REQUIRED=[
@@ -37,16 +35,24 @@ def read(path: Path, label: str) -> pd.DataFrame:
 
 def main():
     demo=read(DEMO,"DEMO")
-    bes=read(BES,"BES")
     sdmx=read(SDMX,"SDMX")
-    combined=pd.concat([demo,bes,sdmx],ignore_index=True)
+    combined=pd.concat([demo,sdmx],ignore_index=True)
+
+    # The home feed is a CURRENT radar, not an historical archive.
+    # Keep only events whose trigger period belongs to the latest year available.
+    combined["_year"]=combined["period"].astype(str).str.extract(r"^(\\d{4})",expand=False)
+    valid_years=pd.to_numeric(combined["_year"],errors="coerce").dropna()
+    if valid_years.empty:
+        raise RuntimeError("No valid event years found in PULSE feed")
+    current_year=int(valid_years.max())
+    combined=combined[combined["_year"].eq(str(current_year))].copy()
+
     combined=combined.drop_duplicates(subset=["id"],keep="first")
     combined=combined.sort_values(["score_num","period"],ascending=[False,False])
-    combined=combined.drop(columns=["score_num"])
+    combined=combined.drop(columns=["score_num","_year"])
     combined.to_csv(OUT,sep="\t",index=False)
 
     manifest=json.loads(MANIFEST.read_text(encoding="utf-8"))
-    bes_meta=json.loads(BES_META.read_text(encoding="utf-8"))
     sdmx_meta=json.loads(SDMX_META.read_text(encoding="utf-8"))
 
     periods=[p for p in combined["period"].tolist() if isinstance(p,str) and p]
@@ -55,21 +61,22 @@ def main():
     counts=combined["source_family"].value_counts().to_dict()
 
     manifest.update({
-        "version":"0.6-data",
+        "version":"0.6-data-current",
         "generated_at":datetime.now(timezone.utc).isoformat(),
         "feed_events":int(len(combined)),
         "latest_period":latest,
-        "source_period":f"multi-fonte · ultimo dato {latest}",
+        "source_period":f"feed corrente {current_year} · ultimo dato {latest}",
+        "current_feed_year":current_year,
+        "historical_sources_excluded":["BES dei territori — ISTAT"],
         "indicators":sorted(set(combined["indicator"].tolist())),
         "source_families":families,
         "events_by_source":{str(k):int(v) for k,v in counts.items()},
-        "bes_territori":bes_meta,
         "istatdata_sdmx":sdmx_meta,
     })
     manifest["feed_sha256"]=hashlib.sha256(OUT.read_bytes()).hexdigest()
     MANIFEST.write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding="utf-8")
 
-    print(f"Merged PULSE feed: {len(combined)} events")
+    print(f"Current-year PULSE feed ({current_year}): {len(combined)} events")
     for family,count in counts.items():
         print(f"  {family}: {count}")
     print(f"Latest period across sources: {latest}")
