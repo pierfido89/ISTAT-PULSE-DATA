@@ -1,0 +1,21 @@
+name: Inspect A misura di Comune XLSX sources
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/probe-amc.yml'
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install workbook tools
+        run: python -m pip install --disable-pip-version-check beautifulsoup4 pandas openpyxl
+      - name: Inspect official source files before writing an ingestion adapter
+        run: python scripts/probe_amc.py
