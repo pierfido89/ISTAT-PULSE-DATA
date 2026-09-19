@@ -15,31 +15,9 @@
         "Emigrati per l'estero"
       ],
       "official": true,
-      "notes": "Dati comunali DEMO. Per le annualità più recenti ISTAT può indicare i dati come provvisori.",
+      "notes": "Fonte attiva nel feed corrente. I dati comunali più recenti possono essere indicati da ISTAT come provvisori.",
       "url": "https://demo.istat.it/app/?i=D7B",
-      "feed_status": "Attiva nel Radar · notizie solo sull'anno del fenomeno"
-    },
-    {
-      "name": "BES dei territori — ISTAT",
-      "level": "Regionale e provinciale",
-      "frequency": "Annuale",
-      "provides": [
-        "Salute",
-        "Istruzione e formazione",
-        "Lavoro e conciliazione dei tempi di vita",
-        "Benessere economico",
-        "Relazioni sociali",
-        "Politica e istituzioni",
-        "Sicurezza",
-        "Paesaggio e patrimonio culturale",
-        "Ambiente",
-        "Innovazione, ricerca e creatività",
-        "Qualità dei servizi"
-      ],
-      "official": true,
-      "notes": "Fonte ufficiale collegata. Gli ultimi indicatori territoriali disponibili sono annuali; PULSE non mostra nel feed corrente segnali con periodo precedente al 2026.",
-      "url": "https://www.istat.it/comunicato-territoriale/il-benessere-equo-e-sostenibile-dei-territori-report-regionali-anno-2025/",
-      "feed_status": "Archivio consultabile · non alimenta le notizie correnti"
+      "feed_status": "Attiva nel Radar · notizie riferite all'anno del fenomeno"
     },
     {
       "name": "IstatData SDMX — ISTAT",
@@ -86,7 +64,7 @@
           "series": "Produzione industriale",
           "description": "Indice mensile della produzione industriale, base 2021.",
           "latest_period": "2026-07",
-          "status": "ok"
+          "status": "monitored_no_signal"
         },
         {
           "area": "Imprese",
@@ -100,7 +78,7 @@
           "series": "Fatturato dei servizi",
           "description": "Indice mensile del fatturato dei servizi, base 2021.",
           "latest_period": "2026-06",
-          "status": "ok"
+          "status": "monitored_no_signal"
         },
         {
           "area": "Prezzi e consumi",
@@ -128,7 +106,7 @@
           "series": "Fiducia del commercio",
           "description": "Indice mensile di fiducia delle imprese del commercio al dettaglio.",
           "latest_period": "2026-08",
-          "status": "ok"
+          "status": "monitored_no_signal"
         },
         {
           "area": "Prezzi e consumi",
@@ -156,7 +134,7 @@
           "series": "Arrivi turistici",
           "description": "Arrivi mensili negli esercizi ricettivi italiani.",
           "latest_period": "2026-07",
-          "status": "ok"
+          "status": "monitored_no_signal"
         },
         {
           "area": "Turismo e mobilità",
@@ -167,33 +145,45 @@
         }
       ],
       "official": true,
-      "notes": "Serie congiunturali ufficiali interrogate tramite servizio SDMX IstatData.",
+      "notes": "Fonte attiva nel feed corrente. Serie congiunturali ufficiali interrogate tramite servizio SDMX IstatData.",
       "url": "https://esploradati.istat.it/SDMXWS/",
       "feed_status": "Attiva nel Radar"
     },
     {
+      "name": "BES dei territori — ISTAT",
+      "level": "Regionale e provinciale",
+      "frequency": "Annuale",
+      "provides": [
+        "Benessere, salute, istruzione, lavoro, ambiente e qualità dei servizi."
+      ],
+      "official": true,
+      "url": "https://www.istat.it/comunicato-territoriale/il-benessere-equo-e-sostenibile-dei-territori-report-regionali-anno-2025/",
+      "feed_status": "Archivio ufficiale consultabile · fuori dal feed corrente",
+      "notes": "I dati annuali del 2024/2025 non vengono presentati come notizie attuali."
+    },
+    {
       "name": "A misura di Comune — ISTAT",
       "level": "Comunale, provinciale e regionale",
-      "frequency": "Secondo i singoli indicatori",
+      "frequency": "Secondo indicatore",
       "provides": [
-        "Indicatori socio-demografici, economici, ambientali e territoriali per i comuni italiani."
+        "Indicatori socio-demografici, economici, ambientali e territoriali."
       ],
       "official": true,
       "url": "https://www.istat.it/statistica-sperimentale/aggiornamento-degli-indicatori-del-sistema-informativo-a-misura-di-comune/",
-      "feed_status": "Database ufficiale consultabile · integrazione nel Radar da sviluppare",
-      "notes": "Collegamento al sistema informativo ISTAT. Non genera ancora notizie nel feed automatico PULSE."
+      "feed_status": "Database consultabile · integrazione nel Radar da sviluppare",
+      "notes": "Portale ufficiale esterno, non ancora acquisito automaticamente dalla pipeline."
     },
     {
       "name": "Noi Italia — ISTAT",
       "level": "Italia, regioni ed Europa",
       "frequency": "Annuale",
       "provides": [
-        "Oltre cento statistiche di popolazione, lavoro, salute, industria, ambiente ed economia."
+        "Oltre 100 statistiche tematiche sull'Italia e sui suoi territori."
       ],
       "official": true,
       "url": "https://noi-italia.istat.it/home.php",
-      "feed_status": "Database ufficiale consultabile · integrazione nel Radar da sviluppare",
-      "notes": "Collegamento alla piattaforma ISTAT: i dati non sono ancora acquisiti automaticamente dal Radar."
+      "feed_status": "Database consultabile · integrazione nel Radar da sviluppare",
+      "notes": "Portale ufficiale esterno, non ancora acquisito automaticamente dalla pipeline."
     }
   ]
 }
