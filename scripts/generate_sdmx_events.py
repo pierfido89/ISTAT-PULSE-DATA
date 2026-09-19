@@ -386,6 +386,16 @@ def build_event(dataset: dict,chosen: dict,source_url: str) -> dict|None:
         "source_family":"IstatData SDMX — ISTAT","source_url":source_url,
     }
 
+def observed_area(dataset: dict) -> str:
+    original = dataset["area"]
+    name = dataset["name"]
+    if original == "Lavoro e redditi": return "Lavoro e mercato del lavoro"
+    if original == "Prezzi e consumi":
+        return "Potere d'acquisto e consumi" if name in {"Vendite al dettaglio","Fiducia dei consumatori"} else "Prezzi e inflazione"
+    if original == "Imprese": return "Imprese e industria"
+    if original == "Turismo e mobilità": return "Turismo"
+    return original
+
 def main():
     # Fetch each unique flow/start once, concurrently.
     unique={}
@@ -429,7 +439,7 @@ def main():
         if chosen and chosen["obs"]:
             current_period, current_value = chosen["obs"][-1]
             observations.append({
-                "area": dataset["area"], "indicator": dataset["name"],
+                "area": observed_area(dataset), "indicator": dataset["name"],
                 "territory": "Italia", "period": current_period,
                 "value": format(float(current_value), ".10g"),
                 "unit": "Unita della serie: verificare i metadati ISTATData",
@@ -440,7 +450,7 @@ def main():
             })
 
         sources.append({
-            "area":dataset["area"],
+            "area":observed_area(dataset),
             "name":dataset["name"],
             "provides":dataset["provides"],
             "flow":dataset["flow"],
