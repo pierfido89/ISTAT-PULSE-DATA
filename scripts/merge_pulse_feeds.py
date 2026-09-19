@@ -47,6 +47,14 @@ def main():
     current_year=int(valid_years.max())
     combined=combined[combined["_year"].eq(str(current_year))].copy()
 
+    # Il periodo dell'estrazione NON e' il periodo della notizia.
+    # Il bilancio DEMO 2026 puo' contenere un'inversione calcolata sul 2025:
+    # tale evento resta storico e non puo' apparire come notizia del 2026.
+    headline_year=combined["summary"].str.extract(r"\\bnel\\s+(20\\d{2})\\b",flags=__import__("re").IGNORECASE,expand=False)
+    combined=combined[headline_year.isna() | headline_year.eq(str(current_year))].copy()
+    if combined.empty:
+        raise RuntimeError("Nessun evento con periodo del fenomeno nell'anno corrente")
+
     combined=combined.drop_duplicates(subset=["id"],keep="first")
     combined=combined.sort_values(["score_num","period"],ascending=[False,False])
     combined=combined.drop(columns=["score_num","_year"])
