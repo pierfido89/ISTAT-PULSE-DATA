@@ -70,7 +70,7 @@ def main():
         # one province as a region. Grouping errors invalidate the entire import.
         if "Provincia" in frame:
             province=frame["Provincia"].fillna("").astype(str).str.strip()
-            regional=frame.loc[province.eq("")].copy()
+            regional=frame.loc[province.str.upper().eq("TOTALE")].copy()
         else:
             regional=frame.copy()
         years=[(int(x),x) for x in frame.columns if re.fullmatch(r"20\d{2}",x)]
