@@ -61,7 +61,9 @@ def main():
             continue
         code = clean(item["W_GEO"])
         matched = re.fullmatch(r"\d{2}-(\d{2})-000", code)
-        if matched is None: continue
+        if matched is None or matched.group(1) == "00":
+            # 20-00-000 / Centro etc. are macro-geographic totals, NOT regions.
+            continue
         # W_GEO's second field is a source grouping code, NOT the Italian
         # administrative region code (e.g. 01-03-000 denotes Liguria here).
         # Resolve only verified region labels from the source. Never guess.
