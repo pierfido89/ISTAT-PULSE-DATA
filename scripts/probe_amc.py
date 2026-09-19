@@ -44,3 +44,18 @@ for label,url in selection:
             print("SHEET",tab,preview.iloc[:7,:12].to_string(index=False,header=False))
     except Exception as exc: print("INSPECTION ERROR",repr(exc))
 if len(links)<10: raise RuntimeError("A misura di Comune download links not available in source page")
+
+print("### REGION TOTAL IDENTIFICATION")
+for label,url in links:
+    if label=="3 – Famiglie":
+        content=fetch(url)
+        frame=pd.read_excel(io.BytesIO(content),sheet_name="Tav. 1.2 Province e regioni",header=3,dtype=str)
+        frame.columns=[str(x).strip() for x in frame.columns]
+        print("REGIONAL FRAME COLS",frame.columns.tolist())
+        print("PROVINCE VALUE COUNTS",frame["Provincia"].fillna("<EMPTY>").value_counts().head(30).to_dict())
+        for region in ["Piemonte","Lazio","Lombardia"]:
+            selected=frame.loc[frame["Denominazione regione"].astype(str).str.contains(region,case=False,na=False)]
+            print("REGION",region,"ROWS",len(selected),"HEAD",selected.head(3).iloc[:,:6].to_string(index=False))
+            print("REGION",region,"TAIL",selected.tail(5).iloc[:,:7].to_string(index=False))
+        print("FRAME TAIL",frame.tail(25).iloc[:,:7].to_string(index=False))
+        break
