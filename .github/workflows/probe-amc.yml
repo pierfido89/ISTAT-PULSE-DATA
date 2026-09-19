@@ -5,6 +5,7 @@ on:
     branches: [ main ]
     paths:
       - '.github/workflows/probe-amc.yml'
+      - 'scripts/probe_amc.py'
   workflow_dispatch:
 
 jobs:
