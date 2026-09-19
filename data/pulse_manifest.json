@@ -1,6 +1,6 @@
 {
   "version": "0.6-data-current",
-  "generated_at": "2026-09-19T06:18:44.973160+00:00",
+  "generated_at": "2026-09-19T07:46:55.390696+00:00",
   "feed_sha256": "29d6570a76907daec623cfe595e1ce9421ee2c7551d0bd5676e39c9b8b04dc9e",
   "source_period": "feed corrente 2026 · ultimo dato 2026-Q2",
   "complete_years": [
@@ -133,14 +133,14 @@
     "connected_series": 17,
     "sources": [
       {
-        "area": "Prezzi e consumi",
+        "area": "Prezzi e inflazione",
         "name": "Prezzi al consumo NIC",
         "provides": "Indice generale mensile dei prezzi al consumo per l'intera collettività.",
         "flow": "167_745_DF_DCSP_NIC1B2025_1",
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/167_745_DF_DCSP_NIC1B2025_1/all/IT1?startPeriod=2026&endPeriod=2026",
         "status": "ok",
         "bytes": 5682982,
-        "sha256": "87eabfee749d82510b3bc0869f590e7f008bb671ee7bd6474e2ae2410a66b28b",
+        "sha256": "2c906960aadc2bfe73a5956beb2d6dd981ac516c91d9def4c3bbdeb1751a38ab",
         "latest_period": "2026-08",
         "series_key": {
           "FREQ": "M",
@@ -152,14 +152,14 @@
         "signal_emitted": true
       },
       {
-        "area": "Lavoro e redditi",
+        "area": "Lavoro e mercato del lavoro",
         "name": "Tasso di disoccupazione",
         "provides": "Tasso di disoccupazione mensile nazionale.",
         "flow": "151_874_DF_DCCV_TAXDISOCCUMENS1_1",
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/151_874_DF_DCCV_TAXDISOCCUMENS1_1/all/IT1?startPeriod=2024&endPeriod=2026",
         "status": "ok",
         "bytes": 1480482,
-        "sha256": "662c334700800f010a5b657d1c2408a82222947b53f459618542f9e8e2b633ec",
+        "sha256": "e87a2378fd27909cdf510442d90b719bb61bbefab2ce7a26226197f9d227ab96",
         "latest_period": "2026-07",
         "series_key": {
           "FREQ": "M",
@@ -173,14 +173,14 @@
         "signal_emitted": true
       },
       {
-        "area": "Lavoro e redditi",
+        "area": "Lavoro e mercato del lavoro",
         "name": "Tasso di occupazione",
         "provides": "Tasso di occupazione mensile nazionale.",
         "flow": "150_872_DF_DCCV_TAXOCCUMENS1_1",
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/150_872_DF_DCCV_TAXOCCUMENS1_1/all/IT1?startPeriod=2024&endPeriod=2026",
         "status": "ok",
         "bytes": 1487506,
-        "sha256": "bb3ec94ad7ee3d89ca6f8109ae5b8cbe19855179c15686a70d34d16170ff6df6",
+        "sha256": "44c7aef0138281e557ce4bd23fe71364090deee45bde4e86c0ca53aea917ed47",
         "latest_period": "2026-07",
         "series_key": {
           "FREQ": "M",
@@ -194,14 +194,14 @@
         "signal_emitted": true
       },
       {
-        "area": "Lavoro e redditi",
+        "area": "Lavoro e mercato del lavoro",
         "name": "Occupati",
         "provides": "Numero mensile di occupati a livello nazionale.",
         "flow": "150_875_DF_DCCV_OCCUPATIMENS1_1",
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/150_875_DF_DCCV_OCCUPATIMENS1_1/all/IT1?startPeriod=2024&endPeriod=2026",
         "status": "ok",
         "bytes": 771329,
-        "sha256": "a427067c57f04be7316459ec237399f3be7b0dead097600f3e742a7ca34a5fca",
+        "sha256": "388d380f33855569803045ae157b791202dc2af7360128347d5d188f43a073f7",
         "latest_period": "2026-07",
         "series_key": {
           "FREQ": "M",
@@ -217,14 +217,14 @@
         "signal_emitted": true
       },
       {
-        "area": "Lavoro e redditi",
+        "area": "Lavoro e mercato del lavoro",
         "name": "Posizioni lavorative dipendenti",
         "provides": "Indice trimestrale delle posizioni lavorative dipendenti.",
         "flow": "149_577_DF_DCSC_OROS_1_3",
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/149_577_DF_DCSC_OROS_1_3/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 591024,
-        "sha256": "2c318a6796ba27ca4cbbb7a593a88fa62d1bd9842cd662d3996fd365a25e4366",
+        "sha256": "17e08b89b47fbd65c6d257b7dc82cee7d5176364f1ef42ffe94a9034cae9141b",
         "latest_period": "2026-Q2",
         "series_key": {
           "FREQ": "Q",
@@ -236,14 +236,14 @@
         "signal_emitted": true
       },
       {
-        "area": "Imprese",
+        "area": "Imprese e industria",
         "name": "Produzione industriale",
         "provides": "Indice mensile della produzione industriale, base 2021.",
         "flow": "115_333_DF_DCSC_INDXPRODIND_1_6",
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/115_333_DF_DCSC_INDXPRODIND_1_6/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "monitored_no_signal",
         "bytes": 7057707,
-        "sha256": "071d57eb23e3f6df08309bb41dca9dcaa54a88dc6d806f371b48a948035c7bcd",
+        "sha256": "7042bb0448ef346dee72abb7343f10aadf7c1390d582b16ede03bd4c4036fb90",
         "latest_period": "2026-07",
         "series_key": {
           "FREQ": "M",
@@ -255,14 +255,14 @@
         "signal_emitted": false
       },
       {
-        "area": "Imprese",
+        "area": "Imprese e industria",
         "name": "Fatturato industriale",
         "provides": "Indice mensile del valore del fatturato industriale, base 2021.",
         "flow": "114_191_DF_DCSC_ORDFATT_9",
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/114_191_DF_DCSC_ORDFATT_9/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 5212153,
-        "sha256": "d26990ecde5e96d72ccfeef83faf9faaa0392fb4e7720df9fc43ad08908bb665",
+        "sha256": "b3ae5eff3e8b2185d87331305b0ebe55d26bd0f186b5a66f08e96e80e106e346",
         "latest_period": "2026-06",
         "series_key": {
           "FREQ": "M",
@@ -275,14 +275,14 @@
         "signal_emitted": true
       },
       {
-        "area": "Imprese",
+        "area": "Imprese e industria",
         "name": "Fatturato dei servizi",
         "provides": "Indice mensile del fatturato dei servizi, base 2021.",
         "flow": "119_367_DF_DCSC_FATTSERVIZ_1_4",
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/119_367_DF_DCSC_FATTSERVIZ_1_4/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "monitored_no_signal",
         "bytes": 3240290,
-        "sha256": "b0fe442838e3d57f343f706ddda0c4b57f471059404c55972650c53cdf01df3e",
+        "sha256": "2e57397f06c8b84ac574c9aff35fb37100cb1a17a155d28ed227288939f3d09d",
         "latest_period": "2026-06",
         "series_key": {
           "FREQ": "M",
@@ -294,14 +294,14 @@
         "signal_emitted": false
       },
       {
-        "area": "Prezzi e consumi",
+        "area": "Potere d'acquisto e consumi",
         "name": "Vendite al dettaglio",
         "provides": "Indice mensile del volume delle vendite al dettaglio, base 2021.",
         "flow": "120_337_DF_DCSC_COMMDET_1_15",
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/120_337_DF_DCSC_COMMDET_1_15/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 145509,
-        "sha256": "19debb13f321c84bb78ef2c52b5ab51d3ca981a112345a0239256939c7647dc6",
+        "sha256": "ca175641f4aeb9163b644f7cd315b6e22e055bb48f2bebafb1f81f2a0691f039",
         "latest_period": "2026-07",
         "series_key": {
           "FREQ": "M",
@@ -315,14 +315,14 @@
         "signal_emitted": true
       },
       {
-        "area": "Imprese",
+        "area": "Imprese e industria",
         "name": "Clima di fiducia delle imprese",
         "provides": "Indice mensile sintetico del clima di fiducia delle imprese.",
         "flow": "6_64_DF_DCSC_IESI_2",
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/6_64_DF_DCSC_IESI_2/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 7997,
-        "sha256": "37f9793cbfdf0ba8667f52f8df36233a6005b37822eeeb16014a54fe08d6a2cd",
+        "sha256": "0b27caa3e38ddfd208d839c7700b7685668fe9bec496b4175fa4d10d7e4fe718",
         "latest_period": "2026-08",
         "series_key": {
           "FREQ": "M",
@@ -334,14 +334,14 @@
         "signal_emitted": true
       },
       {
-        "area": "Imprese",
+        "area": "Imprese e industria",
         "name": "Fiducia delle costruzioni",
         "provides": "Indice mensile di fiducia delle imprese delle costruzioni.",
         "flow": "111_40",
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/111_40/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 1623545,
-        "sha256": "8a6d8c272483832ec81b9164faca910c66d49d28f1e6d1dcc3ccbbfbd3ff5e3a",
+        "sha256": "b22ef4d84f20a8eed94e51ca4be46a1a8c5e5504a6b8031dd8eaf23b5e7b4f9a",
         "latest_period": "2026-08",
         "series_key": {
           "FREQ": "M",
@@ -354,14 +354,14 @@
         "signal_emitted": true
       },
       {
-        "area": "Imprese",
+        "area": "Imprese e industria",
         "name": "Fiducia del commercio",
         "provides": "Indice mensile di fiducia delle imprese del commercio al dettaglio.",
         "flow": "117_266",
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/117_266/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "monitored_no_signal",
         "bytes": 3997352,
-        "sha256": "2dd90962da7f7fe33aa550090e53735f0c2c49f27cd3bab941fde56ca7b8673e",
+        "sha256": "d3cede2016274a67469b37711e7e1d0fd558971a1f99b54673e47b269b88a9d2",
         "latest_period": "2026-08",
         "series_key": {
           "FREQ": "M",
@@ -374,14 +374,14 @@
         "signal_emitted": false
       },
       {
-        "area": "Prezzi e consumi",
+        "area": "Potere d'acquisto e consumi",
         "name": "Fiducia dei consumatori",
         "provides": "Indice mensile del clima di fiducia dei consumatori.",
         "flow": "30_264",
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/30_264/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 2571939,
-        "sha256": "9bdacc257e53b9c03dfe620acc3ddb44704739bc4e8110b18d9f4228e43c3e35",
+        "sha256": "961914e0ca88ce1e3c36cc6e649923dcbb0d24b3732fa4652c90b38381221620",
         "latest_period": "2026-08",
         "series_key": {
           "FREQ": "M",
@@ -396,14 +396,14 @@
         "signal_emitted": true
       },
       {
-        "area": "Prezzi e consumi",
+        "area": "Prezzi e inflazione",
         "name": "Prezzi alla produzione dell'industria",
         "provides": "Indice mensile dei prezzi alla produzione dell'industria, base 2021.",
         "flow": "145_360_DF_DCSC_PREZZPIND_1_4",
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/145_360_DF_DCSC_PREZZPIND_1_4/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 10462376,
-        "sha256": "69a24adbf72760d063dd10d12c70a17ae1c899afc48f9d6dcd0f29d440e2846d",
+        "sha256": "2c1ddc60b956943e4e24499c55ed94c0bae5c039ee978d2e05ef277783f34600",
         "latest_period": "2026-07",
         "series_key": {
           "FREQ": "M",
@@ -416,14 +416,14 @@
         "signal_emitted": true
       },
       {
-        "area": "Prezzi e consumi",
+        "area": "Prezzi e inflazione",
         "name": "Prezzi all'importazione",
         "provides": "Indice mensile dei prezzi all'importazione, base 2021.",
         "flow": "143_222_DF_DCSC_PREIMPIND_2",
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/143_222_DF_DCSC_PREIMPIND_2/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 2797860,
-        "sha256": "25110c0030956035f21062dc5b68795dd6c72c54e7d67e1edd97b3f0ed895425",
+        "sha256": "8251ec58575b63e7f0e9de5bd86834f5a938dd7db5ca319276ee5f7fdb70eccf",
         "latest_period": "2026-07",
         "series_key": {
           "FREQ": "M",
@@ -436,14 +436,14 @@
         "signal_emitted": true
       },
       {
-        "area": "Turismo e mobilità",
+        "area": "Turismo",
         "name": "Arrivi turistici",
         "provides": "Arrivi mensili negli esercizi ricettivi italiani.",
         "flow": "122_54_DF_DCSC_TUR_3",
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/122_54_DF_DCSC_TUR_3/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "monitored_no_signal",
         "bytes": 17194576,
-        "sha256": "2b0408f10409f870be4cd1baa6b2d730f0698f6b2c52140ef2047a47f1e0792f",
+        "sha256": "480587f96335922f2137a3dd749f40470bf4d5e6bedd018e7bad9ebe0384f908",
         "latest_period": "2026-07",
         "series_key": {
           "FREQ": "M",
@@ -461,14 +461,14 @@
         "signal_emitted": false
       },
       {
-        "area": "Turismo e mobilità",
+        "area": "Turismo",
         "name": "Presenze turistiche",
         "provides": "Presenze mensili negli esercizi ricettivi italiani.",
         "flow": "122_54_DF_DCSC_TUR_3",
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/122_54_DF_DCSC_TUR_3/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 17194576,
-        "sha256": "2b0408f10409f870be4cd1baa6b2d730f0698f6b2c52140ef2047a47f1e0792f",
+        "sha256": "480587f96335922f2137a3dd749f40470bf4d5e6bedd018e7bad9ebe0384f908",
         "latest_period": "2026-07",
         "series_key": {
           "FREQ": "M",
