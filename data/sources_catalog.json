@@ -15,7 +15,9 @@
         "Emigrati per l'estero"
       ],
       "official": true,
-      "notes": "Dati comunali DEMO. Per le annualità più recenti ISTAT può indicare i dati come provvisori."
+      "notes": "Dati comunali DEMO. Per le annualità più recenti ISTAT può indicare i dati come provvisori.",
+      "url": "https://demo.istat.it/app/?i=D7B",
+      "feed_status": "Attiva nel Radar · notizie solo sull'anno del fenomeno"
     },
     {
       "name": "BES dei territori — ISTAT",
@@ -35,7 +37,9 @@
         "Qualità dei servizi"
       ],
       "official": true,
-      "notes": "Fonte ufficiale collegata. Gli ultimi indicatori territoriali disponibili sono annuali; PULSE non mostra nel feed corrente segnali con periodo precedente al 2026."
+      "notes": "Fonte ufficiale collegata. Gli ultimi indicatori territoriali disponibili sono annuali; PULSE non mostra nel feed corrente segnali con periodo precedente al 2026.",
+      "url": "https://www.istat.it/comunicato-territoriale/il-benessere-equo-e-sostenibile-dei-territori-report-regionali-anno-2025/",
+      "feed_status": "Archivio consultabile · non alimenta le notizie correnti"
     },
     {
       "name": "IstatData SDMX — ISTAT",
@@ -163,7 +167,33 @@
         }
       ],
       "official": true,
-      "notes": "Serie congiunturali ufficiali interrogate tramite servizio SDMX IstatData."
+      "notes": "Serie congiunturali ufficiali interrogate tramite servizio SDMX IstatData.",
+      "url": "https://esploradati.istat.it/SDMXWS/",
+      "feed_status": "Attiva nel Radar"
+    },
+    {
+      "name": "A misura di Comune — ISTAT",
+      "level": "Comunale, provinciale e regionale",
+      "frequency": "Secondo i singoli indicatori",
+      "provides": [
+        "Indicatori socio-demografici, economici, ambientali e territoriali per i comuni italiani."
+      ],
+      "official": true,
+      "url": "https://www.istat.it/statistica-sperimentale/aggiornamento-degli-indicatori-del-sistema-informativo-a-misura-di-comune/",
+      "feed_status": "Database ufficiale consultabile · integrazione nel Radar da sviluppare",
+      "notes": "Collegamento al sistema informativo ISTAT. Non genera ancora notizie nel feed automatico PULSE."
+    },
+    {
+      "name": "Noi Italia — ISTAT",
+      "level": "Italia, regioni ed Europa",
+      "frequency": "Annuale",
+      "provides": [
+        "Oltre cento statistiche di popolazione, lavoro, salute, industria, ambiente ed economia."
+      ],
+      "official": true,
+      "url": "https://noi-italia.istat.it/home.php",
+      "feed_status": "Database ufficiale consultabile · integrazione nel Radar da sviluppare",
+      "notes": "Collegamento alla piattaforma ISTAT: i dati non sono ancora acquisiti automaticamente dal Radar."
     }
   ]
 }
