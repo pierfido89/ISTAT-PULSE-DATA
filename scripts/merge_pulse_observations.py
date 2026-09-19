@@ -12,7 +12,7 @@ from datetime import datetime,timezone
 
 base=Path("app/src/main/assets")
 out=base/"pulse_observations.tsv"
-paths=[base/"pulse_observations_sdmx.tsv",base/"pulse_observations_bes.tsv"]
+paths=[base/"pulse_observations_sdmx.tsv",base/"pulse_observations_bes.tsv",base/"pulse_observations_amc.tsv"]
 fields=["area","indicator","territory","period","value","unit","source","url","note","status"]
 frames=[]
 for source in paths:
