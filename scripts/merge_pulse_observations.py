@@ -36,4 +36,24 @@ meta={
   "note":"Serie osservate, non micro-notizie PULSE. L'anno nella colonna period e' il riferimento statistico."
 }
 (base/"pulse_observations_manifest.json").write_text(json.dumps(meta,ensure_ascii=False,indent=2),encoding="utf-8")
+# The catalogue must never describe a portal as integrated unless verified
+# observations have actually passed the merged-file quality checks.
+catalog_path=base/"sources_catalog.json"
+catalog=json.loads(catalog_path.read_text(encoding="utf-8"))
+counts=meta["by_source"]
+for source in catalog.get("sources",[]):
+    name=source.get("name","")
+    if name=="Bes dei territori — ISTAT" and counts.get(name,0):
+        source["feed_status"]=(
+            f"Osservazioni regionali scaricate e verificate: {counts[name]} valori. "
+            "Fuori dal feed delle notizie correnti."
+        )
+        source["notes"]="Serie annuali storiche consultabili nella sezione Dati osservati; il periodo statistico e' sempre esplicito."
+    elif name=="A misura di Comune — ISTAT" and counts.get(name,0):
+        source["feed_status"]=(
+            f"Prime tavole ufficiali importate e verificate: {counts[name]} valori regionali. "
+            "Ampliamento a tutti i comuni in corso."
+        )
+        source["notes"]="Famiglie, istruzione, redditi e ambiente: leggere sempre l'anno del dato nel catalogo osservato."
+catalog_path.write_text(json.dumps(catalog,ensure_ascii=False,indent=2),encoding="utf-8")
 print("PULSE OBSERVED REGISTRY",meta)
