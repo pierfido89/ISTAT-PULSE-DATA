@@ -46,6 +46,9 @@ jobs:
       - name: Extract latest observed regional BES measurements
         run: python scripts/generate_bes_observations.py
 
+      - name: Download and validate A misura di Comune regional observations
+        run: python scripts/generate_amc_observations.py
+
       - name: Publish observed measurements independently from current-year news
         run: python scripts/merge_pulse_observations.py
 
