@@ -1,8 +1,8 @@
 {
-  "version": "0.6-data",
+  "version": "0.6-data-current",
   "generated_at": "2026-09-18T21:21:53.685060+00:00",
-  "feed_sha256": "f0be749512ef49587b09ec456f62b1b58e69976835edb1fc08519648cb089d3f",
-  "source_period": "multi-fonte · ultimo dato 2026-Q2",
+  "feed_sha256": "df3cc9ceaaeaa3dc904b94ff8c45c9a2f3fbf2de88df1a638ec49c63e616a5bb",
+  "source_period": "feed corrente 2026 · ultimo dato 2026-08",
   "complete_years": [
     2019,
     2020,
@@ -20,19 +20,11 @@
     2024,
     2025
   ],
-  "latest_period": "2026-Q2",
+  "latest_period": "2026-08",
   "latest_period_provisional": true,
   "quality_A_municipalities": 7493,
-  "feed_events": 518,
+  "feed_events": 278,
   "indicators": [
-    "Ambiente · Concentrazione media annua di PM10",
-    "Ambiente · Concentrazione media annua di PM2.5",
-    "Ambiente · Disponibilità di verde urbano",
-    "Ambiente · Energia elettrica da fonti rinnovabili",
-    "Ambiente · Raccolta differenziata dei rifiuti urbani",
-    "Ambiente · Rifiuti urbani prodotti",
-    "Benessere economico · Importo medio annuo pro-capite dei redditi pensionistici",
-    "Benessere economico · Pensionati con reddito pensionistico di basso importo",
     "Clima di fiducia delle imprese",
     "Emigrati per altro comune",
     "Emigrati per l'estero",
@@ -41,46 +33,14 @@
     "Fiducia delle costruzioni",
     "Immigrati da altro comune",
     "Immigrati dall'estero",
-    "Innovazione, ricerca e creatività · Propensione alla brevettazione",
-    "Istruzione e formazione · Bambini che hanno usufruito dei servizi comunali per l'infanzia",
-    "Istruzione e formazione · Laureati e altri titoli terziari (25-39 anni)",
-    "Istruzione e formazione · Passaggio all'università",
-    "Istruzione e formazione · Persone con almeno il diploma (25-64 anni)",
-    "Lavoro e conciliazione dei tempi di vita · Tasso di mancata partecipazione al lavoro",
-    "Lavoro e conciliazione dei tempi di vita · Tasso di mancata partecipazione al lavoro giovanile (15-29 anni)",
-    "Lavoro e conciliazione dei tempi di vita · Tasso di occupazione (20-64 anni)",
-    "Lavoro e conciliazione dei tempi di vita · Tasso di occupazione giovanile (15-29 anni)",
     "Morti",
     "Nati vivi",
     "Occupati",
-    "Paesaggio e patrimonio culturale · Densità e rilevanza del patrimonio museale",
-    "Paesaggio e patrimonio culturale · Diffusione delle aziende agrituristiche",
-    "Politica e istituzioni · Affollamento degli istituti di pena",
-    "Politica e istituzioni · Amministratori comunali con meno di 40 anni",
-    "Politica e istituzioni · Amministratori comunali donne",
-    "Politica e istituzioni · Amministrazioni provinciali: capacità di riscossione",
-    "Politica e istituzioni · Comuni: capacità di riscossione",
     "Posizioni lavorative dipendenti",
     "Presenze turistiche",
     "Prezzi al consumo NIC",
     "Prezzi all'importazione",
     "Prezzi alla produzione dell'industria",
-    "Qualità dei servizi · Irregolarità del servizio elettrico",
-    "Qualità dei servizi · Posti letto negli ospedali",
-    "Qualità dei servizi · Posti letto per specialità ad elevata assistenza",
-    "Qualità dei servizi · Servizio di raccolta differenziata dei rifiuti urbani",
-    "Relazioni sociali · Organizzazioni non profit",
-    "Salute · Mortalità evitabile (0-74 anni)",
-    "Salute · Mortalità infantile",
-    "Salute · Mortalità per demenze e malattie del sistema nervoso (65 anni e più)",
-    "Salute · Mortalità per incidenti stradali (15-34 anni)",
-    "Salute · Mortalità per tumore (20-64 anni)",
-    "Salute · Speranza di vita alla nascita",
-    "Sicurezza · Altri delitti mortali denunciati",
-    "Sicurezza · Denunce di borseggio",
-    "Sicurezza · Denunce di rapina",
-    "Sicurezza · Mortalità stradale in ambito extraurbano",
-    "Sicurezza · Omicidi volontari",
     "Tasso di disoccupazione",
     "Tasso di occupazione",
     "Vendite al dettaglio"
@@ -155,35 +115,12 @@
   ],
   "disclaimer": "Prototipo indipendente basato su dati pubblici ISTAT. Non è un prodotto ufficiale ISTAT.",
   "source_families": [
-    "BES dei territori — ISTAT",
     "DEMO ISTAT — Bilancio demografico mensile",
     "IstatData SDMX — ISTAT"
   ],
   "events_by_source": {
     "DEMO ISTAT — Bilancio demografico mensile": 265,
-    "BES dei territori — ISTAT": 240,
     "IstatData SDMX — ISTAT": 13
-  },
-  "bes_territori": {
-    "source_family": "BES dei territori — ISTAT",
-    "source_url": "https://www.istat.it/statistiche-per-temi/focus/benessere-e-sostenibilita/la-misurazione-del-benessere-bes/il-bes-dei-territori/",
-    "download_url": "https://www.istat.it/wp-content/uploads/2025/06/Bes_dei_territori_edizione_2025.zip",
-    "source_sha256": "90f90043ad3dc3cf190f836851f32f302b08debfa56a2fa1d190a3d28192b72e",
-    "latest_year": 2024,
-    "events": 240,
-    "domains": [
-      "Ambiente",
-      "Benessere economico",
-      "Innovazione, ricerca e creatività",
-      "Istruzione e formazione",
-      "Lavoro e conciliazione dei tempi di vita",
-      "Paesaggio e patrimonio culturale",
-      "Politica e istituzioni",
-      "Qualità dei servizi",
-      "Relazioni sociali",
-      "Salute",
-      "Sicurezza"
-    ]
   },
   "istatdata_sdmx": {
     "source_family": "IstatData SDMX — ISTAT",
@@ -546,5 +483,9 @@
       }
     ],
     "latest_period": "2026-08"
-  }
+  },
+  "current_feed_year": 2026,
+  "historical_sources_excluded": [
+    "BES dei territori — ISTAT"
+  ]
 }
