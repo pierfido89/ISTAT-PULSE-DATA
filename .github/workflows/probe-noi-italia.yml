@@ -2,7 +2,7 @@ name: Inspect Noi Italia official download
 on:
   push:
     branches: [ main ]
-    paths: ['.github/workflows/probe-noi-italia.yml']
+    paths: ['.github/workflows/probe-noi-italia.yml', 'scripts/probe_noi_italia.py']
   workflow_dispatch:
 jobs:
   probe:
