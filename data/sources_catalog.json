@@ -18,6 +18,26 @@
       "notes": "Dati comunali DEMO. Per le annualità più recenti ISTAT può indicare i dati come provvisori."
     },
     {
+      "name": "BES dei territori — ISTAT",
+      "level": "Regionale e provinciale",
+      "frequency": "Annuale",
+      "provides": [
+        "Salute",
+        "Istruzione e formazione",
+        "Lavoro e conciliazione dei tempi di vita",
+        "Benessere economico",
+        "Relazioni sociali",
+        "Politica e istituzioni",
+        "Sicurezza",
+        "Paesaggio e patrimonio culturale",
+        "Ambiente",
+        "Innovazione, ricerca e creatività",
+        "Qualità dei servizi"
+      ],
+      "official": true,
+      "notes": "Fonte ufficiale collegata. Gli ultimi indicatori territoriali disponibili sono annuali; PULSE non mostra nel feed corrente segnali con periodo precedente al 2026."
+    },
+    {
       "name": "IstatData SDMX — ISTAT",
       "level": "Prevalentemente nazionale",
       "frequency": "Mensile e trimestrale",
