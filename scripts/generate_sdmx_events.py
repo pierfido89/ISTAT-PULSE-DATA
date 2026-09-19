@@ -23,6 +23,7 @@ BASE = "https://esploradati.istat.it/SDMXWS/rest/v1/data"
 OUT = Path("app/src/main/assets/pulse_events_sdmx.tsv")
 META = Path("app/src/main/assets/pulse_sdmx_meta.json")
 CATALOG = Path("app/src/main/assets/sources_catalog.json")
+OBSERVED = Path("app/src/main/assets/pulse_observations_sdmx.tsv")
 
 COLUMNS = [
     "id","municipality_code","municipality","province","region","indicator",
@@ -403,7 +404,7 @@ def main():
                 fetched[key]=(b"","",[],repr(exc))
                 print(f"FETCH ERROR {key[0]}: {exc!r}")
 
-    events=[]; sources=[]
+    events=[]; sources=[]; observations=[]
     for dataset in DATASETS:
         key=(dataset["flow"],dataset["start"])
         raw,url,parsed,error=fetched[key]
@@ -425,6 +426,19 @@ def main():
                 status="monitored_no_signal"
                 print(f"MONITORED {dataset['name']} -> {chosen['obs'][-1][0]} (no current signal)")
 
+        if chosen and chosen["obs"]:
+            current_period, current_value = chosen["obs"][-1]
+            observations.append({
+                "area": dataset["area"], "indicator": dataset["name"],
+                "territory": "Italia", "period": current_period,
+                "value": format(float(current_value), ".10g"),
+                "unit": "Unita della serie: verificare i metadati ISTATData",
+                "source": "IstatData SDMX — ISTAT",
+                "url": url,
+                "note": dataset["note"],
+                "status": "dato ufficiale osservato; non necessariamente una notizia PULSE"
+            })
+
         sources.append({
             "area":dataset["area"],
             "name":dataset["name"],
@@ -441,6 +455,10 @@ def main():
 
     OUT.parent.mkdir(parents=True,exist_ok=True)
     pd.DataFrame(events,columns=COLUMNS).to_csv(OUT,sep="\t",index=False)
+    observed_columns=["area","indicator","territory","period","value","unit","source","url","note","status"]
+    pd.DataFrame(observations,columns=observed_columns).to_csv(
+        OBSERVED,sep="\t",index=False
+    )
     def period_key(value: str):
         value=str(value or "")
         if "-Q" in value:
