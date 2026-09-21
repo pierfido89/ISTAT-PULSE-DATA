@@ -5,7 +5,7 @@ import urllib.request
 from bs4 import BeautifulSoup
 HOME="https://noi-italia.istat.it/home.php"
 req=urllib.request.Request(HOME,headers={"User-Agent":"ISTAT-PULSE/0.9"})
-with urllib.request.urlopen(req,timeout=45) as r:
+with urllib.request.urlopen(req,timeout=120) as r:
     html=r.read()
     print("HOME",r.status,len(html),"bytes",r.url)
 soup=BeautifulSoup(html,"html.parser")
@@ -22,7 +22,7 @@ for tag in soup.select("[onclick]"):
 import io, zipfile
 database="https://noi-italia.istat.it/documenti/Dati.zip"
 req=urllib.request.Request(database,headers={"User-Agent":"ISTAT-PULSE/0.9"})
-with urllib.request.urlopen(req,timeout=120) as r:
+with urllib.request.urlopen(req,timeout=300) as r:
     data=r.read()
     print("NOI ITALIA ARCHIVE",r.status,len(data),"bytes",r.url)
 with zipfile.ZipFile(io.BytesIO(data)) as z:
