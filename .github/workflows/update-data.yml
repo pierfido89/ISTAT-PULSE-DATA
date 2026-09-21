@@ -43,6 +43,9 @@ jobs:
       - name: Generate IstatData SDMX PULSE package
         run: python scripts/generate_sdmx_events.py
 
+      - name: Acquire Noi Italia official annual series and pattern archive
+        run: python scripts/generate_noi_italia.py
+
       - name: Extract latest observed regional BES measurements
         run: python scripts/generate_bes_observations.py
 
@@ -61,12 +64,13 @@ jobs:
           cp app/src/main/assets/pulse_events.tsv data/pulse_events.tsv
           cp app/src/main/assets/pulse_manifest.json data/pulse_manifest.json
           cp app/src/main/assets/sources_catalog.json data/sources_catalog.json
+          cp app/src/main/assets/pulse_events_noi.tsv data/pulse_events_noi.tsv
 
       - name: Commit updated data if changed
         run: |
           git config user.name "ISTAT PULSE Data Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/pulse_events.tsv data/pulse_manifest.json data/sources_catalog.json
+          git add data/pulse_events.tsv data/pulse_manifest.json data/sources_catalog.json data/pulse_events_noi.tsv
           if git diff --cached --quiet; then
             echo "No new ISTAT data to publish."
           else
