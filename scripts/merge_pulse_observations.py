@@ -12,7 +12,7 @@ from datetime import datetime,timezone
 
 base=Path("app/src/main/assets")
 out=base/"pulse_observations.tsv"
-paths=[base/"pulse_observations_sdmx.tsv",base/"pulse_observations_bes.tsv",base/"pulse_observations_amc.tsv"]
+paths=[base/"pulse_observations_sdmx.tsv",base/"pulse_observations_bes.tsv",base/"pulse_observations_amc.tsv",base/"pulse_observations_noi.tsv"]
 fields=["area","indicator","territory","period","value","unit","source","url","note","status"]
 frames=[]
 for source in paths:
@@ -55,5 +55,11 @@ for source in catalog.get("sources",[]):
             "Ampliamento a tutti i comuni in corso."
         )
         source["notes"]="Famiglie, istruzione, redditi e ambiente: leggere sempre l'anno del dato nel catalogo osservato."
+    elif name=="Noi Italia — ISTAT" and counts.get(name,0):
+        source["feed_status"]=(
+            f"Database ufficiale acquisito: {counts[name]} ultimi valori territoriali verificati. "
+            "Le serie storiche alimentano anche il motore dei pattern annuali."
+        )
+        source["notes"]="Il periodo statistico originale resta esplicito; i segnali storici non vengono presentati come notizie del 2026."
 catalog_path.write_text(json.dumps(catalog,ensure_ascii=False,indent=2),encoding="utf-8")
 print("PULSE OBSERVED REGISTRY",meta)
