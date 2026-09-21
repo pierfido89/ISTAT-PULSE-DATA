@@ -223,25 +223,36 @@ def main():
                     "Serie annuale del database ufficiale Noi Italia; anno statistico preservato.",
                 "status":"ultimo valore osservato, non necessariamente un nuovo segnale PULSE"
             })
-            if len(pv)>=6:
+            # Only uninterrupted annual sequences are comparable for
+            # year-on-year acceleration, inversion and recent-record tests.
+            # Nonconsecutive observations still remain in the observed catalogue.
+            contiguous=[pv[-1]]
+            for pair in reversed(pv[:-1]):
+                if pair[0] != contiguous[-1][0]-1:
+                    break
+                contiguous.append(pair)
+            contiguous=list(reversed(contiguous))
+            if len(contiguous)>=6:
                 series.append({
                     "domain":domain_zip,"area":area,"indicator":title,"territory":territory,
-                    "periods":[y for y,_ in pv],"values":[v for _,v in pv],
+                    "periods":[y for y,_ in contiguous],"values":[v for _,v in contiguous],
                     "unit":unit,"source_detail":source_detail
                 })
         print(domain_zip,"observations",sum(1 for o in observations if o["area"]==area_for(domain_zip,"")),flush=True)
 
-    national={(s["indicator"]):s for s in series if s["territory"]=="Italia"}
+    national={(s["domain"],s["indicator"]):s for s in series if s["territory"]=="Italia"}
     events=[]
     for s in series:
         national_values=None
-        n=national.get(s["indicator"])
-        if n:
-            common=[y for y in s["periods"] if y in set(n["periods"])]
-            if len(common)>=2:
-                nv=dict(zip(n["periods"],n["values"]))
-                national_values=np.asarray([nv[y] for y in common[-8:]],dtype=float)
-        patterns,analysis,score=make_patterns(s["values"],national_values if s["territory"]!="Italia" else None)
+        n=national.get((s["domain"],s["indicator"]))
+        # Divergence needs the exact same two statistical reference years:
+        # never compare a regional 2023→2024 change with Italy 2024→2025.
+        if n and s["territory"]!="Italia":
+            nv=dict(zip(n["periods"],n["values"]))
+            current_year,previous_year=s["periods"][-1],s["periods"][-2]
+            if current_year in nv and previous_year in nv:
+                national_values=np.asarray([nv[previous_year],nv[current_year]],dtype=float)
+        patterns,analysis,score=make_patterns(s["values"],national_values)
         if not patterns: continue
         period=str(s["periods"][-1]); cur=s["values"][-1]; prev=s["values"][-2]
         movement="sale" if cur>prev else "scende" if cur<prev else "resta stabile"
@@ -259,6 +270,7 @@ def main():
             "rolling12":"","benchmark_local":"","benchmark_rest":"",
             "analysis":"¦".join(analysis+[
                 "Serie storica annuale ufficiale Noi Italia.",
+                "ANNUAL_PERIODS:"+"|".join(str(y) for y in s["periods"][-8:]),
                 "Periodo della notizia = ultimo anno statistico disponibile, non anno di download."
             ]),
             "source_family":"Noi Italia — ISTAT","source_url":PAGE
