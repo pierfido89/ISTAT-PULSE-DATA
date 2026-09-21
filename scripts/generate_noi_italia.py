@@ -4,6 +4,7 @@
 2) historical PULSE signals from comparable annual series.
 
 No publication year is ever substituted for the statistical reference year.
+The generated archive is validated before it can be published to the Android app.
 """
 from __future__ import annotations
 import hashlib, io, math, re, time, urllib.request, zipfile
