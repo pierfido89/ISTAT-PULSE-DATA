@@ -63,8 +63,8 @@
           "area": "Imprese e industria",
           "series": "Produzione industriale",
           "description": "Indice mensile della produzione industriale, base 2021.",
-          "latest_period": "",
-          "status": "fetch_error"
+          "latest_period": "2026-07",
+          "status": "monitored_no_signal"
         },
         {
           "area": "Imprese e industria",
