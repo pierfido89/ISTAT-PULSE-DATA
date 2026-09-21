@@ -1,0 +1,35 @@
+name: Validate Noi Italia Integration
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - 'scripts/generate_noi_italia.py'
+      - '.github/workflows/validate-noi.yml'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check pandas numpy openpyxl
+      - run: python scripts/generate_noi_italia.py
+      - name: Validate generated files
+        run: |
+          python - <<'PY'
+          import pandas as pd
+          obs=pd.read_csv('app/src/main/assets/pulse_observations_noi.tsv',sep='\t')
+          ev=pd.read_csv('app/src/main/assets/pulse_events_noi.tsv',sep='\t')
+          print('observations',len(obs),'signals',len(ev))
+          print('areas',obs['area'].value_counts().to_dict())
+          pats=set()
+          for x in ev['patterns'].fillna(''):
+              pats.update(p for p in x.split('|') if p)
+          print('patterns',sorted(pats))
+          assert len(obs)>=500
+          assert len(ev)>=100
+          assert {'INVERSIONE','ACCELERAZIONE','RALLENTAMENTO','ANOMALIA','DIVERGENZA'} <= pats
+          assert any(p.startswith('RECORD') for p in pats)
+          PY
