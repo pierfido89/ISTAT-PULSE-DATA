@@ -63,15 +63,15 @@
           "area": "Imprese e industria",
           "series": "Produzione industriale",
           "description": "Indice mensile della produzione industriale, base 2021.",
-          "latest_period": "2026-07",
-          "status": "monitored_no_signal"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Imprese e industria",
           "series": "Fatturato industriale",
           "description": "Indice mensile del valore del fatturato industriale, base 2021.",
-          "latest_period": "2026-06",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Imprese e industria",
@@ -98,50 +98,50 @@
           "area": "Imprese e industria",
           "series": "Fiducia delle costruzioni",
           "description": "Indice mensile di fiducia delle imprese delle costruzioni.",
-          "latest_period": "2026-08",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Imprese e industria",
           "series": "Fiducia del commercio",
           "description": "Indice mensile di fiducia delle imprese del commercio al dettaglio.",
-          "latest_period": "2026-08",
-          "status": "monitored_no_signal"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Potere d'acquisto e consumi",
           "series": "Fiducia dei consumatori",
           "description": "Indice mensile del clima di fiducia dei consumatori.",
-          "latest_period": "2026-08",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Prezzi e inflazione",
           "series": "Prezzi alla produzione dell'industria",
           "description": "Indice mensile dei prezzi alla produzione dell'industria, base 2021.",
-          "latest_period": "2026-07",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Prezzi e inflazione",
           "series": "Prezzi all'importazione",
           "description": "Indice mensile dei prezzi all'importazione, base 2021.",
-          "latest_period": "2026-07",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Turismo",
           "series": "Arrivi turistici",
           "description": "Arrivi mensili negli esercizi ricettivi italiani.",
-          "latest_period": "2026-07",
-          "status": "monitored_no_signal"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Turismo",
           "series": "Presenze turistiche",
           "description": "Presenze mensili negli esercizi ricettivi italiani.",
-          "latest_period": "2026-07",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fetch_error"
         }
       ],
       "official": true,
