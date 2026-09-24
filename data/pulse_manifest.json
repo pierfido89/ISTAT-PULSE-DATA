@@ -1,7 +1,7 @@
 {
   "version": "0.6-data-current",
-  "generated_at": "2026-09-21T17:26:38.690003+00:00",
-  "feed_sha256": "e900d0a257b1b5d239afd1274b2f7d0896329a0f29a952c5c19b09a217b7c5c7",
+  "generated_at": "2026-09-24T05:35:01.801322+00:00",
+  "feed_sha256": "29d6570a76907daec623cfe595e1ce9421ee2c7551d0bd5676e39c9b8b04dc9e",
   "source_period": "feed corrente 2026 · ultimo dato 2026-Q2",
   "complete_years": [
     2019,
@@ -140,7 +140,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/167_745_DF_DCSP_NIC1B2025_1/all/IT1?startPeriod=2026&endPeriod=2026",
         "status": "ok",
         "bytes": 5682982,
-        "sha256": "100c4aa84e1f12afc70961ae06a05f8f212b639529fdd14b247ae53046f16827",
+        "sha256": "6e9e236aaa6ed34324cb1d47f2df71991a9257fb3df3ad4689da8cff9843e87f",
         "latest_period": "2026-08",
         "series_key": {
           "FREQ": "M",
@@ -159,7 +159,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/151_874_DF_DCCV_TAXDISOCCUMENS1_1/all/IT1?startPeriod=2024&endPeriod=2026",
         "status": "ok",
         "bytes": 1480482,
-        "sha256": "357ba3e6ddc1bf4fe13ea26254f7488eaadc02b19dfb69937898d0c88c4c332c",
+        "sha256": "e4518ab9b3e74ae6563f964e887d2387e685c29567994b2f4aa501c426d3822f",
         "latest_period": "2026-07",
         "series_key": {
           "FREQ": "M",
@@ -180,7 +180,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/150_872_DF_DCCV_TAXOCCUMENS1_1/all/IT1?startPeriod=2024&endPeriod=2026",
         "status": "ok",
         "bytes": 1487506,
-        "sha256": "6fcdb9791c4c9f83caf20c0ad261c80d09379b2b0dbd62aaef65c6768a82a33a",
+        "sha256": "9c807d1d947f959e89099030887230ae8d8a5bf2feb9d6849ab926ca4f23a22a",
         "latest_period": "2026-07",
         "series_key": {
           "FREQ": "M",
@@ -201,7 +201,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/150_875_DF_DCCV_OCCUPATIMENS1_1/all/IT1?startPeriod=2024&endPeriod=2026",
         "status": "ok",
         "bytes": 771329,
-        "sha256": "39ca0ba4c22646f85b7c103ac104d1e10d9c449fb24c87b7b9a7302d9b538751",
+        "sha256": "e1ad87b5428abebc0ea5d16b19986bd3b2f492fb4e959746ae3d929b60844956",
         "latest_period": "2026-07",
         "series_key": {
           "FREQ": "M",
@@ -224,7 +224,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/149_577_DF_DCSC_OROS_1_3/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 591024,
-        "sha256": "8fd717f2809d9e873975f732d96f7b3bc3490cb10ce4e932bee7416fe1033e57",
+        "sha256": "c7810ee04c01f5049b59828fec43b14b4c862d4c9f5d0d6a37d2f8033282ecc8",
         "latest_period": "2026-Q2",
         "series_key": {
           "FREQ": "Q",
@@ -243,7 +243,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/115_333_DF_DCSC_INDXPRODIND_1_6/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "monitored_no_signal",
         "bytes": 7057707,
-        "sha256": "aedc3bc38a67e7df6b17724b8d3e9c0fcfcb1549aa5973de6a1d79d18e4c2369",
+        "sha256": "e7a78c3836f7add65eef4be5ed8598b54a79f805d9462e92aaa3dd131e990738",
         "latest_period": "2026-07",
         "series_key": {
           "FREQ": "M",
@@ -262,7 +262,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/114_191_DF_DCSC_ORDFATT_9/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 5212153,
-        "sha256": "63fd0e767426c4391e99bf994e1f3f1f72a4389e27742afe7daf580328fa9ad0",
+        "sha256": "997a9fe7509090fa2169192aeec330e8616ddf447a661240a8630358f7ff34cb",
         "latest_period": "2026-06",
         "series_key": {
           "FREQ": "M",
@@ -282,7 +282,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/119_367_DF_DCSC_FATTSERVIZ_1_4/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "monitored_no_signal",
         "bytes": 3240290,
-        "sha256": "64db7b58357019b0fbd8ab14bab1d79ddf707bfa5f67acd69503df0b44ecaa39",
+        "sha256": "f7567d0b366710e36630f972f44151d179af8b36792538d71bc9660247287277",
         "latest_period": "2026-06",
         "series_key": {
           "FREQ": "M",
@@ -301,7 +301,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/120_337_DF_DCSC_COMMDET_1_15/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 145509,
-        "sha256": "be5a18580364ccf98f21d643be3b5667ebf9da5c5bed0dabd92b8dabfdfc5ff6",
+        "sha256": "66fa00ea983f82d1139b9302aa545c51fb95f058728b23cbfc4b064f0d327c26",
         "latest_period": "2026-07",
         "series_key": {
           "FREQ": "M",
@@ -322,7 +322,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/6_64_DF_DCSC_IESI_2/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 7997,
-        "sha256": "efcbee072510c0c512eb5eccd9dac20baf6a5f278383505105d020d84972acc3",
+        "sha256": "230c7b64590b36b88f40f32efa4bbde9af71f10016c1fa5bbf60f8e2ff3a5ff4",
         "latest_period": "2026-08",
         "series_key": {
           "FREQ": "M",
@@ -341,7 +341,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/111_40/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 1623545,
-        "sha256": "85537e17744038393eb679f2fd908bff8f93bf937747983f003f6d83e410d0ec",
+        "sha256": "90afa89dc65db6834efa6aa498a1b4df73add2e209a19e58729c7d7de36e7d97",
         "latest_period": "2026-08",
         "series_key": {
           "FREQ": "M",
@@ -361,7 +361,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/117_266/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "monitored_no_signal",
         "bytes": 3997352,
-        "sha256": "d8da3296304606ab2b3b8c777694f4f5b174b8116cc42bb1c75f163b03eb9e1f",
+        "sha256": "a1f7067bc4604be6c157cddcd9f1b46774a4a5ed826547470f44cce140124e45",
         "latest_period": "2026-08",
         "series_key": {
           "FREQ": "M",
@@ -381,7 +381,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/30_264/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 2571939,
-        "sha256": "4e08e1a742dabcef0cd20f7d1749f352138ca6431ebe9dbc826c52102fe85117",
+        "sha256": "4cd7b4fd9fd7281d39cfb78652074fe2cb91f9bd541d9806ed9c755fd9f580f7",
         "latest_period": "2026-08",
         "series_key": {
           "FREQ": "M",
@@ -403,7 +403,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/145_360_DF_DCSC_PREZZPIND_1_4/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 10462376,
-        "sha256": "0e39e55b6fcc7233050bcae70dc1c2fccfa696c5b5d6f7c147f03208fa084f33",
+        "sha256": "b612f5672efe97e47831d4a9851402ae04dc8ad5ae1c36b644b894a29eb10172",
         "latest_period": "2026-07",
         "series_key": {
           "FREQ": "M",
@@ -423,7 +423,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/143_222_DF_DCSC_PREIMPIND_2/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 2797860,
-        "sha256": "e4632a3d0d291dc686e4a21ee9342d41c8b3564a7d49940a75f062526c3cf636",
+        "sha256": "8e08686231229dc08ea10ea6fce0fae16c648f1b07201093eec1fc25d1e68c6d",
         "latest_period": "2026-07",
         "series_key": {
           "FREQ": "M",
@@ -443,7 +443,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/122_54_DF_DCSC_TUR_3/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "monitored_no_signal",
         "bytes": 17194576,
-        "sha256": "579b8552ac7e27a0d0b867d3ee3184b496a379ff21ec48a36959dcd056bd3584",
+        "sha256": "25ed80734c17087ec774595264830f6bb76e1b059acacb9e81b302c647580cce",
         "latest_period": "2026-07",
         "series_key": {
           "FREQ": "M",
@@ -468,7 +468,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/122_54_DF_DCSC_TUR_3/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 17194576,
-        "sha256": "579b8552ac7e27a0d0b867d3ee3184b496a379ff21ec48a36959dcd056bd3584",
+        "sha256": "25ed80734c17087ec774595264830f6bb76e1b059acacb9e81b302c647580cce",
         "latest_period": "2026-07",
         "series_key": {
           "FREQ": "M",
