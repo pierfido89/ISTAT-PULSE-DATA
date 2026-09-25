@@ -1,9 +1,332 @@
 {
-  "version": 2,
+  "version": 3,
   "title": "Fonti ISTAT PULSE",
   "sources": [
     {
-      "name": "DEMO ISTAT — Bilancio demografico mensile",
+      "name": "ACI - Open data mobilità e parco veicoli",
+      "category": "GREEN_IT",
+      "topics": [
+        "MOBILITA"
+      ],
+      "level": "Italia e regioni; dettaglio variabile",
+      "frequency": "Annuale e secondo dataset",
+      "provides": [
+        "Parco veicolare per alimentazione, veicoli elettrici, nuove immatricolazioni e mobilità."
+      ],
+      "official": true,
+      "url": "https://aci.gov.it/attivita-e-progetti/studi-e-ricerche/open-data/",
+      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
+      "integration_status": "planned",
+      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Distinguere consistenza del parco da nuove iscrizioni e confrontare i territori omogenei."
+    },
+    {
+      "name": "ARERA - Statistiche del servizio idrico",
+      "category": "GREEN_IT",
+      "topics": [
+        "ACQUA"
+      ],
+      "level": "Gestori e ambiti territoriali secondo pubblicazione",
+      "frequency": "Annuale e secondo rilascio",
+      "provides": [
+        "Qualità del servizio idrico e indicatori di performance dei gestori."
+      ],
+      "official": true,
+      "url": "https://www.arera.it/dati-e-statistiche/dettaglio/rqsii",
+      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
+      "integration_status": "planned",
+      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Indicatori di qualità contrattuale: non confonderli con quantità d'acqua disponibile."
+    },
+    {
+      "name": "Copernicus - Climate Data Store",
+      "category": "GREEN_EU",
+      "topics": [
+        "CLIMA"
+      ],
+      "level": "Griglie climatiche e territori ricostruiti",
+      "frequency": "Secondo dataset",
+      "provides": [
+        "Temperatura, precipitazioni, anomalie climatiche, serie di rianalisi e scenari."
+      ],
+      "official": true,
+      "url": "https://cds.climate.copernicus.eu/",
+      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
+      "integration_status": "planned",
+      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. La griglia climatica non coincide automaticamente con i confini ISTAT; richiede aggregazione spaziale e licenze/condizioni API da verificare."
+    },
+    {
+      "name": "EEA - Dati ambientali europei",
+      "category": "GREEN_EU",
+      "topics": [
+        "CLIMA"
+      ],
+      "level": "Stati europei e altri livelli per indicatore",
+      "frequency": "Annuale e secondo dataset",
+      "provides": [
+        "Gas serra, qualità dell'aria, biodiversità, rinnovabili e impatti ambientali."
+      ],
+      "official": true,
+      "url": "https://www.eea.europa.eu/en/datahub/",
+      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
+      "integration_status": "planned",
+      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Preferire dati primari nazionali per il dettaglio italiano; usare EEA per raffronti armonizzati."
+    },
+    {
+      "name": "ENEA - Rapporto annuale efficienza energetica",
+      "category": "GREEN_IT",
+      "topics": [
+        "ENERGIA"
+      ],
+      "level": "Italia e regioni secondo rapporto",
+      "frequency": "Annuale",
+      "provides": [
+        "Risparmi energetici, efficienza degli edifici, consumi e interventi di riqualificazione."
+      ],
+      "official": true,
+      "url": "https://www.efficienzaenergetica.enea.it/pubblicazioni/raee-rapporto-annuale-sull-efficienza-energetica/rapporto-annuale-sull-efficienza-energetica-2026b.html",
+      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
+      "integration_status": "planned",
+      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Valutare disponibilità di tavole aperte prima di automatizzare i dati dei rapporti."
+    },
+    {
+      "name": "Eurostat - Statistiche ambientali ed energia",
+      "category": "GREEN_EU",
+      "topics": [
+        "MULTITEMA"
+      ],
+      "level": "Italia, Stati UE e regioni secondo serie",
+      "frequency": "Secondo indicatore",
+      "provides": [
+        "Economia circolare, acqua, gas serra, energia, trasporti, capitale naturale."
+      ],
+      "official": true,
+      "url": "https://ec.europa.eu/eurostat/web/environment",
+      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
+      "integration_status": "planned",
+      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Verificare definizioni, revisioni e perimetro degli indicatori prima del confronto con ISTAT."
+    },
+    {
+      "name": "GSE - Statistiche delle rinnovabili",
+      "category": "GREEN_IT",
+      "topics": [
+        "ENERGIA"
+      ],
+      "level": "Italia e regioni secondo pubblicazione",
+      "frequency": "Annuale e secondo rilascio",
+      "provides": [
+        "Impianti e potenza rinnovabile; energia solare, eolica, idroelettrica e consumi FER."
+      ],
+      "official": true,
+      "url": "https://www.gse.it/dati-e-scenari/statistiche",
+      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
+      "integration_status": "planned",
+      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Distinguere capacità installata (MW) e produzione effettiva (MWh)."
+    },
+    {
+      "name": "ISPRA - Catasto nazionale rifiuti",
+      "category": "GREEN_IT",
+      "topics": [
+        "CIRCOLARE"
+      ],
+      "level": "Comunale, provinciale, regionale, Italia",
+      "frequency": "Annuale",
+      "provides": [
+        "Produzione dei rifiuti urbani, raccolta differenziata, dati pro capite e recupero."
+      ],
+      "official": true,
+      "url": "https://www.catasto-rifiuti.isprambiente.it/index.php?pg=detComune",
+      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
+      "integration_status": "planned",
+      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Dati comunali e serie storiche da verificare con i relativi metadati; futura economia circolare."
+    },
+    {
+      "name": "ISPRA - Consumo di suolo e indicatori territoriali",
+      "category": "GREEN_IT",
+      "topics": [
+        "SUOLO"
+      ],
+      "level": "Italia e territori secondo dataset",
+      "frequency": "Annuale o secondo rilascio",
+      "provides": [
+        "Superficie consumata, impermeabilizzazione, suolo naturale, pressione urbana."
+      ],
+      "official": true,
+      "url": "https://www.isprambiente.gov.it/it/banche-dati",
+      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
+      "integration_status": "planned",
+      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Da selezionare e collegare al dataset aggiornato sul consumo di suolo, non al generico catalogo."
+    },
+    {
+      "name": "ISPRA - IdroGEO",
+      "category": "GREEN_IT",
+      "topics": [
+        "SUOLO"
+      ],
+      "level": "Comunale, provinciale, regionale, Italia",
+      "frequency": "Secondo aggiornamento delle mappe",
+      "provides": [
+        "Aree a pericolosità di frana e alluvione, popolazione e beni esposti."
+      ],
+      "official": true,
+      "url": "https://idrogeo.isprambiente.it/",
+      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
+      "integration_status": "planned",
+      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Le mappe di pericolosità non equivalgono a previsioni puntuali di eventi futuri."
+    },
+    {
+      "name": "ISPRA - Indicatori ambientali e biodiversità",
+      "category": "GREEN_IT",
+      "topics": [
+        "BIODIVERSITA"
+      ],
+      "level": "Italia e territori secondo indicatore",
+      "frequency": "Secondo indicatore",
+      "provides": [
+        "Stato di conservazione di specie, habitat, aree tutelate e pressioni ambientali."
+      ],
+      "official": true,
+      "url": "https://indicatoriambientali.isprambiente.it/it/temi/biodiversita-stato-e-minacce",
+      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
+      "integration_status": "planned",
+      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Non confondere stato di conservazione e abbondanza di singole specie; verificare comparabilità dei rapporti."
+    },
+    {
+      "name": "ISPRA - Inventario nazionale delle emissioni",
+      "category": "GREEN_IT",
+      "topics": [
+        "CLIMA"
+      ],
+      "level": "Italia e settori emissivi",
+      "frequency": "Annuale",
+      "provides": [
+        "Emissioni di gas serra, CO₂ equivalente, inquinanti atmosferici per settore."
+      ],
+      "official": true,
+      "url": "https://emissioni.sina.isprambiente.it/inventario-nazionale/",
+      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
+      "integration_status": "planned",
+      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. L'inventario nazionale misura emissioni stimate, non la concentrazione di CO₂ nell'aria."
+    },
+    {
+      "name": "ISPRA - Risorse idriche",
+      "category": "GREEN_IT",
+      "topics": [
+        "ACQUA"
+      ],
+      "level": "Italia e bacini secondo dataset",
+      "frequency": "Annuale o secondo indicatore",
+      "provides": [
+        "Disponibilità idrica, precipitazioni, bilancio delle risorse e siccità."
+      ],
+      "official": true,
+      "url": "https://www.isprambiente.gov.it/it/istituto-informa/ricerca-comunicati/acqua",
+      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
+      "integration_status": "planned",
+      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Identificare il dataset idrologico di origine prima del collegamento automatico."
+    },
+    {
+      "name": "ISPRA/SNPA - Qualità dell'aria",
+      "category": "GREEN_IT",
+      "topics": [
+        "CLIMA"
+      ],
+      "level": "Regioni e stazioni secondo dataset",
+      "frequency": "Secondo rete e indicatore",
+      "provides": [
+        "PM₂.₅, PM₁₀, NO₂ e altri inquinanti, pressioni atmosferiche."
+      ],
+      "official": true,
+      "url": "https://www.isprambiente.gov.it/it/banche-dati",
+      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
+      "integration_status": "planned",
+      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Le misure di singole centraline non rappresentano automaticamente l'intero comune."
+    },
+    {
+      "name": "ISTAT - A misura di Comune",
+      "level": "Comunale, provinciale e regionale",
+      "frequency": "Secondo indicatore",
+      "provides": [
+        "Indicatori socio-demografici, economici, ambientali e territoriali."
+      ],
+      "official": true,
+      "url": "https://www.istat.it/statistica-sperimentale/aggiornamento-degli-indicatori-del-sistema-informativo-a-misura-di-comune/",
+      "feed_status": "Integrazione parziale · verifica copertura di ogni indicatore",
+      "notes": "Famiglie, istruzione, redditi e ambiente: leggere sempre l'anno del dato nel catalogo osservato.",
+      "category": "ISTAT",
+      "integration_status": "partial",
+      "topics": [
+        "TERRITORI"
+      ]
+    },
+    {
+      "name": "ISTAT - Ambiente urbano",
+      "category": "ISTAT",
+      "topics": [
+        "GREEN"
+      ],
+      "level": "Comuni capoluogo",
+      "frequency": "Secondo indicatore e rilascio",
+      "provides": [
+        "Trasporto pubblico, qualità urbana, verde, acqua, rifiuti e mobilità."
+      ],
+      "official": true,
+      "url": "https://www.istat.it/dati/banche-dati/",
+      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
+      "integration_status": "planned",
+      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Selezionare dataset più recente e non estendere automaticamente le misure dei capoluoghi a tutti i comuni."
+    },
+    {
+      "name": "ISTAT - Basi territoriali e dati censuari",
+      "category": "ISTAT",
+      "topics": [
+        "TERRITORI"
+      ],
+      "level": "Sezione censuaria, comune",
+      "frequency": "Secondo rilascio",
+      "provides": [
+        "Geometrie ufficiali e basi di confronto territoriale per mappe e serie storiche."
+      ],
+      "official": true,
+      "url": "https://www.istat.it/notizia/basi-territoriali-e-variabili-censuarie/",
+      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
+      "integration_status": "planned",
+      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Fonte geografica di supporto; non è un segnale di tendenza GREEN di per sé."
+    },
+    {
+      "name": "ISTAT - BES dei territori",
+      "level": "Regionale e provinciale",
+      "frequency": "Annuale",
+      "provides": [
+        "Benessere, salute, istruzione, lavoro, ambiente e qualità dei servizi."
+      ],
+      "official": true,
+      "url": "https://www.istat.it/comunicato-territoriale/il-benessere-equo-e-sostenibile-dei-territori-report-regionali-anno-2025/",
+      "feed_status": "Da integrare · fonte ufficiale consultabile",
+      "notes": "Le serie annue del BES dei territori non alimentano ancora la pipeline PULSE; l'anno osservato verrà conservato quando saranno integrate.",
+      "category": "ISTAT",
+      "integration_status": "planned",
+      "topics": [
+        "BENESSERE"
+      ]
+    },
+    {
+      "name": "ISTAT - Censimento permanente della popolazione",
+      "category": "ISTAT",
+      "topics": [
+        "TERRITORI"
+      ],
+      "level": "Comunale e subcomunale secondo dataset",
+      "frequency": "Annuale e pluriennale",
+      "provides": [
+        "Struttura dei residenti, abitazioni, mobilità per studio e lavoro, dati di sezione."
+      ],
+      "official": true,
+      "url": "https://www.istat.it/statistiche-per-temi/censimenti/popolazione-e-abitazioni/risultati/",
+      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
+      "integration_status": "planned",
+      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Confrontare confini territoriali e anni censuari prima di unirli al registro comunale."
+    },
+    {
+      "name": "ISTAT - DEMO - Bilancio demografico mensile",
       "level": "Comunale",
       "frequency": "Mensile",
       "provides": [
@@ -25,7 +348,24 @@
       ]
     },
     {
-      "name": "IstatData SDMX — ISTAT",
+      "name": "ISTAT - Indicatori SDGs",
+      "category": "ISTAT",
+      "topics": [
+        "GREEN"
+      ],
+      "level": "Italia, regioni e altri livelli secondo la serie",
+      "frequency": "Aggiornamento periodico",
+      "provides": [
+        "Obiettivi di sviluppo sostenibile, energia pulita, acqua, emissioni, consumo responsabile e biodiversità."
+      ],
+      "official": true,
+      "url": "https://www.istat.it/statistiche-per-temi/focus/benessere-e-sostenibilita/obiettivi-di-sviluppo-sostenibile/gli-indicatori-istat/",
+      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
+      "integration_status": "planned",
+      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Misure e metadati SDGs; filtrare gli indicatori ambientali della futura scheda GREEN."
+    },
+    {
+      "name": "ISTAT - IstatData SDMX",
       "level": "Prevalentemente nazionale",
       "frequency": "Mensile e trimestrale",
       "provides": [
@@ -160,92 +500,7 @@
       ]
     },
     {
-      "name": "BES dei territori — ISTAT",
-      "level": "Regionale e provinciale",
-      "frequency": "Annuale",
-      "provides": [
-        "Benessere, salute, istruzione, lavoro, ambiente e qualità dei servizi."
-      ],
-      "official": true,
-      "url": "https://www.istat.it/comunicato-territoriale/il-benessere-equo-e-sostenibile-dei-territori-report-regionali-anno-2025/",
-      "feed_status": "Da integrare · fonte ufficiale consultabile",
-      "notes": "Le serie annue del BES dei territori non alimentano ancora la pipeline PULSE; l'anno osservato verrà conservato quando saranno integrate.",
-      "category": "ISTAT",
-      "integration_status": "planned",
-      "topics": [
-        "BENESSERE"
-      ]
-    },
-    {
-      "name": "A misura di Comune — ISTAT",
-      "level": "Comunale, provinciale e regionale",
-      "frequency": "Secondo indicatore",
-      "provides": [
-        "Indicatori socio-demografici, economici, ambientali e territoriali."
-      ],
-      "official": true,
-      "url": "https://www.istat.it/statistica-sperimentale/aggiornamento-degli-indicatori-del-sistema-informativo-a-misura-di-comune/",
-      "feed_status": "Integrazione parziale · verifica copertura di ogni indicatore",
-      "notes": "Famiglie, istruzione, redditi e ambiente: leggere sempre l'anno del dato nel catalogo osservato.",
-      "category": "ISTAT",
-      "integration_status": "partial",
-      "topics": [
-        "TERRITORI"
-      ]
-    },
-    {
-      "name": "Noi Italia — ISTAT",
-      "level": "Italia, regioni ed Europa",
-      "frequency": "Annuale",
-      "provides": [
-        "Oltre 100 statistiche tematiche sull'Italia e sui suoi territori."
-      ],
-      "official": true,
-      "url": "https://noi-italia.istat.it/home.php",
-      "feed_status": "Archivio storico integrato · non confondere con il feed corrente",
-      "notes": "Il periodo statistico originale resta esplicito; i segnali storici non vengono presentati come notizie del 2026.",
-      "category": "ISTAT",
-      "integration_status": "archive",
-      "topics": [
-        "MULTITEMA"
-      ]
-    },
-    {
-      "name": "ISTAT — Indicatori SDGs",
-      "category": "ISTAT",
-      "topics": [
-        "GREEN"
-      ],
-      "level": "Italia, regioni e altri livelli secondo la serie",
-      "frequency": "Aggiornamento periodico",
-      "provides": [
-        "Obiettivi di sviluppo sostenibile, energia pulita, acqua, emissioni, consumo responsabile e biodiversità."
-      ],
-      "official": true,
-      "url": "https://www.istat.it/statistiche-per-temi/focus/benessere-e-sostenibilita/obiettivi-di-sviluppo-sostenibile/gli-indicatori-istat/",
-      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
-      "integration_status": "planned",
-      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Misure e metadati SDGs; filtrare gli indicatori ambientali della futura scheda GREEN."
-    },
-    {
-      "name": "ISTAT — Censimento permanente della popolazione",
-      "category": "ISTAT",
-      "topics": [
-        "TERRITORI"
-      ],
-      "level": "Comunale e subcomunale secondo dataset",
-      "frequency": "Annuale e pluriennale",
-      "provides": [
-        "Struttura dei residenti, abitazioni, mobilità per studio e lavoro, dati di sezione."
-      ],
-      "official": true,
-      "url": "https://www.istat.it/statistiche-per-temi/censimenti/popolazione-e-abitazioni/risultati/",
-      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
-      "integration_status": "planned",
-      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Confrontare confini territoriali e anni censuari prima di unirli al registro comunale."
-    },
-    {
-      "name": "ISTAT — Mappa dei rischi dei comuni italiani",
+      "name": "ISTAT - Mappa dei rischi dei comuni italiani",
       "category": "ISTAT",
       "topics": [
         "GREEN"
@@ -262,24 +517,24 @@
       "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Catalogo ufficiale delle banche dati: verificare il link diretto al dataset e la versione prima dell'integrazione."
     },
     {
-      "name": "ISTAT — Basi territoriali e dati censuari",
-      "category": "ISTAT",
-      "topics": [
-        "TERRITORI"
-      ],
-      "level": "Sezione censuaria, comune",
-      "frequency": "Secondo rilascio",
+      "name": "ISTAT - Noi Italia",
+      "level": "Italia, regioni ed Europa",
+      "frequency": "Annuale",
       "provides": [
-        "Geometrie ufficiali e basi di confronto territoriale per mappe e serie storiche."
+        "Oltre 100 statistiche tematiche sull'Italia e sui suoi territori."
       ],
       "official": true,
-      "url": "https://www.istat.it/notizia/basi-territoriali-e-variabili-censuarie/",
-      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
-      "integration_status": "planned",
-      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Fonte geografica di supporto; non è un segnale di tendenza GREEN di per sé."
+      "url": "https://noi-italia.istat.it/home.php",
+      "feed_status": "Archivio storico integrato · non confondere con il feed corrente",
+      "notes": "Il periodo statistico originale resta esplicito; i segnali storici non vengono presentati come notizie del 2026.",
+      "category": "ISTAT",
+      "integration_status": "archive",
+      "topics": [
+        "MULTITEMA"
+      ]
     },
     {
-      "name": "ISTAT — Statistiche sull'acqua",
+      "name": "ISTAT - Statistiche sull'acqua",
       "category": "ISTAT",
       "topics": [
         "GREEN"
@@ -296,143 +551,7 @@
       "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Il report riunisce rilevazioni e anni diversi: integrare le singole tavole con i periodi corretti."
     },
     {
-      "name": "ISTAT — Ambiente urbano",
-      "category": "ISTAT",
-      "topics": [
-        "GREEN"
-      ],
-      "level": "Comuni capoluogo",
-      "frequency": "Secondo indicatore e rilascio",
-      "provides": [
-        "Trasporto pubblico, qualità urbana, verde, acqua, rifiuti e mobilità."
-      ],
-      "official": true,
-      "url": "https://www.istat.it/dati/banche-dati/",
-      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
-      "integration_status": "planned",
-      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Selezionare dataset più recente e non estendere automaticamente le misure dei capoluoghi a tutti i comuni."
-    },
-    {
-      "name": "ISPRA — Inventario nazionale delle emissioni",
-      "category": "GREEN_IT",
-      "topics": [
-        "CLIMA"
-      ],
-      "level": "Italia e settori emissivi",
-      "frequency": "Annuale",
-      "provides": [
-        "Emissioni di gas serra, CO₂ equivalente, inquinanti atmosferici per settore."
-      ],
-      "official": true,
-      "url": "https://emissioni.sina.isprambiente.it/inventario-nazionale/",
-      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
-      "integration_status": "planned",
-      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. L'inventario nazionale misura emissioni stimate, non la concentrazione di CO₂ nell'aria."
-    },
-    {
-      "name": "ISPRA — Indicatori ambientali e biodiversità",
-      "category": "GREEN_IT",
-      "topics": [
-        "BIODIVERSITA"
-      ],
-      "level": "Italia e territori secondo indicatore",
-      "frequency": "Secondo indicatore",
-      "provides": [
-        "Stato di conservazione di specie, habitat, aree tutelate e pressioni ambientali."
-      ],
-      "official": true,
-      "url": "https://indicatoriambientali.isprambiente.it/it/temi/biodiversita-stato-e-minacce",
-      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
-      "integration_status": "planned",
-      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Non confondere stato di conservazione e abbondanza di singole specie; verificare comparabilità dei rapporti."
-    },
-    {
-      "name": "ISPRA — Catasto nazionale rifiuti",
-      "category": "GREEN_IT",
-      "topics": [
-        "CIRCOLARE"
-      ],
-      "level": "Comunale, provinciale, regionale, Italia",
-      "frequency": "Annuale",
-      "provides": [
-        "Produzione dei rifiuti urbani, raccolta differenziata, dati pro capite e recupero."
-      ],
-      "official": true,
-      "url": "https://www.catasto-rifiuti.isprambiente.it/index.php?pg=detComune",
-      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
-      "integration_status": "planned",
-      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Dati comunali e serie storiche da verificare con i relativi metadati; futura economia circolare."
-    },
-    {
-      "name": "ISPRA — Consumo di suolo e indicatori territoriali",
-      "category": "GREEN_IT",
-      "topics": [
-        "SUOLO"
-      ],
-      "level": "Italia e territori secondo dataset",
-      "frequency": "Annuale o secondo rilascio",
-      "provides": [
-        "Superficie consumata, impermeabilizzazione, suolo naturale, pressione urbana."
-      ],
-      "official": true,
-      "url": "https://www.isprambiente.gov.it/it/banche-dati",
-      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
-      "integration_status": "planned",
-      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Da selezionare e collegare al dataset aggiornato sul consumo di suolo, non al generico catalogo."
-    },
-    {
-      "name": "ISPRA — IdroGEO",
-      "category": "GREEN_IT",
-      "topics": [
-        "SUOLO"
-      ],
-      "level": "Comunale, provinciale, regionale, Italia",
-      "frequency": "Secondo aggiornamento delle mappe",
-      "provides": [
-        "Aree a pericolosità di frana e alluvione, popolazione e beni esposti."
-      ],
-      "official": true,
-      "url": "https://idrogeo.isprambiente.it/",
-      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
-      "integration_status": "planned",
-      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Le mappe di pericolosità non equivalgono a previsioni puntuali di eventi futuri."
-    },
-    {
-      "name": "ISPRA — Risorse idriche",
-      "category": "GREEN_IT",
-      "topics": [
-        "ACQUA"
-      ],
-      "level": "Italia e bacini secondo dataset",
-      "frequency": "Annuale o secondo indicatore",
-      "provides": [
-        "Disponibilità idrica, precipitazioni, bilancio delle risorse e siccità."
-      ],
-      "official": true,
-      "url": "https://www.isprambiente.gov.it/it/istituto-informa/ricerca-comunicati/acqua",
-      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
-      "integration_status": "planned",
-      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Identificare il dataset idrologico di origine prima del collegamento automatico."
-    },
-    {
-      "name": "GSE — Statistiche delle rinnovabili",
-      "category": "GREEN_IT",
-      "topics": [
-        "ENERGIA"
-      ],
-      "level": "Italia e regioni secondo pubblicazione",
-      "frequency": "Annuale e secondo rilascio",
-      "provides": [
-        "Impianti e potenza rinnovabile; energia solare, eolica, idroelettrica e consumi FER."
-      ],
-      "official": true,
-      "url": "https://www.gse.it/dati-e-scenari/statistiche",
-      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
-      "integration_status": "planned",
-      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Distinguere capacità installata (MW) e produzione effettiva (MWh)."
-    },
-    {
-      "name": "Terna — Portale Dati del sistema elettrico",
+      "name": "Terna - Portale Dati del sistema elettrico",
       "category": "GREEN_IT",
       "topics": [
         "ENERGIA"
@@ -447,126 +566,7 @@
       "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
       "integration_status": "planned",
       "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. I dati della rete elettrica non sono automaticamente equivalenti ai consumi energetici complessivi."
-    },
-    {
-      "name": "ENEA — Rapporto annuale efficienza energetica",
-      "category": "GREEN_IT",
-      "topics": [
-        "ENERGIA"
-      ],
-      "level": "Italia e regioni secondo rapporto",
-      "frequency": "Annuale",
-      "provides": [
-        "Risparmi energetici, efficienza degli edifici, consumi e interventi di riqualificazione."
-      ],
-      "official": true,
-      "url": "https://www.efficienzaenergetica.enea.it/pubblicazioni/raee-rapporto-annuale-sull-efficienza-energetica/rapporto-annuale-sull-efficienza-energetica-2026b.html",
-      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
-      "integration_status": "planned",
-      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Valutare disponibilità di tavole aperte prima di automatizzare i dati dei rapporti."
-    },
-    {
-      "name": "ACI — Open data mobilità e parco veicoli",
-      "category": "GREEN_IT",
-      "topics": [
-        "MOBILITA"
-      ],
-      "level": "Italia e regioni; dettaglio variabile",
-      "frequency": "Annuale e secondo dataset",
-      "provides": [
-        "Parco veicolare per alimentazione, veicoli elettrici, nuove immatricolazioni e mobilità."
-      ],
-      "official": true,
-      "url": "https://aci.gov.it/attivita-e-progetti/studi-e-ricerche/open-data/",
-      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
-      "integration_status": "planned",
-      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Distinguere consistenza del parco da nuove iscrizioni e confrontare i territori omogenei."
-    },
-    {
-      "name": "ARERA — Statistiche del servizio idrico",
-      "category": "GREEN_IT",
-      "topics": [
-        "ACQUA"
-      ],
-      "level": "Gestori e ambiti territoriali secondo pubblicazione",
-      "frequency": "Annuale e secondo rilascio",
-      "provides": [
-        "Qualità del servizio idrico e indicatori di performance dei gestori."
-      ],
-      "official": true,
-      "url": "https://www.arera.it/dati-e-statistiche/dettaglio/rqsii",
-      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
-      "integration_status": "planned",
-      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Indicatori di qualità contrattuale: non confonderli con quantità d'acqua disponibile."
-    },
-    {
-      "name": "Copernicus Climate Data Store",
-      "category": "GREEN_EU",
-      "topics": [
-        "CLIMA"
-      ],
-      "level": "Griglie climatiche e territori ricostruiti",
-      "frequency": "Secondo dataset",
-      "provides": [
-        "Temperatura, precipitazioni, anomalie climatiche, serie di rianalisi e scenari."
-      ],
-      "official": true,
-      "url": "https://cds.climate.copernicus.eu/",
-      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
-      "integration_status": "planned",
-      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. La griglia climatica non coincide automaticamente con i confini ISTAT; richiede aggregazione spaziale e licenze/condizioni API da verificare."
-    },
-    {
-      "name": "EEA — Dati ambientali europei",
-      "category": "GREEN_EU",
-      "topics": [
-        "CLIMA"
-      ],
-      "level": "Stati europei e altri livelli per indicatore",
-      "frequency": "Annuale e secondo dataset",
-      "provides": [
-        "Gas serra, qualità dell'aria, biodiversità, rinnovabili e impatti ambientali."
-      ],
-      "official": true,
-      "url": "https://www.eea.europa.eu/en/datahub/",
-      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
-      "integration_status": "planned",
-      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Preferire dati primari nazionali per il dettaglio italiano; usare EEA per raffronti armonizzati."
-    },
-    {
-      "name": "Eurostat — Statistiche ambientali ed energia",
-      "category": "GREEN_EU",
-      "topics": [
-        "MULTITEMA"
-      ],
-      "level": "Italia, Stati UE e regioni secondo serie",
-      "frequency": "Secondo indicatore",
-      "provides": [
-        "Economia circolare, acqua, gas serra, energia, trasporti, capitale naturale."
-      ],
-      "official": true,
-      "url": "https://ec.europa.eu/eurostat/web/environment",
-      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
-      "integration_status": "planned",
-      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Verificare definizioni, revisioni e perimetro degli indicatori prima del confronto con ISTAT."
-    },
-    {
-      "name": "ISPRA/SNPA — Qualità dell'aria",
-      "category": "GREEN_IT",
-      "topics": [
-        "CLIMA"
-      ],
-      "level": "Regioni e stazioni secondo dataset",
-      "frequency": "Secondo rete e indicatore",
-      "provides": [
-        "PM₂.₅, PM₁₀, NO₂ e altri inquinanti, pressioni atmosferiche."
-      ],
-      "official": true,
-      "url": "https://www.isprambiente.gov.it/it/banche-dati",
-      "feed_status": "Da integrare · fonte candidata per il catalogo esteso",
-      "integration_status": "planned",
-      "notes": "Catalogata per i futuri sviluppi di ISTAT PULSE. Non alimenta ancora il feed o la scheda GREEN. Le misure di singole centraline non rappresentano automaticamente l'intero comune."
     }
   ],
-  "catalog_note": "Catalogo di fonti istituzionali esistenti, non elenco di connessioni già attive. I nuovi sistemi GREEN saranno collegati solo dopo verifica di API, licenze, copertura geografica, frequenza, metadati e qualità."
+  "catalog_note": "Catalogo istituzionale ordinato alfabeticamente per ente. Le fonti ISTAT iniziano tutte con 'ISTAT -'. Lo stato di integrazione resta esplicito: catalogare una fonte non significa che alimenti già il feed."
 }
