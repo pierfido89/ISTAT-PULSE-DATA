@@ -77,11 +77,14 @@ def year_key(period:str):
     return (year, int(q.group(1))*3 if q else int(mon.group(1)) if mon else 12, s)
 
 def fmt(v:float,unit:str="")->str:
-    if abs(v)>=1_000_000: base=f"{v/1_000_000:.2f} mln"
-    elif abs(v)>=10_000: base=f"{v:,.0f}".replace(",",".")
-    elif abs(v)>=100: base=f"{v:.1f}"
-    else: base=f"{v:.2f}"
-    base=base.rstrip("0").rstrip(".").replace(".",",")
+    if abs(v)>=1_000_000:
+        base=f"{v/1_000_000:.2f}".rstrip("0").rstrip(".").replace(".",",")+" mln"
+    elif abs(v)>=10_000:
+        base=f"{v:,.0f}".replace(",",".")
+    elif abs(v)>=100:
+        base=f"{v:.1f}".rstrip("0").rstrip(".").replace(".",",")
+    else:
+        base=f"{v:.2f}".rstrip("0").rstrip(".").replace(".",",")
     return f"{base} {unit}".strip()
 
 def robust_scale(values)->float:
