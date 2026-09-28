@@ -591,6 +591,12 @@ def update_catalog(statuses):
           "green_pillar":source["pillar"],
           "access_cost":"free",
           "access_note":(
+            "Accesso gratuito; richiede account/token e accettazione dei termini del dataset."
+            if source["name"].startswith("Copernicus -")
+            else "Accesso gratuito ai dati/statistiche ufficiali; restano applicabili licenza e condizioni della fonte."
+          ),
+          "access_cost":"free",
+          "access_note":(
             "Accesso gratuito; richiede account/token CDS e accettazione dei termini del dataset."
             if source["name"].startswith("Copernicus -")
             else "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte."
