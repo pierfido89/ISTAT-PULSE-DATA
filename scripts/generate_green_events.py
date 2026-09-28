@@ -493,6 +493,28 @@ def run_ispra_emissions(source):
     })
     return result,events
 
+def classify_green_measure(name:str, goal:int):
+    n=clean(name).casefold()
+    rules=[
+      ("Economia circolare",("rifiut","ricicl","raccolta differenziata","materiali","circolare","discarica","compost")),
+      ("Risorse idriche e suolo",("acqua","idric","suolo","sicc","desertif","erosion","frana","alluvion","impermeabil","territorio naturale")),
+      ("Tutela della biodiversità",("biodivers","fauna","flora","habitat","natura 2000","specie","ittic","forest","aree marine","aree protette","braccon")),
+      ("Mobilità sostenibile",("mobilit","trasporto pubblico","autovetture elettriche","veicoli elettr","bev","phev","passeggeri","ciclab","biciclett")),
+      ("Transizione energetica",("energia rinnov","fonti rinnov","energetic","elettric","fotovolta","eolic","solare","efficienza energetica","combustibili fossili")),
+      ("Crisi climatica e decarbonizzazione",("gas serra","emission","co2","co₂","temperatura","clima","pm2","pm10","no2","nox","sox","nh3","qualità dell'aria")),
+    ]
+    for pillar,words in rules:
+        if any(word in n for word in words): return pillar
+    # Goals with a narrow environmental meaning can safely provide a fallback.
+    return {
+      6:"Risorse idriche e suolo",
+      7:"Transizione energetica",
+      12:"Economia circolare",
+      13:"Crisi climatica e decarbonizzazione",
+      14:"Tutela della biodiversità",
+      15:"Tutela della biodiversità",
+    }.get(goal)
+
 def run_sdgs(source):
     url=KNOWN_STRUCTURED[source["name"]]
     raw=excel_bytes(url,180)
@@ -503,20 +525,13 @@ def run_sdgs(source):
         n=number(col)
         if n is not None and 2000<=n<=2030 and abs(n-round(n))<1e-9:
             yearcols.append((col,str(int(round(n)))))
-    goal_to_pillar={
-      6:"Risorse idriche e suolo",
-      7:"Transizione energetica",
-      11:"Mobilità sostenibile",
-      12:"Economia circolare",
-      13:"Crisi climatica e decarbonizzazione",
-      14:"Tutela della biodiversità",
-      15:"Tutela della biodiversità",
-    }
-    events=[]; series=[]
+    allowed_goals={6,7,11,12,13,14,15}
+    events=[]; series=[]; seen_codes=set()
     for _,row in frame.iterrows():
         goal=clean(row.get("GOAL",""))
         gm=re.match(r"Goal\s+(\d+)",goal,re.I)
-        if not gm or int(gm.group(1)) not in goal_to_pillar: continue
+        if not gm or int(gm.group(1)) not in allowed_goals: continue
+        goal_no=int(gm.group(1))
         level=clean(row.get("LIVELLO TERRITORIALE",""))
         dimension=clean(row.get("DIMENSIONE",""))
         if "Italia (NUTS 0)" not in level: continue
@@ -525,33 +540,27 @@ def run_sdgs(source):
         code=clean(row.get("COD_MISURA",""))
         unit=clean(row.get("UNITÀ",""))
         if not name: continue
+        dedup_key=code or re.sub(r"\W+"," ",name.casefold()).strip()
+        if dedup_key in seen_codes: continue
+        pillar=classify_green_measure(name,goal_no)
+        if not pillar: continue
         periods=[p for _,p in yearcols]
         values=[number(row.get(col)) for col,_ in yearcols]
         if sum(v is not None for v in values)<6: continue
-        pillar=goal_to_pillar[int(gm.group(1))]
+        seen_codes.add(dedup_key)
         stat=event_status(name,pillar,periods,values,unit)
-        stat["code"]=code; stat["goal"]=int(gm.group(1))
+        stat["code"]=code; stat["goal"]=goal_no
         series.append(stat)
         ev=event_from_series(source["name"],url,name,pillar,periods,values,unit)
         if ev:
-            ev["analysis"] += "¦SDG Goal "+str(int(gm.group(1)))+" · codice misura "+code+"."
+            ev["analysis"] += "¦SDG Goal "+str(goal_no)+" · codice misura "+code+"."
             events.append(ev)
-    # Avoid flooding GREEN with dozens of closely related SDG cards:
-    # keep every series in source metadata, but only the strongest distinct
-    # PULSE signals in the editorial feed.
-    events=sorted(events,key=lambda x:x["score"],reverse=True)
-    dedup=[]; seen=set()
-    for ev in events:
-        key=re.sub(r"\W+"," ",ev["indicator"].casefold()).strip()
-        if key in seen: continue
-        seen.add(key); dedup.append(ev)
-        if len(dedup)>=36: break
+    events=sorted(events,key=lambda x:x["score"],reverse=True)[:36]
     return {
-      "status":"feed" if dedup else ("connected" if series else "error"),
-      "candidate_downloads":[url],
-      "series":series,
-      "note":f"Dataset Istat SDGs 2004-2026 acquisito: {len(series)} serie nazionali GREEN monitorate; {len(dedup)} segnali PULSE."
-    },dedup
+      "status":"feed" if events else ("connected" if series else "error"),
+      "candidate_downloads":[url],"series":series,
+      "note":f"Dataset Istat SDGs 2004-2026 acquisito: {len(series)} serie nazionali GREEN semanticamente classificate; {len(events)} segnali PULSE."
+    },events
 
 def run_copernicus(source):
     token=os.environ.get("CDS_API_KEY","").strip()
