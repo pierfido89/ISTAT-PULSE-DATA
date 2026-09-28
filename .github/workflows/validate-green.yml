@@ -1,0 +1,55 @@
+name: Validate GREEN integrations
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - 'scripts/generate_green_events.py'
+      - '.github/workflows/validate-green.yml'
+      - 'requirements.txt'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pulse-green-validation
+  cancel-in-progress: true
+
+jobs:
+  green:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
+      - name: Run all GREEN connectors
+        env:
+          CDS_API_KEY: ${{ secrets.CDS_API_KEY }}
+        run: python scripts/generate_green_events.py
+      - name: Validate GREEN outputs
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          import pandas as pd
+
+          status=json.loads(Path('app/src/main/assets/pulse_green_status.json').read_text())
+          assert status['sources_total']==19, status
+          assert status['error_sources'] <= 19
+          feed=pd.read_csv('app/src/main/assets/pulse_events_green.tsv',sep='\t')
+          print('GREEN SUMMARY')
+          for key in ('sources_total','feed_sources','connected_sources','credential_required','error_sources','events'):
+              print(key, status[key])
+          print('\nSOURCE STATES')
+          for name,data in status['sources'].items():
+              print(data['status'].upper(), '|', name, '|', data.get('note',''))
+          print('\nEVENTS', len(feed))
+          if len(feed):
+              print(feed[['indicator','period','source_family','score']].to_string(index=False))
+          PY
