@@ -18,3 +18,4 @@ jobs:
           python-version: '3.12'
       - run: pip install beautifulsoup4
       - run: python scripts/probe_green_sources.py
+      - run: python scripts/probe_green_endpoints.py
