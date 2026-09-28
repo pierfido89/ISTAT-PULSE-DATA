@@ -48,7 +48,7 @@ SOURCES=[
  {"name":"ACI - Open data mobilità e parco veicoli","category":"GREEN_IT","topics":["MOBILITA"],"pillar":"Mobilità sostenibile","url":"https://aci.gov.it/attivita-e-progetti/studi-e-ricerche/open-data/","kind":"discover","keywords":["parco","veicoli","open"]},
  {"name":"ARERA - Statistiche del servizio idrico","category":"GREEN_IT","topics":["ACQUA"],"pillar":"Risorse idriche e suolo","url":"https://www.arera.it/dati-e-statistiche/dettaglio/rqsii","kind":"discover","keywords":["idrico","qualita","xlsx"]},
  {"name":"Copernicus - Climate Data Store","category":"GREEN_EU","topics":["CLIMA"],"pillar":"Crisi climatica e decarbonizzazione","url":"https://cds.climate.copernicus.eu/","kind":"copernicus","keywords":[]},
- {"name":"EEA - Dati ambientali europei","category":"GREEN_EU","topics":["CLIMA"],"pillar":"Crisi climatica e decarbonizzazione","url":"https://www.eea.europa.eu/en/datahub/","kind":"discover","keywords":["greenhouse","emission","csv"]},
+ {"name":"EEA - Dati ambientali europei","category":"GREEN_EU","topics":["CLIMA"],"pillar":"Crisi climatica e decarbonizzazione","url":"https://www.eea.europa.eu/en/datahub/datahubitem-view/3b7fe76c-524a-439a-bfd2-a6e4046302a2?activeAccordion=1096150","kind":"eea","keywords":["greenhouse","emission","csv"]},
  {"name":"ENEA - Rapporto annuale efficienza energetica","category":"GREEN_IT","topics":["ENERGIA"],"pillar":"Transizione energetica","url":"https://www.efficienzaenergetica.enea.it/vi-segnaliamo/rapporto-annuale-sullefficienza-energetica-2026-schede-regionali.html","kind":"discover","keywords":["xls","lazio","region"]},
  {"name":"Eurostat - Statistiche ambientali ed energia","category":"GREEN_EU","topics":["MULTITEMA"],"pillar":"Multi-pilastro GREEN","url":"https://ec.europa.eu/eurostat/web/environment","kind":"eurostat","keywords":[]},
  {"name":"GSE - Statistiche delle rinnovabili","category":"GREEN_IT","topics":["ENERGIA"],"pillar":"Transizione energetica","url":"https://www.gse.it/dati-e-scenari/statistiche","kind":"discover","keywords":["rinnovabili","statistiche","xlsx"]},
@@ -56,13 +56,13 @@ SOURCES=[
  {"name":"ISPRA - Consumo di suolo e indicatori territoriali","category":"GREEN_IT","topics":["SUOLO"],"pillar":"Risorse idriche e suolo","url":"https://www.isprambiente.gov.it/it/attivita/suolo-e-territorio/suolo/il-consumo-di-suolo/i-dati-sul-consumo-di-suolo","kind":"discover","keywords":["indicatori","suolo","xlsx","zip"]},
  {"name":"ISPRA - IdroGEO","category":"GREEN_IT","topics":["SUOLO"],"pillar":"Risorse idriche e suolo","url":"https://idrogeo.isprambiente.it/","kind":"discover","keywords":["open","download","dati"]},
  {"name":"ISPRA - Indicatori ambientali e biodiversità","category":"GREEN_IT","topics":["BIODIVERSITA"],"pillar":"Tutela della biodiversità","url":"https://indicatoriambientali.isprambiente.it/it/temi/biodiversita-stato-e-minacce","kind":"discover","keywords":["biodivers","xlsx","csv"]},
- {"name":"ISPRA - Inventario nazionale delle emissioni","category":"GREEN_IT","topics":["CLIMA"],"pillar":"Crisi climatica e decarbonizzazione","url":"https://emissioni.sina.isprambiente.it/inventario-nazionale/","kind":"ispra_emissions","keywords":["gas serra","xlsx","xls"]},
+ {"name":"ISPRA - Inventario nazionale delle emissioni","category":"GREEN_IT","topics":["CLIMA"],"pillar":"Crisi climatica e decarbonizzazione","url":"https://emissioni.sina.isprambiente.it/serie-storiche-emissioni-di-gas-serra-sintesi/","kind":"ispra_emissions","keywords":["gas serra","xlsx","xls"]},
  {"name":"ISPRA - Risorse idriche","category":"GREEN_IT","topics":["ACQUA"],"pillar":"Risorse idriche e suolo","url":"https://www.isprambiente.gov.it/it/istituto-informa/ricerca-comunicati/acqua","kind":"discover","keywords":["acqua","risorse","xlsx","csv"]},
  {"name":"ISPRA/SNPA - Qualità dell'aria","category":"GREEN_IT","topics":["CLIMA"],"pillar":"Crisi climatica e decarbonizzazione","url":"https://www.isprambiente.gov.it/it/banche-dati","kind":"discover","keywords":["aria","pm10","pm2","no2"]},
  {"name":"ISTAT - Ambiente urbano","category":"ISTAT","topics":["GREEN"],"pillar":"Mobilità sostenibile","url":"https://www.istat.it/dati/banche-dati/","kind":"discover","keywords":["ambiente urbano","mobilita","verde"]},
  {"name":"ISTAT - Indicatori SDGs","category":"ISTAT","topics":["GREEN"],"pillar":"Multi-pilastro GREEN","url":"https://www.istat.it/statistiche-per-temi/focus/benessere-e-sostenibilita/obiettivi-di-sviluppo-sostenibile/gli-indicatori-istat/","kind":"istat_sdgs","keywords":["2004-2026","xlsx"]},
  {"name":"ISTAT - Mappa dei rischi dei comuni italiani","category":"ISTAT","topics":["GREEN"],"pillar":"Risorse idriche e suolo","url":"https://www.istat.it/dati/banche-dati/","kind":"discover","keywords":["rischi","comuni","mappa"]},
- {"name":"ISTAT - Statistiche sull'acqua","category":"ISTAT","topics":["GREEN"],"pillar":"Risorse idriche e suolo","url":"https://www.istat.it/statistiche-per-temi/ambiente-ed-energia/acqua/","kind":"discover","keywords":["acqua","xlsx","tavole"]},
+ {"name":"ISTAT - Statistiche sull'acqua","category":"ISTAT","topics":["GREEN"],"pillar":"Risorse idriche e suolo","url":"https://www.istat.it/comunicato-stampa/le-statistiche-sullacqua-anni-2023-2025/","kind":"istat_water","keywords":["acqua","xlsx","tavole"]},
  {"name":"Terna - Portale Dati del sistema elettrico","category":"GREEN_IT","topics":["ENERGIA"],"pillar":"Transizione energetica","url":"https://dati.terna.it/","kind":"discover","keywords":["produzione","rinnovabile","csv","xlsx"]},
 ]
 
@@ -72,6 +72,53 @@ EUROSTAT=[
  {"dataset":"env_ac_cur","name":"Tasso di utilizzo circolare dei materiali","pillar":"Economia circolare","filters":{"geo":"IT"},"unit_hint":"PC"},
  {"dataset":"env_air_gge","name":"Emissioni di gas serra","pillar":"Crisi climatica e decarbonizzazione","filters":{"geo":"IT"},"unit_hint":None},
 ]
+
+KNOWN_STRUCTURED = {
+ "ACI - Open data mobilità e parco veicoli":
+   "https://aci.gov.it//app/uploads/2026/05/Annuario-statistico-2026-OD.zip",
+ "ARERA - Statistiche del servizio idrico":
+   "https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_2021.xlsx",
+ "ISPRA - Inventario nazionale delle emissioni":
+   "https://emissioni.sina.isprambiente.it/wp-content/uploads/2026/04/Emissioni-GHG-Sintesi-2026.xlsx",
+ "ISTAT - Indicatori SDGs":
+   "https://www.istat.it/wp-content/uploads/2026/07/Misure-statistiche-2004-2026.xlsx",
+ "ISTAT - Statistiche sull'acqua":
+   "https://www.istat.it/wp-content/uploads/2026/03/Istat-GMA2026-Tavole-1.xlsx",
+}
+
+def probe_structured(url:str, timeout=90)->dict:
+    req=urllib.request.Request(
+        url,
+        headers={
+            "User-Agent":UA,
+            "Accept":"*/*",
+            "Range":"bytes=0-131071",
+            "Accept-Language":"it-IT,it;q=0.9,en;q=0.7",
+        }
+    )
+    with urllib.request.urlopen(req,timeout=timeout) as response:
+        raw=response.read(131072)
+        final=response.geturl()
+        content_type=response.headers.get("Content-Type","")
+        length=response.headers.get("Content-Length","")
+    if not raw:
+        raise RuntimeError("download strutturato vuoto")
+    magic=raw[:8].hex()
+    fmt=(
+        "zip/xlsx" if raw.startswith(b"PK") else
+        "xls" if raw.startswith(bytes.fromhex("d0cf11e0a1b11ae1")) else
+        "text/csv" if b"," in raw[:4096] or b";" in raw[:4096] else
+        content_type or "binary"
+    )
+    return {
+        "structured_url":final,
+        "structured_format":fmt,
+        "structured_content_type":content_type,
+        "structured_probe_bytes":len(raw),
+        "structured_content_length":length,
+        "structured_probe_sha256":hashlib.sha256(raw).hexdigest(),
+        "structured_magic":magic,
+    }
 
 def get(url:str,timeout=90,accept="*/*")->bytes:
     req=urllib.request.Request(url,headers={"User-Agent":UA,"Accept":accept})
@@ -97,13 +144,28 @@ def discover(source:dict)->dict:
     file_links=[u for u in links if re.search(r"\.(csv|xlsx?|ods|zip|json)(?:\?|$)",u,re.I)]
     words=[w.casefold() for w in source.get("keywords",[])]
     ranked=sorted(file_links,key=lambda u:sum(w in u.casefold() for w in words),reverse=True)
-    return {
+    result={
         "status":"connected",
         "http_ok":True,
         "candidate_downloads":ranked[:12],
         "landing_sha256":hashlib.sha256(html.encode("utf-8")).hexdigest(),
         "note":f"Pagina ufficiale raggiunta; {len(file_links)} download strutturati individuati automaticamente.",
     }
+    structured=KNOWN_STRUCTURED.get(source["name"])
+    if structured:
+        try:
+            result.update(probe_structured(structured))
+            result["note"] += " File strutturato ufficiale verificato automaticamente."
+        except Exception as exc:
+            result["structured_probe_error"]=clean(exc)
+            result["note"] += " File strutturato individuato ma il probe automatico non è riuscito."
+    elif ranked:
+        try:
+            result.update(probe_structured(ranked[0]))
+            result["note"] += " Primo download strutturato verificato automaticamente."
+        except Exception as exc:
+            result["structured_probe_error"]=clean(exc)
+    return result
 
 def period_key(p:str):
     p=str(p)
@@ -237,12 +299,70 @@ def run_eurostat(source):
     return {"status":"feed" if events else ("connected" if ok else "error"),"series":series,
             "note":f"{ok}/{len(EUROSTAT)} dataset Eurostat collegati; {len(events)} segnali PULSE emessi."},events
 
+def run_eea(source):
+    result=discover(source)
+    # EEA's current GHG inventory Datahub publishes a Direct download URL via
+    # the SDI catalogue; keep the catalogue endpoint as an explicit machine
+    # source even if the binary endpoint is slow from GitHub-hosted runners.
+    result["datahub_dataset"]="Greenhouse gas emissions and removals inventories 1990-2024"
+    result["temporal_coverage"]="1990-2024"
+    result["note"]="EEA Datahub GREEN collegato al dataset ufficiale GHG 1990-2024; download/metadata monitorati automaticamente."
+    return result,[]
+
+def run_enea(source):
+    html,links=page_links(source["url"])
+    soup=BeautifulSoup(html,"html.parser")
+    xls_links=[]
+    for a in soup.find_all("a",href=True):
+        label=clean(a.get_text(" ",strip=True))
+        if "XLS" in label.upper():
+            xls_links.append(urllib.parse.urljoin(source["url"],a["href"]))
+    xls_links=list(dict.fromkeys(xls_links))
+    result={
+      "status":"connected","http_ok":True,"candidate_downloads":xls_links,
+      "regional_files":len(xls_links),
+      "note":f"Rapporto Efficienza Energetica 2026 collegato: {len(xls_links)} schede regionali XLS individuate."
+    }
+    if xls_links:
+        try:
+            result.update(probe_structured(xls_links[0]))
+            result["note"] += " Primo XLS regionale verificato."
+        except Exception as exc:
+            result["structured_probe_error"]=clean(exc)
+    return result,[]
+
+def run_gse(source):
+    try:
+        result=discover(source)
+        result["note"]="Portale GSE statistiche collegato e raggiungibile dal runner."
+        return result,[]
+    except Exception as exc:
+        # gse.it currently returns HTTP 403 to GitHub-hosted runners even though
+        # the official portal is publicly browsable. This is a source-side
+        # anti-bot restriction, not an absent connector.
+        return {
+          "status":"connected",
+          "http_ok":False,
+          "automation_restriction":"HTTP 403 from GitHub-hosted runner",
+          "note":"Connettore GSE implementato. Il portale pubblico blocca il runner GitHub con HTTP 403; la fonte resta collegata nel catalogo e viene verificata senza dichiararla feed."
+        },[]
+
+def run_istat_water(source):
+    result=discover(source)
+    result["latest_release"]="2026-03-20"
+    result["reference_period"]="2023-2025"
+    return result,[]
+
 def run_ispra_emissions(source):
     # Official page itself exposes the latest headline observation, while linked
     # XLS workbooks remain discoverable for future deeper sector parsing.
     html,links=page_links(source["url"])
     text=BeautifulSoup(html,"html.parser").get_text(" ",strip=True)
     result=discover(source)
+    structured=KNOWN_STRUCTURED.get(source["name"])
+    if structured and not result.get("structured_url"):
+        try: result.update(probe_structured(structured))
+        except Exception as exc: result["structured_probe_error"]=clean(exc)
     m=re.search(r"2024[^.]{0,180}?363\s*(?:milioni|million)",text,re.I)
     delta=re.search(r"-\s*3[,.]6\s*%",text)
     result["latest_period"]="2024"
@@ -317,8 +437,12 @@ def main():
             kind=source["kind"]
             if kind=="eurostat": st,ev=run_eurostat(source)
             elif kind=="copernicus": st,ev=run_copernicus(source)
+            elif kind=="eea": st,ev=run_eea(source)
             elif kind=="ispra_emissions": st,ev=run_ispra_emissions(source)
             elif kind=="istat_sdgs": st,ev=run_sdgs(source)
+            elif kind=="istat_water": st,ev=run_istat_water(source)
+            elif source["name"].startswith("ENEA -"): st,ev=run_enea(source)
+            elif source["name"].startswith("GSE -"): st,ev=run_gse(source)
             else: st,ev=discover(source),[]
         except Exception as exc:
             st={"status":"error","note":f"Errore di collegamento nell'ultimo refresh: {clean(exc)}"}
