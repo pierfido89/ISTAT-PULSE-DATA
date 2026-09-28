@@ -430,10 +430,10 @@
       ],
       "official": true,
       "url": "https://www.istat.it/statistica-sperimentale/aggiornamento-degli-indicatori-del-sistema-informativo-a-misura-di-comune/",
-      "feed_status": "Prime tavole ufficiali importate e verificate: 121 valori regionali. Ampliamento a tutti i comuni in corso.",
-      "notes": "Famiglie, istruzione, redditi e ambiente: leggere sempre l'anno del dato nel catalogo osservato.",
-      "integration_status": "partial",
-      "category": "ISTAT"
+      "feed_status": "Database consultabile · integrazione nel Radar da sviluppare",
+      "notes": "Portale ufficiale esterno, non ancora acquisito automaticamente dalla pipeline.",
+      "category": "ISTAT",
+      "integration_status": "partial"
     },
     {
       "name": "ISTAT - Ambiente urbano",
@@ -463,8 +463,8 @@
       "url": "https://www.istat.it/comunicato-territoriale/il-benessere-equo-e-sostenibile-dei-territori-report-regionali-anno-2025/",
       "feed_status": "Archivio ufficiale consultabile · fuori dal feed corrente",
       "notes": "I dati annuali del 2024/2025 non vengono presentati come notizie attuali.",
-      "integration_status": "archive",
-      "category": "ISTAT"
+      "category": "ISTAT",
+      "integration_status": "archive"
     },
     {
       "name": "ISTAT - DEMO - Bilancio demografico mensile",
@@ -482,8 +482,8 @@
       "notes": "Fonte attiva nel feed corrente. I dati comunali più recenti possono essere indicati da ISTAT come provvisori.",
       "url": "https://demo.istat.it/app/?i=D7B",
       "feed_status": "Attiva nel Radar · notizie riferite all'anno del fenomeno",
-      "integration_status": "feed",
-      "category": "ISTAT"
+      "category": "ISTAT",
+      "integration_status": "feed"
     },
     {
       "name": "ISTAT - Indicatori SDGs",
@@ -1130,8 +1130,8 @@
       "notes": "Fonte attiva nel feed corrente. Serie congiunturali ufficiali interrogate tramite servizio SDMX IstatData.",
       "url": "https://esploradati.istat.it/SDMXWS/",
       "feed_status": "Attiva nel Radar",
-      "integration_status": "feed",
-      "category": "ISTAT"
+      "category": "ISTAT",
+      "integration_status": "feed"
     },
     {
       "name": "ISTAT - Mappa dei rischi dei comuni italiani",
@@ -1159,10 +1159,10 @@
       ],
       "official": true,
       "url": "https://noi-italia.istat.it/home.php",
-      "feed_status": "Database ufficiale acquisito: 3151 ultimi valori territoriali verificati. Le serie storiche alimentano anche il motore dei pattern annuali.",
-      "notes": "Il periodo statistico originale resta esplicito; i segnali storici non vengono presentati come notizie del 2026.",
-      "integration_status": "archive",
-      "category": "ISTAT"
+      "feed_status": "Database consultabile · integrazione nel Radar da sviluppare",
+      "notes": "Portale ufficiale esterno, non ancora acquisito automaticamente dalla pipeline.",
+      "category": "ISTAT",
+      "integration_status": "archive"
     },
     {
       "name": "ISTAT - Statistiche sull'acqua",
