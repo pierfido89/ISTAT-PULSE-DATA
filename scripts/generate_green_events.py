@@ -299,6 +299,41 @@ def run_eurostat(source):
     return {"status":"feed" if events else ("connected" if ok else "error"),"series":series,
             "note":f"{ok}/{len(EUROSTAT)} dataset Eurostat collegati; {len(events)} segnali PULSE emessi."},events
 
+def number(value):
+    if value is None or (isinstance(value,float) and math.isnan(value)): return None
+    if isinstance(value,(int,float,np.number)): return float(value)
+    text=clean(value).replace("\u00a0","").replace(" ","")
+    if text in {"","-","..","....","n.d.","nd"}: return None
+    if "," in text and "." not in text: text=text.replace(",",".")
+    elif "," in text and "." in text:
+        # Italian thousands separator + decimal comma.
+        if text.rfind(",")>text.rfind("."): text=text.replace(".","").replace(",",".")
+        else: text=text.replace(",","")
+    text=re.sub(r"[^0-9+\-.eE]","",text)
+    try:return float(text)
+    except:return None
+
+def excel_bytes(url:str,timeout=120)->bytes:
+    return get(url,timeout=timeout,accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.oasis.opendocument.spreadsheet,*/*")
+
+def find_year_columns(row):
+    result=[]
+    for idx,value in enumerate(row):
+        n=number(value)
+        if n is not None and 1900<=n<=2100 and abs(n-round(n))<1e-9:
+            result.append((idx,str(int(round(n)))))
+    return result
+
+def event_status(name,pillar,periods,values,unit=""):
+    good=[(str(p),number(v)) for p,v in zip(periods,values)]
+    good=[x for x in good if x[1] is not None]
+    return {
+      "name":name,"pillar":pillar,
+      "latest_period":good[-1][0] if good else "",
+      "latest_value":good[-1][1] if good else None,
+      "unit":unit,"observations":len(good),"status":"ok" if len(good)>=2 else "insufficient"
+    }
+
 def run_eea(source):
     result=discover(source)
     # EEA's current GHG inventory Datahub publishes a Direct download URL via
@@ -310,26 +345,57 @@ def run_eea(source):
     return result,[]
 
 def run_enea(source):
-    html,links=page_links(source["url"])
+    html,_=page_links(source["url"])
     soup=BeautifulSoup(html,"html.parser")
-    xls_links=[]
+    regional=[]
     for a in soup.find_all("a",href=True):
         label=clean(a.get_text(" ",strip=True))
-        if "XLS" in label.upper():
-            xls_links.append(urllib.parse.urljoin(source["url"],a["href"]))
-    xls_links=list(dict.fromkeys(xls_links))
-    result={
-      "status":"connected","http_ok":True,"candidate_downloads":xls_links,
-      "regional_files":len(xls_links),
-      "note":f"Rapporto Efficienza Energetica 2026 collegato: {len(xls_links)} schede regionali XLS individuate."
-    }
-    if xls_links:
+        if not label.upper().endswith(" XLS"): continue
+        region=re.sub(r"\s+XLS\s*$","",label,flags=re.I).strip()
+        href=urllib.parse.urljoin(source["url"],a["href"])
+        if region and href: regional.append((region,href))
+    # Preserve page order but remove repeated links.
+    seen=set(); regional=[x for x in regional if not (x[1] in seen or seen.add(x[1]))]
+    events=[]; series=[]; failures=[]
+    for region,url in regional:
         try:
-            result.update(probe_structured(xls_links[0]))
-            result["note"] += " Primo XLS regionale verificato."
+            raw=excel_bytes(url,90)
+            frame=pd.read_excel(io.BytesIO(raw),sheet_name="titoli efficienza energetica",header=None)
+            header_idx=None; years=[]
+            for ri in range(min(12,len(frame))):
+                yc=find_year_columns(frame.iloc[ri].tolist())
+                if len(yc)>=6:
+                    header_idx=ri; years=yc; break
+            if header_idx is None: raise ValueError("anni TEE non individuati")
+            total=None
+            for ri in range(len(frame)):
+                label=clean(frame.iloc[ri,0]) if frame.shape[1] else ""
+                if "totale (tee emessi)" in label.casefold():
+                    total=frame.iloc[ri]; break
+            if total is None: raise ValueError("riga Totale (TEE emessi) assente")
+            periods=[y for _,y in years]
+            values=[number(total.iloc[col]) if col<len(total) else None for col,_ in years]
+            stat=event_status("Titoli di Efficienza Energetica emessi",source["pillar"],periods,values,"TEE")
+            stat["territory"]=region.title()
+            series.append(stat)
+            ev=event_from_series(
+                source["name"],url,"Titoli di Efficienza Energetica emessi",
+                source["pillar"],periods,values,"TEE",region.title()
+            )
+            if ev:
+                ev["region"]=region.title(); ev["municipality"]=region.title()
+                events.append(ev)
         except Exception as exc:
-            result["structured_probe_error"]=clean(exc)
-    return result,[]
+            failures.append(region+": "+clean(exc))
+    ok=len(series)
+    return {
+      "status":"feed" if events else ("connected" if ok else "error"),
+      "http_ok":True,
+      "regional_files":len(regional),
+      "series":series,
+      "failed_regions":failures[:8],
+      "note":f"RAEE 2026: {ok}/{len(regional)} schede regionali acquisite; {len(events)} segnali PULSE da serie TEE 2015-2025."
+    },events
 
 def run_gse(source):
     try:
@@ -348,37 +414,136 @@ def run_gse(source):
         },[]
 
 def run_istat_water(source):
+    url=KNOWN_STRUCTURED[source["name"]]
+    raw=excel_bytes(url)
+    frame=pd.read_excel(io.BytesIO(raw),sheet_name="Tavola 10",header=None)
+    header_idx=None; years=[]
+    for ri in range(min(12,len(frame))):
+        yc=find_year_columns(frame.iloc[ri].tolist())
+        if len(yc)>=5:
+            header_idx=ri; years=yc; break
+    events=[]; series=[]
+    if header_idx is not None:
+        periods=[y for _,y in years]
+        for ri in range(header_idx+1,len(frame)):
+            territory=clean(frame.iloc[ri,0]) if frame.shape[1] else ""
+            if not territory or territory.casefold().startswith(("fonte","nota","italia")): continue
+            values=[number(frame.iloc[ri,col]) if col<frame.shape[1] else None for col,_ in years]
+            if sum(v is not None for v in values)<6: continue
+            stat=event_status("Prelievi di acque minerali naturali per produzione",source["pillar"],periods,values,"migliaia m³")
+            stat["territory"]=territory
+            series.append(stat)
+            ev=event_from_series(
+              source["name"],url,"Prelievi di acque minerali naturali per produzione",
+              source["pillar"],periods,values,"migliaia m³",territory
+            )
+            if ev:
+                ev["region"]=territory; ev["municipality"]=territory
+                events.append(ev)
     result=discover(source)
-    result["latest_release"]="2026-03-20"
-    result["reference_period"]="2023-2025"
-    return result,[]
+    result.update({
+      "status":"feed" if events else ("connected" if series else "error"),
+      "latest_release":"2026-03-20","reference_period":"2015-2023",
+      "series":series[:40],
+      "note":f"Tavole ufficiali Acqua 2026 acquisite; {len(series)} serie regionali pluriennali lette da Tavola 10; {len(events)} segnali PULSE."
+    })
+    return result,events
 
 def run_ispra_emissions(source):
-    # Official page itself exposes the latest headline observation, while linked
-    # XLS workbooks remain discoverable for future deeper sector parsing.
-    html,links=page_links(source["url"])
-    text=BeautifulSoup(html,"html.parser").get_text(" ",strip=True)
+    url=KNOWN_STRUCTURED[source["name"]]
+    raw=excel_bytes(url)
+    frame=pd.read_excel(io.BytesIO(raw),sheet_name="1 GHG CO2 eq",header=None)
+    header_idx=None; years=[]
+    for ri in range(min(12,len(frame))):
+        yc=find_year_columns(frame.iloc[ri].tolist())
+        if len(yc)>=20:
+            header_idx=ri; years=yc; break
+    if header_idx is None: raise ValueError("anni inventario GHG non individuati")
+    targets=[
+      ("Total (net emissions)","Emissioni nette di gas serra","kt CO₂e"),
+      ("1. Energy","Emissioni GHG del settore energia","kt CO₂e"),
+      ("1.A.3.  Transport","Emissioni GHG dei trasporti","kt CO₂e"),
+    ]
+    events=[]; series=[]
+    for needle,label,unit in targets:
+        row=None
+        for ri in range(header_idx+1,len(frame)):
+            first=clean(frame.iloc[ri,0]) if frame.shape[1] else ""
+            if needle.casefold() in first.casefold():
+                row=frame.iloc[ri]; break
+        if row is None: continue
+        periods=[y for _,y in years]
+        values=[number(row.iloc[col]) if col<len(row) else None for col,_ in years]
+        series.append(event_status(label,source["pillar"],periods,values,unit))
+        ev=event_from_series(source["name"],url,label,source["pillar"],periods,values,unit)
+        if ev: events.append(ev)
     result=discover(source)
-    structured=KNOWN_STRUCTURED.get(source["name"])
-    if structured and not result.get("structured_url"):
-        try: result.update(probe_structured(structured))
-        except Exception as exc: result["structured_probe_error"]=clean(exc)
-    m=re.search(r"2024[^.]{0,180}?363\s*(?:milioni|million)",text,re.I)
-    delta=re.search(r"-\s*3[,.]6\s*%",text)
-    result["latest_period"]="2024"
-    result["headline_observation"]="~363 Mt CO2e" if m else ""
-    result["headline_change"]="-3,6%" if delta else ""
-    result["note"]="Inventario nazionale collegato; pagina e download ufficiali monitorati. La serie tabellare completa viene scoperta dal portale ISPRA."
-    # Do not fabricate a multi-year PULSE event from a two-point headline.
-    return result,[]
+    result.update({
+      "status":"feed" if events else ("connected" if series else "error"),
+      "latest_period":"2024","series":series,
+      "note":f"Inventario GHG ISPRA 1990-2024 acquisito dal workbook ufficiale; {len(series)} serie monitorate e {len(events)} segnali PULSE."
+    })
+    return result,events
 
 def run_sdgs(source):
-    html,links=page_links(source["url"])
-    xls=[u for u in links if re.search(r"\.xlsx?(?:\?|$)",u,re.I)]
-    ranked=sorted(xls,key=lambda u:("2004" not in u, "2026" not in u, len(u)))
-    out={"status":"connected","candidate_downloads":ranked[:8],
-         "note":f"Pagina SDGs 2026 collegata; {len(xls)} file Excel ufficiali individuati per acquisizione automatica."}
-    return out,[]
+    url=KNOWN_STRUCTURED[source["name"]]
+    raw=excel_bytes(url,180)
+    frame=pd.read_excel(io.BytesIO(raw),sheet_name="Goal 1-17")
+    columns=list(frame.columns)
+    yearcols=[]
+    for col in columns:
+        n=number(col)
+        if n is not None and 2000<=n<=2030 and abs(n-round(n))<1e-9:
+            yearcols.append((col,str(int(round(n)))))
+    goal_to_pillar={
+      6:"Risorse idriche e suolo",
+      7:"Transizione energetica",
+      11:"Mobilità sostenibile",
+      12:"Economia circolare",
+      13:"Crisi climatica e decarbonizzazione",
+      14:"Tutela della biodiversità",
+      15:"Tutela della biodiversità",
+    }
+    events=[]; series=[]
+    for _,row in frame.iterrows():
+        goal=clean(row.get("GOAL",""))
+        gm=re.match(r"Goal\s+(\d+)",goal,re.I)
+        if not gm or int(gm.group(1)) not in goal_to_pillar: continue
+        level=clean(row.get("LIVELLO TERRITORIALE",""))
+        dimension=clean(row.get("DIMENSIONE",""))
+        if "Italia (NUTS 0)" not in level: continue
+        if dimension and dimension.casefold()!="territorio": continue
+        name=clean(row.get("MISURA STATISTICA",""))
+        code=clean(row.get("COD_MISURA",""))
+        unit=clean(row.get("UNITÀ",""))
+        if not name: continue
+        periods=[p for _,p in yearcols]
+        values=[number(row.get(col)) for col,_ in yearcols]
+        if sum(v is not None for v in values)<6: continue
+        pillar=goal_to_pillar[int(gm.group(1))]
+        stat=event_status(name,pillar,periods,values,unit)
+        stat["code"]=code; stat["goal"]=int(gm.group(1))
+        series.append(stat)
+        ev=event_from_series(source["name"],url,name,pillar,periods,values,unit)
+        if ev:
+            ev["analysis"] += "¦SDG Goal "+str(int(gm.group(1)))+" · codice misura "+code+"."
+            events.append(ev)
+    # Avoid flooding GREEN with dozens of closely related SDG cards:
+    # keep every series in source metadata, but only the strongest distinct
+    # PULSE signals in the editorial feed.
+    events=sorted(events,key=lambda x:x["score"],reverse=True)
+    dedup=[]; seen=set()
+    for ev in events:
+        key=re.sub(r"\W+"," ",ev["indicator"].casefold()).strip()
+        if key in seen: continue
+        seen.add(key); dedup.append(ev)
+        if len(dedup)>=36: break
+    return {
+      "status":"feed" if dedup else ("connected" if series else "error"),
+      "candidate_downloads":[url],
+      "series":series,
+      "note":f"Dataset Istat SDGs 2004-2026 acquisito: {len(series)} serie nazionali GREEN monitorate; {len(dedup)} segnali PULSE."
+    },dedup
 
 def run_copernicus(source):
     token=os.environ.get("CDS_API_KEY","").strip()
