@@ -98,6 +98,15 @@ def iter_year_values(row, columns):
         if v is not None:
             yield year,v
 
+def year_string(value):
+    if isinstance(value,(int,np.integer)):
+        y=int(value); return str(y) if 1900<=y<=2100 else ""
+    if isinstance(value,(float,np.floating)) and np.isfinite(value):
+        y=int(round(float(value))); return str(y) if 1900<=y<=2100 else ""
+    s=clean_text(value)
+    m=re.search(r"(?:19|20)\d{2}",s)
+    return m.group(0) if m else ""
+
 def observations_from_sdg_source(source_keyword,source_name,pillar,measure_regex=None):
     raw,final,_=fetch(SDG_URL)
     df=excel(raw,"Goal 1-17")
@@ -211,8 +220,8 @@ def adapter_copernicus():
     era=find_col(df.columns,"ERA5")
     obs=[]
     for _,r in df.iterrows():
-        y=clean_text(r.get(year)); v=to_float(r.get(era))
-        if re.fullmatch(r"\d{4}",y) and v is not None:
+        y=year_string(r.get(year)); v=to_float(r.get(era))
+        if y and v is not None:
             obs.append(Observation(PILLAR_CLIMATE,name,final,"EUROPA","Europa",
                 "Anomalia temperatura media annua europea (ERA5, base 1991-2020)","°C",y,v,
                 region="Europa",note="Indicatore climatico europeo pubblicato da Copernicus Climate Change Service; non è un valore specifico dell'Italia."))
@@ -228,8 +237,8 @@ def _eea_one(slug,indicator,unit,pillar):
     if italy is None:return []
     obs=[]
     for _,r in df.iterrows():
-        y=clean_text(r[year]);v=to_float(r[italy])
-        if re.fullmatch(r"\d{4}",y) and v is not None:
+        y=year_string(r[year]);v=to_float(r[italy])
+        if y and v is not None:
             obs.append(Observation(pillar,"EEA - Dati ambientali europei",final,"ITALIA","Italia",indicator,unit,y,v,region="Italia",
                 note="Serie armonizzata EEA per l'Italia."))
     return obs
