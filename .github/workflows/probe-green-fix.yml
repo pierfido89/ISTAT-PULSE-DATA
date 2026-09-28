@@ -1,0 +1,15 @@
+name: Diagnose GREEN parsers
+on:
+  workflow_dispatch:
+  push:
+    branches: [ green-integration ]
+    paths: [ 'scripts/probe_green_fix.py', '.github/workflows/probe-green-fix.yml' ]
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install pandas openpyxl
+      - run: python scripts/probe_green_fix.py
