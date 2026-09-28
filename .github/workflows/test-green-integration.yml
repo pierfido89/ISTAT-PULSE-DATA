@@ -1,0 +1,50 @@
+name: Test GREEN integration
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ green-integration ]
+    paths:
+      - 'scripts/generate_green_events.py'
+      - 'scripts/green_common.py'
+      - 'requirements.txt'
+      - '.github/workflows/test-green-integration.yml'
+
+concurrency:
+  group: green-integration-test
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Generate GREEN package
+        run: python scripts/generate_green_events.py
+      - name: Validate GREEN package
+        run: |
+          python - <<'PY'
+          import json, pandas as pd
+          m=json.load(open('data/pulse_green_manifest.json',encoding='utf-8'))
+          s=json.load(open('data/green_source_status.json',encoding='utf-8'))
+          o=pd.read_csv('data/pulse_green_observations.tsv',sep='\t')
+          e=pd.read_csv('data/pulse_events_green.tsv',sep='\t')
+          print(json.dumps(m,ensure_ascii=False,indent=2))
+          print(json.dumps(s,ensure_ascii=False,indent=2))
+          assert m['green_sources_total']==19, m
+          assert len(m['pillars'])==6, m['pillars']
+          assert len(o)>=500, len(o)
+          assert o['source_name'].nunique()>=14, o['source_name'].nunique()
+          assert len(e)>=10, len(e)
+          assert set(e['scope'].astype(str))=={'GREEN'}
+          bad=[x for x in s['sources'] if x['status']=='error']
+          assert len(bad)<=3, bad
+          print('GREEN PACKAGE VALID:',len(o),'observations,',len(e),'events,',
+                o['source_name'].nunique(),'sources with observations')
+          PY
