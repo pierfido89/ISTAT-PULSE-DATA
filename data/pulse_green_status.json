@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-28T11:26:15.541073+00:00",
+  "generated_at": "2026-09-28T11:38:51.180638+00:00",
   "sources_total": 19,
   "feed_sources": 5,
   "connected_sources": 13,
@@ -34,7 +34,7 @@
         "https://aci.gov.it//app/uploads/2024/06/Autoritratto_2021_OD.zip",
         "https://aci.gov.it//app/uploads/2024/06/Autoritratto_2020_OD-1.zip"
       ],
-      "landing_sha256": "6718915f182c8547d3c3804e74f37c3eda7d26a26a6a0a7fe7fa903686309eac",
+      "landing_sha256": "3bc8dfb7fb3a8abd4470b50c3802d7f85b602a09e716f979fb4f654a5d99e93c",
       "note": "Pagina ufficiale raggiunta; 41 download strutturati individuati automaticamente. File strutturato ufficiale verificato automaticamente.",
       "structured_url": "https://aci.gov.it//app/uploads/2026/05/Annuario-statistico-2026-OD.zip",
       "structured_format": "zip/xlsx",
@@ -43,7 +43,7 @@
       "structured_content_length": "131072",
       "structured_probe_sha256": "e5a56749b2c0b6d47096f8b58e01de2a57ea5134fe0ee7e8216037eb834ff0bb",
       "structured_magic": "504b030414000000",
-      "checked_at": "2026-09-28T11:25:34.357795+00:00",
+      "checked_at": "2026-09-28T11:38:00.647304+00:00",
       "pillar": "Mobilità sostenibile",
       "url": "https://aci.gov.it/attivita-e-progetti/studi-e-ricerche/open-data/"
     },
@@ -66,14 +66,14 @@
       "structured_content_length": "131072",
       "structured_probe_sha256": "56f9b62f4684239922ec036b2f8979d184f160adb5e1f4b447b48234077a833f",
       "structured_magic": "504b030414000600",
-      "checked_at": "2026-09-28T11:25:36.941227+00:00",
+      "checked_at": "2026-09-28T11:38:03.575295+00:00",
       "pillar": "Risorse idriche e suolo",
       "url": "https://www.arera.it/dati-e-statistiche/dettaglio/rqsii"
     },
     "Copernicus - Climate Data Store": {
       "status": "credential_required",
       "note": "Connettore CDS implementato: richiede CDS_API_KEY e accettazione preventiva dei termini del dataset.",
-      "checked_at": "2026-09-28T11:25:36.941275+00:00",
+      "checked_at": "2026-09-28T11:38:03.575351+00:00",
       "pillar": "Crisi climatica e decarbonizzazione",
       "url": "https://cds.climate.copernicus.eu/"
     },
@@ -81,11 +81,11 @@
       "status": "connected",
       "http_ok": true,
       "candidate_downloads": [],
-      "landing_sha256": "aa5e51c182abfca0ee468a71af0fded6ae1a7b33e2485275688bc9cfe36617e3",
+      "landing_sha256": "bad9f355571001e0fcb1ccb709a9e00056e55b048a909b9c3c48f2befd5e4ee3",
       "note": "EEA Datahub GREEN collegato al dataset ufficiale GHG 1990-2024; download/metadata monitorati automaticamente.",
       "datahub_dataset": "Greenhouse gas emissions and removals inventories 1990-2024",
       "temporal_coverage": "1990-2024",
-      "checked_at": "2026-09-28T11:25:38.717827+00:00",
+      "checked_at": "2026-09-28T11:38:05.757113+00:00",
       "pillar": "Crisi climatica e decarbonizzazione",
       "url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/3b7fe76c-524a-439a-bfd2-a6e4046302a2?activeAccordion=1096150"
     },
@@ -297,7 +297,7 @@
       ],
       "failed_regions": [],
       "note": "RAEE 2026: 20/20 schede regionali acquisite; 3 segnali PULSE da serie TEE 2015-2025.",
-      "checked_at": "2026-09-28T11:25:48.735892+00:00",
+      "checked_at": "2026-09-28T11:38:16.649767+00:00",
       "pillar": "Transizione energetica",
       "url": "https://www.efficienzaenergetica.enea.it/vi-segnaliamo/rapporto-annuale-sullefficienza-energetica-2026-schede-regionali.html"
     },
@@ -327,7 +327,7 @@
         }
       ],
       "note": "3/3 dataset Eurostat collegati; 3 segnali PULSE emessi.",
-      "checked_at": "2026-09-28T11:25:50.712806+00:00",
+      "checked_at": "2026-09-28T11:38:19.508806+00:00",
       "pillar": "Multi-pilastro GREEN",
       "url": "https://ec.europa.eu/eurostat/web/environment"
     },
@@ -336,7 +336,7 @@
       "http_ok": false,
       "automation_restriction": "HTTP 403 from GitHub-hosted runner",
       "note": "Connettore GSE implementato. Il portale pubblico blocca il runner GitHub con HTTP 403; la fonte resta collegata nel catalogo e viene verificata senza dichiararla feed.",
-      "checked_at": "2026-09-28T11:25:51.154494+00:00",
+      "checked_at": "2026-09-28T11:38:20.104291+00:00",
       "pillar": "Transizione energetica",
       "url": "https://www.gse.it/dati-e-scenari/statistiche"
     },
@@ -344,9 +344,9 @@
       "status": "connected",
       "http_ok": true,
       "candidate_downloads": [],
-      "landing_sha256": "17b9c3d94e38435ac281971802eefb476837fe24b1e354316e7d8138d5bdc551",
+      "landing_sha256": "7dc102073fd649b114267cdc8558ec922ad68c0c2e232269337bba36712d6fc5",
       "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "checked_at": "2026-09-28T11:25:52.060128+00:00",
+      "checked_at": "2026-09-28T11:38:21.383964+00:00",
       "pillar": "Economia circolare",
       "url": "https://www.catasto-rifiuti.isprambiente.it/index.php?pg=detComune"
     },
@@ -365,7 +365,7 @@
       "structured_content_length": "131072",
       "structured_probe_sha256": "d1507a6300cc0e855b27c52ea5c970404c39c54bdebee883037a08f5d58e28bf",
       "structured_magic": "504b030414000600",
-      "checked_at": "2026-09-28T11:25:53.545685+00:00",
+      "checked_at": "2026-09-28T11:38:26.812766+00:00",
       "pillar": "Risorse idriche e suolo",
       "url": "https://www.isprambiente.gov.it/it/attivita/suolo-e-territorio/suolo/il-consumo-di-suolo/i-dati-sul-consumo-di-suolo"
     },
@@ -373,9 +373,9 @@
       "status": "connected",
       "http_ok": true,
       "candidate_downloads": [],
-      "landing_sha256": "29f993d9386529212eb206714f43dec7ddb337c27da198284a15af85f204f1a4",
+      "landing_sha256": "8382e05bba9bf292c31de2ff172853fec8be6b941e4a84270a50d68ab1133170",
       "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "checked_at": "2026-09-28T11:25:54.911092+00:00",
+      "checked_at": "2026-09-28T11:38:28.836858+00:00",
       "pillar": "Risorse idriche e suolo",
       "url": "https://idrogeo.isprambiente.it/"
     },
@@ -383,9 +383,9 @@
       "status": "connected",
       "http_ok": true,
       "candidate_downloads": [],
-      "landing_sha256": "bf23ff13fb16045dbe8cf07a27f09d2a9dac4fe207a5e1d6ed646ccd0a4adcf7",
+      "landing_sha256": "ae6a360559439f30c927ba937aa68b5591bcf76eff6faba76b44bc76478c115c",
       "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "checked_at": "2026-09-28T11:25:55.856493+00:00",
+      "checked_at": "2026-09-28T11:38:30.123979+00:00",
       "pillar": "Tutela della biodiversità",
       "url": "https://indicatoriambientali.isprambiente.it/it/temi/biodiversita-stato-e-minacce"
     },
@@ -395,7 +395,7 @@
       "candidate_downloads": [
         "https://emissioni.sina.isprambiente.it/wp-content/uploads/2026/04/Emissioni-GHG-Sintesi-2026.xlsx"
       ],
-      "landing_sha256": "8083865976417c6230cab61cb89448914445220959d5fbb74902e36b8f59f0a9",
+      "landing_sha256": "5933f207b14befca948fac1ae1c12486797a1a7681fd0857019af11736133c65",
       "note": "Inventario GHG ISPRA 1990-2024 acquisito dal workbook ufficiale; 2 serie monitorate e 2 segnali PULSE.",
       "structured_url": "https://emissioni.sina.isprambiente.it/wp-content/uploads/2026/04/Emissioni-GHG-Sintesi-2026.xlsx",
       "structured_format": "zip/xlsx",
@@ -425,7 +425,7 @@
           "status": "ok"
         }
       ],
-      "checked_at": "2026-09-28T11:25:58.954568+00:00",
+      "checked_at": "2026-09-28T11:38:34.617727+00:00",
       "pillar": "Crisi climatica e decarbonizzazione",
       "url": "https://emissioni.sina.isprambiente.it/serie-storiche-emissioni-di-gas-serra-sintesi/"
     },
@@ -435,7 +435,7 @@
       "candidate_downloads": [],
       "landing_sha256": "9fbc6b338202234229693cde11d1440cfee7c87bf5c7da94b59647974574f3f6",
       "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "checked_at": "2026-09-28T11:25:59.590481+00:00",
+      "checked_at": "2026-09-28T11:38:37.197307+00:00",
       "pillar": "Risorse idriche e suolo",
       "url": "https://www.isprambiente.gov.it/it/istituto-informa/ricerca-comunicati/acqua"
     },
@@ -445,7 +445,7 @@
       "candidate_downloads": [],
       "landing_sha256": "fcef2971617265db84966c07f27d38e5ba3f9dabb90b49aed906aae027c69c74",
       "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "checked_at": "2026-09-28T11:26:00.071085+00:00",
+      "checked_at": "2026-09-28T11:38:38.379777+00:00",
       "pillar": "Crisi climatica e decarbonizzazione",
       "url": "https://www.isprambiente.gov.it/it/banche-dati"
     },
@@ -453,9 +453,9 @@
       "status": "connected",
       "http_ok": true,
       "candidate_downloads": [],
-      "landing_sha256": "cd97d877d0af644d862b4edee9f5a1a7f6b3d830b6434e59fc6b4c1dbf0ae1e7",
+      "landing_sha256": "01b9716175b911588c38d0d644c796a67df125dd2901412e26f7a32ba3390caa",
       "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "checked_at": "2026-09-28T11:26:01.348346+00:00",
+      "checked_at": "2026-09-28T11:38:40.164740+00:00",
       "pillar": "Mobilità sostenibile",
       "url": "https://www.istat.it/dati/banche-dati/"
     },
@@ -1248,7 +1248,7 @@
         }
       ],
       "note": "Dataset Istat SDGs 2004-2026 acquisito: 71 serie nazionali GREEN semanticamente classificate; 36 segnali PULSE.",
-      "checked_at": "2026-09-28T11:26:07.063804+00:00",
+      "checked_at": "2026-09-28T11:38:44.920099+00:00",
       "pillar": "Multi-pilastro GREEN",
       "url": "https://www.istat.it/statistiche-per-temi/focus/benessere-e-sostenibilita/obiettivi-di-sviluppo-sostenibile/gli-indicatori-istat/"
     },
@@ -1256,9 +1256,9 @@
       "status": "connected",
       "http_ok": true,
       "candidate_downloads": [],
-      "landing_sha256": "bc386177912c54f73bf64e964bd263098c9d56df44d189978fcb864fa6dc3a55",
+      "landing_sha256": "5b82329fe636b9a263c82bdcee4f2f206e181d44f38cbb27d90477a0c07c6b30",
       "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "checked_at": "2026-09-28T11:26:09.639918+00:00",
+      "checked_at": "2026-09-28T11:38:46.067988+00:00",
       "pillar": "Risorse idriche e suolo",
       "url": "https://www.istat.it/dati/banche-dati/"
     },
@@ -1269,7 +1269,7 @@
         "https://www.istat.it/wp-content/uploads/2026/03/Istat-GMA2026-Tavole-1.xlsx",
         "https://www.istat.it/wp-content/uploads/2026/03/Istat-GMA2026-Mappe.xlsx"
       ],
-      "landing_sha256": "b1e697aa0c0233b31823a4d11a2a75c8eb3225ddeee1519c5b2293702d8ca441",
+      "landing_sha256": "349aad3fbd9d8be77e03e706bce7d07d50b9a5f40b6ded1d77ded1b0222d73cf",
       "note": "Tavole ufficiali Acqua 2026 acquisite; 27 serie regionali pluriennali lette da Tavola 10; 17 segnali PULSE.",
       "structured_url": "https://www.istat.it/wp-content/uploads/2026/03/Istat-GMA2026-Tavole-1.xlsx",
       "structured_format": "zip/xlsx",
@@ -1552,7 +1552,7 @@
           "territory": "Isole"
         }
       ],
-      "checked_at": "2026-09-28T11:26:14.482665+00:00",
+      "checked_at": "2026-09-28T11:38:49.616915+00:00",
       "pillar": "Risorse idriche e suolo",
       "url": "https://www.istat.it/comunicato-stampa/le-statistiche-sullacqua-anni-2023-2025/"
     },
@@ -1560,9 +1560,9 @@
       "status": "connected",
       "http_ok": true,
       "candidate_downloads": [],
-      "landing_sha256": "c2588312480b9c01733c7295fe5f5695f1dc8d0f0f456fa114c715dccc8ff506",
+      "landing_sha256": "c3278501c5d7d3cb8e9b35b63ca433068a8aff06e9e9720fbd610fc8d548f95e",
       "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "checked_at": "2026-09-28T11:26:15.537250+00:00",
+      "checked_at": "2026-09-28T11:38:51.177914+00:00",
       "pillar": "Transizione energetica",
       "url": "https://dati.terna.it/"
     }
