@@ -1,0 +1,253 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-09-28T11:00:59.033083+00:00",
+  "sources_total": 19,
+  "feed_sources": 1,
+  "connected_sources": 16,
+  "credential_required": 1,
+  "error_sources": 1,
+  "events": 3,
+  "pillars": [
+    "Crisi climatica e decarbonizzazione",
+    "Economia circolare",
+    "Mobilità sostenibile",
+    "Multi-pilastro GREEN",
+    "Risorse idriche e suolo",
+    "Transizione energetica",
+    "Tutela della biodiversità"
+  ],
+  "sources": {
+    "ACI - Open data mobilità e parco veicoli": {
+      "status": "connected",
+      "http_ok": true,
+      "candidate_downloads": [
+        "https://aci.gov.it//app/uploads/2025/05/Annuario-statistico-2025-Open-Data.zip",
+        "https://aci.gov.it//app/uploads/2026/05/Annuario-statistico-2026-OD.zip",
+        "https://aci.gov.it//app/uploads/2024/06/Annuario_Statistico-2024_OD.zip",
+        "https://aci.gov.it//app/uploads/2024/06/Annuario_Statistico-2023-OD.zip",
+        "https://aci.gov.it//app/uploads/2024/06/Annuario_Statistico-2022-OD.zip",
+        "https://aci.gov.it//app/uploads/2024/06/Annuario_Statistico-2021-OD.zip",
+        "https://aci.gov.it//app/uploads/2024/06/Annuario_Statistico-2020-OD.zip",
+        "https://aci.gov.it//app/uploads/2025/11/Autoritratto-2024-OD.zip",
+        "https://aci.gov.it//app/uploads/2024/06/Autoritratto-2023-OD.zip",
+        "https://aci.gov.it//app/uploads/2024/06/Autoritratto_2022_OD-1.zip",
+        "https://aci.gov.it//app/uploads/2024/06/Autoritratto_2021_OD.zip",
+        "https://aci.gov.it//app/uploads/2024/06/Autoritratto_2020_OD-1.zip"
+      ],
+      "landing_sha256": "f3d1b04405d6b3082986bcb6b884ff54dea6e1c7c7051fb14bdcb32ed979bd63",
+      "note": "Pagina ufficiale raggiunta; 41 download strutturati individuati automaticamente.",
+      "checked_at": "2026-09-28T11:00:17.822503+00:00",
+      "pillar": "Mobilità sostenibile",
+      "url": "https://aci.gov.it/attivita-e-progetti/studi-e-ricerche/open-data/"
+    },
+    "ARERA - Statistiche del servizio idrico": {
+      "status": "connected",
+      "http_ok": true,
+      "candidate_downloads": [
+        "https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_2021.xlsx",
+        "https://www.arera.it/allegati/dati/idr/RQSII_2020.xlsx",
+        "https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_19.xlsx",
+        "https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_18.xlsx",
+        "https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_17.xlsx"
+      ],
+      "landing_sha256": "713c364c506c50d7115f394abb7c57a2abe5aa1a5abcb2dd2f70ee6efb589ec6",
+      "note": "Pagina ufficiale raggiunta; 5 download strutturati individuati automaticamente.",
+      "checked_at": "2026-09-28T11:00:19.440840+00:00",
+      "pillar": "Risorse idriche e suolo",
+      "url": "https://www.arera.it/dati-e-statistiche/dettaglio/rqsii"
+    },
+    "Copernicus - Climate Data Store": {
+      "status": "credential_required",
+      "note": "Connettore CDS implementato: richiede CDS_API_KEY e accettazione preventiva dei termini del dataset.",
+      "checked_at": "2026-09-28T11:00:19.440883+00:00",
+      "pillar": "Crisi climatica e decarbonizzazione",
+      "url": "https://cds.climate.copernicus.eu/"
+    },
+    "EEA - Dati ambientali europei": {
+      "status": "connected",
+      "http_ok": true,
+      "candidate_downloads": [],
+      "landing_sha256": "8089a572f13a599492cf9173aa87dc41ff1d952075aa6f36ee3b330b9cbe27fd",
+      "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "checked_at": "2026-09-28T11:00:20.718629+00:00",
+      "pillar": "Crisi climatica e decarbonizzazione",
+      "url": "https://www.eea.europa.eu/en/datahub/"
+    },
+    "ENEA - Rapporto annuale efficienza energetica": {
+      "status": "connected",
+      "http_ok": true,
+      "candidate_downloads": [],
+      "landing_sha256": "55bdbbe4833caeb4158dc30b19c7e3e94a3cbe9f340a5483922c8cafdccaef89",
+      "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "checked_at": "2026-09-28T11:00:23.331280+00:00",
+      "pillar": "Transizione energetica",
+      "url": "https://www.efficienzaenergetica.enea.it/vi-segnaliamo/rapporto-annuale-sullefficienza-energetica-2026-schede-regionali.html"
+    },
+    "Eurostat - Statistiche ambientali ed energia": {
+      "status": "feed",
+      "series": [
+        {
+          "name": "Quota di energia da fonti rinnovabili",
+          "latest_period": "2025",
+          "latest_value": 20.5,
+          "unit": "PC",
+          "status": "ok"
+        },
+        {
+          "name": "Tasso di utilizzo circolare dei materiali",
+          "latest_period": "2024",
+          "latest_value": 21.6,
+          "unit": "PC",
+          "status": "ok"
+        },
+        {
+          "name": "Emissioni di gas serra",
+          "latest_period": "2024",
+          "latest_value": 299421.68,
+          "unit": "THS_T",
+          "status": "ok"
+        }
+      ],
+      "note": "3/3 dataset Eurostat collegati; 3 segnali PULSE emessi.",
+      "checked_at": "2026-09-28T11:00:26.738928+00:00",
+      "pillar": "Multi-pilastro GREEN",
+      "url": "https://ec.europa.eu/eurostat/web/environment"
+    },
+    "GSE - Statistiche delle rinnovabili": {
+      "status": "error",
+      "note": "Errore di collegamento nell'ultimo refresh: HTTP Error 403: Forbidden",
+      "checked_at": "2026-09-28T11:00:27.350439+00:00",
+      "pillar": "Transizione energetica",
+      "url": "https://www.gse.it/dati-e-scenari/statistiche"
+    },
+    "ISPRA - Catasto nazionale rifiuti": {
+      "status": "connected",
+      "http_ok": true,
+      "candidate_downloads": [],
+      "landing_sha256": "b1d583f0d58e975e450b51ac281f6f227ad204175a2ee3559b9c57b5aea84659",
+      "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "checked_at": "2026-09-28T11:00:28.926330+00:00",
+      "pillar": "Economia circolare",
+      "url": "https://www.catasto-rifiuti.isprambiente.it/index.php?pg=detComune"
+    },
+    "ISPRA - Consumo di suolo e indicatori territoriali": {
+      "status": "connected",
+      "http_ok": true,
+      "candidate_downloads": [
+        "https://www.isprambiente.gov.it/it/attivita/suolo-e-territorio/suolo/il-consumo-di-suolo/consumo_di_suolo_estratto_dati_2025_anni_2006_2024.xlsx"
+      ],
+      "landing_sha256": "095e3105c6fdea6b3c058f97ec4a1d5bbb3c5befa170ca1c40eb284d0a30438c",
+      "note": "Pagina ufficiale raggiunta; 1 download strutturati individuati automaticamente.",
+      "checked_at": "2026-09-28T11:00:34.189726+00:00",
+      "pillar": "Risorse idriche e suolo",
+      "url": "https://www.isprambiente.gov.it/it/attivita/suolo-e-territorio/suolo/il-consumo-di-suolo/i-dati-sul-consumo-di-suolo"
+    },
+    "ISPRA - IdroGEO": {
+      "status": "connected",
+      "http_ok": true,
+      "candidate_downloads": [],
+      "landing_sha256": "714ce791954d63f4184e9e173c02f660386d06045eb46731336321552b5380af",
+      "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "checked_at": "2026-09-28T11:00:37.630806+00:00",
+      "pillar": "Risorse idriche e suolo",
+      "url": "https://idrogeo.isprambiente.it/"
+    },
+    "ISPRA - Indicatori ambientali e biodiversità": {
+      "status": "connected",
+      "http_ok": true,
+      "candidate_downloads": [],
+      "landing_sha256": "e016e1bbd2a551dc4892926a9dfb5b1035b717e09aa5ae305a6e3df1061821a6",
+      "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "checked_at": "2026-09-28T11:00:39.197148+00:00",
+      "pillar": "Tutela della biodiversità",
+      "url": "https://indicatoriambientali.isprambiente.it/it/temi/biodiversita-stato-e-minacce"
+    },
+    "ISPRA - Inventario nazionale delle emissioni": {
+      "status": "connected",
+      "http_ok": true,
+      "candidate_downloads": [],
+      "landing_sha256": "3dfae7cd61538dbadf1ef32a8adabfa4777d87c425904f75fe11d12f0e96b1e9",
+      "note": "Inventario nazionale collegato; pagina e download ufficiali monitorati. La serie tabellare completa viene scoperta dal portale ISPRA.",
+      "latest_period": "2024",
+      "headline_observation": "",
+      "headline_change": "",
+      "checked_at": "2026-09-28T11:00:43.679889+00:00",
+      "pillar": "Crisi climatica e decarbonizzazione",
+      "url": "https://emissioni.sina.isprambiente.it/inventario-nazionale/"
+    },
+    "ISPRA - Risorse idriche": {
+      "status": "connected",
+      "http_ok": true,
+      "candidate_downloads": [],
+      "landing_sha256": "9fbc6b338202234229693cde11d1440cfee7c87bf5c7da94b59647974574f3f6",
+      "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "checked_at": "2026-09-28T11:00:46.589638+00:00",
+      "pillar": "Risorse idriche e suolo",
+      "url": "https://www.isprambiente.gov.it/it/istituto-informa/ricerca-comunicati/acqua"
+    },
+    "ISPRA/SNPA - Qualità dell'aria": {
+      "status": "connected",
+      "http_ok": true,
+      "candidate_downloads": [],
+      "landing_sha256": "fcef2971617265db84966c07f27d38e5ba3f9dabb90b49aed906aae027c69c74",
+      "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "checked_at": "2026-09-28T11:00:47.759841+00:00",
+      "pillar": "Crisi climatica e decarbonizzazione",
+      "url": "https://www.isprambiente.gov.it/it/banche-dati"
+    },
+    "ISTAT - Ambiente urbano": {
+      "status": "connected",
+      "http_ok": true,
+      "candidate_downloads": [],
+      "landing_sha256": "e1336e03053d2cd8c9c0e0f899df757f10caf7ec0c7ef1a95f6fcf693d82a857",
+      "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "checked_at": "2026-09-28T11:00:49.651559+00:00",
+      "pillar": "Mobilità sostenibile",
+      "url": "https://www.istat.it/dati/banche-dati/"
+    },
+    "ISTAT - Indicatori SDGs": {
+      "status": "connected",
+      "candidate_downloads": [
+        "https://www.istat.it/wp-content/uploads/2026/07/Misure-statistiche-2004-2026.xlsx",
+        "https://www.istat.it/wp-content/uploads/2026/07/Misure-statistiche-2004-2026-per-genere.xlsx",
+        "https://www.istat.it/wp-content/uploads/2026/07/Metadati-SDGs.xlsx",
+        "https://www.istat.it/wp-content/uploads/2026/07/Misure-statistiche-1995-2003.xlsx",
+        "https://www.istat.it/wp-content/uploads/2026/07/Misure-statistiche-1995-2003-per-genere.xlsx"
+      ],
+      "note": "Pagina SDGs 2026 collegata; 5 file Excel ufficiali individuati per acquisizione automatica.",
+      "checked_at": "2026-09-28T11:00:50.999511+00:00",
+      "pillar": "Multi-pilastro GREEN",
+      "url": "https://www.istat.it/statistiche-per-temi/focus/benessere-e-sostenibilita/obiettivi-di-sviluppo-sostenibile/gli-indicatori-istat/"
+    },
+    "ISTAT - Mappa dei rischi dei comuni italiani": {
+      "status": "connected",
+      "http_ok": true,
+      "candidate_downloads": [],
+      "landing_sha256": "743a9a0625915f4130d4f0871d3873478e4311ebc14e8bc5bedefa39e0c95f08",
+      "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "checked_at": "2026-09-28T11:00:52.118790+00:00",
+      "pillar": "Risorse idriche e suolo",
+      "url": "https://www.istat.it/dati/banche-dati/"
+    },
+    "ISTAT - Statistiche sull'acqua": {
+      "status": "connected",
+      "http_ok": true,
+      "candidate_downloads": [],
+      "landing_sha256": "934c84d26ddb25c13f906ca2cbefeb266159209f5ba32dd2adb908e1133fb8d0",
+      "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "checked_at": "2026-09-28T11:00:55.406095+00:00",
+      "pillar": "Risorse idriche e suolo",
+      "url": "https://www.istat.it/statistiche-per-temi/ambiente-ed-energia/acqua/"
+    },
+    "Terna - Portale Dati del sistema elettrico": {
+      "status": "connected",
+      "http_ok": true,
+      "candidate_downloads": [],
+      "landing_sha256": "6de5d62f36187bd71f65c4c3d42df9e195b72988f2c47216c99d6e08ef145ed6",
+      "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "checked_at": "2026-09-28T11:00:59.030649+00:00",
+      "pillar": "Transizione energetica",
+      "url": "https://dati.terna.it/"
+    }
+  }
+}

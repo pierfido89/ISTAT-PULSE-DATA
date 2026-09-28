@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 4,
   "title": "Fonti dati di ISTAT PULSE",
   "sources": [
     {
@@ -184,6 +184,314 @@
       "url": "https://noi-italia.istat.it/home.php",
       "feed_status": "Database ufficiale acquisito: 3151 ultimi valori territoriali verificati. Le serie storiche alimentano anche il motore dei pattern annuali.",
       "notes": "Il periodo statistico originale resta esplicito; i segnali storici non vengono presentati come notizie del 2026."
+    },
+    {
+      "name": "ACI - Open data mobilità e parco veicoli",
+      "category": "GREEN_IT",
+      "topics": [
+        "MOBILITA"
+      ],
+      "official": true,
+      "url": "https://aci.gov.it/attivita-e-progetti/studi-e-ricerche/open-data/",
+      "green_pillar": "Mobilità sostenibile",
+      "integration_status": "connected",
+      "feed_status": "Collegata · acquisizione/probe automatico attivo",
+      "notes": "Pagina ufficiale raggiunta; 41 download strutturati individuati automaticamente.",
+      "level": "Secondo dataset ufficiale",
+      "frequency": "Secondo aggiornamento della fonte"
+    },
+    {
+      "name": "ARERA - Statistiche del servizio idrico",
+      "category": "GREEN_IT",
+      "topics": [
+        "ACQUA"
+      ],
+      "official": true,
+      "url": "https://www.arera.it/dati-e-statistiche/dettaglio/rqsii",
+      "green_pillar": "Risorse idriche e suolo",
+      "integration_status": "connected",
+      "feed_status": "Collegata · acquisizione/probe automatico attivo",
+      "notes": "Pagina ufficiale raggiunta; 5 download strutturati individuati automaticamente.",
+      "level": "Secondo dataset ufficiale",
+      "frequency": "Secondo aggiornamento della fonte"
+    },
+    {
+      "name": "Copernicus - Climate Data Store",
+      "category": "GREEN_EU",
+      "topics": [
+        "CLIMA"
+      ],
+      "official": true,
+      "url": "https://cds.climate.copernicus.eu/",
+      "green_pillar": "Crisi climatica e decarbonizzazione",
+      "integration_status": "credential_required",
+      "feed_status": "Connettore pronto · credenziali ufficiali richieste",
+      "notes": "Connettore CDS implementato: richiede CDS_API_KEY e accettazione preventiva dei termini del dataset.",
+      "level": "Secondo dataset ufficiale",
+      "frequency": "Secondo aggiornamento della fonte"
+    },
+    {
+      "name": "EEA - Dati ambientali europei",
+      "category": "GREEN_EU",
+      "topics": [
+        "CLIMA"
+      ],
+      "official": true,
+      "url": "https://www.eea.europa.eu/en/datahub/",
+      "green_pillar": "Crisi climatica e decarbonizzazione",
+      "integration_status": "connected",
+      "feed_status": "Collegata · acquisizione/probe automatico attivo",
+      "notes": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "level": "Secondo dataset ufficiale",
+      "frequency": "Secondo aggiornamento della fonte"
+    },
+    {
+      "name": "ENEA - Rapporto annuale efficienza energetica",
+      "category": "GREEN_IT",
+      "topics": [
+        "ENERGIA"
+      ],
+      "official": true,
+      "url": "https://www.efficienzaenergetica.enea.it/vi-segnaliamo/rapporto-annuale-sullefficienza-energetica-2026-schede-regionali.html",
+      "green_pillar": "Transizione energetica",
+      "integration_status": "connected",
+      "feed_status": "Collegata · acquisizione/probe automatico attivo",
+      "notes": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "level": "Secondo dataset ufficiale",
+      "frequency": "Secondo aggiornamento della fonte"
+    },
+    {
+      "name": "Eurostat - Statistiche ambientali ed energia",
+      "category": "GREEN_EU",
+      "topics": [
+        "MULTITEMA"
+      ],
+      "official": true,
+      "url": "https://ec.europa.eu/eurostat/web/environment",
+      "green_pillar": "Multi-pilastro GREEN",
+      "integration_status": "feed",
+      "feed_status": "Attiva in GREEN · dati acquisiti e segnali PULSE disponibili",
+      "notes": "3/3 dataset Eurostat collegati; 3 segnali PULSE emessi.",
+      "level": "Secondo dataset ufficiale",
+      "frequency": "Secondo aggiornamento della fonte",
+      "provides": [
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Quota di energia da fonti rinnovabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Tasso di utilizzo circolare dei materiali",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Emissioni di gas serra",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        }
+      ]
+    },
+    {
+      "name": "GSE - Statistiche delle rinnovabili",
+      "category": "GREEN_IT",
+      "topics": [
+        "ENERGIA"
+      ],
+      "official": true,
+      "url": "https://www.gse.it/dati-e-scenari/statistiche",
+      "green_pillar": "Transizione energetica",
+      "integration_status": "error",
+      "feed_status": "Connettore presente · ultimo aggiornamento fallito",
+      "notes": "Errore di collegamento nell'ultimo refresh: HTTP Error 403: Forbidden",
+      "level": "Secondo dataset ufficiale",
+      "frequency": "Secondo aggiornamento della fonte"
+    },
+    {
+      "name": "ISPRA - Catasto nazionale rifiuti",
+      "category": "GREEN_IT",
+      "topics": [
+        "CIRCOLARE"
+      ],
+      "official": true,
+      "url": "https://www.catasto-rifiuti.isprambiente.it/index.php?pg=detComune",
+      "green_pillar": "Economia circolare",
+      "integration_status": "connected",
+      "feed_status": "Collegata · acquisizione/probe automatico attivo",
+      "notes": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "level": "Secondo dataset ufficiale",
+      "frequency": "Secondo aggiornamento della fonte"
+    },
+    {
+      "name": "ISPRA - Consumo di suolo e indicatori territoriali",
+      "category": "GREEN_IT",
+      "topics": [
+        "SUOLO"
+      ],
+      "official": true,
+      "url": "https://www.isprambiente.gov.it/it/attivita/suolo-e-territorio/suolo/il-consumo-di-suolo/i-dati-sul-consumo-di-suolo",
+      "green_pillar": "Risorse idriche e suolo",
+      "integration_status": "connected",
+      "feed_status": "Collegata · acquisizione/probe automatico attivo",
+      "notes": "Pagina ufficiale raggiunta; 1 download strutturati individuati automaticamente.",
+      "level": "Secondo dataset ufficiale",
+      "frequency": "Secondo aggiornamento della fonte"
+    },
+    {
+      "name": "ISPRA - IdroGEO",
+      "category": "GREEN_IT",
+      "topics": [
+        "SUOLO"
+      ],
+      "official": true,
+      "url": "https://idrogeo.isprambiente.it/",
+      "green_pillar": "Risorse idriche e suolo",
+      "integration_status": "connected",
+      "feed_status": "Collegata · acquisizione/probe automatico attivo",
+      "notes": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "level": "Secondo dataset ufficiale",
+      "frequency": "Secondo aggiornamento della fonte"
+    },
+    {
+      "name": "ISPRA - Indicatori ambientali e biodiversità",
+      "category": "GREEN_IT",
+      "topics": [
+        "BIODIVERSITA"
+      ],
+      "official": true,
+      "url": "https://indicatoriambientali.isprambiente.it/it/temi/biodiversita-stato-e-minacce",
+      "green_pillar": "Tutela della biodiversità",
+      "integration_status": "connected",
+      "feed_status": "Collegata · acquisizione/probe automatico attivo",
+      "notes": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "level": "Secondo dataset ufficiale",
+      "frequency": "Secondo aggiornamento della fonte"
+    },
+    {
+      "name": "ISPRA - Inventario nazionale delle emissioni",
+      "category": "GREEN_IT",
+      "topics": [
+        "CLIMA"
+      ],
+      "official": true,
+      "url": "https://emissioni.sina.isprambiente.it/inventario-nazionale/",
+      "green_pillar": "Crisi climatica e decarbonizzazione",
+      "integration_status": "connected",
+      "feed_status": "Collegata · acquisizione/probe automatico attivo",
+      "notes": "Inventario nazionale collegato; pagina e download ufficiali monitorati. La serie tabellare completa viene scoperta dal portale ISPRA.",
+      "level": "Secondo dataset ufficiale",
+      "frequency": "Secondo aggiornamento della fonte"
+    },
+    {
+      "name": "ISPRA - Risorse idriche",
+      "category": "GREEN_IT",
+      "topics": [
+        "ACQUA"
+      ],
+      "official": true,
+      "url": "https://www.isprambiente.gov.it/it/istituto-informa/ricerca-comunicati/acqua",
+      "green_pillar": "Risorse idriche e suolo",
+      "integration_status": "connected",
+      "feed_status": "Collegata · acquisizione/probe automatico attivo",
+      "notes": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "level": "Secondo dataset ufficiale",
+      "frequency": "Secondo aggiornamento della fonte"
+    },
+    {
+      "name": "ISPRA/SNPA - Qualità dell'aria",
+      "category": "GREEN_IT",
+      "topics": [
+        "CLIMA"
+      ],
+      "official": true,
+      "url": "https://www.isprambiente.gov.it/it/banche-dati",
+      "green_pillar": "Crisi climatica e decarbonizzazione",
+      "integration_status": "connected",
+      "feed_status": "Collegata · acquisizione/probe automatico attivo",
+      "notes": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "level": "Secondo dataset ufficiale",
+      "frequency": "Secondo aggiornamento della fonte"
+    },
+    {
+      "name": "ISTAT - Ambiente urbano",
+      "category": "ISTAT",
+      "topics": [
+        "GREEN"
+      ],
+      "official": true,
+      "url": "https://www.istat.it/dati/banche-dati/",
+      "green_pillar": "Mobilità sostenibile",
+      "integration_status": "connected",
+      "feed_status": "Collegata · acquisizione/probe automatico attivo",
+      "notes": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "level": "Secondo dataset ufficiale",
+      "frequency": "Secondo aggiornamento della fonte"
+    },
+    {
+      "name": "ISTAT - Indicatori SDGs",
+      "category": "ISTAT",
+      "topics": [
+        "GREEN"
+      ],
+      "official": true,
+      "url": "https://www.istat.it/statistiche-per-temi/focus/benessere-e-sostenibilita/obiettivi-di-sviluppo-sostenibile/gli-indicatori-istat/",
+      "green_pillar": "Multi-pilastro GREEN",
+      "integration_status": "connected",
+      "feed_status": "Collegata · acquisizione/probe automatico attivo",
+      "notes": "Pagina SDGs 2026 collegata; 5 file Excel ufficiali individuati per acquisizione automatica.",
+      "level": "Secondo dataset ufficiale",
+      "frequency": "Secondo aggiornamento della fonte"
+    },
+    {
+      "name": "ISTAT - Mappa dei rischi dei comuni italiani",
+      "category": "ISTAT",
+      "topics": [
+        "GREEN"
+      ],
+      "official": true,
+      "url": "https://www.istat.it/dati/banche-dati/",
+      "green_pillar": "Risorse idriche e suolo",
+      "integration_status": "connected",
+      "feed_status": "Collegata · acquisizione/probe automatico attivo",
+      "notes": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "level": "Secondo dataset ufficiale",
+      "frequency": "Secondo aggiornamento della fonte"
+    },
+    {
+      "name": "ISTAT - Statistiche sull'acqua",
+      "category": "ISTAT",
+      "topics": [
+        "GREEN"
+      ],
+      "official": true,
+      "url": "https://www.istat.it/statistiche-per-temi/ambiente-ed-energia/acqua/",
+      "green_pillar": "Risorse idriche e suolo",
+      "integration_status": "connected",
+      "feed_status": "Collegata · acquisizione/probe automatico attivo",
+      "notes": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "level": "Secondo dataset ufficiale",
+      "frequency": "Secondo aggiornamento della fonte"
+    },
+    {
+      "name": "Terna - Portale Dati del sistema elettrico",
+      "category": "GREEN_IT",
+      "topics": [
+        "ENERGIA"
+      ],
+      "official": true,
+      "url": "https://dati.terna.it/",
+      "green_pillar": "Transizione energetica",
+      "integration_status": "connected",
+      "feed_status": "Collegata · acquisizione/probe automatico attivo",
+      "notes": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "level": "Secondo dataset ufficiale",
+      "frequency": "Secondo aggiornamento della fonte"
     }
   ]
 }
