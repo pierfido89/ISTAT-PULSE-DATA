@@ -3,19 +3,6 @@
   "title": "Fonti dati di ISTAT PULSE",
   "sources": [
     {
-      "name": "A misura di Comune — ISTAT",
-      "level": "Comunale, provinciale e regionale",
-      "frequency": "Secondo indicatore",
-      "provides": [
-        "Indicatori socio-demografici, economici, ambientali e territoriali."
-      ],
-      "official": true,
-      "url": "https://www.istat.it/statistica-sperimentale/aggiornamento-degli-indicatori-del-sistema-informativo-a-misura-di-comune/",
-      "feed_status": "Prime tavole ufficiali importate e verificate: 121 valori regionali. Ampliamento a tutti i comuni in corso.",
-      "notes": "Famiglie, istruzione, redditi e ambiente: leggere sempre l'anno del dato nel catalogo osservato.",
-      "integration_status": "partial"
-    },
-    {
       "name": "ACI - Open data mobilità e parco veicoli",
       "category": "GREEN_IT",
       "topics": [
@@ -50,19 +37,6 @@
       "frequency": "Secondo aggiornamento della fonte"
     },
     {
-      "name": "BES dei territori — ISTAT",
-      "level": "Regionale e provinciale",
-      "frequency": "Annuale",
-      "provides": [
-        "Benessere, salute, istruzione, lavoro, ambiente e qualità dei servizi."
-      ],
-      "official": true,
-      "url": "https://www.istat.it/comunicato-territoriale/il-benessere-equo-e-sostenibile-dei-territori-report-regionali-anno-2025/",
-      "feed_status": "Archivio ufficiale consultabile · fuori dal feed corrente",
-      "notes": "I dati annuali del 2024/2025 non vengono presentati come notizie attuali.",
-      "integration_status": "archive"
-    },
-    {
       "name": "Copernicus - Climate Data Store",
       "category": "GREEN_EU",
       "topics": [
@@ -78,24 +52,6 @@
       "notes": "Connettore CDS implementato: richiede CDS_API_KEY e accettazione preventiva dei termini del dataset.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte"
-    },
-    {
-      "name": "DEMO ISTAT — Bilancio demografico mensile",
-      "level": "Comunale",
-      "frequency": "Mensile",
-      "provides": [
-        "Nati vivi",
-        "Morti",
-        "Immigrati da altro comune",
-        "Emigrati per altro comune",
-        "Immigrati dall'estero",
-        "Emigrati per l'estero"
-      ],
-      "official": true,
-      "notes": "Fonte attiva nel feed corrente. I dati comunali più recenti possono essere indicati da ISTAT come provvisori.",
-      "url": "https://demo.istat.it/app/?i=D7B",
-      "feed_status": "Attiva nel Radar · notizie riferite all'anno del fenomeno",
-      "integration_status": "feed"
     },
     {
       "name": "EEA - Dati ambientali europei",
@@ -466,6 +422,20 @@
       "frequency": "Secondo aggiornamento della fonte"
     },
     {
+      "name": "ISTAT - A misura di Comune",
+      "level": "Comunale, provinciale e regionale",
+      "frequency": "Secondo indicatore",
+      "provides": [
+        "Indicatori socio-demografici, economici, ambientali e territoriali."
+      ],
+      "official": true,
+      "url": "https://www.istat.it/statistica-sperimentale/aggiornamento-degli-indicatori-del-sistema-informativo-a-misura-di-comune/",
+      "feed_status": "Prime tavole ufficiali importate e verificate: 121 valori regionali. Ampliamento a tutti i comuni in corso.",
+      "notes": "Famiglie, istruzione, redditi e ambiente: leggere sempre l'anno del dato nel catalogo osservato.",
+      "integration_status": "partial",
+      "category": "ISTAT"
+    },
+    {
       "name": "ISTAT - Ambiente urbano",
       "category": "ISTAT",
       "topics": [
@@ -481,6 +451,39 @@
       "notes": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte"
+    },
+    {
+      "name": "ISTAT - BES dei territori",
+      "level": "Regionale e provinciale",
+      "frequency": "Annuale",
+      "provides": [
+        "Benessere, salute, istruzione, lavoro, ambiente e qualità dei servizi."
+      ],
+      "official": true,
+      "url": "https://www.istat.it/comunicato-territoriale/il-benessere-equo-e-sostenibile-dei-territori-report-regionali-anno-2025/",
+      "feed_status": "Archivio ufficiale consultabile · fuori dal feed corrente",
+      "notes": "I dati annuali del 2024/2025 non vengono presentati come notizie attuali.",
+      "integration_status": "archive",
+      "category": "ISTAT"
+    },
+    {
+      "name": "ISTAT - DEMO - Bilancio demografico mensile",
+      "level": "Comunale",
+      "frequency": "Mensile",
+      "provides": [
+        "Nati vivi",
+        "Morti",
+        "Immigrati da altro comune",
+        "Emigrati per altro comune",
+        "Immigrati dall'estero",
+        "Emigrati per l'estero"
+      ],
+      "official": true,
+      "notes": "Fonte attiva nel feed corrente. I dati comunali più recenti possono essere indicati da ISTAT come provvisori.",
+      "url": "https://demo.istat.it/app/?i=D7B",
+      "feed_status": "Attiva nel Radar · notizie riferite all'anno del fenomeno",
+      "integration_status": "feed",
+      "category": "ISTAT"
     },
     {
       "name": "ISTAT - Indicatori SDGs",
@@ -999,6 +1002,138 @@
       ]
     },
     {
+      "name": "ISTAT - IstatData SDMX",
+      "level": "Prevalentemente nazionale",
+      "frequency": "Mensile e trimestrale",
+      "provides": [
+        {
+          "area": "Prezzi e inflazione",
+          "series": "Prezzi al consumo NIC",
+          "description": "Indice generale mensile dei prezzi al consumo per l'intera collettività.",
+          "latest_period": "2026-08",
+          "status": "ok"
+        },
+        {
+          "area": "Lavoro e mercato del lavoro",
+          "series": "Tasso di disoccupazione",
+          "description": "Tasso di disoccupazione mensile nazionale.",
+          "latest_period": "2026-07",
+          "status": "ok"
+        },
+        {
+          "area": "Lavoro e mercato del lavoro",
+          "series": "Tasso di occupazione",
+          "description": "Tasso di occupazione mensile nazionale.",
+          "latest_period": "2026-07",
+          "status": "ok"
+        },
+        {
+          "area": "Lavoro e mercato del lavoro",
+          "series": "Occupati",
+          "description": "Numero mensile di occupati a livello nazionale.",
+          "latest_period": "2026-07",
+          "status": "ok"
+        },
+        {
+          "area": "Lavoro e mercato del lavoro",
+          "series": "Posizioni lavorative dipendenti",
+          "description": "Indice trimestrale delle posizioni lavorative dipendenti.",
+          "latest_period": "2026-Q2",
+          "status": "ok"
+        },
+        {
+          "area": "Imprese e industria",
+          "series": "Produzione industriale",
+          "description": "Indice mensile della produzione industriale, base 2021.",
+          "latest_period": "2026-07",
+          "status": "monitored_no_signal"
+        },
+        {
+          "area": "Imprese e industria",
+          "series": "Fatturato industriale",
+          "description": "Indice mensile del valore del fatturato industriale, base 2021.",
+          "latest_period": "2026-06",
+          "status": "ok"
+        },
+        {
+          "area": "Imprese e industria",
+          "series": "Fatturato dei servizi",
+          "description": "Indice mensile del fatturato dei servizi, base 2021.",
+          "latest_period": "2026-06",
+          "status": "monitored_no_signal"
+        },
+        {
+          "area": "Potere d'acquisto e consumi",
+          "series": "Vendite al dettaglio",
+          "description": "Indice mensile del volume delle vendite al dettaglio, base 2021.",
+          "latest_period": "2026-07",
+          "status": "ok"
+        },
+        {
+          "area": "Imprese e industria",
+          "series": "Clima di fiducia delle imprese",
+          "description": "Indice mensile sintetico del clima di fiducia delle imprese.",
+          "latest_period": "2026-08",
+          "status": "ok"
+        },
+        {
+          "area": "Imprese e industria",
+          "series": "Fiducia delle costruzioni",
+          "description": "Indice mensile di fiducia delle imprese delle costruzioni.",
+          "latest_period": "2026-08",
+          "status": "ok"
+        },
+        {
+          "area": "Imprese e industria",
+          "series": "Fiducia del commercio",
+          "description": "Indice mensile di fiducia delle imprese del commercio al dettaglio.",
+          "latest_period": "2026-08",
+          "status": "monitored_no_signal"
+        },
+        {
+          "area": "Potere d'acquisto e consumi",
+          "series": "Fiducia dei consumatori",
+          "description": "Indice mensile del clima di fiducia dei consumatori.",
+          "latest_period": "2026-08",
+          "status": "ok"
+        },
+        {
+          "area": "Prezzi e inflazione",
+          "series": "Prezzi alla produzione dell'industria",
+          "description": "Indice mensile dei prezzi alla produzione dell'industria, base 2021.",
+          "latest_period": "2026-07",
+          "status": "ok"
+        },
+        {
+          "area": "Prezzi e inflazione",
+          "series": "Prezzi all'importazione",
+          "description": "Indice mensile dei prezzi all'importazione, base 2021.",
+          "latest_period": "2026-07",
+          "status": "ok"
+        },
+        {
+          "area": "Turismo",
+          "series": "Arrivi turistici",
+          "description": "Arrivi mensili negli esercizi ricettivi italiani.",
+          "latest_period": "2026-07",
+          "status": "monitored_no_signal"
+        },
+        {
+          "area": "Turismo",
+          "series": "Presenze turistiche",
+          "description": "Presenze mensili negli esercizi ricettivi italiani.",
+          "latest_period": "2026-07",
+          "status": "ok"
+        }
+      ],
+      "official": true,
+      "notes": "Fonte attiva nel feed corrente. Serie congiunturali ufficiali interrogate tramite servizio SDMX IstatData.",
+      "url": "https://esploradati.istat.it/SDMXWS/",
+      "feed_status": "Attiva nel Radar",
+      "integration_status": "feed",
+      "category": "ISTAT"
+    },
+    {
       "name": "ISTAT - Mappa dei rischi dei comuni italiani",
       "category": "ISTAT",
       "topics": [
@@ -1014,6 +1149,20 @@
       "notes": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte"
+    },
+    {
+      "name": "ISTAT - Noi Italia",
+      "level": "Italia, regioni ed Europa",
+      "frequency": "Annuale",
+      "provides": [
+        "Oltre 100 statistiche tematiche sull'Italia e sui suoi territori."
+      ],
+      "official": true,
+      "url": "https://noi-italia.istat.it/home.php",
+      "feed_status": "Database ufficiale acquisito: 3151 ultimi valori territoriali verificati. Le serie storiche alimentano anche il motore dei pattern annuali.",
+      "notes": "Il periodo statistico originale resta esplicito; i segnali storici non vengono presentati come notizie del 2026.",
+      "integration_status": "archive",
+      "category": "ISTAT"
     },
     {
       "name": "ISTAT - Statistiche sull'acqua",
@@ -1222,150 +1371,6 @@
           "status": "ok"
         }
       ]
-    },
-    {
-      "name": "IstatData SDMX — ISTAT",
-      "level": "Prevalentemente nazionale",
-      "frequency": "Mensile e trimestrale",
-      "provides": [
-        {
-          "area": "Prezzi e inflazione",
-          "series": "Prezzi al consumo NIC",
-          "description": "Indice generale mensile dei prezzi al consumo per l'intera collettività.",
-          "latest_period": "2026-08",
-          "status": "ok"
-        },
-        {
-          "area": "Lavoro e mercato del lavoro",
-          "series": "Tasso di disoccupazione",
-          "description": "Tasso di disoccupazione mensile nazionale.",
-          "latest_period": "2026-07",
-          "status": "ok"
-        },
-        {
-          "area": "Lavoro e mercato del lavoro",
-          "series": "Tasso di occupazione",
-          "description": "Tasso di occupazione mensile nazionale.",
-          "latest_period": "2026-07",
-          "status": "ok"
-        },
-        {
-          "area": "Lavoro e mercato del lavoro",
-          "series": "Occupati",
-          "description": "Numero mensile di occupati a livello nazionale.",
-          "latest_period": "2026-07",
-          "status": "ok"
-        },
-        {
-          "area": "Lavoro e mercato del lavoro",
-          "series": "Posizioni lavorative dipendenti",
-          "description": "Indice trimestrale delle posizioni lavorative dipendenti.",
-          "latest_period": "2026-Q2",
-          "status": "ok"
-        },
-        {
-          "area": "Imprese e industria",
-          "series": "Produzione industriale",
-          "description": "Indice mensile della produzione industriale, base 2021.",
-          "latest_period": "2026-07",
-          "status": "monitored_no_signal"
-        },
-        {
-          "area": "Imprese e industria",
-          "series": "Fatturato industriale",
-          "description": "Indice mensile del valore del fatturato industriale, base 2021.",
-          "latest_period": "2026-06",
-          "status": "ok"
-        },
-        {
-          "area": "Imprese e industria",
-          "series": "Fatturato dei servizi",
-          "description": "Indice mensile del fatturato dei servizi, base 2021.",
-          "latest_period": "2026-06",
-          "status": "monitored_no_signal"
-        },
-        {
-          "area": "Potere d'acquisto e consumi",
-          "series": "Vendite al dettaglio",
-          "description": "Indice mensile del volume delle vendite al dettaglio, base 2021.",
-          "latest_period": "2026-07",
-          "status": "ok"
-        },
-        {
-          "area": "Imprese e industria",
-          "series": "Clima di fiducia delle imprese",
-          "description": "Indice mensile sintetico del clima di fiducia delle imprese.",
-          "latest_period": "2026-08",
-          "status": "ok"
-        },
-        {
-          "area": "Imprese e industria",
-          "series": "Fiducia delle costruzioni",
-          "description": "Indice mensile di fiducia delle imprese delle costruzioni.",
-          "latest_period": "2026-08",
-          "status": "ok"
-        },
-        {
-          "area": "Imprese e industria",
-          "series": "Fiducia del commercio",
-          "description": "Indice mensile di fiducia delle imprese del commercio al dettaglio.",
-          "latest_period": "2026-08",
-          "status": "monitored_no_signal"
-        },
-        {
-          "area": "Potere d'acquisto e consumi",
-          "series": "Fiducia dei consumatori",
-          "description": "Indice mensile del clima di fiducia dei consumatori.",
-          "latest_period": "2026-08",
-          "status": "ok"
-        },
-        {
-          "area": "Prezzi e inflazione",
-          "series": "Prezzi alla produzione dell'industria",
-          "description": "Indice mensile dei prezzi alla produzione dell'industria, base 2021.",
-          "latest_period": "2026-07",
-          "status": "ok"
-        },
-        {
-          "area": "Prezzi e inflazione",
-          "series": "Prezzi all'importazione",
-          "description": "Indice mensile dei prezzi all'importazione, base 2021.",
-          "latest_period": "2026-07",
-          "status": "ok"
-        },
-        {
-          "area": "Turismo",
-          "series": "Arrivi turistici",
-          "description": "Arrivi mensili negli esercizi ricettivi italiani.",
-          "latest_period": "2026-07",
-          "status": "monitored_no_signal"
-        },
-        {
-          "area": "Turismo",
-          "series": "Presenze turistiche",
-          "description": "Presenze mensili negli esercizi ricettivi italiani.",
-          "latest_period": "2026-07",
-          "status": "ok"
-        }
-      ],
-      "official": true,
-      "notes": "Fonte attiva nel feed corrente. Serie congiunturali ufficiali interrogate tramite servizio SDMX IstatData.",
-      "url": "https://esploradati.istat.it/SDMXWS/",
-      "feed_status": "Attiva nel Radar",
-      "integration_status": "feed"
-    },
-    {
-      "name": "Noi Italia — ISTAT",
-      "level": "Italia, regioni ed Europa",
-      "frequency": "Annuale",
-      "provides": [
-        "Oltre 100 statistiche tematiche sull'Italia e sui suoi territori."
-      ],
-      "official": true,
-      "url": "https://noi-italia.istat.it/home.php",
-      "feed_status": "Database ufficiale acquisito: 3151 ultimi valori territoriali verificati. Le serie storiche alimentano anche il motore dei pattern annuali.",
-      "notes": "Il periodo statistico originale resta esplicito; i segnali storici non vengono presentati come notizie del 2026.",
-      "integration_status": "archive"
     },
     {
       "name": "Terna - Portale Dati del sistema elettrico",
