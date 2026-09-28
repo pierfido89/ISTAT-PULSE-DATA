@@ -340,7 +340,10 @@ def _read_rifiuti_year(year):
     raw,final,_=fetch(url)
     text=raw.decode("utf-8-sig","replace")
     # First line is a title; header follows.
-    df=pd.read_csv(io.StringIO(text),sep=";",skiprows=1,dtype=str,low_memory=False)
+    df=pd.read_csv(
+        io.StringIO(text),sep=";",skiprows=1,dtype=str,low_memory=False,
+        index_col=False,engine="python"
+    )
     return df,final
 
 def adapter_isprarifiuti():
@@ -359,20 +362,26 @@ def adapter_isprarifiuti():
                 # choose the shortest RD-looking column to avoid material subcomponents.
                 cand=[c for c in cols if "rd" in c.lower() and ("%" in c or "percent" in c.lower())]
                 c_rd=min(cand,key=len) if cand else None
-            c_pc=next((c for c in cols if "pro capite" in c.lower() and ("ru" in c.lower() or "produzione" in c.lower())),None)
+            c_pop=find_col(cols,"Popolazione")
+            c_ru=next((c for c in cols if clean_text(c).lower()=="totale ru (t)"),None)
             if not c_com or not c_reg: continue
             for _,r in df.iterrows():
                 reg=norm_region(r.get(c_reg)); com=clean_text(r.get(c_com)); prov=clean_text(r.get(c_prov))
                 if not reg or not com: continue
-                for ind,c,u in [
-                    ("Raccolta differenziata dei rifiuti urbani",c_rd,"%"),
-                    ("Produzione pro capite di rifiuti urbani",c_pc,"kg/ab"),
-                ]:
-                    v=to_float(r.get(c)) if c else None
-                    if v is not None:
-                        obs.append(Observation(PILLAR_CIRCULAR,name,url,"COMUNE",com,ind,u,str(year),v,
-                            region=reg,province=prov,municipality_code=clean_text(r.get(c_code)) if c_code else "",
-                            note="Catasto nazionale rifiuti ISPRA, download comunale annuale."))
+                code=clean_text(r.get(c_code)) if c_code else ""
+                rd=to_float(r.get(c_rd)) if c_rd else None
+                if rd is not None:
+                    obs.append(Observation(PILLAR_CIRCULAR,name,url,"COMUNE",com,
+                        "Raccolta differenziata dei rifiuti urbani","%",str(year),rd,
+                        region=reg,province=prov,municipality_code=code,
+                        note="Catasto nazionale rifiuti ISPRA, download comunale annuale."))
+                pop=to_float(r.get(c_pop)) if c_pop else None
+                ru=to_float(r.get(c_ru)) if c_ru else None
+                if pop and pop>0 and ru is not None:
+                    obs.append(Observation(PILLAR_CIRCULAR,name,url,"COMUNE",com,
+                        "Produzione pro capite di rifiuti urbani","kg/ab",str(year),ru*1000.0/pop,
+                        region=reg,province=prov,municipality_code=code,
+                        note="Calcolo PULSE: Totale RU (tonnellate) × 1000 / popolazione, su dati ISPRA."))
         except Exception as exc: print("  RIFIUTI",year,repr(exc))
     return result(name,"live" if len(obs)>1000 else "partial",obs,f"{len(obs)} osservazioni comunali 2018-2024","direct",
         "https://www.catasto-rifiuti.isprambiente.it/index.php?advice=si&pg=downloadComune")
@@ -549,27 +558,32 @@ def adapter_waterresources():
 def _air_trend(url,indicator,source_name):
     raw,final,_=fetch(url)
     xls=pd.ExcelFile(io.BytesIO(raw),engine="openpyxl")
+    sheet=next(sh for sh in xls.sheet_names if "Trend" in sh)
+    df=pd.read_excel(io.BytesIO(raw),sheet_name=sheet,header=0,engine="openpyxl")
+    # ISPRA publishes one row per monitoring station. Duplicate headers are
+    # de-duplicated by pandas (pendenza, pendenza.1): the second is %/year.
+    c_reg=find_col(df.columns,"Regione")
+    c_prov=find_col(df.columns,"Provincia")
+    c_com=find_col(df.columns,"Comune")
+    c_station=find_col(df.columns,"id_stazione")
+    c_trend=find_col(df.columns,"Tendenza")
+    pct_candidates=[c for c in df.columns if str(c).startswith("pendenza.")]
+    c_pct=pct_candidates[-1] if pct_candidates else None
+    if c_pct is None:
+        # fallback: second numeric slope-like column
+        slopes=[c for c in df.columns if "pendenza" in str(c).lower()]
+        c_pct=slopes[-1] if slopes else None
     obs=[]
-    for sh in xls.sheet_names:
-        df=pd.read_excel(io.BytesIO(raw),sheet_name=sh,header=None,engine="openpyxl")
-        # detect year columns
-        best=None
-        for i,row in df.head(30).iterrows():
-            pairs=[(j,clean_text(v)) for j,v in enumerate(row) if re.fullmatch(r"20(?:1[5-9]|2[0-4])",clean_text(v))]
-            if len(pairs)>=4:
-                best=(i,pairs);break
-        if not best:continue
-        hi,pairs=best
-        # Find a row label / station and aggregate national median for each year.
-        for j,y in pairs:
-            vals=[]
-            for i in range(hi+1,len(df)):
-                v=to_float(df.iloc[i,j])
-                if v is not None: vals.append(v)
-            if len(vals)>=5:
-                obs.append(Observation(PILLAR_CLIMATE,source_name,final,"ITALIA","Italia",indicator,"µg/m³",y,float(np.median(vals)),region="Italia",
-                    note="Mediana PULSE delle stazioni con serie valida nel file trend ISPRA; non è una media di esposizione della popolazione."))
-        if obs:break
+    for _,r in df.iloc[1:].iterrows():
+        reg=norm_region(r.get(c_reg)); com=clean_text(r.get(c_com)); prov=clean_text(r.get(c_prov))
+        v=to_float(r.get(c_pct)) if c_pct else None
+        if not reg or not com or v is None: continue
+        trend=clean_text(r.get(c_trend))
+        obs.append(Observation(
+            PILLAR_CLIMATE,source_name,final,"COMUNE",com,indicator,"%/anno","2024",v,
+            region=reg,province=prov,municipality_code="",
+            note=f"Trend ISPRA 2015-2024 per stazione; tendenza: {trend}. Il valore è la variazione percentuale annua stimata, non la concentrazione media."
+        ))
     return obs
 
 def adapter_air():
