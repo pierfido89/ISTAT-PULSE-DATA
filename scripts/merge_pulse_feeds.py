@@ -12,6 +12,7 @@ import pandas as pd
 ASSETS=Path("app/src/main/assets")
 DEMO=ASSETS/"pulse_events_demo.tsv"
 SDMX=ASSETS/"pulse_events_sdmx.tsv"
+GREEN=Path("data/pulse_events_green.tsv")
 OUT=ASSETS/"pulse_events.tsv"
 MANIFEST=ASSETS/"pulse_manifest.json"
 SDMX_META=ASSETS/"pulse_sdmx_meta.json"
@@ -36,16 +37,20 @@ def read(path: Path, label: str) -> pd.DataFrame:
 def main():
     demo=read(DEMO,"DEMO")
     sdmx=read(SDMX,"SDMX")
-    combined=pd.concat([demo,sdmx],ignore_index=True)
+    green=read(GREEN,"GREEN")
+    current=pd.concat([demo,sdmx],ignore_index=True)
 
-    # The home feed is a CURRENT radar, not an historical archive.
+    # The general news feed is a CURRENT radar, not an historical archive.
+    # GREEN is a separate vertical: its latest official environmental period
+    # may legitimately be 2024/2025 and must remain explicit rather than be
+    # relabelled as current news.
     # Keep only events whose trigger period belongs to the latest year available.
-    combined["_year"]=combined["period"].astype(str).str.extract(r"^(\d{4})",expand=False)
-    valid_years=pd.to_numeric(combined["_year"],errors="coerce").dropna()
+    current["_year"]=current["period"].astype(str).str.extract(r"^(\d{4})",expand=False)
+    valid_years=pd.to_numeric(current["_year"],errors="coerce").dropna()
     if valid_years.empty:
         raise RuntimeError("No valid event years found in PULSE feed")
     current_year=int(valid_years.max())
-    combined=combined[combined["_year"].eq(str(current_year))].copy()
+    combined=combined[current["_year"].eq(str(current_year))].copy()
 
     # Il periodo dell'estrazione NON e' il periodo della notizia.
     # Il bilancio DEMO 2026 puo' contenere un'inversione calcolata sul 2025:
@@ -57,25 +62,27 @@ def main():
 
     combined=combined.drop_duplicates(subset=["id"],keep="first")
     combined=combined.sort_values(["score_num","period"],ascending=[False,False])
-    combined=combined.drop(columns=["score_num","_year"])
+    combined=combined.drop(columns=["score_num","_year"],errors="ignore")
     combined.to_csv(OUT,sep="\t",index=False)
 
     manifest=json.loads(MANIFEST.read_text(encoding="utf-8"))
     sdmx_meta=json.loads(SDMX_META.read_text(encoding="utf-8"))
 
-    periods=[p for p in combined["period"].tolist() if isinstance(p,str) and p]
+    periods=[p for p in current["period"].tolist() if isinstance(p,str) and p]
     latest=max(periods,default=manifest.get("latest_period",""))
     families=sorted(set(x for x in combined["source_family"].tolist() if x))
     counts=combined["source_family"].value_counts().to_dict()
 
     manifest.update({
-        "version":"0.6-data-current",
+        "version":"0.7-data-green",
         "generated_at":datetime.now(timezone.utc).isoformat(),
         "feed_events":int(len(combined)),
         "latest_period":latest,
-        "source_period":f"feed corrente {current_year} · ultimo dato {latest}",
+        "source_period":f"Notizie correnti {current_year} + GREEN con periodo ufficiale dichiarato · ultimo dato {latest}",
         "current_feed_year":current_year,
         "historical_sources_excluded":["BES dei territori — ISTAT"],
+        "green_events":int(len(green)),
+        "green_sources":int(green["source_family"].nunique()),
         "indicators":sorted(set(combined["indicator"].tolist())),
         "source_families":families,
         "events_by_source":{str(k):int(v) for k,v in counts.items()},
@@ -84,7 +91,7 @@ def main():
     manifest["feed_sha256"]=hashlib.sha256(OUT.read_bytes()).hexdigest()
     MANIFEST.write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding="utf-8")
 
-    print(f"Current-year PULSE feed ({current_year}): {len(combined)} events")
+    print(f"PULSE feed: {len(current)} current-news events + {len(green)} GREEN events = {len(combined)}")
     for family,count in counts.items():
         print(f"  {family}: {count}")
     print(f"Latest period across sources: {latest}")
