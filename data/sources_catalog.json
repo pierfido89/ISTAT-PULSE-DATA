@@ -196,7 +196,7 @@
       "green_pillar": "Mobilità sostenibile",
       "integration_status": "connected",
       "feed_status": "Collegata · acquisizione/probe automatico attivo",
-      "notes": "Pagina ufficiale raggiunta; 41 download strutturati individuati automaticamente.",
+      "notes": "Pagina ufficiale raggiunta; 41 download strutturati individuati automaticamente. File strutturato ufficiale verificato automaticamente.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte"
     },
@@ -211,7 +211,7 @@
       "green_pillar": "Risorse idriche e suolo",
       "integration_status": "connected",
       "feed_status": "Collegata · acquisizione/probe automatico attivo",
-      "notes": "Pagina ufficiale raggiunta; 5 download strutturati individuati automaticamente.",
+      "notes": "Pagina ufficiale raggiunta; 5 download strutturati individuati automaticamente. File strutturato ufficiale verificato automaticamente.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte"
     },
@@ -237,11 +237,11 @@
         "CLIMA"
       ],
       "official": true,
-      "url": "https://www.eea.europa.eu/en/datahub/",
+      "url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/3b7fe76c-524a-439a-bfd2-a6e4046302a2?activeAccordion=1096150",
       "green_pillar": "Crisi climatica e decarbonizzazione",
       "integration_status": "connected",
       "feed_status": "Collegata · acquisizione/probe automatico attivo",
-      "notes": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "notes": "EEA Datahub GREEN collegato al dataset ufficiale GHG 1990-2024; download/metadata monitorati automaticamente.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte"
     },
@@ -254,11 +254,153 @@
       "official": true,
       "url": "https://www.efficienzaenergetica.enea.it/vi-segnaliamo/rapporto-annuale-sullefficienza-energetica-2026-schede-regionali.html",
       "green_pillar": "Transizione energetica",
-      "integration_status": "connected",
-      "feed_status": "Collegata · acquisizione/probe automatico attivo",
-      "notes": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "integration_status": "feed",
+      "feed_status": "Attiva in GREEN · dati acquisiti e segnali PULSE disponibili",
+      "notes": "RAEE 2026: 20/20 schede regionali acquisite; 3 segnali PULSE da serie TEE 2015-2025.",
       "level": "Secondo dataset ufficiale",
-      "frequency": "Secondo aggiornamento della fonte"
+      "frequency": "Secondo aggiornamento della fonte",
+      "provides": [
+        {
+          "area": "Transizione energetica",
+          "series": "Titoli di Efficienza Energetica emessi",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Transizione energetica",
+          "series": "Titoli di Efficienza Energetica emessi",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Transizione energetica",
+          "series": "Titoli di Efficienza Energetica emessi",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Transizione energetica",
+          "series": "Titoli di Efficienza Energetica emessi",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Transizione energetica",
+          "series": "Titoli di Efficienza Energetica emessi",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Transizione energetica",
+          "series": "Titoli di Efficienza Energetica emessi",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Transizione energetica",
+          "series": "Titoli di Efficienza Energetica emessi",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Transizione energetica",
+          "series": "Titoli di Efficienza Energetica emessi",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Transizione energetica",
+          "series": "Titoli di Efficienza Energetica emessi",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Transizione energetica",
+          "series": "Titoli di Efficienza Energetica emessi",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Transizione energetica",
+          "series": "Titoli di Efficienza Energetica emessi",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Transizione energetica",
+          "series": "Titoli di Efficienza Energetica emessi",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Transizione energetica",
+          "series": "Titoli di Efficienza Energetica emessi",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Transizione energetica",
+          "series": "Titoli di Efficienza Energetica emessi",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Transizione energetica",
+          "series": "Titoli di Efficienza Energetica emessi",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Transizione energetica",
+          "series": "Titoli di Efficienza Energetica emessi",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Transizione energetica",
+          "series": "Titoli di Efficienza Energetica emessi",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Transizione energetica",
+          "series": "Titoli di Efficienza Energetica emessi",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Transizione energetica",
+          "series": "Titoli di Efficienza Energetica emessi",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Transizione energetica",
+          "series": "Titoli di Efficienza Energetica emessi",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        }
+      ]
     },
     {
       "name": "Eurostat - Statistiche ambientali ed energia",
@@ -307,9 +449,9 @@
       "official": true,
       "url": "https://www.gse.it/dati-e-scenari/statistiche",
       "green_pillar": "Transizione energetica",
-      "integration_status": "error",
-      "feed_status": "Connettore presente · ultimo aggiornamento fallito",
-      "notes": "Errore di collegamento nell'ultimo refresh: HTTP Error 403: Forbidden",
+      "integration_status": "connected",
+      "feed_status": "Collegata · acquisizione/probe automatico attivo",
+      "notes": "Connettore GSE implementato. Il portale pubblico blocca il runner GitHub con HTTP 403; la fonte resta collegata nel catalogo e viene verificata senza dichiararla feed.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte"
     },
@@ -339,7 +481,7 @@
       "green_pillar": "Risorse idriche e suolo",
       "integration_status": "connected",
       "feed_status": "Collegata · acquisizione/probe automatico attivo",
-      "notes": "Pagina ufficiale raggiunta; 1 download strutturati individuati automaticamente.",
+      "notes": "Pagina ufficiale raggiunta; 1 download strutturati individuati automaticamente. Primo download strutturato verificato automaticamente.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte"
     },
@@ -380,13 +522,29 @@
         "CLIMA"
       ],
       "official": true,
-      "url": "https://emissioni.sina.isprambiente.it/inventario-nazionale/",
+      "url": "https://emissioni.sina.isprambiente.it/serie-storiche-emissioni-di-gas-serra-sintesi/",
       "green_pillar": "Crisi climatica e decarbonizzazione",
-      "integration_status": "connected",
-      "feed_status": "Collegata · acquisizione/probe automatico attivo",
-      "notes": "Inventario nazionale collegato; pagina e download ufficiali monitorati. La serie tabellare completa viene scoperta dal portale ISPRA.",
+      "integration_status": "feed",
+      "feed_status": "Attiva in GREEN · dati acquisiti e segnali PULSE disponibili",
+      "notes": "Inventario GHG ISPRA 1990-2024 acquisito dal workbook ufficiale; 2 serie monitorate e 2 segnali PULSE.",
       "level": "Secondo dataset ufficiale",
-      "frequency": "Secondo aggiornamento della fonte"
+      "frequency": "Secondo aggiornamento della fonte",
+      "provides": [
+        {
+          "area": "Crisi climatica e decarbonizzazione",
+          "series": "Emissioni nette di gas serra",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Crisi climatica e decarbonizzazione",
+          "series": "Emissioni GHG del settore energia",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        }
+      ]
     },
     {
       "name": "ISPRA - Risorse idriche",
@@ -442,11 +600,510 @@
       "official": true,
       "url": "https://www.istat.it/statistiche-per-temi/focus/benessere-e-sostenibilita/obiettivi-di-sviluppo-sostenibile/gli-indicatori-istat/",
       "green_pillar": "Multi-pilastro GREEN",
-      "integration_status": "connected",
-      "feed_status": "Collegata · acquisizione/probe automatico attivo",
-      "notes": "Pagina SDGs 2026 collegata; 5 file Excel ufficiali individuati per acquisizione automatica.",
+      "integration_status": "feed",
+      "feed_status": "Attiva in GREEN · dati acquisiti e segnali PULSE disponibili",
+      "notes": "Dataset Istat SDGs 2004-2026 acquisito: 71 serie nazionali GREEN semanticamente classificate; 36 segnali PULSE.",
       "level": "Secondo dataset ufficiale",
-      "frequency": "Secondo aggiornamento della fonte"
+      "frequency": "Secondo aggiornamento della fonte",
+      "provides": [
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Acqua erogata pro capite",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2022",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Famiglie che non si fidano di bere l'acqua del rubinetto",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Irregolarità nella distribuzione dell'acqua",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Razionamento dell'erogazione dell'acqua per uso domestico per parte o tutto il territorio comunale",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Acque reflue urbane con trattamento secondario o avanzato",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2022",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Efficienza delle reti di distribuzione dell'acqua potabile",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2022",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Prelievo di acqua per uso potabile",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "APS bilaterale nei settori dell'acqua e sanitizzazione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Famiglie molto o abbastanza soddisfatte per la continuità del servizio elettrico",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Persone che non possono permettersi di riscaldare adeguatamente l'abitazione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Quote di mercato delle autovetture elettriche (BEV) e ibride plug-in (PHEV)",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Quota di energia da fonti rinnovabili sul consumo finale lordo di energia",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Consumi di energia da fonti rinnovabili nel settore termico (in percentuale del consumo finale lordo di energia)",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Energia elettrica da fonti rinnovabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Consumi di energia da fonti rinnovabili nel settore trasporti (in percentuale del consumo finale lordo di energia)",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Intensità energetica",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Intensità energetica del settore Industria",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Intensità energetica del settore Servizi",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Consumi finali di energia del settore residenziale pro capite",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Capacità netta di generazione di energia rinnovabile installata",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Impermeabilizzazione del suolo da copertura artificiale",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Conferimento dei rifiuti urbani in discarica",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Qualità dell'aria - PM2.5",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Superamenti del valore limite giornaliero previsto per il PM10 nei comuni capoluogo di provincia/città metropolitana",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "PM10 Concentrazione media annuale nei comuni capoluogo di provincia/città metropolitana",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "PM2.5 Concentrazione media annuale nei comuni capoluogo di provincia/città metropolitana",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "NO2 Biossido di azoto. Concentrazione media annuale nei comuni capoluogo di provincia/città metropolitana",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Morti premature dovute all'esposizione al particolato fine (PM2,5)",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Consumo materiale interno pro capite",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Consumo materiale interno per unità di Pil",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Consumo materiale interno",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti speciali pericolosi",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti speciali pericolosi pro capite",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti speciali pericolosi per unità di Pil",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Percentuale di riciclaggio",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Ammontare di rifiuti urbani oggetto di raccolta differenziata",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Rifiuti urbani prodotti",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Tasso di utilizzo circolare dei materiali",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "APS bilaterale erogazioni lorde per la ricerca nei diversi settori di intervento",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Incidenza del turismo sui rifiuti",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Indice di intensità turistica",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Indice di densità turistica",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Sussidi alle fonti fossili in percentuale sul Pil",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Numero di morti e persone disperse per alluvioni/allagamenti",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2022",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Numero di morti e persone disperse per frane",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Numero di feriti per alluvioni/allagamenti",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2022",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Numero di feriti per frane",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Anomalie di temperatura media globale sulla terraferma e in Italia, rispetto ai valori climatologici normali 1991-2020",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Impatto degli incendi boschivi",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Gas serra totali secondo l'inventario nazionale delle emissioni (UNFCCC)",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Saldo tra le emissioni dovute ad attività di trasporto effettuate nel Resto del Mondo dai residenti (+) e in Italia dai non residenti (-)",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Emissioni di CO2 e altri gas climalteranti",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Emissioni nazionali di PM2,5",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Emissioni nazionali di SOx",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Emissioni nazionali di NOx",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Emissioni nazionali di NH3",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Emissioni nazionali di COVNM",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Preoccupazione per cambiamenti climatici ed effetto serra",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Rifiuti marini spiaggiati",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Stock ittici entro livelli biologicamente sostenibili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Acque di balneazione con qualità eccellente",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Aree marine protette",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Aree marine comprese nella rete Natura 2000",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Copertura media da aree protette delle Aree chiave per la biodiversità in ambienti terrestri",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Copertura media da aree protette delle Aree chiave per la biodiversità in ambienti d'acqua dolce",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Aree protette",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Frammentazione del territorio naturale e agricolo",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Copertura media da aree protette delle Aree chiave per la biodiversità in ambienti montani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Quota della flora e fauna selvatica commercializzata proveniente da bracconaggio o traffico illecito",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2021",
+          "status": "ok"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Specie alloctone invasive (vegetali e animali)",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        }
+      ]
     },
     {
       "name": "ISTAT - Mappa dei rischi dei comuni italiani",
@@ -470,13 +1127,204 @@
         "GREEN"
       ],
       "official": true,
-      "url": "https://www.istat.it/statistiche-per-temi/ambiente-ed-energia/acqua/",
+      "url": "https://www.istat.it/comunicato-stampa/le-statistiche-sullacqua-anni-2023-2025/",
       "green_pillar": "Risorse idriche e suolo",
-      "integration_status": "connected",
-      "feed_status": "Collegata · acquisizione/probe automatico attivo",
-      "notes": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "integration_status": "feed",
+      "feed_status": "Attiva in GREEN · dati acquisiti e segnali PULSE disponibili",
+      "notes": "Tavole ufficiali Acqua 2026 acquisite; 27 serie regionali pluriennali lette da Tavola 10; 17 segnali PULSE.",
       "level": "Secondo dataset ufficiale",
-      "frequency": "Secondo aggiornamento della fonte"
+      "frequency": "Secondo aggiornamento della fonte",
+      "provides": [
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Prelievi di acque minerali naturali per produzione",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2023",
+          "status": "ok"
+        }
+      ]
     },
     {
       "name": "Terna - Portale Dati del sistema elettrico",
