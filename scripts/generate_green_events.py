@@ -614,7 +614,7 @@ def update_catalog(statuses):
             } for x in series]
         entries[source["name"]]=item
     root["version"]=4
-    root["sources"]=list(entries.values())
+    root["sources"]=sorted(entries.values(),key=lambda item: clean(item.get("name","")).casefold())
     CATALOG.parent.mkdir(parents=True,exist_ok=True)
     CATALOG.write_text(json.dumps(root,ensure_ascii=False,indent=2),encoding="utf-8")
 
