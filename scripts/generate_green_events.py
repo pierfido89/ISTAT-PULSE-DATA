@@ -613,16 +613,22 @@ def update_catalog(statuses):
               "latest_period":x.get("latest_period",""),"status":x.get("status","")
             } for x in series]
         entries[source["name"]]=item
-    legacy_status={
-      "DEMO ISTAT — Bilancio demografico mensile":"feed",
-      "IstatData SDMX — ISTAT":"feed",
-      "BES dei territori — ISTAT":"archive",
-      "Noi Italia — ISTAT":"archive",
-      "A misura di Comune — ISTAT":"partial",
+    legacy_sources={
+      "DEMO ISTAT — Bilancio demografico mensile":("ISTAT - DEMO - Bilancio demografico mensile","feed"),
+      "IstatData SDMX — ISTAT":("ISTAT - IstatData SDMX","feed"),
+      "BES dei territori — ISTAT":("ISTAT - BES dei territori","archive"),
+      "Noi Italia — ISTAT":("ISTAT - Noi Italia","archive"),
+      "A misura di Comune — ISTAT":("ISTAT - A misura di Comune","partial"),
     }
-    for name,status in legacy_status.items():
-        if name in entries and not clean(entries[name].get("integration_status")):
-            entries[name]["integration_status"]=status
+    for old,(canonical,status) in legacy_sources.items():
+        item=entries.pop(old,None)
+        if item is None:
+            item=entries.get(canonical)
+        if item is not None:
+            item["name"]=canonical
+            item["category"]="ISTAT"
+            item["integration_status"]=status
+            entries[canonical]=item
     root["version"]=4
     root["sources"]=sorted(entries.values(),key=lambda item: clean(item.get("name","")).casefold())
     CATALOG.parent.mkdir(parents=True,exist_ok=True)
