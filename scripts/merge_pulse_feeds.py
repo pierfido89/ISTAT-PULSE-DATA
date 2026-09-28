@@ -12,6 +12,7 @@ import pandas as pd
 ASSETS=Path("app/src/main/assets")
 DEMO=ASSETS/"pulse_events_demo.tsv"
 SDMX=ASSETS/"pulse_events_sdmx.tsv"
+GREEN=ASSETS/"pulse_events_green.tsv"
 OUT=ASSETS/"pulse_events.tsv"
 MANIFEST=ASSETS/"pulse_manifest.json"
 SDMX_META=ASSETS/"pulse_sdmx_meta.json"
@@ -36,7 +37,8 @@ def read(path: Path, label: str) -> pd.DataFrame:
 def main():
     demo=read(DEMO,"DEMO")
     sdmx=read(SDMX,"SDMX")
-    combined=pd.concat([demo,sdmx],ignore_index=True)
+    green=read(GREEN,"GREEN")
+    combined=pd.concat([demo,sdmx,green],ignore_index=True)
 
     # The home feed is a CURRENT radar, not an historical archive.
     # Keep only events whose trigger period belongs to the latest year available.
@@ -45,13 +47,18 @@ def main():
     if valid_years.empty:
         raise RuntimeError("No valid event years found in PULSE feed")
     current_year=int(valid_years.max())
-    combined=combined[combined["_year"].eq(str(current_year))].copy()
+    # GREEN includes annual environmental series that legitimately lag the
+    # current calendar year. Keep them in the dedicated GREEN vertical while
+    # the general/news feed remains current-year only.
+    is_green=combined["scope"].str.upper().eq("GREEN")
+    combined=combined[is_green | combined["_year"].eq(str(current_year))].copy()
 
     # Il periodo dell'estrazione NON e' il periodo della notizia.
     # Il bilancio DEMO 2026 puo' contenere un'inversione calcolata sul 2025:
     # tale evento resta storico e non puo' apparire come notizia del 2026.
     headline_year=combined["summary"].str.extract(r"\bnel\s+(20\d{2})\b",flags=__import__("re").IGNORECASE,expand=False)
-    combined=combined[headline_year.isna() | headline_year.eq(str(current_year))].copy()
+    is_green=combined["scope"].str.upper().eq("GREEN")
+    combined=combined[is_green | headline_year.isna() | headline_year.eq(str(current_year))].copy()
     if combined.empty:
         raise RuntimeError("Nessun evento con periodo del fenomeno nell'anno corrente")
 
@@ -76,6 +83,7 @@ def main():
         "source_period":f"feed corrente {current_year} · ultimo dato {latest}",
         "current_feed_year":current_year,
         "historical_sources_excluded":["BES dei territori — ISTAT"],
+        "green_events":int(combined["scope"].str.upper().eq("GREEN").sum()),
         "indicators":sorted(set(combined["indicator"].tolist())),
         "source_families":families,
         "events_by_source":{str(k):int(v) for k,v in counts.items()},
