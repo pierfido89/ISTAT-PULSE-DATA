@@ -8,6 +8,7 @@ on:
       - 'scripts/generate_green_events.py'
       - '.github/workflows/validate-green.yml'
       - 'requirements.txt'
+      - 'tools/probe_green_structured.py'
 
 permissions:
   contents: read
@@ -28,6 +29,10 @@ jobs:
           cache: pip
       - name: Install dependencies
         run: python -m pip install --disable-pip-version-check -r requirements.txt
+      - name: Inspect structured GREEN workbooks
+        continue-on-error: true
+        run: python tools/probe_green_structured.py
+
       - name: Run all GREEN connectors
         env:
           CDS_API_KEY: ${{ secrets.CDS_API_KEY }}
