@@ -613,6 +613,16 @@ def update_catalog(statuses):
               "latest_period":x.get("latest_period",""),"status":x.get("status","")
             } for x in series]
         entries[source["name"]]=item
+    legacy_status={
+      "DEMO ISTAT — Bilancio demografico mensile":"feed",
+      "IstatData SDMX — ISTAT":"feed",
+      "BES dei territori — ISTAT":"archive",
+      "Noi Italia — ISTAT":"archive",
+      "A misura di Comune — ISTAT":"partial",
+    }
+    for name,status in legacy_status.items():
+        if name in entries and not clean(entries[name].get("integration_status")):
+            entries[name]["integration_status"]=status
     root["version"]=4
     root["sources"]=sorted(entries.values(),key=lambda item: clean(item.get("name","")).casefold())
     CATALOG.parent.mkdir(parents=True,exist_ok=True)
