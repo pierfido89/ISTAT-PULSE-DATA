@@ -12,7 +12,8 @@
       "official": true,
       "url": "https://www.istat.it/statistica-sperimentale/aggiornamento-degli-indicatori-del-sistema-informativo-a-misura-di-comune/",
       "feed_status": "Prime tavole ufficiali importate e verificate: 121 valori regionali. Ampliamento a tutti i comuni in corso.",
-      "notes": "Famiglie, istruzione, redditi e ambiente: leggere sempre l'anno del dato nel catalogo osservato."
+      "notes": "Famiglie, istruzione, redditi e ambiente: leggere sempre l'anno del dato nel catalogo osservato.",
+      "integration_status": "partial"
     },
     {
       "name": "ACI - Open data mobilità e parco veicoli",
@@ -58,7 +59,8 @@
       "official": true,
       "url": "https://www.istat.it/comunicato-territoriale/il-benessere-equo-e-sostenibile-dei-territori-report-regionali-anno-2025/",
       "feed_status": "Archivio ufficiale consultabile · fuori dal feed corrente",
-      "notes": "I dati annuali del 2024/2025 non vengono presentati come notizie attuali."
+      "notes": "I dati annuali del 2024/2025 non vengono presentati come notizie attuali.",
+      "integration_status": "archive"
     },
     {
       "name": "Copernicus - Climate Data Store",
@@ -92,7 +94,8 @@
       "official": true,
       "notes": "Fonte attiva nel feed corrente. I dati comunali più recenti possono essere indicati da ISTAT come provvisori.",
       "url": "https://demo.istat.it/app/?i=D7B",
-      "feed_status": "Attiva nel Radar · notizie riferite all'anno del fenomeno"
+      "feed_status": "Attiva nel Radar · notizie riferite all'anno del fenomeno",
+      "integration_status": "feed"
     },
     {
       "name": "EEA - Dati ambientali europei",
@@ -1348,7 +1351,8 @@
       "official": true,
       "notes": "Fonte attiva nel feed corrente. Serie congiunturali ufficiali interrogate tramite servizio SDMX IstatData.",
       "url": "https://esploradati.istat.it/SDMXWS/",
-      "feed_status": "Attiva nel Radar"
+      "feed_status": "Attiva nel Radar",
+      "integration_status": "feed"
     },
     {
       "name": "Noi Italia — ISTAT",
@@ -1360,7 +1364,8 @@
       "official": true,
       "url": "https://noi-italia.istat.it/home.php",
       "feed_status": "Database ufficiale acquisito: 3151 ultimi valori territoriali verificati. Le serie storiche alimentano anche il motore dei pattern annuali.",
-      "notes": "Il periodo statistico originale resta esplicito; i segnali storici non vengono presentati come notizie del 2026."
+      "notes": "Il periodo statistico originale resta esplicito; i segnali storici non vengono presentati come notizie del 2026.",
+      "integration_status": "archive"
     },
     {
       "name": "Terna - Portale Dati del sistema elettrico",
