@@ -25,6 +25,7 @@ import statistics
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import numpy as np
@@ -354,46 +355,53 @@ def run_enea(source):
         region=re.sub(r"\s+XLS\s*$","",label,flags=re.I).strip()
         href=urllib.parse.urljoin(source["url"],a["href"])
         if region and href: regional.append((region,href))
-    # Preserve page order but remove repeated links.
     seen=set(); regional=[x for x in regional if not (x[1] in seen or seen.add(x[1]))]
+
+    def parse_region(item):
+        region,url=item
+        raw=excel_bytes(url,45)
+        frame=pd.read_excel(io.BytesIO(raw),sheet_name="titoli efficienza energetica",header=None)
+        years=[]
+        for ri in range(min(12,len(frame))):
+            yc=find_year_columns(frame.iloc[ri].tolist())
+            if len(yc)>=6:
+                years=yc; break
+        if not years: raise ValueError("anni TEE non individuati")
+        total=None
+        for ri in range(len(frame)):
+            label=clean(frame.iloc[ri,0]) if frame.shape[1] else ""
+            if "totale (tee emessi)" in label.casefold():
+                total=frame.iloc[ri]; break
+        if total is None: raise ValueError("riga Totale (TEE emessi) assente")
+        periods=[y for _,y in years]
+        values=[number(total.iloc[col]) if col<len(total) else None for col,_ in years]
+        territory=region.title()
+        stat=event_status("Titoli di Efficienza Energetica emessi",source["pillar"],periods,values,"TEE")
+        stat["territory"]=territory
+        ev=event_from_series(source["name"],url,"Titoli di Efficienza Energetica emessi",
+            source["pillar"],periods,values,"TEE",territory)
+        if ev:
+            ev["region"]=territory; ev["municipality"]=territory
+        return stat,ev
+
     events=[]; series=[]; failures=[]
-    for region,url in regional:
-        try:
-            raw=excel_bytes(url,90)
-            frame=pd.read_excel(io.BytesIO(raw),sheet_name="titoli efficienza energetica",header=None)
-            header_idx=None; years=[]
-            for ri in range(min(12,len(frame))):
-                yc=find_year_columns(frame.iloc[ri].tolist())
-                if len(yc)>=6:
-                    header_idx=ri; years=yc; break
-            if header_idx is None: raise ValueError("anni TEE non individuati")
-            total=None
-            for ri in range(len(frame)):
-                label=clean(frame.iloc[ri,0]) if frame.shape[1] else ""
-                if "totale (tee emessi)" in label.casefold():
-                    total=frame.iloc[ri]; break
-            if total is None: raise ValueError("riga Totale (TEE emessi) assente")
-            periods=[y for _,y in years]
-            values=[number(total.iloc[col]) if col<len(total) else None for col,_ in years]
-            stat=event_status("Titoli di Efficienza Energetica emessi",source["pillar"],periods,values,"TEE")
-            stat["territory"]=region.title()
-            series.append(stat)
-            ev=event_from_series(
-                source["name"],url,"Titoli di Efficienza Energetica emessi",
-                source["pillar"],periods,values,"TEE",region.title()
-            )
-            if ev:
-                ev["region"]=region.title(); ev["municipality"]=region.title()
-                events.append(ev)
-        except Exception as exc:
-            failures.append(region+": "+clean(exc))
+    with ThreadPoolExecutor(max_workers=6) as pool:
+        futures={pool.submit(parse_region,item):item for item in regional}
+        for future in as_completed(futures):
+            region,_=futures[future]
+            try:
+                stat,ev=future.result()
+                series.append(stat)
+                if ev: events.append(ev)
+            except Exception as exc:
+                failures.append(region+": "+clean(exc))
+    series.sort(key=lambda x:x.get("territory",""))
+    events.sort(key=lambda x:x.get("region",""))
     ok=len(series)
     return {
       "status":"feed" if events else ("connected" if ok else "error"),
-      "http_ok":True,
-      "regional_files":len(regional),
-      "series":series,
-      "failed_regions":failures[:8],
+      "http_ok":True,"regional_files":len(regional),"series":series,
+      "failed_regions":sorted(failures)[:8],
       "note":f"RAEE 2026: {ok}/{len(regional)} schede regionali acquisite; {len(events)} segnali PULSE da serie TEE 2015-2025."
     },events
 
