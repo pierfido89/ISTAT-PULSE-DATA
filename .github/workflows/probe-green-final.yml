@@ -1,0 +1,17 @@
+name: Probe GREEN final endpoints
+on:
+  workflow_dispatch:
+  push:
+    branches: [ green-integration ]
+    paths:
+      - 'scripts/probe_green_final.py'
+      - '.github/workflows/probe-green-final.yml'
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install pandas openpyxl xlrd odfpy beautifulsoup4
+      - run: python scripts/probe_green_final.py
