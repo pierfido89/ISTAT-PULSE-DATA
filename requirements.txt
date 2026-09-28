@@ -3,3 +3,6 @@ numpy
 scipy
 openpyxl
 beautifulsoup4
+
+xlrd
+odfpy
