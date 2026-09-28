@@ -589,6 +589,12 @@ def update_catalog(statuses):
           "name":source["name"],"category":source["category"],"topics":source["topics"],
           "official":True,"url":source["url"],
           "green_pillar":source["pillar"],
+          "access_cost":"free",
+          "access_note":(
+            "Accesso gratuito; richiede account/token CDS e accettazione dei termini del dataset."
+            if source["name"].startswith("Copernicus -")
+            else "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte."
+          ),
           "integration_status":st["status"],
           "feed_status":{
             "feed":"Attiva in GREEN · dati acquisiti e segnali PULSE disponibili",
