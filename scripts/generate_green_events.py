@@ -1044,10 +1044,19 @@ def run_ispra_soil(source):
         raise RuntimeError(f"Intervalli annuali ISPRA suolo insufficienti: {intervals}")
 
     periods=[str(y) for y,_ in intervals]
-    national=[]
-    for _,col in intervals:
-        vals=pd.to_numeric(frame[col],errors="coerce")
-        national.append(float(vals.sum()))
+
+    # The regional sheet also contains the official aggregate "Italia".
+    # Use it directly rather than summing it together with the 20 regions.
+    italy_rows=frame[frame["Nome_Regione"].astype(str).str.strip().str.casefold().eq("italia")]
+    if not italy_rows.empty:
+        italy_row=italy_rows.iloc[0]
+        national=[number(italy_row.get(col)) for _,col in intervals]
+    else:
+        regional_only=frame[~frame["Nome_Regione"].astype(str).str.strip().str.casefold().eq("italia")]
+        national=[]
+        for _,col in intervals:
+            vals=pd.to_numeric(regional_only[col],errors="coerce")
+            national.append(float(vals.sum()))
 
     series=[]
     events=[]
@@ -1064,7 +1073,7 @@ def run_ispra_soil(source):
 
     for _,row in frame.iterrows():
         region=clean(row.get("Nome_Regione"))
-        if not region:
+        if not region or region.casefold()=="italia":
             continue
         vals=[number(row.get(col)) for _,col in intervals]
         if sum(v is not None for v in vals)<6:
