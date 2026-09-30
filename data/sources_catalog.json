@@ -719,25 +719,18 @@
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
       "integration_status": "connected",
-      "feed_status": "Collegamento completato · OpenData IdroGEO ufficiali verificati; fonte geospaziale corrente, non forzata in serie annuale",
-      "notes": "Collegamento completato e validato il 30/09/2026. Verificati i pacchetti OpenData pubblici IdroGEO IFFI (GeoJSON ~33 MB; Shapefile ~37 MB). La fonte è territoriale/geospaziale e non viene trasformata artificialmente in trend annuale. Aggiornamento: IFFI discontinuo in base agli aggiornamenti regionali/PA; PAI/mosaicature aggiornabili in continuo. Ultimo quadro nazionale integrato: edizione 2024.",
+      "feed_status": "Collegata · acquisizione/probe automatico attivo",
+      "notes": "IdroGEO collegato e verificato tramite i pacchetti OpenData ufficiali IFFI (GeoJSON e Shapefile). Fonte territoriale a dettaglio puntuale/comunale, provinciale, regionale e nazionale. Aggiornamento periodico secondo gli aggiornamenti dell'inventario IFFI/IdroGEO; non viene forzata una frequenza annuale perché la fonte è un inventario geospaziale corrente e non una serie storica annuale omogenea.",
       "level": "Comune / Provincia / Regione / Italia",
-      "frequency": "Variabile / continuo secondo dataset (IFFI discontinuo; PAI continuo)",
-      "latest_period": "2024",
+      "frequency": "Periodico / secondo aggiornamento IFFI-IdroGEO",
+      "latest_period": "Inventario corrente",
       "provides": [
         {
           "area": "Risorse idriche e suolo",
-          "series": "Inventario dei Fenomeni Franosi in Italia (IFFI)",
-          "description": "OpenData geospaziali ufficiali IdroGEO verificati in Shapefile/GeoJSON.",
-          "latest_period": "2024",
-          "status": "current_snapshot"
-        },
-        {
-          "area": "Risorse idriche e suolo",
-          "series": "Pericolosità e indicatori di rischio idrogeologico",
-          "description": "Quadro territoriale corrente su frane e alluvioni; aggiornamento differenziato per dataset.",
-          "latest_period": "2024",
-          "status": "current_snapshot"
+          "series": "Inventario dei fenomeni franosi IFFI",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "Inventario corrente",
+          "status": "latest_public"
         }
       ]
     },
@@ -753,8 +746,8 @@
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
       "integration_status": "feed",
-      "feed_status": "Attiva in GREEN · serie FBI/FBIpm 2000-2025 e segnali PULSE disponibili",
-      "notes": "Collegamento completato e validato il 30/09/2026. Indicatore ISPRA Farmland Bird Index: serie nazionale FBI e FBIpm 2000-2025; ultimo aggiornamento scheda ISPRA 30/06/2026; frequenza annuale. Valori 2025: FBI 66,51; FBIpm 70,10. La pubblicazione 2025 è verificata anche sulla fonte pubblica Rete PAC/LIPU indicata da ISPRA. Generato 1 segnale PULSE.",
+      "feed_status": "Attiva in GREEN · dati acquisiti e segnali PULSE disponibili",
+      "notes": "Indicatori ambientali ISPRA - biodiversità collegati alla serie ufficiale Farmland Bird Index. Serie nazionali FBI e FBIpm 2000-2025; scheda aggiornata il 30/06/2026. Aggiornamento annuale. L'indicatore misura l'andamento delle popolazioni di uccelli degli ambienti agricoli e delle praterie montane.",
       "level": "Italia",
       "frequency": "Annuale",
       "latest_period": "2025",
@@ -762,14 +755,14 @@
         {
           "area": "Tutela della biodiversità",
           "series": "Farmland Bird Index (FBI)",
-          "description": "Indice nazionale annuale degli uccelli degli ambienti agricoli, base 2000=100.",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
           "latest_period": "2025",
           "status": "latest_public"
         },
         {
           "area": "Tutela della biodiversità",
-          "series": "Farmland Bird Index praterie montane (FBIpm)",
-          "description": "Indice nazionale annuale delle specie delle praterie montane, base 2000=100.",
+          "series": "Indice specie delle praterie montane (FBIpm)",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
           "latest_period": "2025",
           "status": "latest_public"
         }
@@ -816,35 +809,35 @@
         "ACQUA"
       ],
       "official": true,
-      "url": "https://www.isprambiente.gov.it/it/istituto-informa/ricerca-comunicati/acqua",
+      "url": "https://www.isprambiente.gov.it/pre_meteo/idro/BIGBANG_ISPRA.html",
       "green_pillar": "Risorse idriche e suolo",
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
       "integration_status": "connected",
-      "feed_status": "Collegata · BIGBANG 10.0 acquisito e serie ufficiali validate · nessun segnale PULSE corrente",
-      "notes": "Collegamento completato e validato il 30/09/2026. BIGBANG 10.0: serie 1951-2025. Ultimi valori 2025: precipitazione totale 962,9 mm; risorsa idrica rinnovabile 128,02 km³; ricarica degli acquiferi 55,85 km³. Aggiornamento annuale, con stime disponibili anche mensilmente; pagina BIGBANG aggiornata il 16/04/2026. Nessun pattern PULSE corrente ha superato le soglie, quindi la fonte è connected e non feed.",
-      "level": "Italia / Regioni / Distretti idrografici",
+      "feed_status": "Collegata · acquisizione/probe automatico attivo",
+      "notes": "ISPRA BIGBANG 10.0 collegato al workbook ufficiale. Serie nazionali 1951-2025 per precipitazione totale, risorsa idrica rinnovabile (internal flow) e ricarica degli acquiferi. Il modello produce anche stime mensili e dataset aggregati per Regioni e Distretti idrografici. Aggiornamento della versione/delle stime: annuale; pagina BIGBANG aggiornata il 16/04/2026.",
+      "level": "Italia / Regione / Distretto idrografico",
       "frequency": "Annuale (stime disponibili anche mensilmente)",
       "latest_period": "2025",
       "provides": [
         {
           "area": "Risorse idriche e suolo",
           "series": "Precipitazione totale annua",
-          "description": "Serie nazionale ufficiale BIGBANG 10.0.",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
           "latest_period": "2025",
           "status": "latest_public"
         },
         {
           "area": "Risorse idriche e suolo",
           "series": "Risorsa idrica rinnovabile (internal flow)",
-          "description": "Serie nazionale ufficiale BIGBANG 10.0.",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
           "latest_period": "2025",
           "status": "latest_public"
         },
         {
           "area": "Risorse idriche e suolo",
           "series": "Ricarica degli acquiferi",
-          "description": "Serie nazionale ufficiale BIGBANG 10.0.",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
           "latest_period": "2025",
           "status": "latest_public"
         }
@@ -857,35 +850,35 @@
         "CLIMA"
       ],
       "official": true,
-      "url": "https://www.isprambiente.gov.it/it/banche-dati",
+      "url": "https://www.isprambiente.gov.it/it/banche-dati/banche-dati-folder/aria/qualita-dellaria",
       "green_pillar": "Crisi climatica e decarbonizzazione",
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
       "integration_status": "feed",
-      "feed_status": "Attiva in GREEN · CSV ufficiali acquisiti e segnale PULSE disponibile",
-      "notes": "Collegamento completato e validato il 30/09/2026. CSV ufficiali storici: PM10 2002-2022, PM2.5 2004-2022, NO2 2001-2022. Valori aggregati PULSE 2022: PM10 23,0 µg/m³; PM2.5 14,0 µg/m³; NO2 18,0 µg/m³. Valutazione annuale SNPA più recente: 2025. I dati quasi-real-time sono aggiornati giornalmente; i dati definitivi hanno aggiornamento annuale. Generato 1 segnale PULSE.",
+      "feed_status": "Attiva in GREEN · dati acquisiti e segnali PULSE disponibili",
+      "notes": "Qualità dell'aria ISPRA/SNPA collegata ai CSV ufficiali delle statistiche di stazione per PM10, PM2.5 e NO2. Le serie strutturate pubblicate arrivano al 2022; la valutazione annuale SNPA più recente riguarda il 2025. I dati quasi-real-time vengono trasmessi quotidianamente a ISPRA, mentre i dati definitivi sono trasmessi all'inizio di ogni anno per l'anno precedente. Il feed PULSE usa solo i CSV strutturati definitivi e non miscela stime preliminari con serie validate.",
       "level": "Stazione / Comune / Provincia / Regione / Italia",
-      "frequency": "Annuale; quasi-real-time giornaliero",
+      "frequency": "Annuale; dati quasi-real-time aggiornati giornalmente",
       "latest_period": "2025 (valutazione SNPA); 2022 (CSV strutturati)",
       "provides": [
         {
           "area": "Crisi climatica e decarbonizzazione",
           "series": "PM10 - mediana nazionale delle medie annue di stazione",
-          "description": "Serie ufficiale ISPRA da stazioni con copertura valida.",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
           "latest_period": "2022",
           "status": "latest_structured"
         },
         {
           "area": "Crisi climatica e decarbonizzazione",
           "series": "PM2.5 - mediana nazionale delle medie annue di stazione",
-          "description": "Serie ufficiale ISPRA da stazioni con copertura valida.",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
           "latest_period": "2022",
           "status": "latest_structured"
         },
         {
           "area": "Crisi climatica e decarbonizzazione",
           "series": "NO2 - mediana nazionale delle medie annue di stazione",
-          "description": "Serie ufficiale ISPRA da stazioni con copertura valida.",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
           "latest_period": "2022",
           "status": "latest_structured"
         }
@@ -893,20 +886,15 @@
     },
     {
       "name": "ISTAT - A misura di Comune",
-      "level": "Comune / Provincia / Regione",
+      "level": "Comunale, provinciale e regionale",
       "frequency": "Periodico; ultimo aggiornamento pagina 26/05/2026",
       "provides": [
-        "Tasso di occupazione comunale",
-        "Tasso di disoccupazione comunale",
-        "Contribuenti con reddito complessivo inferiore a 10.000 euro",
-        "Reddito imponibile per contribuente",
-        "Raccolta differenziata dei rifiuti urbani",
-        "Autovetture con standard di emissioni inferiore a Euro 4"
+        "Indicatori socio-demografici, economici, ambientali e territoriali."
       ],
       "official": true,
       "url": "https://www.istat.it/statistica-sperimentale/aggiornamento-degli-indicatori-del-sistema-informativo-a-misura-di-comune/",
-      "feed_status": "Osservazioni comunali ufficiali acquisite e pubblicate in PULSE · fuori dal feed delle notizie correnti",
-      "notes": "Collegamento completato e validato il 30/09/2026. Pubblicate 47.313 osservazioni comunali verificate su 6 indicatori; fino a 7.895 comuni coperti. Ultimi periodi: 2024 per raccolta differenziata; 2023 per lavoro, redditi e parco auto. La pagina A misura di Comune è stata aggiornata il 26/05/2026 e usa la configurazione territoriale al 31/12/2024. I dati alimentano la sezione Dati osservati e non vengono presentati come notizie correnti.",
+      "feed_status": "Osservazioni comunali ufficiali scaricate e verificate: 47313 valori su lavoro, redditi, ambiente e mobilità. Fuori dal feed delle notizie correnti.",
+      "notes": "Sistema multi-fonte aggiornato il 26/05/2026, con configurazione territoriale al 31/12/2024. Le tavole selezionate alimentano la sezione Dati osservati a livello comunale; l'anno statistico resta sempre esplicito e non viene presentato come notizia corrente.",
       "category": "ISTAT",
       "integration_status": "connected",
       "latest_period": "2024 (secondo indicatore)"
@@ -918,42 +906,3304 @@
         "GREEN"
       ],
       "official": true,
-      "url": "https://www.istat.it/dati/banche-dati/",
-      "green_pillar": "Mobilità sostenibile",
+      "url": "https://www.istat.it/comunicato-stampa/ambiente-urbano-anno-2024/",
+      "green_pillar": "Multi-pilastro GREEN",
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
       "integration_status": "feed",
-      "feed_status": "Attiva in GREEN · tavole ufficiali 2024 acquisite e segnali PULSE disponibili",
-      "notes": "Collegamento completato e validato il 30/09/2026. Rilascio Ambiente urbano - Anno 2024 pubblicato il 09/09/2026. Acquisite 4 famiglie di serie storiche su comuni capoluogo/città metropolitane: verde urbano (120 territori, 2011-2024), produzione rifiuti (121, 2010-2024), raccolta differenziata (121, 2010-2024), piste ciclabili (108, 2019-2024). Generati 313 segnali PULSE. Aggiornamento annuale; l'indagine 2026 raccoglie dati riferiti al 2025.",
-      "level": "Comuni capoluogo di provincia / città metropolitane",
+      "feed_status": "Attiva in GREEN · dati acquisiti e segnali PULSE disponibili",
+      "notes": "ISTAT Ambiente urbano 2024 collegato alle tavole ufficiali pubblicate il 09/09/2026. PULSE acquisisce serie storiche comunali su disponibilità di verde urbano, produzione di rifiuti urbani, raccolta differenziata e densità di piste ciclabili. Aggiornamento annuale. L'indagine Dati ambientali nelle città è annuale; la raccolta 2026 riguarda l'anno di riferimento 2025.",
+      "level": "Comuni capoluogo di provincia / Città metropolitane",
       "frequency": "Annuale",
       "latest_period": "2024",
       "provides": [
         {
-          "area": "Tutela della biodiversità",
+          "area": "Multi-pilastro GREEN",
           "series": "Disponibilità di verde urbano",
-          "description": "Serie comunali annuali 2011-2024.",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
           "latest_period": "2024",
           "status": "latest_public"
         },
         {
-          "area": "Economia circolare",
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
           "series": "Produzione di rifiuti urbani",
-          "description": "Serie comunali annuali 2010-2024.",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
           "latest_period": "2024",
           "status": "latest_public"
         },
         {
-          "area": "Economia circolare",
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
           "series": "Raccolta differenziata dei rifiuti urbani",
-          "description": "Serie comunali annuali 2010-2024.",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
           "latest_period": "2024",
           "status": "latest_public"
         },
         {
-          "area": "Mobilità sostenibile",
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
           "series": "Densità di piste ciclabili",
-          "description": "Serie comunali annuali 2019-2024.",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Multi-pilastro GREEN",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
           "latest_period": "2024",
           "status": "latest_public"
         }
@@ -1528,15 +4778,15 @@
           "area": "Lavoro e mercato del lavoro",
           "series": "Tasso di disoccupazione",
           "description": "Tasso di disoccupazione mensile nazionale.",
-          "latest_period": "2026-07",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Lavoro e mercato del lavoro",
           "series": "Tasso di occupazione",
           "description": "Tasso di occupazione mensile nazionale.",
-          "latest_period": "2026-07",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Lavoro e mercato del lavoro",
@@ -1556,8 +4806,8 @@
           "area": "Imprese e industria",
           "series": "Produzione industriale",
           "description": "Indice mensile della produzione industriale, base 2021.",
-          "latest_period": "2026-07",
-          "status": "monitored_no_signal"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Imprese e industria",
@@ -1894,9 +5144,9 @@
       "green_pillar": "Transizione energetica",
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
-      "integration_status": "connected",
-      "feed_status": "Collegata · acquisizione/probe automatico attivo",
-      "notes": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "integration_status": "error",
+      "feed_status": "Connettore presente · ultimo aggiornamento fallito",
+      "notes": "Errore di collegamento nell'ultimo refresh: <urlopen error timed out>",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte"
     }

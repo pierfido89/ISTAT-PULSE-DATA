@@ -1,12 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-30T10:51:34.467264+00:00",
+  "generated_at": "2026-09-30T17:33:20.093428+00:00",
   "sources_total": 19,
-  "feed_sources": 10,
-  "connected_sources": 9,
+  "feed_sources": 12,
+  "connected_sources": 6,
   "credential_required": 0,
-  "error_sources": 0,
-  "events": 100,
+  "error_sources": 1,
+  "events": 414,
   "pillars": [
     "Crisi climatica e decarbonizzazione",
     "Economia circolare",
@@ -64,7 +64,7 @@
         }
       ],
       "note": "Annuario ACI 2026 acquisito automaticamente; TABII03 letta con 18 anni utili fino al 2025. 4 segnali PULSE emessi da 4 serie sulla transizione del parco nuovo.",
-      "checked_at": "2026-09-30T10:49:33.534772+00:00",
+      "checked_at": "2026-09-30T17:30:08.570404+00:00",
       "pillar": "Mobilità sostenibile",
       "url": "https://aci.gov.it/attivita-e-progetti/studi-e-ricerche/open-data/"
     },
@@ -226,7 +226,7 @@
         }
       ],
       "note": "ARERA RQSII integrata con dati pubblici 2017-2021 da workbook dettagliati e con risultati ufficiali 2022-2023 dalle Relazioni annuali ARERA. Per il 2022: MC1 96,3%, MC2 95,3%; per il 2023: MC1 96,5%, MC2 95,9%. Il mancato rispetto medio degli standard specifici è 3,5% in entrambi gli anni. La delibera 277/2025/R/idr certifica i risultati finali del biennio 2022-2023.",
-      "checked_at": "2026-09-30T10:50:39.721979+00:00",
+      "checked_at": "2026-09-30T17:30:22.471789+00:00",
       "pillar": "Risorse idriche e suolo",
       "url": "https://www.arera.it/dati-e-statistiche/dettaglio/rqsii"
     },
@@ -270,7 +270,7 @@
         }
       ],
       "note": "Copernicus ERA5 collegato. Ultimo mese acquisito: 2026-08. Aggiornamento mensile; le medie mensili sono normalmente disponibili intorno al 6 del mese. ERA5T è preliminare e può essere consolidato 2-3 mesi dopo.",
-      "checked_at": "2026-09-30T10:50:44.175444+00:00",
+      "checked_at": "2026-09-30T17:30:34.710425+00:00",
       "pillar": "Crisi climatica e decarbonizzazione",
       "url": "https://cds.climate.copernicus.eu/"
     },
@@ -299,7 +299,7 @@
         }
       ],
       "note": "EEA collegata al dataset statistico ufficiale sulle emissioni nette domestiche di gas serra incl. LULUCF. Serie Italia 1990-2024 (35 osservazioni). Aggiornamento annuale; ultimo anno disponibile 2024. Dataset finale pubblicato il 15/04/2026, licenza CC BY 4.0.",
-      "checked_at": "2026-09-30T10:50:55.723727+00:00",
+      "checked_at": "2026-09-30T17:30:48.418360+00:00",
       "pillar": "Crisi climatica e decarbonizzazione",
       "url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/3b7fe76c-524a-439a-bfd2-a6e4046302a2?activeAccordion=1096150"
     },
@@ -511,7 +511,7 @@
       ],
       "failed_regions": [],
       "note": "RAEE 2026: 20/20 schede regionali acquisite; 3 segnali PULSE da serie TEE 2015-2025.",
-      "checked_at": "2026-09-30T10:51:05.586625+00:00",
+      "checked_at": "2026-09-30T17:31:00.243373+00:00",
       "pillar": "Transizione energetica",
       "url": "https://www.efficienzaenergetica.enea.it/vi-segnaliamo/rapporto-annuale-sullefficienza-energetica-2026-schede-regionali.html"
     },
@@ -541,7 +541,7 @@
         }
       ],
       "note": "3/3 dataset Eurostat collegati; 3 segnali PULSE emessi.",
-      "checked_at": "2026-09-30T10:51:07.499827+00:00",
+      "checked_at": "2026-09-30T17:31:03.336475+00:00",
       "pillar": "Multi-pilastro GREEN",
       "url": "https://ec.europa.eu/eurostat/web/environment"
     },
@@ -550,7 +550,7 @@
       "http_ok": false,
       "automation_restriction": "HTTP 403 from GitHub-hosted runner",
       "note": "Connettore GSE implementato. Il portale pubblico blocca il runner GitHub con HTTP 403; la fonte resta collegata nel catalogo e viene verificata senza dichiararla feed.",
-      "checked_at": "2026-09-30T10:51:07.868052+00:00",
+      "checked_at": "2026-09-30T17:31:03.945947+00:00",
       "pillar": "Transizione energetica",
       "url": "https://www.gse.it/dati-e-scenari/statistiche"
     },
@@ -785,7 +785,7 @@
       ],
       "failed_years": [],
       "note": "Catasto Nazionale Rifiuti ISPRA collegato ai CSV comunali ufficiali. Acquisite annualità 2015-2024; ultimo file: 7897 comuni. Serie PULSE nazionali su raccolta differenziata e rifiuti urbani pro capite, più serie regionali RD. Aggiornamento annuale; dati 2024 aggiornati sul portale il 22/07/2026.",
-      "checked_at": "2026-09-30T10:51:14.365365+00:00",
+      "checked_at": "2026-09-30T17:31:14.313784+00:00",
       "pillar": "Economia circolare",
       "url": "https://www.catasto-rifiuti.isprambiente.it/index.php?advice=si&pg=downloadComune"
     },
@@ -1040,57 +1040,49 @@
         "Italia": 7.169666808314301
       },
       "note": "ISPRA/SNPA Consumo di suolo collegato al workbook ufficiale del Rapporto 2025. Dati definitivi fino al 2024; copertura 2006-2024 a livello comunale, provinciale e regionale. PULSE usa gli incrementi netti annuali comparabili 2016-2024 per Italia e regioni. Aggiornamento annuale. I dati preliminari 2025 sono in consultazione e ISPRA prevede i definitivi a fine ottobre 2026.",
-      "checked_at": "2026-09-30T10:51:15.954426+00:00",
+      "checked_at": "2026-09-30T17:31:16.588533+00:00",
       "pillar": "Risorse idriche e suolo",
       "url": "https://www.isprambiente.gov.it/it/attivita/suolo-e-territorio/suolo/il-consumo-di-suolo/i-dati-sul-consumo-di-suolo"
     },
     "ISPRA - IdroGEO": {
       "status": "connected",
       "http_ok": true,
-      "frequency": "Variabile / continuo secondo dataset (IFFI discontinuo; PAI continuo)",
-      "latest_period": "2024",
+      "frequency": "Periodico / secondo aggiornamento IFFI-IdroGEO",
+      "latest_period": "Inventario corrente",
       "administrative_levels": [
         "Comune",
         "Provincia",
         "Regione",
         "Italia"
       ],
-      "verified_opendata": [
-        {
-          "url": "https://idrogeo.isprambiente.it/opendata/frane/frane_piff_ispra_opendata.json.zip",
-          "bytes": 33006061.0,
-          "content_type": "application/zip"
-        },
-        {
-          "url": "https://idrogeo.isprambiente.it/opendata/frane/frane_piff_ispra_opendata.zip",
-          "bytes": 36971800.0,
-          "content_type": "application/zip"
-        }
-      ],
       "series": [
         {
-          "name": "Inventario dei Fenomeni Franosi in Italia (IFFI)",
+          "name": "Inventario dei fenomeni franosi IFFI",
           "pillar": "Risorse idriche e suolo",
-          "latest_period": "2024",
+          "latest_period": "Inventario corrente",
           "latest_value": null,
-          "unit": "",
-          "observations": 0,
-          "territory": "Italia",
-          "status": "current_snapshot"
-        },
-        {
-          "name": "Pericolosità e indicatori di rischio idrogeologico",
-          "pillar": "Risorse idriche e suolo",
-          "latest_period": "2024",
-          "latest_value": null,
-          "unit": "",
-          "observations": 0,
-          "territory": "Italia",
-          "status": "current_snapshot"
+          "unit": "geodati",
+          "observations": 2,
+          "status": "latest_public",
+          "territory": "Italia"
         }
       ],
-      "note": "IdroGEO collegato agli OpenData pubblici ufficiali ISPRA. Verificati i pacchetti massivi IFFI in Shapefile/GeoJSON senza scaricarli ad ogni refresh. La piattaforma offre dati su frane, pericolosità da frana/alluvione e indicatori di rischio. Aggiornamento non uniforme: IFFI è aggiornato in modo discontinuo dalle Regioni/PA, mentre le mosaicature PAI possono essere aggiornate in continuo. Ultimo quadro nazionale di riferimento integrato in PULSE: edizione 2024.",
-      "checked_at": "2026-09-30T10:51:17.171402+00:00",
+      "packages": [
+        {
+          "name": "IFFI landslide points GeoJSON",
+          "url": "https://idrogeo.isprambiente.it/opendata/frane/frane_piff_ispra_opendata.json.zip",
+          "content_length": 33006061.0,
+          "content_type": "application/zip"
+        },
+        {
+          "name": "IFFI landslide points Shapefile",
+          "url": "https://idrogeo.isprambiente.it/opendata/frane/frane_piff_ispra_opendata.zip",
+          "content_length": 36971800.0,
+          "content_type": "application/zip"
+        }
+      ],
+      "note": "IdroGEO collegato e verificato tramite i pacchetti OpenData ufficiali IFFI (GeoJSON e Shapefile). Fonte territoriale a dettaglio puntuale/comunale, provinciale, regionale e nazionale. Aggiornamento periodico secondo gli aggiornamenti dell'inventario IFFI/IdroGEO; non viene forzata una frequenza annuale perché la fonte è un inventario geospaziale corrente e non una serie storica annuale omogenea.",
+      "checked_at": "2026-09-30T17:31:18.208834+00:00",
       "pillar": "Risorse idriche e suolo",
       "url": "https://idrogeo.isprambiente.it/"
     },
@@ -1100,7 +1092,7 @@
       "frequency": "Annuale",
       "latest_period": "2025",
       "temporal_coverage": "2000-2025",
-      "last_indicator_update": "2026-06-30",
+      "source_update_date": "2026-06-30",
       "administrative_levels": [
         "Italia"
       ],
@@ -1116,7 +1108,7 @@
           "territory": "Italia"
         },
         {
-          "name": "Farmland Bird Index praterie montane (FBIpm)",
+          "name": "Indice specie delle praterie montane (FBIpm)",
           "pillar": "Tutela della biodiversità",
           "latest_period": "2025",
           "latest_value": 70.1,
@@ -1126,8 +1118,8 @@
           "territory": "Italia"
         }
       ],
-      "note": "Biodiversità collegata tramite l'indicatore ufficiale ISPRA Farmland Bird Index. Serie nazionale FBI e FBIpm 2000-2025, aggiornamento annuale; scheda ISPRA aggiornata al 30/06/2026. La disponibilità della pubblicazione 2025 viene verificata sulla fonte pubblica Rete PAC/LIPU, indicata da ISPRA come fonte di base.",
-      "checked_at": "2026-09-30T10:51:17.796161+00:00",
+      "note": "Indicatori ambientali ISPRA - biodiversità collegati alla serie ufficiale Farmland Bird Index. Serie nazionali FBI e FBIpm 2000-2025; scheda aggiornata il 30/06/2026. Aggiornamento annuale. L'indicatore misura l'andamento delle popolazioni di uccelli degli ambienti agricoli e delle praterie montane.",
+      "checked_at": "2026-09-30T17:31:18.209801+00:00",
       "pillar": "Tutela della biodiversità",
       "url": "https://indicatoriambientali.isprambiente.it/it/temi/biodiversita-stato-e-minacce"
     },
@@ -1137,7 +1129,7 @@
       "candidate_downloads": [
         "https://emissioni.sina.isprambiente.it/wp-content/uploads/2026/04/Emissioni-GHG-Sintesi-2026.xlsx"
       ],
-      "landing_sha256": "27eb9ec56cb01b62d7fd9486edce072e1e70526785c030a793ca2545ea0ea094",
+      "landing_sha256": "b2f811d1e69b26cfaace915fa1653d6a385a95755c9dc9464e2a144ce94cb67f",
       "note": "Inventario GHG ISPRA 1990-2024 acquisito dal workbook ufficiale; 2 serie monitorate e 2 segnali PULSE.",
       "structured_url": "https://emissioni.sina.isprambiente.it/wp-content/uploads/2026/04/Emissioni-GHG-Sintesi-2026.xlsx",
       "structured_format": "zip/xlsx",
@@ -1167,39 +1159,4852 @@
           "status": "ok"
         }
       ],
-      "checked_at": "2026-09-30T10:51:20.586895+00:00",
+      "checked_at": "2026-09-30T17:31:22.493136+00:00",
       "pillar": "Crisi climatica e decarbonizzazione",
       "url": "https://emissioni.sina.isprambiente.it/serie-storiche-emissioni-di-gas-serra-sintesi/"
     },
     "ISPRA - Risorse idriche": {
       "status": "connected",
       "http_ok": true,
-      "candidate_downloads": [],
-      "landing_sha256": "b4f71c4bcf781bc637c07fa75f47feade96c2b300eed8dc43370911aa6ea1691",
-      "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "checked_at": "2026-09-30T10:51:21.605594+00:00",
+      "frequency": "Annuale (stime disponibili anche mensilmente)",
+      "latest_period": "2025",
+      "temporal_coverage": "1951-2025",
+      "administrative_levels": [
+        "Italia",
+        "Regione",
+        "Distretto idrografico"
+      ],
+      "series": [
+        {
+          "name": "Precipitazione totale annua",
+          "pillar": "Risorse idriche e suolo",
+          "latest_period": "2025",
+          "latest_value": 962.9,
+          "unit": "mm",
+          "observations": 75,
+          "status": "latest_public",
+          "territory": "Italia"
+        },
+        {
+          "name": "Risorsa idrica rinnovabile (internal flow)",
+          "pillar": "Risorse idriche e suolo",
+          "latest_period": "2025",
+          "latest_value": 128.0185374,
+          "unit": "km³",
+          "observations": 75,
+          "status": "latest_public",
+          "territory": "Italia"
+        },
+        {
+          "name": "Ricarica degli acquiferi",
+          "pillar": "Risorse idriche e suolo",
+          "latest_period": "2025",
+          "latest_value": 55.853297700000006,
+          "unit": "km³",
+          "observations": 75,
+          "status": "latest_public",
+          "territory": "Italia"
+        }
+      ],
+      "note": "ISPRA BIGBANG 10.0 collegato al workbook ufficiale. Serie nazionali 1951-2025 per precipitazione totale, risorsa idrica rinnovabile (internal flow) e ricarica degli acquiferi. Il modello produce anche stime mensili e dataset aggregati per Regioni e Distretti idrografici. Aggiornamento della versione/delle stime: annuale; pagina BIGBANG aggiornata il 16/04/2026.",
+      "checked_at": "2026-09-30T17:31:24.992334+00:00",
       "pillar": "Risorse idriche e suolo",
-      "url": "https://www.isprambiente.gov.it/it/istituto-informa/ricerca-comunicati/acqua"
+      "url": "https://www.isprambiente.gov.it/pre_meteo/idro/BIGBANG_ISPRA.html"
     },
     "ISPRA/SNPA - Qualità dell'aria": {
-      "status": "connected",
+      "status": "feed",
       "http_ok": true,
-      "candidate_downloads": [],
-      "landing_sha256": "fcef2971617265db84966c07f27d38e5ba3f9dabb90b49aed906aae027c69c74",
-      "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "checked_at": "2026-09-30T10:51:22.276703+00:00",
+      "frequency": "Annuale; dati quasi-real-time aggiornati giornalmente",
+      "latest_period": "2025 (valutazione SNPA); 2022 (CSV strutturati)",
+      "latest_structured_period": "2022",
+      "latest_assessment_period": "2025",
+      "administrative_levels": [
+        "Stazione",
+        "Comune",
+        "Provincia",
+        "Regione",
+        "Italia"
+      ],
+      "series": [
+        {
+          "name": "PM10 - mediana nazionale delle medie annue di stazione",
+          "pillar": "Crisi climatica e decarbonizzazione",
+          "latest_period": "2022",
+          "latest_value": 23.0,
+          "unit": "µg/m³",
+          "observations": 22,
+          "status": "latest_structured",
+          "territory": "Italia"
+        },
+        {
+          "name": "PM2.5 - mediana nazionale delle medie annue di stazione",
+          "pillar": "Crisi climatica e decarbonizzazione",
+          "latest_period": "2022",
+          "latest_value": 14.0,
+          "unit": "µg/m³",
+          "observations": 19,
+          "status": "latest_structured",
+          "territory": "Italia"
+        },
+        {
+          "name": "NO2 - mediana nazionale delle medie annue di stazione",
+          "pillar": "Crisi climatica e decarbonizzazione",
+          "latest_period": "2022",
+          "latest_value": 18.0,
+          "unit": "µg/m³",
+          "observations": 22,
+          "status": "latest_structured",
+          "territory": "Italia"
+        }
+      ],
+      "note": "Qualità dell'aria ISPRA/SNPA collegata ai CSV ufficiali delle statistiche di stazione per PM10, PM2.5 e NO2. Le serie strutturate pubblicate arrivano al 2022; la valutazione annuale SNPA più recente riguarda il 2025. I dati quasi-real-time vengono trasmessi quotidianamente a ISPRA, mentre i dati definitivi sono trasmessi all'inizio di ogni anno per l'anno precedente. Il feed PULSE usa solo i CSV strutturati definitivi e non miscela stime preliminari con serie validate.",
+      "checked_at": "2026-09-30T17:31:31.235173+00:00",
       "pillar": "Crisi climatica e decarbonizzazione",
-      "url": "https://www.isprambiente.gov.it/it/banche-dati"
+      "url": "https://www.isprambiente.gov.it/it/banche-dati/banche-dati-folder/aria/qualita-dellaria"
     },
     "ISTAT - Ambiente urbano": {
-      "status": "connected",
+      "status": "feed",
       "http_ok": true,
-      "candidate_downloads": [],
-      "landing_sha256": "992c99ea69418dbf267f5d200c6f47b506331673a8b010ed6d41ea6dcc368870",
-      "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "checked_at": "2026-09-30T10:51:23.374244+00:00",
-      "pillar": "Mobilità sostenibile",
-      "url": "https://www.istat.it/dati/banche-dati/"
+      "frequency": "Annuale",
+      "publication_date": "2026-09-09",
+      "latest_period": "2024",
+      "release": "Ambiente urbano - Anno 2024",
+      "administrative_levels": [
+        "Comuni capoluogo di provincia",
+        "Città metropolitane"
+      ],
+      "series": [
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 27.849391719642455,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Torino"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 31.788195733344978,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Vercelli"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 16.92558385269399,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Novara"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 21.04320535620881,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Biella"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 32.61627188465499,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Cuneo"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 113.7104890207913,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Verbania"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 28.281774163891555,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Asti"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 27.804703432116977,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Alessandria"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 19.526241049037676,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Aosta"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 6.413353708710474,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Imperia"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 5.900831521043878,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Savona"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 24.417195886025947,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Genova"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 13.479315217743066,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "La Spezia"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 20.24557379126798,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Varese"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 20.775847073853924,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Como"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 15.761694821848703,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Lecco"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 301.64337993806885,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Sondrio"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 18.94849804380174,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Milano"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 74.21410650021349,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Monza"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 25.712204734229626,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Bergamo"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 25.759409412426653,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Brescia"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 24.61057890796112,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Pavia"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 56.50334198751588,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Lodi"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 33.26857207426711,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Cremona"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 40.49045625487831,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Mantova"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 228.36162968181284,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Bolzano - Bozen"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 400.32942009918025,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Trento"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 28.463039129046102,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Verona"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 27.95984907164567,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Vicenza"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 26.043044634190945,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Belluno"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 21.787067039432895,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Treviso"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 48.626967865860976,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Venezia"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 45.06795625117494,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Padova"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 33.725352957645086,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Rovigo"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 43.82971635347163,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Pordenone"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 22.172985456524724,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Udine"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 140.09626941155472,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Gorizia"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 62.80203206698369,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Trieste"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 28.39395423014838,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Piacenza"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 92.96568165437711,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Parma"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 57.51026955582533,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Reggio nell'Emilia"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 75.7469559580222,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Modena"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 22.06244929503274,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Bologna"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 64.36803212727104,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Ferrara"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 49.41763795243152,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Ravenna"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 25.655809194961314,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Forlì"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 42.14892907047071,
+          "unit": "m²/abitante",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Cesena"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 22.05314619197747,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Rimini"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 17.814955313111696,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Massa"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 17.96608990327431,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Lucca"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 21.537166395980737,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Pistoia"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 26.614845965446115,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Firenze"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 27.662276573342297,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Prato"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 15.29619143300758,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Livorno"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 23.3224561580383,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Pisa"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 30.070390904988876,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Arezzo"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 34.40168961378906,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Siena"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 53.74835633441068,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Grosseto"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 63.67258884031726,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Perugia"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 157.6718998242035,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Terni"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 26.833188221842253,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Pesaro"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 48.13415112362375,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Ancona"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 20.451339324236038,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Macerata"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 26.22878620631838,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Fermo"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 13.294703775144669,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Ascoli Piceno"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 12.831325755575836,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Viterbo"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 349.12388097688364,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Rieti"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 17.201101574693897,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Roma"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 16.73804150124191,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Latina"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 32.54740500463392,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Frosinone"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 33.15702644460619,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "L'Aquila"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 19.132035261067518,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Teramo"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 39.43990471926816,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Pescara"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 8.9462010625677,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Chieti"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 1025.9312352898357,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Isernia"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 12.124403727689149,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Campobasso"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 18.296030022269267,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Caserta"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 25.647136721546172,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Benevento"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 14.164711252487358,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Napoli"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 31.458807254841684,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Avellino"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 19.567995568130108,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Salerno"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 9.394890837201306,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Foggia"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 7.208605459210805,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Andria"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 3.865179132620993,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Barletta"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 5.416388005576259,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Trani"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 9.75447783981508,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Bari"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 19.889254656387052,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Taranto"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 13.162948646819615,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Brindisi"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 10.706655274707197,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Lecce"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 164.73017337064425,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Potenza"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 17.572132796780686,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Matera"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 38.92975476796307,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Cosenza"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 3.629867351305092,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Crotone"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 61.10010631816607,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Catanzaro"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 13.21022213612295,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Vibo Valentia"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 37.744712785633666,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Reggio di Calabria"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 7.261576721305524,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Trapani"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 12.125929220407905,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Palermo"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 6.491825137014014,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Messina"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 99.33908279771106,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Agrigento"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 10.658656940570692,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Caltanissetta"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 18.380259348851965,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Enna"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 26.90655803088143,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Catania"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 22.55944558104245,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Ragusa"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 8.450101929550089,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Siracusa"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 18.94415033423705,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Sassari"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 35.24521566980623,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Nuoro"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 59.64602180468569,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Oristano"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 55.40616722712791,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Cagliari"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 92.72221576152266,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Carbonia"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 42.60627027198494,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Nord (*)"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 26.67935756073016,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Nord-ovest (*)"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 64.30620621906832,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Nord-est (*)"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 28.114234724213144,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Centro (*)"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 25.73537779056928,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Mezzogiorno (*)"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 27.640112543727476,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Sud (*)"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 22.53170512020879,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Isole (*)"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 20.45696172487524,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Capoluoghi città metropolitana"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 48.40128903526615,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Capoluoghi di provincia (*)"
+        },
+        {
+          "name": "Disponibilità di verde urbano",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2024",
+          "latest_value": 33.68618177356319,
+          "unit": "m²/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Italia (*)"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 507.4605358499643,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Torino"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 610.6764635238117,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Vercelli"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 493.70251152051185,
+          "unit": "kg/abitante",
+          "observations": 13,
+          "status": "latest_public",
+          "territory": "Novara"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 584.9619323267194,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Biella"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 540.0707473245869,
+          "unit": "kg/abitante",
+          "observations": 13,
+          "status": "latest_public",
+          "territory": "Cuneo"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 617.7331310335628,
+          "unit": "kg/abitante",
+          "observations": 13,
+          "status": "latest_public",
+          "territory": "Verbania"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 488.394930571162,
+          "unit": "kg/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Asti"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 642.5238642773463,
+          "unit": "kg/abitante",
+          "observations": 13,
+          "status": "latest_public",
+          "territory": "Alessandria"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 500.8816509049159,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Aosta"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 493.79405195721165,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Imperia"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 546.8798771907382,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Savona"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 515.1448466136767,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Genova"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 519.8913711826194,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "La Spezia"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 460.418097712439,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Varese"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 486.70977261412787,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Como"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 510.4048411369465,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Lecco"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 500.1013418410435,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Sondrio"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 480.54596727966606,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Milano"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 409.56078319744626,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Monza"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 489.72371188878634,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Bergamo"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 562.0294791415481,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Brescia"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 512.6122583218457,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Pavia"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 427.16676793901564,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Lodi"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 511.94742826472316,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Cremona"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 540.4202694346737,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Mantova"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 497.4613596336739,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Bolzano - Bozen"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 442.2393988462706,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Trento"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 567.471886224201,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Verona"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 654.6627892755711,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Vicenza"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 458.84257761397686,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Belluno"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 444.0188566682653,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Treviso"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 693.5790147664972,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Venezia"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 633.8023301214229,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Padova"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 630.0423949126105,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Rovigo"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 469.66963747235815,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Pordenone"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 544.1697400080373,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Udine"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 557.0211816505027,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Gorizia"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 497.6141338415179,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Trieste"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 750.8034688525544,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Piacenza"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 571.7338097950174,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Parma"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 664.245351406587,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Reggio nell'Emilia"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 657.6219990180947,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Modena"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 528.6656695490798,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Bologna"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 663.8541118573772,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Ferrara"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 721.5512851677946,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Ravenna"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 494.03192872519554,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Forlì"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 693.1558530939122,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Cesena"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 738.665885431405,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Rimini"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 592.3082591547409,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Carrara"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 663.7260822724306,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Massa"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 625.5836082497364,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Lucca"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 545.0870222486976,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Pistoia"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 614.4211244232506,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Firenze"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 593.376549239493,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Prato"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 524.3107654971752,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Livorno"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 801.7890768963643,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Pisa"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 598.4062984611714,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Arezzo"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 622.1670147321471,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Siena"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 564.5626927850763,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Grosseto"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 580.1978719662872,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Perugia"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 486.41986218307284,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Terni"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 573.856748733334,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Pesaro"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 554.4483831295667,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Urbino"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 483.2108994017394,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Ancona"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 473.1067638031137,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Macerata"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 568.5984155150973,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Fermo"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 521.3165059244972,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Ascoli Piceno"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 426.21778384534736,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Viterbo"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 499.7970542995939,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Rieti"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 597.496347087681,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Roma"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 508.9289080988051,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Latina"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 501.2143188137164,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Frosinone"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 477.8192119421729,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "L'Aquila"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 435.2719170783687,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Teramo"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 502.7492883509169,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Pescara"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 522.2945272605355,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Chieti"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 473.46662460873995,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Isernia"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 382.45964302637816,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Campobasso"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 493.30107497319443,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Caserta"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 464.1957766642806,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Benevento"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 562.9223626048366,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Napoli"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 427.34014755610207,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Avellino"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 464.4881388124963,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Salerno"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 453.47952552862296,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Foggia"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 454.65695360135476,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Andria"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 455.5369643902122,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Barletta"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 483.12653187670276,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Trani"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 520.2035259478181,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Bari"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 538.4115206039095,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Taranto"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 485.29115174276467,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Brindisi"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 570.8614550221029,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Lecce"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 403.9500054715713,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Potenza"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 417.40509725016767,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Matera"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 442.3607817805122,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Cosenza"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 523.7014976465554,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Crotone"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 434.90831551409013,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Catanzaro"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 472.84611907529376,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Vibo Valentia"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 396.14770518055417,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Reggio di Calabria"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 438.88289858229405,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Trapani"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 573.7401677361968,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Palermo"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 450.51343472983405,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Messina"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 460.0960052070621,
+          "unit": "kg/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Agrigento"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 476.4278910105128,
+          "unit": "kg/abitante",
+          "observations": 12,
+          "status": "latest_public",
+          "territory": "Caltanissetta"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 423.040012689852,
+          "unit": "kg/abitante",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Enna"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 584.1617873290277,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Catania"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 469.5478748628178,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Ragusa"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 517.52300418493,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Siracusa"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 514.1576605476107,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Sassari"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 421.35431039654446,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Nuoro"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 514.0902011465686,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Oristano"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 472.9830025535272,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Cagliari"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 433.8078071093538,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Carbonia"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 544.5375278101972,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Nord (*)"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 503.54161383536945,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Nord-ovest (*)"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 598.7692741932917,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Nord-est (*)"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 586.0868340594034,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Centro (*)"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 509.50771450157094,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Mezzogiorno (*)"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 500.818417885331,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Sud (*)"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 524.1226954315649,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Isole (*)"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 542.1423153155208,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Capoluoghi di provincia (*)"
+        },
+        {
+          "name": "Produzione di rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 546.1861042264989,
+          "unit": "kg/abitante",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Italia (*)"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 57.353174861939905,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Torino"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 72.41738968754414,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Vercelli"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 77.03119884647184,
+          "unit": "%",
+          "observations": 13,
+          "status": "latest_public",
+          "territory": "Novara"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 77.34376210882652,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Biella"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 70.69358449267912,
+          "unit": "%",
+          "observations": 13,
+          "status": "latest_public",
+          "territory": "Cuneo"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 75.48876133677447,
+          "unit": "%",
+          "observations": 13,
+          "status": "latest_public",
+          "territory": "Verbania"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 66.59004077170634,
+          "unit": "%",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Asti"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 49.70814405958571,
+          "unit": "%",
+          "observations": 13,
+          "status": "latest_public",
+          "territory": "Alessandria"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 78.60502796531239,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Aosta"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 66.08360594623856,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Imperia"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 44.70373212069041,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Savona"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 49.76398028852426,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Genova"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 78.39444168363784,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "La Spezia"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 72.09912442549799,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Varese"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 73.94256238913329,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Como"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 76.33003452186612,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Lecco"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 53.15869167926929,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Sondrio"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 63.331785911294816,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Milano"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 73.27521412939248,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Monza"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 77.01248579384841,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Bergamo"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 68.43773614453372,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Brescia"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 60.974381851668426,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Pavia"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 71.64950213371266,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Lodi"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 80.38723016704874,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Cremona"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 84.34055483653144,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Mantova"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 66.60044810349052,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Bolzano - Bozen"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 83.25683231430506,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Trento"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 57.4027104103944,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Verona"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 73.69936913236292,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Vicenza"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 86.37062344069315,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Belluno"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 86.77690827507573,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Treviso"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 63.72183897779845,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Venezia"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 65.09543586641784,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Padova"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 84.97525860235702,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Rovigo"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 85.85969309137631,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Pordenone"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 71.95090943151696,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Udine"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 70.84557494214555,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Gorizia"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 47.8662074179421,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Trieste"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 71.50183845485859,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Piacenza"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 80.93379358702649,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Parma"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 84.49579970047637,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Reggio nell'Emilia"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 78.91055894636565,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Modena"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 72.80992359442826,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Bologna"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 88.3625458001943,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Ferrara"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 79.57990622579112,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Ravenna"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 82.0583181928629,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Forlì"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 85.96134688364741,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Cesena"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 66.81965345909036,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Rimini"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 63.591377472931256,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Carrara"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 69.33717925797765,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Massa"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 80.43477792948472,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Lucca"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 54.952315813631344,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Pistoia"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 60.693680973605126,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Firenze"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 71.41030903502875,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Prato"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 61.52160956581788,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Livorno"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 63.78133744722867,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Pisa"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 60.317328796829074,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Arezzo"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 60.983317329788555,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Siena"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 67.76691678914483,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Grosseto"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 72.44868096314491,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Perugia"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 78.31061224221588,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Terni"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 67.15523700767697,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Pesaro"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 74.43026875813854,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Urbino"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 63.50748079289621,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Ancona"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 74.70578303609395,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Macerata"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 65.3741262229684,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Fermo"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 68.69244281387775,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Ascoli Piceno"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 54.89798150292046,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Viterbo"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 55.07167312873177,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Rieti"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 48.03394302088705,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Roma"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 52.94998348323444,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Latina"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 69.49447611246273,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Frosinone"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 47.61432287365444,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "L'Aquila"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 74.58320276891521,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Teramo"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 51.920748641861806,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Pescara"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 70.48629806619259,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Chieti"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 48.36503701638601,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Isernia"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 55.8778731882023,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Campobasso"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 61.996400792739614,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Caserta"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 62.97681583823132,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Benevento"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 44.37903187702222,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Napoli"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 63.21888122577802,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Avellino"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 74.16059481124714,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Salerno"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 24.34314935904843,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Foggia"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 73.64058623512086,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Andria"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 66.91995725572627,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Barletta"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 71.37649221233858,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Trani"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 45.978926653752566,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Bari"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 24.260750279018524,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Taranto"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 37.10847290771596,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Brindisi"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 70.39280507777995,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Lecce"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 60.06965313143032,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Potenza"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 71.56291224726883,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Matera"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 59.2348645824355,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Cosenza"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 30.586758422159367,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Crotone"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 68.88559522570215,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Catanzaro"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 70.22367376147065,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Vibo Valentia"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 36.77647327672209,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Reggio di Calabria"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 66.4890919784495,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Trapani"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 17.343333484863646,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Palermo"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 58.565235632807386,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Messina"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 67.25241750917962,
+          "unit": "%",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Agrigento"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 62.79615013826705,
+          "unit": "%",
+          "observations": 12,
+          "status": "latest_public",
+          "territory": "Caltanissetta"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 68.63102045407676,
+          "unit": "%",
+          "observations": 14,
+          "status": "latest_public",
+          "territory": "Enna"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 33.35866974650965,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Catania"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 68.9416699946214,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Ragusa"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 51.1713626995424,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Siracusa"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 62.56078028033314,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Sassari"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 85.7414087310486,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Nuoro"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 80.95103037959997,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Oristano"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 75.93867455630149,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Cagliari"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 76.56479259114963,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Carbonia"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 67.61775292106297,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Nord (*)"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 62.90232445891238,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Nord-ovest (*)"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 72.86353250246931,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Nord-est (*)"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 55.51290557912177,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Centro (*)"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 46.67946129474735,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Mezzogiorno (*)"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 49.569451961724106,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Sud (*)"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 42.03476419715028,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Isole (*)"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 67.2983177062458,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Capoluoghi di provincia (*)"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 58.3837188392185,
+          "unit": "%",
+          "observations": 15,
+          "status": "latest_public",
+          "territory": "Italia (*)"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 200.8,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Torino"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 57.0,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Vercelli"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 33.1,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Novara"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 17.1,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Biella"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 57.8,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Cuneo"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 70.9,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Verbania"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 6.8,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Asti"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 20.1,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Alessandria"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 98.2,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Aosta"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 4.4,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Imperia"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 15.6,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Savona"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 26.9,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Genova"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 40.7,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "La Spezia"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 34.6,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Varese"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 25.1,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Como"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 35.3,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Lecco"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 100.6,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Sondrio"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 182.6,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Milano"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 105.8,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Monza"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 241.0,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Bergamo"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 184.5,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Brescia"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 58.5,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Pavia"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 151.6,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Lodi"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 122.7,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Cremona"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 183.7,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Mantova"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 139.2,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Bolzano/Bozen"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 50.6,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Trento"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 58.3,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Verona"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 99.0,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Vicenza"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 18.3,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Belluno"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 153.3,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Treviso"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 45.4,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Venezia"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 219.3,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Padova"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 29.1,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Rovigo"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 136.9,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Pordenone"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 92.3,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Udine"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 40.0,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Gorizia"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 30.0,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Trieste"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 67.7,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Piacenza"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 58.2,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Parma"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 119.5,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Reggio nell'Emilia"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 139.6,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Modena"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 173.7,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Bologna"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 55.0,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Ferrara"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 26.4,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Ravenna"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 63.3,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Forlì"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 143.0,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Rimini"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 27.2,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Massa"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 22.6,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Lucca"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 7.9,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Pistoia"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 103.0,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Firenze"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 124.2,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Prato"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 32.5,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Livorno"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 37.8,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Pisa"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 14.4,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Arezzo"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 6.5,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Siena"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 13.2,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Grosseto"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 5.6,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Perugia"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 14.4,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Terni"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 37.8,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Pesaro"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 3.6,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Ancona"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 5.7,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Macerata"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 16.0,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Fermo"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 5.1,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Ascoli Piceno"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 12.6,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Rieti"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 25.5,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Roma"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 6.5,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Latina"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 14.9,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Frosinone"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 5.5,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "L'Aquila"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 7.9,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Teramo"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 110.4,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Pescara"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 2.9,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Isernia"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 16.9,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Benevento"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 20.1,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Napoli"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 29.4,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Avellino"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 5.0,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Salerno"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 7.3,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Foggia"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 1.7,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Andria"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 16.3,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Barletta"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 11.6,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Trani"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 35.1,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Bari"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 9.5,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Taranto"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 2.1,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Brindisi"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 18.6,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Lecce"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 0.3,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Matera"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 63.4,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Cosenza"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 2.7,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Crotone"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 13.7,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Catanzaro"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 5.7,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Reggio di Calabria"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 40.3,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Palermo"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 5.3,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Messina"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 1.2,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Agrigento"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 12.6,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Catania"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 1.3,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Ragusa"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 8.2,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Siracusa"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 1.8,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Sassari"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 13.0,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Oristano"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 51.9,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Cagliari"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 5.1,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Carbonia"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 74.0,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Nord (*)"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 79.2,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Nord-ovest (*)"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 71.3,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Nord-est (*)"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 19.4,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Centro (*)"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 7.7,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Mezzogiorno (*)"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 8.9,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Sud (*)"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 6.2,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Isole (*)"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 27.4,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Capoluoghi di provincia (*)"
+        },
+        {
+          "name": "Densità di piste ciclabili",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2024",
+          "latest_value": 31.3,
+          "unit": "km per 100 km²",
+          "observations": 6,
+          "status": "latest_public",
+          "territory": "Italia (*)"
+        }
+      ],
+      "tables": [
+        {
+          "indicator": "Disponibilità di verde urbano",
+          "territories": 120,
+          "latest_2024": 120,
+          "coverage": "2011-2024"
+        },
+        {
+          "indicator": "Produzione di rifiuti urbani",
+          "territories": 121,
+          "latest_2024": 121,
+          "coverage": "2010-2024"
+        },
+        {
+          "indicator": "Raccolta differenziata dei rifiuti urbani",
+          "territories": 121,
+          "latest_2024": 121,
+          "coverage": "2010-2024"
+        },
+        {
+          "indicator": "Densità di piste ciclabili",
+          "territories": 108,
+          "latest_2024": 108,
+          "coverage": "2019-2024"
+        }
+      ],
+      "note": "ISTAT Ambiente urbano 2024 collegato alle tavole ufficiali pubblicate il 09/09/2026. PULSE acquisisce serie storiche comunali su disponibilità di verde urbano, produzione di rifiuti urbani, raccolta differenziata e densità di piste ciclabili. Aggiornamento annuale. L'indagine Dati ambientali nelle città è annuale; la raccolta 2026 riguarda l'anno di riferimento 2025.",
+      "checked_at": "2026-09-30T17:31:36.451221+00:00",
+      "pillar": "Multi-pilastro GREEN",
+      "url": "https://www.istat.it/comunicato-stampa/ambiente-urbano-anno-2024/"
     },
     "ISTAT - Indicatori SDGs": {
       "status": "feed",
@@ -1990,7 +6795,7 @@
         }
       ],
       "note": "Dataset Istat SDGs 2004-2026 acquisito: 71 serie nazionali GREEN semanticamente classificate; 36 segnali PULSE.",
-      "checked_at": "2026-09-30T10:51:29.472352+00:00",
+      "checked_at": "2026-09-30T17:31:43.730727+00:00",
       "pillar": "Multi-pilastro GREEN",
       "url": "https://www.istat.it/statistiche-per-temi/focus/benessere-e-sostenibilita/obiettivi-di-sviluppo-sostenibile/gli-indicatori-istat/"
     },
@@ -1998,9 +6803,9 @@
       "status": "connected",
       "http_ok": true,
       "candidate_downloads": [],
-      "landing_sha256": "86d977ebc28ff600e43bc28176be76c1bd0fecf66051e2c226bae942032694a2",
+      "landing_sha256": "ba0d2a89547fc196160c362f2cf12f2d54c704e069a73ff8af45c5b89cf3059b",
       "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "checked_at": "2026-09-30T10:51:30.382803+00:00",
+      "checked_at": "2026-09-30T17:31:45.405758+00:00",
       "pillar": "Risorse idriche e suolo",
       "url": "https://www.istat.it/dati/banche-dati/"
     },
@@ -2011,7 +6816,7 @@
         "https://www.istat.it/wp-content/uploads/2026/03/Istat-GMA2026-Tavole-1.xlsx",
         "https://www.istat.it/wp-content/uploads/2026/03/Istat-GMA2026-Mappe.xlsx"
       ],
-      "landing_sha256": "88441071fba79ff7ddbc05c2c550e804ec394f88ae90cfc8cb6e2b7b3419061a",
+      "landing_sha256": "4a3e3602695ca13b392d7aa85007c62f882fe0b0af76b6b4e803abb37b947c31",
       "note": "Tavole ufficiali Acqua 2026 acquisite; 27 serie regionali pluriennali lette da Tavola 10; 17 segnali PULSE.",
       "structured_url": "https://www.istat.it/wp-content/uploads/2026/03/Istat-GMA2026-Tavole-1.xlsx",
       "structured_format": "zip/xlsx",
@@ -2294,17 +7099,14 @@
           "territory": "Isole"
         }
       ],
-      "checked_at": "2026-09-30T10:51:33.179770+00:00",
+      "checked_at": "2026-09-30T17:31:49.554622+00:00",
       "pillar": "Risorse idriche e suolo",
       "url": "https://www.istat.it/comunicato-stampa/le-statistiche-sullacqua-anni-2023-2025/"
     },
     "Terna - Portale Dati del sistema elettrico": {
-      "status": "connected",
-      "http_ok": true,
-      "candidate_downloads": [],
-      "landing_sha256": "1631498572c515f66002d46f1a4a068ad4bb03861cacdeebaa8e4b59d502c0d8",
-      "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "checked_at": "2026-09-30T10:51:34.463054+00:00",
+      "status": "error",
+      "note": "Errore di collegamento nell'ultimo refresh: <urlopen error timed out>",
+      "checked_at": "2026-09-30T17:33:20.084783+00:00",
       "pillar": "Transizione energetica",
       "url": "https://dati.terna.it/"
     }

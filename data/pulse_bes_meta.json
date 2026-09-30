@@ -1,0 +1,21 @@
+{
+  "source_family": "BES dei territori — ISTAT",
+  "source_url": "https://www.istat.it/statistiche-per-temi/focus/benessere-e-sostenibilita/la-misurazione-del-benessere-bes/il-bes-dei-territori/",
+  "download_url": "https://www.istat.it/wp-content/uploads/2025/06/Bes_dei_territori_edizione_2025.zip",
+  "source_sha256": "90f90043ad3dc3cf190f836851f32f302b08debfa56a2fa1d190a3d28192b72e",
+  "latest_year": 2024,
+  "events": 240,
+  "domains": [
+    "Ambiente",
+    "Benessere economico",
+    "Innovazione, ricerca e creatività",
+    "Istruzione e formazione",
+    "Lavoro e conciliazione dei tempi di vita",
+    "Paesaggio e patrimonio culturale",
+    "Politica e istituzioni",
+    "Qualità dei servizi",
+    "Relazioni sociali",
+    "Salute",
+    "Sicurezza"
+  ]
+}
