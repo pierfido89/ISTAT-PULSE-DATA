@@ -4906,10 +4906,17 @@
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
       "integration_status": "connected",
-      "feed_status": "Collegata · acquisizione/probe automatico attivo",
-      "notes": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "level": "Secondo dataset ufficiale",
-      "frequency": "Secondo aggiornamento della fonte"
+      "feed_status": "Dataset nazionale strutturato ufficiale acquisito · contesto storico, fuori dal feed corrente",
+      "notes": "Collegamento completato e validato il 30/09/2026 tramite il download ufficiale nazionale della Mappa dei rischi. CSV strutturato di circa 43,6 MB acquisito dal form ufficiale getReport.php. Il controller della fonte espone una sola data di riferimento, 01/01/2018: PULSE usa quindi questa fonte solo come contesto territoriale storico/observed e non come feed di novità.",
+      "level": "Comune / Provincia / Regione / Italia",
+      "frequency": "Archivio / snapshot; aggiornamento non corrente",
+      "latest_period": "2018-01-01",
+      "provides": [
+        "Indicatori comunali di rischio idrogeologico",
+        "Indicatori di rischio vulcanico",
+        "Indicatori territoriali e demografici di esposizione/vulnerabilità",
+        "Dataset nazionale CSV con oltre 100 variabili"
+      ]
     },
     {
       "name": "ISTAT - Noi Italia",
