@@ -30,8 +30,8 @@ jobs:
           print("IDROGEO",json.dumps(st,ensure_ascii=False,indent=2))
           print("IDRO_EVENTS",len(ev))
           assert st["status"]=="connected", st
-          assert st["latest_period"]=="2024", st
-          assert len(st.get("verified_opendata",[]))>=1, st
+          assert st["latest_period"]=="Inventario corrente", st
+          assert len(st.get("packages",[]))>=1, st
           assert "IFFI" in st["series"][0]["name"], st
 
           src=next(x for x in g.SOURCES if x["name"]=="ISPRA - Indicatori ambientali e biodiversità")
