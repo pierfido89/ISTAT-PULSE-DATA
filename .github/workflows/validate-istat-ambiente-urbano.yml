@@ -1,0 +1,36 @@
+name: Validate ISTAT Ambiente Urbano Feed
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/validate-istat-ambiente-urbano.yml'
+      - 'scripts/generate_green_events.py'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python -m pip install --disable-pip-version-check -r requirements.txt
+      - name: Run Ambiente urbano connector
+        run: |
+          python - <<'PY'
+          import json
+          import scripts.generate_green_events as g
+          src=next(x for x in g.SOURCES if x["name"]=="ISTAT - Ambiente urbano")
+          st,events=g.run_istat_urban(src)
+          print(json.dumps(st,ensure_ascii=False,indent=2))
+          print("EVENTS",len(events))
+          assert st["status"]=="feed", st
+          assert st["latest_period"]=="2024", st
+          assert st["frequency"]=="Annuale", st
+          assert len(st["tables"])==4, st
+          assert len(st["series"])>300, len(st["series"])
+          assert len(events)>0, "No PULSE events generated"
+          PY
