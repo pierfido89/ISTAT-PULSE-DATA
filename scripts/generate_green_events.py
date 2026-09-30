@@ -337,12 +337,12 @@ def event_status(name,pillar,periods,values,unit=""):
     }
 
 def run_arera(source):
-    """Acquire the complete public ARERA RQSII historical series exposed online.
+    """Acquire ARERA RQSII history and extend it with official 2022-2023 results.
 
-    The public RQSII page currently exposes annual workbooks from 2017 through
-    2021. We ingest the whole public history and build comparable national
-    compliance-rate series, while keeping them out of the current-news feed
-    because the latest published detailed observation is historical.
+    2017-2021 are read from the public detailed workbooks. For 2022-2023,
+    ARERA's annual reports and final RQSII decision provide official national
+    summary values. We keep provenance explicit because the publication format
+    changes after 2021.
     """
     html,links=page_links(source["url"])
     by_year={}
@@ -358,7 +358,6 @@ def run_arera(source):
             if 17 <= yy <= 99:
                 by_year[2000+yy]=url
 
-    # Stable public fallbacks, only used if link discovery changes.
     fallbacks={
         2017:"https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_17.xlsx",
         2018:"https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_18.xlsx",
@@ -369,25 +368,48 @@ def run_arera(source):
     for year,url in fallbacks.items():
         by_year.setdefault(year,url)
 
-    targets=[
-        ("Attivazione","Rispetto standard · attivazione fornitura"),
-        ("RispReclami","Rispetto standard · risposta ai reclami"),
-        ("ArrivoProntoInterv","Rispetto standard · arrivo pronto intervento"),
-        ("RispChiamataProntoInterv","Rispetto standard · risposta chiamata pronto intervento"),
-    ]
-    histories={label:[] for _,label in targets}
-    acquired=[]
-    errors=[]
+    # National summaries officially published by ARERA after the detailed
+    # workbook series currently exposed on the RQSII page.
+    official_summary={
+        2022:{
+            "mc1":96.3,
+            "mc2":95.3,
+            "specific_compliance":96.5,
+            "source":"https://www.arera.it/fileadmin/allegati/relaz_ann/23/ra23_sintesi.pdf",
+        },
+        2023:{
+            "mc1":96.5,
+            "mc2":95.9,
+            "specific_compliance":96.5,
+            "source":"https://www.arera.it/fileadmin/allegati/relaz_ann/24/Sintesi_RA24.pdf",
+        },
+    }
+    final_results_url="https://www.arera.it/atti-e-provvedimenti/dettaglio/25/277-25"
+
+    acquired=[]; errors=[]
+    # Detailed historical indicators retained for provenance/territorial use.
+    detailed_series={}
+    specific_history=[]
 
     for year,url in sorted(by_year.items()):
         try:
             raw=excel_bytes(url,timeout=120)
             book=pd.ExcelFile(io.BytesIO(raw))
-            acquired.append({"year":year,"url":url,"bytes":len(raw)})
-            for sheet,label in targets:
-                if sheet not in book.sheet_names:
+            acquired.append({"year":year,"url":url,"bytes":len(raw),"kind":"detailed_workbook"})
+
+            # Build a national weighted compliance rate from specific-standard
+            # sheets. Exclude invoice-emission because ARERA excludes it from
+            # the published cross-year summary due to its dominant volume.
+            total_within=0.0; total_services=0.0
+            for sheet in book.sheet_names:
+                if sheet in {"EmissioneFattura"}:
                     continue
                 frame=pd.read_excel(book,sheet_name=sheet,header=None)
+                if frame.empty:
+                    continue
+                first=" ".join(clean(x).casefold() for x in frame.iloc[:4].values.ravel())
+                if "standard specifico" not in first:
+                    continue
                 header=None
                 for idx in range(min(12,len(frame))):
                     vals=[clean(x).casefold() for x in frame.iloc[idx].tolist()]
@@ -396,67 +418,118 @@ def run_arera(source):
                         and any("totale prestazioni eseguite" in x for x in vals)
                         and any("entro lo standard" in x or "prest.ese. entro lo standard" in x for x in vals)
                     ):
-                        header=idx
-                        break
+                        header=idx; break
                 if header is None:
                     continue
                 cols=[clean(x) or f"col_{i}" for i,x in enumerate(frame.iloc[header].tolist())]
-                data=frame.iloc[header+1:].copy()
-                data.columns=cols
-                total_col=next((c for c in cols if "totale prestazioni eseguite" in clean(c).casefold()),None)
-                within_col=next((c for c in cols if "entro lo standard" in clean(c).casefold() or "prest.ese. entro lo standard" in clean(c).casefold()),None)
-                if total_col is None or within_col is None:
+                data=frame.iloc[header+1:].copy(); data.columns=cols
+                tc=next((c for c in cols if "totale prestazioni eseguite" in clean(c).casefold()),None)
+                wc=next((c for c in cols if "entro lo standard" in clean(c).casefold() or "prest.ese. entro lo standard" in clean(c).casefold()),None)
+                if tc is None or wc is None:
                     continue
-                total=pd.to_numeric(data[total_col],errors="coerce").fillna(0)
-                within=pd.to_numeric(data[within_col],errors="coerce").fillna(0)
-                denom=float(total[total>0].sum())
-                numer=float(within[total>0].sum())
-                if denom>0:
-                    histories[label].append({
-                        "period":str(year),
-                        "value":numer/denom*100.0,
-                        "unit":"%",
-                        "total_services":int(round(denom)),
-                    })
+                total=pd.to_numeric(data[tc],errors="coerce").fillna(0)
+                within=pd.to_numeric(data[wc],errors="coerce").fillna(0)
+                mask=total>0
+                total_services += float(total[mask].sum())
+                total_within += float(within[mask].sum())
+            if total_services>0:
+                specific_history.append({
+                    "period":str(year),
+                    "value":total_within/total_services*100.0,
+                    "unit":"%",
+                    "source":url,
+                    "method":"weighted_from_public_workbook",
+                })
         except Exception as exc:
             errors.append({"year":year,"url":url,"error":clean(exc)})
 
-    series=[]
-    ok_years=sorted({int(p["period"]) for pts in histories.values() for p in pts})
-    if not ok_years:
-        raise RuntimeError("Nessuna annualità RQSII pubblica acquisita")
-
-    for label,points in histories.items():
-        points=sorted(points,key=lambda p:int(p["period"]))
-        if not points:
-            continue
-        series.append({
-            "name":label,
-            "latest_period":points[-1]["period"],
-            "latest_value":round(points[-1]["value"],4),
+    # Append official ARERA national summaries for 2022-2023.
+    for year,item in official_summary.items():
+        specific_history.append({
+            "period":str(year),
+            "value":item["specific_compliance"],
             "unit":"%",
-            "observations":len(points),
-            "status":"historical_public",
-            "history":points,
+            "source":item["source"],
+            "method":"official_ARERA_annual_report",
         })
+        acquired.append({"year":year,"url":item["source"],"kind":"official_annual_summary"})
 
+    specific_history=sorted(
+        {p["period"]:p for p in specific_history}.values(),
+        key=lambda p:int(p["period"])
+    )
+
+    series=[
+        {
+            "name":"Rispetto medio degli standard specifici",
+            "latest_period":specific_history[-1]["period"],
+            "latest_value":round(float(specific_history[-1]["value"]),4),
+            "unit":"%",
+            "observations":len(specific_history),
+            "status":"official_historical",
+            "history":specific_history,
+        },
+        {
+            "name":"MC1 - Avvio e cessazione del rapporto contrattuale",
+            "latest_period":"2023",
+            "latest_value":96.5,
+            "unit":"%",
+            "observations":2,
+            "status":"official_summary",
+            "history":[
+                {"period":"2022","value":96.3,"unit":"%","source":official_summary[2022]["source"]},
+                {"period":"2023","value":96.5,"unit":"%","source":official_summary[2023]["source"]},
+            ],
+        },
+        {
+            "name":"MC2 - Gestione del rapporto contrattuale e accessibilità",
+            "latest_period":"2023",
+            "latest_value":95.9,
+            "unit":"%",
+            "observations":2,
+            "status":"official_summary",
+            "history":[
+                {"period":"2022","value":95.3,"unit":"%","source":official_summary[2022]["source"]},
+                {"period":"2023","value":95.9,"unit":"%","source":official_summary[2023]["source"]},
+            ],
+        },
+    ]
+
+    events=[]
+    if len(specific_history)>=6:
+        ev=event_from_series(
+            source["name"],
+            final_results_url,
+            "Rispetto medio degli standard specifici del servizio idrico",
+            source["pillar"],
+            [p["period"] for p in specific_history],
+            [p["value"] for p in specific_history],
+            "%",
+            "Italia",
+        )
+        if ev:
+            events.append(ev)
+
+    latest_year=max(int(x["latest_period"]) for x in series if x.get("latest_period"))
     return {
-        "status":"connected",
+        "status":"feed" if events else "connected",
         "http_ok":True,
-        "public_data_years":ok_years,
-        "latest_public_detailed_year":max(ok_years),
-        "structured_format":"xlsx",
+        "public_data_years":list(range(2017,latest_year+1)),
+        "latest_public_year":latest_year,
+        "detailed_workbooks_through":2021,
+        "official_summary_through":2023,
+        "final_results_2022_2023":final_results_url,
         "series":series,
-        "acquired_workbooks":acquired,
+        "acquired_sources":acquired,
         "errors":errors,
         "note":(
-            f"RQSII ARERA collegata sull'intera storia pubblica {min(ok_years)}-{max(ok_years)}. "
-            f"{len(series)} serie nazionali comparabili costruite aggregando le prestazioni "
-            "dei gestori/ATO: attivazioni, reclami e pronto intervento. "
-            "L'ultima annualità pubblica dettagliata disponibile nella banca dati collegata "
-            f"è il {max(ok_years)}; le raccolte successive non vengono trattate come pubblicate."
+            "ARERA RQSII integrata con dati pubblici 2017-2021 da workbook dettagliati "
+            "e con risultati ufficiali 2022-2023 dalle Relazioni annuali ARERA. "
+            "Per il 2022: MC1 96,3%, MC2 95,3%; per il 2023: MC1 96,5%, MC2 95,9%. "
+            "Il mancato rispetto medio degli standard specifici è 3,5% in entrambi gli anni. "
+            "La delibera 277/2025/R/idr certifica i risultati finali del biennio 2022-2023."
         ),
-    },[]
+    },events
 
 
 def run_aci(source):
