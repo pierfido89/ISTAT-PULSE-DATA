@@ -1,0 +1,44 @@
+name: Validate ISPRA Water Air Feed
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/validate-ispra-water-air.yml'
+      - 'scripts/generate_green_events.py'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python -m pip install --disable-pip-version-check -r requirements.txt
+      - name: Run water and air connectors
+        run: |
+          python - <<'PY'
+          import json
+          import scripts.generate_green_events as g
+
+          for name,runner in [
+              ("ISPRA - Risorse idriche",g.run_ispra_water),
+              ("ISPRA/SNPA - Qualità dell'aria",g.run_ispra_air),
+          ]:
+              src=next(x for x in g.SOURCES if x["name"]==name)
+              st,ev=runner(src)
+              print(name,json.dumps(st,ensure_ascii=False,indent=2))
+              print("EVENTS",len(ev))
+              assert st["status"]=="feed", st
+              assert len(st.get("series",[]))>=3, st
+              if "Risorse idriche" in name:
+                  assert st["latest_period"]=="2025", st
+                  assert st["frequency"].startswith("Annuale"), st
+              else:
+                  assert st["latest_structured_period"]=="2022", st
+                  assert st["latest_assessment_period"]=="2025", st
+                  assert st["frequency"].startswith("Annuale"), st
+          PY
