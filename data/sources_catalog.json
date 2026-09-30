@@ -329,10 +329,19 @@
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
       "integration_status": "connected",
-      "feed_status": "Collegata · acquisizione/probe automatico attivo",
-      "notes": "Connettore GSE implementato. Il portale pubblico blocca il runner GitHub con HTTP 403; la fonte resta collegata nel catalogo e viene verificata senza dichiararla feed.",
-      "level": "Secondo dataset ufficiale",
-      "frequency": "Secondo aggiornamento della fonte"
+      "feed_status": "Connettore implementato · download automatico bloccato dal portale GSE (HTTP 403)",
+      "notes": "Ultimo rapporto ufficiale verificato: 'Energia da FER in Italia - anno 2024', pubblicato il 24/09/2026. Frequenza annuale. Il portale GSE e il PDF diretto restituiscono HTTP 403 ai runner GitHub: il connettore non viene dichiarato feed finché non è disponibile una rotta ufficiale automatizzabile stabile.",
+      "level": "Italia / Regioni secondo pubblicazione",
+      "frequency": "Annuale",
+      "provides": [
+        {
+          "area": "Transizione energetica",
+          "series": "Energia da fonti rinnovabili in Italia",
+          "description": "Rapporto statistico GSE su FER nei settori elettrico, termico e trasporti.",
+          "latest_period": "2024",
+          "status": "official_latest_verified"
+        }
+      ]
     },
     {
       "name": "ISPRA - Catasto nazionale rifiuti",
