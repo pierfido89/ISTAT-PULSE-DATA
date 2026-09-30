@@ -821,10 +821,34 @@
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
       "integration_status": "connected",
-      "feed_status": "Collegata · acquisizione/probe automatico attivo",
-      "notes": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "level": "Secondo dataset ufficiale",
-      "frequency": "Secondo aggiornamento della fonte"
+      "feed_status": "Collegata · BIGBANG 10.0 acquisito e serie ufficiali validate · nessun segnale PULSE corrente",
+      "notes": "Collegamento completato e validato il 30/09/2026. BIGBANG 10.0: serie 1951-2025. Ultimi valori 2025: precipitazione totale 962,9 mm; risorsa idrica rinnovabile 128,02 km³; ricarica degli acquiferi 55,85 km³. Aggiornamento annuale, con stime disponibili anche mensilmente; pagina BIGBANG aggiornata il 16/04/2026. Nessun pattern PULSE corrente ha superato le soglie, quindi la fonte è connected e non feed.",
+      "level": "Italia / Regioni / Distretti idrografici",
+      "frequency": "Annuale (stime disponibili anche mensilmente)",
+      "latest_period": "2025",
+      "provides": [
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Precipitazione totale annua",
+          "description": "Serie nazionale ufficiale BIGBANG 10.0.",
+          "latest_period": "2025",
+          "status": "latest_public"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Risorsa idrica rinnovabile (internal flow)",
+          "description": "Serie nazionale ufficiale BIGBANG 10.0.",
+          "latest_period": "2025",
+          "status": "latest_public"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Ricarica degli acquiferi",
+          "description": "Serie nazionale ufficiale BIGBANG 10.0.",
+          "latest_period": "2025",
+          "status": "latest_public"
+        }
+      ]
     },
     {
       "name": "ISPRA/SNPA - Qualità dell'aria",
@@ -837,11 +861,35 @@
       "green_pillar": "Crisi climatica e decarbonizzazione",
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
-      "integration_status": "connected",
-      "feed_status": "Collegata · acquisizione/probe automatico attivo",
-      "notes": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "level": "Secondo dataset ufficiale",
-      "frequency": "Secondo aggiornamento della fonte"
+      "integration_status": "feed",
+      "feed_status": "Attiva in GREEN · CSV ufficiali acquisiti e segnale PULSE disponibile",
+      "notes": "Collegamento completato e validato il 30/09/2026. CSV ufficiali storici: PM10 2002-2022, PM2.5 2004-2022, NO2 2001-2022. Valori aggregati PULSE 2022: PM10 23,0 µg/m³; PM2.5 14,0 µg/m³; NO2 18,0 µg/m³. Valutazione annuale SNPA più recente: 2025. I dati quasi-real-time sono aggiornati giornalmente; i dati definitivi hanno aggiornamento annuale. Generato 1 segnale PULSE.",
+      "level": "Stazione / Comune / Provincia / Regione / Italia",
+      "frequency": "Annuale; quasi-real-time giornaliero",
+      "latest_period": "2025 (valutazione SNPA); 2022 (CSV strutturati)",
+      "provides": [
+        {
+          "area": "Crisi climatica e decarbonizzazione",
+          "series": "PM10 - mediana nazionale delle medie annue di stazione",
+          "description": "Serie ufficiale ISPRA da stazioni con copertura valida.",
+          "latest_period": "2022",
+          "status": "latest_structured"
+        },
+        {
+          "area": "Crisi climatica e decarbonizzazione",
+          "series": "PM2.5 - mediana nazionale delle medie annue di stazione",
+          "description": "Serie ufficiale ISPRA da stazioni con copertura valida.",
+          "latest_period": "2022",
+          "status": "latest_structured"
+        },
+        {
+          "area": "Crisi climatica e decarbonizzazione",
+          "series": "NO2 - mediana nazionale delle medie annue di stazione",
+          "description": "Serie ufficiale ISPRA da stazioni con copertura valida.",
+          "latest_period": "2022",
+          "status": "latest_structured"
+        }
+      ]
     },
     {
       "name": "ISTAT - A misura di Comune",
