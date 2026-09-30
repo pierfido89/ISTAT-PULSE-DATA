@@ -1,0 +1,35 @@
+name: Probe ISPRA Soil XLSX
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/probe-ispra-soil.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check requests pandas openpyxl
+      - name: Inspect ISPRA soil workbook
+        run: |
+          python - <<'PY'
+          import requests,io,pandas as pd
+          u='https://www.isprambiente.gov.it/it/attivita/suolo-e-territorio/suolo/il-consumo-di-suolo/consumo_di_suolo_estratto_dati_2025_anni_2006_2024.xlsx'
+          r=requests.get(u,timeout=120,headers={'User-Agent':'Mozilla/5.0 ISTAT-PULSE-DATA'})
+          print('STATUS',r.status_code,'LEN',len(r.content),'TYPE',r.headers.get('content-type'))
+          r.raise_for_status()
+          xls=pd.ExcelFile(io.BytesIO(r.content))
+          print('SHEETS',xls.sheet_names)
+          for sh in xls.sheet_names[:12]:
+              df=pd.read_excel(io.BytesIO(r.content),sheet_name=sh,header=None,nrows=20)
+              print('\nSHEET',sh,'SHAPE',df.shape)
+              print(df.to_string(max_cols=30))
+          PY
