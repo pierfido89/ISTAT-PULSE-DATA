@@ -1,0 +1,38 @@
+name: Inspect ISTAT Ambiente Urbano ZIP
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/inspect-istat-ambiente-urbano-zip.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python -m pip install --disable-pip-version-check requests pandas openpyxl
+      - name: Inspect ZIP tables
+        run: |
+          python - <<'PY'
+          import requests,zipfile,io,os,pandas as pd
+          u='https://www.istat.it/wp-content/uploads/2026/09/TAVOLE_AMBURB_2024.zip'
+          r=requests.get(u,timeout=180,headers={'User-Agent':'Mozilla/5.0 ISTAT-PULSE-DATA'}); r.raise_for_status()
+          z=zipfile.ZipFile(io.BytesIO(r.content))
+          print('FILES')
+          for n in z.namelist(): print(n)
+          for n in z.namelist():
+              if n.lower().endswith(('.xlsx','.xls')):
+                  raw=z.read(n)
+                  print('\nBOOK',n,'BYTES',len(raw))
+                  xl=pd.ExcelFile(io.BytesIO(raw))
+                  print('SHEETS',xl.sheet_names[:30])
+                  for sh in xl.sheet_names[:3]:
+                      df=pd.read_excel(io.BytesIO(raw),sheet_name=sh,header=None,nrows=15)
+                      print('SHEET',sh,'SHAPE',df.shape)
+                      print(df.to_string(max_cols=35))
+          PY
