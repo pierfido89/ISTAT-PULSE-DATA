@@ -1,0 +1,72 @@
+name: Probe ISPRA Water Air Latest
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/probe-ispra-water-air-latest.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check requests beautifulsoup4 pandas openpyxl
+      - name: Inspect BIGBANG 10 and latest air candidates
+        run: |
+          python - <<'PY'
+          import requests,re,io,pandas as pd
+          from bs4 import BeautifulSoup
+          H={'User-Agent':'Mozilla/5.0 ISTAT-PULSE-DATA'}
+          s=requests.Session()
+
+          u='https://groupware.sinanet.isprambiente.it/bigbang-data/library/bigbang100/excel_tables/'
+          r=s.get(u,timeout=90,headers=H)
+          print('BIGDIR',r.status_code,len(r.content),r.url)
+          print(r.text[:2500])
+          bs=BeautifulSoup(r.text,'html.parser')
+          links=[]
+          for a in bs.find_all('a',href=True):
+              href=requests.compat.urljoin(r.url,a['href'])
+              txt=' '.join(a.stripped_strings)
+              if re.search(r'\.(xlsx?|xls|csv|zip)(?:\?|$)',href,re.I):
+                  links.append((txt,href)); print('BIGFILE',txt,'|',href)
+          for txt,href in links[:6]:
+              try:
+                  x=s.get(href,timeout=180,headers=H); x.raise_for_status()
+                  print('BIGDL',href,len(x.content),x.headers.get('content-type'))
+                  if 'excel' in (x.headers.get('content-type') or '').lower() or href.lower().endswith(('.xlsx','.xls')):
+                      xl=pd.ExcelFile(io.BytesIO(x.content))
+                      print('BIGSHEETS',xl.sheet_names[:20])
+                      for sh in xl.sheet_names[:3]:
+                          df=pd.read_excel(io.BytesIO(x.content),sheet_name=sh,header=None,nrows=12)
+                          print('BIGSHEET',sh,df.shape)
+                          print(df.to_string(max_cols=30))
+              except Exception as e: print('BIGERR',href,repr(e))
+
+          candidates=[]
+          stems=[
+            ('PM10',['2002_2023_pm10__statistiche','2002_2024_pm10__statistiche','2002_2025_pm10__statistiche']),
+            ('PM25',['2004_2023_pm25__statistiche','2004_2024_pm25__statistiche','2004_2025_pm25__statistiche']),
+            ('NO2',['2001_2023-no2-_statistiche','2001_2024-no2-_statistiche','2001_2025-no2-_statistiche'])
+          ]
+          for year in [2025,2026]:
+            for pol,ss in stems:
+              for stem in ss:
+                for date in ['2025-01-09_','2025-03-13_','2026-01-09_','2026-03-13_','']:
+                  candidates.append(f'https://www.isprambiente.gov.it/files{year}/attivita/aria/{date}{stem}.csv')
+          seen=set()
+          for u in candidates:
+              if u in seen: continue
+              seen.add(u)
+              try:
+                  rr=s.head(u,timeout=15,headers=H,allow_redirects=True)
+                  if rr.status_code==200 and (rr.headers.get('content-length') or '0')!='0':
+                      print('AIRCAND',u,rr.status_code,rr.headers.get('content-length'),rr.headers.get('content-type'))
+              except Exception: pass
+          PY
