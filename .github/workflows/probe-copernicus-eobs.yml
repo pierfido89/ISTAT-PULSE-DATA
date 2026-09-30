@@ -1,0 +1,39 @@
+name: Probe Copernicus EOBS
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/probe-copernicus-eobs.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check requests beautifulsoup4 xarray netcdf4 numpy
+      - name: Inspect public monthly E-OBS links and latest period
+        run: |
+          python - <<'PY'
+          import requests,re,io,os
+          from bs4 import BeautifulSoup
+          url='https://surfobs.climate.copernicus.eu/dataaccess/access_eobs_months.php'
+          r=requests.get(url,timeout=90,headers={'User-Agent':'ISTAT-PULSE-DATA/Copernicus-EOBS'})
+          r.raise_for_status()
+          soup=BeautifulSoup(r.text,'html.parser')
+          links=[]
+          for a in soup.find_all('a',href=True):
+              href=requests.compat.urljoin(url,a['href'])
+              text=' '.join(a.stripped_strings)
+              if '2026' in href or '2026' in text or href.lower().endswith(('.nc','.nc.gz','.zip')):
+                  links.append((text,href))
+          print('LINKS',len(links))
+          for text,href in links[:300]:
+              print('LINK',text,'|',href)
+          PY
