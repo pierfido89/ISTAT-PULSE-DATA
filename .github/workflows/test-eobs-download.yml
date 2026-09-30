@@ -1,0 +1,36 @@
+name: Test Copernicus EOBS Download
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/test-eobs-download.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check requests
+      - name: Test download headers
+        run: |
+          python - <<'PY'
+          import requests
+          u='https://knmi-ecad-assets-prd.s3.amazonaws.com/ensembles/data/months/ens/tg_0.25deg_day_2026_08_grid_ensmean.nc'
+          tests=[
+            {},
+            {'Referer':'https://surfobs.climate.copernicus.eu/','User-Agent':'Mozilla/5.0'},
+            {'Range':'bytes=0-1023','Referer':'https://surfobs.climate.copernicus.eu/dataaccess/access_eobs_months.php','User-Agent':'Mozilla/5.0'},
+          ]
+          for h in tests:
+              r=requests.get(u,headers=h,timeout=60,allow_redirects=True)
+              print('STATUS',r.status_code,'LEN',len(r.content),'URL',r.url,'HEADERS',h)
+              print('RESP',dict(r.headers))
+              print('BODY',r.text[:300] if 'text' in r.headers.get('content-type','') else r.content[:80])
+          PY
