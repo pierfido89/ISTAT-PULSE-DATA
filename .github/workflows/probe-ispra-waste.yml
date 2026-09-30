@@ -25,7 +25,11 @@ jobs:
           u='https://www.catasto-rifiuti.isprambiente.it/get/getDettaglioComunale.csv.php?&aa=2024'
           r=requests.get(u,timeout=120,headers={'User-Agent':'Mozilla/5.0 ISTAT-PULSE-DATA'})
           r.raise_for_status()
-          df=pd.read_csv(io.BytesIO(r.content),sep=';',skiprows=1,encoding='utf-8-sig',dtype=str)
+          txt=r.content.decode('utf-8-sig')
+          lines=txt.splitlines()
+          print('HEADER_FIELDS',len(lines[1].split(';')),lines[1])
+          print('ROW_FIELDS',len(lines[2].split(';')),lines[2][:1200])
+          df=pd.read_csv(io.BytesIO(r.content),sep=';',skiprows=1,encoding='utf-8-sig',dtype=str,index_col=False)
           print('SHAPE',df.shape)
           print('COLUMNS',list(df.columns))
           print(df[['Regione','Provincia','Comune','Popolazione','Totale RD (t)','Totale RU (t)','Percentuale RD (%)']].head(12).to_string())
