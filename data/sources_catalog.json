@@ -354,11 +354,27 @@
       "green_pillar": "Economia circolare",
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
-      "integration_status": "connected",
-      "feed_status": "Collegata · acquisizione/probe automatico attivo",
-      "notes": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "level": "Secondo dataset ufficiale",
-      "frequency": "Secondo aggiornamento della fonte"
+      "integration_status": "feed",
+      "feed_status": "Attiva in GREEN · CSV comunali acquisiti e segnali PULSE disponibili",
+      "notes": "Collegamento completato e validato il 30/09/2026. CSV comunali ufficiali acquisiti per il periodo 2015-2024; file 2024: 7.897 comuni. Raccolta differenziata nazionale 2024: 67,69%; rifiuti urbani pro capite: 507,86 kg/ab. Aggiornamento annuale; portale aggiornato il 22/07/2026. Generati 18 segnali PULSE.",
+      "level": "Comune / Regione / Italia",
+      "frequency": "Annuale",
+      "provides": [
+        {
+          "area": "Economia circolare",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie annuale Italia e regioni costruita dai CSV comunali ufficiali ISPRA.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Economia circolare",
+          "series": "Rifiuti urbani prodotti pro capite",
+          "description": "Serie annuale nazionale costruita dai CSV comunali ufficiali ISPRA.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        }
+      ]
     },
     {
       "name": "ISPRA - Consumo di suolo e indicatori territoriali",
