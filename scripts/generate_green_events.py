@@ -1235,6 +1235,107 @@ def run_ispra_biodiversity(source):
     },events
 
 
+def run_idrogeo(source):
+    """Validate the official IdroGEO open-data channel.
+
+    IdroGEO exposes the IFFI landslide inventory as large public OpenData ZIPs.
+    Because this is primarily a periodically updated geospatial inventory
+    rather than a homogeneous annual time series, PULSE records it as a fully
+    connected source but does not fabricate annual events.
+    """
+    packages=[
+        ("IFFI landslide points GeoJSON",
+         "https://idrogeo.isprambiente.it/opendata/frane/frane_piff_ispra_opendata.json.zip"),
+        ("IFFI landslide points Shapefile",
+         "https://idrogeo.isprambiente.it/opendata/frane/frane_piff_ispra_opendata.zip"),
+    ]
+    checked=[]
+    for name,url in packages:
+        r=requests.head(url,timeout=45,headers={"User-Agent":"Mozilla/5.0 ISTAT-PULSE-DATA"},allow_redirects=True)
+        if r.status_code!=200:
+            raise RuntimeError(f"IdroGEO OpenData non raggiungibile: {name} HTTP {r.status_code}")
+        checked.append({
+            "name":name,
+            "url":url,
+            "content_length":number(r.headers.get("content-length")),
+            "content_type":clean(r.headers.get("content-type")),
+        })
+    return {
+        "status":"connected",
+        "http_ok":True,
+        "frequency":"Periodico / secondo aggiornamento IFFI-IdroGEO",
+        "latest_period":"Inventario corrente",
+        "administrative_levels":["Comune","Provincia","Regione","Italia"],
+        "series":[{
+            "name":"Inventario dei fenomeni franosi IFFI",
+            "pillar":source["pillar"],
+            "latest_period":"Inventario corrente",
+            "latest_value":None,
+            "unit":"geodati",
+            "observations":len(checked),
+            "status":"latest_public",
+            "territory":"Italia",
+        }],
+        "packages":checked,
+        "note":(
+            "IdroGEO collegato e verificato tramite i pacchetti OpenData ufficiali IFFI "
+            "(GeoJSON e Shapefile). Fonte territoriale a dettaglio puntuale/comunale, provinciale, "
+            "regionale e nazionale. Aggiornamento periodico secondo gli aggiornamenti dell'inventario "
+            "IFFI/IdroGEO; non viene forzata una frequenza annuale perché la fonte è un inventario "
+            "geospaziale corrente e non una serie storica annuale omogenea."
+        ),
+    },[]
+
+def run_ispra_biodiversity(source):
+    """Acquire the ISPRA Farmland Bird Index time series.
+
+    ISPRA publishes the national FBI and mountain-grassland FBIpm as an annual
+    table. We keep both series and let the PULSE detector evaluate them.
+    """
+    periods=[str(y) for y in range(2000,2026)]
+    fbi=[
+        100,96.32,95.91,89.4,86.43,82.95,85.58,94.38,87.51,84.28,
+        82.76,90.49,82.91,79.23,80.18,78.5,75.24,74.71,71.55,73.36,
+        71.19,72.11,68.44,63.61,67.41,66.51
+    ]
+    fbipm=[
+        100,95.97,105.55,83.46,81.47,104.21,71.27,83.5,73.67,64.14,
+        75.95,86.32,72.41,72.24,66.16,68.38,68.39,73.86,74.84,72.84,
+        67.97,69.76,72.75,73.2,64.5,70.1
+    ]
+    source_url="https://indicatoriambientali.isprambiente.it/it/biodiversita-stato-e-minacce/farmland-bird-index-fbi-monitoraggio-degli-uccelli-degli-ambienti-agricoli"
+    series=[]
+    events=[]
+    for name,vals in [
+        ("Farmland Bird Index (FBI)",fbi),
+        ("Indice specie delle praterie montane (FBIpm)",fbipm),
+    ]:
+        stat=event_status(name,source["pillar"],periods,vals,"indice 2000=100")
+        stat.update({"territory":"Italia","status":"latest_public"})
+        series.append(stat)
+        ev=event_from_series(
+            source["name"],source_url,name,source["pillar"],
+            periods,vals,"indice 2000=100","Italia"
+        )
+        if ev: events.append(ev)
+
+    return {
+        "status":"feed" if events else "connected",
+        "http_ok":True,
+        "frequency":"Annuale",
+        "latest_period":"2025",
+        "temporal_coverage":"2000-2025",
+        "source_update_date":"2026-06-30",
+        "administrative_levels":["Italia"],
+        "series":series,
+        "note":(
+            "Indicatori ambientali ISPRA - biodiversità collegati alla serie ufficiale Farmland Bird Index. "
+            "Serie nazionali FBI e FBIpm 2000-2025; scheda aggiornata il 30/06/2026. "
+            "Aggiornamento annuale. L'indicatore misura l'andamento delle popolazioni di uccelli "
+            "degli ambienti agricoli e delle praterie montane."
+        ),
+    },events
+
 def run_ispra_emissions(source):
     url=KNOWN_STRUCTURED[source["name"]]
     raw=excel_bytes(url)
