@@ -1,0 +1,31 @@
+name: Inspect Mappa Rischi Controller
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/inspect-mappa-rischi-controller.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: |
+          python - <<'PY'
+          import urllib.request,re
+          u='https://www.istat.it/wp-content/themes/EGPbs5-child/inc/mappa-rischi/js/atlrsk.js'
+          txt=urllib.request.urlopen(urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0'}),timeout=30).read().decode('utf-8','ignore')
+          for key in ['getReportAJAX.php','Controller.php','regioni.php','province.php','getValueParam.php','viewReportAjax','scaricaDati']:
+              print('\n###',key)
+              pos=0
+              while True:
+                  i=txt.find(key,pos)
+                  if i<0: break
+                  print(txt[max(0,i-1200):i+1800])
+                  pos=i+len(key)
+          PY
