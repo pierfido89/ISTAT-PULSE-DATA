@@ -1430,7 +1430,9 @@ def run_ispra_air(source):
         frame["mean_num"]=frame["media_yy"].map(number)
         if "copertura" in frame.columns:
             frame["coverage_num"]=frame["copertura"].map(number)
-            good=frame[(frame["mean_num"].notna()) & ((frame["coverage_num"].isna()) | (frame["coverage_num"]>=75))]
+            cov=frame["coverage_num"].dropna()
+            threshold=0.75 if (not cov.empty and cov.median()<=1.5) else 75.0
+            good=frame[(frame["mean_num"].notna()) & ((frame["coverage_num"].isna()) | (frame["coverage_num"]>=threshold))]
         else:
             good=frame[frame["mean_num"].notna()]
         agg=good.groupby("yy_num")["mean_num"].median().dropna().sort_index()
