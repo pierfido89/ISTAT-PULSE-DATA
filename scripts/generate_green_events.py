@@ -55,7 +55,7 @@ SOURCES=[
  {"name":"Eurostat - Statistiche ambientali ed energia","category":"GREEN_EU","topics":["MULTITEMA"],"pillar":"Multi-pilastro GREEN","url":"https://ec.europa.eu/eurostat/web/environment","kind":"eurostat","keywords":[]},
  {"name":"GSE - Statistiche delle rinnovabili","category":"GREEN_IT","topics":["ENERGIA"],"pillar":"Transizione energetica","url":"https://www.gse.it/dati-e-scenari/statistiche","kind":"discover","keywords":["rinnovabili","statistiche","xlsx"]},
  {"name":"ISPRA - Catasto nazionale rifiuti","category":"GREEN_IT","topics":["CIRCOLARE"],"pillar":"Economia circolare","url":"https://www.catasto-rifiuti.isprambiente.it/index.php?advice=si&pg=downloadComune","kind":"ispra_waste","keywords":["rifiuti","csv"]},
- {"name":"ISPRA - Consumo di suolo e indicatori territoriali","category":"GREEN_IT","topics":["SUOLO"],"pillar":"Risorse idriche e suolo","url":"https://www.isprambiente.gov.it/it/attivita/suolo-e-territorio/suolo/il-consumo-di-suolo/i-dati-sul-consumo-di-suolo","kind":"discover","keywords":["indicatori","suolo","xlsx","zip"]},
+ {"name":"ISPRA - Consumo di suolo e indicatori territoriali","category":"GREEN_IT","topics":["SUOLO"],"pillar":"Risorse idriche e suolo","url":"https://www.isprambiente.gov.it/it/attivita/suolo-e-territorio/suolo/il-consumo-di-suolo/i-dati-sul-consumo-di-suolo","kind":"ispra_soil","keywords":["indicatori","suolo","xlsx"]},
  {"name":"ISPRA - IdroGEO","category":"GREEN_IT","topics":["SUOLO"],"pillar":"Risorse idriche e suolo","url":"https://idrogeo.isprambiente.it/","kind":"discover","keywords":["open","download","dati"]},
  {"name":"ISPRA - Indicatori ambientali e biodiversità","category":"GREEN_IT","topics":["BIODIVERSITA"],"pillar":"Tutela della biodiversità","url":"https://indicatoriambientali.isprambiente.it/it/temi/biodiversita-stato-e-minacce","kind":"discover","keywords":["biodivers","xlsx","csv"]},
  {"name":"ISPRA - Inventario nazionale delle emissioni","category":"GREEN_IT","topics":["CLIMA"],"pillar":"Crisi climatica e decarbonizzazione","url":"https://emissioni.sina.isprambiente.it/serie-storiche-emissioni-di-gas-serra-sintesi/","kind":"ispra_emissions","keywords":["gas serra","xlsx","xls"]},
@@ -1015,6 +1015,101 @@ def run_ispra_waste(source):
         ),
     },events
 
+def run_ispra_soil(source):
+    """Acquire ISPRA/SNPA official soil-consumption indicators.
+
+    The 2025 release contains administrative indicators through 2024 at
+    municipal, provincial and regional level. For PULSE we use comparable
+    annual net soil-consumption increments from 2015-2016 through 2023-2024,
+    aggregated nationally and retained by region.
+    """
+    url="https://www.isprambiente.gov.it/it/attivita/suolo-e-territorio/suolo/il-consumo-di-suolo/consumo_di_suolo_estratto_dati_2025_anni_2006_2024.xlsx"
+    raw=excel_bytes(url,120)
+    frame=pd.read_excel(io.BytesIO(raw),sheet_name="Regioni_2006_2024")
+
+    if "Nome_Regione" not in frame.columns:
+        raise RuntimeError(f"Foglio ISPRA suolo inatteso: {list(frame.columns)}")
+
+    intervals=[]
+    for col in frame.columns:
+        m=re.match(r"Incremento netto (20\d{2})-(20\d{2}) \[ettari\]",clean(col))
+        if not m:
+            continue
+        start_y,end_y=int(m.group(1)),int(m.group(2))
+        if end_y-start_y==1 and end_y>=2016:
+            intervals.append((end_y,col))
+    intervals.sort()
+
+    if len(intervals)<6:
+        raise RuntimeError(f"Intervalli annuali ISPRA suolo insufficienti: {intervals}")
+
+    periods=[str(y) for y,_ in intervals]
+    national=[]
+    for _,col in intervals:
+        vals=pd.to_numeric(frame[col],errors="coerce")
+        national.append(float(vals.sum()))
+
+    series=[]
+    events=[]
+
+    national_name="Consumo netto annuale di suolo"
+    stat=event_status(national_name,source["pillar"],periods,national,"ettari")
+    stat.update({"territory":"Italia","status":"latest_public"})
+    series.append(stat)
+    ev=event_from_series(
+        source["name"],url,national_name,source["pillar"],
+        periods,national,"ettari","Italia"
+    )
+    if ev: events.append(ev)
+
+    for _,row in frame.iterrows():
+        region=clean(row.get("Nome_Regione"))
+        if not region:
+            continue
+        vals=[number(row.get(col)) for _,col in intervals]
+        if sum(v is not None for v in vals)<6:
+            continue
+        stat=event_status(national_name,source["pillar"],periods,vals,"ettari")
+        stat.update({"territory":region,"status":"latest_public"})
+        series.append(stat)
+        ev=event_from_series(
+            source["name"],url,national_name,source["pillar"],
+            periods,vals,"ettari",region
+        )
+        if ev:
+            ev["region"]=region
+            ev["municipality"]=region
+            events.append(ev)
+
+    latest_col="Suolo consumato 2024 [%]"
+    latest_pct={}
+    if latest_col in frame.columns:
+        for _,row in frame.iterrows():
+            region=clean(row.get("Nome_Regione"))
+            value=number(row.get(latest_col))
+            if region and value is not None:
+                latest_pct[region]=value
+
+    return {
+        "status":"feed" if events else "connected",
+        "http_ok":True,
+        "frequency":"Annuale",
+        "release":"Rapporto 2025",
+        "publication_date":"2025-10-24",
+        "latest_period":"2024",
+        "temporal_coverage":"2006-2024",
+        "pulse_annual_series":f"{periods[0]}-{periods[-1]}",
+        "administrative_levels":["Comune","Provincia","Regione","Italia"],
+        "series":series,
+        "latest_region_soil_share_pct":latest_pct,
+        "note":(
+            f"ISPRA/SNPA Consumo di suolo collegato al workbook ufficiale del Rapporto 2025. "
+            f"Dati definitivi fino al 2024; copertura 2006-2024 a livello comunale, provinciale e regionale. "
+            f"PULSE usa gli incrementi netti annuali comparabili {periods[0]}-{periods[-1]} per Italia e regioni. "
+            f"Aggiornamento annuale. I dati preliminari 2025 sono in consultazione e ISPRA prevede i definitivi a fine ottobre 2026."
+        ),
+    },events
+
 def run_ispra_emissions(source):
     url=KNOWN_STRUCTURED[source["name"]]
     raw=excel_bytes(url)
@@ -1338,6 +1433,7 @@ def main():
             elif kind=="copernicus": st,ev=run_copernicus(source)
             elif kind=="eea": st,ev=run_eea(source)
             elif kind=="ispra_waste": st,ev=run_ispra_waste(source)
+            elif kind=="ispra_soil": st,ev=run_ispra_soil(source)
             elif kind=="ispra_emissions": st,ev=run_ispra_emissions(source)
             elif kind=="istat_sdgs": st,ev=run_sdgs(source)
             elif kind=="istat_water": st,ev=run_istat_water(source)
