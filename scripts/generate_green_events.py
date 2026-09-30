@@ -24,6 +24,7 @@ import re
 import statistics
 import urllib.parse
 import urllib.request
+import zipfile
 from datetime import datetime, timezone
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
@@ -46,7 +47,7 @@ COLUMNS=[
 UA="ISTAT-PULSE-GREEN/1.0 (+https://github.com/pierfido89/ISTAT-PULSE-DATA)"
 
 SOURCES=[
- {"name":"ACI - Open data mobilità e parco veicoli","category":"GREEN_IT","topics":["MOBILITA"],"pillar":"Mobilità sostenibile","url":"https://aci.gov.it/attivita-e-progetti/studi-e-ricerche/open-data/","kind":"discover","keywords":["parco","veicoli","open"]},
+ {"name":"ACI - Open data mobilità e parco veicoli","category":"GREEN_IT","topics":["MOBILITA"],"pillar":"Mobilità sostenibile","url":"https://aci.gov.it/attivita-e-progetti/studi-e-ricerche/open-data/","kind":"aci","keywords":["annuario","prime iscrizioni","alimentazione","elettrico","ibrido"]},
  {"name":"ARERA - Statistiche del servizio idrico","category":"GREEN_IT","topics":["ACQUA"],"pillar":"Risorse idriche e suolo","url":"https://www.arera.it/dati-e-statistiche/dettaglio/rqsii","kind":"discover","keywords":["idrico","qualita","xlsx"]},
  {"name":"Copernicus - Climate Data Store","category":"GREEN_EU","topics":["CLIMA"],"pillar":"Crisi climatica e decarbonizzazione","url":"https://cds.climate.copernicus.eu/","kind":"copernicus","keywords":[]},
  {"name":"EEA - Dati ambientali europei","category":"GREEN_EU","topics":["CLIMA"],"pillar":"Crisi climatica e decarbonizzazione","url":"https://www.eea.europa.eu/en/datahub/datahubitem-view/3b7fe76c-524a-439a-bfd2-a6e4046302a2?activeAccordion=1096150","kind":"eea","keywords":["greenhouse","emission","csv"]},
@@ -334,6 +335,143 @@ def event_status(name,pillar,periods,values,unit=""):
       "latest_value":good[-1][1] if good else None,
       "unit":unit,"observations":len(good),"status":"ok" if len(good)>=2 else "insufficient"
     }
+
+def run_aci(source):
+    """Acquire ACI PRA open data and build national sustainable-mobility series.
+
+    The ACI Open Data Annuario is published annually and its reference year is
+    the previous calendar year. TABII03 contains the historical national series
+    of first registrations of new passenger cars by fuel/powertrain.
+    """
+    html,links=page_links(source["url"])
+    packages=[]
+    for url in links:
+        match=re.search(r"Annuario-statistico-(\\d{4})-OD\\.zip(?:\\?|$)",url,re.I)
+        if match:
+            packages.append((int(match.group(1)),url))
+    if not packages:
+        # Keep a current, verified fallback while still preferring automatic discovery.
+        packages=[(2026,KNOWN_STRUCTURED[source["name"]])]
+    publication_year,package_url=max(packages,key=lambda item:item[0])
+
+    raw=get(package_url,timeout=120)
+    if not raw.startswith(b"PK"):
+        raise RuntimeError("Pacchetto ACI Open Data non riconosciuto come ZIP")
+
+    with zipfile.ZipFile(io.BytesIO(raw)) as archive:
+        candidates=[
+            name for name in archive.namelist()
+            if re.search(r"Capitolo\\s*2.*\\.ods$",name,re.I)
+        ]
+        if not candidates:
+            raise RuntimeError("Capitolo 2 ACI non trovato nel pacchetto Open Data")
+        chapter=sorted(candidates)[-1]
+        workbook=archive.read(chapter)
+
+    frame=pd.read_excel(
+        io.BytesIO(workbook),sheet_name="TABII03",header=None,engine="odf"
+    )
+    header=None
+    for idx in range(min(12,len(frame))):
+        row=[clean(x).casefold() for x in frame.iloc[idx].tolist()]
+        if row and row[0]=="anni" and any("elettr" in x for x in row):
+            header=idx
+            break
+    if header is None:
+        raise RuntimeError("Intestazione TABII03 ACI non individuata")
+
+    labels=[clean(x) for x in frame.iloc[header].tolist()]
+    normalized=[x.casefold() for x in labels]
+    def col(term):
+        return next((i for i,x in enumerate(normalized) if term in x),None)
+
+    c_year=0
+    c_hybrid=col("ibrid")
+    c_electric=col("elettr")
+    c_total=col("totale")
+    if None in (c_hybrid,c_electric,c_total):
+        raise RuntimeError("Colonne alimentazione ACI incomplete in TABII03")
+
+    rows=[]
+    for idx in range(header+1,len(frame)):
+        y=number(frame.iloc[idx,c_year])
+        if y is None or not (1990<=y<=2100):
+            continue
+        year=str(int(round(y)))
+        hybrid=number(frame.iloc[idx,c_hybrid])
+        electric=number(frame.iloc[idx,c_electric])
+        total=number(frame.iloc[idx,c_total])
+        if total is None or total<=0:
+            continue
+        rows.append((year,hybrid,electric,total))
+
+    rows.sort(key=lambda x:int(x[0]))
+    if len(rows)<6:
+        raise RuntimeError(f"Serie ACI troppo corta: {len(rows)} osservazioni")
+
+    periods=[x[0] for x in rows]
+    configs=[
+        (
+            "Prime iscrizioni di autovetture elettriche",
+            [x[2] for x in rows],
+            "veicoli",
+        ),
+        (
+            "Prime iscrizioni di autovetture ibride",
+            [x[1] for x in rows],
+            "veicoli",
+        ),
+        (
+            "Quota di prime iscrizioni elettriche sul totale",
+            [(x[2]/x[3]*100) if x[2] is not None else None for x in rows],
+            "%",
+        ),
+        (
+            "Quota di prime iscrizioni ibride ed elettriche sul totale",
+            [((x[1] or 0)+(x[2] or 0))/x[3]*100
+             if (x[1] is not None or x[2] is not None) else None for x in rows],
+            "%",
+        ),
+    ]
+
+    events=[]; series=[]
+    data_url=package_url
+    for name,values,unit in configs:
+        good=[(p,v) for p,v in zip(periods,values) if v is not None and np.isfinite(float(v))]
+        stat={
+            "name":name,
+            "pillar":source["pillar"],
+            "latest_period":good[-1][0] if good else "",
+            "latest_value":float(good[-1][1]) if good else None,
+            "unit":unit,
+            "observations":len(good),
+            "status":"ok" if len(good)>=6 else "insufficient",
+        }
+        series.append(stat)
+        if len(good)>=6:
+            ev=event_from_series(
+                source["name"],data_url,name,source["pillar"],
+                [x[0] for x in good],[x[1] for x in good],unit,"Italia"
+            )
+            if ev:
+                events.append(ev)
+
+    return {
+        "status":"feed" if events else "connected",
+        "http_ok":True,
+        "publication_year":publication_year,
+        "data_reference_year":periods[-1],
+        "structured_url":package_url,
+        "structured_format":"zip/ods",
+        "licence":"CC BY 4.0",
+        "series":series,
+        "note":(
+            f"Annuario ACI {publication_year} acquisito automaticamente; "
+            f"TABII03 letta con {len(rows)} anni utili fino al {periods[-1]}. "
+            f"{len(events)} segnali PULSE emessi da 4 serie sulla transizione del parco nuovo."
+        ),
+    },events
+
 
 def run_eea(source):
     result=discover(source)
@@ -645,7 +783,8 @@ def main():
     for source in SOURCES:
         try:
             kind=source["kind"]
-            if kind=="eurostat": st,ev=run_eurostat(source)
+            if kind=="aci": st,ev=run_aci(source)
+            elif kind=="eurostat": st,ev=run_eurostat(source)
             elif kind=="copernicus": st,ev=run_copernicus(source)
             elif kind=="eea": st,ev=run_eea(source)
             elif kind=="ispra_emissions": st,ev=run_ispra_emissions(source)
