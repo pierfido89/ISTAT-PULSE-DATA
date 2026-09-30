@@ -1,0 +1,50 @@
+name: Probe ISPRA Fast Endpoints
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/probe-ispra-fast.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check requests
+      - name: Probe lightweight endpoints
+        run: |
+          python - <<'PY'
+          import requests,re
+          H={'User-Agent':'Mozilla/5.0 ISTAT-PULSE-DATA'}
+          s=requests.Session()
+          js=s.get('https://idrogeo.isprambiente.it/app/main-AYPMWW6W.js',timeout=40,headers=H)
+          print('JS',js.status_code,len(js.content)); js.raise_for_status()
+          t=js.text
+          for pat in [
+              r'url:"([^"]+)"',
+              r'frane:"([^"]+)"',
+              r'frana:"([^"]+)"',
+              r'download:\{([^}]+)\}',
+              r'wfs:"([^"]+)"'
+          ]:
+              vals=re.findall(pat,t)
+              print('PAT',pat,vals[:30])
+          for u in [
+            'https://idrogeo.isprambiente.it/opendata/frane/frane_piff_ispra_opendata.json.zip',
+            'https://idrogeo.isprambiente.it/opendata/frane/frane_piff_ispra_opendata.zip'
+          ]:
+              try:
+                  r=s.head(u,timeout=30,headers=H,allow_redirects=True)
+                  print('HEAD',u,r.status_code,r.headers.get('content-length'),r.headers.get('content-type'),r.url)
+              except Exception as e: print('HEADERR',u,repr(e))
+          u='https://www.reterurale.it/farmlandbirdindex'
+          r=s.get(u,timeout=40,headers=H)
+          print('FBI',r.status_code,len(r.content),r.url)
+          print('FBI_MARKERS',all(x in r.text for x in ['2000-2025','Farmland Bird Index']))
+          PY
