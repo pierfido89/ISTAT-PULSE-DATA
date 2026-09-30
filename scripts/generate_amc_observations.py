@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
-"""Import selected, independently verified official municipal-system XLSX tables.
+"""Acquire verified ISTAT 'A misura di Comune' municipal observations.
 
-A misura di Comune published 2026-05-26 contains reference years as old as
-2023/2024: these records go ONLY to the observed-data catalogue, never the news.
+The source is a multi-topic municipal statistical system. Its statistical
+reference years are mostly 2023/2024 even though the release was updated on
+2026-05-26. Therefore these values belong to PULSE's observed-data catalogue,
+not to the current-news feed.
 """
 from __future__ import annotations
+
 from pathlib import Path
 from urllib.parse import urljoin,urlparse
 import io,math,re,urllib.request
@@ -13,97 +16,200 @@ from bs4 import BeautifulSoup
 
 PAGE="https://www.istat.it/statistica-sperimentale/aggiornamento-degli-indicatori-del-sistema-informativo-a-misura-di-comune/"
 OUT=Path("app/src/main/assets/pulse_observations_amc.tsv")
+SOURCE="ISTAT - A misura di Comune"
 FIELDS=["area","indicator","territory","period","value","unit","source","url","note","status"]
-# Explicit semantic mapping of each official TABLE, not an inference from data values.
+
+# Explicit table-level semantic mapping. Each selected table is municipality
+# level and carries stable ISTAT municipality codes in the official workbook.
 TABLES=[
-    ("3 – Famiglie","Tav. 1.2 Province e regioni","Famiglie","Numero famiglie"),
-    ("4 – Istruzione","Tav. 2.2 Province e regioni","Istruzione","Competenze alfabetiche degli studenti"),
-    ("4 – Istruzione","Tav. 1.2 Province e regioni","Servizi e qualità locale","Bambini nei servizi comunali per l'infanzia"),
-    ("6 – Benessere economico","Tav. 2.2 Province e regioni","Redditi","Reddito imponibile per contribuente"),
-    ("6 – Benessere economico","Tav. 1.2 Province e regioni","Redditi","Incidenza di contribuenti con reddito inferiore a 10.000 euro"),
-    ("11 – Territorio e ambiente","Tav. 6.2 Province e regioni","Ambiente","Indicatore ambientale"),
+    {
+      "book":"5 – Lavoro","sheet":"Tav. 1.1 Comuni","area":"Lavoro",
+      "indicator":"Tasso di occupazione","unit":"%",
+    },
+    {
+      "book":"5 – Lavoro","sheet":"Tav. 2.1 Comuni","area":"Lavoro",
+      "indicator":"Tasso di disoccupazione","unit":"%",
+    },
+    {
+      "book":"6 – Benessere economico","sheet":"Tav. 1.1 Comuni","area":"Redditi",
+      "indicator":"Contribuenti con reddito complessivo inferiore a 10.000 euro","unit":"%",
+    },
+    {
+      "book":"6 – Benessere economico","sheet":"Tav. 2.1 Comuni","area":"Redditi",
+      "indicator":"Reddito imponibile per contribuente","unit":"euro",
+    },
+    {
+      "book":"11 – Territorio e ambiente","sheet":"Tav. 6.1 Comuni","area":"Ambiente",
+      "indicator":"Raccolta differenziata dei rifiuti urbani","unit":"%",
+    },
+    {
+      "book":"11 – Territorio e ambiente","sheet":"Tav. 8.1 Comuni","area":"Mobilità sostenibile",
+      "indicator":"Autovetture con standard di emissioni inferiore a Euro 4","unit":"%",
+    },
 ]
+
 def download(url):
-    request=urllib.request.Request(url,headers={"User-Agent":"ISTAT-PULSE/0.9"})
-    with urllib.request.urlopen(request,timeout=180) as response:
-        return response.read()
-def find_official_urls():
+    req=urllib.request.Request(url,headers={"User-Agent":"ISTAT-PULSE/1.0"})
+    with urllib.request.urlopen(req,timeout=180) as response:
+        data=response.read()
+        if response.status!=200:
+            raise RuntimeError(f"HTTP {response.status}: {url}")
+        return data
+
+def official_urls():
     soup=BeautifulSoup(download(PAGE),"html.parser")
     mapping={}
     for a in soup.select("a[href]"):
         label=a.get_text(" ",strip=True)
         url=urljoin(PAGE,a.get("href",""))
-        if urlparse(url).netloc not in {"www.istat.it","istat.it"} or not url.lower().split("?")[0].endswith(".xlsx"): continue
-        mapping[label]=url
+        if urlparse(url).netloc not in {"www.istat.it","istat.it"}:
+            continue
+        if url.lower().split("?")[0].endswith(".xlsx"):
+            mapping[label]=url
+    if len(mapping)<20:
+        raise RuntimeError(f"Too few official XLSX links found: {len(mapping)}")
     return mapping
-def latest(row,year_columns):
-    for year,column in sorted(year_columns,reverse=True):
-        raw=row.get(column)
-        if pd.isna(raw): continue
-        raw=str(raw).strip()
-        try:
-            value=float(raw.replace(".","").replace(",",".")) if "," in raw else float(raw)
-            if math.isfinite(value): return year,value
-        except (ValueError,TypeError): continue
+
+def parse_number(raw):
+    if raw is None or pd.isna(raw): return None
+    text=str(raw).strip()
+    if text in {"","-","..","....","nan","NaN",".","n.d.","nd"}: return None
+    # Excel cells normally arrive as numeric strings with decimal dot.
+    try:
+        val=float(text)
+        return val if math.isfinite(val) else None
+    except Exception:
+        pass
+    # Fallback for Italian-formatted text.
+    if "," in text and "." in text:
+        if text.rfind(",")>text.rfind("."):
+            text=text.replace(".","").replace(",",".")
+        else:
+            text=text.replace(",","")
+    elif "," in text:
+        text=text.replace(",",".")
+    text=re.sub(r"[^0-9+\-.eE]","",text)
+    try:
+        val=float(text)
+        return val if math.isfinite(val) else None
+    except Exception:
+        return None
+
+def year_columns(frame):
+    result=[]
+    for col in frame.columns:
+        text=str(col).strip()
+        m=re.fullmatch(r"(20\d{2})(?:\.0+)?",text)
+        if m:
+            result.append((int(m.group(1)),col))
+    return sorted(result)
+
+def latest_value(row,years):
+    for year,col in reversed(years):
+        value=parse_number(row.get(col))
+        if value is not None:
+            return year,value
     return None
+
 def main():
-    official_urls=find_official_urls()
+    urls=official_urls()
     books={}
     observations=[]
-    for label,sheet,area,indicator in TABLES:
-        if label not in official_urls: raise RuntimeError(f"Official XLSX not found for {label}")
-        url=official_urls[label]
+    validation={}
+
+    for spec in TABLES:
+        label=spec["book"]
+        if label not in urls:
+            raise RuntimeError(f"Official XLSX not found for {label}")
+        url=urls[label]
+
         if label not in books:
             raw=download(url)
-            if raw[:2]!=b"PK": raise RuntimeError(f"Not a valid XLSX: {url}")
+            if raw[:2]!=b"PK":
+                raise RuntimeError(f"Invalid XLSX payload: {url}")
             books[label]=raw
             print(f"OFFICIAL {label}: {len(raw):,} bytes from {url}",flush=True)
-        book=books[label]
-        xl=pd.ExcelFile(io.BytesIO(book))
-        matching=[s for s in xl.sheet_names if s.strip()==sheet]
-        if len(matching)!=1: raise RuntimeError(f"Unexpected table layout for {label}: {sheet}")
-        frame=pd.read_excel(io.BytesIO(book),sheet_name=matching[0],header=3,dtype=str)
+
+        raw=books[label]
+        xl=pd.ExcelFile(io.BytesIO(raw))
+        if spec["sheet"] not in xl.sheet_names:
+            raise RuntimeError(f"Missing sheet {spec['sheet']} in {label}")
+
+        frame=pd.read_excel(io.BytesIO(raw),sheet_name=spec["sheet"],header=3,dtype=str)
         frame.columns=[str(x).strip() for x in frame.columns]
-        if "Denominazione regione" not in frame or "Codice regione" not in frame:
-            raise RuntimeError(f"Missing region keys in {label}/{sheet}: {frame.columns.tolist()}")
-        # Only source's explicit *regional totals*. Never sum provinces or use
-        # one province as a region. Grouping errors invalidate the entire import.
-        if "Provincia" in frame:
-            province=frame["Provincia"].fillna("").astype(str).str.strip()
-            regional=frame.loc[province.str.upper().eq("TOTALE")].copy()
-        else:
-            regional=frame.copy()
-        years=[(int(x),x) for x in frame.columns if re.fullmatch(r"20\d{2}",x)]
-        if not years: raise RuntimeError(f"No year columns in {label}/{sheet}")
-        added=0; codes=set()
-        for _,row in regional.iterrows():
-            code=str(row.get("Codice regione","")).strip()
+
+        required={"Denominazione comune","Codice comune Istat","Denominazione regione"}
+        if not required.issubset(frame.columns):
+            raise RuntimeError(
+                f"Missing municipality keys in {label}/{spec['sheet']}: {frame.columns.tolist()}"
+            )
+
+        years=year_columns(frame)
+        if len(years)<2:
+            raise RuntimeError(f"Insufficient year columns in {label}/{spec['sheet']}")
+
+        added=0
+        codes=set()
+        latest_year=0
+        for _,row in frame.iterrows():
+            code=str(row.get("Codice comune Istat","")).strip()
             if code.endswith(".0"): code=code[:-2]
-            code=code.zfill(2)
-            name=str(row.get("Denominazione regione","")).strip()
-            if not re.fullmatch(r"(0[1-9]|1\d|20)",code) or not name or name.casefold()=="nan": continue
-            result=latest(row,years)
+            code=re.sub(r"\D","",code).zfill(6)
+            comune=str(row.get("Denominazione comune","")).strip()
+            regione=str(row.get("Denominazione regione","")).strip()
+            if not re.fullmatch(r"\d{6}",code) or not comune or comune.casefold()=="nan":
+                continue
+            result=latest_value(row,years)
             if result is None: continue
             year,value=result
-            if year>2026: raise RuntimeError(f"Future year in source {label}: {year}")
-            codes.add(code);added+=1
-            title=indicator
-            if indicator=="Indicatore ambientale":
-                first=frame.iloc[0]
-                title=str(pd.read_excel(io.BytesIO(book),sheet_name=matching[0],header=None,nrows=1).iloc[0,0])
-                title=re.sub(r"^Tavola\s+\d+(?:\.\d+)?\s*-\s*","",title).split(". Anni ")[0].strip()
+            if year>2026:
+                raise RuntimeError(f"Future statistical year {year} in {label}/{spec['sheet']}")
+            latest_year=max(latest_year,year)
+            codes.add(code)
+            added+=1
             observations.append({
-                "area":area,"indicator":title,"territory":name,
-                "period":str(year),"value":format(value,".10g"),
-                "unit":"Valore nella tavola ISTAT; verificare unita e definizione nel file ufficiale.",
-                "source":"A misura di Comune — ISTAT","url":url,
-                "note":"Serie annuale ufficiale. Data di riferimento precedente al 2026; non notizia PULSE.",
-                "status":"ultimo valore osservato, non segnale corrente"
+                "area":spec["area"],
+                "indicator":spec["indicator"],
+                "territory":f"{comune} [{code}]",
+                "period":str(year),
+                "value":format(value,".10g"),
+                "unit":spec["unit"],
+                "source":SOURCE,
+                "url":url,
+                "note":(
+                    f"Comune: {comune}; codice ISTAT: {code}; regione: {regione}. "
+                    "Valore osservato nella tavola ufficiale A misura di Comune; "
+                    "non è una notizia corrente."
+                ),
+                "status":"ultimo valore osservato, non segnale corrente",
             })
-        print("TABLE",label,sheet,"REGIONAL VALUES",added,"REGION CODES",len(codes),flush=True)
-        if len(codes)<17: raise RuntimeError(f"Not enough verified regional totals for {label}/{sheet} ({len(codes)})")
+
+        validation[spec["indicator"]]={
+            "rows":added,"municipalities":len(codes),"latest_year":latest_year,
+            "first_year":years[0][0],
+        }
+        print(
+            "TABLE",spec["indicator"],"ROWS",added,"MUNICIPALITIES",len(codes),
+            "COVERAGE",f"{years[0][0]}-{latest_year}",flush=True
+        )
+        # Municipality counts differ slightly by source year/geography, but a
+        # national municipal table must still cover essentially all Italy.
+        if len(codes)<7700:
+            raise RuntimeError(
+                f"Municipal coverage too low for {spec['indicator']}: {len(codes)}"
+            )
+
+    out=pd.DataFrame(observations,columns=FIELDS)
+    if out.empty:
+        raise RuntimeError("No A misura di Comune observations generated")
+    if out.duplicated(["source","indicator","territory","period"]).any():
+        raise RuntimeError("Duplicate A misura di Comune observations")
     OUT.parent.mkdir(parents=True,exist_ok=True)
-    pd.DataFrame(observations,columns=FIELDS).to_csv(OUT,sep="\t",index=False)
-    print("A misura di Comune observed regional values:",len(observations),flush=True)
+    out.to_csv(OUT,sep="\t",index=False)
+
+    print("A MISURA DI COMUNE OBSERVATIONS",len(out),flush=True)
+    print("INDICATORS",len(validation),flush=True)
+    print("VALIDATION",validation,flush=True)
+
 if __name__=="__main__":
     main()
