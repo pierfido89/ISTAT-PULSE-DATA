@@ -1,0 +1,36 @@
+name: Validate ARERA Connector
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/validate-arera.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  arera:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check -r requirements.txt
+      - name: Run ARERA connector only
+        run: |
+          python - <<'PY'
+          import json
+          import scripts.generate_green_events as g
+          source=next(x for x in g.SOURCES if x["name"].startswith("ARERA -"))
+          st,events=g.run_arera(source)
+          print(json.dumps(st,ensure_ascii=False,indent=2))
+          print("EVENTS",len(events))
+          for e in events:
+              print("EVENT",e["indicator"],e["period"],e["patterns"],e["score"])
+          assert st["latest_public_year"]==2023, st
+          assert st["official_summary_through"]==2023, st
+          assert any(s.get("name","").startswith("MC1") and s.get("latest_period")=="2023" for s in st["series"])
+          assert any(s.get("name","").startswith("MC2") and s.get("latest_period")=="2023" for s in st["series"])
+          PY
