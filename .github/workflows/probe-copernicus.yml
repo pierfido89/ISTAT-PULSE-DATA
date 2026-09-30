@@ -5,6 +5,7 @@ on:
     branches: [ main ]
     paths:
       - '.github/workflows/probe-copernicus.yml'
+      - 'scripts/generate_green_events.py'
 
 permissions:
   contents: read
