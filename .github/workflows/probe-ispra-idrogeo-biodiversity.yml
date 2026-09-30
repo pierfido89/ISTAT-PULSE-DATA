@@ -1,0 +1,47 @@
+name: Probe ISPRA IdroGEO Biodiversity
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/probe-ispra-idrogeo-biodiversity.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check requests beautifulsoup4
+      - name: Probe official ISPRA endpoints
+        run: |
+          python - <<'PY'
+          import requests,re
+          from bs4 import BeautifulSoup
+          urls=[
+            'https://idrogeo.isprambiente.it/',
+            'https://idrogeo.isprambiente.it/app/',
+            'https://indicatoriambientali.isprambiente.it/it/aree-tutelate/rete-natura-2000',
+            'https://indicatoriambientali.isprambiente.it/it/biodiversita-stato-e-minacce/farmland-bird-index-fbi-monitoraggio-degli-uccelli-degli-ambienti-agricoli'
+          ]
+          H={'User-Agent':'Mozilla/5.0 ISTAT-PULSE-DATA'}
+          for u in urls:
+              print('\nURL',u)
+              r=requests.get(u,timeout=60,headers=H)
+              print('STATUS',r.status_code,'LEN',len(r.content),'TYPE',r.headers.get('content-type'),'FINAL',r.url)
+              soup=BeautifulSoup(r.text,'html.parser')
+              for a in soup.find_all('a',href=True):
+                  href=requests.compat.urljoin(r.url,a['href'])
+                  txt=' '.join(a.stripped_strings)
+                  if re.search(r'(csv|xls|xlsx|download|open.?data|api|geojson|wfs)',href,re.I) or re.search(r'(csv|xls|xlsx|download|scarica|dati)',txt,re.I):
+                      print('LINK',txt[:140],'|',href)
+              for sc in soup.find_all('script',src=True):
+                  src=requests.compat.urljoin(r.url,sc['src'])
+                  if 'idrogeo' in u:
+                      print('SCRIPT',src)
+          PY
