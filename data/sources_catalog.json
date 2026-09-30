@@ -387,11 +387,21 @@
       "green_pillar": "Risorse idriche e suolo",
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
-      "integration_status": "connected",
-      "feed_status": "Collegata · acquisizione/probe automatico attivo",
-      "notes": "Pagina ufficiale raggiunta; 1 download strutturati individuati automaticamente. Primo download strutturato verificato automaticamente.",
-      "level": "Secondo dataset ufficiale",
-      "frequency": "Secondo aggiornamento della fonte"
+      "integration_status": "feed",
+      "feed_status": "Attiva in GREEN · dati acquisiti e segnali PULSE disponibili",
+      "notes": "Collegamento completato e validato il 30/09/2026. Workbook ufficiale del Rapporto 2025 con dati definitivi fino al 2024 e copertura 2006-2024 a livello comunale, provinciale e regionale. PULSE usa la serie annuale comparabile 2016-2024 del consumo netto di suolo per Italia e regioni. Valore Italia 2023-2024: 7.850,37 ettari. Aggiornamento annuale. I dati preliminari 2025 sono in consultazione; ISPRA prevede i definitivi a fine ottobre 2026.",
+      "level": "Comune / Provincia / Regione / Italia",
+      "frequency": "Annuale",
+      "latest_period": "2024",
+      "provides": [
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Consumo netto annuale di suolo",
+          "description": "Serie annuale Italia e regioni da workbook ufficiale ISPRA/SNPA.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        }
+      ]
     },
     {
       "name": "ISPRA - IdroGEO",
