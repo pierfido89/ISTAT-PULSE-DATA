@@ -1,0 +1,33 @@
+name: Validate Mappa Rischi Download
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/validate-mappa-rischi-download.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python -m pip install --disable-pip-version-check requests pandas
+      - run: |
+          python - <<'PY'
+          import requests,io,pandas as pd
+          base='https://www.istat.it/wp-content/themes/EGPbs5-child/inc/mappa-rischi/'
+          H={'User-Agent':'Mozilla/5.0 ISTAT-PULSE-DATA','Referer':base+'?lang=it'}
+          data={'id_regione':'','id_provincia':'','dateFrom':'01/01/2018','id_comune':'','fileType':'csv'}
+          r=requests.post(base+'getReportAJAX.php',headers=H,data=data,timeout=90)
+          print('HTTP',r.status_code,'TYPE',r.headers.get('content-type'),'BYTES',len(r.content),'HEAD',r.content[:120])
+          r.raise_for_status()
+          open('/tmp/mappa.csv','wb').write(r.content)
+          txt=r.content.decode('utf-8-sig','replace')
+          print(txt[:3000])
+          assert len(r.content)>10000
+          assert any(sep in txt[:1000] for sep in [';',',','\t'])
+          PY
