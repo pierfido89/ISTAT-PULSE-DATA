@@ -1,0 +1,54 @@
+name: Validate ISPRA IdroGEO and Biodiversity Sources
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/validate-ispra-idrogeo-biodiversity.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check requests beautifulsoup4 pandas
+      - name: Test IdroGEO OpenData and FBI source
+        run: |
+          python - <<'PY'
+          import requests,re,zipfile,io
+          from bs4 import BeautifulSoup
+          H={'User-Agent':'Mozilla/5.0 ISTAT-PULSE-DATA'}
+          tests=[
+            'https://idrogeo.isprambiente.it/opendata/frane/frane_piff_ispra_opendata.zip',
+            'https://idrogeo.isprambiente.it/opendata/frane/frane_piff_ispra_opendata.json.zip',
+            'https://idrogeo.isprambiente.it/opendata/frane/frane_poly_ispra_opendata.zip'
+          ]
+          ok=[]
+          for u in tests:
+              try:
+                  r=requests.get(u,timeout=120,headers=H)
+                  print('IDRO',u,r.status_code,len(r.content),r.headers.get('content-type'))
+                  if r.ok and len(r.content)>1000:
+                      ok.append((u,r.content))
+                      try:
+                          z=zipfile.ZipFile(io.BytesIO(r.content))
+                          print('ZIPFILES',z.namelist()[:25])
+                      except Exception as e: print('ZIPERR',e)
+              except Exception as e: print('IDROERR',u,repr(e))
+          print('IDRO_OK',len(ok))
+          assert ok, 'No public IdroGEO OpenData package reached'
+
+          u='https://www.reterurale.it/farmlandbirdindex'
+          r=requests.get(u,timeout=120,headers=H)
+          print('FBI_PAGE',r.status_code,len(r.content),r.url)
+          r.raise_for_status()
+          txt=BeautifulSoup(r.text,'html.parser').get_text(' ',strip=True)
+          print('HAS2025','2025' in txt,'HAS_FBI','Farmland Bird Index' in txt)
+          assert '2025' in txt and 'Farmland Bird Index' in txt
+          PY
