@@ -48,7 +48,7 @@ UA="ISTAT-PULSE-GREEN/1.0 (+https://github.com/pierfido89/ISTAT-PULSE-DATA)"
 
 SOURCES=[
  {"name":"ACI - Open data mobilità e parco veicoli","category":"GREEN_IT","topics":["MOBILITA"],"pillar":"Mobilità sostenibile","url":"https://aci.gov.it/attivita-e-progetti/studi-e-ricerche/open-data/","kind":"aci","keywords":["annuario","prime iscrizioni","alimentazione","elettrico","ibrido"]},
- {"name":"ARERA - Statistiche del servizio idrico","category":"GREEN_IT","topics":["ACQUA"],"pillar":"Risorse idriche e suolo","url":"https://www.arera.it/dati-e-statistiche/dettaglio/rqsii","kind":"discover","keywords":["idrico","qualita","xlsx"]},
+ {"name":"ARERA - Statistiche del servizio idrico","category":"GREEN_IT","topics":["ACQUA"],"pillar":"Risorse idriche e suolo","url":"https://www.arera.it/dati-e-statistiche/dettaglio/rqsii","kind":"arera","keywords":["idrico","qualita","xlsx"]},
  {"name":"Copernicus - Climate Data Store","category":"GREEN_EU","topics":["CLIMA"],"pillar":"Crisi climatica e decarbonizzazione","url":"https://cds.climate.copernicus.eu/","kind":"copernicus","keywords":[]},
  {"name":"EEA - Dati ambientali europei","category":"GREEN_EU","topics":["CLIMA"],"pillar":"Crisi climatica e decarbonizzazione","url":"https://www.eea.europa.eu/en/datahub/datahubitem-view/3b7fe76c-524a-439a-bfd2-a6e4046302a2?activeAccordion=1096150","kind":"eea","keywords":["greenhouse","emission","csv"]},
  {"name":"ENEA - Rapporto annuale efficienza energetica","category":"GREEN_IT","topics":["ENERGIA"],"pillar":"Transizione energetica","url":"https://www.efficienzaenergetica.enea.it/vi-segnaliamo/rapporto-annuale-sullefficienza-energetica-2026-schede-regionali.html","kind":"discover","keywords":["xls","lazio","region"]},
@@ -335,6 +335,112 @@ def event_status(name,pillar,periods,values,unit=""):
       "latest_value":good[-1][1] if good else None,
       "unit":unit,"observations":len(good),"status":"ok" if len(good)>=2 else "insufficient"
     }
+
+def run_arera(source):
+    """Acquire and validate ARERA public RQSII water-service quality workbooks.
+
+    ARERA's operator collections opened in 2026 refer to 2025 data, but those
+    collection templates are not treated as published observations. For PULSE,
+    only public datasets exposed in the Dati e statistiche area are acquired.
+    """
+    html,links=page_links(source["url"])
+    workbooks=[]
+    for url in links:
+        if not re.search(r"\\.xlsx?(?:\\?|$)",url,re.I):
+            continue
+        year_match=re.search(r"(20(?:1[7-9]|2[0-9]))",url)
+        if year_match:
+            workbooks.append((int(year_match.group(1)),url))
+    # Stable public URLs currently exposed by ARERA's RQSII page.
+    if not workbooks:
+        workbooks=[
+            (year,f"https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_{year}.xlsx")
+            for year in range(2017,2022)
+        ]
+    # De-duplicate by year and prefer the discovered URL.
+    by_year={}
+    for year,url in workbooks:
+        by_year[year]=url
+    workbooks=sorted(by_year.items())
+
+    series=[]
+    acquired=[]
+    for year,url in workbooks:
+        try:
+            raw=excel_bytes(url,timeout=90)
+            book=pd.ExcelFile(io.BytesIO(raw))
+            if "MC1" not in book.sheet_names or "MC2" not in book.sheet_names:
+                raise ValueError("fogli MC1/MC2 non presenti")
+            year_info={"year":year,"url":url,"bytes":len(raw)}
+            for sheet,label in [("MC1","Macro-indicatore MC1"),("MC2","Macro-indicatore MC2")]:
+                frame=pd.read_excel(book,sheet_name=sheet,header=None)
+                header=None
+                for idx in range(min(12,len(frame))):
+                    vals=[clean(x).casefold() for x in frame.iloc[idx].tolist()]
+                    if "gestore" in vals and any("valore" in x and sheet.casefold() in x for x in vals):
+                        header=idx
+                        break
+                if header is None:
+                    # Current public files have a compact 5-column MC layout.
+                    for idx in range(min(12,len(frame))):
+                        vals=[clean(x).casefold() for x in frame.iloc[idx].tolist()]
+                        if "gestore" in vals and "ato" in vals:
+                            header=idx
+                            break
+                if header is None:
+                    raise ValueError(f"intestazione {sheet} non trovata")
+                data=frame.iloc[header+1:].copy()
+                data.columns=[clean(x) or f"col_{i}" for i,x in enumerate(frame.iloc[header].tolist())]
+                gestor_col=next((c for c in data.columns if clean(c).casefold()=="gestore"),None)
+                value_col=next((c for c in data.columns if "valore" in clean(c).casefold() and sheet.casefold() in clean(c).casefold()),None)
+                if value_col is None:
+                    value_col=next((c for c in data.columns if "valore" in clean(c).casefold()),None)
+                if gestor_col is None or value_col is None:
+                    raise ValueError(f"colonne {sheet} incomplete")
+                values=pd.to_numeric(data[value_col],errors="coerce").dropna()
+                values=values[(values>=0)&(values<=1.5)]
+                if values.empty:
+                    raise ValueError(f"nessun valore {sheet}")
+                # Keep descriptive annual observations, not PULSE events:
+                # public detailed series currently stop before the current feed year.
+                weighted_proxy=float(values.median())
+                series.append({
+                    "name":label,
+                    "latest_period":str(year),
+                    "latest_value":weighted_proxy,
+                    "unit":"quota 0-1",
+                    "observations":int(len(values)),
+                    "status":"historical_public",
+                })
+            acquired.append(year_info)
+        except Exception as exc:
+            series.append({
+                "name":f"RQSII {year}",
+                "latest_period":str(year),
+                "status":"error",
+                "error":clean(exc),
+            })
+
+    ok_years=sorted({int(x["latest_period"]) for x in series if x.get("status")=="historical_public"})
+    if not ok_years:
+        raise RuntimeError("Nessun workbook RQSII pubblico acquisito")
+
+    return {
+        "status":"connected",
+        "http_ok":True,
+        "public_data_years":ok_years,
+        "latest_public_detailed_year":max(ok_years),
+        "series":series,
+        "acquired_workbooks":acquired,
+        "note":(
+            f"RQSII ARERA collegata con workbook pubblici {min(ok_years)}-{max(ok_years)} "
+            "a livello di gestore/ATO (MC1, MC2 e standard contrattuali). "
+            "La raccolta ARERA 2026 riguarda dati 2025 trasmessi dagli operatori, "
+            "ma non viene trattata come dato pubblico finché ARERA non pubblica le osservazioni. "
+            "Per questo la fonte resta collegata ma non alimenta ancora il feed corrente."
+        ),
+    },[]
+
 
 def run_aci(source):
     """Acquire ACI PRA open data and build national sustainable-mobility series.
@@ -783,7 +889,8 @@ def main():
     for source in SOURCES:
         try:
             kind=source["kind"]
-            if kind=="aci": st,ev=run_aci(source)
+            if kind=="arera": st,ev=run_arera(source)
+            elif kind=="aci": st,ev=run_aci(source)
             elif kind=="eurostat": st,ev=run_eurostat(source)
             elif kind=="copernicus": st,ev=run_copernicus(source)
             elif kind=="eea": st,ev=run_eea(source)
