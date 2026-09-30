@@ -897,18 +897,126 @@ def run_sdgs(source):
     },events
 
 def run_copernicus(source):
+    """Acquire latest monthly Copernicus ERA5 data for Italy.
+
+    ERA5 monthly means are updated every month, usually around the 6th.
+    Data access through CDS requires a personal API key and acceptance of
+    the dataset terms. The connector automatically searches backwards from
+    the current month until it finds the latest published monthly record.
+    """
     token=os.environ.get("CDS_API_KEY","").strip()
-    # Connector is fully wired but CDS requires a personal access token and
-    # manual acceptance of each dataset's Terms of Use.
     if not token:
-        return {"status":"credential_required","note":"Connettore CDS implementato: richiede CDS_API_KEY e accettazione preventiva dei termini del dataset."},[]
+        return {
+            "status":"credential_required",
+            "frequency":"Mensile",
+            "latest_availability_note":"ERA5 mensile: aggiornamento generalmente intorno al 6 del mese; E-OBS mensile pubblico disponibile fino ad agosto 2026 alla verifica del 30/09/2026.",
+            "dataset":"ERA5 monthly averaged data on single levels",
+            "dataset_id":"reanalysis-era5-single-levels-monthly-means",
+            "note":"Connettore ERA5 completo ma download bloccato finché non viene configurata CDS_API_KEY e accettata la licenza del dataset nel Climate Data Store."
+        },[]
+
     try:
-        # Lightweight authenticated profile/API reachability check; full ERA5
-        # retrieval is intentionally not run on every refresh.
-        raw=get("https://cds.climate.copernicus.eu/api/catalogue/v1/collections",timeout=60,accept="application/json")
-        return {"status":"connected","note":f"CDS API raggiungibile ({len(raw)} byte di catalogo). Token presente."},[]
+        import cdsapi
+        import xarray as xr
+        import tempfile
+        from datetime import date
     except Exception as exc:
-        return {"status":"error","note":f"CDS token presente ma verifica API fallita: {clean(exc)}"},[]
+        return {"status":"error","note":f"Dipendenze Copernicus non disponibili: {clean(exc)}"},[]
+
+    client=cdsapi.Client(
+        url="https://cds.climate.copernicus.eu/api",
+        key=token,
+        quiet=True,
+    )
+    first=date.today().replace(day=1)
+    candidates=[]
+    y,m=first.year,first.month
+    for _ in range(6):
+        candidates.append((y,m))
+        m-=1
+        if m==0:
+            m=12;y-=1
+
+    latest=None
+    temp_series=[]
+    precip_series=[]
+    checked=[]
+    for y,m in candidates:
+        target=Path(tempfile.gettempdir())/f"pulse_era5_{y}_{m:02d}.nc"
+        request={
+            "product_type":["monthly_averaged_reanalysis"],
+            "variable":["2m_temperature","total_precipitation"],
+            "year":[str(y)],
+            "month":[f"{m:02d}"],
+            "time":["00:00"],
+            "area":[47.5,6.0,35.5,18.5],
+            "data_format":"netcdf",
+            "download_format":"unarchived",
+        }
+        try:
+            client.retrieve("reanalysis-era5-single-levels-monthly-means",request,str(target))
+            ds=xr.open_dataset(target)
+            vars=list(ds.data_vars)
+            tvar=next((v for v in vars if v.lower()=="t2m" or "temperature" in v.lower()),None)
+            pvar=next((v for v in vars if v.lower()=="tp" or "precipitation" in v.lower()),None)
+            if tvar is None and pvar is None:
+                raise RuntimeError(f"Variabili ERA5 non trovate: {vars}")
+            latest=f"{y}-{m:02d}"
+            row={"period":latest,"source_file":str(target.name)}
+            if tvar:
+                row["temperature_c"]=float(ds[tvar].mean().values)-273.15
+            if pvar:
+                row["precipitation_mm"]=float(ds[pvar].mean().values)*1000.0
+            checked.append(row)
+            ds.close()
+            break
+        except Exception as exc:
+            checked.append({"period":f"{y}-{m:02d}","error":clean(exc)})
+
+    if latest is None:
+        return {
+            "status":"error",
+            "frequency":"Mensile",
+            "checked_months":checked,
+            "note":"CDS_API_KEY presente ma nessuno degli ultimi 6 mesi ERA5 è stato acquisito."
+        },[]
+
+    series=[]
+    row=next(x for x in checked if x.get("period")==latest and "error" not in x)
+    if "temperature_c" in row:
+        series.append({
+            "name":"Temperatura media mensile ERA5 · area Italia",
+            "latest_period":latest,
+            "latest_value":round(row["temperature_c"],3),
+            "unit":"°C",
+            "observations":1,
+            "status":"latest_public",
+        })
+    if "precipitation_mm" in row:
+        series.append({
+            "name":"Precipitazione media mensile ERA5 · area Italia",
+            "latest_period":latest,
+            "latest_value":round(row["precipitation_mm"],3),
+            "unit":"mm",
+            "observations":1,
+            "status":"latest_public",
+        })
+
+    return {
+        "status":"connected",
+        "frequency":"Mensile",
+        "dataset":"ERA5 monthly averaged data on single levels",
+        "dataset_id":"reanalysis-era5-single-levels-monthly-means",
+        "latest_period":latest,
+        "series":series,
+        "checked_months":checked,
+        "note":(
+            f"Copernicus ERA5 collegato. Ultimo mese acquisito: {latest}. "
+            "Aggiornamento mensile; le medie mensili sono normalmente disponibili intorno al 6 del mese. "
+            "ERA5T è preliminare e può essere consolidato 2-3 mesi dopo."
+        ),
+    },[]
+
 
 def update_catalog(statuses):
     root={"version":4,"title":"Fonti ISTAT PULSE","sources":[]}
