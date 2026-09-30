@@ -45,3 +45,5 @@ jobs:
           assert any(x["name"]=="Farmland Bird Index (FBI)" and abs(x["latest_value"]-66.51)<1e-9 for x in st["series"]), st
           assert len(ev)>=1, ev
           PY
+
+# final-cleanup-trigger
