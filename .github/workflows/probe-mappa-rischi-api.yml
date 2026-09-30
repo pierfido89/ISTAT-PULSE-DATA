@@ -1,0 +1,44 @@
+name: Probe Mappa Rischi API
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/probe-mappa-rischi-api.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python -m pip install --disable-pip-version-check requests beautifulsoup4
+      - run: |
+          python - <<'PY'
+          import requests,re
+          from bs4 import BeautifulSoup
+          H={'User-Agent':'Mozilla/5.0 ISTAT-PULSE-DATA'}
+          u='https://www.istat.it/wp-content/themes/EGPbs5-child/inc/mappa-rischi/?lang=it'
+          r=requests.get(u,headers=H,timeout=30); r.raise_for_status()
+          soup=BeautifulSoup(r.text,'html.parser')
+          print('PAGE',r.status_code,len(r.content))
+          scripts=[]
+          for s in soup.find_all('script',src=True):
+              src=requests.compat.urljoin(r.url,s['src']); scripts.append(src); print('SCRIPT',src)
+          for src in scripts:
+              try:
+                  x=requests.get(src,headers=H,timeout=30)
+                  if x.status_code!=200: continue
+                  txt=x.text
+                  if re.search(r'(mappa|risch|download|ajax|csv|json|indicator)',txt,re.I):
+                      print('\nJS',src,'BYTES',len(txt))
+                      for pat in [r'https?://[^"\' ]+',r'[^"\']+(?:ajax|download|export|api|dati)[^"\']*',r'[^"\']+\.(?:php|json|csv)[^"\']*']:
+                          hits=[]
+                          for m in re.findall(pat,txt,re.I):
+                              if m not in hits: hits.append(m)
+                          for m in hits[:150]: print(m[:500])
+              except Exception as e: print('ERR',src,repr(e))
+          PY
