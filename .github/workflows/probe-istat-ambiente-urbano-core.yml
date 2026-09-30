@@ -1,0 +1,44 @@
+name: Probe ISTAT Ambiente Urbano Core Series
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/probe-istat-ambiente-urbano-core.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python -m pip install --disable-pip-version-check requests pandas openpyxl
+      - name: Inspect selected historical tables
+        run: |
+          python - <<'PY'
+          import requests,zipfile,io,pandas as pd
+          u='https://www.istat.it/wp-content/uploads/2026/09/TAVOLE_AMBURB_2024.zip'
+          r=requests.get(u,timeout=180,headers={'User-Agent':'Mozilla/5.0 ISTAT-PULSE-DATA'}); r.raise_for_status()
+          z=zipfile.ZipFile(io.BytesIO(r.content))
+          targets={
+            'VERDE_URBANO_2024.xlsx':['Tav 12.1 - verde urbano'],
+            'ENERGIA_2024.xlsx':['Tav.3.1-energia'],
+            'RIFIUTI_URBANI_2024.xlsx':['Tav.10.1 - Rifiuti urbani','Tav.11.1 - Rifiuti urbani'],
+            'MOBILITA_URBANA_2024.xlsx':['16.1','19.1','20.1','21.1']
+          }
+          for book,sheets in targets.items():
+              raw=z.read(book); xl=pd.ExcelFile(io.BytesIO(raw))
+              print('\nBOOK',book)
+              for wanted in sheets:
+                  matches=[s for s in xl.sheet_names if s.strip().lower()==wanted.strip().lower()]
+                  if not matches:
+                      print('NO_SHEET',wanted,'AVAILABLE',xl.sheet_names)
+                      continue
+                  sh=matches[0]
+                  df=pd.read_excel(io.BytesIO(raw),sheet_name=sh,header=None,nrows=16)
+                  print('\nSHEET',sh,'SHAPE',df.shape)
+                  print(df.to_string(max_cols=60))
+          PY
