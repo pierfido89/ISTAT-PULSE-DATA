@@ -60,8 +60,8 @@ SOURCES=[
  {"name":"ISPRA - IdroGEO","category":"GREEN_IT","topics":["SUOLO"],"pillar":"Risorse idriche e suolo","url":"https://idrogeo.isprambiente.it/","kind":"idrogeo","keywords":["open","download","dati"]},
  {"name":"ISPRA - Indicatori ambientali e biodiversità","category":"GREEN_IT","topics":["BIODIVERSITA"],"pillar":"Tutela della biodiversità","url":"https://indicatoriambientali.isprambiente.it/it/temi/biodiversita-stato-e-minacce","kind":"ispra_biodiversity","keywords":["biodivers","fbi"]},
  {"name":"ISPRA - Inventario nazionale delle emissioni","category":"GREEN_IT","topics":["CLIMA"],"pillar":"Crisi climatica e decarbonizzazione","url":"https://emissioni.sina.isprambiente.it/serie-storiche-emissioni-di-gas-serra-sintesi/","kind":"ispra_emissions","keywords":["gas serra","xlsx","xls"]},
- {"name":"ISPRA - Risorse idriche","category":"GREEN_IT","topics":["ACQUA"],"pillar":"Risorse idriche e suolo","url":"https://www.isprambiente.gov.it/it/istituto-informa/ricerca-comunicati/acqua","kind":"discover","keywords":["acqua","risorse","xlsx","csv"]},
- {"name":"ISPRA/SNPA - Qualità dell'aria","category":"GREEN_IT","topics":["CLIMA"],"pillar":"Crisi climatica e decarbonizzazione","url":"https://www.isprambiente.gov.it/it/banche-dati","kind":"discover","keywords":["aria","pm10","pm2","no2"]},
+ {"name":"ISPRA - Risorse idriche","category":"GREEN_IT","topics":["ACQUA"],"pillar":"Risorse idriche e suolo","url":"https://www.isprambiente.gov.it/pre_meteo/idro/BIGBANG_ISPRA.html","kind":"ispra_water","keywords":["BIGBANG","risorsa idrica","xlsx"]},
+ {"name":"ISPRA/SNPA - Qualità dell'aria","category":"GREEN_IT","topics":["CLIMA"],"pillar":"Crisi climatica e decarbonizzazione","url":"https://www.isprambiente.gov.it/it/banche-dati/banche-dati-folder/aria/qualita-dellaria","kind":"ispra_air","keywords":["aria","pm10","pm2","no2","csv"]},
  {"name":"ISTAT - Ambiente urbano","category":"ISTAT","topics":["GREEN"],"pillar":"Mobilità sostenibile","url":"https://www.istat.it/dati/banche-dati/","kind":"discover","keywords":["ambiente urbano","mobilita","verde"]},
  {"name":"ISTAT - Indicatori SDGs","category":"ISTAT","topics":["GREEN"],"pillar":"Multi-pilastro GREEN","url":"https://www.istat.it/statistiche-per-temi/focus/benessere-e-sostenibilita/obiettivi-di-sviluppo-sostenibile/gli-indicatori-istat/","kind":"istat_sdgs","keywords":["2004-2026","xlsx"]},
  {"name":"ISTAT - Mappa dei rischi dei comuni italiani","category":"ISTAT","topics":["GREEN"],"pillar":"Risorse idriche e suolo","url":"https://www.istat.it/dati/banche-dati/","kind":"discover","keywords":["rischi","comuni","mappa"]},
@@ -1337,6 +1337,134 @@ def run_ispra_biodiversity(source):
         ),
     },events
 
+def run_ispra_water(source):
+    """Acquire ISPRA BIGBANG 10.0 national hydrological balance, 1951-2025."""
+    url=(
+        "https://groupware.sinanet.isprambiente.it/bigbang-data/library/"
+        "bigbang100/excel_tables/bigbang100_tables_italy_01/download/en/1/"
+        "BIGBANG100_TABLES_ITALY_01.xlsx"
+    )
+    raw=excel_bytes(url,180)
+    df=pd.read_excel(io.BytesIO(raw),sheet_name="Annuale (Annual)",header=0)
+
+    required={"ANNO (YEAR)","TP","IF","GR","IF.1","GR.1"}
+    if not required.issubset(df.columns):
+        raise RuntimeError(f"Schema BIGBANG inatteso: {list(df.columns)}")
+
+    years=[]
+    for v in df["ANNO (YEAR)"]:
+        n=number(v)
+        years.append(str(int(n)) if n is not None else "")
+    mask=[bool(y) and 1951<=int(y)<=2100 for y in years]
+    clean_df=df.loc[mask].copy()
+    periods=[str(int(number(v))) for v in clean_df["ANNO (YEAR)"]]
+
+    specs=[
+        ("Precipitazione totale annua", "TP", "mm"),
+        ("Risorsa idrica rinnovabile (internal flow)", "IF.1", "km³"),
+        ("Ricarica degli acquiferi", "GR.1", "km³"),
+    ]
+    series=[]; events=[]
+    for name,col,unit in specs:
+        vals=[number(v) for v in clean_df[col]]
+        stat=event_status(name,source["pillar"],periods,vals,unit)
+        stat.update({"territory":"Italia","status":"latest_public"})
+        series.append(stat)
+        ev=event_from_series(source["name"],url,name,source["pillar"],periods,vals,unit,"Italia")
+        if ev: events.append(ev)
+
+    latest=periods[-1]
+    if latest!="2025":
+        raise RuntimeError(f"BIGBANG 10.0 non arriva al 2025: ultimo={latest}")
+
+    return {
+        "status":"feed" if events else "connected",
+        "http_ok":True,
+        "frequency":"Annuale (stime disponibili anche mensilmente)",
+        "latest_period":"2025",
+        "temporal_coverage":"1951-2025",
+        "administrative_levels":["Italia","Regione","Distretto idrografico"],
+        "series":series,
+        "note":(
+            "ISPRA BIGBANG 10.0 collegato al workbook ufficiale. Serie nazionali 1951-2025 "
+            "per precipitazione totale, risorsa idrica rinnovabile (internal flow) e ricarica "
+            "degli acquiferi. Il modello produce anche stime mensili e dataset aggregati per "
+            "Regioni e Distretti idrografici. Aggiornamento della versione/delle stime: annuale; "
+            "pagina BIGBANG aggiornata il 16/04/2026."
+        ),
+    },events
+
+def run_ispra_air(source):
+    """Acquire official ISPRA historical station statistics for major pollutants.
+
+    The structured historical CSVs currently published by ISPRA extend through
+    2022. SNPA annual assessments are already available through 2025. The
+    connector deliberately keeps these two freshness concepts separate.
+    """
+    page="https://www.isprambiente.gov.it/it/banche-dati/banche-dati-folder/aria/qualita-dellaria"
+    html,links=page_links(page)
+    csvs=[u for u in links if re.search(r"\.csv(?:\?|$)",u,re.I)]
+
+    wanted={
+        "PM10":r"pm10",
+        "PM2.5":r"pm25",
+        "NO2":r"no2",
+    }
+    selected={}
+    for pol,pat in wanted.items():
+        cand=[u for u in csvs if re.search(pat,u,re.I)]
+        if not cand:
+            raise RuntimeError(f"Nessun CSV ISPRA trovato per {pol}")
+        def end_year(u):
+            vals=[int(x) for x in re.findall(r"20\d{2}",u)]
+            return max(vals) if vals else 0
+        selected[pol]=max(cand,key=end_year)
+
+    series=[]; events=[]; latest_structured=0
+    for pol,url in selected.items():
+        raw=get(url,timeout=180,accept="text/csv,*/*")
+        frame=pd.read_csv(io.BytesIO(raw),sep=",",encoding="utf-8-sig",low_memory=False)
+        if "yy" not in frame.columns or "media_yy" not in frame.columns:
+            raise RuntimeError(f"Schema aria ISPRA inatteso per {pol}: {list(frame.columns)}")
+        frame["yy_num"]=pd.to_numeric(frame["yy"],errors="coerce")
+        frame["mean_num"]=pd.to_numeric(frame["media_yy"],errors="coerce")
+        if "copertura" in frame.columns:
+            frame["coverage_num"]=pd.to_numeric(frame["copertura"],errors="coerce")
+            good=frame[(frame["mean_num"].notna()) & ((frame["coverage_num"].isna()) | (frame["coverage_num"]>=75))]
+        else:
+            good=frame[frame["mean_num"].notna()]
+        agg=good.groupby("yy_num")["mean_num"].median().dropna().sort_index()
+        periods=[str(int(y)) for y in agg.index if 1900<=y<=2100]
+        vals=[float(agg.loc[float(p)]) if float(p) in agg.index else float(agg.loc[int(p)]) for p in periods]
+        if len(periods)<6:
+            raise RuntimeError(f"Serie aria insufficiente per {pol}: {len(periods)}")
+        latest_structured=max(latest_structured,int(periods[-1]))
+        name=f"{pol} - mediana nazionale delle medie annue di stazione"
+        stat=event_status(name,source["pillar"],periods,vals,"µg/m³")
+        stat.update({"territory":"Italia","status":"latest_structured"})
+        series.append(stat)
+        ev=event_from_series(source["name"],url,name,source["pillar"],periods,vals,"µg/m³","Italia")
+        if ev: events.append(ev)
+
+    return {
+        "status":"feed" if events else "connected",
+        "http_ok":True,
+        "frequency":"Annuale; dati quasi-real-time aggiornati giornalmente",
+        "latest_period":"2025 (valutazione SNPA); 2022 (CSV strutturati)",
+        "latest_structured_period":str(latest_structured),
+        "latest_assessment_period":"2025",
+        "administrative_levels":["Stazione","Comune","Provincia","Regione","Italia"],
+        "series":series,
+        "note":(
+            f"Qualità dell'aria ISPRA/SNPA collegata ai CSV ufficiali delle statistiche di stazione "
+            f"per PM10, PM2.5 e NO2. Le serie strutturate pubblicate arrivano al {latest_structured}; "
+            f"la valutazione annuale SNPA più recente riguarda il 2025. I dati quasi-real-time vengono "
+            f"trasmessi quotidianamente a ISPRA, mentre i dati definitivi sono trasmessi all'inizio "
+            f"di ogni anno per l'anno precedente. Il feed PULSE usa solo i CSV strutturati definitivi "
+            f"e non miscela stime preliminari con serie validate."
+        ),
+    },events
+
 def run_ispra_emissions(source):
     url=KNOWN_STRUCTURED[source["name"]]
     raw=excel_bytes(url)
@@ -1676,6 +1804,8 @@ def main():
             elif kind=="ispra_soil": st,ev=run_ispra_soil(source)
             elif kind=="idrogeo": st,ev=run_idrogeo(source)
             elif kind=="ispra_biodiversity": st,ev=run_ispra_biodiversity(source)
+            elif kind=="ispra_water": st,ev=run_ispra_water(source)
+            elif kind=="ispra_air": st,ev=run_ispra_air(source)
             elif kind=="ispra_emissions": st,ev=run_ispra_emissions(source)
             elif kind=="istat_sdgs": st,ev=run_sdgs(source)
             elif kind=="istat_water": st,ev=run_istat_water(source)
