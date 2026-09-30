@@ -337,107 +337,124 @@ def event_status(name,pillar,periods,values,unit=""):
     }
 
 def run_arera(source):
-    """Acquire and validate ARERA public RQSII water-service quality workbooks.
+    """Acquire the complete public ARERA RQSII historical series exposed online.
 
-    ARERA's operator collections opened in 2026 refer to 2025 data, but those
-    collection templates are not treated as published observations. For PULSE,
-    only public datasets exposed in the Dati e statistiche area are acquired.
+    The public RQSII page currently exposes annual workbooks from 2017 through
+    2021. We ingest the whole public history and build comparable national
+    compliance-rate series, while keeping them out of the current-news feed
+    because the latest published detailed observation is historical.
     """
     html,links=page_links(source["url"])
-    workbooks=[]
+    by_year={}
     for url in links:
         if not re.search(r"\\.xlsx?(?:\\?|$)",url,re.I):
             continue
-        year_match=re.search(r"(20(?:1[7-9]|2[0-9]))",url)
-        if year_match:
-            workbooks.append((int(year_match.group(1)),url))
-    # Stable public URLs currently exposed by ARERA's RQSII page.
-    if not workbooks:
-        workbooks=[
-            (year,f"https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_{year}.xlsx")
-            for year in range(2017,2022)
-        ]
-    # De-duplicate by year and prefer the discovered URL.
-    by_year={}
-    for year,url in workbooks:
-        by_year[year]=url
-    workbooks=sorted(by_year.items())
+        m4=re.search(r"RQSII_(20\\d{2})\\.xlsx",url,re.I)
+        m2=re.search(r"RQSII_(\\d{2})\\.xlsx",url,re.I)
+        if m4:
+            by_year[int(m4.group(1))]=url
+        elif m2:
+            yy=int(m2.group(1))
+            if 17 <= yy <= 99:
+                by_year[2000+yy]=url
 
-    series=[]
+    # Stable public fallbacks, only used if link discovery changes.
+    fallbacks={
+        2017:"https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_17.xlsx",
+        2018:"https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_18.xlsx",
+        2019:"https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_19.xlsx",
+        2020:"https://www.arera.it/allegati/dati/idr/RQSII_2020.xlsx",
+        2021:"https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_2021.xlsx",
+    }
+    for year,url in fallbacks.items():
+        by_year.setdefault(year,url)
+
+    targets=[
+        ("Attivazione","Rispetto standard · attivazione fornitura"),
+        ("RispReclami","Rispetto standard · risposta ai reclami"),
+        ("ArrivoProntoInterv","Rispetto standard · arrivo pronto intervento"),
+        ("RispChiamataProntoInterv","Rispetto standard · risposta chiamata pronto intervento"),
+    ]
+    histories={label:[] for _,label in targets}
     acquired=[]
-    for year,url in workbooks:
+    errors=[]
+
+    for year,url in sorted(by_year.items()):
         try:
-            raw=excel_bytes(url,timeout=90)
+            raw=excel_bytes(url,timeout=120)
             book=pd.ExcelFile(io.BytesIO(raw))
-            if "MC1" not in book.sheet_names or "MC2" not in book.sheet_names:
-                raise ValueError("fogli MC1/MC2 non presenti")
-            year_info={"year":year,"url":url,"bytes":len(raw)}
-            for sheet,label in [("MC1","Macro-indicatore MC1"),("MC2","Macro-indicatore MC2")]:
+            acquired.append({"year":year,"url":url,"bytes":len(raw)})
+            for sheet,label in targets:
+                if sheet not in book.sheet_names:
+                    continue
                 frame=pd.read_excel(book,sheet_name=sheet,header=None)
                 header=None
                 for idx in range(min(12,len(frame))):
                     vals=[clean(x).casefold() for x in frame.iloc[idx].tolist()]
-                    if "gestore" in vals and any("valore" in x and sheet.casefold() in x for x in vals):
+                    if (
+                        "gestore" in vals
+                        and any("totale prestazioni eseguite" in x for x in vals)
+                        and any("entro lo standard" in x or "prest.ese. entro lo standard" in x for x in vals)
+                    ):
                         header=idx
                         break
                 if header is None:
-                    # Current public files have a compact 5-column MC layout.
-                    for idx in range(min(12,len(frame))):
-                        vals=[clean(x).casefold() for x in frame.iloc[idx].tolist()]
-                        if "gestore" in vals and "ato" in vals:
-                            header=idx
-                            break
-                if header is None:
-                    raise ValueError(f"intestazione {sheet} non trovata")
+                    continue
+                cols=[clean(x) or f"col_{i}" for i,x in enumerate(frame.iloc[header].tolist())]
                 data=frame.iloc[header+1:].copy()
-                data.columns=[clean(x) or f"col_{i}" for i,x in enumerate(frame.iloc[header].tolist())]
-                gestor_col=next((c for c in data.columns if clean(c).casefold()=="gestore"),None)
-                value_col=next((c for c in data.columns if "valore" in clean(c).casefold() and sheet.casefold() in clean(c).casefold()),None)
-                if value_col is None:
-                    value_col=next((c for c in data.columns if "valore" in clean(c).casefold()),None)
-                if gestor_col is None or value_col is None:
-                    raise ValueError(f"colonne {sheet} incomplete")
-                values=pd.to_numeric(data[value_col],errors="coerce").dropna()
-                values=values[(values>=0)&(values<=1.5)]
-                if values.empty:
-                    raise ValueError(f"nessun valore {sheet}")
-                # Keep descriptive annual observations, not PULSE events:
-                # public detailed series currently stop before the current feed year.
-                weighted_proxy=float(values.median())
-                series.append({
-                    "name":label,
-                    "latest_period":str(year),
-                    "latest_value":weighted_proxy,
-                    "unit":"quota 0-1",
-                    "observations":int(len(values)),
-                    "status":"historical_public",
-                })
-            acquired.append(year_info)
+                data.columns=cols
+                total_col=next((c for c in cols if "totale prestazioni eseguite" in clean(c).casefold()),None)
+                within_col=next((c for c in cols if "entro lo standard" in clean(c).casefold() or "prest.ese. entro lo standard" in clean(c).casefold()),None)
+                if total_col is None or within_col is None:
+                    continue
+                total=pd.to_numeric(data[total_col],errors="coerce").fillna(0)
+                within=pd.to_numeric(data[within_col],errors="coerce").fillna(0)
+                denom=float(total[total>0].sum())
+                numer=float(within[total>0].sum())
+                if denom>0:
+                    histories[label].append({
+                        "period":str(year),
+                        "value":numer/denom*100.0,
+                        "unit":"%",
+                        "total_services":int(round(denom)),
+                    })
         except Exception as exc:
-            series.append({
-                "name":f"RQSII {year}",
-                "latest_period":str(year),
-                "status":"error",
-                "error":clean(exc),
-            })
+            errors.append({"year":year,"url":url,"error":clean(exc)})
 
-    ok_years=sorted({int(x["latest_period"]) for x in series if x.get("status")=="historical_public"})
+    series=[]
+    ok_years=sorted({int(p["period"]) for pts in histories.values() for p in pts})
     if not ok_years:
-        raise RuntimeError("Nessun workbook RQSII pubblico acquisito")
+        raise RuntimeError("Nessuna annualità RQSII pubblica acquisita")
+
+    for label,points in histories.items():
+        points=sorted(points,key=lambda p:int(p["period"]))
+        if not points:
+            continue
+        series.append({
+            "name":label,
+            "latest_period":points[-1]["period"],
+            "latest_value":round(points[-1]["value"],4),
+            "unit":"%",
+            "observations":len(points),
+            "status":"historical_public",
+            "history":points,
+        })
 
     return {
         "status":"connected",
         "http_ok":True,
         "public_data_years":ok_years,
         "latest_public_detailed_year":max(ok_years),
+        "structured_format":"xlsx",
         "series":series,
         "acquired_workbooks":acquired,
+        "errors":errors,
         "note":(
-            f"RQSII ARERA collegata con workbook pubblici {min(ok_years)}-{max(ok_years)} "
-            "a livello di gestore/ATO (MC1, MC2 e standard contrattuali). "
-            "La raccolta ARERA 2026 riguarda dati 2025 trasmessi dagli operatori, "
-            "ma non viene trattata come dato pubblico finché ARERA non pubblica le osservazioni. "
-            "Per questo la fonte resta collegata ma non alimenta ancora il feed corrente."
+            f"RQSII ARERA collegata sull'intera storia pubblica {min(ok_years)}-{max(ok_years)}. "
+            f"{len(series)} serie nazionali comparabili costruite aggregando le prestazioni "
+            "dei gestori/ATO: attivazioni, reclami e pronto intervento. "
+            "L'ultima annualità pubblica dettagliata disponibile nella banca dati collegata "
+            f"è il {max(ok_years)}; le raccolte successive non vengono trattate come pubblicate."
         ),
     },[]
 
