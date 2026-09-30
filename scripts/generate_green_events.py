@@ -346,7 +346,7 @@ def run_aci(source):
     html,links=page_links(source["url"])
     packages=[]
     for url in links:
-        match=re.search(r"Annuario-statistico-(\\d{4})-OD\\.zip(?:\\?|$)",url,re.I)
+        match=re.search(r"Annuario-statistico-(\d{4})-OD\.zip(?:\?|$)",url,re.I)
         if match:
             packages.append((int(match.group(1)),url))
     if not packages:
@@ -361,7 +361,7 @@ def run_aci(source):
     with zipfile.ZipFile(io.BytesIO(raw)) as archive:
         candidates=[
             name for name in archive.namelist()
-            if re.search(r"Capitolo\\s*2.*\\.ods$",name,re.I)
+            if re.search(r"Capitolo\s*2.*\.ods$",name,re.I)
         ]
         if not candidates:
             raise RuntimeError("Capitolo 2 ACI non trovato nel pacchetto Open Data")
