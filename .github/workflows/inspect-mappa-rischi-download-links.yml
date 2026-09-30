@@ -1,0 +1,31 @@
+name: Inspect Mappa Rischi Download Links
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/inspect-mappa-rischi-download-links.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: |
+          python - <<'PY'
+          import urllib.request,re
+          u='https://www.istat.it/wp-content/themes/EGPbs5-child/inc/mappa-rischi/?lang=it'
+          txt=urllib.request.urlopen(urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0'}),timeout=30).read().decode('utf-8','ignore')
+          for key in ['scaricaDatiAll','scaricaDati','fileDisponibile','getReport','download']:
+              print('\n###',key)
+              pos=0
+              while True:
+                  i=txt.find(key,pos)
+                  if i<0: break
+                  print(txt[max(0,i-1500):i+2500])
+                  pos=i+len(key)
+          PY
