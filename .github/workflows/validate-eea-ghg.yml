@@ -1,0 +1,43 @@
+name: Validate EEA Domestic GHG
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/validate-eea-ghg.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check requests pandas openpyxl
+      - name: Download and inspect EEA domestic GHG package
+        run: |
+          python - <<'PY'
+          import requests, zipfile, io, os, pandas as pd
+          u='https://sdi.eea.europa.eu/datashare/s/4ZALANAF7qaDrTa/download'
+          r=requests.get(u,timeout=120,headers={'User-Agent':'ISTAT-PULSE-DATA/EEA'})
+          r.raise_for_status()
+          print('BYTES',len(r.content),'ZIP',zipfile.is_zipfile(io.BytesIO(r.content)))
+          z=zipfile.ZipFile(io.BytesIO(r.content))
+          names=z.namelist()
+          print('FILES',names)
+          for n in names:
+              if n.lower().endswith(('.csv','.xlsx','.xls')):
+                  print('DATAFILE',n)
+                  raw=z.read(n)
+                  print('SIZE',len(raw))
+                  if n.lower().endswith('.csv'):
+                      df=pd.read_csv(io.BytesIO(raw))
+                  else:
+                      df=pd.read_excel(io.BytesIO(raw))
+                  print('COLUMNS',list(df.columns))
+                  print(df.head(20).to_string())
+          PY
