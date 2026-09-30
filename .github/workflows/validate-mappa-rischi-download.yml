@@ -31,3 +31,5 @@ jobs:
           assert len(r.content)>10000
           assert any(sep in txt[:1000] for sep in [';',',','\t'])
           PY
+
+# audit-trigger
