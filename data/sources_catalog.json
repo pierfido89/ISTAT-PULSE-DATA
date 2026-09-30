@@ -70,25 +70,25 @@
       "green_pillar": "Crisi climatica e decarbonizzazione",
       "access_cost": "free",
       "access_note": "Accesso gratuito; richiede account/token CDS e accettazione dei termini del dataset.",
-      "integration_status": "credential_required",
-      "feed_status": "Connettore completo · attivazione download con CDS_API_KEY",
-      "notes": "Connettore ERA5 completato. Frequenza mensile; le medie mensili sono normalmente disponibili intorno al 6 del mese. ERA5T può essere consolidato 2-3 mesi dopo. Al 30/09/2026 la pagina pubblica E-OBS mostra dati mensili 2026 fino ad agosto. Per scaricare ERA5 dal CDS il repository deve avere CDS_API_KEY e la licenza del dataset deve essere accettata sull'account Copernicus.",
+      "integration_status": "connected",
+      "feed_status": "Collegata · ERA5 acquisito automaticamente",
+      "notes": "Collegamento completato e verificato il 30/09/2026. Ultima mensilità disponibile/acquisita: agosto 2026. Aggiornamento mensile, normalmente intorno al 6 del mese. ERA5T può essere consolidato 2-3 mesi dopo. Accesso gratuito tramite account CDS/API key e accettazione dei termini.",
       "level": "Italia / Europa / globale secondo dataset",
       "frequency": "Mensile",
       "provides": [
         {
           "area": "Crisi climatica e decarbonizzazione",
-          "series": "ERA5 · temperatura media mensile",
-          "description": "Serie mensile Copernicus ERA5. PULSE ricerca automaticamente l'ultima mensilità disponibile.",
-          "latest_period": "Ultimo mese disponibile via CDS",
-          "status": "connector_ready"
+          "series": "ERA5 · temperatura media mensile · Italia",
+          "description": "Temperatura media mensile ERA5 acquisita automaticamente sul bounding box Italia.",
+          "latest_period": "2026-08",
+          "status": "latest_public"
         },
         {
           "area": "Crisi climatica e decarbonizzazione",
-          "series": "ERA5 · precipitazione mensile",
-          "description": "Serie mensile Copernicus ERA5. Aggiornamento generalmente intorno al 6 del mese.",
-          "latest_period": "Ultimo mese disponibile via CDS",
-          "status": "connector_ready"
+          "series": "ERA5 · precipitazione media mensile · Italia",
+          "description": "Precipitazione media mensile ERA5 acquisita automaticamente sul bounding box Italia.",
+          "latest_period": "2026-08",
+          "status": "latest_public"
         }
       ]
     },
