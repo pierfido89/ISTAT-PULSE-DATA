@@ -1,0 +1,37 @@
+name: Validate GSE FER 2024 Direct PDF
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/validate-gse-fer.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check requests pypdf
+      - name: Download GSE FER 2024 report
+        run: |
+          python - <<'PY'
+          import requests, io, re
+          from pypdf import PdfReader
+          u='https://www.gse.it/documenti_site/Documenti%20GSE/Rapporti%20statistici/Rapporto%20Statistico%20GSE%20-%20Energia%20da%20FER%20in%20Italia%20-%20anno%202024.pdf'
+          r=requests.get(u,timeout=120,headers={'User-Agent':'Mozilla/5.0 ISTAT-PULSE-DATA'})
+          print('STATUS',r.status_code,'LEN',len(r.content),'TYPE',r.headers.get('content-type'))
+          print('HEAD',r.content[:20])
+          r.raise_for_status()
+          reader=PdfReader(io.BytesIO(r.content))
+          print('PAGES',len(reader.pages))
+          text='\n'.join((p.extract_text() or '') for p in reader.pages[:20])
+          for pat in ['Quota FER','2024','Consumi finali lordi','Energia da FER']:
+              print('PAT',pat,'FOUND',pat.lower() in text.lower())
+          print(text[:20000])
+          PY
