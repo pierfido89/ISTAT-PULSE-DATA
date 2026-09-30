@@ -1423,7 +1423,7 @@ def run_ispra_air(source):
     series=[]; events=[]; latest_structured=0
     for pol,url in selected.items():
         raw=get(url,timeout=180,accept="text/csv,*/*")
-        frame=pd.read_csv(io.BytesIO(raw),sep=",",encoding="utf-8-sig",low_memory=False)
+        frame=pd.read_csv(io.BytesIO(raw),sep=";",encoding="utf-8-sig",low_memory=False)
         if "yy" not in frame.columns or "media_yy" not in frame.columns:
             raise RuntimeError(f"Schema aria ISPRA inatteso per {pol}: {list(frame.columns)}")
         frame["yy_num"]=pd.to_numeric(frame["yy"],errors="coerce")
