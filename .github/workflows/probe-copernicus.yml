@@ -71,3 +71,5 @@ jobs:
           if ok is None:
               raise SystemExit("No recent ERA5 month could be retrieved")
           PY
+
+# licence accepted; rerun trigger
