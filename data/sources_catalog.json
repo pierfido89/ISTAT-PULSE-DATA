@@ -893,17 +893,23 @@
     },
     {
       "name": "ISTAT - A misura di Comune",
-      "level": "Comunale, provinciale e regionale",
-      "frequency": "Secondo indicatore",
+      "level": "Comune / Provincia / Regione",
+      "frequency": "Periodico; ultimo aggiornamento pagina 26/05/2026",
       "provides": [
-        "Indicatori socio-demografici, economici, ambientali e territoriali."
+        "Tasso di occupazione comunale",
+        "Tasso di disoccupazione comunale",
+        "Contribuenti con reddito complessivo inferiore a 10.000 euro",
+        "Reddito imponibile per contribuente",
+        "Raccolta differenziata dei rifiuti urbani",
+        "Autovetture con standard di emissioni inferiore a Euro 4"
       ],
       "official": true,
       "url": "https://www.istat.it/statistica-sperimentale/aggiornamento-degli-indicatori-del-sistema-informativo-a-misura-di-comune/",
-      "feed_status": "Database consultabile · integrazione nel Radar da sviluppare",
-      "notes": "Portale ufficiale esterno, non ancora acquisito automaticamente dalla pipeline.",
+      "feed_status": "Osservazioni comunali ufficiali acquisite e pubblicate in PULSE · fuori dal feed delle notizie correnti",
+      "notes": "Collegamento completato e validato il 30/09/2026. Pubblicate 47.313 osservazioni comunali verificate su 6 indicatori; fino a 7.895 comuni coperti. Ultimi periodi: 2024 per raccolta differenziata; 2023 per lavoro, redditi e parco auto. La pagina A misura di Comune è stata aggiornata il 26/05/2026 e usa la configurazione territoriale al 31/12/2024. I dati alimentano la sezione Dati osservati e non vengono presentati come notizie correnti.",
       "category": "ISTAT",
-      "integration_status": "partial"
+      "integration_status": "connected",
+      "latest_period": "2024 (secondo indicatore)"
     },
     {
       "name": "ISTAT - Ambiente urbano",
