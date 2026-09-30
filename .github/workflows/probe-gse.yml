@@ -1,0 +1,40 @@
+name: Probe GSE Statistics Page
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/probe-gse.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check requests beautifulsoup4
+      - name: Probe GSE statistics page and document URLs
+        run: |
+          python - <<'PY'
+          import requests,re,json
+          from bs4 import BeautifulSoup
+          u='https://www.gse.it/dati-e-scenari/statistiche'
+          r=requests.get(u,timeout=60,headers={'User-Agent':'Mozilla/5.0 ISTAT-PULSE-DATA'})
+          print('STATUS',r.status_code,'LEN',len(r.content),'TYPE',r.headers.get('content-type'))
+          txt=r.text
+          pats=[
+            r'https?://[^"\']+Rapporto[^"\']+2024[^"\']+',
+            r'https?://[^"\']+documenti_site[^"\']+',
+            r'[^"\']+Energia[^"\']+FER[^"\']+2024[^"\']+'
+          ]
+          for p in pats:
+              vals=re.findall(p,txt,re.I)
+              print('PATTERN',p,'COUNT',len(vals))
+              for v in vals[:100]: print('MATCH',v[:500])
+          print('HAS_2024', 'Energia da FER in Italia - anno 2024' in txt)
+          PY
