@@ -1,0 +1,35 @@
+name: Probe ARERA RQSII 2021
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/probe-arera-2021.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check pandas openpyxl requests
+      - name: Inspect ARERA 2021 workbook
+        run: |
+          python - <<'PY'
+          import io, requests, pandas as pd
+          url='https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_2021.xlsx'
+          r=requests.get(url,timeout=90,headers={'User-Agent':'ISTAT-PULSE-DATA/ARERA-probe'})
+          r.raise_for_status()
+          print('BYTES',len(r.content))
+          book=pd.ExcelFile(io.BytesIO(r.content))
+          print('SHEETS',book.sheet_names)
+          for sh in book.sheet_names:
+              df=pd.read_excel(book,sheet_name=sh,header=None,nrows=30)
+              print('\n---',sh,df.shape,'---')
+              print(df.fillna('').astype(str).iloc[:22,:18].to_csv(index=False,header=False,sep='|'))
+          PY
