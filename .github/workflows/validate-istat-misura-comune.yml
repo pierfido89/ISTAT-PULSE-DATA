@@ -1,0 +1,38 @@
+name: Validate ISTAT A Misura Comune
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/validate-istat-misura-comune.yml'
+      - 'scripts/generate_amc_observations.py'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python -m pip install --disable-pip-version-check -r requirements.txt
+      - name: Generate A misura di Comune observations
+        run: |
+          python scripts/generate_amc_observations.py
+          python - <<'PY'
+          import pandas as pd
+          p='app/src/main/assets/pulse_observations_amc.tsv'
+          df=pd.read_csv(p,sep='\t',dtype=str,keep_default_na=False)
+          print('ROWS',len(df))
+          print('INDICATORS',df['indicator'].nunique())
+          print('TERRITORIES',df['territory'].nunique())
+          print('PERIODS',sorted(df['period'].unique()))
+          print(df.groupby('indicator').agg(rows=('territory','size'),territories=('territory','nunique'),latest=('period','max')).to_string())
+          assert len(df)>45000, len(df)
+          assert df['indicator'].nunique()==6
+          assert df['territory'].nunique()>7700
+          assert set(['2023','2024']).intersection(df['period'])
+          assert not df[['indicator','territory','period','value','source','url']].eq('').any().any()
+          PY
