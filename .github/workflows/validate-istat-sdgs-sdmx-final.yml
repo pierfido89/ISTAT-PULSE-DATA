@@ -1,0 +1,45 @@
+name: Validate ISTAT SDGs and SDMX Final
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/validate-istat-sdgs-sdmx-final.yml'
+      - 'scripts/generate_green_events.py'
+      - 'scripts/generate_sdmx_events.py'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python -m pip install --disable-pip-version-check -r requirements.txt
+      - name: Validate SDGs and SDMX
+        run: |
+          python scripts/generate_green_events.py
+          python scripts/generate_sdmx_events.py
+          python - <<'PY'
+          import json,pandas as pd
+
+          # GREEN SDGs status
+          st=json.load(open('app/src/main/assets/pulse_green_status.json'))
+          sdgs=next(x for x in st['sources'] if x['name']=='ISTAT - Indicatori SDGs')
+          print('SDGS_STATUS',json.dumps(sdgs,ensure_ascii=False))
+          assert sdgs['status']=='feed', sdgs
+          assert len(sdgs.get('series',[]))>=70, len(sdgs.get('series',[]))
+
+          # SDMX current feed + metadata
+          meta=json.load(open('app/src/main/assets/pulse_sdmx_meta.json'))
+          ev=pd.read_csv('app/src/main/assets/pulse_events_sdmx.tsv',sep='\t',dtype=str,keep_default_na=False)
+          print('SDMX_META',json.dumps(meta,ensure_ascii=False))
+          print('SDMX_EVENTS',len(ev))
+          print('SDMX_PERIODS',ev['period'].value_counts().sort_index().tail(20).to_dict())
+          assert len(ev)>0
+          assert any(ev['period'].str.startswith('2026'))
+          assert meta.get('series_count',0)>=17 or len(meta.get('series',[]))>=17 or len(ev['indicator'].unique())>=10
+          PY
