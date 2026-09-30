@@ -1,0 +1,54 @@
+name: Probe ACI Open Data
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/probe-aci.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install parsers
+        run: python -m pip install --disable-pip-version-check pandas odfpy requests openpyxl
+      - name: Inspect official ACI 2026 open-data package
+        run: |
+          python - <<'PY'
+          import io, re, zipfile, requests, pandas as pd
+          url='https://aci.gov.it/app/uploads/2026/05/Annuario-statistico-2026-OD.zip'
+          r=requests.get(url,timeout=120,headers={'User-Agent':'ISTAT-PULSE-DATA/ACI-probe'})
+          r.raise_for_status()
+          print('ACI_URL',r.url)
+          print('ACI_BYTES',len(r.content))
+          with zipfile.ZipFile(io.BytesIO(r.content)) as z:
+              names=z.namelist()
+              print('ZIP_FILES',len(names))
+              for n in names:
+                  print('FILE',n)
+              candidates=[n for n in names if n.lower().endswith(('.ods','.xlsx','.xls'))]
+              for n in candidates:
+                  print('\n=== WORKBOOK',n,'===')
+                  raw=z.read(n)
+                  engine='odf' if n.lower().endswith('.ods') else None
+                  try:
+                      book=pd.ExcelFile(io.BytesIO(raw),engine=engine)
+                      print('SHEETS',book.sheet_names)
+                      for sheet in book.sheet_names:
+                          frame=pd.read_excel(book,sheet_name=sheet,header=None,nrows=18)
+                          text=frame.fillna('').astype(str)
+                          joined=' '.join(text.head(18).values.ravel()).casefold()
+                          if any(k in joined for k in ['aliment','elettr','ibrid','benzina','gasolio','regione','provincia','parco','iscrizion']):
+                              print('--- SHEET',sheet,'shape_probe',frame.shape)
+                              print(text.iloc[:12,:16].to_csv(index=False,header=False,sep='|'))
+                  except Exception as exc:
+                      print('READ_ERROR',n,repr(exc))
+          PY
