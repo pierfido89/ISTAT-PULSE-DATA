@@ -1,0 +1,55 @@
+name: Final Sources Probe
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/probe-final-sources.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python -m pip install --disable-pip-version-check requests beautifulsoup4 pandas openpyxl
+      - name: Probe remaining sources
+        run: |
+          python - <<'PY'
+          import requests,re,json
+          from bs4 import BeautifulSoup
+          H={'User-Agent':'Mozilla/5.0 ISTAT-PULSE-DATA'}
+
+          urls={
+            'mappa':'https://www.istat.it/wp-content/themes/EGPbs5-child/inc/mappa-rischi/?lang=it',
+            'noi':'https://noi-italia.istat.it/',
+            'terna':'https://dati.terna.it/',
+            'gse':'https://www.gse.it/dati-e-scenari/statistiche',
+          }
+          for name,u in urls.items():
+              print('\n###',name,u)
+              try:
+                  r=requests.get(u,headers=H,timeout=90,allow_redirects=True)
+                  print('HTTP',r.status_code,'FINAL',r.url,'TYPE',r.headers.get('content-type'),'BYTES',len(r.content))
+                  txt=r.text if 'text' in r.headers.get('content-type','') or 'html' in r.headers.get('content-type','') else ''
+                  if txt:
+                      print('TOKENS')
+                      for pat in [
+                          r'https?://[^"\'<> ]+',
+                          r'[^"\']+\.(?:csv|xlsx?|zip|json)(?:\?[^"\']*)?',
+                          r'[^"\']+(?:api|ajax|download|export|scarica)[^"\']*'
+                      ]:
+                          hits=[]
+                          for x in re.findall(pat,txt,re.I):
+                              x=x if isinstance(x,str) else ''.join(x)
+                              if x not in hits: hits.append(x)
+                          for x in hits[:80]: print(x[:500])
+              except Exception as e:
+                  print('ERR',repr(e))
+          PY
+      - name: Validate Noi Italia existing connector
+        run: python scripts/generate_noi_italia.py
