@@ -955,20 +955,41 @@ def run_copernicus(source):
         }
         try:
             client.retrieve("reanalysis-era5-single-levels-monthly-means",request,str(target))
-            ds=xr.open_dataset(target)
-            vars=list(ds.data_vars)
-            tvar=next((v for v in vars if v.lower()=="t2m" or "temperature" in v.lower()),None)
-            pvar=next((v for v in vars if v.lower()=="tp" or "precipitation" in v.lower()),None)
-            if tvar is None and pvar is None:
-                raise RuntimeError(f"Variabili ERA5 non trovate: {vars}")
+
+            # CDS may return a ZIP even when "unarchived" is requested, notably
+            # when multiple variables are requested. Handle both direct NetCDF
+            # and ZIP packages transparently.
+            netcdf_files=[]
+            if zipfile.is_zipfile(target):
+                extract_dir=Path(tempfile.gettempdir())/f"pulse_era5_{y}_{m:02d}_files"
+                extract_dir.mkdir(parents=True,exist_ok=True)
+                with zipfile.ZipFile(target) as zf:
+                    zf.extractall(extract_dir)
+                netcdf_files=sorted(extract_dir.rglob("*.nc"))
+            else:
+                netcdf_files=[target]
+
+            if not netcdf_files:
+                raise RuntimeError("Pacchetto ERA5 scaricato ma nessun file NetCDF trovato")
+
             latest=f"{y}-{m:02d}"
-            row={"period":latest,"source_file":str(target.name)}
-            if tvar:
-                row["temperature_c"]=float(ds[tvar].mean().values)-273.15
-            if pvar:
-                row["precipitation_mm"]=float(ds[pvar].mean().values)*1000.0
+            row={"period":latest,"source_files":[p.name for p in netcdf_files]}
+            found_vars=[]
+            for nc_path in netcdf_files:
+                ds=xr.open_dataset(nc_path,engine="netcdf4")
+                vars=list(ds.data_vars)
+                found_vars.extend(vars)
+                tvar=next((v for v in vars if v.lower()=="t2m" or "temperature" in v.lower()),None)
+                pvar=next((v for v in vars if v.lower()=="tp" or "precipitation" in v.lower()),None)
+                if tvar and "temperature_c" not in row:
+                    row["temperature_c"]=float(ds[tvar].mean().values)-273.15
+                if pvar and "precipitation_mm" not in row:
+                    row["precipitation_mm"]=float(ds[pvar].mean().values)*1000.0
+                ds.close()
+
+            if "temperature_c" not in row and "precipitation_mm" not in row:
+                raise RuntimeError(f"Variabili ERA5 non trovate: {found_vars}")
             checked.append(row)
-            ds.close()
             break
         except Exception as exc:
             checked.append({"period":f"{y}-{m:02d}","error":clean(exc)})
