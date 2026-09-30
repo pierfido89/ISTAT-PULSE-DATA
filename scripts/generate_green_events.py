@@ -1426,10 +1426,10 @@ def run_ispra_air(source):
         frame=pd.read_csv(io.BytesIO(raw),sep=";",encoding="utf-8-sig",low_memory=False)
         if "yy" not in frame.columns or "media_yy" not in frame.columns:
             raise RuntimeError(f"Schema aria ISPRA inatteso per {pol}: {list(frame.columns)}")
-        frame["yy_num"]=pd.to_numeric(frame["yy"],errors="coerce")
-        frame["mean_num"]=pd.to_numeric(frame["media_yy"],errors="coerce")
+        frame["yy_num"]=frame["yy"].map(number)
+        frame["mean_num"]=frame["media_yy"].map(number)
         if "copertura" in frame.columns:
-            frame["coverage_num"]=pd.to_numeric(frame["copertura"],errors="coerce")
+            frame["coverage_num"]=frame["copertura"].map(number)
             good=frame[(frame["mean_num"].notna()) & ((frame["coverage_num"].isna()) | (frame["coverage_num"]>=75))]
         else:
             good=frame[frame["mean_num"].notna()]
