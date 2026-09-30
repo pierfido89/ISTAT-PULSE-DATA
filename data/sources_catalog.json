@@ -719,8 +719,8 @@
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
       "integration_status": "connected",
-      "feed_status": "Collegata · acquisizione/probe automatico attivo",
-      "notes": "IdroGEO collegato agli OpenData pubblici ufficiali ISPRA. Verificati i pacchetti massivi IFFI in Shapefile/GeoJSON senza scaricarli ad ogni refresh. La piattaforma offre dati su frane, pericolosità da frana/alluvione e indicatori di rischio. Aggiornamento non uniforme: IFFI è aggiornato in modo discontinuo dalle Regioni/PA, mentre le mosaicature PAI possono essere aggiornate in continuo. Ultimo quadro nazionale di riferimento integrato in PULSE: edizione 2024.",
+      "feed_status": "Collegamento completato · OpenData IdroGEO ufficiali verificati; fonte geospaziale corrente, non forzata in serie annuale",
+      "notes": "Collegamento completato e validato il 30/09/2026. Verificati i pacchetti OpenData pubblici IdroGEO IFFI (GeoJSON ~33 MB; Shapefile ~37 MB). La fonte è territoriale/geospaziale e non viene trasformata artificialmente in trend annuale. Aggiornamento: IFFI discontinuo in base agli aggiornamenti regionali/PA; PAI/mosaicature aggiornabili in continuo. Ultimo quadro nazionale integrato: edizione 2024.",
       "level": "Comune / Provincia / Regione / Italia",
       "frequency": "Variabile / continuo secondo dataset (IFFI discontinuo; PAI continuo)",
       "latest_period": "2024",
@@ -728,14 +728,14 @@
         {
           "area": "Risorse idriche e suolo",
           "series": "Inventario dei Fenomeni Franosi in Italia (IFFI)",
-          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "description": "OpenData geospaziali ufficiali IdroGEO verificati in Shapefile/GeoJSON.",
           "latest_period": "2024",
           "status": "current_snapshot"
         },
         {
           "area": "Risorse idriche e suolo",
           "series": "Pericolosità e indicatori di rischio idrogeologico",
-          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "description": "Quadro territoriale corrente su frane e alluvioni; aggiornamento differenziato per dataset.",
           "latest_period": "2024",
           "status": "current_snapshot"
         }
@@ -753,8 +753,8 @@
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
       "integration_status": "feed",
-      "feed_status": "Attiva in GREEN · dati acquisiti e segnali PULSE disponibili",
-      "notes": "Biodiversità collegata tramite l'indicatore ufficiale ISPRA Farmland Bird Index. Serie nazionale FBI e FBIpm 2000-2025, aggiornamento annuale; scheda ISPRA aggiornata al 30/06/2026. La disponibilità della pubblicazione 2025 viene verificata sulla fonte pubblica Rete PAC/LIPU, indicata da ISPRA come fonte di base.",
+      "feed_status": "Attiva in GREEN · serie FBI/FBIpm 2000-2025 e segnali PULSE disponibili",
+      "notes": "Collegamento completato e validato il 30/09/2026. Indicatore ISPRA Farmland Bird Index: serie nazionale FBI e FBIpm 2000-2025; ultimo aggiornamento scheda ISPRA 30/06/2026; frequenza annuale. Valori 2025: FBI 66,51; FBIpm 70,10. La pubblicazione 2025 è verificata anche sulla fonte pubblica Rete PAC/LIPU indicata da ISPRA. Generato 1 segnale PULSE.",
       "level": "Italia",
       "frequency": "Annuale",
       "latest_period": "2025",
@@ -762,14 +762,14 @@
         {
           "area": "Tutela della biodiversità",
           "series": "Farmland Bird Index (FBI)",
-          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "description": "Indice nazionale annuale degli uccelli degli ambienti agricoli, base 2000=100.",
           "latest_period": "2025",
           "status": "latest_public"
         },
         {
           "area": "Tutela della biodiversità",
           "series": "Farmland Bird Index praterie montane (FBIpm)",
-          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "description": "Indice nazionale annuale delle specie delle praterie montane, base 2000=100.",
           "latest_period": "2025",
           "status": "latest_public"
         }
