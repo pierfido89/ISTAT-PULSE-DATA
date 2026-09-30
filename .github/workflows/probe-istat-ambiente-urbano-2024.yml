@@ -1,0 +1,50 @@
+name: Probe ISTAT Ambiente Urbano 2024
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/probe-istat-ambiente-urbano-2024.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python -m pip install --disable-pip-version-check requests beautifulsoup4 pandas openpyxl
+      - name: Inspect 2024 release downloads
+        run: |
+          python - <<'PY'
+          import requests,re,io,pandas as pd
+          from bs4 import BeautifulSoup
+          H={'User-Agent':'Mozilla/5.0 ISTAT-PULSE-DATA'}
+          page='https://www.istat.it/comunicato-stampa/ambiente-urbano-anno-2024/'
+          r=requests.get(page,timeout=90,headers=H); r.raise_for_status()
+          print('PAGE',r.status_code,len(r.content),r.url)
+          soup=BeautifulSoup(r.text,'html.parser')
+          links=[]
+          for a in soup.find_all('a',href=True):
+              href=requests.compat.urljoin(r.url,a['href'])
+              txt=' '.join(a.stripped_strings)
+              if re.search(r'\.(xlsx?|xls|ods|csv|zip)(?:\?|$)',href,re.I) or re.search(r'(tavole|dati|download)',txt,re.I):
+                  print('LINK',txt[:180],'|',href)
+                  links.append((txt,href))
+          for txt,href in links:
+              if re.search(r'\.(xlsx?|xls|ods|csv|zip)(?:\?|$)',href,re.I):
+                  try:
+                      x=requests.get(href,timeout=180,headers=H); x.raise_for_status()
+                      print('DL',txt[:80],x.status_code,len(x.content),x.headers.get('content-type'),href)
+                      if href.lower().split('?')[0].endswith(('.xlsx','.xls')):
+                          xl=pd.ExcelFile(io.BytesIO(x.content))
+                          print('SHEETS',xl.sheet_names[:40])
+                          for sh in xl.sheet_names[:4]:
+                              df=pd.read_excel(io.BytesIO(x.content),sheet_name=sh,header=None,nrows=14)
+                              print('SHEET',sh,'SHAPE',df.shape)
+                              print(df.to_string(max_cols=35))
+                  except Exception as e:
+                      print('ERR',href,repr(e))
+          PY
