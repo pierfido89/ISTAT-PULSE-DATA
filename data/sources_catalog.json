@@ -103,11 +103,20 @@
       "green_pillar": "Crisi climatica e decarbonizzazione",
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
-      "integration_status": "connected",
-      "feed_status": "Collegata · acquisizione/probe automatico attivo",
-      "notes": "EEA Datahub GREEN collegato al dataset ufficiale GHG 1990-2024; download/metadata monitorati automaticamente.",
-      "level": "Secondo dataset ufficiale",
-      "frequency": "Secondo aggiornamento della fonte"
+      "integration_status": "feed",
+      "feed_status": "Attiva in GREEN · serie Italia acquisita e segnale PULSE disponibile",
+      "notes": "Collegamento completato e validato il 30/09/2026. Dataset EEA EU SDG 13_10, serie Italia 1990-2024 (35 osservazioni), ultimo anno disponibile 2024. Aggiornamento annuale. Dataset finale pubblicato il 15/04/2026. Licenza CC BY 4.0. Generato 1 segnale PULSE.",
+      "level": "Italia / UE / Paesi EEA",
+      "frequency": "Annuale",
+      "provides": [
+        {
+          "area": "Crisi climatica e decarbonizzazione",
+          "series": "Emissioni nette domestiche di gas serra (incl. LULUCF)",
+          "description": "Serie ufficiale EEA per l'Italia, 1990-2024.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        }
+      ]
     },
     {
       "name": "ENEA - Rapporto annuale efficienza energetica",
