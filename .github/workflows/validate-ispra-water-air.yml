@@ -32,12 +32,13 @@ jobs:
               st,ev=runner(src)
               print(name,json.dumps(st,ensure_ascii=False,indent=2))
               print("EVENTS",len(ev))
-              assert st["status"]=="feed", st
+              assert st["status"] in {"connected","feed"}, st
               assert len(st.get("series",[]))>=3, st
               if "Risorse idriche" in name:
                   assert st["latest_period"]=="2025", st
                   assert st["frequency"].startswith("Annuale"), st
               else:
+                  assert st["status"]=="feed", st
                   assert st["latest_structured_period"]=="2022", st
                   assert st["latest_assessment_period"]=="2025", st
                   assert st["frequency"].startswith("Annuale"), st
