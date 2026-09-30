@@ -24,19 +24,10 @@ jobs:
           import requests,io,pandas as pd
           u='https://www.catasto-rifiuti.isprambiente.it/get/getDettaglioComunale.csv.php?&aa=2024'
           r=requests.get(u,timeout=120,headers={'User-Agent':'Mozilla/5.0 ISTAT-PULSE-DATA'})
-          print('STATUS',r.status_code,'LEN',len(r.content),'TYPE',r.headers.get('content-type'))
           r.raise_for_status()
-          print('HEAD_BYTES',r.content[:200])
-          for enc in ['utf-8-sig','cp1252','latin1']:
-              try:
-                  txt=r.content.decode(enc)
-                  print('ENCODING',enc,'HEAD',txt[:500].replace('\n',' | '))
-                  break
-              except Exception:
-                  pass
-          df=pd.read_csv(io.BytesIO(r.content),sep=None,engine='python',encoding=enc)
+          df=pd.read_csv(io.BytesIO(r.content),sep=';',skiprows=1,encoding='utf-8-sig',dtype=str)
           print('SHAPE',df.shape)
           print('COLUMNS',list(df.columns))
-          print(df.head(8).to_string())
-          print('TAIL',df.tail(3).to_string())
+          print(df[['Regione','Provincia','Comune','Popolazione','Totale RD (t)','Totale RU (t)','Percentuale RD (%)']].head(12).to_string())
+          print('REGIONS',df['Regione'].nunique(),sorted(df['Regione'].dropna().unique().tolist()))
           PY
