@@ -1,0 +1,35 @@
+name: Validate ISTAT Mappa Rischi Connector
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/validate-istat-mappa-rischi.yml'
+      - 'scripts/generate_green_events.py'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python -m pip install --disable-pip-version-check -r requirements.txt
+      - run: |
+          python - <<'PY'
+          import json
+          import scripts.generate_green_events as g
+          src=next(x for x in g.SOURCES if x["name"]=="ISTAT - Mappa dei rischi dei comuni italiani")
+          st,ev=g.run_istat_risk_map(src)
+          print(json.dumps(st,ensure_ascii=False,indent=2))
+          print("EVENTS",len(ev))
+          assert st["status"]=="connected"
+          assert st["latest_period"]=="2018-01-01"
+          assert st["structured_bytes"]>40_000_000
+          assert st["structured_rows"]>7_000
+          assert st["structured_columns"]>100
+          assert len(ev)==0
+          PY
