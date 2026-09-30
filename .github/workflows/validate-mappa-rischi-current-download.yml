@@ -1,0 +1,50 @@
+name: Validate Mappa Rischi Current Download
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/validate-mappa-rischi-current-download.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python -m pip install --disable-pip-version-check requests beautifulsoup4
+      - run: |
+          python - <<'PY'
+          import requests
+          from bs4 import BeautifulSoup
+          s=requests.Session()
+          H={'User-Agent':'Mozilla/5.0 ISTAT-PULSE-DATA'}
+          base='https://www.istat.it/wp-content/themes/EGPbs5-child/inc/mappa-rischi/'
+          p=s.get(base+'?lang=it',headers=H,timeout=30); p.raise_for_status()
+          soup=BeautifulSoup(p.text,'html.parser')
+          form=soup.find('form',id='formToFile')
+          print('FORM',form.get('action') if form else None, form.get('method') if form else None)
+          params={}
+          for inp in form.find_all('input') if form else []:
+              name=inp.get('name')
+              if name: params[name]=inp.get('value','')
+          params.update({
+              'paramsSelected[dateFrom]':'01/01/2018',
+              'paramsSelected[fileType]':'csv',
+              'paramsSelected[tipoFruizione]':'0',
+              'paramsSelected[id_regione]':'',
+              'paramsSelected[id_provincia]':'',
+              'paramsSelected[id_comune]':'',
+              'paramsSelected[Gis]':'',
+          })
+          print('PARAM_KEYS',sorted(params))
+          r=s.get(base+'getReport.php',headers={**H,'Referer':p.url},params=params,timeout=90)
+          print('HTTP',r.status_code,'FINAL',r.url[:1000],'TYPE',r.headers.get('content-type'),'BYTES',len(r.content),'HEAD',r.content[:120])
+          print(r.text[:3000] if 'text' in r.headers.get('content-type','') or 'csv' in r.headers.get('content-type','') else '')
+          r.raise_for_status()
+          assert len(r.content)>10000
+          assert r.status_code==200
+          PY
