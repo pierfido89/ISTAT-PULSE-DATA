@@ -4913,17 +4913,20 @@
     },
     {
       "name": "ISTAT - Noi Italia",
-      "level": "Italia, regioni ed Europa",
+      "level": "Italia / Regioni / Europa (secondo indicatore)",
       "frequency": "Annuale",
       "provides": [
-        "Oltre 100 statistiche tematiche sull'Italia e sui suoi territori."
+        "3.151 ultimi valori osservati ufficiali",
+        "2.111 segnali PULSE storici su serie annuali comparabili",
+        "13 aree informative derivate dai domini ufficiali Noi Italia"
       ],
       "official": true,
       "url": "https://noi-italia.istat.it/home.php",
-      "feed_status": "Database consultabile · integrazione nel Radar da sviluppare",
-      "notes": "Portale ufficiale esterno, non ancora acquisito automaticamente dalla pipeline.",
+      "feed_status": "Dati osservati + archivio pattern PULSE · escluso dal feed delle novità correnti",
+      "notes": "Collegamento completato e validato il 30/09/2026 sul download ufficiale Dati.zip di Noi Italia 2025. Acquisite 3.151 osservazioni e generati 2.111 segnali PULSE storici. L'anno statistico viene sempre preservato: la fonte alimenta dati osservati e archivio pattern, non il feed delle novità correnti. Aggiornamento annuale.",
       "category": "ISTAT",
-      "integration_status": "archive"
+      "integration_status": "connected",
+      "latest_period": "Secondo indicatore; edizione 2025"
     },
     {
       "name": "ISTAT - Statistiche sull'acqua",
