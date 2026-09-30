@@ -961,17 +961,21 @@
     },
     {
       "name": "ISTAT - BES dei territori",
-      "level": "Regionale e provinciale",
+      "level": "Provincia / città metropolitana / Regione / Italia",
       "frequency": "Annuale",
       "provides": [
-        "Benessere, salute, istruzione, lavoro, ambiente e qualità dei servizi."
+        "67 indicatori di benessere territoriale in serie storica",
+        "11 domini BES: salute, istruzione, lavoro, benessere economico, relazioni sociali, politica, sicurezza, paesaggio/cultura, ambiente, innovazione, qualità dei servizi",
+        "240 segnali PULSE storici/territoriali validati",
+        "1.340 ultimi valori regionali osservati"
       ],
       "official": true,
       "url": "https://www.istat.it/comunicato-territoriale/il-benessere-equo-e-sostenibile-dei-territori-report-regionali-anno-2025/",
-      "feed_status": "Archivio ufficiale consultabile · fuori dal feed corrente",
-      "notes": "I dati annuali del 2024/2025 non vengono presentati come notizie attuali.",
+      "feed_status": "Dati osservati + archivio pattern territoriali PULSE · escluso dal feed delle notizie correnti",
+      "notes": "Collegamento completato e validato il 30/09/2026 sul pacchetto BES dei territori edizione 2025. Copertura: 107 province e città metropolitane; 67 indicatori. Il motore ha generato 240 segnali storici, di cui 57 con periodo 2024, 97 con periodo 2023 e 84 con periodo 2022; per questo la fonte non entra nel feed delle novità correnti. Sono inoltre pubblicati 1.340 ultimi valori regionali osservati. Aggiornamento annuale.",
       "category": "ISTAT",
-      "integration_status": "archive"
+      "integration_status": "connected",
+      "latest_period": "2024 (ultimo anno effettivo presente nel pacchetto 2025)"
     },
     {
       "name": "ISTAT - DEMO - Bilancio demografico mensile",
