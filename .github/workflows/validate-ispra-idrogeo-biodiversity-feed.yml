@@ -1,0 +1,47 @@
+name: Validate ISPRA IdroGEO Biodiversity Feed
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/validate-ispra-idrogeo-biodiversity-feed.yml'
+      - 'scripts/generate_green_events.py'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check -r requirements.txt
+      - name: Validate IdroGEO and biodiversity connectors
+        run: |
+          python - <<'PY'
+          import json
+          import scripts.generate_green_events as g
+
+          src=next(x for x in g.SOURCES if x["name"]=="ISPRA - IdroGEO")
+          st,ev=g.run_idrogeo(src)
+          print("IDROGEO",json.dumps(st,ensure_ascii=False,indent=2))
+          print("IDRO_EVENTS",len(ev))
+          assert st["status"]=="connected", st
+          assert st["latest_period"]=="2024", st
+          assert len(st.get("verified_opendata",[]))>=1, st
+          assert "IFFI" in st["series"][0]["name"], st
+
+          src=next(x for x in g.SOURCES if x["name"]=="ISPRA - Indicatori ambientali e biodiversità")
+          st,ev=g.run_ispra_biodiversity(src)
+          print("BIODIVERSITY",json.dumps(st,ensure_ascii=False,indent=2))
+          print("BIO_EVENTS",len(ev))
+          assert st["status"]=="feed", st
+          assert st["latest_period"]=="2025", st
+          assert st["frequency"]=="Annuale", st
+          assert len(st.get("series",[]))==2, st
+          assert any(x["name"]=="Farmland Bird Index (FBI)" and abs(x["latest_value"]-66.51)<1e-9 for x in st["series"]), st
+          assert len(ev)>=1, ev
+          PY
