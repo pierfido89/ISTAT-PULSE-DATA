@@ -1,0 +1,42 @@
+name: Probe Mappa Rischi Data Calls
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/probe-mappa-rischi-data-calls.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python -m pip install --disable-pip-version-check requests beautifulsoup4
+      - run: |
+          python - <<'PY'
+          import requests,re,json
+          from bs4 import BeautifulSoup
+          H={'User-Agent':'Mozilla/5.0 ISTAT-PULSE-DATA'}
+          base='https://www.istat.it/wp-content/themes/EGPbs5-child/inc/mappa-rischi/'
+          page=requests.get(base+'?lang=it',headers=H,timeout=30); page.raise_for_status()
+          soup=BeautifulSoup(page.text,'html.parser')
+          token_el=soup.find('input',attrs={'name':'paramsSelected[token]'})
+          print('TOKEN',token_el.get('value') if token_el else None)
+          js=requests.get(base+'js/atlrsk.js',headers=H,timeout=30).text
+          print('CLASS_ACTIONS')
+          for m in re.finditer(r'\{[^{}]{0,400}"class"\s*:\s*"([^"]+)"[^{}]{0,400}"action"\s*:\s*"([^"]+)"[^{}]{0,400}\}',js,re.S):
+              print(m.group(1),m.group(2),re.sub(r'\s+',' ',m.group(0))[:900])
+          token=token_el.get('value') if token_el else ''
+          ctl=base+'Controller.php'
+          tests=[
+              {"token":token,"class":"Data","action":"info"},
+              {"token":token,"class":"Regione","action":"info"},
+          ]
+          for payload in tests:
+              r=requests.post(ctl,headers={**H,'Content-Type':'application/json; charset=utf-8'},data=json.dumps(payload),timeout=30)
+              print('POST',payload,'HTTP',r.status_code,'TYPE',r.headers.get('content-type'),'BODY',r.text[:5000])
+          PY
