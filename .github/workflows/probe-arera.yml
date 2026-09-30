@@ -1,0 +1,51 @@
+name: Probe ARERA Water Data
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/probe-arera.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install parsers
+        run: python -m pip install --disable-pip-version-check pandas openpyxl requests beautifulsoup4
+      - name: Inspect ARERA public water-service workbooks
+        run: |
+          python - <<'PY'
+          import io, re, requests, pandas as pd
+          from bs4 import BeautifulSoup
+          url='https://www.arera.it/dati-e-statistiche/dettaglio/rqsii'
+          html=requests.get(url,timeout=90,headers={'User-Agent':'ISTAT-PULSE-DATA/ARERA-probe'}).text
+          soup=BeautifulSoup(html,'html.parser')
+          links=[]
+          for a in soup.find_all('a',href=True):
+              h=a['href']
+              if h.lower().endswith(('.xlsx','.xls')):
+                  links.append(requests.compat.urljoin(url,h))
+          print('WORKBOOKS',len(links))
+          for link in links[:20]:
+              print('FILE',link)
+              r=requests.get(link,timeout=90,headers={'User-Agent':'ISTAT-PULSE-DATA/ARERA-probe'})
+              r.raise_for_status()
+              try:
+                  book=pd.ExcelFile(io.BytesIO(r.content))
+                  print('SHEETS',book.sheet_names)
+                  for sh in book.sheet_names[:8]:
+                      df=pd.read_excel(book,sheet_name=sh,header=None,nrows=18)
+                      txt=df.fillna('').astype(str)
+                      print('---',sh,df.shape)
+                      print(txt.iloc[:12,:14].to_csv(index=False,header=False,sep='|'))
+              except Exception as e:
+                  print('READ_ERROR',repr(e))
+          PY
