@@ -1,0 +1,33 @@
+name: Validate Noi Italia Final
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/validate-noi-italia-final.yml'
+      - 'scripts/generate_noi_italia.py'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python -m pip install --disable-pip-version-check -r requirements.txt
+      - run: |
+          python scripts/generate_noi_italia.py
+          python - <<'PY'
+          import pandas as pd
+          ob=pd.read_csv('app/src/main/assets/pulse_observations_noi.tsv',sep='\t',dtype=str,keep_default_na=False)
+          ev=pd.read_csv('app/src/main/assets/pulse_events_noi.tsv',sep='\t',dtype=str,keep_default_na=False)
+          print('OBS',len(ob))
+          print('EVENTS',len(ev))
+          print('LATEST_OBS',sorted(ob['period'].unique())[-10:])
+          print('LATEST_EVENTS',sorted(ev['period'].unique())[-10:])
+          assert len(ob)>=500
+          assert len(ev)>=100
+          PY
