@@ -1,0 +1,36 @@
+name: Validate ISPRA Waste Feed
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/validate-ispra-waste.yml'
+      - 'scripts/generate_green_events.py'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check -r requirements.txt
+      - name: Run ISPRA waste connector
+        run: |
+          python - <<'PY'
+          import json
+          import scripts.generate_green_events as g
+          source=next(x for x in g.SOURCES if x["name"]=="ISPRA - Catasto nazionale rifiuti")
+          st,events=g.run_ispra_waste(source)
+          print(json.dumps(st,ensure_ascii=False,indent=2))
+          print("EVENTS",len(events))
+          assert st["status"] in {"connected","feed"}, st
+          assert st.get("latest_period")=="2024", st
+          assert st.get("municipal_rows_latest",0)>7000, st
+          assert len(st.get("series",[]))>=2, st
+          assert any(x.get("territory")=="Italia" and x.get("name")=="Raccolta differenziata dei rifiuti urbani" for x in st["series"]), st
+          PY
