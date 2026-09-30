@@ -71,10 +71,26 @@
       "access_cost": "free",
       "access_note": "Accesso gratuito; richiede account/token CDS e accettazione dei termini del dataset.",
       "integration_status": "credential_required",
-      "feed_status": "Connettore pronto · credenziali ufficiali richieste",
-      "notes": "Connettore CDS implementato: richiede CDS_API_KEY e accettazione preventiva dei termini del dataset.",
-      "level": "Secondo dataset ufficiale",
-      "frequency": "Secondo aggiornamento della fonte"
+      "feed_status": "Connettore completo · attivazione download con CDS_API_KEY",
+      "notes": "Connettore ERA5 completato. Frequenza mensile; le medie mensili sono normalmente disponibili intorno al 6 del mese. ERA5T può essere consolidato 2-3 mesi dopo. Al 30/09/2026 la pagina pubblica E-OBS mostra dati mensili 2026 fino ad agosto. Per scaricare ERA5 dal CDS il repository deve avere CDS_API_KEY e la licenza del dataset deve essere accettata sull'account Copernicus.",
+      "level": "Italia / Europa / globale secondo dataset",
+      "frequency": "Mensile",
+      "provides": [
+        {
+          "area": "Crisi climatica e decarbonizzazione",
+          "series": "ERA5 · temperatura media mensile",
+          "description": "Serie mensile Copernicus ERA5. PULSE ricerca automaticamente l'ultima mensilità disponibile.",
+          "latest_period": "Ultimo mese disponibile via CDS",
+          "status": "connector_ready"
+        },
+        {
+          "area": "Crisi climatica e decarbonizzazione",
+          "series": "ERA5 · precipitazione mensile",
+          "description": "Serie mensile Copernicus ERA5. Aggiornamento generalmente intorno al 6 del mese.",
+          "latest_period": "Ultimo mese disponibile via CDS",
+          "status": "connector_ready"
+        }
+      ]
     },
     {
       "name": "EEA - Dati ambientali europei",
