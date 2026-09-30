@@ -6,6 +6,7 @@ on:
     paths:
       - '.github/workflows/probe-copernicus.yml'
       - 'scripts/generate_green_events.py'
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -18,58 +19,21 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install Copernicus client
-        run: python -m pip install --disable-pip-version-check cdsapi xarray netcdf4 numpy
-      - name: Probe latest ERA5 monthly Italy data
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
+      - name: Run Copernicus connector
         env:
           CDS_API_KEY: ${{ secrets.CDS_API_KEY }}
         run: |
           python - <<'PY'
-          import os, json, tempfile, datetime as dt
-          import cdsapi, xarray as xr, numpy as np
-          key=os.environ.get("CDS_API_KEY","").strip()
-          if not key:
-              raise SystemExit("CDS_API_KEY missing")
-          client=cdsapi.Client(url="https://cds.climate.copernicus.eu/api", key=key, quiet=False)
-          today=dt.date.today().replace(day=1)
-          candidates=[]
-          for back in range(0,5):
-              y=today.year
-              m=today.month-back
-              while m<=0:
-                  m+=12; y-=1
-              candidates.append((y,m))
-          ok=None
-          for y,m in candidates:
-              target=f"/tmp/era5_{y}_{m:02d}.nc"
-              request={
-                "product_type":["monthly_averaged_reanalysis"],
-                "variable":["2m_temperature","total_precipitation"],
-                "year":[str(y)],
-                "month":[f"{m:02d}"],
-                "time":["00:00"],
-                "area":[47.5,6.0,35.5,18.5],
-                "data_format":"netcdf",
-                "download_format":"unarchived",
-              }
-              print("TRY",y,m)
-              try:
-                  client.retrieve("reanalysis-era5-single-levels-monthly-means",request,target)
-                  ds=xr.open_dataset(target)
-                  print("DIMS",dict(ds.sizes))
-                  print("VARS",list(ds.data_vars))
-                  temp=next((v for v in ds.data_vars if "t2m" in v.lower() or "temperature" in v.lower()),None)
-                  prec=next((v for v in ds.data_vars if v.lower()=="tp" or "precipitation" in v.lower()),None)
-                  out={"year":y,"month":m}
-                  if temp: out["temp_c"]=float(ds[temp].mean().values)-273.15
-                  if prec: out["precip_mm"]=float(ds[prec].mean().values)*1000
-                  print("LATEST_OK",json.dumps(out))
-                  ok=out
-                  break
-              except Exception as exc:
-                  print("FAILED",y,m,repr(exc))
-          if ok is None:
-              raise SystemExit("No recent ERA5 month could be retrieved")
+          import json
+          import scripts.generate_green_events as g
+          source=next(x for x in g.SOURCES if x["name"].startswith("Copernicus -"))
+          st,events=g.run_copernicus(source)
+          print(json.dumps(st,ensure_ascii=False,indent=2))
+          print("EVENTS",len(events))
+          assert st["status"] in {"connected","feed"}, st
+          assert st.get("latest_period")=="2026-08", st
+          assert any(x.get("name","").startswith("Temperatura media mensile ERA5") for x in st.get("series",[])), st
+          assert any(x.get("name","").startswith("Precipitazione media mensile ERA5") for x in st.get("series",[])), st
           PY
-
-# licence accepted; rerun trigger
