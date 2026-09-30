@@ -64,7 +64,7 @@ SOURCES=[
  {"name":"ISPRA/SNPA - Qualità dell'aria","category":"GREEN_IT","topics":["CLIMA"],"pillar":"Crisi climatica e decarbonizzazione","url":"https://www.isprambiente.gov.it/it/banche-dati/banche-dati-folder/aria/qualita-dellaria","kind":"ispra_air","keywords":["aria","pm10","pm2","no2","csv"]},
  {"name":"ISTAT - Ambiente urbano","category":"ISTAT","topics":["GREEN"],"pillar":"Multi-pilastro GREEN","url":"https://www.istat.it/comunicato-stampa/ambiente-urbano-anno-2024/","kind":"istat_urban","keywords":["ambiente urbano","mobilita","verde","rifiuti"]},
  {"name":"ISTAT - Indicatori SDGs","category":"ISTAT","topics":["GREEN"],"pillar":"Multi-pilastro GREEN","url":"https://www.istat.it/statistiche-per-temi/focus/benessere-e-sostenibilita/obiettivi-di-sviluppo-sostenibile/gli-indicatori-istat/","kind":"istat_sdgs","keywords":["2004-2026","xlsx"]},
- {"name":"ISTAT - Mappa dei rischi dei comuni italiani","category":"ISTAT","topics":["GREEN"],"pillar":"Risorse idriche e suolo","url":"https://www.istat.it/dati/banche-dati/","kind":"discover","keywords":["rischi","comuni","mappa"]},
+ {"name":"ISTAT - Mappa dei rischi dei comuni italiani","category":"ISTAT","topics":["GREEN"],"pillar":"Risorse idriche e suolo","url":"https://www.istat.it/wp-content/themes/EGPbs5-child/inc/mappa-rischi/?lang=it","kind":"istat_risk_map","keywords":["rischi","comuni","mappa"]},
  {"name":"ISTAT - Statistiche sull'acqua","category":"ISTAT","topics":["GREEN"],"pillar":"Risorse idriche e suolo","url":"https://www.istat.it/comunicato-stampa/le-statistiche-sullacqua-anni-2023-2025/","kind":"istat_water","keywords":["acqua","xlsx","tavole"]},
  {"name":"Terna - Portale Dati del sistema elettrico","category":"GREEN_IT","topics":["ENERGIA"],"pillar":"Transizione energetica","url":"https://dati.terna.it/","kind":"discover","keywords":["produzione","rinnovabile","csv","xlsx"]},
 ]
@@ -968,6 +968,101 @@ def run_istat_urban(source):
             "la raccolta 2026 riguarda l'anno di riferimento 2025."
         ),
     },events
+
+def run_istat_risk_map(source):
+    """Verify and inspect the official ISTAT Mappa dei rischi national dataset.
+
+    The application currently exposes one reference date (01/01/2018).  It is
+    therefore a static territorial context source, never a current PULSE news
+    feed.  The connector follows the same form/controller used by the official
+    site and validates the full national CSV download.
+    """
+    base="https://www.istat.it/wp-content/themes/EGPbs5-child/inc/mappa-rischi/"
+    session=requests.Session()
+    headers={"User-Agent":UA}
+    page=session.get(source["url"],headers=headers,timeout=60)
+    page.raise_for_status()
+    soup=BeautifulSoup(page.text,"html.parser")
+    token_el=soup.find("input",attrs={"name":"paramsSelected[token]"})
+    if token_el is None or not token_el.get("value"):
+        raise RuntimeError("Mappa rischi: token ufficiale non trovato")
+    token=token_el.get("value")
+
+    controller=session.post(
+        base+"Controller.php",
+        headers={**headers,"Content-Type":"application/json; charset=utf-8","Referer":page.url},
+        data=json.dumps({"token":token,"class":"Data","action":"info"}),
+        timeout=60,
+    )
+    controller.raise_for_status()
+    dates=controller.json().get("DT",[])
+    if not dates:
+        raise RuntimeError("Mappa rischi: nessuna data di riferimento esposta")
+    date_from=clean(dates[-1].get("DT"))
+    date_label=clean(dates[-1].get("NAMEDT"))
+    if not date_from:
+        raise RuntimeError("Mappa rischi: data di riferimento vuota")
+
+    params={
+        "paramsSelected[token]":token,
+        "paramsSelected[id_regione]":"",
+        "paramsSelected[id_provincia]":"",
+        "paramsSelected[id_comune]":"",
+        "paramsSelected[dateFrom]":date_from,
+        "paramsSelected[Gis]":"",
+        "paramsSelected[fileType]":"csv",
+        "paramsSelected[tipoFruizione]":"0",
+    }
+    report=session.get(
+        base+"getReport.php",
+        headers={**headers,"Referer":page.url},
+        params=params,
+        timeout=180,
+    )
+    report.raise_for_status()
+    raw=report.content
+    if len(raw)<1_000_000:
+        raise RuntimeError(f"Mappa rischi: download nazionale troppo piccolo ({len(raw)} byte)")
+    header=raw.splitlines()[0].decode("utf-8-sig","replace")
+    columns=[x.strip().strip('"') for x in header.split(",")]
+    required={"DATA_RIF","DZREG","CODPRO","DZPRO","PROCOM","DZCOM","PAI_AREAP3","IDR_AREAP3"}
+    if not required.issubset(set(columns)):
+        raise RuntimeError(f"Mappa rischi: schema inatteso, mancano {sorted(required-set(columns))}")
+
+    # Counting the newline records confirms that the download contains the
+    # complete municipal table while avoiding expensive dataframe expansion.
+    rows=max(0,raw.count(b"\n")-1)
+    return {
+        "status":"connected",
+        "http_ok":True,
+        "frequency":"Archivio / snapshot; aggiornamento non corrente",
+        "latest_period":"2018-01-01",
+        "reference_dates":[clean(x.get("DT")) for x in dates],
+        "administrative_levels":["Comune","Provincia","Regione","Italia"],
+        "structured_format":"CSV",
+        "structured_bytes":len(raw),
+        "structured_rows":rows,
+        "structured_columns":len(columns),
+        "series":[
+            {
+                "name":"Indicatori territoriali dei rischi naturali",
+                "pillar":source["pillar"],
+                "latest_period":"2018-01-01",
+                "latest_value":None,
+                "unit":"dataset comunale",
+                "observations":rows,
+                "territory":"Italia",
+                "status":"historical_snapshot",
+            }
+        ],
+        "note":(
+            "Mappa dei rischi ISTAT collegata al download nazionale strutturato ufficiale. "
+            f"CSV verificato ({len(raw)} byte, {rows} righe dati, {len(columns)} colonne). "
+            f"La fonte espone come unico riferimento {date_label or date_from}; per questo "
+            "PULSE la usa esclusivamente come contesto territoriale storico/observed e non "
+            "come fonte di notizie correnti."
+        ),
+    },[]
 
 def run_istat_water(source):
     url=KNOWN_STRUCTURED[source["name"]]
@@ -1927,6 +2022,7 @@ def main():
             elif kind=="ispra_water": st,ev=run_ispra_water(source)
             elif kind=="ispra_air": st,ev=run_ispra_air(source)
             elif kind=="istat_urban": st,ev=run_istat_urban(source)
+            elif kind=="istat_risk_map": st,ev=run_istat_risk_map(source)
             elif kind=="ispra_emissions": st,ev=run_ispra_emissions(source)
             elif kind=="istat_sdgs": st,ev=run_sdgs(source)
             elif kind=="istat_water": st,ev=run_istat_water(source)
