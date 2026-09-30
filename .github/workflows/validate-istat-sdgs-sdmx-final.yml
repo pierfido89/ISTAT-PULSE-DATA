@@ -28,9 +28,14 @@ jobs:
 
           # GREEN SDGs status
           st=json.load(open('app/src/main/assets/pulse_green_status.json'))
-          sdgs=next(x for x in st['sources'] if x['name']=='ISTAT - Indicatori SDGs')
+          sources=st.get('sources',{})
+          if isinstance(sources,dict):
+              sdgs=sources.get('ISTAT - Indicatori SDGs')
+          else:
+              sdgs=next((x for x in sources if isinstance(x,dict) and x.get('name')=='ISTAT - Indicatori SDGs'),None)
+          assert isinstance(sdgs,dict), type(sdgs)
           print('SDGS_STATUS',json.dumps(sdgs,ensure_ascii=False))
-          assert sdgs['status']=='feed', sdgs
+          assert sdgs.get('status')=='feed', sdgs
           assert len(sdgs.get('series',[]))>=70, len(sdgs.get('series',[]))
 
           # SDMX current feed + metadata
@@ -41,5 +46,8 @@ jobs:
           print('SDMX_PERIODS',ev['period'].value_counts().sort_index().tail(20).to_dict())
           assert len(ev)>0
           assert any(ev['period'].str.startswith('2026'))
-          assert meta.get('series_count',0)>=17 or len(meta.get('series',[]))>=17 or len(ev['indicator'].unique())>=10
+          connected=int(meta.get('connected_series', meta.get('series_connected', 0)) or 0)
+          monitored=int(meta.get('monitored_series', meta.get('series_count', 0)) or 0)
+          assert monitored>=17 or len(meta.get('series',[]))>=17 or len(ev['indicator'].unique())>=10
+          assert connected>=14 or len(ev['indicator'].unique())>=10
           PY
