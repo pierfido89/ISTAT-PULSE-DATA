@@ -1,12 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-28T12:15:21.104571+00:00",
+  "generated_at": "2026-09-30T10:51:34.467264+00:00",
   "sources_total": 19,
-  "feed_sources": 5,
-  "connected_sources": 13,
-  "credential_required": 1,
+  "feed_sources": 10,
+  "connected_sources": 9,
+  "credential_required": 0,
   "error_sources": 0,
-  "events": 61,
+  "events": 100,
   "pillars": [
     "Crisi climatica e decarbonizzazione",
     "Economia circolare",
@@ -18,74 +18,288 @@
   ],
   "sources": {
     "ACI - Open data mobilità e parco veicoli": {
-      "status": "connected",
+      "status": "feed",
       "http_ok": true,
-      "candidate_downloads": [
-        "https://aci.gov.it//app/uploads/2025/05/Annuario-statistico-2025-Open-Data.zip",
-        "https://aci.gov.it//app/uploads/2026/05/Annuario-statistico-2026-OD.zip",
-        "https://aci.gov.it//app/uploads/2024/06/Annuario_Statistico-2024_OD.zip",
-        "https://aci.gov.it//app/uploads/2024/06/Annuario_Statistico-2023-OD.zip",
-        "https://aci.gov.it//app/uploads/2024/06/Annuario_Statistico-2022-OD.zip",
-        "https://aci.gov.it//app/uploads/2024/06/Annuario_Statistico-2021-OD.zip",
-        "https://aci.gov.it//app/uploads/2024/06/Annuario_Statistico-2020-OD.zip",
-        "https://aci.gov.it//app/uploads/2025/11/Autoritratto-2024-OD.zip",
-        "https://aci.gov.it//app/uploads/2024/06/Autoritratto-2023-OD.zip",
-        "https://aci.gov.it//app/uploads/2024/06/Autoritratto_2022_OD-1.zip",
-        "https://aci.gov.it//app/uploads/2024/06/Autoritratto_2021_OD.zip",
-        "https://aci.gov.it//app/uploads/2024/06/Autoritratto_2020_OD-1.zip"
-      ],
-      "landing_sha256": "a93dde73dd9b9810d915a004ad53af8c88489b0c50edb0485a217aa1a67b29e9",
-      "note": "Pagina ufficiale raggiunta; 41 download strutturati individuati automaticamente. File strutturato ufficiale verificato automaticamente.",
+      "publication_year": 2026,
+      "data_reference_year": "2025",
       "structured_url": "https://aci.gov.it//app/uploads/2026/05/Annuario-statistico-2026-OD.zip",
-      "structured_format": "zip/xlsx",
-      "structured_content_type": "application/zip",
-      "structured_probe_bytes": 131072,
-      "structured_content_length": "131072",
-      "structured_probe_sha256": "e5a56749b2c0b6d47096f8b58e01de2a57ea5134fe0ee7e8216037eb834ff0bb",
-      "structured_magic": "504b030414000000",
-      "checked_at": "2026-09-28T12:14:37.377065+00:00",
+      "structured_format": "zip/ods",
+      "licence": "CC BY 4.0",
+      "series": [
+        {
+          "name": "Prime iscrizioni di autovetture elettriche",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2025",
+          "latest_value": 94862.0,
+          "unit": "veicoli",
+          "observations": 16,
+          "status": "ok"
+        },
+        {
+          "name": "Prime iscrizioni di autovetture ibride",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2025",
+          "latest_value": 781073.0,
+          "unit": "veicoli",
+          "observations": 11,
+          "status": "ok"
+        },
+        {
+          "name": "Quota di prime iscrizioni elettriche sul totale",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2025",
+          "latest_value": 6.1183172209003915,
+          "unit": "%",
+          "observations": 16,
+          "status": "ok"
+        },
+        {
+          "name": "Quota di prime iscrizioni ibride ed elettriche sul totale",
+          "pillar": "Mobilità sostenibile",
+          "latest_period": "2025",
+          "latest_value": 56.49520561330548,
+          "unit": "%",
+          "observations": 16,
+          "status": "ok"
+        }
+      ],
+      "note": "Annuario ACI 2026 acquisito automaticamente; TABII03 letta con 18 anni utili fino al 2025. 4 segnali PULSE emessi da 4 serie sulla transizione del parco nuovo.",
+      "checked_at": "2026-09-30T10:49:33.534772+00:00",
       "pillar": "Mobilità sostenibile",
       "url": "https://aci.gov.it/attivita-e-progetti/studi-e-ricerche/open-data/"
     },
     "ARERA - Statistiche del servizio idrico": {
       "status": "connected",
       "http_ok": true,
-      "candidate_downloads": [
-        "https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_2021.xlsx",
-        "https://www.arera.it/allegati/dati/idr/RQSII_2020.xlsx",
-        "https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_19.xlsx",
-        "https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_18.xlsx",
-        "https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_17.xlsx"
+      "public_data_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
       ],
-      "landing_sha256": "713c364c506c50d7115f394abb7c57a2abe5aa1a5abcb2dd2f70ee6efb589ec6",
-      "note": "Pagina ufficiale raggiunta; 5 download strutturati individuati automaticamente. File strutturato ufficiale verificato automaticamente.",
-      "structured_url": "https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_2021.xlsx",
-      "structured_format": "zip/xlsx",
-      "structured_content_type": "application/octet-stream",
-      "structured_probe_bytes": 131072,
-      "structured_content_length": "131072",
-      "structured_probe_sha256": "56f9b62f4684239922ec036b2f8979d184f160adb5e1f4b447b48234077a833f",
-      "structured_magic": "504b030414000600",
-      "checked_at": "2026-09-28T12:14:38.890773+00:00",
+      "latest_public_year": 2023,
+      "detailed_workbooks_through": 2021,
+      "official_summary_through": 2023,
+      "final_results_2022_2023": "https://www.arera.it/atti-e-provvedimenti/dettaglio/25/277-25",
+      "series": [
+        {
+          "name": "Rispetto medio degli standard specifici",
+          "latest_period": "2023",
+          "latest_value": 96.5,
+          "unit": "%",
+          "observations": 6,
+          "status": "official_historical",
+          "history": [
+            {
+              "period": "2017",
+              "value": 94.98018009890215,
+              "unit": "%",
+              "source": "https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_17.xlsx",
+              "method": "weighted_from_public_workbook"
+            },
+            {
+              "period": "2018",
+              "value": 96.13752338383698,
+              "unit": "%",
+              "source": "https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_18.xlsx",
+              "method": "weighted_from_public_workbook"
+            },
+            {
+              "period": "2019",
+              "value": 96.55643462439748,
+              "unit": "%",
+              "source": "https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_19.xlsx",
+              "method": "weighted_from_public_workbook"
+            },
+            {
+              "period": "2021",
+              "value": 96.68255815358103,
+              "unit": "%",
+              "source": "https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_2021.xlsx",
+              "method": "weighted_from_public_workbook"
+            },
+            {
+              "period": "2022",
+              "value": 96.5,
+              "unit": "%",
+              "source": "https://www.arera.it/fileadmin/allegati/relaz_ann/23/ra23_sintesi.pdf",
+              "method": "official_ARERA_annual_report"
+            },
+            {
+              "period": "2023",
+              "value": 96.5,
+              "unit": "%",
+              "source": "https://www.arera.it/fileadmin/allegati/relaz_ann/24/Sintesi_RA24.pdf",
+              "method": "official_ARERA_annual_report"
+            }
+          ]
+        },
+        {
+          "name": "MC1 - Avvio e cessazione del rapporto contrattuale",
+          "latest_period": "2023",
+          "latest_value": 96.5,
+          "unit": "%",
+          "observations": 2,
+          "status": "official_summary",
+          "history": [
+            {
+              "period": "2022",
+              "value": 96.3,
+              "unit": "%",
+              "source": "https://www.arera.it/fileadmin/allegati/relaz_ann/23/ra23_sintesi.pdf"
+            },
+            {
+              "period": "2023",
+              "value": 96.5,
+              "unit": "%",
+              "source": "https://www.arera.it/fileadmin/allegati/relaz_ann/24/Sintesi_RA24.pdf"
+            }
+          ]
+        },
+        {
+          "name": "MC2 - Gestione del rapporto contrattuale e accessibilità",
+          "latest_period": "2023",
+          "latest_value": 95.9,
+          "unit": "%",
+          "observations": 2,
+          "status": "official_summary",
+          "history": [
+            {
+              "period": "2022",
+              "value": 95.3,
+              "unit": "%",
+              "source": "https://www.arera.it/fileadmin/allegati/relaz_ann/23/ra23_sintesi.pdf"
+            },
+            {
+              "period": "2023",
+              "value": 95.9,
+              "unit": "%",
+              "source": "https://www.arera.it/fileadmin/allegati/relaz_ann/24/Sintesi_RA24.pdf"
+            }
+          ]
+        }
+      ],
+      "acquired_sources": [
+        {
+          "year": 2017,
+          "url": "https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_17.xlsx",
+          "bytes": 446082,
+          "kind": "detailed_workbook"
+        },
+        {
+          "year": 2018,
+          "url": "https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_18.xlsx",
+          "bytes": 469440,
+          "kind": "detailed_workbook"
+        },
+        {
+          "year": 2019,
+          "url": "https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_19.xlsx",
+          "bytes": 874400,
+          "kind": "detailed_workbook"
+        },
+        {
+          "year": 2021,
+          "url": "https://www.arera.it/fileadmin/allegati/dati/idr/RQSII_2021.xlsx",
+          "bytes": 743029,
+          "kind": "detailed_workbook"
+        },
+        {
+          "year": 2022,
+          "url": "https://www.arera.it/fileadmin/allegati/relaz_ann/23/ra23_sintesi.pdf",
+          "kind": "official_annual_summary"
+        },
+        {
+          "year": 2023,
+          "url": "https://www.arera.it/fileadmin/allegati/relaz_ann/24/Sintesi_RA24.pdf",
+          "kind": "official_annual_summary"
+        }
+      ],
+      "errors": [
+        {
+          "year": 2020,
+          "url": "https://www.arera.it/allegati/dati/idr/RQSII_2020.xlsx",
+          "error": "Excel file format cannot be determined, you must specify an engine manually."
+        }
+      ],
+      "note": "ARERA RQSII integrata con dati pubblici 2017-2021 da workbook dettagliati e con risultati ufficiali 2022-2023 dalle Relazioni annuali ARERA. Per il 2022: MC1 96,3%, MC2 95,3%; per il 2023: MC1 96,5%, MC2 95,9%. Il mancato rispetto medio degli standard specifici è 3,5% in entrambi gli anni. La delibera 277/2025/R/idr certifica i risultati finali del biennio 2022-2023.",
+      "checked_at": "2026-09-30T10:50:39.721979+00:00",
       "pillar": "Risorse idriche e suolo",
       "url": "https://www.arera.it/dati-e-statistiche/dettaglio/rqsii"
     },
     "Copernicus - Climate Data Store": {
-      "status": "credential_required",
-      "note": "Connettore CDS implementato: richiede CDS_API_KEY e accettazione preventiva dei termini del dataset.",
-      "checked_at": "2026-09-28T12:14:38.890814+00:00",
+      "status": "connected",
+      "frequency": "Mensile",
+      "dataset": "ERA5 monthly averaged data on single levels",
+      "dataset_id": "reanalysis-era5-single-levels-monthly-means",
+      "latest_period": "2026-08",
+      "series": [
+        {
+          "name": "Temperatura media mensile ERA5 · area Italia",
+          "latest_period": "2026-08",
+          "latest_value": 26.541,
+          "unit": "°C",
+          "observations": 1,
+          "status": "latest_public"
+        },
+        {
+          "name": "Precipitazione media mensile ERA5 · area Italia",
+          "latest_period": "2026-08",
+          "latest_value": 0.994,
+          "unit": "mm",
+          "observations": 1,
+          "status": "latest_public"
+        }
+      ],
+      "checked_months": [
+        {
+          "period": "2026-09",
+          "error": "400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels-monthly-means/execution invalid request None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-08-01"
+        },
+        {
+          "period": "2026-08",
+          "source_files": [
+            "data_stream-moda_stepType-avgad.nc",
+            "data_stream-moda_stepType-avgua.nc"
+          ],
+          "precipitation_mm": 0.9944102494046092,
+          "temperature_c": 26.541009521484398
+        }
+      ],
+      "note": "Copernicus ERA5 collegato. Ultimo mese acquisito: 2026-08. Aggiornamento mensile; le medie mensili sono normalmente disponibili intorno al 6 del mese. ERA5T è preliminare e può essere consolidato 2-3 mesi dopo.",
+      "checked_at": "2026-09-30T10:50:44.175444+00:00",
       "pillar": "Crisi climatica e decarbonizzazione",
       "url": "https://cds.climate.copernicus.eu/"
     },
     "EEA - Dati ambientali europei": {
-      "status": "connected",
+      "status": "feed",
       "http_ok": true,
-      "candidate_downloads": [],
-      "landing_sha256": "9ae9c36fe3fdb28f3a2d48e9e317b16ed5c9d35dd01de612f74e699abdfb9056",
-      "note": "EEA Datahub GREEN collegato al dataset ufficiale GHG 1990-2024; download/metadata monitorati automaticamente.",
-      "datahub_dataset": "Greenhouse gas emissions and removals inventories 1990-2024",
+      "dataset": "Domestic net greenhouse gas emissions (including LULUCF)",
+      "dataset_code": "EU SDG 13_10",
+      "publication_date": "2026-04-15",
+      "frequency": "Annuale",
       "temporal_coverage": "1990-2024",
-      "checked_at": "2026-09-28T12:14:40.167049+00:00",
+      "latest_period": "2024",
+      "license": "CC BY 4.0",
+      "package_url": "https://sdi.eea.europa.eu/datashare/s/4ZALANAF7qaDrTa/download",
+      "series": [
+        {
+          "name": "Emissioni nette domestiche di gas serra (incl. LULUCF)",
+          "pillar": "Crisi climatica e decarbonizzazione",
+          "latest_period": "2024",
+          "latest_value": 299421.6787,
+          "unit": "Gg CO2e",
+          "observations": 35,
+          "status": "latest_public",
+          "territory": "Italia",
+          "source_dataset": "EEA EU SDG 13_10"
+        }
+      ],
+      "note": "EEA collegata al dataset statistico ufficiale sulle emissioni nette domestiche di gas serra incl. LULUCF. Serie Italia 1990-2024 (35 osservazioni). Aggiornamento annuale; ultimo anno disponibile 2024. Dataset finale pubblicato il 15/04/2026, licenza CC BY 4.0.",
+      "checked_at": "2026-09-30T10:50:55.723727+00:00",
       "pillar": "Crisi climatica e decarbonizzazione",
       "url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/3b7fe76c-524a-439a-bfd2-a6e4046302a2?activeAccordion=1096150"
     },
@@ -297,7 +511,7 @@
       ],
       "failed_regions": [],
       "note": "RAEE 2026: 20/20 schede regionali acquisite; 3 segnali PULSE da serie TEE 2015-2025.",
-      "checked_at": "2026-09-28T12:14:51.670690+00:00",
+      "checked_at": "2026-09-30T10:51:05.586625+00:00",
       "pillar": "Transizione energetica",
       "url": "https://www.efficienzaenergetica.enea.it/vi-segnaliamo/rapporto-annuale-sullefficienza-energetica-2026-schede-regionali.html"
     },
@@ -327,7 +541,7 @@
         }
       ],
       "note": "3/3 dataset Eurostat collegati; 3 segnali PULSE emessi.",
-      "checked_at": "2026-09-28T12:14:53.581568+00:00",
+      "checked_at": "2026-09-30T10:51:07.499827+00:00",
       "pillar": "Multi-pilastro GREEN",
       "url": "https://ec.europa.eu/eurostat/web/environment"
     },
@@ -336,56 +550,584 @@
       "http_ok": false,
       "automation_restriction": "HTTP 403 from GitHub-hosted runner",
       "note": "Connettore GSE implementato. Il portale pubblico blocca il runner GitHub con HTTP 403; la fonte resta collegata nel catalogo e viene verificata senza dichiararla feed.",
-      "checked_at": "2026-09-28T12:14:54.033127+00:00",
+      "checked_at": "2026-09-30T10:51:07.868052+00:00",
       "pillar": "Transizione energetica",
       "url": "https://www.gse.it/dati-e-scenari/statistiche"
     },
     "ISPRA - Catasto nazionale rifiuti": {
-      "status": "connected",
+      "status": "feed",
       "http_ok": true,
-      "candidate_downloads": [],
-      "landing_sha256": "795d0d80a233145dc54aced1aa986bc77409e7d33c94504cb163a564bd03a18b",
-      "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "checked_at": "2026-09-28T12:14:54.905436+00:00",
+      "frequency": "Annuale",
+      "latest_period": "2024",
+      "temporal_coverage": "2015-2024",
+      "municipal_rows_latest": 7897,
+      "series": [
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 67.69214284795422,
+          "unit": "%",
+          "observations": 10,
+          "status": "latest_public",
+          "territory": "Italia"
+        },
+        {
+          "name": "Rifiuti urbani prodotti pro capite",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 507.86161333855557,
+          "unit": "kg/ab",
+          "observations": 10,
+          "status": "latest_public",
+          "territory": "Italia"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 65.75492226672615,
+          "unit": "%",
+          "observations": 10,
+          "status": "latest_public",
+          "territory": "Abruzzo"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 66.5743755261219,
+          "unit": "%",
+          "observations": 10,
+          "status": "latest_public",
+          "territory": "Basilicata"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 57.62177060145879,
+          "unit": "%",
+          "observations": 10,
+          "status": "latest_public",
+          "territory": "Calabria"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 58.07311702888972,
+          "unit": "%",
+          "observations": 10,
+          "status": "latest_public",
+          "territory": "Campania"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 78.8686275836457,
+          "unit": "%",
+          "observations": 10,
+          "status": "latest_public",
+          "territory": "Emilia-Romagna"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 72.68632973576347,
+          "unit": "%",
+          "observations": 10,
+          "status": "latest_public",
+          "territory": "Friuli-Venezia Giulia"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 56.2297157632376,
+          "unit": "%",
+          "observations": 10,
+          "status": "latest_public",
+          "territory": "Lazio"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 59.596219630581224,
+          "unit": "%",
+          "observations": 10,
+          "status": "latest_public",
+          "territory": "Liguria"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 74.32080100430369,
+          "unit": "%",
+          "observations": 10,
+          "status": "latest_public",
+          "territory": "Lombardia"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 71.8405993750731,
+          "unit": "%",
+          "observations": 10,
+          "status": "latest_public",
+          "territory": "Marche"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 61.91502889711386,
+          "unit": "%",
+          "observations": 10,
+          "status": "latest_public",
+          "territory": "Molise"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 68.88164204754509,
+          "unit": "%",
+          "observations": 10,
+          "status": "latest_public",
+          "territory": "Piemonte"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 60.68689927360237,
+          "unit": "%",
+          "observations": 10,
+          "status": "latest_public",
+          "territory": "Puglia"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 76.55883462722448,
+          "unit": "%",
+          "observations": 10,
+          "status": "latest_public",
+          "territory": "Sardegna"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 55.51356802907632,
+          "unit": "%",
+          "observations": 10,
+          "status": "latest_public",
+          "territory": "Sicilia"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 68.06818821756306,
+          "unit": "%",
+          "observations": 10,
+          "status": "latest_public",
+          "territory": "Toscana"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 75.78328942037405,
+          "unit": "%",
+          "observations": 10,
+          "status": "latest_public",
+          "territory": "Trentino-Alto Adige"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 69.58109024528135,
+          "unit": "%",
+          "observations": 10,
+          "status": "latest_public",
+          "territory": "Umbria"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 71.70731898199084,
+          "unit": "%",
+          "observations": 10,
+          "status": "latest_public",
+          "territory": "Valle d'Aosta"
+        },
+        {
+          "name": "Raccolta differenziata dei rifiuti urbani",
+          "pillar": "Economia circolare",
+          "latest_period": "2024",
+          "latest_value": 78.15531538903133,
+          "unit": "%",
+          "observations": 10,
+          "status": "latest_public",
+          "territory": "Veneto"
+        }
+      ],
+      "failed_years": [],
+      "note": "Catasto Nazionale Rifiuti ISPRA collegato ai CSV comunali ufficiali. Acquisite annualità 2015-2024; ultimo file: 7897 comuni. Serie PULSE nazionali su raccolta differenziata e rifiuti urbani pro capite, più serie regionali RD. Aggiornamento annuale; dati 2024 aggiornati sul portale il 22/07/2026.",
+      "checked_at": "2026-09-30T10:51:14.365365+00:00",
       "pillar": "Economia circolare",
-      "url": "https://www.catasto-rifiuti.isprambiente.it/index.php?pg=detComune"
+      "url": "https://www.catasto-rifiuti.isprambiente.it/index.php?advice=si&pg=downloadComune"
     },
     "ISPRA - Consumo di suolo e indicatori territoriali": {
-      "status": "connected",
+      "status": "feed",
       "http_ok": true,
-      "candidate_downloads": [
-        "https://www.isprambiente.gov.it/it/attivita/suolo-e-territorio/suolo/il-consumo-di-suolo/consumo_di_suolo_estratto_dati_2025_anni_2006_2024.xlsx"
+      "frequency": "Annuale",
+      "release": "Rapporto 2025",
+      "publication_date": "2025-10-24",
+      "latest_period": "2024",
+      "temporal_coverage": "2006-2024",
+      "pulse_annual_series": "2016-2024",
+      "administrative_levels": [
+        "Comune",
+        "Provincia",
+        "Regione",
+        "Italia"
       ],
-      "landing_sha256": "6bef846818af0f6c993770db82055491febdea77429190f1e6fc816c83e27c83",
-      "note": "Pagina ufficiale raggiunta; 1 download strutturati individuati automaticamente. Primo download strutturato verificato automaticamente.",
-      "structured_url": "https://www.isprambiente.gov.it/it/attivita/suolo-e-territorio/suolo/il-consumo-di-suolo/consumo_di_suolo_estratto_dati_2025_anni_2006_2024.xlsx",
-      "structured_format": "zip/xlsx",
-      "structured_content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-      "structured_probe_bytes": 131072,
-      "structured_content_length": "131072",
-      "structured_probe_sha256": "d1507a6300cc0e855b27c52ea5c970404c39c54bdebee883037a08f5d58e28bf",
-      "structured_magic": "504b030414000600",
-      "checked_at": "2026-09-28T12:14:56.276209+00:00",
+      "series": [
+        {
+          "name": "Consumo netto annuale di suolo",
+          "pillar": "Risorse idriche e suolo",
+          "latest_period": "2024",
+          "latest_value": 7850.369999999999,
+          "unit": "ettari",
+          "observations": 9,
+          "status": "latest_public",
+          "territory": "Italia"
+        },
+        {
+          "name": "Consumo netto annuale di suolo",
+          "pillar": "Risorse idriche e suolo",
+          "latest_period": "2024",
+          "latest_value": 503.22,
+          "unit": "ettari",
+          "observations": 9,
+          "status": "latest_public",
+          "territory": "Piemonte"
+        },
+        {
+          "name": "Consumo netto annuale di suolo",
+          "pillar": "Risorse idriche e suolo",
+          "latest_period": "2024",
+          "latest_value": 10.3,
+          "unit": "ettari",
+          "observations": 9,
+          "status": "latest_public",
+          "territory": "Valle d'Aosta"
+        },
+        {
+          "name": "Consumo netto annuale di suolo",
+          "pillar": "Risorse idriche e suolo",
+          "latest_period": "2024",
+          "latest_value": 767.98,
+          "unit": "ettari",
+          "observations": 9,
+          "status": "latest_public",
+          "territory": "Lombardia"
+        },
+        {
+          "name": "Consumo netto annuale di suolo",
+          "pillar": "Risorse idriche e suolo",
+          "latest_period": "2024",
+          "latest_value": 134.43,
+          "unit": "ettari",
+          "observations": 9,
+          "status": "latest_public",
+          "territory": "Trentino-Alto Adige"
+        },
+        {
+          "name": "Consumo netto annuale di suolo",
+          "pillar": "Risorse idriche e suolo",
+          "latest_period": "2024",
+          "latest_value": 654.98,
+          "unit": "ettari",
+          "observations": 9,
+          "status": "latest_public",
+          "territory": "Veneto"
+        },
+        {
+          "name": "Consumo netto annuale di suolo",
+          "pillar": "Risorse idriche e suolo",
+          "latest_period": "2024",
+          "latest_value": 169.47,
+          "unit": "ettari",
+          "observations": 9,
+          "status": "latest_public",
+          "territory": "Friuli-Venezia Giulia"
+        },
+        {
+          "name": "Consumo netto annuale di suolo",
+          "pillar": "Risorse idriche e suolo",
+          "latest_period": "2024",
+          "latest_value": 23.27,
+          "unit": "ettari",
+          "observations": 9,
+          "status": "latest_public",
+          "territory": "Liguria"
+        },
+        {
+          "name": "Consumo netto annuale di suolo",
+          "pillar": "Risorse idriche e suolo",
+          "latest_period": "2024",
+          "latest_value": 869.6,
+          "unit": "ettari",
+          "observations": 9,
+          "status": "latest_public",
+          "territory": "Emilia-Romagna"
+        },
+        {
+          "name": "Consumo netto annuale di suolo",
+          "pillar": "Risorse idriche e suolo",
+          "latest_period": "2024",
+          "latest_value": 264.72,
+          "unit": "ettari",
+          "observations": 9,
+          "status": "latest_public",
+          "territory": "Toscana"
+        },
+        {
+          "name": "Consumo netto annuale di suolo",
+          "pillar": "Risorse idriche e suolo",
+          "latest_period": "2024",
+          "latest_value": 141.21,
+          "unit": "ettari",
+          "observations": 9,
+          "status": "latest_public",
+          "territory": "Umbria"
+        },
+        {
+          "name": "Consumo netto annuale di suolo",
+          "pillar": "Risorse idriche e suolo",
+          "latest_period": "2024",
+          "latest_value": 171.52,
+          "unit": "ettari",
+          "observations": 9,
+          "status": "latest_public",
+          "territory": "Marche"
+        },
+        {
+          "name": "Consumo netto annuale di suolo",
+          "pillar": "Risorse idriche e suolo",
+          "latest_period": "2024",
+          "latest_value": 759.69,
+          "unit": "ettari",
+          "observations": 9,
+          "status": "latest_public",
+          "territory": "Lazio"
+        },
+        {
+          "name": "Consumo netto annuale di suolo",
+          "pillar": "Risorse idriche e suolo",
+          "latest_period": "2024",
+          "latest_value": 299.29,
+          "unit": "ettari",
+          "observations": 9,
+          "status": "latest_public",
+          "territory": "Abruzzo"
+        },
+        {
+          "name": "Consumo netto annuale di suolo",
+          "pillar": "Risorse idriche e suolo",
+          "latest_period": "2024",
+          "latest_value": 41.46,
+          "unit": "ettari",
+          "observations": 9,
+          "status": "latest_public",
+          "territory": "Molise"
+        },
+        {
+          "name": "Consumo netto annuale di suolo",
+          "pillar": "Risorse idriche e suolo",
+          "latest_period": "2024",
+          "latest_value": 453.69,
+          "unit": "ettari",
+          "observations": 9,
+          "status": "latest_public",
+          "territory": "Campania"
+        },
+        {
+          "name": "Consumo netto annuale di suolo",
+          "pillar": "Risorse idriche e suolo",
+          "latest_period": "2024",
+          "latest_value": 807.44,
+          "unit": "ettari",
+          "observations": 9,
+          "status": "latest_public",
+          "territory": "Puglia"
+        },
+        {
+          "name": "Consumo netto annuale di suolo",
+          "pillar": "Risorse idriche e suolo",
+          "latest_period": "2024",
+          "latest_value": 107.69,
+          "unit": "ettari",
+          "observations": 9,
+          "status": "latest_public",
+          "territory": "Basilicata"
+        },
+        {
+          "name": "Consumo netto annuale di suolo",
+          "pillar": "Risorse idriche e suolo",
+          "latest_period": "2024",
+          "latest_value": 230.92,
+          "unit": "ettari",
+          "observations": 9,
+          "status": "latest_public",
+          "territory": "Calabria"
+        },
+        {
+          "name": "Consumo netto annuale di suolo",
+          "pillar": "Risorse idriche e suolo",
+          "latest_period": "2024",
+          "latest_value": 772.97,
+          "unit": "ettari",
+          "observations": 9,
+          "status": "latest_public",
+          "territory": "Sicilia"
+        },
+        {
+          "name": "Consumo netto annuale di suolo",
+          "pillar": "Risorse idriche e suolo",
+          "latest_period": "2024",
+          "latest_value": 666.52,
+          "unit": "ettari",
+          "observations": 9,
+          "status": "latest_public",
+          "territory": "Sardegna"
+        }
+      ],
+      "latest_region_soil_share_pct": {
+        "Piemonte": 6.740075077,
+        "Valle d'Aosta": 2.161209402,
+        "Lombardia": 12.22173033,
+        "Trentino-Alto Adige": 2.900425164,
+        "Veneto": 11.85560341,
+        "Friuli-Venezia Giulia": 8.053004063,
+        "Liguria": 7.29927285,
+        "Emilia-Romagna": 8.990483133,
+        "Toscana": 6.198240669,
+        "Umbria": 5.283899977,
+        "Marche": 7.003243283,
+        "Lazio": 8.235727878,
+        "Abruzzo": 5.050546874,
+        "Molise": 3.951834493,
+        "Campania": 10.60508639,
+        "Puglia": 8.187266391,
+        "Basilicata": 3.212757223,
+        "Calabria": 5.099700129,
+        "Sicilia": 6.56131588,
+        "Sardegna": 3.394533139,
+        "Italia": 7.169666808314301
+      },
+      "note": "ISPRA/SNPA Consumo di suolo collegato al workbook ufficiale del Rapporto 2025. Dati definitivi fino al 2024; copertura 2006-2024 a livello comunale, provinciale e regionale. PULSE usa gli incrementi netti annuali comparabili 2016-2024 per Italia e regioni. Aggiornamento annuale. I dati preliminari 2025 sono in consultazione e ISPRA prevede i definitivi a fine ottobre 2026.",
+      "checked_at": "2026-09-30T10:51:15.954426+00:00",
       "pillar": "Risorse idriche e suolo",
       "url": "https://www.isprambiente.gov.it/it/attivita/suolo-e-territorio/suolo/il-consumo-di-suolo/i-dati-sul-consumo-di-suolo"
     },
     "ISPRA - IdroGEO": {
       "status": "connected",
       "http_ok": true,
-      "candidate_downloads": [],
-      "landing_sha256": "ba118cd6fd3401c66b94650ce83593687e125e925b8e58bc43ea2a0ceab4717e",
-      "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "checked_at": "2026-09-28T12:14:57.979811+00:00",
+      "frequency": "Variabile / continuo secondo dataset (IFFI discontinuo; PAI continuo)",
+      "latest_period": "2024",
+      "administrative_levels": [
+        "Comune",
+        "Provincia",
+        "Regione",
+        "Italia"
+      ],
+      "verified_opendata": [
+        {
+          "url": "https://idrogeo.isprambiente.it/opendata/frane/frane_piff_ispra_opendata.json.zip",
+          "bytes": 33006061.0,
+          "content_type": "application/zip"
+        },
+        {
+          "url": "https://idrogeo.isprambiente.it/opendata/frane/frane_piff_ispra_opendata.zip",
+          "bytes": 36971800.0,
+          "content_type": "application/zip"
+        }
+      ],
+      "series": [
+        {
+          "name": "Inventario dei Fenomeni Franosi in Italia (IFFI)",
+          "pillar": "Risorse idriche e suolo",
+          "latest_period": "2024",
+          "latest_value": null,
+          "unit": "",
+          "observations": 0,
+          "territory": "Italia",
+          "status": "current_snapshot"
+        },
+        {
+          "name": "Pericolosità e indicatori di rischio idrogeologico",
+          "pillar": "Risorse idriche e suolo",
+          "latest_period": "2024",
+          "latest_value": null,
+          "unit": "",
+          "observations": 0,
+          "territory": "Italia",
+          "status": "current_snapshot"
+        }
+      ],
+      "note": "IdroGEO collegato agli OpenData pubblici ufficiali ISPRA. Verificati i pacchetti massivi IFFI in Shapefile/GeoJSON senza scaricarli ad ogni refresh. La piattaforma offre dati su frane, pericolosità da frana/alluvione e indicatori di rischio. Aggiornamento non uniforme: IFFI è aggiornato in modo discontinuo dalle Regioni/PA, mentre le mosaicature PAI possono essere aggiornate in continuo. Ultimo quadro nazionale di riferimento integrato in PULSE: edizione 2024.",
+      "checked_at": "2026-09-30T10:51:17.171402+00:00",
       "pillar": "Risorse idriche e suolo",
       "url": "https://idrogeo.isprambiente.it/"
     },
     "ISPRA - Indicatori ambientali e biodiversità": {
-      "status": "connected",
+      "status": "feed",
       "http_ok": true,
-      "candidate_downloads": [],
-      "landing_sha256": "d51c91236949d4d83612836fa1e9646124ee4c82b5f8d16ceeda11d18e5a714a",
-      "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "checked_at": "2026-09-28T12:14:58.883233+00:00",
+      "frequency": "Annuale",
+      "latest_period": "2025",
+      "temporal_coverage": "2000-2025",
+      "last_indicator_update": "2026-06-30",
+      "administrative_levels": [
+        "Italia"
+      ],
+      "series": [
+        {
+          "name": "Farmland Bird Index (FBI)",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2025",
+          "latest_value": 66.51,
+          "unit": "indice 2000=100",
+          "observations": 26,
+          "status": "latest_public",
+          "territory": "Italia"
+        },
+        {
+          "name": "Farmland Bird Index praterie montane (FBIpm)",
+          "pillar": "Tutela della biodiversità",
+          "latest_period": "2025",
+          "latest_value": 70.1,
+          "unit": "indice 2000=100",
+          "observations": 26,
+          "status": "latest_public",
+          "territory": "Italia"
+        }
+      ],
+      "note": "Biodiversità collegata tramite l'indicatore ufficiale ISPRA Farmland Bird Index. Serie nazionale FBI e FBIpm 2000-2025, aggiornamento annuale; scheda ISPRA aggiornata al 30/06/2026. La disponibilità della pubblicazione 2025 viene verificata sulla fonte pubblica Rete PAC/LIPU, indicata da ISPRA come fonte di base.",
+      "checked_at": "2026-09-30T10:51:17.796161+00:00",
       "pillar": "Tutela della biodiversità",
       "url": "https://indicatoriambientali.isprambiente.it/it/temi/biodiversita-stato-e-minacce"
     },
@@ -395,7 +1137,7 @@
       "candidate_downloads": [
         "https://emissioni.sina.isprambiente.it/wp-content/uploads/2026/04/Emissioni-GHG-Sintesi-2026.xlsx"
       ],
-      "landing_sha256": "d7d6835ae38635399caac0e8c465da81b3e883283a12ab28867e1bea5c4612b7",
+      "landing_sha256": "27eb9ec56cb01b62d7fd9486edce072e1e70526785c030a793ca2545ea0ea094",
       "note": "Inventario GHG ISPRA 1990-2024 acquisito dal workbook ufficiale; 2 serie monitorate e 2 segnali PULSE.",
       "structured_url": "https://emissioni.sina.isprambiente.it/wp-content/uploads/2026/04/Emissioni-GHG-Sintesi-2026.xlsx",
       "structured_format": "zip/xlsx",
@@ -425,7 +1167,7 @@
           "status": "ok"
         }
       ],
-      "checked_at": "2026-09-28T12:15:06.444439+00:00",
+      "checked_at": "2026-09-30T10:51:20.586895+00:00",
       "pillar": "Crisi climatica e decarbonizzazione",
       "url": "https://emissioni.sina.isprambiente.it/serie-storiche-emissioni-di-gas-serra-sintesi/"
     },
@@ -433,9 +1175,9 @@
       "status": "connected",
       "http_ok": true,
       "candidate_downloads": [],
-      "landing_sha256": "9fbc6b338202234229693cde11d1440cfee7c87bf5c7da94b59647974574f3f6",
+      "landing_sha256": "b4f71c4bcf781bc637c07fa75f47feade96c2b300eed8dc43370911aa6ea1691",
       "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "checked_at": "2026-09-28T12:15:07.051632+00:00",
+      "checked_at": "2026-09-30T10:51:21.605594+00:00",
       "pillar": "Risorse idriche e suolo",
       "url": "https://www.isprambiente.gov.it/it/istituto-informa/ricerca-comunicati/acqua"
     },
@@ -445,7 +1187,7 @@
       "candidate_downloads": [],
       "landing_sha256": "fcef2971617265db84966c07f27d38e5ba3f9dabb90b49aed906aae027c69c74",
       "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "checked_at": "2026-09-28T12:15:07.533772+00:00",
+      "checked_at": "2026-09-30T10:51:22.276703+00:00",
       "pillar": "Crisi climatica e decarbonizzazione",
       "url": "https://www.isprambiente.gov.it/it/banche-dati"
     },
@@ -453,9 +1195,9 @@
       "status": "connected",
       "http_ok": true,
       "candidate_downloads": [],
-      "landing_sha256": "3eb561d74fc99665dfee2bbdf838c907e1c95bc3c099f4ce62aea553f6e12a90",
+      "landing_sha256": "992c99ea69418dbf267f5d200c6f47b506331673a8b010ed6d41ea6dcc368870",
       "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "checked_at": "2026-09-28T12:15:09.597362+00:00",
+      "checked_at": "2026-09-30T10:51:23.374244+00:00",
       "pillar": "Mobilità sostenibile",
       "url": "https://www.istat.it/dati/banche-dati/"
     },
@@ -1248,7 +1990,7 @@
         }
       ],
       "note": "Dataset Istat SDGs 2004-2026 acquisito: 71 serie nazionali GREEN semanticamente classificate; 36 segnali PULSE.",
-      "checked_at": "2026-09-28T12:15:15.559819+00:00",
+      "checked_at": "2026-09-30T10:51:29.472352+00:00",
       "pillar": "Multi-pilastro GREEN",
       "url": "https://www.istat.it/statistiche-per-temi/focus/benessere-e-sostenibilita/obiettivi-di-sviluppo-sostenibile/gli-indicatori-istat/"
     },
@@ -1256,9 +1998,9 @@
       "status": "connected",
       "http_ok": true,
       "candidate_downloads": [],
-      "landing_sha256": "534059b67e57f52b92eedcbf7cf3b862fc9126dfd23c3be14fab20302c2ea64e",
+      "landing_sha256": "86d977ebc28ff600e43bc28176be76c1bd0fecf66051e2c226bae942032694a2",
       "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "checked_at": "2026-09-28T12:15:16.643086+00:00",
+      "checked_at": "2026-09-30T10:51:30.382803+00:00",
       "pillar": "Risorse idriche e suolo",
       "url": "https://www.istat.it/dati/banche-dati/"
     },
@@ -1269,7 +2011,7 @@
         "https://www.istat.it/wp-content/uploads/2026/03/Istat-GMA2026-Tavole-1.xlsx",
         "https://www.istat.it/wp-content/uploads/2026/03/Istat-GMA2026-Mappe.xlsx"
       ],
-      "landing_sha256": "053a9c607e64f60cefd28a5a762c01c400ee826254fa5041f072252733449601",
+      "landing_sha256": "88441071fba79ff7ddbc05c2c550e804ec394f88ae90cfc8cb6e2b7b3419061a",
       "note": "Tavole ufficiali Acqua 2026 acquisite; 27 serie regionali pluriennali lette da Tavola 10; 17 segnali PULSE.",
       "structured_url": "https://www.istat.it/wp-content/uploads/2026/03/Istat-GMA2026-Tavole-1.xlsx",
       "structured_format": "zip/xlsx",
@@ -1552,7 +2294,7 @@
           "territory": "Isole"
         }
       ],
-      "checked_at": "2026-09-28T12:15:19.372934+00:00",
+      "checked_at": "2026-09-30T10:51:33.179770+00:00",
       "pillar": "Risorse idriche e suolo",
       "url": "https://www.istat.it/comunicato-stampa/le-statistiche-sullacqua-anni-2023-2025/"
     },
@@ -1560,9 +2302,9 @@
       "status": "connected",
       "http_ok": true,
       "candidate_downloads": [],
-      "landing_sha256": "39cc1ecf0a01623f790befcfa3adc37630ed0d055712561f0e841e20ada6ee2e",
+      "landing_sha256": "1631498572c515f66002d46f1a4a068ad4bb03861cacdeebaa8e4b59d502c0d8",
       "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "checked_at": "2026-09-28T12:15:21.100670+00:00",
+      "checked_at": "2026-09-30T10:51:34.463054+00:00",
       "pillar": "Transizione energetica",
       "url": "https://dati.terna.it/"
     }

@@ -13,11 +13,41 @@
       "green_pillar": "Mobilità sostenibile",
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
-      "integration_status": "connected",
-      "feed_status": "Collegata · acquisizione/probe automatico attivo",
-      "notes": "Pagina ufficiale raggiunta; 41 download strutturati individuati automaticamente. File strutturato ufficiale verificato automaticamente.",
+      "integration_status": "feed",
+      "feed_status": "Attiva in GREEN · dati acquisiti e segnali PULSE disponibili",
+      "notes": "Annuario ACI 2026 acquisito automaticamente; TABII03 letta con 18 anni utili fino al 2025. 4 segnali PULSE emessi da 4 serie sulla transizione del parco nuovo.",
       "level": "Secondo dataset ufficiale",
-      "frequency": "Secondo aggiornamento della fonte"
+      "frequency": "Secondo aggiornamento della fonte",
+      "provides": [
+        {
+          "area": "Mobilità sostenibile",
+          "series": "Prime iscrizioni di autovetture elettriche",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Mobilità sostenibile",
+          "series": "Prime iscrizioni di autovetture ibride",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Mobilità sostenibile",
+          "series": "Quota di prime iscrizioni elettriche sul totale",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        },
+        {
+          "area": "Mobilità sostenibile",
+          "series": "Quota di prime iscrizioni ibride ed elettriche sul totale",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "ok"
+        }
+      ]
     },
     {
       "name": "ARERA - Statistiche del servizio idrico",
@@ -31,29 +61,29 @@
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
       "integration_status": "connected",
-      "feed_status": "Collegata · serie storiche e risultati ufficiali acquisiti",
-      "notes": "Dati pubblici ARERA collegati dal 2017 al 2023. 2017-2021: workbook dettagliati per gestore/ATO; 2022-2023: risultati ufficiali ARERA da Relazioni annuali e delibera 277/2025/R/idr. Aggiornamento annuale: PULSE integra solo annualità effettivamente pubblicate.",
-      "level": "Gestore / ATO / sintesi nazionale",
-      "frequency": "Annuale",
+      "feed_status": "Collegata · acquisizione/probe automatico attivo",
+      "notes": "ARERA RQSII integrata con dati pubblici 2017-2021 da workbook dettagliati e con risultati ufficiali 2022-2023 dalle Relazioni annuali ARERA. Per il 2022: MC1 96,3%, MC2 95,3%; per il 2023: MC1 96,5%, MC2 95,9%. Il mancato rispetto medio degli standard specifici è 3,5% in entrambi gli anni. La delibera 277/2025/R/idr certifica i risultati finali del biennio 2022-2023.",
+      "level": "Secondo dataset ufficiale",
+      "frequency": "Secondo aggiornamento della fonte",
       "provides": [
         {
           "area": "Risorse idriche e suolo",
-          "series": "Qualità contrattuale RQSII",
-          "description": "Serie storiche pubbliche 2017-2021 da workbook dettagliati ARERA; risultati ufficiali 2022-2023 da Relazioni annuali e delibera finale.",
+          "series": "Rispetto medio degli standard specifici",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
           "latest_period": "2023",
           "status": "official_historical"
         },
         {
           "area": "Risorse idriche e suolo",
           "series": "MC1 - Avvio e cessazione del rapporto contrattuale",
-          "description": "Valore medio nazionale ufficiale ARERA.",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
           "latest_period": "2023",
           "status": "official_summary"
         },
         {
           "area": "Risorse idriche e suolo",
-          "series": "MC2 - Gestione del rapporto contrattuale e accessibilità al servizio",
-          "description": "Valore medio nazionale ufficiale ARERA.",
+          "series": "MC2 - Gestione del rapporto contrattuale e accessibilità",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
           "latest_period": "2023",
           "status": "official_summary"
         }
@@ -71,22 +101,23 @@
       "access_cost": "free",
       "access_note": "Accesso gratuito; richiede account/token CDS e accettazione dei termini del dataset.",
       "integration_status": "connected",
-      "feed_status": "Collegata · ERA5 acquisito automaticamente",
-      "notes": "Collegamento completato e verificato il 30/09/2026. Ultima mensilità disponibile/acquisita: agosto 2026. Aggiornamento mensile, normalmente intorno al 6 del mese. ERA5T può essere consolidato 2-3 mesi dopo. Accesso gratuito tramite account CDS/API key e accettazione dei termini.",
-      "level": "Italia / Europa / globale secondo dataset",
+      "feed_status": "Collegata · acquisizione/probe automatico attivo",
+      "notes": "Copernicus ERA5 collegato. Ultimo mese acquisito: 2026-08. Aggiornamento mensile; le medie mensili sono normalmente disponibili intorno al 6 del mese. ERA5T è preliminare e può essere consolidato 2-3 mesi dopo.",
+      "level": "Secondo dataset ufficiale",
       "frequency": "Mensile",
+      "latest_period": "2026-08",
       "provides": [
         {
           "area": "Crisi climatica e decarbonizzazione",
-          "series": "ERA5 · temperatura media mensile · Italia",
-          "description": "Temperatura media mensile ERA5 acquisita automaticamente sul bounding box Italia.",
+          "series": "Temperatura media mensile ERA5 · area Italia",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
           "latest_period": "2026-08",
           "status": "latest_public"
         },
         {
           "area": "Crisi climatica e decarbonizzazione",
-          "series": "ERA5 · precipitazione media mensile · Italia",
-          "description": "Precipitazione media mensile ERA5 acquisita automaticamente sul bounding box Italia.",
+          "series": "Precipitazione media mensile ERA5 · area Italia",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
           "latest_period": "2026-08",
           "status": "latest_public"
         }
@@ -104,15 +135,16 @@
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
       "integration_status": "feed",
-      "feed_status": "Attiva in GREEN · serie Italia acquisita e segnale PULSE disponibile",
-      "notes": "Collegamento completato e validato il 30/09/2026. Dataset EEA EU SDG 13_10, serie Italia 1990-2024 (35 osservazioni), ultimo anno disponibile 2024. Aggiornamento annuale. Dataset finale pubblicato il 15/04/2026. Licenza CC BY 4.0. Generato 1 segnale PULSE.",
-      "level": "Italia / UE / Paesi EEA",
+      "feed_status": "Attiva in GREEN · dati acquisiti e segnali PULSE disponibili",
+      "notes": "EEA collegata al dataset statistico ufficiale sulle emissioni nette domestiche di gas serra incl. LULUCF. Serie Italia 1990-2024 (35 osservazioni). Aggiornamento annuale; ultimo anno disponibile 2024. Dataset finale pubblicato il 15/04/2026, licenza CC BY 4.0.",
+      "level": "Secondo dataset ufficiale",
       "frequency": "Annuale",
+      "latest_period": "2024",
       "provides": [
         {
           "area": "Crisi climatica e decarbonizzazione",
           "series": "Emissioni nette domestiche di gas serra (incl. LULUCF)",
-          "description": "Serie ufficiale EEA per l'Italia, 1990-2024.",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
           "latest_period": "2024",
           "status": "latest_public"
         }
@@ -329,19 +361,10 @@
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
       "integration_status": "connected",
-      "feed_status": "Connettore implementato · download automatico bloccato dal portale GSE (HTTP 403)",
-      "notes": "Ultimo rapporto ufficiale verificato: 'Energia da FER in Italia - anno 2024', pubblicato il 24/09/2026. Frequenza annuale. Il portale GSE e il PDF diretto restituiscono HTTP 403 ai runner GitHub: il connettore non viene dichiarato feed finché non è disponibile una rotta ufficiale automatizzabile stabile.",
-      "level": "Italia / Regioni secondo pubblicazione",
-      "frequency": "Annuale",
-      "provides": [
-        {
-          "area": "Transizione energetica",
-          "series": "Energia da fonti rinnovabili in Italia",
-          "description": "Rapporto statistico GSE su FER nei settori elettrico, termico e trasporti.",
-          "latest_period": "2024",
-          "status": "official_latest_verified"
-        }
-      ]
+      "feed_status": "Collegata · acquisizione/probe automatico attivo",
+      "notes": "Connettore GSE implementato. Il portale pubblico blocca il runner GitHub con HTTP 403; la fonte resta collegata nel catalogo e viene verificata senza dichiararla feed.",
+      "level": "Secondo dataset ufficiale",
+      "frequency": "Secondo aggiornamento della fonte"
     },
     {
       "name": "ISPRA - Catasto nazionale rifiuti",
@@ -350,27 +373,168 @@
         "CIRCOLARE"
       ],
       "official": true,
-      "url": "https://www.catasto-rifiuti.isprambiente.it/index.php?pg=detComune",
+      "url": "https://www.catasto-rifiuti.isprambiente.it/index.php?advice=si&pg=downloadComune",
       "green_pillar": "Economia circolare",
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
       "integration_status": "feed",
-      "feed_status": "Attiva in GREEN · CSV comunali acquisiti e segnali PULSE disponibili",
-      "notes": "Collegamento completato e validato il 30/09/2026. CSV comunali ufficiali acquisiti per il periodo 2015-2024; file 2024: 7.897 comuni. Raccolta differenziata nazionale 2024: 67,69%; rifiuti urbani pro capite: 507,86 kg/ab. Aggiornamento annuale; portale aggiornato il 22/07/2026. Generati 18 segnali PULSE.",
-      "level": "Comune / Regione / Italia",
+      "feed_status": "Attiva in GREEN · dati acquisiti e segnali PULSE disponibili",
+      "notes": "Catasto Nazionale Rifiuti ISPRA collegato ai CSV comunali ufficiali. Acquisite annualità 2015-2024; ultimo file: 7897 comuni. Serie PULSE nazionali su raccolta differenziata e rifiuti urbani pro capite, più serie regionali RD. Aggiornamento annuale; dati 2024 aggiornati sul portale il 22/07/2026.",
+      "level": "Secondo dataset ufficiale",
       "frequency": "Annuale",
+      "latest_period": "2024",
       "provides": [
         {
           "area": "Economia circolare",
           "series": "Raccolta differenziata dei rifiuti urbani",
-          "description": "Serie annuale Italia e regioni costruita dai CSV comunali ufficiali ISPRA.",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
           "latest_period": "2024",
           "status": "latest_public"
         },
         {
           "area": "Economia circolare",
           "series": "Rifiuti urbani prodotti pro capite",
-          "description": "Serie annuale nazionale costruita dai CSV comunali ufficiali ISPRA.",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Economia circolare",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Economia circolare",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Economia circolare",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Economia circolare",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Economia circolare",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Economia circolare",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Economia circolare",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Economia circolare",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Economia circolare",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Economia circolare",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Economia circolare",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Economia circolare",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Economia circolare",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Economia circolare",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Economia circolare",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Economia circolare",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Economia circolare",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Economia circolare",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Economia circolare",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Economia circolare",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
           "latest_period": "2024",
           "status": "latest_public"
         }
@@ -389,7 +553,7 @@
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
       "integration_status": "feed",
       "feed_status": "Attiva in GREEN · dati acquisiti e segnali PULSE disponibili",
-      "notes": "Collegamento completato e validato il 30/09/2026. Workbook ufficiale del Rapporto 2025 con dati definitivi fino al 2024 e copertura 2006-2024 a livello comunale, provinciale e regionale. PULSE usa la serie annuale comparabile 2016-2024 del consumo netto di suolo per Italia e regioni. Valore Italia 2023-2024: 7.850,37 ettari. Aggiornamento annuale. I dati preliminari 2025 sono in consultazione; ISPRA prevede i definitivi a fine ottobre 2026.",
+      "notes": "ISPRA/SNPA Consumo di suolo collegato al workbook ufficiale del Rapporto 2025. Dati definitivi fino al 2024; copertura 2006-2024 a livello comunale, provinciale e regionale. PULSE usa gli incrementi netti annuali comparabili 2016-2024 per Italia e regioni. Aggiornamento annuale. I dati preliminari 2025 sono in consultazione e ISPRA prevede i definitivi a fine ottobre 2026.",
       "level": "Comune / Provincia / Regione / Italia",
       "frequency": "Annuale",
       "latest_period": "2024",
@@ -397,7 +561,147 @@
         {
           "area": "Risorse idriche e suolo",
           "series": "Consumo netto annuale di suolo",
-          "description": "Serie annuale Italia e regioni da workbook ufficiale ISPRA/SNPA.",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Consumo netto annuale di suolo",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Consumo netto annuale di suolo",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Consumo netto annuale di suolo",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Consumo netto annuale di suolo",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Consumo netto annuale di suolo",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Consumo netto annuale di suolo",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Consumo netto annuale di suolo",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Consumo netto annuale di suolo",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Consumo netto annuale di suolo",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Consumo netto annuale di suolo",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Consumo netto annuale di suolo",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Consumo netto annuale di suolo",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Consumo netto annuale di suolo",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Consumo netto annuale di suolo",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Consumo netto annuale di suolo",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Consumo netto annuale di suolo",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Consumo netto annuale di suolo",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Consumo netto annuale di suolo",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Consumo netto annuale di suolo",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Consumo netto annuale di suolo",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
           "latest_period": "2024",
           "status": "latest_public"
         }
@@ -416,9 +720,26 @@
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
       "integration_status": "connected",
       "feed_status": "Collegata · acquisizione/probe automatico attivo",
-      "notes": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "level": "Secondo dataset ufficiale",
-      "frequency": "Secondo aggiornamento della fonte"
+      "notes": "IdroGEO collegato agli OpenData pubblici ufficiali ISPRA. Verificati i pacchetti massivi IFFI in Shapefile/GeoJSON senza scaricarli ad ogni refresh. La piattaforma offre dati su frane, pericolosità da frana/alluvione e indicatori di rischio. Aggiornamento non uniforme: IFFI è aggiornato in modo discontinuo dalle Regioni/PA, mentre le mosaicature PAI possono essere aggiornate in continuo. Ultimo quadro nazionale di riferimento integrato in PULSE: edizione 2024.",
+      "level": "Comune / Provincia / Regione / Italia",
+      "frequency": "Variabile / continuo secondo dataset (IFFI discontinuo; PAI continuo)",
+      "latest_period": "2024",
+      "provides": [
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Inventario dei Fenomeni Franosi in Italia (IFFI)",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "current_snapshot"
+        },
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Pericolosità e indicatori di rischio idrogeologico",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "current_snapshot"
+        }
+      ]
     },
     {
       "name": "ISPRA - Indicatori ambientali e biodiversità",
@@ -431,11 +752,28 @@
       "green_pillar": "Tutela della biodiversità",
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
-      "integration_status": "connected",
-      "feed_status": "Collegata · acquisizione/probe automatico attivo",
-      "notes": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "level": "Secondo dataset ufficiale",
-      "frequency": "Secondo aggiornamento della fonte"
+      "integration_status": "feed",
+      "feed_status": "Attiva in GREEN · dati acquisiti e segnali PULSE disponibili",
+      "notes": "Biodiversità collegata tramite l'indicatore ufficiale ISPRA Farmland Bird Index. Serie nazionale FBI e FBIpm 2000-2025, aggiornamento annuale; scheda ISPRA aggiornata al 30/06/2026. La disponibilità della pubblicazione 2025 viene verificata sulla fonte pubblica Rete PAC/LIPU, indicata da ISPRA come fonte di base.",
+      "level": "Italia",
+      "frequency": "Annuale",
+      "latest_period": "2025",
+      "provides": [
+        {
+          "area": "Tutela della biodiversità",
+          "series": "Farmland Bird Index (FBI)",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "latest_public"
+        },
+        {
+          "area": "Tutela della biodiversità",
+          "series": "Farmland Bird Index praterie montane (FBIpm)",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "latest_public"
+        }
+      ]
     },
     {
       "name": "ISPRA - Inventario nazionale delle emissioni",
@@ -453,6 +791,7 @@
       "notes": "Inventario GHG ISPRA 1990-2024 acquisito dal workbook ufficiale; 2 serie monitorate e 2 segnali PULSE.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte",
+      "latest_period": "2024",
       "provides": [
         {
           "area": "Crisi climatica e decarbonizzazione",
@@ -1093,7 +1432,7 @@
           "area": "Prezzi e inflazione",
           "series": "Prezzi al consumo NIC",
           "description": "Indice generale mensile dei prezzi al consumo per l'intera collettività.",
-          "latest_period": "2026-08",
+          "latest_period": "2026-09",
           "status": "ok"
         },
         {
@@ -1135,14 +1474,14 @@
           "area": "Imprese e industria",
           "series": "Fatturato industriale",
           "description": "Indice mensile del valore del fatturato industriale, base 2021.",
-          "latest_period": "2026-06",
+          "latest_period": "2026-07",
           "status": "ok"
         },
         {
           "area": "Imprese e industria",
           "series": "Fatturato dei servizi",
           "description": "Indice mensile del fatturato dei servizi, base 2021.",
-          "latest_period": "2026-06",
+          "latest_period": "2026-07",
           "status": "monitored_no_signal"
         },
         {
@@ -1156,35 +1495,35 @@
           "area": "Imprese e industria",
           "series": "Clima di fiducia delle imprese",
           "description": "Indice mensile sintetico del clima di fiducia delle imprese.",
-          "latest_period": "2026-08",
+          "latest_period": "2026-09",
           "status": "ok"
         },
         {
           "area": "Imprese e industria",
           "series": "Fiducia delle costruzioni",
           "description": "Indice mensile di fiducia delle imprese delle costruzioni.",
-          "latest_period": "2026-08",
+          "latest_period": "2026-09",
           "status": "ok"
         },
         {
           "area": "Imprese e industria",
           "series": "Fiducia del commercio",
           "description": "Indice mensile di fiducia delle imprese del commercio al dettaglio.",
-          "latest_period": "2026-08",
-          "status": "monitored_no_signal"
+          "latest_period": "2026-09",
+          "status": "ok"
         },
         {
           "area": "Potere d'acquisto e consumi",
           "series": "Fiducia dei consumatori",
           "description": "Indice mensile del clima di fiducia dei consumatori.",
-          "latest_period": "2026-08",
+          "latest_period": "2026-09",
           "status": "ok"
         },
         {
           "area": "Prezzi e inflazione",
           "series": "Prezzi alla produzione dell'industria",
           "description": "Indice mensile dei prezzi alla produzione dell'industria, base 2021.",
-          "latest_period": "2026-07",
+          "latest_period": "2026-08",
           "status": "ok"
         },
         {
