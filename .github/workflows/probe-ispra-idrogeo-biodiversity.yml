@@ -18,30 +18,51 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install --disable-pip-version-check requests beautifulsoup4
-      - name: Probe official ISPRA endpoints
+      - name: Probe IdroGEO app JS and ISPRA biodiversity pages
         run: |
           python - <<'PY'
-          import requests,re
+          import requests,re,time
           from bs4 import BeautifulSoup
+          H={'User-Agent':'Mozilla/5.0 ISTAT-PULSE-DATA'}
+          sess=requests.Session()
+          app='https://idrogeo.isprambiente.it/app/'
+          r=sess.get(app,timeout=60,headers=H); r.raise_for_status()
+          soup=BeautifulSoup(r.text,'html.parser')
+          scripts=[requests.compat.urljoin(r.url,s['src']) for s in soup.find_all('script',src=True)]
+          print('IDRO_SCRIPTS',scripts)
+          for src in scripts:
+              if 'main-' not in src: continue
+              js=sess.get(src,timeout=120,headers=H); js.raise_for_status()
+              print('MAINJS',src,'LEN',len(js.content))
+              txt=js.text
+              pats=sorted(set(re.findall(r'https?://[^"\'\\ ]+',txt)))
+              for p in pats:
+                  if any(k in p.lower() for k in ['idro','api','geo','ispra']):
+                      print('JSURL',p[:500])
+              for key in ['csv','wfs','geoserver','api/','download','report']:
+                  pos=[m.start() for m in re.finditer(key,txt,re.I)]
+                  print('KEY',key,'COUNT',len(pos))
+                  for i in pos[:15]:
+                      print('CTX',txt[max(0,i-180):i+350].replace('\n',' ')[:800])
           urls=[
-            'https://idrogeo.isprambiente.it/',
-            'https://idrogeo.isprambiente.it/app/',
             'https://indicatoriambientali.isprambiente.it/it/aree-tutelate/rete-natura-2000',
             'https://indicatoriambientali.isprambiente.it/it/biodiversita-stato-e-minacce/farmland-bird-index-fbi-monitoraggio-degli-uccelli-degli-ambienti-agricoli'
           ]
-          H={'User-Agent':'Mozilla/5.0 ISTAT-PULSE-DATA'}
           for u in urls:
-              print('\nURL',u)
-              r=requests.get(u,timeout=60,headers=H)
-              print('STATUS',r.status_code,'LEN',len(r.content),'TYPE',r.headers.get('content-type'),'FINAL',r.url)
-              soup=BeautifulSoup(r.text,'html.parser')
-              for a in soup.find_all('a',href=True):
-                  href=requests.compat.urljoin(r.url,a['href'])
+              print('\nBIO',u)
+              rr=None
+              for attempt in range(4):
+                  try:
+                      rr=sess.get(u,timeout=90,headers=H)
+                      print('ATTEMPT',attempt+1,'STATUS',rr.status_code,'LEN',len(rr.content))
+                      if rr.ok: break
+                  except Exception as e:
+                      print('ERR',attempt+1,repr(e)); time.sleep(2)
+              if not rr or not rr.ok: continue
+              bs=BeautifulSoup(rr.text,'html.parser')
+              for a in bs.find_all('a',href=True):
+                  href=requests.compat.urljoin(rr.url,a['href'])
                   txt=' '.join(a.stripped_strings)
-                  if re.search(r'(csv|xls|xlsx|download|open.?data|api|geojson|wfs)',href,re.I) or re.search(r'(csv|xls|xlsx|download|scarica|dati)',txt,re.I):
-                      print('LINK',txt[:140],'|',href)
-              for sc in soup.find_all('script',src=True):
-                  src=requests.compat.urljoin(r.url,sc['src'])
-                  if 'idrogeo' in u:
-                      print('SCRIPT',src)
+                  if re.search(r'\.(xlsx?|ods|csv)(?:\?|$)',href,re.I) or re.search(r'(xlsx?|scarica|download)',txt,re.I):
+                      print('BIOLINK',txt[:160],'|',href)
           PY
