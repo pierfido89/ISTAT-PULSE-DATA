@@ -54,7 +54,7 @@ SOURCES=[
  {"name":"ENEA - Rapporto annuale efficienza energetica","category":"GREEN_IT","topics":["ENERGIA"],"pillar":"Transizione energetica","url":"https://www.efficienzaenergetica.enea.it/vi-segnaliamo/rapporto-annuale-sullefficienza-energetica-2026-schede-regionali.html","kind":"discover","keywords":["xls","lazio","region"]},
  {"name":"Eurostat - Statistiche ambientali ed energia","category":"GREEN_EU","topics":["MULTITEMA"],"pillar":"Multi-pilastro GREEN","url":"https://ec.europa.eu/eurostat/web/environment","kind":"eurostat","keywords":[]},
  {"name":"GSE - Statistiche delle rinnovabili","category":"GREEN_IT","topics":["ENERGIA"],"pillar":"Transizione energetica","url":"https://www.gse.it/dati-e-scenari/statistiche","kind":"discover","keywords":["rinnovabili","statistiche","xlsx"]},
- {"name":"ISPRA - Catasto nazionale rifiuti","category":"GREEN_IT","topics":["CIRCOLARE"],"pillar":"Economia circolare","url":"https://www.catasto-rifiuti.isprambiente.it/index.php?pg=detComune","kind":"discover","keywords":["rifiuti","xlsx","csv"]},
+ {"name":"ISPRA - Catasto nazionale rifiuti","category":"GREEN_IT","topics":["CIRCOLARE"],"pillar":"Economia circolare","url":"https://www.catasto-rifiuti.isprambiente.it/index.php?advice=si&pg=downloadComune","kind":"ispra_waste","keywords":["rifiuti","csv"]},
  {"name":"ISPRA - Consumo di suolo e indicatori territoriali","category":"GREEN_IT","topics":["SUOLO"],"pillar":"Risorse idriche e suolo","url":"https://www.isprambiente.gov.it/it/attivita/suolo-e-territorio/suolo/il-consumo-di-suolo/i-dati-sul-consumo-di-suolo","kind":"discover","keywords":["indicatori","suolo","xlsx","zip"]},
  {"name":"ISPRA - IdroGEO","category":"GREEN_IT","topics":["SUOLO"],"pillar":"Risorse idriche e suolo","url":"https://idrogeo.isprambiente.it/","kind":"discover","keywords":["open","download","dati"]},
  {"name":"ISPRA - Indicatori ambientali e biodiversità","category":"GREEN_IT","topics":["BIODIVERSITA"],"pillar":"Tutela della biodiversità","url":"https://indicatoriambientali.isprambiente.it/it/temi/biodiversita-stato-e-minacce","kind":"discover","keywords":["biodivers","xlsx","csv"]},
@@ -886,6 +886,135 @@ def run_istat_water(source):
     })
     return result,events
 
+def run_ispra_waste(source):
+    """Acquire ISPRA municipal urban-waste CSVs and build annual PULSE series.
+
+    The Catasto Nazionale Rifiuti publishes one CSV per year for all Italian
+    municipalities. We aggregate municipal data to national and regional
+    series, preserving the official annual granularity.
+    """
+    base="https://www.catasto-rifiuti.isprambiente.it/get/getDettaglioComunale.csv.php?&aa={year}"
+    years=list(range(2015,2025))
+
+    def parse_year(year):
+        raw=get(base.format(year=year),timeout=120,accept="text/csv,*/*")
+        frame=pd.read_csv(
+            io.BytesIO(raw),sep=";",skiprows=1,encoding="utf-8-sig",
+            dtype=str,index_col=False
+        )
+        required={"Regione","Popolazione","Totale RD (t)","Totale RU (t)"}
+        if not required.issubset(frame.columns):
+            raise RuntimeError(f"Colonne ISPRA rifiuti mancanti {year}: {list(frame.columns)}")
+
+        for col in ["Popolazione","Totale RD (t)","Totale RU (t)"]:
+            frame[col+"_num"]=frame[col].map(number)
+
+        # Rows referring to aggregations can contain textual placeholders;
+        # numeric-only aggregation naturally avoids double counting placeholders.
+        valid=frame[
+            frame["Totale RU (t)_num"].notna() &
+            frame["Totale RD (t)_num"].notna()
+        ].copy()
+        if valid.empty:
+            raise RuntimeError(f"Nessun dato numerico ISPRA rifiuti per {year}")
+
+        total_ru=float(valid["Totale RU (t)_num"].sum())
+        total_rd=float(valid["Totale RD (t)_num"].sum())
+        pop=float(frame["Popolazione_num"].dropna().sum())
+        national={
+            "year":year,
+            "rd_pct":100.0*total_rd/total_ru if total_ru>0 else None,
+            "ru_t":total_ru,
+            "rd_t":total_rd,
+            "ru_kg_pc":1000.0*total_ru/pop if pop>0 else None,
+            "municipal_rows":int(len(frame)),
+        }
+
+        regions={}
+        for region,g in frame.groupby("Regione",dropna=True):
+            region=clean(region)
+            gv=g[g["Totale RU (t)_num"].notna() & g["Totale RD (t)_num"].notna()]
+            if gv.empty: continue
+            ru=float(gv["Totale RU (t)_num"].sum())
+            rd=float(gv["Totale RD (t)_num"].sum())
+            rpop=float(g["Popolazione_num"].dropna().sum())
+            regions[region]={
+                "rd_pct":100.0*rd/ru if ru>0 else None,
+                "ru_kg_pc":1000.0*ru/rpop if rpop>0 else None,
+            }
+        return national,regions
+
+    rows={}; region_rows={}; failures=[]
+    with ThreadPoolExecutor(max_workers=5) as pool:
+        futures={pool.submit(parse_year,y):y for y in years}
+        for future in as_completed(futures):
+            y=futures[future]
+            try:
+                nat,regs=future.result()
+                rows[y]=nat
+                for region,vals in regs.items():
+                    region_rows.setdefault(region,{})[y]=vals
+            except Exception as exc:
+                failures.append(f"{y}: {clean(exc)}")
+
+    ok_years=sorted(rows)
+    if len(ok_years)<6:
+        raise RuntimeError(f"Serie ISPRA rifiuti insufficiente: {len(ok_years)} anni; errori={failures[:3]}")
+
+    periods=[str(y) for y in ok_years]
+    rd_values=[rows[y]["rd_pct"] for y in ok_years]
+    pc_values=[rows[y]["ru_kg_pc"] for y in ok_years]
+
+    series=[]
+    events=[]
+    for name,vals,unit in [
+        ("Raccolta differenziata dei rifiuti urbani",rd_values,"%"),
+        ("Rifiuti urbani prodotti pro capite",pc_values,"kg/ab"),
+    ]:
+        stat=event_status(name,source["pillar"],periods,vals,unit)
+        stat.update({"territory":"Italia","status":"latest_public"})
+        series.append(stat)
+        ev=event_from_series(source["name"],source["url"],name,source["pillar"],periods,vals,unit,"Italia")
+        if ev: events.append(ev)
+
+    # Regional RD histories are valuable for territorial divergences and
+    # regional micro-news; retain only regions with at least six annual values.
+    for region in sorted(region_rows):
+        yrs=sorted(y for y in ok_years if y in region_rows[region] and region_rows[region][y]["rd_pct"] is not None)
+        if len(yrs)<6: continue
+        p=[str(y) for y in yrs]
+        vals=[region_rows[region][y]["rd_pct"] for y in yrs]
+        stat=event_status("Raccolta differenziata dei rifiuti urbani",source["pillar"],p,vals,"%")
+        stat.update({"territory":region,"status":"latest_public"})
+        series.append(stat)
+        ev=event_from_series(
+            source["name"],source["url"],
+            "Raccolta differenziata dei rifiuti urbani",
+            source["pillar"],p,vals,"%",region
+        )
+        if ev:
+            ev["region"]=region
+            ev["municipality"]=region
+            events.append(ev)
+
+    latest=ok_years[-1]
+    return {
+        "status":"feed" if events else "connected",
+        "http_ok":True,
+        "frequency":"Annuale",
+        "latest_period":str(latest),
+        "temporal_coverage":f"{ok_years[0]}-{latest}",
+        "municipal_rows_latest":rows[latest]["municipal_rows"],
+        "series":series,
+        "failed_years":failures,
+        "note":(
+            f"Catasto Nazionale Rifiuti ISPRA collegato ai CSV comunali ufficiali. "
+            f"Acquisite annualità {ok_years[0]}-{latest}; ultimo file: {rows[latest]['municipal_rows']} comuni. "
+            f"Serie PULSE nazionali su raccolta differenziata e rifiuti urbani pro capite, "
+            f"più serie regionali RD. Aggiornamento annuale; dati {latest} aggiornati sul portale il 22/07/2026."
+        ),
+    },events
+
 def run_ispra_emissions(source):
     url=KNOWN_STRUCTURED[source["name"]]
     raw=excel_bytes(url)
@@ -1208,6 +1337,7 @@ def main():
             elif kind=="eurostat": st,ev=run_eurostat(source)
             elif kind=="copernicus": st,ev=run_copernicus(source)
             elif kind=="eea": st,ev=run_eea(source)
+            elif kind=="ispra_waste": st,ev=run_ispra_waste(source)
             elif kind=="ispra_emissions": st,ev=run_ispra_emissions(source)
             elif kind=="istat_sdgs": st,ev=run_sdgs(source)
             elif kind=="istat_water": st,ev=run_istat_water(source)
