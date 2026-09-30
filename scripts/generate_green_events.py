@@ -62,7 +62,7 @@ SOURCES=[
  {"name":"ISPRA - Inventario nazionale delle emissioni","category":"GREEN_IT","topics":["CLIMA"],"pillar":"Crisi climatica e decarbonizzazione","url":"https://emissioni.sina.isprambiente.it/serie-storiche-emissioni-di-gas-serra-sintesi/","kind":"ispra_emissions","keywords":["gas serra","xlsx","xls"]},
  {"name":"ISPRA - Risorse idriche","category":"GREEN_IT","topics":["ACQUA"],"pillar":"Risorse idriche e suolo","url":"https://www.isprambiente.gov.it/pre_meteo/idro/BIGBANG_ISPRA.html","kind":"ispra_water","keywords":["BIGBANG","risorsa idrica","xlsx"]},
  {"name":"ISPRA/SNPA - Qualità dell'aria","category":"GREEN_IT","topics":["CLIMA"],"pillar":"Crisi climatica e decarbonizzazione","url":"https://www.isprambiente.gov.it/it/banche-dati/banche-dati-folder/aria/qualita-dellaria","kind":"ispra_air","keywords":["aria","pm10","pm2","no2","csv"]},
- {"name":"ISTAT - Ambiente urbano","category":"ISTAT","topics":["GREEN"],"pillar":"Mobilità sostenibile","url":"https://www.istat.it/dati/banche-dati/","kind":"discover","keywords":["ambiente urbano","mobilita","verde"]},
+ {"name":"ISTAT - Ambiente urbano","category":"ISTAT","topics":["GREEN"],"pillar":"Multi-pilastro GREEN","url":"https://www.istat.it/comunicato-stampa/ambiente-urbano-anno-2024/","kind":"istat_urban","keywords":["ambiente urbano","mobilita","verde","rifiuti"]},
  {"name":"ISTAT - Indicatori SDGs","category":"ISTAT","topics":["GREEN"],"pillar":"Multi-pilastro GREEN","url":"https://www.istat.it/statistiche-per-temi/focus/benessere-e-sostenibilita/obiettivi-di-sviluppo-sostenibile/gli-indicatori-istat/","kind":"istat_sdgs","keywords":["2004-2026","xlsx"]},
  {"name":"ISTAT - Mappa dei rischi dei comuni italiani","category":"ISTAT","topics":["GREEN"],"pillar":"Risorse idriche e suolo","url":"https://www.istat.it/dati/banche-dati/","kind":"discover","keywords":["rischi","comuni","mappa"]},
  {"name":"ISTAT - Statistiche sull'acqua","category":"ISTAT","topics":["GREEN"],"pillar":"Risorse idriche e suolo","url":"https://www.istat.it/comunicato-stampa/le-statistiche-sullacqua-anni-2023-2025/","kind":"istat_water","keywords":["acqua","xlsx","tavole"]},
@@ -850,6 +850,124 @@ def run_gse(source):
           "automation_restriction":"HTTP 403 from GitHub-hosted runner",
           "note":"Connettore GSE implementato. Il portale pubblico blocca il runner GitHub con HTTP 403; la fonte resta collegata nel catalogo e viene verificata senza dichiararla feed."
         },[]
+
+def run_istat_urban(source):
+    """Acquire the official ISTAT Ambiente urbano 2024 table package.
+
+    The 9 September 2026 release contains annual historical tables through
+    reference year 2024 for the Italian provincial/metropolitan capitals.
+    We use only tables with at least six comparable annual observations for
+    PULSE pattern detection.
+    """
+    url="https://www.istat.it/wp-content/uploads/2026/09/TAVOLE_AMBURB_2024.zip"
+    raw=get(url,timeout=180,accept="application/zip,*/*")
+    z=zipfile.ZipFile(io.BytesIO(raw))
+
+    specs=[
+        {
+          "book":"VERDE_URBANO_2024.xlsx",
+          "sheet":"Tav 12.1 - verde urbano",
+          "name":"Disponibilità di verde urbano",
+          "pillar":"Tutela della biodiversità",
+          "unit":"m²/abitante",
+        },
+        {
+          "book":"RIFIUTI_URBANI_2024.xlsx",
+          "sheet":"Tav.10.1 - Rifiuti urbani",
+          "name":"Produzione di rifiuti urbani",
+          "pillar":"Economia circolare",
+          "unit":"kg/abitante",
+        },
+        {
+          "book":"RIFIUTI_URBANI_2024.xlsx",
+          "sheet":"Tav.11.1 - Rifiuti urbani",
+          "name":"Raccolta differenziata dei rifiuti urbani",
+          "pillar":"Economia circolare",
+          "unit":"%",
+        },
+        {
+          "book":"MOBILITA_URBANA_2024.xlsx",
+          "sheet":"20.1",
+          "name":"Densità di piste ciclabili",
+          "pillar":"Mobilità sostenibile",
+          "unit":"km per 100 km²",
+        },
+    ]
+
+    def read_simple(book,sheet):
+        if book not in z.namelist():
+            raise RuntimeError(f"Ambiente urbano: file mancante {book}")
+        payload=z.read(book)
+        frame=pd.read_excel(io.BytesIO(payload),sheet_name=sheet,header=2,dtype=str)
+        frame.columns=[clean(x) for x in frame.columns]
+        first=frame.columns[0]
+        years=[]
+        for col in frame.columns[1:]:
+            n=number(col)
+            if n is not None and 2000<=n<=2100 and abs(n-round(n))<1e-9:
+                years.append((str(int(round(n))),col))
+        if len(years)<6:
+            raise RuntimeError(f"Ambiente urbano: anni insufficienti {book}/{sheet}: {years}")
+        return frame,first,years
+
+    series=[]; events=[]; table_meta=[]
+    for spec in specs:
+        frame,city_col,years=read_simple(spec["book"],spec["sheet"])
+        periods=[y for y,_ in years]
+        city_count=0
+        latest_count=0
+        for _,row in frame.iterrows():
+            city=clean(row.get(city_col))
+            if not city or city.casefold() in {
+                "nan","nord","nord-ovest","nord-est","centro","mezzogiorno","sud","isole",
+                "italia","capoluoghi di città metropolitana","capoluoghi di provincia"
+            }:
+                continue
+            city=re.sub(r"\s*\([a-z]\)\s*$","",city,flags=re.I).strip()
+            vals=[number(row.get(col)) for _,col in years]
+            if sum(v is not None for v in vals)<6:
+                continue
+            city_count+=1
+            if vals[-1] is not None: latest_count+=1
+            stat=event_status(spec["name"],spec["pillar"],periods,vals,spec["unit"])
+            stat.update({"territory":city,"status":"latest_public"})
+            series.append(stat)
+            ev=event_from_series(
+                source["name"],source["url"],spec["name"],spec["pillar"],
+                periods,vals,spec["unit"],city
+            )
+            if ev:
+                ev["municipality"]=city
+                events.append(ev)
+        table_meta.append({
+            "indicator":spec["name"],"territories":city_count,
+            "latest_2024":latest_count,"coverage":f"{periods[0]}-{periods[-1]}",
+        })
+
+    if not series:
+        raise RuntimeError("Ambiente urbano: nessuna serie valida acquisita")
+    latest=max((x.get("latest_period","") for x in series),default="")
+    if latest!="2024":
+        raise RuntimeError(f"Ambiente urbano: ultimo periodo inatteso {latest}")
+
+    return {
+        "status":"feed" if events else "connected",
+        "http_ok":True,
+        "frequency":"Annuale",
+        "publication_date":"2026-09-09",
+        "latest_period":"2024",
+        "release":"Ambiente urbano - Anno 2024",
+        "administrative_levels":["Comuni capoluogo di provincia","Città metropolitane"],
+        "series":series,
+        "tables":table_meta,
+        "note":(
+            "ISTAT Ambiente urbano 2024 collegato alle tavole ufficiali pubblicate il 09/09/2026. "
+            "PULSE acquisisce serie storiche comunali su disponibilità di verde urbano, produzione "
+            "di rifiuti urbani, raccolta differenziata e densità di piste ciclabili. "
+            "Aggiornamento annuale. L'indagine Dati ambientali nelle città è annuale; "
+            "la raccolta 2026 riguarda l'anno di riferimento 2025."
+        ),
+    },events
 
 def run_istat_water(source):
     url=KNOWN_STRUCTURED[source["name"]]
@@ -1808,6 +1926,7 @@ def main():
             elif kind=="ispra_biodiversity": st,ev=run_ispra_biodiversity(source)
             elif kind=="ispra_water": st,ev=run_ispra_water(source)
             elif kind=="ispra_air": st,ev=run_ispra_air(source)
+            elif kind=="istat_urban": st,ev=run_istat_urban(source)
             elif kind=="ispra_emissions": st,ev=run_ispra_emissions(source)
             elif kind=="istat_sdgs": st,ev=run_sdgs(source)
             elif kind=="istat_water": st,ev=run_istat_water(source)
