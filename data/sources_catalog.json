@@ -361,8 +361,8 @@
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
       "integration_status": "connected",
-      "feed_status": "Collegata · acquisizione/probe automatico attivo",
-      "notes": "Connettore GSE implementato. Il portale pubblico blocca il runner GitHub con HTTP 403; la fonte resta collegata nel catalogo e viene verificata senza dichiararla feed.",
+      "feed_status": "Connettore presente · automazione bloccata dal portale GSE (HTTP 403)",
+      "notes": "Connettore implementato e fonte ufficiale identificata. Nel test finale del 30/09/2026 il portale pubblico GSE ha risposto HTTP 403 al runner GitHub. Non viene assegnato ✅ e non viene dichiarata feed finché non sarà disponibile una rotta ufficiale stabile e automatizzabile.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte"
     },
@@ -5155,8 +5155,8 @@
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
       "integration_status": "error",
-      "feed_status": "Connettore presente · ultimo aggiornamento fallito",
-      "notes": "Errore di collegamento nell'ultimo refresh: <urlopen error timed out>",
+      "feed_status": "Connettore presente · accesso automatico al Portale Dati in timeout dal runner",
+      "notes": "Nel test finale del 30/09/2026 dati.terna.it non ha completato la connessione dal runner GitHub entro 90 secondi. Il Download Center ufficiale resta la destinazione prevista per i dati esportabili, ma PULSE non dichiara la fonte completata finché l'acquisizione automatica reale non supera il test.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte"
     }
