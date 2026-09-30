@@ -1401,8 +1401,21 @@ def update_catalog(statuses):
           }.get(st["status"],st["status"]),
           "notes":st.get("note",""),
         })
-        if "level" not in item:item["level"]="Secondo dataset ufficiale"
-        if "frequency" not in item:item["frequency"]="Secondo aggiornamento della fonte"
+        if st.get("administrative_levels"):
+            item["level"]=" / ".join(st["administrative_levels"])
+        elif "level" not in item:
+            item["level"]="Secondo dataset ufficiale"
+
+        # Always propagate the real source refresh cadence when the connector
+        # knows it. This is displayed in the app's Fonti section.
+        if st.get("frequency"):
+            item["frequency"]=st["frequency"]
+        elif "frequency" not in item:
+            item["frequency"]="Secondo aggiornamento della fonte"
+
+        if st.get("latest_period"):
+            item["latest_period"]=st["latest_period"]
+
         series=st.get("series")
         if series:
             item["provides"]=[{
