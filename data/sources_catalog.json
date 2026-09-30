@@ -922,11 +922,42 @@
       "green_pillar": "Mobilità sostenibile",
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
-      "integration_status": "connected",
-      "feed_status": "Collegata · acquisizione/probe automatico attivo",
-      "notes": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "level": "Secondo dataset ufficiale",
-      "frequency": "Secondo aggiornamento della fonte"
+      "integration_status": "feed",
+      "feed_status": "Attiva in GREEN · tavole ufficiali 2024 acquisite e segnali PULSE disponibili",
+      "notes": "Collegamento completato e validato il 30/09/2026. Rilascio Ambiente urbano - Anno 2024 pubblicato il 09/09/2026. Acquisite 4 famiglie di serie storiche su comuni capoluogo/città metropolitane: verde urbano (120 territori, 2011-2024), produzione rifiuti (121, 2010-2024), raccolta differenziata (121, 2010-2024), piste ciclabili (108, 2019-2024). Generati 313 segnali PULSE. Aggiornamento annuale; l'indagine 2026 raccoglie dati riferiti al 2025.",
+      "level": "Comuni capoluogo di provincia / città metropolitane",
+      "frequency": "Annuale",
+      "latest_period": "2024",
+      "provides": [
+        {
+          "area": "Tutela della biodiversità",
+          "series": "Disponibilità di verde urbano",
+          "description": "Serie comunali annuali 2011-2024.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Economia circolare",
+          "series": "Produzione di rifiuti urbani",
+          "description": "Serie comunali annuali 2010-2024.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Economia circolare",
+          "series": "Raccolta differenziata dei rifiuti urbani",
+          "description": "Serie comunali annuali 2010-2024.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Mobilità sostenibile",
+          "series": "Densità di piste ciclabili",
+          "description": "Serie comunali annuali 2019-2024.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        }
+      ]
     },
     {
       "name": "ISTAT - BES dei territori",
