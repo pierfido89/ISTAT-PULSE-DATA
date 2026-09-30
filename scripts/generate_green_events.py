@@ -670,14 +670,109 @@ def run_aci(source):
 
 
 def run_eea(source):
-    result=discover(source)
-    # EEA's current GHG inventory Datahub publishes a Direct download URL via
-    # the SDI catalogue; keep the catalogue endpoint as an explicit machine
-    # source even if the binary endpoint is slow from GitHub-hosted runners.
-    result["datahub_dataset"]="Greenhouse gas emissions and removals inventories 1990-2024"
-    result["temporal_coverage"]="1990-2024"
-    result["note"]="EEA Datahub GREEN collegato al dataset ufficiale GHG 1990-2024; download/metadata monitorati automaticamente."
-    return result,[]
+    """Acquire EEA official domestic net GHG emissions for Italy.
+
+    Uses the compact statistical Datahub package (CSV/XLSX), not the full
+    multi-country inventory archive. Current final dataset covers 1990-2024
+    and is maintained annually by EEA.
+    """
+    indicator_page="https://www.eea.europa.eu/en/datahub/datahubitem-view/d22b842a-53f7-4c63-aa94-74d5fa1f4d40"
+    page_html,_=page_links(indicator_page)
+    soup=BeautifulSoup(page_html,"html.parser")
+
+    direct=None
+    for a in soup.find_all("a",href=True):
+        label=clean(a.get_text(" ",strip=True)).casefold()
+        href=urllib.parse.urljoin(indicator_page,a["href"])
+        if "direct download" in label and "/data/" in href:
+            direct=href
+            break
+    if not direct:
+        # Stable current EEA data-package resolver for the final 1990-2024 dataset.
+        direct="https://sdi.eea.europa.eu/data/6dee7ee7-ae9c-4017-a3b1-bbef822c74f8"
+
+    landing=get(direct,timeout=90,accept="text/html")
+    landing_soup=BeautifulSoup(landing,"html.parser")
+    package_url=None
+    for a in landing_soup.find_all("a",href=True):
+        label=clean(a.get_text(" ",strip=True)).casefold()
+        href=urllib.parse.urljoin(direct,a["href"])
+        if "download all files" in label and "/datashare/s/" in href:
+            package_url=href
+            break
+    if not package_url:
+        package_url="https://sdi.eea.europa.eu/datashare/s/4ZALANAF7qaDrTa/download"
+
+    raw=get(package_url,timeout=120,accept="application/zip")
+    if not zipfile.is_zipfile(io.BytesIO(raw)):
+        raise RuntimeError("Pacchetto EEA GHG non riconosciuto come ZIP")
+    with zipfile.ZipFile(io.BytesIO(raw)) as zf:
+        csv_names=[n for n in zf.namelist() if n.lower().endswith(".csv")]
+        if not csv_names:
+            raise RuntimeError("CSV EEA assente nel pacchetto")
+        csv_name=next((n for n in csv_names if "eu-sdg-13-10" in n.lower()),csv_names[0])
+        frame=pd.read_csv(io.BytesIO(zf.read(csv_name)))
+
+    required={"geo","time","obs_value"}
+    if not required.issubset(frame.columns):
+        raise RuntimeError(f"Colonne EEA incomplete: {list(frame.columns)}")
+
+    italy=frame[frame["geo"].astype(str).str.upper().eq("IT")].copy()
+    if "dimension" in italy.columns:
+        preferred=italy[italy["dimension"].astype(str).str.upper().eq("TOTXMEMO")]
+        if not preferred.empty:
+            italy=preferred
+    italy["time_num"]=pd.to_numeric(italy["time"],errors="coerce")
+    italy["value_num"]=pd.to_numeric(italy["obs_value"],errors="coerce")
+    italy=italy.dropna(subset=["time_num","value_num"]).sort_values("time_num")
+    italy=italy.drop_duplicates(subset=["time_num"],keep="last")
+    if len(italy)<20:
+        raise RuntimeError(f"Serie Italia EEA troppo corta: {len(italy)} osservazioni")
+
+    periods=[str(int(x)) for x in italy["time_num"].tolist()]
+    values=[float(x) for x in italy["value_num"].tolist()]
+    indicator="Emissioni nette domestiche di gas serra (incl. LULUCF)"
+    stat=event_status(indicator,source["pillar"],periods,values,"Gg CO2e")
+    stat.update({
+        "territory":"Italia",
+        "source_dataset":"EEA EU SDG 13_10",
+        "latest_period":periods[-1],
+        "latest_value":values[-1],
+        "observations":len(values),
+        "status":"latest_public",
+    })
+
+    ev=event_from_series(
+        source["name"],
+        indicator_page,
+        indicator,
+        source["pillar"],
+        periods,
+        values,
+        "Gg CO2e",
+        "Italia",
+    )
+    events=[ev] if ev else []
+
+    return {
+        "status":"feed" if events else "connected",
+        "http_ok":True,
+        "dataset":"Domestic net greenhouse gas emissions (including LULUCF)",
+        "dataset_code":"EU SDG 13_10",
+        "publication_date":"2026-04-15",
+        "frequency":"Annuale",
+        "temporal_coverage":f"{periods[0]}-{periods[-1]}",
+        "latest_period":periods[-1],
+        "license":"CC BY 4.0",
+        "package_url":package_url,
+        "series":[stat],
+        "note":(
+            f"EEA collegata al dataset statistico ufficiale sulle emissioni nette domestiche "
+            f"di gas serra incl. LULUCF. Serie Italia {periods[0]}-{periods[-1]} "
+            f"({len(values)} osservazioni). Aggiornamento annuale; ultimo anno disponibile "
+            f"{periods[-1]}. Dataset finale pubblicato il 15/04/2026, licenza CC BY 4.0."
+        ),
+    },events
 
 def run_enea(source):
     html,_=page_links(source["url"])
