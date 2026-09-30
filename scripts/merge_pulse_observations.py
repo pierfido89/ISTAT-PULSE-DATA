@@ -49,12 +49,19 @@ for source in catalog.get("sources",[]):
             "Fuori dal feed delle notizie correnti."
         )
         source["notes"]="Serie annuali storiche consultabili nella sezione Dati osservati; il periodo statistico e' sempre esplicito."
-    elif name=="A misura di Comune — ISTAT" and counts.get(name,0):
+    elif name=="ISTAT - A misura di Comune" and counts.get(name,0):
+        source["integration_status"]="connected"
         source["feed_status"]=(
-            f"Prime tavole ufficiali importate e verificate: {counts[name]} valori regionali. "
-            "Ampliamento a tutti i comuni in corso."
+            f"Osservazioni comunali ufficiali scaricate e verificate: {counts[name]} valori "
+            "su lavoro, redditi, ambiente e mobilità. Fuori dal feed delle notizie correnti."
         )
-        source["notes"]="Famiglie, istruzione, redditi e ambiente: leggere sempre l'anno del dato nel catalogo osservato."
+        source["frequency"]="Periodico; ultimo aggiornamento pagina 26/05/2026"
+        source["latest_period"]="2024 (secondo indicatore)"
+        source["notes"]=(
+            "Sistema multi-fonte aggiornato il 26/05/2026, con configurazione territoriale al 31/12/2024. "
+            "Le tavole selezionate alimentano la sezione Dati osservati a livello comunale; "
+            "l'anno statistico resta sempre esplicito e non viene presentato come notizia corrente."
+        )
     elif name=="Noi Italia — ISTAT" and counts.get(name,0):
         source["feed_status"]=(
             f"Database ufficiale acquisito: {counts[name]} ultimi valori territoriali verificati. "
