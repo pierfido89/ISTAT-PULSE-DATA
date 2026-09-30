@@ -1,0 +1,39 @@
+name: Probe EEA Data Redirect
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/probe-eea-redirect.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check requests
+      - name: Inspect EEA direct data redirects
+        run: |
+          python - <<'PY'
+          import requests
+          urls=[
+            'https://sdi.eea.europa.eu/data/a1407927-71d3-49da-9895-29a5e4cbcaf1',
+            'https://sdi.eea.europa.eu/webdav/datastore/public/eea_t_national-emissions-reported_p_2026_v02_r00',
+          ]
+          for u in urls:
+              for method in ('HEAD','GET'):
+                  try:
+                      if method=='HEAD':
+                          r=requests.head(u,timeout=20,allow_redirects=False,headers={'User-Agent':'ISTAT-PULSE-DATA/EEA'})
+                      else:
+                          r=requests.get(u,timeout=20,allow_redirects=False,stream=True,headers={'User-Agent':'ISTAT-PULSE-DATA/EEA'})
+                      print(method,u,'STATUS',r.status_code,'LOCATION',r.headers.get('location'),'TYPE',r.headers.get('content-type'),'LEN',r.headers.get('content-length'))
+                  except Exception as e:
+                      print(method,u,'ERR',repr(e))
+          PY
