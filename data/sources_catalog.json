@@ -361,8 +361,8 @@
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
       "integration_status": "connected",
-      "feed_status": "Connettore presente · automazione bloccata dal portale GSE (HTTP 403)",
-      "notes": "Connettore implementato e fonte ufficiale identificata. Nel test finale del 30/09/2026 il portale pubblico GSE ha risposto HTTP 403 al runner GitHub. Non viene assegnato ✅ e non viene dichiarata feed finché non sarà disponibile una rotta ufficiale stabile e automatizzabile.",
+      "feed_status": "Collegata · acquisizione/probe automatico attivo",
+      "notes": "Connettore GSE implementato. Il portale pubblico blocca il runner GitHub con HTTP 403; la fonte resta collegata nel catalogo e viene verificata senza dichiararla feed.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte"
     },
@@ -4211,21 +4211,17 @@
     },
     {
       "name": "ISTAT - BES dei territori",
-      "level": "Provincia / città metropolitana / Regione / Italia",
+      "level": "Regionale e provinciale",
       "frequency": "Annuale",
       "provides": [
-        "67 indicatori di benessere territoriale in serie storica",
-        "11 domini BES: salute, istruzione, lavoro, benessere economico, relazioni sociali, politica, sicurezza, paesaggio/cultura, ambiente, innovazione, qualità dei servizi",
-        "240 segnali PULSE storici/territoriali validati",
-        "1.340 ultimi valori regionali osservati"
+        "Benessere, salute, istruzione, lavoro, ambiente e qualità dei servizi."
       ],
       "official": true,
       "url": "https://www.istat.it/comunicato-territoriale/il-benessere-equo-e-sostenibile-dei-territori-report-regionali-anno-2025/",
-      "feed_status": "Dati osservati + archivio pattern territoriali PULSE · escluso dal feed delle notizie correnti",
-      "notes": "Collegamento completato e validato il 30/09/2026 sul pacchetto BES dei territori edizione 2025. Copertura: 107 province e città metropolitane; 67 indicatori. Il motore ha generato 240 segnali storici, di cui 57 con periodo 2024, 97 con periodo 2023 e 84 con periodo 2022; per questo la fonte non entra nel feed delle novità correnti. Sono inoltre pubblicati 1.340 ultimi valori regionali osservati. Aggiornamento annuale.",
+      "feed_status": "Archivio ufficiale consultabile · fuori dal feed corrente",
+      "notes": "I dati annuali del 2024/2025 non vengono presentati come notizie attuali.",
       "category": "ISTAT",
-      "integration_status": "connected",
-      "latest_period": "2024 (ultimo anno effettivo presente nel pacchetto 2025)"
+      "integration_status": "archive"
     },
     {
       "name": "ISTAT - DEMO - Bilancio demografico mensile",
@@ -4778,15 +4774,15 @@
           "area": "Lavoro e mercato del lavoro",
           "series": "Tasso di disoccupazione",
           "description": "Tasso di disoccupazione mensile nazionale.",
-          "latest_period": "",
-          "status": "fetch_error"
+          "latest_period": "2026-07",
+          "status": "ok"
         },
         {
           "area": "Lavoro e mercato del lavoro",
           "series": "Tasso di occupazione",
           "description": "Tasso di occupazione mensile nazionale.",
-          "latest_period": "",
-          "status": "fetch_error"
+          "latest_period": "2026-07",
+          "status": "ok"
         },
         {
           "area": "Lavoro e mercato del lavoro",
@@ -4806,8 +4802,8 @@
           "area": "Imprese e industria",
           "series": "Produzione industriale",
           "description": "Indice mensile della produzione industriale, base 2021.",
-          "latest_period": "",
-          "status": "fetch_error"
+          "latest_period": "2026-07",
+          "status": "monitored_no_signal"
         },
         {
           "area": "Imprese e industria",
@@ -4901,39 +4897,39 @@
         "GREEN"
       ],
       "official": true,
-      "url": "https://www.istat.it/dati/banche-dati/",
+      "url": "https://www.istat.it/wp-content/themes/EGPbs5-child/inc/mappa-rischi/?lang=it",
       "green_pillar": "Risorse idriche e suolo",
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
       "integration_status": "connected",
-      "feed_status": "Dataset nazionale strutturato ufficiale acquisito · contesto storico, fuori dal feed corrente",
-      "notes": "Collegamento completato e validato il 30/09/2026 tramite il download ufficiale nazionale della Mappa dei rischi. CSV strutturato di circa 43,6 MB acquisito dal form ufficiale getReport.php. Il controller della fonte espone una sola data di riferimento, 01/01/2018: PULSE usa quindi questa fonte solo come contesto territoriale storico/observed e non come feed di novità.",
+      "feed_status": "Collegata · acquisizione/probe automatico attivo",
+      "notes": "Mappa dei rischi ISTAT collegata al download nazionale strutturato ufficiale. CSV verificato (43609442 byte, 7953 righe dati, 397 colonne). La fonte espone come unico riferimento 01-JAN-2018; per questo PULSE la usa esclusivamente come contesto territoriale storico/observed e non come fonte di notizie correnti.",
       "level": "Comune / Provincia / Regione / Italia",
       "frequency": "Archivio / snapshot; aggiornamento non corrente",
       "latest_period": "2018-01-01",
       "provides": [
-        "Indicatori comunali di rischio idrogeologico",
-        "Indicatori di rischio vulcanico",
-        "Indicatori territoriali e demografici di esposizione/vulnerabilità",
-        "Dataset nazionale CSV con oltre 100 variabili"
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Indicatori territoriali dei rischi naturali",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2018-01-01",
+          "status": "historical_snapshot"
+        }
       ]
     },
     {
       "name": "ISTAT - Noi Italia",
-      "level": "Italia / Regioni / Europa (secondo indicatore)",
+      "level": "Italia, regioni ed Europa",
       "frequency": "Annuale",
       "provides": [
-        "3.151 ultimi valori osservati ufficiali",
-        "2.111 segnali PULSE storici su serie annuali comparabili",
-        "13 aree informative derivate dai domini ufficiali Noi Italia"
+        "Oltre 100 statistiche tematiche sull'Italia e sui suoi territori."
       ],
       "official": true,
       "url": "https://noi-italia.istat.it/home.php",
-      "feed_status": "Dati osservati + archivio pattern PULSE · escluso dal feed delle novità correnti",
-      "notes": "Collegamento completato e validato il 30/09/2026 sul download ufficiale Dati.zip di Noi Italia 2025. Acquisite 3.151 osservazioni e generati 2.111 segnali PULSE storici. L'anno statistico viene sempre preservato: la fonte alimenta dati osservati e archivio pattern, non il feed delle novità correnti. Aggiornamento annuale.",
+      "feed_status": "Database consultabile · integrazione nel Radar da sviluppare",
+      "notes": "Portale ufficiale esterno, non ancora acquisito automaticamente dalla pipeline.",
       "category": "ISTAT",
-      "integration_status": "connected",
-      "latest_period": "Secondo indicatore; edizione 2025"
+      "integration_status": "archive"
     },
     {
       "name": "ISTAT - Statistiche sull'acqua",
@@ -5154,9 +5150,9 @@
       "green_pillar": "Transizione energetica",
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
-      "integration_status": "error",
-      "feed_status": "Connettore presente · accesso automatico al Portale Dati in timeout dal runner",
-      "notes": "Nel test finale del 30/09/2026 dati.terna.it non ha completato la connessione dal runner GitHub entro 90 secondi. Il Download Center ufficiale resta la destinazione prevista per i dati esportabili, ma PULSE non dichiara la fonte completata finché l'acquisizione automatica reale non supera il test.",
+      "integration_status": "connected",
+      "feed_status": "Collegata · acquisizione/probe automatico attivo",
+      "notes": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte"
     }
