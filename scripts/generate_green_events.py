@@ -1786,22 +1786,24 @@ def run_sdgs(source):
     },events
 
 def run_copernicus(source):
-    """Acquire latest monthly Copernicus ERA5 data for Italy.
+    """Acquire a monthly ERA5 history for Italy and emit current GREEN news.
 
-    ERA5 monthly means are updated every month, usually around the 6th.
-    Data access through CDS requires a personal API key and acceptance of
-    the dataset terms. The connector automatically searches backwards from
-    the current month until it finds the latest published monthly record.
+    The previous connector downloaded only the latest month, which was useful
+    for connectivity/status but could never generate a statistical PULSE event.
+    This version first discovers the latest published month, then downloads a
+    recent monthly history ending at that month. Every successful current
+    observation emits an ULTIMO_DATO event; statistically unusual observations
+    retain the normal PULSE patterns (record, inversion, acceleration, etc.).
     """
     token=os.environ.get("CDS_API_KEY","").strip()
     if not token:
         return {
             "status":"credential_required",
             "frequency":"Mensile",
-            "latest_availability_note":"ERA5 mensile: aggiornamento generalmente intorno al 6 del mese; E-OBS mensile pubblico disponibile fino ad agosto 2026 alla verifica del 30/09/2026.",
+            "latest_availability_note":"ERA5 mensile: aggiornamento generalmente intorno al 6 del mese.",
             "dataset":"ERA5 monthly averaged data on single levels",
             "dataset_id":"reanalysis-era5-single-levels-monthly-means",
-            "note":"Connettore ERA5 completo ma download bloccato finché non viene configurata CDS_API_KEY e accettata la licenza del dataset nel Climate Data Store."
+            "note":"Connettore ERA5 pronto ma download bloccato finché non viene configurata CDS_API_KEY e accettata la licenza del dataset nel Climate Data Store."
         },[]
 
     try:
@@ -1817,6 +1819,60 @@ def run_copernicus(source):
         key=token,
         quiet=True,
     )
+    dataset_id="reanalysis-era5-single-levels-monthly-means"
+
+    def retrieve_month(year:int, month:int, target:Path):
+        request={
+            "product_type":["monthly_averaged_reanalysis"],
+            "variable":["2m_temperature","total_precipitation"],
+            "year":[str(year)],
+            "month":[f"{month:02d}"],
+            "time":["00:00"],
+            "area":[47.5,6.0,35.5,18.5],
+            "data_format":"netcdf",
+            "download_format":"unarchived",
+        }
+        client.retrieve(dataset_id,request,str(target))
+
+    def netcdf_files(target:Path, label:str):
+        if zipfile.is_zipfile(target):
+            extract_dir=Path(tempfile.gettempdir())/f"pulse_era5_{label}_files"
+            if extract_dir.exists():
+                for old in extract_dir.rglob("*"):
+                    if old.is_file():
+                        old.unlink()
+            extract_dir.mkdir(parents=True,exist_ok=True)
+            with zipfile.ZipFile(target) as zf:
+                zf.extractall(extract_dir)
+            return sorted(extract_dir.rglob("*.nc"))
+        return [target]
+
+    def decode_single_month(files, period:str):
+        row={"period":period,"source_files":[p.name for p in files]}
+        found_vars=[]
+        for nc_path in files:
+            ds=xr.open_dataset(nc_path,engine="netcdf4")
+            try:
+                vars=list(ds.data_vars)
+                found_vars.extend(vars)
+                tvar=next((v for v in vars if v.lower()=="t2m" or "temperature" in v.lower()),None)
+                pvar=next((v for v in vars if v.lower()=="tp" or "precipitation" in v.lower()),None)
+                if tvar and "temperature_c" not in row:
+                    row["temperature_c"]=float(ds[tvar].mean().values)-273.15
+                if pvar and "precipitation_mm_day" not in row:
+                    # ERA5 monthly means of accumulated total precipitation are
+                    # expressed as metres per day. Preserve the physical meaning
+                    # instead of labelling this value as a monthly accumulation.
+                    row["precipitation_mm_day"]=float(ds[pvar].mean().values)*1000.0
+            finally:
+                ds.close()
+        if "temperature_c" not in row and "precipitation_mm_day" not in row:
+            raise RuntimeError(f"Variabili ERA5 non trovate: {found_vars}")
+        return row
+
+    # Discover the latest actually published ERA5 month. Searching backwards
+    # makes the connector independent from calendar assumptions and publication
+    # delays.
     first=date.today().replace(day=1)
     candidates=[]
     y,m=first.year,first.month
@@ -1826,64 +1882,25 @@ def run_copernicus(source):
         if m==0:
             m=12;y-=1
 
-    latest=None
-    temp_series=[]
-    precip_series=[]
+    latest_tuple=None
+    latest_row=None
     checked=[]
     for y,m in candidates:
-        target=Path(tempfile.gettempdir())/f"pulse_era5_{y}_{m:02d}.nc"
-        request={
-            "product_type":["monthly_averaged_reanalysis"],
-            "variable":["2m_temperature","total_precipitation"],
-            "year":[str(y)],
-            "month":[f"{m:02d}"],
-            "time":["00:00"],
-            "area":[47.5,6.0,35.5,18.5],
-            "data_format":"netcdf",
-            "download_format":"unarchived",
-        }
+        target=Path(tempfile.gettempdir())/f"pulse_era5_latest_{y}_{m:02d}.nc"
         try:
-            client.retrieve("reanalysis-era5-single-levels-monthly-means",request,str(target))
-
-            # CDS may return a ZIP even when "unarchived" is requested, notably
-            # when multiple variables are requested. Handle both direct NetCDF
-            # and ZIP packages transparently.
-            netcdf_files=[]
-            if zipfile.is_zipfile(target):
-                extract_dir=Path(tempfile.gettempdir())/f"pulse_era5_{y}_{m:02d}_files"
-                extract_dir.mkdir(parents=True,exist_ok=True)
-                with zipfile.ZipFile(target) as zf:
-                    zf.extractall(extract_dir)
-                netcdf_files=sorted(extract_dir.rglob("*.nc"))
-            else:
-                netcdf_files=[target]
-
-            if not netcdf_files:
+            retrieve_month(y,m,target)
+            files=netcdf_files(target,f"latest_{y}_{m:02d}")
+            if not files:
                 raise RuntimeError("Pacchetto ERA5 scaricato ma nessun file NetCDF trovato")
-
-            latest=f"{y}-{m:02d}"
-            row={"period":latest,"source_files":[p.name for p in netcdf_files]}
-            found_vars=[]
-            for nc_path in netcdf_files:
-                ds=xr.open_dataset(nc_path,engine="netcdf4")
-                vars=list(ds.data_vars)
-                found_vars.extend(vars)
-                tvar=next((v for v in vars if v.lower()=="t2m" or "temperature" in v.lower()),None)
-                pvar=next((v for v in vars if v.lower()=="tp" or "precipitation" in v.lower()),None)
-                if tvar and "temperature_c" not in row:
-                    row["temperature_c"]=float(ds[tvar].mean().values)-273.15
-                if pvar and "precipitation_mm" not in row:
-                    row["precipitation_mm"]=float(ds[pvar].mean().values)*1000.0
-                ds.close()
-
-            if "temperature_c" not in row and "precipitation_mm" not in row:
-                raise RuntimeError(f"Variabili ERA5 non trovate: {found_vars}")
-            checked.append(row)
+            period=f"{y}-{m:02d}"
+            latest_row=decode_single_month(files,period)
+            checked.append(latest_row)
+            latest_tuple=(y,m)
             break
         except Exception as exc:
             checked.append({"period":f"{y}-{m:02d}","error":clean(exc)})
 
-    if latest is None:
+    if latest_tuple is None or latest_row is None:
         return {
             "status":"error",
             "frequency":"Mensile",
@@ -1891,41 +1908,158 @@ def run_copernicus(source):
             "note":"CDS_API_KEY presente ma nessuno degli ultimi 6 mesi ERA5 è stato acquisito."
         },[]
 
+    # Build a 30-month history. Monthly data are requested one month at a time:
+    # this avoids cartesian year/month requests accidentally asking CDS for
+    # unpublished months and keeps failure recovery granular.
+    ly,lm=latest_tuple
+    month_list=[]
+    y,m=ly,lm
+    for _ in range(30):
+        month_list.append((y,m))
+        m-=1
+        if m==0:
+            m=12;y-=1
+    month_list.reverse()
+
+    history=[]
+    errors=[]
+    for y,m in month_list:
+        period=f"{y}-{m:02d}"
+        if period==latest_row["period"]:
+            history.append(latest_row)
+            continue
+        target=Path(tempfile.gettempdir())/f"pulse_era5_hist_{y}_{m:02d}.nc"
+        try:
+            retrieve_month(y,m,target)
+            files=netcdf_files(target,f"hist_{y}_{m:02d}")
+            if not files:
+                raise RuntimeError("nessun NetCDF")
+            history.append(decode_single_month(files,period))
+        except Exception as exc:
+            errors.append({"period":period,"error":clean(exc)})
+
+    history=sorted(history,key=lambda row: period_key(row["period"]))
+    latest=latest_row["period"]
+
+    temp_points=[
+        (row["period"],row["temperature_c"])
+        for row in history if "temperature_c" in row
+    ]
+    precip_points=[
+        (row["period"],row["precipitation_mm_day"])
+        for row in history if "precipitation_mm_day" in row
+    ]
+
+    def current_green_event(indicator, pillar, points, unit):
+        if len(points)<6:
+            return None
+        periods=[p for p,_ in points]
+        values=[v for _,v in points]
+
+        # Reuse the PULSE statistical engine first.
+        event=event_from_series(
+            source["name"],source["url"],indicator,pillar,
+            periods,values,unit,territory="Italia"
+        )
+        if event is not None:
+            return event
+
+        # A fresh official monthly release is news even when none of the six
+        # statistical patterns crosses its threshold.
+        a=np.asarray(values[-30:],dtype=float)
+        pp=periods[-len(a):]
+        if len(a)<2:
+            return None
+        deltas=np.diff(a)
+        scale=robust_scale(deltas[:-1]) if len(deltas)>1 else 0.0
+        if scale<=1e-9:
+            scale=max(abs(float(np.median(a)))*0.005,1e-6)
+        z=abs(float(deltas[-1]))/scale
+        score=min(69.0,48.0+min(18.0,z*4.0))
+        prev,cur=float(a[-2]),float(a[-1])
+        movement="sale" if cur>prev else "scende" if cur<prev else "resta stabile"
+        summary=(
+            f"Italia: {indicator} {movement} da {fmt(prev)} a {fmt(cur)} "
+            f"nel periodo {pp[-1]}."
+        )
+        analysis=[
+            f"Pilastro GREEN: {pillar}.",
+            "Ultimo dato ufficiale Copernicus ERA5: nuova osservazione mensile disponibile; non è necessario che scatti uno dei sei pattern PULSE per entrare nel notiziario.",
+            f"Ultima variazione: {float(deltas[-1]):+.4g}; intensità robusta z={z:.2f}.",
+            f"PULSE Score editoriale: {score:.1f}/100.",
+            f"Unità di misura: {unit}.",
+        ]
+        eid=hashlib.sha256(
+            f"GREEN|COPERNICUS|{indicator}|Italia|{pp[-1]}".encode()
+        ).hexdigest()[:16]
+        return {
+            "id":eid,"municipality_code":"","municipality":"Italia",
+            "province":"","region":"Italia",
+            "indicator":f"GREEN · {pillar} · {indicator}",
+            "patterns":"ULTIMO_DATO","scope":"GREEN",
+            "score":round(score,1),
+            "validation_status":"ULTIMO DATO UFFICIALE — COPERNICUS ERA5",
+            "period":pp[-1],"summary":summary,
+            "annual":"","rolling12":"|".join(format(v,".10g") for v in a),
+            "benchmark_local":"","benchmark_rest":"",
+            "analysis":"¦".join(analysis),
+            "source_family":source["name"],"source_url":source["url"],
+        }
+
+    events=[]
+    temp_indicator="Temperatura media mensile ERA5 · area Italia"
+    precip_indicator="Precipitazione media giornaliera nel mese ERA5 · area Italia"
+
+    if temp_points:
+        ev=current_green_event(
+            temp_indicator,source["pillar"],temp_points,"°C"
+        )
+        if ev: events.append(ev)
+    if precip_points:
+        ev=current_green_event(
+            precip_indicator,source["pillar"],precip_points,"mm/giorno"
+        )
+        if ev: events.append(ev)
+
     series=[]
-    row=next(x for x in checked if x.get("period")==latest and "error" not in x)
-    if "temperature_c" in row:
+    if temp_points:
         series.append({
-            "name":"Temperatura media mensile ERA5 · area Italia",
-            "latest_period":latest,
-            "latest_value":round(row["temperature_c"],3),
+            "name":temp_indicator,
+            "latest_period":temp_points[-1][0],
+            "latest_value":round(float(temp_points[-1][1]),3),
             "unit":"°C",
-            "observations":1,
+            "observations":len(temp_points),
             "status":"latest_public",
         })
-    if "precipitation_mm" in row:
+    if precip_points:
         series.append({
-            "name":"Precipitazione media mensile ERA5 · area Italia",
-            "latest_period":latest,
-            "latest_value":round(row["precipitation_mm"],3),
-            "unit":"mm",
-            "observations":1,
+            "name":precip_indicator,
+            "latest_period":precip_points[-1][0],
+            "latest_value":round(float(precip_points[-1][1]),3),
+            "unit":"mm/giorno",
+            "observations":len(precip_points),
             "status":"latest_public",
         })
 
+    status="feed" if events else "connected"
     return {
-        "status":"connected",
+        "status":status,
         "frequency":"Mensile",
         "dataset":"ERA5 monthly averaged data on single levels",
-        "dataset_id":"reanalysis-era5-single-levels-monthly-means",
+        "dataset_id":dataset_id,
         "latest_period":latest,
         "series":series,
         "checked_months":checked,
+        "history_months_requested":30,
+        "history_months_acquired":len(history),
+        "history_errors":errors[-8:],
         "note":(
-            f"Copernicus ERA5 collegato. Ultimo mese acquisito: {latest}. "
-            "Aggiornamento mensile; le medie mensili sono normalmente disponibili intorno al 6 del mese. "
-            "ERA5T è preliminare e può essere consolidato 2-3 mesi dopo."
+            f"Copernicus ERA5 {'attivo come feed PULSE' if status=='feed' else 'collegato'}. "
+            f"Ultimo mese acquisito: {latest}; {len(history)}/30 mesi disponibili per il motore statistico. "
+            f"{len(events)} notizie/segnali GREEN emessi. Aggiornamento mensile, normalmente intorno al 6 del mese. "
+            "ERA5T può essere consolidato 2-3 mesi dopo."
         ),
-    },[]
+    },events
 
 
 def update_catalog(statuses):
