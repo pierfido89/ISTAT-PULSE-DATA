@@ -24,6 +24,7 @@ OUT = Path("app/src/main/assets/pulse_events_sdmx.tsv")
 META = Path("app/src/main/assets/pulse_sdmx_meta.json")
 CATALOG = Path("app/src/main/assets/sources_catalog.json")
 OBSERVED = Path("app/src/main/assets/pulse_observations_sdmx.tsv")
+LAST_GOOD = Path("data/pulse_events_sdmx_last_good.tsv")
 
 COLUMNS = [
     "id","municipality_code","municipality","province","region","indicator",
@@ -447,7 +448,9 @@ def main():
     for d in DATASETS:
         unique[(d["flow"],d["start"])]=d
     fetched={}
-    with ThreadPoolExecutor(max_workers=4) as pool:
+    # ISTATData intermittently throttles/breaks under higher concurrency on hosted runners.
+    # Keep parallelism deliberately low so a refresh is less likely to become partial.
+    with ThreadPoolExecutor(max_workers=2) as pool:
         futures={pool.submit(fetch,d):key for key,d in unique.items()}
         for future in as_completed(futures):
             key=futures[future]
@@ -459,6 +462,20 @@ def main():
                 fetched[key]=(b"","",[],repr(exc))
                 print(f"FETCH ERROR {key[0]}: {exc!r}")
 
+    # Preserve the last known-good event per indicator. A temporary API failure
+    # must never delete current official news from the published feed.
+    last_good={}
+    if LAST_GOOD.exists():
+        try:
+            cached=pd.read_csv(LAST_GOOD,sep="\t",dtype=str,keep_default_na=False)
+            for _,row in cached.iterrows():
+                name=str(row.get("indicator",""))
+                period=str(row.get("period",""))
+                if name and period.startswith("2026"):
+                    last_good[name]={col:str(row.get(col,"")) for col in COLUMNS}
+        except Exception as exc:
+            print("LAST_GOOD READ ERROR:",repr(exc))
+
     events=[]; sources=[]; observations=[]
     for dataset in DATASETS:
         key=(dataset["flow"],dataset["start"])
@@ -468,10 +485,10 @@ def main():
         event=None
         if error:
             status="fetch_error"
-            print(f"SKIP {dataset['name']}: {error}")
+            print(f"FETCH FAILED {dataset['name']}: {error}")
         elif chosen is None:
             status="series_not_found"
-            print(f"SKIP {dataset['name']}: aggregate series not found.")
+            print(f"SERIES NOT FOUND {dataset['name']}: aggregate series not found.")
         else:
             event=build_event(dataset,chosen,url)
             if event:
@@ -479,7 +496,21 @@ def main():
                 print(f"SIGNAL {dataset['name']} -> {event['period']} score {event['score']}")
             else:
                 status="event_not_generated"
-                print(f"SKIP {dataset['name']}: serie valida ma evento non generato.")
+                print(f"NO EVENT {dataset['name']}: serie valida ma evento non generato.")
+
+        # Critical resilience rule: network/API failures are not data revisions.
+        # If today's run cannot reacquire a series, retain its last verified current
+        # event instead of silently dropping it from NOTIZIE.
+        if event is None and status in {"fetch_error","series_not_found","event_not_generated"}:
+            cached_event=last_good.get(dataset["name"])
+            if cached_event:
+                events.append(cached_event)
+                event=cached_event
+                status="fallback_last_good"
+                print(
+                    f"FALLBACK {dataset['name']} -> {cached_event.get('period','')} "
+                    "(last verified official event)"
+                )
 
         if chosen and chosen["obs"]:
             current_period, current_value = chosen["obs"][-1]
@@ -509,7 +540,21 @@ def main():
         })
 
     OUT.parent.mkdir(parents=True,exist_ok=True)
+
+    # One current event per configured indicator. Prefer the newest period in
+    # case both a freshly acquired and a cached event somehow coexist.
+    if events:
+        dedup=pd.DataFrame(events,columns=COLUMNS)
+        dedup=dedup.sort_values(["indicator","period"]).drop_duplicates(
+            subset=["indicator"],keep="last"
+        )
+        events=dedup.to_dict("records")
+
     pd.DataFrame(events,columns=COLUMNS).to_csv(OUT,sep="\t",index=False)
+
+    # Persist a durable last-known-good SDMX snapshot used by future runs.
+    LAST_GOOD.parent.mkdir(parents=True,exist_ok=True)
+    pd.DataFrame(events,columns=COLUMNS).to_csv(LAST_GOOD,sep="\t",index=False)
     observed_columns=["area","indicator","territory","period","value","unit","source","url","note","status"]
     pd.DataFrame(observations,columns=observed_columns).to_csv(
         OBSERVED,sep="\t",index=False
@@ -539,7 +584,7 @@ def main():
         "source_family":"IstatData SDMX — ISTAT",
         "events":len(events),
         "monitored_series":len(DATASETS),
-        "connected_series":sum(1 for s in sources if s["status"] in {"ok","monitored_no_signal"}),
+        "connected_series":sum(1 for s in sources if s["status"] in {"ok","monitored_no_signal","fallback_last_good"}),
         "sources":sources,
         "latest_period":latest_period,
     }
