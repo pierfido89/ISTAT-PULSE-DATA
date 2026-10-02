@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "source": "GSE - Statistiche delle rinnovabili",
+  "report": "Energia da fonti rinnovabili in Italia nel 2024",
+  "publication_period": "2026-09",
+  "statistical_latest_period": "2024",
+  "official_document": "https://www.gse.it/documenti_site/Documenti%20GSE/Rapporti%20statistici/Rapporto%20Statistico%20GSE%20-%20Energia%20da%20FER%20in%20Italia%20-%20anno%202024.pdf",
+  "verified_at": "2026-10-02",
+  "provenance_note": "Valori trascritti dal Rapporto Statistico GSE 2024, tabelle di sintesi del settore elettrico (pagine 6-9 del rapporto).",
+  "periods": [
+    "2021",
+    "2022",
+    "2023",
+    "2024"
+  ],
+  "series": [
+    {
+      "name": "Potenza efficiente lorda degli impianti elettrici FER",
+      "unit": "MW",
+      "values": [
+        57979,
+        61055,
+        66825,
+        74509
+      ]
+    },
+    {
+      "name": "Produzione lorda di energia elettrica da FER",
+      "unit": "GWh",
+      "values": [
+        116339,
+        100466,
+        116579,
+        134358
+      ]
+    },
+    {
+      "name": "Quota FER sulla produzione elettrica complessiva",
+      "unit": "%",
+      "values": [
+        40.2,
+        35.4,
+        44,
+        49.6
+      ]
+    }
+  ]
+}
