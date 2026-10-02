@@ -34,7 +34,7 @@ jobs:
               label=' | '.join(names)
               flows.append((rid,label))
           groups={
-            'LAVORO':['employment rate','tasso di occupazione','employed - monthly','occupati - mensili','unemployment rate','tasso di disoccupazione','payroll jobs','posizioni lavorative'],
+            'LAVORO':['employment rate','tasso di occupazione','employed - monthly','occupati - mensili','unemployment rate','tasso di disoccupazione','unemployed','disoccupati','inactivity rate','tasso di inattività','inactive population','inattivi','payroll jobs','posizioni lavorative'],
             'IMPRESE':['business confidence','fiducia delle imprese','industrial production','produzione industriale','turnover','fatturato','retail trade','commercio al dettaglio'],
             'PREZZI_CONSUMI':['consumer prices','prezzi al consumo','producer prices','prezzi alla produzione','retail trade','vendite al dettaglio'],
             'TURISMO_MOBILITA':['tourist','turismo','occupancy in collective tourist','movimento dei clienti','transport','trasporto','mobility','mobilità'],
