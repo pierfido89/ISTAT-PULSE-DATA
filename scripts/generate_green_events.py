@@ -497,6 +497,55 @@ def run_arera(source):
     ]
 
     events=[]
+
+    def latest_official_event(name, history, source_url, status_label="ULTIMO DATO UFFICIALE — ARERA"):
+        valid=[
+            (str(x.get("period","")), number(x.get("value")))
+            for x in history
+        ]
+        valid=[(p,float(v)) for p,v in valid if p and v is not None]
+        if len(valid)<2:
+            return None
+        periods=[p for p,_ in valid]
+        a=np.asarray([v for _,v in valid],dtype=float)
+        latest_delta=float(a[-1]-a[-2])
+        scale=robust_scale(np.diff(a)[:-1]) if len(a)>=4 else 0.0
+        if scale<=1e-9:
+            scale=max(abs(float(np.median(a)))*0.005,0.05)
+        z=abs(latest_delta)/scale
+        score=min(64.0,46.0+min(15.0,z*4.0))
+        movement="sale" if a[-1]>a[-2] else "scende" if a[-1]<a[-2] else "resta stabile"
+        summary=(
+            f"Italia: {name} {movement} da {fmt(float(a[-2]))}% "
+            f"a {fmt(float(a[-1]))}% nel {periods[-1]}."
+        )
+        analysis=[
+            f"Pilastro GREEN: {source['pillar']}.",
+            "Ultimo dato ufficiale ARERA disponibile per la qualità contrattuale del servizio idrico.",
+            f"Confronto {periods[-2]}-{periods[-1]}: variazione {latest_delta:+.2f} punti percentuali.",
+            "Il periodo statistico resta esplicitamente quello della rilevazione; la pubblicazione/certificazione successiva non viene usata come anno del dato.",
+            "Risultati finali del biennio 2022-2023 certificati dalla delibera ARERA 277/2025/R/idr.",
+            f"PULSE Score editoriale: {score:.1f}/100.",
+        ]
+        eid=hashlib.sha256(
+            f"GREEN|ARERA|{name}|Italia|{periods[-1]}".encode()
+        ).hexdigest()[:16]
+        return {
+            "id":eid,"municipality_code":"","municipality":"Italia",
+            "province":"","region":"Italia",
+            "indicator":f"GREEN · {source['pillar']} · {name}",
+            "patterns":"ULTIMO_DATO","scope":"GREEN",
+            "score":round(score,1),
+            "validation_status":status_label,
+            "period":periods[-1],"summary":summary,
+            "annual":"|".join(format(v,".10g") for v in a[-12:]),
+            "rolling12":"","benchmark_local":"","benchmark_rest":"",
+            "analysis":"¦".join(analysis),
+            "source_family":source["name"],"source_url":source_url,
+        }
+
+    # Longest ARERA series: promote a real statistical pattern when present;
+    # otherwise still publish the newest official observation as news.
     if len(specific_history)>=6:
         ev=event_from_series(
             source["name"],
@@ -507,6 +556,26 @@ def run_arera(source):
             [p["value"] for p in specific_history],
             "%",
             "Italia",
+        )
+        if ev:
+            events.append(ev)
+        else:
+            ev=latest_official_event(
+                "Rispetto medio degli standard specifici del servizio idrico",
+                specific_history,
+                final_results_url,
+            )
+            if ev:
+                events.append(ev)
+
+    # MC1/MC2 are official biennial summary series. Two observations are enough
+    # for a factual latest-release item, but deliberately not enough to claim a
+    # statistical PULSE anomaly/trend.
+    for item in series[1:]:
+        ev=latest_official_event(
+            item["name"],
+            item.get("history",[]),
+            final_results_url,
         )
         if ev:
             events.append(ev)
@@ -528,7 +597,8 @@ def run_arera(source):
             "e con risultati ufficiali 2022-2023 dalle Relazioni annuali ARERA. "
             "Per il 2022: MC1 96,3%, MC2 95,3%; per il 2023: MC1 96,5%, MC2 95,9%. "
             "Il mancato rispetto medio degli standard specifici è 3,5% in entrambi gli anni. "
-            "La delibera 277/2025/R/idr certifica i risultati finali del biennio 2022-2023."
+            "La delibera 277/2025/R/idr certifica i risultati finali del biennio 2022-2023. "
+            f"{len(events)} notizie/segnali GREEN emessi; il 2023 resta sempre dichiarato come periodo statistico."
         ),
     },events
 
