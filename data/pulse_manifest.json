@@ -1,7 +1,7 @@
 {
   "version": "0.6-data-current",
-  "generated_at": "2026-10-01T05:43:58.612726+00:00",
-  "feed_sha256": "41697f0ed0eda0a65e3e5f09aa4d7aa342e6c4c70b1c45bffd6689e7d634d851",
+  "generated_at": "2026-10-02T10:18:22.944501+00:00",
+  "feed_sha256": "16b097c2067805ae200e6e09eeaa11b0077d418add67fbb52924ce7ec763ebc5",
   "source_period": "feed corrente 2026 · ultimo dato 2026-Q2",
   "complete_years": [
     2019,
@@ -23,11 +23,14 @@
   "latest_period": "2026-Q2",
   "latest_period_provisional": true,
   "quality_A_municipalities": 7493,
-  "feed_events": 569,
+  "feed_events": 575,
   "indicators": [
+    "Arrivi turistici",
     "Clima di fiducia delle imprese",
+    "Disoccupati",
     "Emigrati per altro comune",
     "Emigrati per l'estero",
+    "Fatturato dei servizi",
     "Fatturato industriale",
     "Fiducia dei consumatori",
     "Fiducia del commercio",
@@ -88,6 +91,7 @@
     "GREEN · Tutela della biodiversità · Stock ittici entro livelli biologicamente sostenibili",
     "Immigrati da altro comune",
     "Immigrati dall'estero",
+    "Inattivi",
     "Morti",
     "Nati vivi",
     "Occupati",
@@ -97,6 +101,8 @@
     "Prezzi all'importazione",
     "Prezzi alla produzione dell'industria",
     "Tasso di disoccupazione",
+    "Tasso di disoccupazione giovanile",
+    "Tasso di inattività",
     "Tasso di occupazione",
     "Vendite al dettaglio"
   ],
@@ -194,10 +200,10 @@
     "ISTAT - Ambiente urbano": 313,
     "DEMO ISTAT — Bilancio demografico mensile": 141,
     "ISTAT - Indicatori SDGs": 36,
+    "IstatData SDMX — ISTAT": 20,
     "ISPRA - Catasto nazionale rifiuti": 18,
     "ISTAT - Statistiche sull'acqua": 17,
     "ISPRA - Consumo di suolo e indicatori territoriali": 15,
-    "IstatData SDMX — ISTAT": 14,
     "ACI - Open data mobilità e parco veicoli": 4,
     "Eurostat - Statistiche ambientali ed energia": 3,
     "ENEA - Rapporto annuale efficienza energetica": 3,
@@ -208,9 +214,9 @@
   },
   "istatdata_sdmx": {
     "source_family": "IstatData SDMX — ISTAT",
-    "events": 14,
-    "monitored_series": 17,
-    "connected_series": 17,
+    "events": 20,
+    "monitored_series": 21,
+    "connected_series": 20,
     "sources": [
       {
         "area": "Prezzi e inflazione",
@@ -220,7 +226,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/167_745_DF_DCSP_NIC1B2025_1/all/IT1?startPeriod=2026&endPeriod=2026",
         "status": "ok",
         "bytes": 5692004,
-        "sha256": "89e1a44a13fae98af6f429aa2f032215cd3538e11108134b7a7b4fbc07035dc9",
+        "sha256": "86273b7b3b96db59e8ae676e0f5211de0cc6cefe5bbf31d8bf9dd6bdad0cea86",
         "latest_period": "2026-09",
         "series_key": {
           "FREQ": "M",
@@ -238,17 +244,17 @@
         "flow": "151_874_DF_DCCV_TAXDISOCCUMENS1_1",
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/151_874_DF_DCCV_TAXDISOCCUMENS1_1/all/IT1?startPeriod=2024&endPeriod=2026",
         "status": "ok",
-        "bytes": 1480482,
-        "sha256": "4ab69f8ea7e670fb34507865c956dafcd482bd87113be29a8cd684df7136fb64",
-        "latest_period": "2026-07",
+        "bytes": 1566997,
+        "sha256": "40ddc782d279b857e719678661c6fea2705444223143608b8b56b8b6e5d2cd27",
+        "latest_period": "2026-08",
         "series_key": {
           "FREQ": "M",
           "REF_AREA": "IT",
           "DATA_TYPE": "UNEM_R",
-          "ADJUSTMENT": "N",
+          "ADJUSTMENT": "Y",
           "SEX": "9",
           "AGE": "Y15-74",
-          "EDITION": "2026M9G1"
+          "EDITION": "2026M10G1"
         },
         "signal_emitted": true
       },
@@ -259,17 +265,17 @@
         "flow": "150_872_DF_DCCV_TAXOCCUMENS1_1",
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/150_872_DF_DCCV_TAXOCCUMENS1_1/all/IT1?startPeriod=2024&endPeriod=2026",
         "status": "ok",
-        "bytes": 1487506,
-        "sha256": "35d70a6ed54276ca02bf30cffff2296892f0e0d2b4a1fc081eb0416e50c37cf8",
-        "latest_period": "2026-07",
+        "bytes": 1574499,
+        "sha256": "1374160a2ccc14bdb133ae98bef882f99e6ab0079ba1a6a75907ef7c545fcfc7",
+        "latest_period": "2026-08",
         "series_key": {
           "FREQ": "M",
           "REF_AREA": "IT",
           "DATA_TYPE": "EMP_R",
-          "ADJUSTMENT": "N",
+          "ADJUSTMENT": "Y",
           "SEX": "9",
           "AGE": "Y15-64",
-          "EDITION": "2026M9G1"
+          "EDITION": "2026M10G1"
         },
         "signal_emitted": true
       },
@@ -280,19 +286,103 @@
         "flow": "150_875_DF_DCCV_OCCUPATIMENS1_1",
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/150_875_DF_DCCV_OCCUPATIMENS1_1/all/IT1?startPeriod=2024&endPeriod=2026",
         "status": "ok",
-        "bytes": 771329,
-        "sha256": "be36ff27d590bba468fbd5c3fa7d66a5b40023ff94e6057489bd8c00c2068fcc",
-        "latest_period": "2026-07",
+        "bytes": 815633,
+        "sha256": "e3aeb6743f783d95b6c031829467f267cef70bf4dee47bef99d7e9f988cfc291",
+        "latest_period": "2026-08",
         "series_key": {
           "FREQ": "M",
           "REF_AREA": "IT",
           "DATA_TYPE": "EMP",
-          "ADJUSTMENT": "N",
+          "ADJUSTMENT": "Y",
           "SEX": "9",
           "AGE": "Y15-89",
           "POSIZ_PROF": "9",
           "PERM_TEMP_EMPLOYEES": "9",
-          "EDITION": "2026M9G1"
+          "EDITION": "2026M10G1"
+        },
+        "signal_emitted": true
+      },
+      {
+        "area": "Lavoro e mercato del lavoro",
+        "name": "Tasso di disoccupazione giovanile",
+        "provides": "Tasso di disoccupazione mensile dei giovani 15-24 anni.",
+        "flow": "151_874_DF_DCCV_TAXDISOCCUMENS1_1",
+        "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/151_874_DF_DCCV_TAXDISOCCUMENS1_1/all/IT1?startPeriod=2024&endPeriod=2026",
+        "status": "ok",
+        "bytes": 1566997,
+        "sha256": "40ddc782d279b857e719678661c6fea2705444223143608b8b56b8b6e5d2cd27",
+        "latest_period": "2026-08",
+        "series_key": {
+          "FREQ": "M",
+          "REF_AREA": "IT",
+          "DATA_TYPE": "UNEM_R",
+          "ADJUSTMENT": "Y",
+          "SEX": "9",
+          "AGE": "Y15-24",
+          "EDITION": "2026M10G1"
+        },
+        "signal_emitted": true
+      },
+      {
+        "area": "Lavoro e mercato del lavoro",
+        "name": "Disoccupati",
+        "provides": "Numero mensile di persone disoccupate a livello nazionale.",
+        "flow": "151_877_DF_DCCV_DISOCCUPTMENS1_1",
+        "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/151_877_DF_DCCV_DISOCCUPTMENS1_1/all/IT1?startPeriod=2024&endPeriod=2026",
+        "status": "ok",
+        "bytes": 1555678,
+        "sha256": "e5291afb66afcf09c7fbe58617bd509b5ddfbf109043642826151d53955dc68f",
+        "latest_period": "2026-08",
+        "series_key": {
+          "FREQ": "M",
+          "REF_AREA": "IT",
+          "DATA_TYPE": "UNEMP",
+          "ADJUSTMENT": "Y",
+          "SEX": "9",
+          "AGE": "Y15-74",
+          "EDITION": "2026M10G1"
+        },
+        "signal_emitted": true
+      },
+      {
+        "area": "Lavoro e mercato del lavoro",
+        "name": "Tasso di inattività",
+        "provides": "Tasso di inattività mensile della popolazione 15-64 anni.",
+        "flow": "152_878_DF_DCCV_TAXINATTMENS1_1",
+        "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/152_878_DF_DCCV_TAXINATTMENS1_1/all/IT1?startPeriod=2024&endPeriod=2026",
+        "status": "ok",
+        "bytes": 1575204,
+        "sha256": "5db03388129d388373ef7593c3ee7c55e479e0e3df18b1bae5cc5ec7ef739e08",
+        "latest_period": "2026-08",
+        "series_key": {
+          "FREQ": "M",
+          "REF_AREA": "IT",
+          "DATA_TYPE": "INAC_R",
+          "ADJUSTMENT": "Y",
+          "SEX": "9",
+          "AGE": "Y15-64",
+          "EDITION": "2026M10G1"
+        },
+        "signal_emitted": true
+      },
+      {
+        "area": "Lavoro e mercato del lavoro",
+        "name": "Inattivi",
+        "provides": "Numero mensile di persone inattive tra 15 e 64 anni.",
+        "flow": "152_879_DF_DCCV_INATTIVMENS1_1",
+        "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/152_879_DF_DCCV_INATTIVMENS1_1/all/IT1?startPeriod=2024&endPeriod=2026",
+        "status": "ok",
+        "bytes": 1566462,
+        "sha256": "50ea14a4d64732585c4ef8ca6a60e3dae14e95733fbc8c90d0698defb7828b0e",
+        "latest_period": "2026-08",
+        "series_key": {
+          "FREQ": "M",
+          "REF_AREA": "IT",
+          "DATA_TYPE": "INAC",
+          "ADJUSTMENT": "Y",
+          "SEX": "9",
+          "AGE": "Y15-64",
+          "EDITION": "2026M10G1"
         },
         "signal_emitted": true
       },
@@ -304,7 +394,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/149_577_DF_DCSC_OROS_1_3/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 591024,
-        "sha256": "61783b2d808eb0362d5d01f76d102d4a91162a8b2d19151876b44cde06cbbaab",
+        "sha256": "b4c9aeae8749ae17aa90039820a51c194a12b97887d91659f363cf9463b2e0e6",
         "latest_period": "2026-Q2",
         "series_key": {
           "FREQ": "Q",
@@ -320,18 +410,12 @@
         "name": "Produzione industriale",
         "provides": "Indice mensile della produzione industriale, base 2021.",
         "flow": "115_333_DF_DCSC_INDXPRODIND_1_6",
-        "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/115_333_DF_DCSC_INDXPRODIND_1_6/all/IT1?startPeriod=2022&endPeriod=2026",
-        "status": "monitored_no_signal",
-        "bytes": 7057707,
-        "sha256": "e4211e3a2e06ece8697ce63eb80f6056f2c2dbd029ee51fb457b168118250c80",
-        "latest_period": "2026-07",
-        "series_key": {
-          "FREQ": "M",
-          "REF_AREA": "IT",
-          "DATA_TYPE": "IND_PROD_21",
-          "ADJUSTMENT": "Y",
-          "ECON_ACTIVITY_NACE_2007": "0020"
-        },
+        "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/115_333_DF_DCSC_INDXPRODIND_1_6/all/IT1",
+        "status": "fetch_error",
+        "bytes": 0,
+        "sha256": "",
+        "latest_period": "",
+        "series_key": {},
         "signal_emitted": false
       },
       {
@@ -342,7 +426,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/114_191_DF_DCSC_ORDFATT_9/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 5302499,
-        "sha256": "8fad3dbb37afbeafc926fb502de6f5a9170eb0d92bef510eed606e3fcc0b2d28",
+        "sha256": "572092ccf4619734eb76fd4f0f73468d354f5f1c0e59a1aa5f029a8e668e22d7",
         "latest_period": "2026-07",
         "series_key": {
           "FREQ": "M",
@@ -360,9 +444,9 @@
         "provides": "Indice mensile del fatturato dei servizi, base 2021.",
         "flow": "119_367_DF_DCSC_FATTSERVIZ_1_4",
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/119_367_DF_DCSC_FATTSERVIZ_1_4/all/IT1?startPeriod=2022&endPeriod=2026",
-        "status": "monitored_no_signal",
+        "status": "ok",
         "bytes": 3297847,
-        "sha256": "52771517c1d2a677b7a7a87645850a16ad6efebbb01470493a8677d04e47952b",
+        "sha256": "dc2a127d838c72b645c26cf754836159325804536c7d3fa37ce7bf26ba6ae6cc",
         "latest_period": "2026-07",
         "series_key": {
           "FREQ": "M",
@@ -371,7 +455,7 @@
           "ADJUSTMENT": "Y",
           "ECON_ACTIVITY_NACE_2007": "0014"
         },
-        "signal_emitted": false
+        "signal_emitted": true
       },
       {
         "area": "Potere d'acquisto e consumi",
@@ -380,9 +464,9 @@
         "flow": "120_337_DF_DCSC_COMMDET_1_15",
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/120_337_DF_DCSC_COMMDET_1_15/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
-        "bytes": 145509,
-        "sha256": "05b71f9dbfdd30c1b2446df973909f385979d9978065415cbe052658b36f7cc7",
-        "latest_period": "2026-07",
+        "bytes": 147974,
+        "sha256": "015be5ade0c3be7ff8200f3da3eb923dd253a158d6bcc60d05124dc96a9f9dd0",
+        "latest_period": "2026-08",
         "series_key": {
           "FREQ": "M",
           "REF_AREA": "IT",
@@ -402,7 +486,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/6_64_DF_DCSC_IESI_2/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 8108,
-        "sha256": "905ae839016926635401db5d297aad6f9a45ab079fb5eb3a714a2a4e1fc846a7",
+        "sha256": "f65030e9f9a510e17fbb7bf9f2e3ec4c627540ad3b1b36a5d8c2c847f366bb73",
         "latest_period": "2026-09",
         "series_key": {
           "FREQ": "M",
@@ -421,7 +505,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/111_40/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 1644297,
-        "sha256": "439c16c2bd6ee2a9c9e4b2833ac2535de1d540d8e38067999158172877ce1a85",
+        "sha256": "7dfb30f0f4dde0fe4d404c6160ffc9862a36116d9c0e8436310d0a046d56ea8d",
         "latest_period": "2026-09",
         "series_key": {
           "FREQ": "M",
@@ -441,7 +525,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/117_266/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 4044564,
-        "sha256": "4519a086dca5cba2935efd5c829b0003cb56058a5f11096e7b849f1321d9abc6",
+        "sha256": "c34aabaedf1e4909598fe75dc3e504e690dc469d146f3be39946d6fd203e894d",
         "latest_period": "2026-09",
         "series_key": {
           "FREQ": "M",
@@ -461,7 +545,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/30_264/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 2610831,
-        "sha256": "0e670d1e1581a2833f4a9aa0b549ab108fbceb358e1ac9c6b3862860e83fe85a",
+        "sha256": "a85fb4d76af25ac4407f4bc65fe127ab005357ef6a26873c01efa4e928046a3e",
         "latest_period": "2026-09",
         "series_key": {
           "FREQ": "M",
@@ -483,7 +567,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/145_360_DF_DCSC_PREZZPIND_1_4/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 10636393,
-        "sha256": "1fb954690152a09fb26b4d536a1b070f631a86c31445e92c57301b4bed9790ce",
+        "sha256": "51062498f7df46da81e7364973511866e7829fbb3fe807af7afa6740e48d2ae1",
         "latest_period": "2026-08",
         "series_key": {
           "FREQ": "M",
@@ -503,7 +587,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/143_222_DF_DCSC_PREIMPIND_2/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 2797860,
-        "sha256": "7e9934af9ccbad53909fa12471dcad8ba81a16b986f6cc8ddd91a4fe8cc57b05",
+        "sha256": "37fae92f5771ba62684d00da717e70957220fb71c0e17370924a9767b8ebc274",
         "latest_period": "2026-07",
         "series_key": {
           "FREQ": "M",
@@ -521,9 +605,9 @@
         "provides": "Arrivi mensili negli esercizi ricettivi italiani.",
         "flow": "122_54_DF_DCSC_TUR_3",
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/122_54_DF_DCSC_TUR_3/all/IT1?startPeriod=2022&endPeriod=2026",
-        "status": "monitored_no_signal",
+        "status": "ok",
         "bytes": 17194576,
-        "sha256": "2db225a413d257b4ff2ba175f7db597822c9ca3e174b4a2218af263f37d2a8c4",
+        "sha256": "82891c257715b5430dda51a3af4dd1a5ed5bea5611fc6725bde6c5e54fd693df",
         "latest_period": "2026-07",
         "series_key": {
           "FREQ": "M",
@@ -538,7 +622,7 @@
           "COASTAL_AREA": "ALL",
           "SIZE_BY_NUMBER_ROOMS": "TOT"
         },
-        "signal_emitted": false
+        "signal_emitted": true
       },
       {
         "area": "Turismo",
@@ -548,7 +632,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/122_54_DF_DCSC_TUR_3/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 17194576,
-        "sha256": "2db225a413d257b4ff2ba175f7db597822c9ca3e174b4a2218af263f37d2a8c4",
+        "sha256": "82891c257715b5430dda51a3af4dd1a5ed5bea5611fc6725bde6c5e54fd693df",
         "latest_period": "2026-07",
         "series_key": {
           "FREQ": "M",

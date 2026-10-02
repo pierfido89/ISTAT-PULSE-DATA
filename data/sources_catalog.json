@@ -4774,21 +4774,49 @@
           "area": "Lavoro e mercato del lavoro",
           "series": "Tasso di disoccupazione",
           "description": "Tasso di disoccupazione mensile nazionale.",
-          "latest_period": "2026-07",
+          "latest_period": "2026-08",
           "status": "ok"
         },
         {
           "area": "Lavoro e mercato del lavoro",
           "series": "Tasso di occupazione",
           "description": "Tasso di occupazione mensile nazionale.",
-          "latest_period": "2026-07",
+          "latest_period": "2026-08",
           "status": "ok"
         },
         {
           "area": "Lavoro e mercato del lavoro",
           "series": "Occupati",
           "description": "Numero mensile di occupati a livello nazionale.",
-          "latest_period": "2026-07",
+          "latest_period": "2026-08",
+          "status": "ok"
+        },
+        {
+          "area": "Lavoro e mercato del lavoro",
+          "series": "Tasso di disoccupazione giovanile",
+          "description": "Tasso di disoccupazione mensile dei giovani 15-24 anni.",
+          "latest_period": "2026-08",
+          "status": "ok"
+        },
+        {
+          "area": "Lavoro e mercato del lavoro",
+          "series": "Disoccupati",
+          "description": "Numero mensile di persone disoccupate a livello nazionale.",
+          "latest_period": "2026-08",
+          "status": "ok"
+        },
+        {
+          "area": "Lavoro e mercato del lavoro",
+          "series": "Tasso di inattività",
+          "description": "Tasso di inattività mensile della popolazione 15-64 anni.",
+          "latest_period": "2026-08",
+          "status": "ok"
+        },
+        {
+          "area": "Lavoro e mercato del lavoro",
+          "series": "Inattivi",
+          "description": "Numero mensile di persone inattive tra 15 e 64 anni.",
+          "latest_period": "2026-08",
           "status": "ok"
         },
         {
@@ -4802,8 +4830,8 @@
           "area": "Imprese e industria",
           "series": "Produzione industriale",
           "description": "Indice mensile della produzione industriale, base 2021.",
-          "latest_period": "2026-07",
-          "status": "monitored_no_signal"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Imprese e industria",
@@ -4817,13 +4845,13 @@
           "series": "Fatturato dei servizi",
           "description": "Indice mensile del fatturato dei servizi, base 2021.",
           "latest_period": "2026-07",
-          "status": "monitored_no_signal"
+          "status": "ok"
         },
         {
           "area": "Potere d'acquisto e consumi",
           "series": "Vendite al dettaglio",
           "description": "Indice mensile del volume delle vendite al dettaglio, base 2021.",
-          "latest_period": "2026-07",
+          "latest_period": "2026-08",
           "status": "ok"
         },
         {
@@ -4873,7 +4901,7 @@
           "series": "Arrivi turistici",
           "description": "Arrivi mensili negli esercizi ricettivi italiani.",
           "latest_period": "2026-07",
-          "status": "monitored_no_signal"
+          "status": "ok"
         },
         {
           "area": "Turismo",
