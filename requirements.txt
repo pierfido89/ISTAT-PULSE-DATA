@@ -8,3 +8,5 @@ odfpy
 cdsapi
 xarray
 netCDF4
+
+pypdf
