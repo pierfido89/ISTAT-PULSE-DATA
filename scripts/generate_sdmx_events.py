@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
 Generate national PULSE signals from a curated set of official IstatData SDMX
-series. Every configured series is monitored even when it does not emit a
-signal on the latest observation; that coverage is written to metadata and is
-used by the future "Fonti" section of the Android app.
+series. Every valid configured series emits a current "ULTIMO DATO UFFICIALE"
+news event; when one or more statistical PULSE patterns are detected, the same
+event is promoted to a PULSE signal. Coverage is also written to metadata.
 """
 from __future__ import annotations
 
@@ -50,8 +50,8 @@ DATASETS = [
         "provides":"Tasso di disoccupazione mensile nazionale.",
         "flow":"151_874_DF_DCCV_TAXDISOCCUMENS1_1","start":"2024",
         "required":{"FREQ":"M","REF_AREA":"IT","DATA_TYPE":"UNEM_R","SEX":"9","AGE":"Y15-74"},
-        "preferred":{"ADJUSTMENT":"N"},
-        "note":"Tasso di disoccupazione, popolazione 15-74 anni, totale sesso.",
+        "preferred":{"ADJUSTMENT":"Y"},
+        "note":"Tasso di disoccupazione mensile destagionalizzato, popolazione 15-74 anni, totale sesso.",
     },
     {
         "area":"Lavoro e redditi",
@@ -59,8 +59,8 @@ DATASETS = [
         "provides":"Tasso di occupazione mensile nazionale.",
         "flow":"150_872_DF_DCCV_TAXOCCUMENS1_1","start":"2024",
         "required":{"FREQ":"M","REF_AREA":"IT","DATA_TYPE":"EMP_R","SEX":"9","AGE":"Y15-64"},
-        "preferred":{"ADJUSTMENT":"N"},
-        "note":"Tasso di occupazione, popolazione 15-64 anni, totale sesso.",
+        "preferred":{"ADJUSTMENT":"Y"},
+        "note":"Tasso di occupazione mensile destagionalizzato, popolazione 15-64 anni, totale sesso.",
     },
     {
         "area":"Lavoro e redditi",
@@ -68,8 +68,44 @@ DATASETS = [
         "provides":"Numero mensile di occupati a livello nazionale.",
         "flow":"150_875_DF_DCCV_OCCUPATIMENS1_1","start":"2024",
         "required":{"FREQ":"M","REF_AREA":"IT","DATA_TYPE":"EMP","SEX":"9","AGE":"Y15-89"},
-        "preferred":{"ADJUSTMENT":"N"},
-        "note":"Occupati mensili, totale sesso, 15-89 anni; viene scelta la combinazione più aggregata disponibile.",
+        "preferred":{"ADJUSTMENT":"Y"},
+        "note":"Occupati mensili destagionalizzati, totale sesso, 15-89 anni; serie coerente con il confronto congiunturale del comunicato ISTAT.",
+    },
+    {
+        "area":"Lavoro e redditi",
+        "name":"Tasso di disoccupazione giovanile",
+        "provides":"Tasso di disoccupazione mensile dei giovani 15-24 anni.",
+        "flow":"151_874_DF_DCCV_TAXDISOCCUMENS1_1","start":"2024",
+        "required":{"FREQ":"M","REF_AREA":"IT","DATA_TYPE":"UNEM_R","SEX":"9","AGE":"Y15-24"},
+        "preferred":{"ADJUSTMENT":"Y"},
+        "note":"Tasso di disoccupazione giovanile mensile destagionalizzato, 15-24 anni, totale sesso.",
+    },
+    {
+        "area":"Lavoro e redditi",
+        "name":"Disoccupati",
+        "provides":"Numero mensile di persone disoccupate a livello nazionale.",
+        "flow":"151_877_DF_DCCV_DISOCCUPTMENS1_1","start":"2024",
+        "required":{"FREQ":"M","REF_AREA":"IT","SEX":"9","AGE":"Y15-74"},
+        "preferred":{"ADJUSTMENT":"Y"},
+        "note":"Disoccupati mensili destagionalizzati, 15-74 anni, totale sesso.",
+    },
+    {
+        "area":"Lavoro e redditi",
+        "name":"Tasso di inattività",
+        "provides":"Tasso di inattività mensile della popolazione 15-64 anni.",
+        "flow":"152_878_DF_DCCV_TAXINATTMENS1_1","start":"2024",
+        "required":{"FREQ":"M","REF_AREA":"IT","SEX":"9","AGE":"Y15-64"},
+        "preferred":{"ADJUSTMENT":"Y"},
+        "note":"Tasso di inattività mensile destagionalizzato, popolazione 15-64 anni, totale sesso.",
+    },
+    {
+        "area":"Lavoro e redditi",
+        "name":"Inattivi",
+        "provides":"Numero mensile di persone inattive tra 15 e 64 anni.",
+        "flow":"152_879_DF_DCCV_INATTIVMENS1_1","start":"2024",
+        "required":{"FREQ":"M","REF_AREA":"IT","SEX":"9","AGE":"Y15-64"},
+        "preferred":{"ADJUSTMENT":"Y"},
+        "note":"Inattivi mensili destagionalizzati, 15-64 anni, totale sesso.",
     },
     {
         "area":"Lavoro e redditi",
@@ -356,8 +392,13 @@ def build_event(dataset: dict,chosen: dict,source_url: str) -> dict|None:
         analysis.append("Anomalia: l'ultimo livello o la sua variazione supera la soglia robusta PULSE.")
 
     patterns=list(dict.fromkeys(patterns))
-    if not patterns:
-        return None
+    has_statistical_pattern=bool(patterns)
+    if not has_statistical_pattern:
+        patterns=["ULTIMO_DATO"]
+        analysis.append(
+            "Ultimo dato ufficiale: nuova osservazione disponibile nella serie ISTATData; "
+            "non è necessario che scatti uno dei sei pattern PULSE per entrare nel notiziario."
+        )
 
     score=48.0+min(20.0,z*4.0)+min(10.0,zlevel*2.0)
     score+=10 if any(p.startswith("RECORD") for p in patterns) else 0
@@ -379,7 +420,11 @@ def build_event(dataset: dict,chosen: dict,source_url: str) -> dict|None:
         "municipality_code":f"SDMX-IT-{dataset['flow']}",
         "municipality":"Italia","province":"","region":"Italia",
         "indicator":dataset["name"],"patterns":"|".join(patterns),"scope":"GENERAL",
-        "score":round(score,1),"validation_status":"SEGNALE PULSE — ISTATDATA",
+        "score":round(score,1),
+        "validation_status":(
+            "SEGNALE PULSE — ISTATDATA" if has_statistical_pattern
+            else "ULTIMO DATO UFFICIALE — ISTATDATA"
+        ),
         "period":periods[-1],"summary":summary,"annual":"",
         "rolling12":"|".join(f"{v:.6g}" for v in values),
         "benchmark_local":"","benchmark_rest":"","analysis":"¦".join(analysis),
@@ -433,8 +478,8 @@ def main():
                 events.append(event)
                 print(f"SIGNAL {dataset['name']} -> {event['period']} score {event['score']}")
             else:
-                status="monitored_no_signal"
-                print(f"MONITORED {dataset['name']} -> {chosen['obs'][-1][0]} (no current signal)")
+                status="event_not_generated"
+                print(f"SKIP {dataset['name']}: serie valida ma evento non generato.")
 
         if chosen and chosen["obs"]:
             current_period, current_value = chosen["obs"][-1]
@@ -446,7 +491,7 @@ def main():
                 "source": "IstatData SDMX — ISTAT",
                 "url": url,
                 "note": dataset["note"],
-                "status": "dato ufficiale osservato; non necessariamente una notizia PULSE"
+                "status": "dato ufficiale osservato; alimenta il notiziario PULSE dell'ultimo dato disponibile"
             })
 
         sources.append({
