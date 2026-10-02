@@ -35,5 +35,5 @@ jobs:
           assert st["status"] in {"connected","feed"}, st
           assert st.get("latest_period")=="2026-08", st
           assert any(x.get("name","").startswith("Temperatura media mensile ERA5") for x in st.get("series",[])), st
-          assert any(x.get("name","").startswith("Precipitazione media mensile ERA5") for x in st.get("series",[])), st
+          assert any(x.get("name","").startswith("Precipitazione media giornaliera nel mese ERA5") for x in st.get("series",[])), st
           PY
