@@ -38,6 +38,7 @@ ASSETS=Path("app/src/main/assets")
 OUT=ASSETS/"pulse_events_green.tsv"
 STATUS=ASSETS/"pulse_green_status.json"
 CATALOG=ASSETS/"sources_catalog.json"
+GSE_SNAPSHOT=Path("data/gse_fer_last_good.json")
 
 COLUMNS=[
     "id","municipality_code","municipality","province","region","indicator",
@@ -906,12 +907,11 @@ def run_enea(source):
     },events
 
 def run_gse(source):
-    """Acquire the official GSE FER statistical report through its direct PDF.
+    """GSE FER feed with an official last-known-good fallback.
 
-    The GSE statistics landing page may return HTTP 403 to GitHub-hosted
-    runners. The underlying official statistical report is publicly downloadable
-    from the GSE document repository, so the connector uses that stable official
-    artefact instead of scraping the protected landing page.
+    GSE may return HTTP 403 to GitHub-hosted runners. A transport failure must
+    never erase already verified official statistics, so the connector first
+    tries the current official report and falls back to the persisted snapshot.
     """
     from pypdf import PdfReader
 
@@ -919,112 +919,174 @@ def run_gse(source):
         "https://www.gse.it/documenti_site/Documenti%20GSE/Rapporti%20statistici/"
         "Rapporto%20Statistico%20GSE%20-%20Energia%20da%20FER%20in%20Italia%20-%20anno%202024.pdf"
     )
-    raw=get(pdf_url,timeout=180,accept="application/pdf,*/*")
-    if not raw.startswith(b"%PDF"):
-        raise RuntimeError("GSE FER: il download diretto non è un PDF valido")
 
-    reader=PdfReader(io.BytesIO(raw))
-    if len(reader.pages)<10:
-        raise RuntimeError(f"GSE FER: rapporto incompleto ({len(reader.pages)} pagine)")
+    def load_snapshot():
+        if not GSE_SNAPSHOT.exists():
+            raise RuntimeError("GSE FER: snapshot ufficiale last-good assente")
+        payload=json.loads(GSE_SNAPSHOT.read_text(encoding="utf-8"))
+        if payload.get("official_document") != pdf_url:
+            raise RuntimeError("GSE FER: provenienza snapshot non coerente")
+        periods=[str(x) for x in payload.get("periods",[])]
+        specs=[]
+        for item in payload.get("series",[]):
+            values=[float(x) for x in item.get("values",[])]
+            if len(periods)<2 or len(values)!=len(periods):
+                raise RuntimeError("GSE FER: snapshot incompleto")
+            specs.append((clean(item.get("name")),values,clean(item.get("unit"))))
+        if len(specs)<3:
+            raise RuntimeError("GSE FER: serie snapshot insufficienti")
+        return payload,periods,specs
 
-    # The national synthesis tables are on report pages 6-9. Text extraction is
-    # intentionally limited to those pages and then parsed against table labels.
-    text="\n".join((reader.pages[i].extract_text() or "") for i in range(4,9))
-    flat=re.sub(r"\s+"," ",text)
+    def parse_live_report(raw):
+        if not raw.startswith(b"%PDF"):
+            raise RuntimeError("GSE FER: il download diretto non è un PDF valido")
+        reader=PdfReader(io.BytesIO(raw))
+        if len(reader.pages)<10:
+            raise RuntimeError(f"GSE FER: rapporto incompleto ({len(reader.pages)} pagine)")
+        text="\n".join((reader.pages[i].extract_text() or "") for i in range(4,9))
+        flat=re.sub(r"\s+"," ",text)
 
-    def nums_after(label, count, pct=False):
-        pos=flat.casefold().find(label.casefold())
-        if pos<0:
-            raise RuntimeError(f"GSE FER: etichetta non trovata: {label}")
-        chunk=flat[pos+len(label):pos+len(label)+420]
-        pattern=r"-?\d{1,3}(?:\.\d{3})*(?:,\d+)?%?" if pct else r"-?\d{1,3}(?:\.\d{3})*(?:,\d+)?"
-        vals=re.findall(pattern,chunk)
-        out=[]
-        for token in vals:
-            token=token.rstrip("%")
-            token=token.replace(".","").replace(",",".")
-            try: out.append(float(token))
-            except: pass
-            if len(out)>=count: break
-        if len(out)<count:
-            raise RuntimeError(f"GSE FER: valori insufficienti per {label}: {out}")
-        return out
+        def row_values(label):
+            m=re.search(re.escape(label)+r"\s+(.{1,500}?)(?=[A-ZÀ-Ü][A-Za-zÀ-ÿ ]{3,}|$)",flat,re.I)
+            return m.group(1) if m else ""
 
-    # Table: total number / installed renewable capacity 2021-2024. The line
-    # alternates number of plants and MW, therefore take every second value.
-    total_line=nums_after("Totale",10)
-    installed_mw=[total_line[1],total_line[3],total_line[5],total_line[7]]
+        total=row_values("Totale")
+        prod=row_values("Produzione totale da FER")
+        share=row_values("Produzione FER/Produzione complessiva")
+        if not total or not prod or not share:
+            raise RuntimeError("GSE FER: righe di sintesi non trovate")
 
-    # Table: gross renewable electricity production. Values alternate actual and
-    # RED-countable production; keep actual production for each year.
-    prod_line=nums_after("Produzione totale da FER",10)
-    production_gwh=[prod_line[0],prod_line[2],prod_line[4],prod_line[6]]
+        def nums(chunk):
+            out=[]
+            for token in re.findall(r"-?\d{1,3}(?:\.\d{3})*(?:,\d+)?%?",chunk):
+                token=token.rstrip("%").replace(".","").replace(",",".")
+                try: out.append(float(token))
+                except Exception: pass
+            return out
 
-    share_line=nums_after("Produzione FER/Produzione complessiva",4,True)
-    production_share=share_line[:4]
+        t=nums(total)
+        p=nums(prod)
+        q=nums(share)
 
-    periods=["2021","2022","2023","2024"]
-    specs=[
-        ("Potenza efficiente lorda degli impianti elettrici FER",installed_mw,"MW"),
-        ("Produzione lorda di energia elettrica da FER",production_gwh,"GWh"),
-        ("Quota FER sulla produzione elettrica complessiva",production_share,"%"),
-    ]
+        # Official table layout:
+        # Totale => Number, MW repeated for 2021..2024, then two variation values.
+        # Production => actual, EU-countable repeated for 2021..2024, then variations.
+        if len(t)<8 or len(p)<8 or len(q)<4:
+            raise RuntimeError("GSE FER: valori di sintesi insufficienti")
+        installed=[t[1],t[3],t[5],t[7]]
+        production=[p[0],p[2],p[4],p[6]]
+        shares=q[:4]
+
+        # Guardrails from the published 2024 table prevent a layout change from
+        # silently producing plausible but incorrect values.
+        if not (74000 <= installed[-1] <= 75050):
+            raise RuntimeError(f"GSE FER: controllo potenza 2024 fallito ({installed[-1]})")
+        if not (133000 <= production[-1] <= 136000):
+            raise RuntimeError(f"GSE FER: controllo produzione 2024 fallito ({production[-1]})")
+        if not (49.0 <= shares[-1] <= 50.2):
+            raise RuntimeError(f"GSE FER: controllo quota 2024 fallito ({shares[-1]})")
+
+        periods=["2021","2022","2023","2024"]
+        specs=[
+            ("Potenza efficiente lorda degli impianti elettrici FER",installed,"MW"),
+            ("Produzione lorda di energia elettrica da FER",production,"GWh"),
+            ("Quota FER sulla produzione elettrica complessiva",shares,"%"),
+        ]
+        snapshot={
+            "version":1,
+            "source":source["name"],
+            "report":"Energia da fonti rinnovabili in Italia nel 2024",
+            "publication_period":"2026-09",
+            "statistical_latest_period":"2024",
+            "official_document":pdf_url,
+            "verified_at":datetime.now(timezone.utc).date().isoformat(),
+            "provenance_note":"Valori acquisiti dal Rapporto Statistico GSE 2024, tabelle di sintesi del settore elettrico.",
+            "periods":periods,
+            "series":[{"name":n,"unit":u,"values":v} for n,v,u in specs],
+        }
+        GSE_SNAPSHOT.parent.mkdir(parents=True,exist_ok=True)
+        GSE_SNAPSHOT.write_text(json.dumps(snapshot,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+        return snapshot,periods,specs
+
+    live_error=""
+    used_snapshot=False
+    try:
+        raw=get(pdf_url,timeout=180,accept="application/pdf,*/*")
+        snapshot,periods,specs=parse_live_report(raw)
+    except Exception as exc:
+        live_error=clean(exc)
+        snapshot,periods,specs=load_snapshot()
+        used_snapshot=True
 
     series=[]; events=[]
     for name,values,unit in specs:
         series.append({
-            "name":name,"latest_period":"2024","latest_value":values[-1],
-            "unit":unit,"observations":len(values),"status":"latest_public",
+            "name":name,
+            "latest_period":periods[-1],
+            "latest_value":values[-1],
+            "unit":unit,
+            "observations":len(values),
+            "status":"latest_public",
             "territory":"Italia",
         })
-
-        # Four observations are not enough for the six-pattern detector, but are
-        # enough for a factual latest-official release item.
         prev,cur=float(values[-2]),float(values[-1])
         delta=cur-prev
         rel=(delta/prev*100.0) if abs(prev)>1e-12 else 0.0
         movement="sale" if delta>0 else "scende" if delta<0 else "resta stabile"
         score=min(72.0,50.0+min(18.0,abs(rel)*0.7))
-        summary=(
-            f"Italia: {name} {movement} da {fmt(prev)} a {fmt(cur)} "
-            f"nel 2024."
-        )
+        summary=f"Italia: {name} {movement} da {fmt(prev)} a {fmt(cur)} nel {periods[-1]}."
         analysis=[
             f"Pilastro GREEN: {source['pillar']}.",
             "Ultimo dato ufficiale GSE disponibile nel Rapporto Statistico FER pubblicato nel 2026.",
-            f"Confronto 2023-2024: variazione {delta:+.4g} {unit} ({rel:+.1f}%).",
+            f"Confronto {periods[-2]}-{periods[-1]}: variazione {delta:+.4g} {unit} ({rel:+.1f}%).",
             "Il 2024 è il periodo statistico del dato; il 2026 è l'anno di pubblicazione del rapporto.",
+            (
+                "Acquisizione corrente dal documento ufficiale GSE."
+                if not used_snapshot else
+                "Feed mantenuto tramite snapshot last-known-good verificato del medesimo documento ufficiale GSE."
+            ),
             f"PULSE Score editoriale: {score:.1f}/100.",
         ]
-        eid=hashlib.sha256(f"GREEN|GSE_FER|{name}|Italia|2024".encode()).hexdigest()[:16]
+        eid=hashlib.sha256(f"GREEN|GSE_FER|{name}|Italia|{periods[-1]}".encode()).hexdigest()[:16]
         events.append({
             "id":eid,"municipality_code":"","municipality":"Italia",
             "province":"","region":"Italia",
             "indicator":f"GREEN · {source['pillar']} · {name}",
             "patterns":"ULTIMO_DATO","scope":"GREEN","score":round(score,1),
             "validation_status":"ULTIMO DATO UFFICIALE — GSE",
-            "period":"2024","summary":summary,
+            "period":periods[-1],"summary":summary,
             "annual":"|".join(format(v,".10g") for v in values),
             "rolling12":"","benchmark_local":"","benchmark_rest":"",
             "analysis":"¦".join(analysis),
             "source_family":source["name"],"source_url":pdf_url,
         })
 
+    note=(
+        "GSE FER attivo come feed PULSE. "
+        f"{len(events)} notizie GREEN emesse su potenza FER, produzione elettrica FER "
+        "e quota FER sulla produzione complessiva. "
+        "Periodo statistico 2024, rapporto ufficiale pubblicato a settembre 2026."
+    )
+    if used_snapshot:
+        note += (
+            " Il refresh diretto del documento è stato bloccato dal server GSE; "
+            "PULSE ha mantenuto il feed usando lo snapshot ufficiale last-known-good già verificato."
+        )
+        if live_error:
+            note += f" Errore refresh: {live_error}."
+
     return {
         "status":"feed",
-        "http_ok":True,
+        "http_ok":not used_snapshot,
+        "fallback_last_good":used_snapshot,
+        "refresh_error":live_error,
         "frequency":"Annuale",
-        "publication_period":"2026-09",
-        "latest_period":"2024",
-        "report":"Energia da fonti rinnovabili in Italia nel 2024",
+        "publication_period":snapshot.get("publication_period","2026-09"),
+        "latest_period":snapshot.get("statistical_latest_period",periods[-1]),
+        "report":snapshot.get("report","Energia da fonti rinnovabili in Italia nel 2024"),
         "direct_official_document":pdf_url,
         "series":series,
-        "note":(
-            "GSE FER attivo come feed PULSE tramite il rapporto statistico ufficiale diretto, "
-            "evitando la landing page che può bloccare i runner con HTTP 403. "
-            f"{len(events)} notizie GREEN emesse su potenza FER, produzione elettrica FER "
-            "e quota FER sulla produzione complessiva. Periodo statistico 2024, rapporto pubblicato nel 2026."
-        ),
+        "note":note,
     },events
 
 def run_istat_urban(source):
