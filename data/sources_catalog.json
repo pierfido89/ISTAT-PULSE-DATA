@@ -360,11 +360,35 @@
       "green_pillar": "Transizione energetica",
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
-      "integration_status": "error",
-      "feed_status": "Connettore presente · ultimo aggiornamento fallito",
-      "notes": "Errore di collegamento nell'ultimo refresh: HTTP Error 403: Forbidden",
+      "integration_status": "feed",
+      "feed_status": "Attiva in GREEN · dati acquisiti e segnali PULSE disponibili",
+      "notes": "GSE FER attivo come feed PULSE. 3 notizie GREEN emesse su potenza FER, produzione elettrica FER e quota FER sulla produzione complessiva. Periodo statistico 2024, rapporto ufficiale pubblicato a settembre 2026. Il refresh diretto del documento è stato bloccato dal server GSE; PULSE ha mantenuto il feed usando lo snapshot ufficiale last-known-good già verificato. Errore refresh: HTTP Error 403: Forbidden.",
       "level": "Secondo dataset ufficiale",
-      "frequency": "Secondo aggiornamento della fonte"
+      "frequency": "Annuale",
+      "latest_period": "2024",
+      "provides": [
+        {
+          "area": "Transizione energetica",
+          "series": "Potenza efficiente lorda degli impianti elettrici FER",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Transizione energetica",
+          "series": "Produzione lorda di energia elettrica da FER",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        },
+        {
+          "area": "Transizione energetica",
+          "series": "Quota FER sulla produzione elettrica complessiva",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2024",
+          "status": "latest_public"
+        }
+      ]
     },
     {
       "name": "ISPRA - Catasto nazionale rifiuti",
