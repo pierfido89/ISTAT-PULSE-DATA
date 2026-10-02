@@ -3,7 +3,7 @@ name: Update PULSE Data
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 5 * * 1,4'
+    - cron: '17 10 * * *'
   push:
     branches: [ main ]
     paths:
