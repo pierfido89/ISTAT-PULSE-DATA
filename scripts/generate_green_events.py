@@ -1584,7 +1584,54 @@ def run_ispra_water(source):
         stat.update({"territory":"Italia","status":"latest_public"})
         series.append(stat)
         ev=event_from_series(source["name"],url,name,source["pillar"],periods,vals,unit,"Italia")
-        if ev: events.append(ev)
+        if ev:
+            events.append(ev)
+        else:
+            # BIGBANG is an annual official release: a newly published latest
+            # observation is useful news even when it does not cross a PULSE
+            # anomaly/pattern threshold.
+            valid=[(p,float(v)) for p,v in zip(periods,vals) if v is not None and np.isfinite(float(v))]
+            if len(valid)>=2:
+                hist_periods=[p for p,_ in valid]
+                a=np.asarray([v for _,v in valid],dtype=float)
+                deltas=np.diff(a)
+                scale=robust_scale(deltas[:-1]) if len(deltas)>1 else 0.0
+                if scale<=1e-9:
+                    scale=max(abs(float(np.median(a)))*0.005,1e-6)
+                latest_delta=float(deltas[-1])
+                z=abs(latest_delta)/scale
+                score=min(69.0,48.0+min(18.0,z*4.0))
+                prev,cur=float(a[-2]),float(a[-1])
+                movement="sale" if cur>prev else "scende" if cur<prev else "resta stabile"
+                summary=(
+                    f"Italia: {name} {movement} da {fmt(prev)} a {fmt(cur)} "
+                    f"nel {hist_periods[-1]}."
+                )
+                analysis=[
+                    f"Pilastro GREEN: {source['pillar']}.",
+                    "Ultimo dato ufficiale ISPRA BIGBANG 10.0: nuova osservazione annuale disponibile; non è necessario che scatti uno dei sei pattern PULSE per entrare nel notiziario.",
+                    f"Serie ufficiale nazionale {hist_periods[0]}-{hist_periods[-1]} acquisita automaticamente.",
+                    f"Ultima variazione: {latest_delta:+.4g}; intensità robusta z={z:.2f}.",
+                    f"PULSE Score editoriale: {score:.1f}/100.",
+                    f"Unità di misura: {unit}.",
+                    "BIGBANG 10.0 è stato pubblicato/aggiornato da ISPRA nel 2026 e il 2025 è l'ultimo anno statistico disponibile.",
+                ]
+                eid=hashlib.sha256(
+                    f"GREEN|ISPRA_BIGBANG|{name}|Italia|{hist_periods[-1]}".encode()
+                ).hexdigest()[:16]
+                events.append({
+                    "id":eid,"municipality_code":"","municipality":"Italia",
+                    "province":"","region":"Italia",
+                    "indicator":f"GREEN · {source['pillar']} · {name}",
+                    "patterns":"ULTIMO_DATO","scope":"GREEN",
+                    "score":round(score,1),
+                    "validation_status":"ULTIMO DATO UFFICIALE — ISPRA BIGBANG",
+                    "period":hist_periods[-1],"summary":summary,
+                    "annual":"|".join(format(v,".10g") for v in a[-12:]),
+                    "rolling12":"","benchmark_local":"","benchmark_rest":"",
+                    "analysis":"¦".join(analysis),
+                    "source_family":source["name"],"source_url":url,
+                })
 
     latest=periods[-1]
     if latest!="2025":
@@ -1603,7 +1650,9 @@ def run_ispra_water(source):
             "per precipitazione totale, risorsa idrica rinnovabile (internal flow) e ricarica "
             "degli acquiferi. Il modello produce anche stime mensili e dataset aggregati per "
             "Regioni e Distretti idrografici. Aggiornamento della versione/delle stime: annuale; "
-            "pagina BIGBANG aggiornata il 16/04/2026."
+            "pagina BIGBANG aggiornata il 16/04/2026. "
+            f"{len(events)} notizie/segnali GREEN emessi: ogni nuova annualità ufficiale entra nel feed, "
+            "mentre eventuali pattern statistici la promuovono a Segnale PULSE."
         ),
     },events
 
