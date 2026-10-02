@@ -100,9 +100,9 @@
       "green_pillar": "Crisi climatica e decarbonizzazione",
       "access_cost": "free",
       "access_note": "Accesso gratuito; richiede account/token CDS e accettazione dei termini del dataset.",
-      "integration_status": "connected",
-      "feed_status": "Collegata · acquisizione/probe automatico attivo",
-      "notes": "Copernicus ERA5 collegato. Ultimo mese acquisito: 2026-08. Aggiornamento mensile; le medie mensili sono normalmente disponibili intorno al 6 del mese. ERA5T è preliminare e può essere consolidato 2-3 mesi dopo.",
+      "integration_status": "feed",
+      "feed_status": "Attiva in GREEN · dati acquisiti e segnali PULSE disponibili",
+      "notes": "Copernicus ERA5 attivo come feed PULSE. Ultimo mese acquisito: 2026-08; 30/30 mesi disponibili per il motore statistico. 2 notizie/segnali GREEN emessi. Aggiornamento mensile, normalmente intorno al 6 del mese. ERA5T può essere consolidato 2-3 mesi dopo.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Mensile",
       "latest_period": "2026-08",
@@ -116,7 +116,7 @@
         },
         {
           "area": "Crisi climatica e decarbonizzazione",
-          "series": "Precipitazione media mensile ERA5 · area Italia",
+          "series": "Precipitazione media giornaliera nel mese ERA5 · area Italia",
           "description": "Serie GREEN ufficiale monitorata automaticamente.",
           "latest_period": "2026-08",
           "status": "latest_public"
@@ -4816,8 +4816,8 @@
           "area": "Lavoro e mercato del lavoro",
           "series": "Inattivi",
           "description": "Numero mensile di persone inattive tra 15 e 64 anni.",
-          "latest_period": "",
-          "status": "fetch_error"
+          "latest_period": "2026-08",
+          "status": "ok"
         },
         {
           "area": "Lavoro e mercato del lavoro",
@@ -4830,8 +4830,8 @@
           "area": "Imprese e industria",
           "series": "Produzione industriale",
           "description": "Indice mensile della produzione industriale, base 2021.",
-          "latest_period": "",
-          "status": "fetch_error"
+          "latest_period": "2026-07",
+          "status": "ok"
         },
         {
           "area": "Imprese e industria",
@@ -4879,8 +4879,8 @@
           "area": "Potere d'acquisto e consumi",
           "series": "Fiducia dei consumatori",
           "description": "Indice mensile del clima di fiducia dei consumatori.",
-          "latest_period": "",
-          "status": "fetch_error"
+          "latest_period": "2026-09",
+          "status": "ok"
         },
         {
           "area": "Prezzi e inflazione",
