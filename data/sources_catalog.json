@@ -60,9 +60,9 @@
       "green_pillar": "Risorse idriche e suolo",
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
-      "integration_status": "connected",
-      "feed_status": "Collegata · acquisizione/probe automatico attivo",
-      "notes": "ARERA RQSII integrata con dati pubblici 2017-2021 da workbook dettagliati e con risultati ufficiali 2022-2023 dalle Relazioni annuali ARERA. Per il 2022: MC1 96,3%, MC2 95,3%; per il 2023: MC1 96,5%, MC2 95,9%. Il mancato rispetto medio degli standard specifici è 3,5% in entrambi gli anni. La delibera 277/2025/R/idr certifica i risultati finali del biennio 2022-2023.",
+      "integration_status": "feed",
+      "feed_status": "Attiva in GREEN · dati acquisiti e segnali PULSE disponibili",
+      "notes": "ARERA RQSII integrata con dati pubblici 2017-2021 da workbook dettagliati e con risultati ufficiali 2022-2023 dalle Relazioni annuali ARERA. Per il 2022: MC1 96,3%, MC2 95,3%; per il 2023: MC1 96,5%, MC2 95,9%. Il mancato rispetto medio degli standard specifici è 3,5% in entrambi gli anni. La delibera 277/2025/R/idr certifica i risultati finali del biennio 2022-2023. 3 notizie/segnali GREEN emessi; il 2023 resta sempre dichiarato come periodo statistico.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte",
       "provides": [
@@ -4767,8 +4767,8 @@
           "area": "Prezzi e inflazione",
           "series": "Prezzi al consumo NIC",
           "description": "Indice generale mensile dei prezzi al consumo per l'intera collettività.",
-          "latest_period": "2026-09",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Lavoro e mercato del lavoro",
@@ -4781,8 +4781,8 @@
           "area": "Lavoro e mercato del lavoro",
           "series": "Tasso di occupazione",
           "description": "Tasso di occupazione mensile nazionale.",
-          "latest_period": "2026-08",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Lavoro e mercato del lavoro",
@@ -4802,113 +4802,113 @@
           "area": "Lavoro e mercato del lavoro",
           "series": "Disoccupati",
           "description": "Numero mensile di persone disoccupate a livello nazionale.",
-          "latest_period": "2026-08",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Lavoro e mercato del lavoro",
           "series": "Tasso di inattività",
           "description": "Tasso di inattività mensile della popolazione 15-64 anni.",
-          "latest_period": "2026-08",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Lavoro e mercato del lavoro",
           "series": "Inattivi",
           "description": "Numero mensile di persone inattive tra 15 e 64 anni.",
-          "latest_period": "2026-08",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Lavoro e mercato del lavoro",
           "series": "Posizioni lavorative dipendenti",
           "description": "Indice trimestrale delle posizioni lavorative dipendenti.",
-          "latest_period": "2026-Q2",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Imprese e industria",
           "series": "Produzione industriale",
           "description": "Indice mensile della produzione industriale, base 2021.",
-          "latest_period": "2026-07",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Imprese e industria",
           "series": "Fatturato industriale",
           "description": "Indice mensile del valore del fatturato industriale, base 2021.",
-          "latest_period": "2026-07",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Imprese e industria",
           "series": "Fatturato dei servizi",
           "description": "Indice mensile del fatturato dei servizi, base 2021.",
-          "latest_period": "2026-07",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Potere d'acquisto e consumi",
           "series": "Vendite al dettaglio",
           "description": "Indice mensile del volume delle vendite al dettaglio, base 2021.",
-          "latest_period": "2026-08",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Imprese e industria",
           "series": "Clima di fiducia delle imprese",
           "description": "Indice mensile sintetico del clima di fiducia delle imprese.",
-          "latest_period": "2026-09",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Imprese e industria",
           "series": "Fiducia delle costruzioni",
           "description": "Indice mensile di fiducia delle imprese delle costruzioni.",
-          "latest_period": "2026-09",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Imprese e industria",
           "series": "Fiducia del commercio",
           "description": "Indice mensile di fiducia delle imprese del commercio al dettaglio.",
-          "latest_period": "2026-09",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Potere d'acquisto e consumi",
           "series": "Fiducia dei consumatori",
           "description": "Indice mensile del clima di fiducia dei consumatori.",
-          "latest_period": "2026-09",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Prezzi e inflazione",
           "series": "Prezzi alla produzione dell'industria",
           "description": "Indice mensile dei prezzi alla produzione dell'industria, base 2021.",
-          "latest_period": "2026-08",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Prezzi e inflazione",
           "series": "Prezzi all'importazione",
           "description": "Indice mensile dei prezzi all'importazione, base 2021.",
-          "latest_period": "2026-07",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Turismo",
           "series": "Arrivi turistici",
           "description": "Arrivi mensili negli esercizi ricettivi italiani.",
-          "latest_period": "2026-07",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fetch_error"
         },
         {
           "area": "Turismo",
           "series": "Presenze turistiche",
           "description": "Presenze mensili negli esercizi ricettivi italiani.",
-          "latest_period": "2026-07",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fetch_error"
         }
       ],
       "official": true,
