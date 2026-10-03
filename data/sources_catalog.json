@@ -4938,11 +4938,13 @@
         }
       ],
       "official": true,
-      "notes": "Fonte attiva nel feed corrente. Serie congiunturali ufficiali interrogate tramite servizio SDMX IstatData.",
+      "notes": "Fonte attiva nel feed corrente. Serie congiunturali ufficiali interrogate tramite servizio SDMX IstatData. Il feed corrente include dati ufficiali ISTAT disponibili fino a settembre 2026.",
       "url": "https://esploradati.istat.it/SDMXWS/",
-      "feed_status": "Attiva nel Radar",
+      "feed_status": "Attiva nel Radar · ultimo dato ufficiale disponibile 2026-09",
       "category": "ISTAT",
-      "integration_status": "feed"
+      "integration_status": "feed",
+      "latest_period": "2026-09",
+      "publication_period": "2026-09"
     },
     {
       "name": "ISTAT - Noi Italia",
