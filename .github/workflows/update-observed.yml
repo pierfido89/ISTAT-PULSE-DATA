@@ -41,15 +41,18 @@ jobs:
         run: python scripts/generate_amc_observations.py
       - name: Merge observed data separately from the current-year news
         run: python scripts/merge_pulse_observations.py
+      - name: Generate A misura di Comune territorial PULSE archive
+        run: python scripts/generate_amc_events.py
       - name: Publish verified observation package
         run: |
           mkdir -p data
           cp app/src/main/assets/pulse_observations.tsv data/pulse_observations.tsv
           cp app/src/main/assets/pulse_observations_manifest.json data/pulse_observations_manifest.json
           cp app/src/main/assets/pulse_events_noi.tsv data/pulse_events_noi.tsv
+          cp app/src/main/assets/pulse_events_amc.tsv data/pulse_events_amc.tsv
           git config user.name "ISTAT PULSE Data Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/pulse_observations.tsv data/pulse_observations_manifest.json data/pulse_events_noi.tsv
+          git add data/pulse_observations.tsv data/pulse_observations_manifest.json data/pulse_events_noi.tsv data/pulse_events_amc.tsv
           if ! git diff --cached --quiet; then
             git commit -m "data: publish verified observed official sources"
             git pull --rebase origin main
