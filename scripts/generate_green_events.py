@@ -956,11 +956,20 @@ def run_terna(source):
         },
     ]
 
-    # Guard that we are really on the current official 2025 statistical page.
-    required_tokens=["Dati statistici 2025","269,3","145,9","51,8","4,9","312,2"]
+    # Guard against silently parsing the wrong page. Terna's current page no
+    # longer exposes the literal heading "Dati statistici 2025", while the
+    # official 2025 values and labels remain published. Validate the actual
+    # metrics instead of a presentation heading that may change in the CMS.
+    required_tokens=[
+        "produzione netta","269,3",
+        "Potenza efficiente lorda","145,9",
+        "Import","51,8",
+        "Export","4,9",
+        "fabbisogno di energia elettrica","312,2"
+    ]
     missing=[token for token in required_tokens if token.casefold() not in text.casefold()]
     if missing:
-        raise RuntimeError("Terna: pagina statistica 2025 non riconosciuta; mancanti "+", ".join(missing))
+        raise RuntimeError("Terna: pagina statistica ufficiale non riconosciuta; mancanti "+", ".join(missing))
 
     events=[]; series=[]
     for spec in specs:
