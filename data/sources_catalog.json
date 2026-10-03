@@ -918,11 +918,12 @@
       ],
       "official": true,
       "url": "https://www.istat.it/statistica-sperimentale/aggiornamento-degli-indicatori-del-sistema-informativo-a-misura-di-comune/",
-      "feed_status": "Osservazioni comunali ufficiali scaricate e verificate: 47313 valori su lavoro, redditi, ambiente e mobilità. Fuori dal feed delle notizie correnti.",
-      "notes": "Sistema multi-fonte aggiornato il 26/05/2026, con configurazione territoriale al 31/12/2024. Le tavole selezionate alimentano la sezione Dati osservati a livello comunale; l'anno statistico resta sempre esplicito e non viene presentato come notizia corrente.",
+      "feed_status": "Feed territoriale storico attivo · 396 segnali PULSE verificati + osservazioni comunali ufficiali.",
+      "notes": "A misura di Comune collegato alle tavole XLSX ufficiali ISTAT. Le osservazioni comunali alimentano il catalogo dati; un archivio PULSE separato genera segnali storici territoriali mantenendo sempre l'anno statistico reale. Non viene presentato come notizia corrente 2026 quando il dato si riferisce al 2023/2024.",
       "category": "ISTAT",
-      "integration_status": "connected",
-      "latest_period": "2024 (secondo indicatore)"
+      "integration_status": "feed",
+      "latest_period": "2024",
+      "publication_period": "2026-05-26"
     },
     {
       "name": "ISTAT - Ambiente urbano",
