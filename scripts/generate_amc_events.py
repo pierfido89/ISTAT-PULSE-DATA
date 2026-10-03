@@ -159,21 +159,22 @@ def main():
     OUT.parent.mkdir(parents=True,exist_ok=True)
     df[COLS].to_csv(OUT,sep="\t",index=False)
 
-    catalog=json.loads(CATALOG.read_text(encoding="utf-8"))
-    for source in catalog.get("sources",[]):
-        if source.get("name")==SOURCE:
-            source["integration_status"]="feed"
-            source["feed_status"]=f"Feed territoriale storico attivo · {len(df)} segnali PULSE verificati + osservazioni comunali ufficiali."
-            source["frequency"]="Periodico; ultimo aggiornamento pagina 26/05/2026"
-            source["latest_period"]=str(max(int(x) for x in df["period"]))
-            source["publication_period"]="2026-05-26"
-            source["notes"]=(
-              "A misura di Comune collegato alle tavole XLSX ufficiali ISTAT. "
-              "Le osservazioni comunali alimentano il catalogo dati; un archivio PULSE separato "
-              "genera segnali storici territoriali mantenendo sempre l'anno statistico reale. "
-              "Non viene presentato come notizia corrente 2026 quando il dato si riferisce al 2023/2024."
-            )
-    CATALOG.write_text(json.dumps(catalog,ensure_ascii=False,indent=2),encoding="utf-8")
+    if CATALOG.exists():
+        catalog=json.loads(CATALOG.read_text(encoding="utf-8"))
+        for source in catalog.get("sources",[]):
+            if source.get("name")==SOURCE:
+                source["integration_status"]="feed"
+                source["feed_status"]=f"Feed territoriale storico attivo · {len(df)} segnali PULSE verificati + osservazioni comunali ufficiali."
+                source["frequency"]="Periodico; ultimo aggiornamento pagina 26/05/2026"
+                source["latest_period"]=str(max(int(x) for x in df["period"]))
+                source["publication_period"]="2026-05-26"
+                source["notes"]=(
+                  "A misura di Comune collegato alle tavole XLSX ufficiali ISTAT. "
+                  "Le osservazioni comunali alimentano il catalogo dati; un archivio PULSE separato "
+                  "genera segnali storici territoriali mantenendo sempre l'anno statistico reale. "
+                  "Non viene presentato come notizia corrente 2026 quando il dato si riferisce al 2023/2024."
+                )
+        CATALOG.write_text(json.dumps(catalog,ensure_ascii=False,indent=2),encoding="utf-8")
     print("A MISURA DI COMUNE PULSE EVENTS",len(df))
     print("REGIONS",df["region"].nunique())
     print("PERIODS",sorted(df["period"].unique()))
