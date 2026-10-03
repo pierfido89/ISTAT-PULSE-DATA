@@ -5203,11 +5203,50 @@
       "green_pillar": "Transizione energetica",
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
-      "integration_status": "error",
-      "feed_status": "Connettore presente · ultimo aggiornamento fallito",
-      "notes": "Errore di collegamento nell'ultimo refresh: Terna: pagina statistica 2025 non riconosciuta; mancanti Dati statistici 2025",
+      "integration_status": "feed",
+      "feed_status": "Attiva in GREEN · dati acquisiti e segnali PULSE disponibili",
+      "notes": "Terna attiva come feed PULSE tramite la pubblicazione statistica annuale ufficiale 2025. 5 notizie GREEN emesse su produzione netta, potenza efficiente lorda, import, export e fabbisogno. Il Portale Dati resta disponibile per futuri approfondimenti granulari/API.",
       "level": "Secondo dataset ufficiale",
-      "frequency": "Secondo aggiornamento della fonte"
+      "frequency": "Annuale",
+      "latest_period": "2025",
+      "publication_period": "2026-09",
+      "provides": [
+        {
+          "area": "Transizione energetica",
+          "series": "Produzione netta di energia elettrica",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "latest_public"
+        },
+        {
+          "area": "Transizione energetica",
+          "series": "Potenza efficiente lorda del sistema elettrico",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "latest_public"
+        },
+        {
+          "area": "Transizione energetica",
+          "series": "Importazioni di energia elettrica",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "latest_public"
+        },
+        {
+          "area": "Transizione energetica",
+          "series": "Esportazioni di energia elettrica",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "latest_public"
+        },
+        {
+          "area": "Transizione energetica",
+          "series": "Fabbisogno di energia elettrica",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2025",
+          "status": "latest_public"
+        }
+      ]
     }
   ]
 }
