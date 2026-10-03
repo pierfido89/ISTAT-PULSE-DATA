@@ -21,6 +21,7 @@ jobs:
       - name: Generate A misura di Comune observations
         run: |
           python scripts/generate_amc_observations.py
+          python scripts/generate_amc_events.py
           python - <<'PY'
           import pandas as pd
           p='app/src/main/assets/pulse_observations_amc.tsv'
@@ -35,4 +36,8 @@ jobs:
           assert df['territory'].nunique()>7700
           assert set(['2023','2024']).intersection(df['period'])
           assert not df[['indicator','territory','period','value','source','url']].eq('').any().any()
+          ev=pd.read_csv('app/src/main/assets/pulse_events_amc.tsv',sep='\t',dtype=str,keep_default_na=False)
+          print('PULSE EVENTS',len(ev),'REGIONS',ev['region'].nunique(),'PERIODS',sorted(ev['period'].unique()))
+          assert len(ev)>=50, len(ev)
+          assert ev['region'].nunique()>=18, ev['region'].nunique()
           PY
