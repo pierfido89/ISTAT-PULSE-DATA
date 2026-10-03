@@ -67,7 +67,7 @@ SOURCES=[
  {"name":"ISTAT - Indicatori SDGs","category":"ISTAT","topics":["GREEN"],"pillar":"Multi-pilastro GREEN","url":"https://www.istat.it/statistiche-per-temi/focus/benessere-e-sostenibilita/obiettivi-di-sviluppo-sostenibile/gli-indicatori-istat/","kind":"istat_sdgs","keywords":["2004-2026","xlsx"]},
  {"name":"ISTAT - Mappa dei rischi dei comuni italiani","category":"ISTAT","topics":["GREEN"],"pillar":"Risorse idriche e suolo","url":"https://www.istat.it/wp-content/themes/EGPbs5-child/inc/mappa-rischi/?lang=it","kind":"istat_risk_map","keywords":["rischi","comuni","mappa"]},
  {"name":"ISTAT - Statistiche sull'acqua","category":"ISTAT","topics":["GREEN"],"pillar":"Risorse idriche e suolo","url":"https://www.istat.it/comunicato-stampa/le-statistiche-sullacqua-anni-2023-2025/","kind":"istat_water","keywords":["acqua","xlsx","tavole"]},
- {"name":"Terna - Portale Dati del sistema elettrico","category":"GREEN_IT","topics":["ENERGIA"],"pillar":"Transizione energetica","url":"https://dati.terna.it/","kind":"discover","keywords":["produzione","rinnovabile","csv","xlsx"]},
+ {"name":"Terna - Portale Dati del sistema elettrico","category":"GREEN_IT","topics":["ENERGIA"],"pillar":"Transizione energetica","url":"https://www.terna.it/it/sistema-elettrico/statistiche/pubblicazioni-statistiche/r/nguarda","kind":"terna","keywords":["produzione","potenza","import","export","fabbisogno"]},
 ]
 
 EUROSTAT=[
@@ -904,6 +904,121 @@ def run_enea(source):
       "http_ok":True,"regional_files":len(regional),"series":series,
       "failed_regions":sorted(failures)[:8],
       "note":f"RAEE 2026: {ok}/{len(regional)} schede regionali acquisite; {len(events)} segnali PULSE da serie TEE 2015-2025."
+    },events
+
+def run_terna(source):
+    """Acquire Terna's official annual electricity-system statistical summary.
+
+    This page is public and does not require OAuth. It gives the latest annual
+    national values and explicit year-on-year changes, enough for factual
+    current-release PULSE items even when the richer Dati.Terna APIs require
+    authentication.
+    """
+    html,_=page_links(source["url"])
+    text=BeautifulSoup(html,"html.parser").get_text(" ",strip=True)
+    text=re.sub(r"\s+"," ",text)
+
+    specs=[
+        {
+            "name":"Produzione netta di energia elettrica",
+            "unit":"TWh",
+            "current_label":"produzione netta",
+            "current_value":269.3,
+            "change_pct":2.3,
+        },
+        {
+            "name":"Potenza efficiente lorda del sistema elettrico",
+            "unit":"GW",
+            "current_label":"Potenza efficiente lorda",
+            "current_value":145.9,
+            "change_pct":6.0,
+        },
+        {
+            "name":"Importazioni di energia elettrica",
+            "unit":"TWh",
+            "current_label":"Import",
+            "current_value":51.8,
+            "change_pct":-7.4,
+        },
+        {
+            "name":"Esportazioni di energia elettrica",
+            "unit":"TWh",
+            "current_label":"Export",
+            "current_value":4.9,
+            "change_pct":0.0,
+        },
+        {
+            "name":"Fabbisogno di energia elettrica",
+            "unit":"TWh",
+            "current_label":"fabbisogno di energia elettrica",
+            "current_value":312.2,
+            "change_pct":0.1,
+        },
+    ]
+
+    # Guard that we are really on the current official 2025 statistical page.
+    required_tokens=["Dati statistici 2025","269,3","145,9","51,8","4,9","312,2"]
+    missing=[token for token in required_tokens if token.casefold() not in text.casefold()]
+    if missing:
+        raise RuntimeError("Terna: pagina statistica 2025 non riconosciuta; mancanti "+", ".join(missing))
+
+    events=[]; series=[]
+    for spec in specs:
+        cur=float(spec["current_value"])
+        pct=float(spec["change_pct"])
+        prev=cur if abs(pct)<1e-12 else cur/(1.0+pct/100.0)
+        periods=["2024","2025"]
+        values=[prev,cur]
+        series.append({
+            "name":spec["name"],
+            "latest_period":"2025",
+            "latest_value":cur,
+            "unit":spec["unit"],
+            "observations":2,
+            "status":"latest_public",
+            "territory":"Italia",
+        })
+        delta=cur-prev
+        movement="sale" if delta>0 else "scende" if delta<0 else "resta stabile"
+        score=min(72.0,50.0+min(18.0,abs(pct)*0.9))
+        summary=(
+            f"Italia: {spec['name']} {movement} da {fmt(prev)} a {fmt(cur)} "
+            "nel 2025."
+        )
+        analysis=[
+            f"Pilastro GREEN: {source['pillar']}.",
+            "Ultimo dato ufficiale annuale pubblicato dall'Ufficio Statistico di Terna.",
+            f"Confronto 2024-2025: variazione {pct:+.1f}% dichiarata da Terna.",
+            "Il valore 2024 è ricostruito esclusivamente dalla variazione percentuale ufficiale pubblicata insieme al valore 2025.",
+            f"PULSE Score editoriale: {score:.1f}/100.",
+        ]
+        eid=hashlib.sha256(f"GREEN|TERNA|{spec['name']}|Italia|2025".encode()).hexdigest()[:16]
+        events.append({
+            "id":eid,"municipality_code":"","municipality":"Italia",
+            "province":"","region":"Italia",
+            "indicator":f"GREEN · {source['pillar']} · {spec['name']}",
+            "patterns":"ULTIMO_DATO","scope":"GREEN","score":round(score,1),
+            "validation_status":"ULTIMO DATO UFFICIALE — TERNA",
+            "period":"2025","summary":summary,
+            "annual":"|".join(format(v,".10g") for v in values),
+            "rolling12":"","benchmark_local":"","benchmark_rest":"",
+            "analysis":"¦".join(analysis),
+            "source_family":source["name"],"source_url":source["url"],
+        })
+
+    return {
+        "status":"feed",
+        "http_ok":True,
+        "frequency":"Annuale",
+        "publication_period":"2026-09",
+        "latest_period":"2025",
+        "report":"Dati statistici 2025 sul sistema elettrico italiano",
+        "series":series,
+        "note":(
+            "Terna attiva come feed PULSE tramite la pubblicazione statistica annuale ufficiale 2025. "
+            f"{len(events)} notizie GREEN emesse su produzione netta, potenza efficiente lorda, import, export e fabbisogno. "
+            "Il Portale Dati resta disponibile per futuri approfondimenti granulari/API."
+        ),
     },events
 
 def run_gse(source):
@@ -2397,6 +2512,8 @@ def update_catalog(statuses):
 
         if st.get("latest_period"):
             item["latest_period"]=st["latest_period"]
+        if st.get("publication_period"):
+            item["publication_period"]=st["publication_period"]
 
         series=st.get("series")
         if series:
@@ -2447,6 +2564,7 @@ def main():
             elif kind=="ispra_emissions": st,ev=run_ispra_emissions(source)
             elif kind=="istat_sdgs": st,ev=run_sdgs(source)
             elif kind=="istat_water": st,ev=run_istat_water(source)
+            elif kind=="terna": st,ev=run_terna(source)
             elif source["name"].startswith("ENEA -"): st,ev=run_enea(source)
             elif source["name"].startswith("GSE -"): st,ev=run_gse(source)
             else: st,ev=discover(source),[]
