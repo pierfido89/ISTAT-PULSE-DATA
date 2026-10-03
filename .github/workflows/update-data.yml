@@ -63,6 +63,9 @@ jobs:
       - name: Publish observed measurements independently from current-year news
         run: python scripts/merge_pulse_observations.py
 
+      - name: Generate A misura di Comune territorial PULSE archive
+        run: python scripts/generate_amc_events.py
+
       - name: Merge multi-source PULSE feed
         run: python scripts/merge_pulse_feeds.py
 
@@ -74,6 +77,7 @@ jobs:
           cp app/src/main/assets/sources_catalog.json data/sources_catalog.json
           cp app/src/main/assets/pulse_events_noi.tsv data/pulse_events_noi.tsv
           cp app/src/main/assets/pulse_events_bes.tsv data/pulse_events_bes.tsv
+          cp app/src/main/assets/pulse_events_amc.tsv data/pulse_events_amc.tsv
           cp app/src/main/assets/pulse_bes_meta.json data/pulse_bes_meta.json
           cp app/src/main/assets/pulse_green_status.json data/pulse_green_status.json
 
@@ -81,7 +85,7 @@ jobs:
         run: |
           git config user.name "ISTAT PULSE Data Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/pulse_events.tsv data/pulse_manifest.json data/sources_catalog.json data/pulse_events_noi.tsv data/pulse_events_bes.tsv data/pulse_bes_meta.json data/pulse_green_status.json data/pulse_events_sdmx_last_good.tsv data/gse_fer_last_good.json
+          git add data/pulse_events.tsv data/pulse_manifest.json data/sources_catalog.json data/pulse_events_noi.tsv data/pulse_events_bes.tsv data/pulse_events_amc.tsv data/pulse_bes_meta.json data/pulse_green_status.json data/pulse_events_sdmx_last_good.tsv data/gse_fer_last_good.json
           if git diff --cached --quiet; then
             echo "No new ISTAT data to publish."
           else
