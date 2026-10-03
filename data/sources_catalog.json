@@ -4945,33 +4945,6 @@
       "integration_status": "feed"
     },
     {
-      "name": "ISTAT - Mappa dei rischi dei comuni italiani",
-      "category": "ISTAT",
-      "topics": [
-        "GREEN"
-      ],
-      "official": true,
-      "url": "https://www.istat.it/wp-content/themes/EGPbs5-child/inc/mappa-rischi/?lang=it",
-      "green_pillar": "Risorse idriche e suolo",
-      "access_cost": "free",
-      "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
-      "integration_status": "connected",
-      "feed_status": "Collegata · acquisizione/probe automatico attivo",
-      "notes": "Mappa dei rischi ISTAT collegata al download nazionale strutturato ufficiale. CSV verificato (43609442 byte, 7953 righe dati, 397 colonne). La fonte espone come unico riferimento 01-JAN-2018; per questo PULSE la usa esclusivamente come contesto territoriale storico/observed e non come fonte di notizie correnti.",
-      "level": "Comune / Provincia / Regione / Italia",
-      "frequency": "Archivio / snapshot; aggiornamento non corrente",
-      "latest_period": "2018-01-01",
-      "provides": [
-        {
-          "area": "Risorse idriche e suolo",
-          "series": "Indicatori territoriali dei rischi naturali",
-          "description": "Serie GREEN ufficiale monitorata automaticamente.",
-          "latest_period": "2018-01-01",
-          "status": "historical_snapshot"
-        }
-      ]
-    },
-    {
       "name": "ISTAT - Noi Italia",
       "level": "Italia, regioni ed Europa",
       "frequency": "Annuale",
