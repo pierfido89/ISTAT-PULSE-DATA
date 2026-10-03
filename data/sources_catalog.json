@@ -366,6 +366,7 @@
       "level": "Secondo dataset ufficiale",
       "frequency": "Annuale",
       "latest_period": "2024",
+      "publication_period": "2026-09",
       "provides": [
         {
           "area": "Transizione energetica",
@@ -5198,13 +5199,13 @@
         "ENERGIA"
       ],
       "official": true,
-      "url": "https://dati.terna.it/",
+      "url": "https://www.terna.it/it/sistema-elettrico/statistiche/pubblicazioni-statistiche/r/nguarda",
       "green_pillar": "Transizione energetica",
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
-      "integration_status": "connected",
-      "feed_status": "Collegata · acquisizione/probe automatico attivo",
-      "notes": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
+      "integration_status": "error",
+      "feed_status": "Connettore presente · ultimo aggiornamento fallito",
+      "notes": "Errore di collegamento nell'ultimo refresh: Terna: pagina statistica 2025 non riconosciuta; mancanti Dati statistici 2025",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte"
     }

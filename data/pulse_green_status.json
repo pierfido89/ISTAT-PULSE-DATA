@@ -1,11 +1,11 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-02T21:34:37.250489+00:00",
+  "generated_at": "2026-10-03T05:14:09.580585+00:00",
   "sources_total": 19,
   "feed_sources": 16,
-  "connected_sources": 3,
+  "connected_sources": 2,
   "credential_required": 0,
-  "error_sources": 0,
+  "error_sources": 1,
   "events": 425,
   "pillars": [
     "Crisi climatica e decarbonizzazione",
@@ -64,7 +64,7 @@
         }
       ],
       "note": "Annuario ACI 2026 acquisito automaticamente; TABII03 letta con 18 anni utili fino al 2025. 4 segnali PULSE emessi da 4 serie sulla transizione del parco nuovo.",
-      "checked_at": "2026-10-02T21:31:18.291700+00:00",
+      "checked_at": "2026-10-03T05:08:57.904483+00:00",
       "pillar": "Mobilità sostenibile",
       "url": "https://aci.gov.it/attivita-e-progetti/studi-e-ricerche/open-data/"
     },
@@ -226,7 +226,7 @@
         }
       ],
       "note": "ARERA RQSII integrata con dati pubblici 2017-2021 da workbook dettagliati e con risultati ufficiali 2022-2023 dalle Relazioni annuali ARERA. Per il 2022: MC1 96,3%, MC2 95,3%; per il 2023: MC1 96,5%, MC2 95,9%. Il mancato rispetto medio degli standard specifici è 3,5% in entrambi gli anni. La delibera 277/2025/R/idr certifica i risultati finali del biennio 2022-2023. 3 notizie/segnali GREEN emessi; il 2023 resta sempre dichiarato come periodo statistico.",
-      "checked_at": "2026-10-02T21:31:27.643894+00:00",
+      "checked_at": "2026-10-03T05:09:08.520585+00:00",
       "pillar": "Risorse idriche e suolo",
       "url": "https://www.arera.it/dati-e-statistiche/dettaglio/rqsii"
     },
@@ -277,7 +277,7 @@
       "history_months_acquired": 30,
       "history_errors": [],
       "note": "Copernicus ERA5 attivo come feed PULSE. Ultimo mese acquisito: 2026-08; 30/30 mesi disponibili per il motore statistico. 2 notizie/segnali GREEN emessi. Aggiornamento mensile, normalmente intorno al 6 del mese. ERA5T può essere consolidato 2-3 mesi dopo.",
-      "checked_at": "2026-10-02T21:33:33.963120+00:00",
+      "checked_at": "2026-10-03T05:12:57.396167+00:00",
       "pillar": "Crisi climatica e decarbonizzazione",
       "url": "https://cds.climate.copernicus.eu/"
     },
@@ -306,7 +306,7 @@
         }
       ],
       "note": "EEA collegata al dataset statistico ufficiale sulle emissioni nette domestiche di gas serra incl. LULUCF. Serie Italia 1990-2024 (35 osservazioni). Aggiornamento annuale; ultimo anno disponibile 2024. Dataset finale pubblicato il 15/04/2026, licenza CC BY 4.0.",
-      "checked_at": "2026-10-02T21:33:45.954377+00:00",
+      "checked_at": "2026-10-03T05:13:08.929688+00:00",
       "pillar": "Crisi climatica e decarbonizzazione",
       "url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/3b7fe76c-524a-439a-bfd2-a6e4046302a2?activeAccordion=1096150"
     },
@@ -518,7 +518,7 @@
       ],
       "failed_regions": [],
       "note": "RAEE 2026: 20/20 schede regionali acquisite; 3 segnali PULSE da serie TEE 2015-2025.",
-      "checked_at": "2026-10-02T21:33:55.521631+00:00",
+      "checked_at": "2026-10-03T05:13:18.636630+00:00",
       "pillar": "Transizione energetica",
       "url": "https://www.efficienzaenergetica.enea.it/vi-segnaliamo/rapporto-annuale-sullefficienza-energetica-2026-schede-regionali.html"
     },
@@ -548,7 +548,7 @@
         }
       ],
       "note": "3/3 dataset Eurostat collegati; 3 segnali PULSE emessi.",
-      "checked_at": "2026-10-02T21:33:57.434227+00:00",
+      "checked_at": "2026-10-03T05:13:21.170564+00:00",
       "pillar": "Multi-pilastro GREEN",
       "url": "https://ec.europa.eu/eurostat/web/environment"
     },
@@ -592,7 +592,7 @@
         }
       ],
       "note": "GSE FER attivo come feed PULSE. 3 notizie GREEN emesse su potenza FER, produzione elettrica FER e quota FER sulla produzione complessiva. Periodo statistico 2024, rapporto ufficiale pubblicato a settembre 2026. Il refresh diretto del documento è stato bloccato dal server GSE; PULSE ha mantenuto il feed usando lo snapshot ufficiale last-known-good già verificato. Errore refresh: HTTP Error 403: Forbidden.",
-      "checked_at": "2026-10-02T21:33:57.944083+00:00",
+      "checked_at": "2026-10-03T05:13:21.776561+00:00",
       "pillar": "Transizione energetica",
       "url": "https://www.gse.it/dati-e-scenari/statistiche"
     },
@@ -827,7 +827,7 @@
       ],
       "failed_years": [],
       "note": "Catasto Nazionale Rifiuti ISPRA collegato ai CSV comunali ufficiali. Acquisite annualità 2015-2024; ultimo file: 7897 comuni. Serie PULSE nazionali su raccolta differenziata e rifiuti urbani pro capite, più serie regionali RD. Aggiornamento annuale; dati 2024 aggiornati sul portale il 22/07/2026.",
-      "checked_at": "2026-10-02T21:34:06.630817+00:00",
+      "checked_at": "2026-10-03T05:13:31.499328+00:00",
       "pillar": "Economia circolare",
       "url": "https://www.catasto-rifiuti.isprambiente.it/index.php?advice=si&pg=downloadComune"
     },
@@ -1082,7 +1082,7 @@
         "Italia": 7.169666808314301
       },
       "note": "ISPRA/SNPA Consumo di suolo collegato al workbook ufficiale del Rapporto 2025. Dati definitivi fino al 2024; copertura 2006-2024 a livello comunale, provinciale e regionale. PULSE usa gli incrementi netti annuali comparabili 2016-2024 per Italia e regioni. Aggiornamento annuale. I dati preliminari 2025 sono in consultazione e ISPRA prevede i definitivi a fine ottobre 2026.",
-      "checked_at": "2026-10-02T21:34:08.104876+00:00",
+      "checked_at": "2026-10-03T05:13:33.564336+00:00",
       "pillar": "Risorse idriche e suolo",
       "url": "https://www.isprambiente.gov.it/it/attivita/suolo-e-territorio/suolo/il-consumo-di-suolo/i-dati-sul-consumo-di-suolo"
     },
@@ -1124,7 +1124,7 @@
         }
       ],
       "note": "IdroGEO collegato e verificato tramite i pacchetti OpenData ufficiali IFFI (GeoJSON e Shapefile). Fonte territoriale a dettaglio puntuale/comunale, provinciale, regionale e nazionale. Aggiornamento periodico secondo gli aggiornamenti dell'inventario IFFI/IdroGEO; non viene forzata una frequenza annuale perché la fonte è un inventario geospaziale corrente e non una serie storica annuale omogenea.",
-      "checked_at": "2026-10-02T21:34:09.432410+00:00",
+      "checked_at": "2026-10-03T05:13:35.068659+00:00",
       "pillar": "Risorse idriche e suolo",
       "url": "https://idrogeo.isprambiente.it/"
     },
@@ -1161,7 +1161,7 @@
         }
       ],
       "note": "Indicatori ambientali ISPRA - biodiversità collegati alla serie ufficiale Farmland Bird Index. Serie nazionali FBI e FBIpm 2000-2025; scheda aggiornata il 30/06/2026. Aggiornamento annuale. L'indicatore misura l'andamento delle popolazioni di uccelli degli ambienti agricoli e delle praterie montane.",
-      "checked_at": "2026-10-02T21:34:09.433158+00:00",
+      "checked_at": "2026-10-03T05:13:35.069417+00:00",
       "pillar": "Tutela della biodiversità",
       "url": "https://indicatoriambientali.isprambiente.it/it/temi/biodiversita-stato-e-minacce"
     },
@@ -1171,7 +1171,7 @@
       "candidate_downloads": [
         "https://emissioni.sina.isprambiente.it/wp-content/uploads/2026/04/Emissioni-GHG-Sintesi-2026.xlsx"
       ],
-      "landing_sha256": "dbf3b9f1a6c0fc30e435e5fecaa72fc6b12cf5e4d792ae5a388d06b7f7f3d63e",
+      "landing_sha256": "5046b94773ad425d109012db6a5da5c8071016bf9b543978eb813c9010e36fd0",
       "note": "Inventario GHG ISPRA 1990-2024 acquisito dal workbook ufficiale; 2 serie monitorate e 2 segnali PULSE.",
       "structured_url": "https://emissioni.sina.isprambiente.it/wp-content/uploads/2026/04/Emissioni-GHG-Sintesi-2026.xlsx",
       "structured_format": "zip/xlsx",
@@ -1201,7 +1201,7 @@
           "status": "ok"
         }
       ],
-      "checked_at": "2026-10-02T21:34:15.071869+00:00",
+      "checked_at": "2026-10-03T05:13:38.623437+00:00",
       "pillar": "Crisi climatica e decarbonizzazione",
       "url": "https://emissioni.sina.isprambiente.it/serie-storiche-emissioni-di-gas-serra-sintesi/"
     },
@@ -1249,7 +1249,7 @@
         }
       ],
       "note": "ISPRA BIGBANG 10.0 collegato al workbook ufficiale. Serie nazionali 1951-2025 per precipitazione totale, risorsa idrica rinnovabile (internal flow) e ricarica degli acquiferi. Il modello produce anche stime mensili e dataset aggregati per Regioni e Distretti idrografici. Aggiornamento della versione/delle stime: annuale; pagina BIGBANG aggiornata il 16/04/2026. 3 notizie/segnali GREEN emessi: ogni nuova annualità ufficiale entra nel feed, mentre eventuali pattern statistici la promuovono a Segnale PULSE.",
-      "checked_at": "2026-10-02T21:34:16.734877+00:00",
+      "checked_at": "2026-10-03T05:13:40.575950+00:00",
       "pillar": "Risorse idriche e suolo",
       "url": "https://www.isprambiente.gov.it/pre_meteo/idro/BIGBANG_ISPRA.html"
     },
@@ -1300,7 +1300,7 @@
         }
       ],
       "note": "Qualità dell'aria ISPRA/SNPA collegata ai CSV ufficiali delle statistiche di stazione per PM10, PM2.5 e NO2. Le serie strutturate pubblicate arrivano al 2022; la valutazione annuale SNPA più recente riguarda il 2025. I dati quasi-real-time vengono trasmessi quotidianamente a ISPRA, mentre i dati definitivi sono trasmessi all'inizio di ogni anno per l'anno precedente. Il feed PULSE usa solo i CSV strutturati definitivi e non miscela stime preliminari con serie validate.",
-      "checked_at": "2026-10-02T21:34:20.655443+00:00",
+      "checked_at": "2026-10-03T05:13:46.000410+00:00",
       "pillar": "Crisi climatica e decarbonizzazione",
       "url": "https://www.isprambiente.gov.it/it/banche-dati/banche-dati-folder/aria/qualita-dellaria"
     },
@@ -6044,7 +6044,7 @@
         }
       ],
       "note": "ISTAT Ambiente urbano 2024 collegato alle tavole ufficiali pubblicate il 09/09/2026. PULSE acquisisce serie storiche comunali su disponibilità di verde urbano, produzione di rifiuti urbani, raccolta differenziata e densità di piste ciclabili. Aggiornamento annuale. L'indagine Dati ambientali nelle città è annuale; la raccolta 2026 riguarda l'anno di riferimento 2025.",
-      "checked_at": "2026-10-02T21:34:23.465717+00:00",
+      "checked_at": "2026-10-03T05:13:49.621657+00:00",
       "pillar": "Multi-pilastro GREEN",
       "url": "https://www.istat.it/comunicato-stampa/ambiente-urbano-anno-2024/"
     },
@@ -6837,7 +6837,7 @@
         }
       ],
       "note": "Dataset Istat SDGs 2004-2026 acquisito: 71 serie nazionali GREEN semanticamente classificate; 36 segnali PULSE.",
-      "checked_at": "2026-10-02T21:34:28.280725+00:00",
+      "checked_at": "2026-10-03T05:13:54.167892+00:00",
       "pillar": "Multi-pilastro GREEN",
       "url": "https://www.istat.it/statistiche-per-temi/focus/benessere-e-sostenibilita/obiettivi-di-sviluppo-sostenibile/gli-indicatori-istat/"
     },
@@ -6872,7 +6872,7 @@
         }
       ],
       "note": "Mappa dei rischi ISTAT collegata al download nazionale strutturato ufficiale. CSV verificato (43609442 byte, 7953 righe dati, 397 colonne). La fonte espone come unico riferimento 01-JAN-2018; per questo PULSE la usa esclusivamente come contesto territoriale storico/observed e non come fonte di notizie correnti.",
-      "checked_at": "2026-10-02T21:34:33.608510+00:00",
+      "checked_at": "2026-10-03T05:14:00.501607+00:00",
       "pillar": "Risorse idriche e suolo",
       "url": "https://www.istat.it/wp-content/themes/EGPbs5-child/inc/mappa-rischi/?lang=it"
     },
@@ -6883,7 +6883,7 @@
         "https://www.istat.it/wp-content/uploads/2026/03/Istat-GMA2026-Tavole-1.xlsx",
         "https://www.istat.it/wp-content/uploads/2026/03/Istat-GMA2026-Mappe.xlsx"
       ],
-      "landing_sha256": "e6244951c372d4b65625d6a2e26cbbb0e1c7befe93577031ef48cf7dae1d58af",
+      "landing_sha256": "ac05aa3e635a46be8c49ba127a2f7920a7c9e221936db86d9bcdefc16dfe3a06",
       "note": "Tavole ufficiali Acqua 2026 acquisite; 27 serie regionali pluriennali lette da Tavola 10; 17 segnali PULSE.",
       "structured_url": "https://www.istat.it/wp-content/uploads/2026/03/Istat-GMA2026-Tavole-1.xlsx",
       "structured_format": "zip/xlsx",
@@ -7166,19 +7166,16 @@
           "territory": "Isole"
         }
       ],
-      "checked_at": "2026-10-02T21:34:36.293454+00:00",
+      "checked_at": "2026-10-03T05:14:05.086740+00:00",
       "pillar": "Risorse idriche e suolo",
       "url": "https://www.istat.it/comunicato-stampa/le-statistiche-sullacqua-anni-2023-2025/"
     },
     "Terna - Portale Dati del sistema elettrico": {
-      "status": "connected",
-      "http_ok": true,
-      "candidate_downloads": [],
-      "landing_sha256": "5a32d11206608c3f2dd3893f700f1cccb50717fb9483302d07887a1474e3c8e4",
-      "note": "Pagina ufficiale raggiunta; 0 download strutturati individuati automaticamente.",
-      "checked_at": "2026-10-02T21:34:37.243571+00:00",
+      "status": "error",
+      "note": "Errore di collegamento nell'ultimo refresh: Terna: pagina statistica 2025 non riconosciuta; mancanti Dati statistici 2025",
+      "checked_at": "2026-10-03T05:14:09.574634+00:00",
       "pillar": "Transizione energetica",
-      "url": "https://dati.terna.it/"
+      "url": "https://www.terna.it/it/sistema-elettrico/statistiche/pubblicazioni-statistiche/r/nguarda"
     }
   }
 }
