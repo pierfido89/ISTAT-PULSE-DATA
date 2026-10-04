@@ -18,6 +18,8 @@
       "notes": "Annuario ACI 2026 acquisito automaticamente; TABII03 letta con 18 anni utili fino al 2025. 4 segnali PULSE emessi da 4 serie sulla transizione del parco nuovo.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte",
+      "publication_year": "2026",
+      "checked_at": "2026-10-04T07:21:35.870784+00:00",
       "provides": [
         {
           "area": "Mobilità sostenibile",
@@ -65,6 +67,7 @@
       "notes": "ARERA RQSII integrata con dati pubblici 2017-2021 da workbook dettagliati e con risultati ufficiali 2022-2023 dalle Relazioni annuali ARERA. Per il 2022: MC1 96,3%, MC2 95,3%; per il 2023: MC1 96,5%, MC2 95,9%. Il mancato rispetto medio degli standard specifici è 3,5% in entrambi gli anni. La delibera 277/2025/R/idr certifica i risultati finali del biennio 2022-2023. 3 notizie/segnali GREEN emessi; il 2023 resta sempre dichiarato come periodo statistico.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte",
+      "checked_at": "2026-10-04T07:21:47.444135+00:00",
       "provides": [
         {
           "area": "Risorse idriche e suolo",
@@ -106,6 +109,7 @@
       "level": "Secondo dataset ufficiale",
       "frequency": "Mensile",
       "latest_period": "2026-08",
+      "checked_at": "2026-10-04T07:23:29.559911+00:00",
       "provides": [
         {
           "area": "Crisi climatica e decarbonizzazione",
@@ -140,6 +144,8 @@
       "level": "Secondo dataset ufficiale",
       "frequency": "Annuale",
       "latest_period": "2024",
+      "publication_date": "2026-04-15",
+      "checked_at": "2026-10-04T07:23:37.447905+00:00",
       "provides": [
         {
           "area": "Crisi climatica e decarbonizzazione",
@@ -166,6 +172,7 @@
       "notes": "RAEE 2026: 20/20 schede regionali acquisite; 3 segnali PULSE da serie TEE 2015-2025.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte",
+      "checked_at": "2026-10-04T07:23:46.973442+00:00",
       "provides": [
         {
           "area": "Transizione energetica",
@@ -325,6 +332,7 @@
       "notes": "3/3 dataset Eurostat collegati; 3 segnali PULSE emessi.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte",
+      "checked_at": "2026-10-04T07:23:48.879007+00:00",
       "provides": [
         {
           "area": "Multi-pilastro GREEN",
@@ -367,6 +375,7 @@
       "frequency": "Annuale",
       "latest_period": "2024",
       "publication_period": "2026-09",
+      "checked_at": "2026-10-04T07:23:49.442492+00:00",
       "provides": [
         {
           "area": "Transizione energetica",
@@ -408,6 +417,7 @@
       "level": "Secondo dataset ufficiale",
       "frequency": "Annuale",
       "latest_period": "2024",
+      "checked_at": "2026-10-04T07:23:58.508737+00:00",
       "provides": [
         {
           "area": "Economia circolare",
@@ -582,6 +592,8 @@
       "level": "Comune / Provincia / Regione / Italia",
       "frequency": "Annuale",
       "latest_period": "2024",
+      "publication_date": "2025-10-24",
+      "checked_at": "2026-10-04T07:24:00.106687+00:00",
       "provides": [
         {
           "area": "Risorse idriche e suolo",
@@ -749,6 +761,7 @@
       "level": "Comune / Provincia / Regione / Italia",
       "frequency": "Periodico / secondo aggiornamento IFFI-IdroGEO",
       "latest_period": "Inventario corrente",
+      "checked_at": "2026-10-04T07:24:01.334472+00:00",
       "provides": [
         {
           "area": "Risorse idriche e suolo",
@@ -776,6 +789,8 @@
       "level": "Italia",
       "frequency": "Annuale",
       "latest_period": "2025",
+      "publication_date": "2026-06-30",
+      "checked_at": "2026-10-04T07:24:01.335366+00:00",
       "provides": [
         {
           "area": "Tutela della biodiversità",
@@ -810,6 +825,7 @@
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte",
       "latest_period": "2024",
+      "checked_at": "2026-10-04T07:24:08.692674+00:00",
       "provides": [
         {
           "area": "Crisi climatica e decarbonizzazione",
@@ -844,6 +860,7 @@
       "level": "Italia / Regione / Distretto idrografico",
       "frequency": "Annuale (stime disponibili anche mensilmente)",
       "latest_period": "2025",
+      "checked_at": "2026-10-04T07:24:10.490924+00:00",
       "provides": [
         {
           "area": "Risorse idriche e suolo",
@@ -885,6 +902,7 @@
       "level": "Stazione / Comune / Provincia / Regione / Italia",
       "frequency": "Annuale; dati quasi-real-time aggiornati giornalmente",
       "latest_period": "2025 (valutazione SNPA); 2022 (CSV strutturati)",
+      "checked_at": "2026-10-04T07:24:14.685315+00:00",
       "provides": [
         {
           "area": "Crisi climatica e decarbonizzazione",
@@ -942,6 +960,8 @@
       "level": "Comuni capoluogo di provincia / Città metropolitane",
       "frequency": "Annuale",
       "latest_period": "2024",
+      "publication_date": "2026-09-09",
+      "checked_at": "2026-10-04T07:24:17.662494+00:00",
       "provides": [
         {
           "area": "Multi-pilastro GREEN",
@@ -4284,6 +4304,7 @@
       "notes": "Dataset Istat SDGs 2004-2026 acquisito: 71 serie nazionali GREEN semanticamente classificate; 36 segnali PULSE.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte",
+      "checked_at": "2026-10-04T07:24:28.726626+00:00",
       "provides": [
         {
           "area": "Multi-pilastro GREEN",
@@ -4800,8 +4821,8 @@
           "area": "Lavoro e mercato del lavoro",
           "series": "Tasso di disoccupazione",
           "description": "Tasso di disoccupazione mensile nazionale.",
-          "latest_period": "2026-08",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fallback_last_good"
         },
         {
           "area": "Lavoro e mercato del lavoro",
@@ -4814,22 +4835,22 @@
           "area": "Lavoro e mercato del lavoro",
           "series": "Occupati",
           "description": "Numero mensile di occupati a livello nazionale.",
-          "latest_period": "2026-08",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fallback_last_good"
         },
         {
           "area": "Lavoro e mercato del lavoro",
           "series": "Tasso di disoccupazione giovanile",
           "description": "Tasso di disoccupazione mensile dei giovani 15-24 anni.",
-          "latest_period": "2026-08",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fallback_last_good"
         },
         {
           "area": "Lavoro e mercato del lavoro",
           "series": "Disoccupati",
           "description": "Numero mensile di persone disoccupate a livello nazionale.",
-          "latest_period": "2026-08",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fallback_last_good"
         },
         {
           "area": "Lavoro e mercato del lavoro",
@@ -4856,95 +4877,121 @@
           "area": "Imprese e industria",
           "series": "Produzione industriale",
           "description": "Indice mensile della produzione industriale, base 2021.",
-          "latest_period": "2026-07",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fallback_last_good"
         },
         {
           "area": "Imprese e industria",
           "series": "Fatturato industriale",
           "description": "Indice mensile del valore del fatturato industriale, base 2021.",
-          "latest_period": "2026-07",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fallback_last_good"
         },
         {
           "area": "Imprese e industria",
           "series": "Fatturato dei servizi",
           "description": "Indice mensile del fatturato dei servizi, base 2021.",
-          "latest_period": "2026-07",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fallback_last_good"
         },
         {
           "area": "Potere d'acquisto e consumi",
           "series": "Vendite al dettaglio",
           "description": "Indice mensile del volume delle vendite al dettaglio, base 2021.",
-          "latest_period": "2026-08",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fallback_last_good"
         },
         {
           "area": "Imprese e industria",
           "series": "Clima di fiducia delle imprese",
           "description": "Indice mensile sintetico del clima di fiducia delle imprese.",
-          "latest_period": "2026-09",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fallback_last_good"
         },
         {
           "area": "Imprese e industria",
           "series": "Fiducia delle costruzioni",
           "description": "Indice mensile di fiducia delle imprese delle costruzioni.",
-          "latest_period": "2026-09",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fallback_last_good"
         },
         {
           "area": "Imprese e industria",
           "series": "Fiducia del commercio",
           "description": "Indice mensile di fiducia delle imprese del commercio al dettaglio.",
-          "latest_period": "2026-09",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fallback_last_good"
         },
         {
           "area": "Potere d'acquisto e consumi",
           "series": "Fiducia dei consumatori",
           "description": "Indice mensile del clima di fiducia dei consumatori.",
-          "latest_period": "2026-09",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fallback_last_good"
         },
         {
           "area": "Prezzi e inflazione",
           "series": "Prezzi alla produzione dell'industria",
           "description": "Indice mensile dei prezzi alla produzione dell'industria, base 2021.",
-          "latest_period": "2026-08",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fallback_last_good"
         },
         {
           "area": "Prezzi e inflazione",
           "series": "Prezzi all'importazione",
           "description": "Indice mensile dei prezzi all'importazione, base 2021.",
-          "latest_period": "2026-07",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fallback_last_good"
         },
         {
           "area": "Turismo",
           "series": "Arrivi turistici",
           "description": "Arrivi mensili negli esercizi ricettivi italiani.",
-          "latest_period": "2026-07",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fallback_last_good"
         },
         {
           "area": "Turismo",
           "series": "Presenze turistiche",
           "description": "Presenze mensili negli esercizi ricettivi italiani.",
-          "latest_period": "2026-07",
-          "status": "ok"
+          "latest_period": "",
+          "status": "fallback_last_good"
         }
       ],
       "official": true,
-      "notes": "Fonte attiva nel feed corrente. Serie congiunturali ufficiali interrogate tramite servizio SDMX IstatData. Il feed corrente include dati ufficiali ISTAT disponibili fino a settembre 2026.",
+      "notes": "Fonte attiva nel feed corrente. Serie congiunturali ufficiali interrogate tramite servizio SDMX IstatData.",
       "url": "https://esploradati.istat.it/SDMXWS/",
-      "feed_status": "Attiva nel Radar · ultimo dato ufficiale disponibile 2026-09",
+      "feed_status": "Attiva nel Radar",
       "category": "ISTAT",
-      "integration_status": "feed",
-      "latest_period": "2026-09",
-      "publication_period": "2026-09"
+      "integration_status": "feed"
+    },
+    {
+      "name": "ISTAT - Mappa dei rischi dei comuni italiani",
+      "category": "ISTAT",
+      "topics": [
+        "GREEN"
+      ],
+      "official": true,
+      "url": "https://www.istat.it/wp-content/themes/EGPbs5-child/inc/mappa-rischi/?lang=it",
+      "green_pillar": "Risorse idriche e suolo",
+      "access_cost": "free",
+      "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
+      "integration_status": "connected",
+      "feed_status": "Collegata · acquisizione/probe automatico attivo",
+      "notes": "Mappa dei rischi ISTAT collegata al download nazionale strutturato ufficiale. CSV verificato (43609442 byte, 7953 righe dati, 397 colonne). La fonte espone come unico riferimento 01-JAN-2018; per questo PULSE la usa esclusivamente come contesto territoriale storico/observed e non come fonte di notizie correnti.",
+      "level": "Comune / Provincia / Regione / Italia",
+      "frequency": "Archivio / snapshot; aggiornamento non corrente",
+      "latest_period": "2018-01-01",
+      "checked_at": "2026-10-04T07:24:51.045584+00:00",
+      "provides": [
+        {
+          "area": "Risorse idriche e suolo",
+          "series": "Indicatori territoriali dei rischi naturali",
+          "description": "Serie GREEN ufficiale monitorata automaticamente.",
+          "latest_period": "2018-01-01",
+          "status": "historical_snapshot"
+        }
+      ]
     },
     {
       "name": "ISTAT - Noi Italia",
@@ -4976,6 +5023,8 @@
       "notes": "Tavole ufficiali Acqua 2026 acquisite; 27 serie regionali pluriennali lette da Tavola 10; 17 segnali PULSE.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte",
+      "publication_date": "2026-03-20",
+      "checked_at": "2026-10-04T07:24:54.174649+00:00",
       "provides": [
         {
           "area": "Risorse idriche e suolo",
@@ -5186,6 +5235,7 @@
       "frequency": "Annuale",
       "latest_period": "2025",
       "publication_period": "2026-09",
+      "checked_at": "2026-10-04T07:24:58.291852+00:00",
       "provides": [
         {
           "area": "Transizione energetica",
