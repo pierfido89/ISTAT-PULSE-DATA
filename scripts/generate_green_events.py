@@ -2524,6 +2524,22 @@ def update_catalog(statuses):
         if st.get("publication_period"):
             item["publication_period"]=st["publication_period"]
 
+        # Standard publication metadata used by the Android client.
+        # Connectors historically used a few source-specific names; normalize
+        # them here so every source exposes the same contract.
+        publication_date = (
+            st.get("publication_date")
+            or st.get("latest_release")
+            or st.get("source_update_date")
+            or st.get("last_indicator_update")
+        )
+        if publication_date:
+            item["publication_date"]=str(publication_date)
+        if st.get("publication_year"):
+            item["publication_year"]=str(st["publication_year"])
+        if st.get("checked_at"):
+            item["checked_at"]=str(st["checked_at"])
+
         series=st.get("series")
         if series:
             item["provides"]=[{
