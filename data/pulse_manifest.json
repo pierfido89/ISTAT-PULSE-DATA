@@ -1,7 +1,7 @@
 {
   "version": "0.6-data-current",
-  "generated_at": "2026-10-04T07:26:08.808467+00:00",
-  "feed_sha256": "ac9f3ea9b77a9f1f8bb93bb1d6bc3e1dbf6d28c4e1e3925471a09d310fbe7827",
+  "generated_at": "2026-10-04T17:21:12.971668+00:00",
+  "feed_sha256": "c7699e05fd3d038762fdaab8468974dca8779540deb51e7aa55b98abf04190fd",
   "source_period": "feed corrente 2026 · ultimo dato 2026-Q2",
   "complete_years": [
     2019,
@@ -250,18 +250,12 @@
         "name": "Prezzi al consumo NIC",
         "provides": "Indice generale mensile dei prezzi al consumo per l'intera collettività.",
         "flow": "167_745_DF_DCSP_NIC1B2025_1",
-        "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/167_745_DF_DCSP_NIC1B2025_1/all/IT1?startPeriod=2026&endPeriod=2026",
-        "status": "ok",
-        "bytes": 5692004,
-        "sha256": "a98d87823eb214672354e316e4684920866ec658ff6abea5ba71bd37cc8e13a3",
-        "latest_period": "2026-09",
-        "series_key": {
-          "FREQ": "M",
-          "REF_AREA": "IT",
-          "DATA_TYPE": "85",
-          "MEASURE": "4",
-          "ECOICOP_2": "00"
-        },
+        "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/167_745_DF_DCSP_NIC1B2025_1/all/IT1",
+        "status": "fallback_last_good",
+        "bytes": 0,
+        "sha256": "",
+        "latest_period": "",
+        "series_key": {},
         "signal_emitted": true
       },
       {
@@ -285,7 +279,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/150_872_DF_DCCV_TAXOCCUMENS1_1/all/IT1?startPeriod=2024&endPeriod=2026",
         "status": "ok",
         "bytes": 1574499,
-        "sha256": "e93caa6d4e03faa986c1d0f062fa4f790233858482ef9121f8b78456fe6bd42e",
+        "sha256": "28293682b84ed207cb43c188a152678b14cdec4c9fc6c6a0a94009ad9f1d04ed",
         "latest_period": "2026-08",
         "series_key": {
           "FREQ": "M",
@@ -342,20 +336,12 @@
         "name": "Tasso di inattività",
         "provides": "Tasso di inattività mensile della popolazione 15-64 anni.",
         "flow": "152_878_DF_DCCV_TAXINATTMENS1_1",
-        "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/152_878_DF_DCCV_TAXINATTMENS1_1/all/IT1?startPeriod=2024&endPeriod=2026",
-        "status": "ok",
-        "bytes": 1575204,
-        "sha256": "1a66096eb61a08a726ae2de200f049b70631c35a1cadb6962af74a0f6bba481f",
-        "latest_period": "2026-08",
-        "series_key": {
-          "FREQ": "M",
-          "REF_AREA": "IT",
-          "DATA_TYPE": "INAC_R",
-          "ADJUSTMENT": "Y",
-          "SEX": "9",
-          "AGE": "Y15-64",
-          "EDITION": "2026M10G1"
-        },
+        "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/152_878_DF_DCCV_TAXINATTMENS1_1/all/IT1",
+        "status": "fallback_last_good",
+        "bytes": 0,
+        "sha256": "",
+        "latest_period": "",
+        "series_key": {},
         "signal_emitted": true
       },
       {
@@ -366,7 +352,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/152_879_DF_DCCV_INATTIVMENS1_1/all/IT1?startPeriod=2024&endPeriod=2026",
         "status": "ok",
         "bytes": 1566462,
-        "sha256": "6acb4be6d65f14bc123acf29a972c089cf2034a972642429b12d2ba0437820a6",
+        "sha256": "4c4272a2b64a4473886ad4b74ff8cd52623d0b406c501e146c0548040c043b88",
         "latest_period": "2026-08",
         "series_key": {
           "FREQ": "M",
@@ -387,7 +373,7 @@
         "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/149_577_DF_DCSC_OROS_1_3/all/IT1?startPeriod=2022&endPeriod=2026",
         "status": "ok",
         "bytes": 591024,
-        "sha256": "74784c73841b93f50c9517965fe359f3816109085183ee2b13957d029bc4a957",
+        "sha256": "20653580625d54f5da395305975d65cada04c5a3eda648cc3baa9fefda47f575",
         "latest_period": "2026-Q2",
         "series_key": {
           "FREQ": "Q",
@@ -429,12 +415,18 @@
         "name": "Fatturato dei servizi",
         "provides": "Indice mensile del fatturato dei servizi, base 2021.",
         "flow": "119_367_DF_DCSC_FATTSERVIZ_1_4",
-        "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/119_367_DF_DCSC_FATTSERVIZ_1_4/all/IT1",
-        "status": "fallback_last_good",
-        "bytes": 0,
-        "sha256": "",
-        "latest_period": "",
-        "series_key": {},
+        "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/119_367_DF_DCSC_FATTSERVIZ_1_4/all/IT1?startPeriod=2022&endPeriod=2026",
+        "status": "ok",
+        "bytes": 3297847,
+        "sha256": "864aa0efff22c9729720ad53517043e2040ace8e01b560ff87d157087bd8d7b4",
+        "latest_period": "2026-07",
+        "series_key": {
+          "FREQ": "M",
+          "REF_AREA": "IT",
+          "DATA_TYPE": "SERV_TURN_VAL_21",
+          "ADJUSTMENT": "Y",
+          "ECON_ACTIVITY_NACE_2007": "0014"
+        },
         "signal_emitted": true
       },
       {
@@ -442,12 +434,20 @@
         "name": "Vendite al dettaglio",
         "provides": "Indice mensile del volume delle vendite al dettaglio, base 2021.",
         "flow": "120_337_DF_DCSC_COMMDET_1_15",
-        "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/120_337_DF_DCSC_COMMDET_1_15/all/IT1",
-        "status": "fallback_last_good",
-        "bytes": 0,
-        "sha256": "",
-        "latest_period": "",
-        "series_key": {},
+        "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/120_337_DF_DCSC_COMMDET_1_15/all/IT1?startPeriod=2022&endPeriod=2026",
+        "status": "ok",
+        "bytes": 147974,
+        "sha256": "78790596926c173356560ec7ea8455ae1b88a5c42fb7017ae04ca82368307f5f",
+        "latest_period": "2026-08",
+        "series_key": {
+          "FREQ": "M",
+          "REF_AREA": "IT",
+          "DATA_TYPE": "RTD_TURN_VOL_21",
+          "ADJUSTMENT": "Y",
+          "PRODUCT_SECTOR": "1",
+          "TYPE_OF_SALES": "9",
+          "PERS_EMPL_SIZE_CLASS": "TOTAL"
+        },
         "signal_emitted": true
       },
       {
@@ -455,12 +455,18 @@
         "name": "Clima di fiducia delle imprese",
         "provides": "Indice mensile sintetico del clima di fiducia delle imprese.",
         "flow": "6_64_DF_DCSC_IESI_2",
-        "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/6_64_DF_DCSC_IESI_2/all/IT1",
-        "status": "fallback_last_good",
-        "bytes": 0,
-        "sha256": "",
-        "latest_period": "",
-        "series_key": {},
+        "url": "https://esploradati.istat.it/SDMXWS/rest/v1/data/6_64_DF_DCSC_IESI_2/all/IT1?startPeriod=2022&endPeriod=2026",
+        "status": "ok",
+        "bytes": 8108,
+        "sha256": "21b4fdcf1f390a0962a3774f1ec1e6a925da423fa2441106a7157acff43034bc",
+        "latest_period": "2026-09",
+        "series_key": {
+          "FREQ": "M",
+          "REF_AREA": "IT",
+          "DATA_TYPE": "IESI_21",
+          "ADJUSTMENT": "Y",
+          "ECON_ACTIVITY_NACE_2007": "C-F-45-47-0017"
+        },
         "signal_emitted": true
       },
       {
