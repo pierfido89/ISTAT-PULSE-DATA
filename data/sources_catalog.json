@@ -5273,6 +5273,43 @@
           "status": "latest_public"
         }
       ]
+    },
+    {
+      "name": "MIMIT - Prezzi carburanti",
+      "category": "PREZZI_ENERGIA_IT",
+      "topics": [
+        "CARBURANTI",
+        "PREZZI",
+        "ENERGIA",
+        "MOBILITA"
+      ],
+      "official": true,
+      "url": "https://www.mimit.gov.it/index.php/it/open-data/elenco-dataset/carburanti-prezzi-praticati-e-anagrafica-degli-impianti",
+      "access_cost": "free",
+      "access_note": "Open data MIMIT, licenza IODL 2.0.",
+      "integration_status": "feed",
+      "feed_status": "Attiva · CSV carburanti MIMIT acquisiti automaticamente",
+      "notes": "Feed quotidiano sui prezzi praticati alle 8 e anagrafica impianti, con prezzi medi regionali.",
+      "level": "Nazionale, regionale e impianto",
+      "frequency": "Quotidiana",
+      "latest_period": "2026-10-05",
+      "checked_at": "2026-10-05T10:24:31.554636+00:00",
+      "provides": [
+        {
+          "area": "Prezzi",
+          "series": "Prezzi carburanti praticati",
+          "description": "CSV quotidiano ufficiale MIMIT.",
+          "latest_period": "2026-10-05",
+          "status": "latest_public"
+        },
+        {
+          "area": "Territorio",
+          "series": "Prezzi medi regionali carburanti",
+          "description": "Medie regionali pubblicate giornalmente.",
+          "latest_period": "2026-10-05",
+          "status": "latest_public"
+        }
+      ]
     }
   ]
 }

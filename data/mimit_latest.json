@@ -1,0 +1,448 @@
+{
+  "source": "MIMIT",
+  "source_family": "MIMIT - Prezzi carburanti",
+  "open_data_url": "https://www.mimit.gov.it/index.php/it/open-data/elenco-dataset/carburanti-prezzi-praticati-e-anagrafica-degli-impianti",
+  "regional_average_url": "https://www.mimit.gov.it/it/prezzo-medio-carburanti/regioni",
+  "datasets": {
+    "prices": {
+      "title": "Prezzo alle 8 di mattina",
+      "url": "https://www.mimit.gov.it/images/exportCSV/prezzo_alle_8.csv",
+      "content_type": "text/csv",
+      "bytes": 3944459,
+      "sha256": "d27f15a730ce5855151d51fc7cb232d607c93815e18a94067974e3837b27e728",
+      "rows_sampled": 100,
+      "header": [
+        "Estrazione del 2026-10-04"
+      ],
+      "delimiter": ","
+    },
+    "stations": {
+      "title": "Anagrafica degli impianti attivi",
+      "url": "https://www.mimit.gov.it/images/exportCSV/anagrafica_impianti_attivi.csv",
+      "content_type": "text/csv",
+      "bytes": 3573113,
+      "sha256": "ee120e02b9d1af996abe1294006028db39eb1591ee6ce361e9e8c9eb4fd921ce",
+      "rows_sampled": 100,
+      "header": [
+        "Estrazione del 2026-10-04"
+      ],
+      "delimiter": ","
+    }
+  },
+  "regional_average_date": "2026-10-05",
+  "regional_average_rows": [
+    {
+      "fuel": "Gasolio",
+      "service": "SELF",
+      "price": 2.243
+    },
+    {
+      "fuel": "Benzina",
+      "service": "SELF",
+      "price": 2.049
+    },
+    {
+      "fuel": "GPL",
+      "service": "SERVITO",
+      "price": 0.773
+    },
+    {
+      "fuel": "Metano",
+      "service": "SERVITO",
+      "price": 1.862
+    },
+    {
+      "fuel": "Gasolio",
+      "service": "SELF",
+      "price": 2.245
+    },
+    {
+      "fuel": "Benzina",
+      "service": "SELF",
+      "price": 2.066
+    },
+    {
+      "fuel": "GPL",
+      "service": "SERVITO",
+      "price": 0.75
+    },
+    {
+      "fuel": "Metano",
+      "service": "SERVITO",
+      "price": 1.802
+    },
+    {
+      "fuel": "Gasolio",
+      "service": "SELF",
+      "price": 2.25
+    },
+    {
+      "fuel": "Benzina",
+      "service": "SELF",
+      "price": 2.055
+    },
+    {
+      "fuel": "GPL",
+      "service": "SERVITO",
+      "price": 0.811
+    },
+    {
+      "fuel": "Metano",
+      "service": "SERVITO",
+      "price": 1.913
+    },
+    {
+      "fuel": "Gasolio",
+      "service": "SELF",
+      "price": 2.241
+    },
+    {
+      "fuel": "Benzina",
+      "service": "SELF",
+      "price": 2.057
+    },
+    {
+      "fuel": "GPL",
+      "service": "SERVITO",
+      "price": 0.726
+    },
+    {
+      "fuel": "Metano",
+      "service": "SERVITO",
+      "price": 1.801
+    },
+    {
+      "fuel": "Gasolio",
+      "service": "SELF",
+      "price": 2.248
+    },
+    {
+      "fuel": "Benzina",
+      "service": "SELF",
+      "price": 2.053
+    },
+    {
+      "fuel": "GPL",
+      "service": "SERVITO",
+      "price": 0.748
+    },
+    {
+      "fuel": "Metano",
+      "service": "SERVITO",
+      "price": 1.894
+    },
+    {
+      "fuel": "Gasolio",
+      "service": "SELF",
+      "price": 2.244
+    },
+    {
+      "fuel": "Benzina",
+      "service": "SELF",
+      "price": 2.044
+    },
+    {
+      "fuel": "GPL",
+      "service": "SERVITO",
+      "price": 0.738
+    },
+    {
+      "fuel": "Metano",
+      "service": "SERVITO",
+      "price": 1.998
+    },
+    {
+      "fuel": "Gasolio",
+      "service": "SELF",
+      "price": 2.221
+    },
+    {
+      "fuel": "Benzina",
+      "service": "SELF",
+      "price": 2.027
+    },
+    {
+      "fuel": "GPL",
+      "service": "SERVITO",
+      "price": 0.75
+    },
+    {
+      "fuel": "Metano",
+      "service": "SERVITO",
+      "price": 1.944
+    },
+    {
+      "fuel": "Gasolio",
+      "service": "SELF",
+      "price": 2.229
+    },
+    {
+      "fuel": "Benzina",
+      "service": "SELF",
+      "price": 2.028
+    },
+    {
+      "fuel": "GPL",
+      "service": "SERVITO",
+      "price": 0.857
+    },
+    {
+      "fuel": "Metano",
+      "service": "SERVITO",
+      "price": 1.904
+    },
+    {
+      "fuel": "Gasolio",
+      "service": "SELF",
+      "price": 2.245
+    },
+    {
+      "fuel": "Benzina",
+      "service": "SELF",
+      "price": 2.045
+    },
+    {
+      "fuel": "GPL",
+      "service": "SERVITO",
+      "price": 0.743
+    },
+    {
+      "fuel": "Metano",
+      "service": "SERVITO",
+      "price": 1.845
+    },
+    {
+      "fuel": "Gasolio",
+      "service": "SELF",
+      "price": 2.238
+    },
+    {
+      "fuel": "Benzina",
+      "service": "SELF",
+      "price": 2.044
+    },
+    {
+      "fuel": "GPL",
+      "service": "SERVITO",
+      "price": 0.777
+    },
+    {
+      "fuel": "Metano",
+      "service": "SERVITO",
+      "price": 1.924
+    },
+    {
+      "fuel": "Gasolio",
+      "service": "SELF",
+      "price": 2.252
+    },
+    {
+      "fuel": "Benzina",
+      "service": "SELF",
+      "price": 2.051
+    },
+    {
+      "fuel": "GPL",
+      "service": "SERVITO",
+      "price": 0.803
+    },
+    {
+      "fuel": "Metano",
+      "service": "SERVITO",
+      "price": 1.894
+    },
+    {
+      "fuel": "Gasolio",
+      "service": "SELF",
+      "price": 2.242
+    },
+    {
+      "fuel": "Benzina",
+      "service": "SELF",
+      "price": 2.043
+    },
+    {
+      "fuel": "GPL",
+      "service": "SERVITO",
+      "price": 0.742
+    },
+    {
+      "fuel": "Metano",
+      "service": "SERVITO",
+      "price": 1.876
+    },
+    {
+      "fuel": "Gasolio",
+      "service": "SELF",
+      "price": 2.239
+    },
+    {
+      "fuel": "Benzina",
+      "service": "SELF",
+      "price": 2.053
+    },
+    {
+      "fuel": "GPL",
+      "service": "SERVITO",
+      "price": 0.746
+    },
+    {
+      "fuel": "Metano",
+      "service": "SERVITO",
+      "price": 1.899
+    },
+    {
+      "fuel": "Gasolio",
+      "service": "SELF",
+      "price": 2.255
+    },
+    {
+      "fuel": "Benzina",
+      "service": "SELF",
+      "price": 2.056
+    },
+    {
+      "fuel": "GPL",
+      "service": "SERVITO",
+      "price": 0.857
+    },
+    {
+      "fuel": "Gasolio",
+      "service": "SELF",
+      "price": 2.253
+    },
+    {
+      "fuel": "Benzina",
+      "service": "SELF",
+      "price": 2.058
+    },
+    {
+      "fuel": "GPL",
+      "service": "SERVITO",
+      "price": 0.797
+    },
+    {
+      "fuel": "Metano",
+      "service": "SERVITO",
+      "price": 2.026
+    },
+    {
+      "fuel": "Gasolio",
+      "service": "SELF",
+      "price": 2.252
+    },
+    {
+      "fuel": "Benzina",
+      "service": "SELF",
+      "price": 2.053
+    },
+    {
+      "fuel": "GPL",
+      "service": "SERVITO",
+      "price": 0.765
+    },
+    {
+      "fuel": "Metano",
+      "service": "SERVITO",
+      "price": 1.997
+    },
+    {
+      "fuel": "Gasolio",
+      "service": "SELF",
+      "price": 2.234
+    },
+    {
+      "fuel": "Benzina",
+      "service": "SELF",
+      "price": 2.042
+    },
+    {
+      "fuel": "GPL",
+      "service": "SERVITO",
+      "price": 0.774
+    },
+    {
+      "fuel": "Metano",
+      "service": "SERVITO",
+      "price": 1.939
+    },
+    {
+      "fuel": "Gasolio",
+      "service": "SELF",
+      "price": 2.246
+    },
+    {
+      "fuel": "Benzina",
+      "service": "SELF",
+      "price": 2.042
+    },
+    {
+      "fuel": "GPL",
+      "service": "SERVITO",
+      "price": 0.869
+    },
+    {
+      "fuel": "Gasolio",
+      "service": "SELF",
+      "price": 2.235
+    },
+    {
+      "fuel": "Benzina",
+      "service": "SELF",
+      "price": 2.043
+    },
+    {
+      "fuel": "GPL",
+      "service": "SERVITO",
+      "price": 0.761
+    },
+    {
+      "fuel": "Metano",
+      "service": "SERVITO",
+      "price": 1.905
+    },
+    {
+      "fuel": "Gasolio",
+      "service": "SELF",
+      "price": 2.29
+    },
+    {
+      "fuel": "Benzina",
+      "service": "SELF",
+      "price": 2.089
+    },
+    {
+      "fuel": "GPL",
+      "service": "SERVITO",
+      "price": 0.86
+    },
+    {
+      "fuel": "Metano",
+      "service": "SERVITO",
+      "price": 1.948
+    },
+    {
+      "fuel": "Gasolio",
+      "service": "SELF",
+      "price": 2.258
+    },
+    {
+      "fuel": "Benzina",
+      "service": "SELF",
+      "price": 2.061
+    },
+    {
+      "fuel": "GPL",
+      "service": "SERVITO",
+      "price": 0.791
+    },
+    {
+      "fuel": "Metano",
+      "service": "SERVITO",
+      "price": 1.99
+    }
+  ],
+  "regional_average_count": 82,
+  "checked_at": "2026-10-05T10:24:31.554636+00:00",
+  "status": "feed"
+}
