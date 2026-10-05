@@ -65,7 +65,7 @@ def score_candidate(text):
     score=0
     term_hits=sum(1 for t in STAT_TERMS if t in low)
     score += min(35,term_hits*5)
-    nums=re.findall(r"(?<!\w)[+-]?\d{1,3}(?:[\.,]\d+)?\s*(?:%|milioni|miliardi|mila)?",low)
+    nums=re.findall(r"(?<!\w)[+-]?(?:20\d{2}|\d{1,3}(?:[\.,]\d+)?)\s*(?:%|milioni|miliardi|mila)?",low)
     score += min(30,len(nums)*6)
     if re.search(r"\b(20\d{2}|\d{1,2}[\.,]\d+\s*%)\b",low): score+=10
     if any(x in low for x in ("record","massimo storico","minimo storico","mai così","più alto","più basso")): score+=15
@@ -157,6 +157,48 @@ def verify_primary_page(url, numbers, keywords, allowed_domains):
     except Exception:
         return None
 
+
+PRIMARY_ENTITY_PATTERNS=[
+ ("istat","istat.it"),
+ ("tuttoscuola","tuttoscuola.com"),
+ ("crif","crif.it"),
+ ("confindustria nautica","confindustrianautica.net"),
+ ("deloitte","deloitte.com"),
+ ("legambiente","legambiente.it"),
+ ("banca d'italia","bancaditalia.it"),
+ ("bankitalia","bancaditalia.it"),
+ ("inps","inps.it"),
+ ("inail","inail.it"),
+ ("aifa","aifa.gov.it"),
+ ("iss","iss.it"),
+ ("agenas","agenas.gov.it"),
+ ("ispra","isprambiente.gov.it"),
+ ("invalsi","invalsi.it"),
+ ("unioncamere","unioncamere.gov.it"),
+ ("anfia","anfia.it"),
+ ("unrae","unrae.it")
+]
+
+def extract_named_primary_domains(text):
+    low=(text or "").lower()
+    out=[]
+    for name,dom in PRIMARY_ENTITY_PATTERNS:
+        if name in low and dom not in out: out.append(dom)
+    return out
+
+def looks_editorially_irrelevant(title):
+    low=(title or "").lower()
+    bad=("pronostico","quote e statistiche","scommesse","oddschecker","calendario partite",
+         "ospita","evento","festival","dal 2027/28 limite","decreto scuola")
+    return any(x in low for x in bad)
+
+def semantic_key(title, topic, numbers):
+    clean=re.sub(r"[^a-z0-9à-ù ]"," ",(title or "").lower())
+    words=[w for w in clean.split() if len(w)>=4 and w not in {"italia","dati","statistiche","rapporto","news"}]
+    core=" ".join(sorted(set(words[:8])))
+    nums="|".join(sorted(set(normalize_number_token(n) for n in numbers if normalize_number_token(n))))
+    return hashlib.sha256(f"{topic}|{core}|{nums}".encode()).hexdigest()[:20]
+
 def resolve_primary(discovery_title, discovery_text, topic, numbers, direct_links, hint_domains, cfg):
     domains=cfg.get("official_domains",[])
     kws=title_keywords(discovery_title+" "+discovery_text[:1500])
@@ -167,11 +209,12 @@ def resolve_primary(discovery_title, discovery_text, topic, numbers, direct_link
             v["method"]="direct_official_link"; return v
     # 2) domains inferred from named entities + topic
     candidates=[]
-    for d in list(hint_domains)+TOPIC_DOMAINS.get(topic,[]):
+    named_domains=extract_named_primary_domains(discovery_title+" "+discovery_text[:4000])
+    for d in named_domains+list(hint_domains)+TOPIC_DOMAINS.get(topic,[]):
         if d not in candidates: candidates.append(d)
     qwords=" ".join(kws[:5])
     nums=" ".join(numbers[:2])
-    for dom in candidates[:5]:
+    for dom in candidates[:8]:
         query=f'site:{dom} "{qwords}" {nums}'.strip()
         results=ddg_search(query,limit=4)
         if not results and qwords:
@@ -196,7 +239,7 @@ def classify_topic(text):
     low=text.lower()
     rules=[
       ("LAVORO",("lavor","occupaz","disoccup","salari","stipendi")),
-      ("ECONOMIA",("pil","inflaz","prezzi","consumi","redditi","imprese","export","import")),
+      ("ECONOMIA",("pil","inflaz","prezzi","consumi","redditi","imprese","export","import","pressione fiscale","fisco","tasse","profitti","risparmio")),
       ("SALUTE",("salute","sanità","farmac","osped","medic")),
       ("ISTRUZIONE",("scuola","student","universit","invalsi","istruzione")),
       ("AMBIENTE",("ambiente","clima","emission","rifiuti","suolo","acqua","biodivers")),
@@ -239,6 +282,7 @@ def main():
     old_articles=load_json(ARTICLES,{"articles":[]}).get("articles",[])
     by_id={x.get("id"):x for x in old_articles if x.get("id")}
     candidates=[]
+    seen_story_keys=set()
     now=datetime.now(timezone.utc)
     today=now.date().isoformat()
 
@@ -248,12 +292,16 @@ def main():
             candidates.append({"radar":feed.get("name"),"status":"radar_error","error":str(e)[:180]})
             continue
         for item in items:
+            if looks_editorially_irrelevant(item["title"]): continue
             discovery=(item["title"]+" "+item.get("summary",""))[:7000]
             s,nums=score_candidate(discovery)
             if s<35: continue
             probe=article_probe(item["url"],cfg.get("official_domains",[]),cfg.get("entity_domain_hints",{}))
             combined=(discovery+" "+probe.get("text",""))[:35000]
             topic=classify_topic(combined); geos=detect_geo(combined)
+            story_key=semantic_key(item["title"],topic,nums)
+            if story_key in seen_story_keys: continue
+            seen_story_keys.add(story_key)
             official_links=probe.get("official_links",[])
             hints=probe.get("hint_domains",[])
             resolved=resolve_primary(item["title"],combined,topic,nums,official_links,hints,cfg)
@@ -263,7 +311,7 @@ def main():
               "discovery_title":item["title"],"detected_at":now.isoformat(),"score_discovery":s,"topic":topic,
               "numbers_detected":nums,"official_links":official_links,"official_domain_hints":hints,
               "primary_resolution":resolved,
-              "status":"primary_verified" if resolved else "needs_primary_source"
+              "status":"primary_statistical_source_verified" if resolved else "needs_primary_source"
             }
             candidates.append(cand)
             if not resolved: continue
@@ -275,12 +323,12 @@ def main():
             headline=derive_headline(topic,resolved,geos,verified_nums)
             article={
               "id":aid,"published_at":now.isoformat(),"topic":topic,"pulse_score":pulse,
-              "public_source":{"url":primary,"domain":resolved.get("domain"),"role":"primary_official",
+              "public_source":{"url":primary,"domain":resolved.get("domain"),"role":"primary_statistical_source",
                                "verification_method":resolved.get("method"),"verification_score":resolved.get("verification_score")},
               "discovery":{"visible":False,"role":"hidden_radar"},
               "period_reference":None,"latest_source_update":None,
               "headline":headline,
-              "summary":"Dato intercettato dal News Radar e riscontrato su una fonte primaria ufficiale. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+              "summary":"Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
               "statistical_claims":[{"raw_value":n,"verified":n in verified_nums} for n in nums],
               "territories":geos,
               "chart_spec":chart,"map_spec":map_spec,
