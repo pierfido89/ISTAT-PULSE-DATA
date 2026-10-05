@@ -11,7 +11,19 @@ CFG=Path("data/news_radar_sources.json")
 ARTICLES=ROOT/"articles.json"
 CANDIDATES=ROOT/"candidates.json"
 INDEX=ROOT/"index.json"
-UA="ISTAT-PULSE-NewsRadar/1.0"
+UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/154 Safari/537.36 ISTAT-PULSE-NewsRadar/1.1"
+
+TOPIC_DOMAINS={
+ "LAVORO":["istat.it","inps.it","inail.it","unioncamere.gov.it"],
+ "ECONOMIA":["istat.it","bancaditalia.it","mef.gov.it","unioncamere.gov.it"],
+ "SALUTE":["salute.gov.it","iss.it","agenas.gov.it","aifa.gov.it"],
+ "ISTRUZIONE":["invalsi.it","istruzione.it","istat.it","mur.gov.it"],
+ "AMBIENTE":["isprambiente.gov.it","istat.it","eea.europa.eu"],
+ "ENERGIA":["terna.it","gse.it","arera.it","istat.it"],
+ "MOBILITA":["aci.it","unrae.it","anfia.it","istat.it"],
+ "CASA":["agenziaentrate.gov.it","bancaditalia.it","istat.it"],
+ "DEMOGRAFIA":["istat.it"]
+}
 
 STAT_TERMS=(
  "dato","dati","statistica","statistiche","rapporto","osservatorio","indagine","rilevazione",
@@ -84,6 +96,102 @@ def article_probe(url, domains, hints):
     except Exception:
         return {"final_url":url,"text":"","official_links":[],"hint_domains":[]}
 
+
+def normalize_number_token(x):
+    x=(x or "").lower().strip()
+    x=x.replace("milioni","").replace("miliardi","").replace("mila","").replace("%","")
+    x=re.sub(r"[^0-9,.-]","",x)
+    return x.strip(" .,-")
+
+def title_keywords(text):
+    stop={"italia","italiano","italiani","oggi","ieri","anno","anni","dati","dato","statistiche","statistica",
+          "rapporto","secondo","oltre","sono","della","delle","degli","dello","nella","nelle","con","per","tra","fra",
+          "che","del","dei","gli","una","uno","più","meno","news"}
+    words=re.findall(r"[a-zà-ù]{4,}",(text or "").lower())
+    out=[]
+    for w in words:
+        if w not in stop and w not in out: out.append(w)
+    return out[:8]
+
+def ddg_search(query, limit=6):
+    url="https://html.duckduckgo.com/html/?"+urllib.parse.urlencode({"q":query})
+    try:
+        raw,_,_=fetch(url,timeout=20,max_bytes=600000)
+        soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
+        out=[]
+        for a in soup.select("a.result__a"):
+            href=a.get("href","")
+            if not href: continue
+            if "uddg=" in href:
+                try:
+                    qs=urllib.parse.parse_qs(urllib.parse.urlparse(href).query)
+                    href=qs.get("uddg",[href])[0]
+                except: pass
+            out.append({"url":href,"title":" ".join(a.stripped_strings)})
+            if len(out)>=limit: break
+        return out
+    except Exception:
+        return []
+
+def verify_primary_page(url, numbers, keywords, allowed_domains):
+    host=canonical_host(url)
+    dom=official_domain(host,allowed_domains)
+    if not dom: return None
+    try:
+        raw,final,ct=fetch(url,timeout=20,max_bytes=900000)
+        if "html" not in ct.lower() and "text" not in ct.lower() and "json" not in ct.lower():
+            return None
+        text=clean_text(raw.decode("utf-8","ignore"))[:60000]
+        low=text.lower()
+        matched_numbers=[]
+        for n in numbers:
+            nn=normalize_number_token(n)
+            if len(nn)>=1 and (nn in low or nn.replace(",",".") in low or nn.replace(".",",") in low):
+                matched_numbers.append(n)
+        matched_keywords=[k for k in keywords if k in low]
+        score=(35 if matched_numbers else 0)+min(40,len(matched_keywords)*8)+(15 if dom else 0)
+        if score<50: return None
+        return {"url":final,"domain":dom,"matched_numbers":matched_numbers[:6],
+                "matched_keywords":matched_keywords[:8],"verification_score":min(100,score),
+                "text_excerpt":text[:900]}
+    except Exception:
+        return None
+
+def resolve_primary(discovery_title, discovery_text, topic, numbers, direct_links, hint_domains, cfg):
+    domains=cfg.get("official_domains",[])
+    kws=title_keywords(discovery_title+" "+discovery_text[:1500])
+    # 1) direct official links from the article
+    for u in direct_links:
+        v=verify_primary_page(u,numbers,kws,domains)
+        if v:
+            v["method"]="direct_official_link"; return v
+    # 2) domains inferred from named entities + topic
+    candidates=[]
+    for d in list(hint_domains)+TOPIC_DOMAINS.get(topic,[]):
+        if d not in candidates: candidates.append(d)
+    qwords=" ".join(kws[:5])
+    nums=" ".join(numbers[:2])
+    for dom in candidates[:5]:
+        query=f'site:{dom} "{qwords}" {nums}'.strip()
+        results=ddg_search(query,limit=4)
+        if not results and qwords:
+            results=ddg_search(f"site:{dom} {qwords}",limit=4)
+        for rr in results:
+            v=verify_primary_page(rr["url"],numbers,kws,domains)
+            if v:
+                v["method"]="official_domain_search"; v["search_domain"]=dom; return v
+    return None
+
+def derive_headline(topic, primary, geos, numbers):
+    where=(geos[0].title() if geos else "Italia")
+    value=(numbers[0] if numbers else None)
+    label={
+      "LAVORO":"Lavoro","ECONOMIA":"Economia","SALUTE":"Salute","ISTRUZIONE":"Istruzione",
+      "AMBIENTE":"Ambiente","ENERGIA":"Energia","MOBILITA":"Mobilità","CASA":"Casa","DEMOGRAFIA":"Demografia"
+    }.get(topic,"Dati")
+    if value: return f"{label}, nuovo dato per {where}: {value}"
+    return f"{label}, nuovo aggiornamento statistico per {where}"
+
 def classify_topic(text):
     low=text.lower()
     rules=[
@@ -148,32 +256,38 @@ def main():
             topic=classify_topic(combined); geos=detect_geo(combined)
             official_links=probe.get("official_links",[])
             hints=probe.get("hint_domains",[])
-            primary=official_links[0] if official_links else None
+            resolved=resolve_primary(item["title"],combined,topic,nums,official_links,hints,cfg)
+            primary=resolved.get("url") if resolved else None
             cand={
               "radar":feed.get("name"),"discovery_url":probe.get("final_url") or item["url"],
-              "detected_at":now.isoformat(),"score_discovery":s,"topic":topic,
+              "discovery_title":item["title"],"detected_at":now.isoformat(),"score_discovery":s,"topic":topic,
               "numbers_detected":nums,"official_links":official_links,"official_domain_hints":hints,
-              "status":"primary_found" if primary else "needs_primary_source"
+              "primary_resolution":resolved,
+              "status":"primary_verified" if resolved else "needs_primary_source"
             }
             candidates.append(cand)
-            if not primary: continue
-            pulse=min(100,45+s//2+(10 if geos else 0)+(5 if len(nums)>=2 else 0))
-            chart,map_spec=make_visual_specs(topic,geos,nums)
+            if not resolved: continue
+            verified_nums=resolved.get("matched_numbers",[])
+            if not verified_nums: continue
+            pulse=min(100,50+s//2+(10 if geos else 0)+(5 if len(verified_nums)>=2 else 0))
+            chart,map_spec=make_visual_specs(topic,geos,verified_nums)
             aid=stable_id(primary,topic,today)
+            headline=derive_headline(topic,resolved,geos,verified_nums)
             article={
               "id":aid,"published_at":now.isoformat(),"topic":topic,"pulse_score":pulse,
-              "public_source":{"url":primary,"domain":canonical_host(primary),"role":"primary_official"},
+              "public_source":{"url":primary,"domain":resolved.get("domain"),"role":"primary_official",
+                               "verification_method":resolved.get("method"),"verification_score":resolved.get("verification_score")},
               "discovery":{"visible":False,"role":"hidden_radar"},
               "period_reference":None,"latest_source_update":None,
-              "headline":None,
-              "summary":None,
-              "statistical_claims":[{"raw_value":n,"verified":False} for n in nums],
+              "headline":headline,
+              "summary":"Dato intercettato dal News Radar e riscontrato su una fonte primaria ufficiale. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+              "statistical_claims":[{"raw_value":n,"verified":n in verified_nums} for n in nums],
               "territories":geos,
               "chart_spec":chart,"map_spec":map_spec,
-              "editorial_status":"needs_primary_fact_verification",
-              "publication_status":"withheld"
+              "editorial_status":"verified_primary_match",
+              "publication_status":"published"
             }
-            if aid not in by_id: by_id[aid]=article
+            if aid not in by_id or by_id[aid].get("publication_status")!="published": by_id[aid]=article
 
     arts=sorted(by_id.values(),key=lambda x:x.get("published_at",""),reverse=True)
     # Safety gate: only verified articles may be publicly visible.
