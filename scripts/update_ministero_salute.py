@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import hashlib,json,re,urllib.parse,requests
+import hashlib,json,re,subprocess,tempfile,os
 from datetime import datetime,timezone
 from pathlib import Path
 from bs4 import BeautifulSoup
@@ -11,15 +11,19 @@ PAGES={
  "dispositivi_medici":"https://www.dati.salute.gov.it/it/dataset/dispositivi-medici/"
 }
 def get(u,probe=False):
- h={"User-Agent":UA,"Accept":"*/*","Accept-Language":"it-IT,it;q=0.9"}
- if probe:h["Range"]="bytes=0-131071"
- r=requests.get(u,headers=h,timeout=90,stream=probe)
- r.raise_for_status()
- if probe:
-  b=next(r.iter_content(131072),b"")
- else:
-  b=r.content
- return b,r.url,r.headers.get("Content-Type","")
+ fd,path=tempfile.mkstemp();os.close(fd)
+ try:
+  cmd=["curl","-L","--fail","--silent","--show-error","--max-time","35","--http1.1","--tlsv1.2","-A",UA,"-o",path]
+  if probe: cmd += ["-H","Range: bytes=0-131071"]
+  cmd.append(u)
+  subprocess.run(cmd,check=True,timeout=40)
+  b=Path(path).read_bytes()
+  if probe:b=b[:131072]
+  return b,u,"application/octet-stream"
+ finally:
+  try:os.unlink(path)
+  except:pass
+
 def iso_date(text):
  m=re.search(r"Data ultimo aggiornamento\s*(\d{2})/(\d{2})/(20\d{2})",text,re.I)
  return f"{m.group(3)}-{m.group(2)}-{m.group(1)}" if m else ""
