@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import json,hashlib,re,time,urllib.parse,urllib.request
+import json,hashlib,re,time,urllib.parse,urllib.request,requests
 from datetime import datetime,timezone
 from pathlib import Path
 from bs4 import BeautifulSoup
@@ -35,9 +35,12 @@ def main():
  known2025="https://www.aifa.gov.it/documents/20142/847578/dati_2025_260514.zip"
  if not any(x.get("year")==2025 for x in files):
   try:
-   b,u,ct=get(known2025,True)
+   rr=requests.get(known2025,headers={"User-Agent":"Mozilla/5.0","Accept":"*/*"},timeout=180,stream=True)
+   rr.raise_for_status()
+   b=next(rr.iter_content(131072),b"")
+   ct=rr.headers.get("Content-Type","")
    if len(b)>50 and "text/html" not in ct.lower():
-    files.append({"year":2025,"title":"Download - Anno 2025","url":u,"content_type":ct,
+    files.append({"year":2025,"title":"Download - Anno 2025","url":rr.url,"content_type":ct,
      "probe_bytes":len(b),"sha256":hashlib.sha256(b).hexdigest()})
   except Exception: pass
  if len(files)<3 and OUT.exists():
