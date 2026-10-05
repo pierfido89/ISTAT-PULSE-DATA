@@ -1,123 +1,59 @@
 #!/usr/bin/env python3
-"""Unioncamere / InfoCamere connector for ISTAT PULSE.
-
-Sources:
-- Unioncamere Open Government (CSV open data)
-- Movimprese (quarterly business demography, downloadable CSV/documents)
-
-Outputs:
-- data/unioncamere_infocamere_latest.json
-- updates data/sources_catalog.json
-"""
 from __future__ import annotations
-import hashlib, json, re, urllib.parse, urllib.request
-from datetime import datetime, timezone
+import hashlib,json,re,urllib.parse,urllib.request
+from datetime import datetime,timezone
 from pathlib import Path
 from bs4 import BeautifulSoup
-
-OUT=Path("data/unioncamere_infocamere_latest.json")
-CATALOG=Path("data/sources_catalog.json")
+OUT=Path("data/unioncamere_infocamere_latest.json");CATALOG=Path("data/sources_catalog.json")
 UA="ISTAT-PULSE/Unioncamere-InfoCamere (+https://github.com/pierfido89/ISTAT-PULSE-DATA)"
-OPEN_GOV="https://opengovernment.unioncamere.gov.it/"
-MOVIMPRESE="https://www.infocamere.it/movimprese"
-
-def get(url, timeout=120, accept="*/*"):
-    req=urllib.request.Request(url,headers={"User-Agent":UA,"Accept":accept,"Accept-Language":"it-IT,it;q=0.9,en;q=0.7"})
-    with urllib.request.urlopen(req,timeout=timeout) as r:
-        raw=r.read()
-        return raw,r.geturl(),r.headers.get("Content-Type","")
-
-def clean(x): return re.sub(r"\s+"," ",str(x or "")).strip()
-
-def links(url):
-    raw,final,ctype=get(url)
-    html=raw.decode("utf-8","ignore")
-    soup=BeautifulSoup(html,"html.parser")
-    out=[]
-    for a in soup.find_all("a",href=True):
-        href=urllib.parse.urljoin(final,a["href"])
-        title=clean(a.get_text(" ",strip=True))
-        out.append((title,href))
-    return raw,final,ctype,out
-
-def probe_file(url):
-    req=urllib.request.Request(url,headers={"User-Agent":UA,"Accept":"*/*","Range":"bytes=0-131071"})
-    with urllib.request.urlopen(req,timeout=120) as r:
-        raw=r.read(131072)
-        return {
-          "url":r.geturl(),
-          "content_type":r.headers.get("Content-Type",""),
-          "bytes_sampled":len(raw),
-          "sha256":hashlib.sha256(raw).hexdigest(),
-        }
-
+DATASETS="https://opengovernment.unioncamere.gov.it/dataset";MOVIMPRESE="https://www.infocamere.it/movimprese"
+def get(u,timeout=120):
+ req=urllib.request.Request(u,headers={"User-Agent":UA,"Accept":"*/*","Accept-Language":"it-IT,it;q=0.9"})
+ with urllib.request.urlopen(req,timeout=timeout) as r:return r.read(),r.geturl(),r.headers.get("Content-Type","")
+def clean(x):return re.sub(r"\s+"," ",str(x or "")).strip()
 def main():
-    og_raw,og_final,og_type,og_links=links(OPEN_GOV)
-    csvs=[]
-    for title,href in og_links:
-        h=href.lower()
-        if ".csv" in h or "download" in h:
-            if any(k in (title+" "+href).lower() for k in ("impres","demografia","startup","giovan","femmin","stranier")):
-                csvs.append({"title":title[:200],"url":href})
-    csvs=csvs[:20]
-
-    mv_raw,mv_final,mv_type,mv_links=links(MOVIMPRESE)
-    mv_candidates=[]
-    for title,href in mv_links:
-        text=(title+" "+href).lower()
-        if any(k in text for k in ("csv","scarica","download","movimprese")):
-            mv_candidates.append({"title":title[:200],"url":href})
-    mv_candidates=mv_candidates[:30]
-
-    validated=[]
-    for item in csvs + mv_candidates:
-        try:
-            p=probe_file(item["url"])
-            if p["bytes_sampled"]>0:
-                validated.append({**item,**p})
-        except Exception:
-            pass
-        if len(validated)>=8: break
-
-    if len(validated)<1:
-        raise RuntimeError("Unioncamere/InfoCamere: no downloadable public resources validated")
-
-    snapshot={
-      "source":"Unioncamere - InfoCamere",
-      "source_family":"Unioncamere - InfoCamere - Demografia d'impresa",
-      "open_government_url":og_final,
-      "movimprese_url":mv_final,
-      "validated_resource_count":len(validated),
-      "resources":validated,
-      "checked_at":datetime.now(timezone.utc).isoformat(),
-      "status":"feed",
-    }
-    OUT.write_text(json.dumps(snapshot,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-
-    root=json.loads(CATALOG.read_text(encoding="utf-8")) if CATALOG.exists() else {"sources":[]}
-    name="Unioncamere - InfoCamere - Demografia d'impresa"
-    src=next((x for x in root["sources"] if x.get("name")==name),None)
-    if src is None: src={}; root["sources"].append(src)
-    src.update({
-      "name":name,
-      "category":"IMPRESE_IT",
-      "topics":["IMPRESE","DEMOGRAFIA_IMPRESE","STARTUP","IMPRENDITORIA"],
-      "official":True,
-      "url":MOVIMPRESE,
-      "access_cost":"free",
-      "access_note":"Dati pubblici Unioncamere/InfoCamere e dataset Open Government; verificare la licenza del singolo dataset.",
-      "integration_status":"feed",
-      "feed_status":"Attiva · risorse pubbliche CSV/download validate automaticamente",
-      "notes":"Feed PULSE basato su Movimprese e Open Government Unioncamere per demografia d'impresa e dataset camerali.",
-      "level":"Nazionale, regionale, provinciale e comunale secondo dataset",
-      "frequency":"Trimestrale e secondo aggiornamento dataset",
-      "checked_at":snapshot["checked_at"],
-      "provides":[
-        {"area":"Imprese","series":"Nati-mortalità e consistenza delle imprese","description":"Movimprese / Registro Imprese.","latest_period":"","status":"latest_public"},
-        {"area":"Imprese","series":"Open data camerali su demografia e profili imprenditoriali","description":"Unioncamere Open Government.","latest_period":"","status":"latest_public"}
-      ]
-    })
-    CATALOG.write_text(json.dumps(root,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    print(json.dumps({"validated_resource_count":len(validated)},ensure_ascii=False))
-
-if __name__=="__main__": main()
+ raw,final,_=get(DATASETS);soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
+ pages=[];seen=set()
+ for a in soup.find_all("a",href=True):
+  href=urllib.parse.urljoin(final,a["href"]);title=clean(a.get_text(" ",strip=True))
+  if "/dataset/" in href and href.rstrip("/")!=DATASETS.rstrip("/") and href not in seen:
+   if any(k in title.lower() for k in ("impres","moviment","consistenza","iscrizioni","cessazioni")):
+    seen.add(href);pages.append({"title":title[:220],"url":href})
+ datasets=[];csvs=[]
+ for p in pages[:25]:
+  try:
+   b,u,_=get(p["url"]);ps=BeautifulSoup(b.decode("utf-8","ignore"),"html.parser");txt=clean(ps.get_text(" ",strip=True))
+   mod="";m=re.search(r"Data ultima modifica dataset:\s*(\d{1,2}/\d{1,2}/20\d{2})",txt,re.I)
+   if m:
+    d,mo,y=m.group(1).split("/");mod=f"{y}-{int(mo):02d}-{int(d):02d}"
+   dist=[]
+   for a in ps.find_all("a",href=True):
+    href=urllib.parse.urljoin(u,a["href"]);title=clean(a.get_text(" ",strip=True));low=(href+" "+title).lower()
+    if any(x in low for x in (".csv","download","scarica")):
+     try:
+      rb,ru,ct=get(href)
+      magic=rb[:300].decode("utf-8","ignore")
+      if len(rb)>20 and ("csv" in ct.lower() or ".csv" in ru.lower() or ";" in magic or "," in magic):
+       if "text/html" not in ct.lower():
+        item={"title":title[:180],"url":ru,"content_type":ct,"bytes":len(rb),"sha256":hashlib.sha256(rb).hexdigest()}
+        dist.append(item);csvs.append(item)
+     except:pass
+   if dist:datasets.append({"title":p["title"],"url":u,"modified":mod,"distributions":dist})
+  except:pass
+  if len(csvs)>=8:break
+ if not csvs:raise RuntimeError("Unioncamere Open Government: no true CSV distributions validated")
+ latest=max((d["modified"] for d in datasets if d["modified"]),default="")
+ snap={"source":"Unioncamere - InfoCamere","source_family":"Unioncamere - InfoCamere - Open Data imprese",
+ "dataset_count":len(datasets),"validated_csv_count":len(csvs),"datasets":datasets,"movimprese_url":MOVIMPRESE,
+ "latest_publication_date":latest,"checked_at":datetime.now(timezone.utc).isoformat(),"status":"feed"}
+ OUT.write_text(json.dumps(snap,ensure_ascii=False,indent=2)+"\n")
+ root=json.loads(CATALOG.read_text()) if CATALOG.exists() else {"sources":[]};name="Unioncamere - InfoCamere - Demografia d'impresa"
+ src=next((x for x in root["sources"] if x.get("name")==name),None)
+ if src is None:src={};root["sources"].append(src)
+ src.update({"name":name,"category":"IMPRESE_IT","topics":["IMPRESE","DEMOGRAFIA_IMPRESE","STARTUP","IMPRENDITORIA"],
+ "official":True,"url":DATASETS,"access_cost":"free","integration_status":"feed",
+ "feed_status":"Attiva · vere distribuzioni CSV Open Government validate","frequency":"Trimestrale e secondo dataset",
+ "latest_period":latest,"checked_at":snap["checked_at"]})
+ CATALOG.write_text(json.dumps(root,ensure_ascii=False,indent=2)+"\n")
+ print(json.dumps({"datasets":len(datasets),"csv":len(csvs),"latest":latest},ensure_ascii=False))
+if __name__=="__main__":main()
