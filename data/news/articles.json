@@ -1,4 +1,53 @@
 {
-  "generated_at": "2026-10-05T17:26:05.480756+00:00",
-  "articles": []
+  "generated_at": "2026-10-05T17:31:42.395222+00:00",
+  "articles": [
+    {
+      "id": "PULSE-CC3479F31D78B752",
+      "published_at": "2026-10-05T17:31:42.395222+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 84,
+      "public_source": {
+        "url": "https://www.legambiente.it/comunicati-stampa/tartarughe-marine-questanno-piu-lente-del-solito",
+        "domain": "legambiente.it",
+        "role": "primary_statistical_source",
+        "verification_method": "broad_primary_search",
+        "verification_score": 66
+      },
+      "discovery": {
+        "visible": false,
+        "role": "hidden_radar"
+      },
+      "period_reference": null,
+      "latest_source_update": null,
+      "headline": "Dati, nuovo dato per Italia: 2026 ",
+      "summary": "Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+      "statistical_claims": [
+        {
+          "raw_value": "358 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": true
+        },
+        {
+          "raw_value": "358 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": true
+        }
+      ],
+      "territories": [],
+      "chart_spec": {
+        "type": "auto",
+        "status": "requires_primary_series",
+        "reason": "candidate_contains_multiple_numeric_values"
+      },
+      "map_spec": null,
+      "editorial_status": "verified_primary_match",
+      "publication_status": "published"
+    }
+  ]
 }

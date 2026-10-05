@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-05T17:26:05.480756+00:00",
+  "generated_at": "2026-10-05T17:31:42.395222+00:00",
   "candidates": [
     {
       "radar": "Google News - statistiche Italia",
       "discovery_url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPQk9hWEtQcWpEUGNmYmFweVpVaDdCTlR1OUVodHpBS2ctY1FXNW41R0std2pQZ1Z4Q04tZ1B5bXhEUnBkNmh4MXpDZ2J3Y1JQdFZLdFFQYWdhTWlDV3VwX0RYWWpKeWo0c2VHU283c1N0UlV4OF9WTVRQQmZHSzdqQzY3SUw4bHM5OVBlZ0ZMeG9heG9hZVBieTFEaEZpbmJIWVRjRXowd0RoRVI5OWFTYWFhS1FGR2RYektjUElxSWhhSS0zcklrdUdRVWFWazZTUHpZ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Tartarughe marine, dopo il record un calo naturale: 358 nidi in Italia nel 2026 - Greenreport",
-      "detected_at": "2026-10-05T17:26:05.480756+00:00",
+      "detected_at": "2026-10-05T17:31:42.395222+00:00",
       "score_discovery": 59,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -16,14 +16,30 @@
       ],
       "official_links": [],
       "official_domain_hints": [],
-      "primary_resolution": null,
-      "status": "needs_primary_source"
+      "primary_resolution": {
+        "url": "https://www.legambiente.it/comunicati-stampa/tartarughe-marine-questanno-piu-lente-del-solito",
+        "domain": "legambiente.it",
+        "matched_numbers": [
+          "2026 ",
+          "2026 "
+        ],
+        "matched_keywords": [
+          "tartarughe",
+          "marine"
+        ],
+        "verification_score": 66,
+        "text_excerpt": "Tartarughe marine, quest’anno più lente del solito • Legambiente - Legambiente Home Comunicati stampa Tartarughe marine, quest’anno più lente del solito Natura e biodiversità # Biodiversità Tartarughe marine, quest’anno più lente del solito Legambiente 7 agosto 2026 Legambiente Ci battiamo per un mondo in cui ambiente, giustizia sociale e partecipazione camminano insieme. Siamo ovunque serva una voce in difesa del pianeta. E quella voce, il più delle volte, è anche la tua. Vedi gli articoli correlati Hai davvero a cuore l’ambiente? Aiutaci con una donazione! Chi dona a Legambiente compie un atto di generosità nel presente, che è anche un piccolo grande tassello di futuro. Fai una donazione Comunicati Correlati Comunicati stampa #Territorio Nuova Ecologia, il numero di ottobre In copertina la sfida di adattamento alla crisi climatica. Tra i contenuti chiave l’allarme sul futuro del progra",
+        "method": "broad_primary_search",
+        "search_domain": "legambiente.it"
+      },
+      "editorial_excluded": false,
+      "status": "primary_statistical_source_verified"
     },
     {
       "radar": "Google News - statistiche Italia",
       "discovery_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQbE9DTzJRMjR5TmxxbUJxdUxrUjlVU2FiMnNpdXVtYWkyQjVhNkljTHlRaWpVZ0p3bzdXZ2ZPNmZ0eXVZcDN4R2JjZEtsS0U0b0JRN0NhTmkydnhNMmFteV9IVEFmUkJUQzVWTF9NTGVnMURJN2pHYUwxRXJSdVQ3c2JWOWlhTE9RRXZtRTNpc2Rtc3g2aFE?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Scuola: rapporto, in Italia 9,1% classi supera tetto 30% alunni stranieri - Ore12",
-      "detected_at": "2026-10-05T17:26:05.480756+00:00",
+      "detected_at": "2026-10-05T17:31:42.395222+00:00",
       "score_discovery": 39,
       "topic": "ISTRUZIONE",
       "numbers_detected": [
@@ -35,13 +51,35 @@
       "official_links": [],
       "official_domain_hints": [],
       "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - statistiche Italia",
+      "discovery_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNcE1YMXVpaUFqaUtnUG5KU3o0SWNaNEVXT0daVmJUc28ybk1wMTZvSWRHdHVpc0lJTW1iU0tCZWJ4d01wNHRRXzVLQXVXelVRYTAtZnpXNmh3S2lPWUctN2VCSWtZUVVvc05oWUJOcVNsUUN6ZFd4NFNBSGFqbGlEOHJBM3J3Z1dMOFFKNXVVRTBWby1BdG50aFVfTkdkb2RWdmdpS0Z0TVBoMzdtdkVybkhWNGVkSzVkOG5RNUJB?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Italia-Turchia pronostico, quote e statistiche 4ª giornata Nations League 2026/27 - Oddschecker",
+      "detected_at": "2026-10-05T17:31:42.395222+00:00",
+      "score_discovery": 45,
+      "topic": "ALTRO",
+      "numbers_detected": [
+        "4",
+        "2026",
+        "27 ",
+        "4",
+        "2026",
+        "27 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": true,
       "status": "needs_primary_source"
     },
     {
       "radar": "Google News - statistiche Italia",
       "discovery_url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNNW91UEw3OFZEcWFtWFJIZDZaZ0tjVFhPRVd1SjhjajJLay13bV9QMFE2Tl9Ld0t4aE1UTnNlcFdaczhvNjZCbWE0eldXMGdHY09CcGI3YVpyaDROYUZ2U2RqQW85R2E2MTQ3NzE2VGphUE9WWjZoMEVGdEZzWDh5NFhXd2dBOXBnRkHSAYoBQVVfeXFMTTVvdVBMNzhWRHFhbVhSSGQ2WmdLY1RYT0VXdUo4Y2oyS2std21fUDBRNk5fS3dLeGhNVE5zZXBXWnM4bzY2Qm1hNHpXVzBnR2NPQnBiN2Facmg0TmFGdlNkakFvOUdhNjE0NzcxNlRqYVBPVlo2aDBFRnRGc1g4eTRYV3dnQTlwZ0ZB?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Istat, pressione fiscale record in Italia: è al 43,5% - IlSipontino.net",
-      "detected_at": "2026-10-05T17:26:05.480756+00:00",
+      "detected_at": "2026-10-05T17:31:42.395222+00:00",
       "score_discovery": 37,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -51,13 +89,14 @@
       "official_links": [],
       "official_domain_hints": [],
       "primary_resolution": null,
+      "editorial_excluded": false,
       "status": "needs_primary_source"
     },
     {
       "radar": "Google News - statistiche Italia",
       "discovery_url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNQ2dja1VkSG1VaU5PNEYwZU1GQmI2cjJLUlpQeFFJVDBtVHdsU201M0czX1lEdmdxX0RzTFR2WU9RRXVwUmhXdWpkS0hrV2VaWkd3aUcxbHhlZ0Y5YzhfZDdRR0p1MkVIY3Y2N2d4ZWwyamNYWnlGSy1aTVhnd212em1wQXR4aU1jVm4yUU5MOU5tSl83OUF3?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Istat pressione fiscale record in Italia | è al 43,5% - Zazoom Social News",
-      "detected_at": "2026-10-05T17:26:05.480756+00:00",
+      "detected_at": "2026-10-05T17:31:42.395222+00:00",
       "score_discovery": 37,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -67,13 +106,14 @@
       "official_links": [],
       "official_domain_hints": [],
       "primary_resolution": null,
+      "editorial_excluded": false,
       "status": "needs_primary_source"
     },
     {
       "radar": "Google News - economia lavoro",
       "discovery_url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNRnFucDJUdWw2TzhNd1Zqb3pib1NxX3lZZU9vX25TVVNkZTZtWk1uRlZvMEZDTnQ3RnJMV19Dc0RFM0U4QW1rWktwaElmZDdYTjVmd1ZtTjBWXzJFanRXQXFkbkJfYkdybERkd05yQlZNS0JMZWpKLTN2MmxUYXdzUUpMVFVCemFYZnVENzYyZVhkSXFXa1hZSW5HaWdHcDZCLXhZRjJobE9fZmV4MEpqOGRvdEVjT1RBbjNWZEItRnZsMlNpemZzNTNtRjJtU2Q2WG9R?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Imprese, Salone Franchising Milano, 39 miliardi di euro e +8% mentre l'economia frena - adnkronos.com",
-      "detected_at": "2026-10-05T17:26:05.480756+00:00",
+      "discovery_title": "Imprese, Salone Franchising Milano, 39 miliardi di euro e +8% mentre l'economia frena - Adnkronos",
+      "detected_at": "2026-10-05T17:31:42.395222+00:00",
       "score_discovery": 44,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -85,13 +125,35 @@
       "official_links": [],
       "official_domain_hints": [],
       "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - economia lavoro",
+      "discovery_url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPcG5HMjd4Zk0zQnFiOVBOMGd0M3ZGeUVJYXdJc0JqcGo0Vy0zd2JrYzVJUkYtdkpuNUdZY2wwVlZza0hEQzZNTGRxZGFGVTNtTmdkeU9mN0ZOeDc0OWUtMHk3UXB1OGl4QmVvWjNsaUdCWGNNc2k1aHdINGE3REpSNEI4MVdEZ0tqQS1LSTNLTQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Giacomo Coppi (Sap) sarà a Industria Italiana Summit 2026 (24-26 novembre) - Industria Italiana",
+      "detected_at": "2026-10-05T17:31:42.395222+00:00",
+      "score_discovery": 40,
+      "topic": "ALTRO",
+      "numbers_detected": [
+        "2026 ",
+        "24",
+        "26 ",
+        "2026 ",
+        "24",
+        "26 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
       "status": "needs_primary_source"
     },
     {
       "radar": "Google News - economia lavoro",
       "discovery_url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxOaEE4cTlRb19NSTE2S3cweXRpalJIYThpTDBaUml6STF3QjF5dHE1VTlQMW5RRmpzNWIyWU8wX2FUWHJfZFFSeGlYTkQ2OGNGVmR2QjNmZ0pHT3lCcl8tTGh0QkNSUFVXZEEwcU9uRGlyNDNibWR6MHZfa1pFaFBJbkV4SlFkdE1jTXJrZy1tY09WbEhWdTFKRG8zTkxONjdhN0t2dFg2dnJLTC1ScFlTUkZRaXh2d3J3TENFRXBNZWJ3S1JTZDBwaVRORmRNdE9FTWw5SldVbFkyMllEa0VCRV9OTk93ZWFUa3lsSFkwREUtQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "In Italia è record storico di occupati: 24 milioni – Ma il Paese è all’ultimo posto in UE per tasso di occupazione. I dati contrastanti - TorinoNews24",
-      "detected_at": "2026-10-05T17:26:05.480756+00:00",
+      "detected_at": "2026-10-05T17:31:42.395222+00:00",
       "score_discovery": 57,
       "topic": "LAVORO",
       "numbers_detected": [
@@ -101,13 +163,14 @@
       "official_links": [],
       "official_domain_hints": [],
       "primary_resolution": null,
+      "editorial_excluded": false,
       "status": "needs_primary_source"
     },
     {
       "radar": "Google News - economia lavoro",
       "discovery_url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNY1lobVZtZFhFc2Zvd2hvYldUVjJhbHZwWFlybFMxMGFleWRPQ2VtTERLZGEzYmFuZ1BNU3lfYm9OMzRhaXRKa2pFRzhZSjlYYVZpb1NwVnZ6NXdLV0xCOTVyZGZMN1liLWZfQUlwNHJjXy1fX1BSRXFYSWtUZEJIeVRmWG5kcGluUlpONGxZVnNfdXJRY0NtOTNUZkNRS1h6OWNrQkxLbWdYbEQ0d1RoRVNPRWI1UGY3WkJKbDNqMmp4UWk1WmlNdUoySG8wNE1YQ3VEeWVfMnlEMDJRSVFZZVRwWkttdWszZGx0akZlS2RrNTY4TTZiTEI0eHRoeEpDenlB?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Colombo (CRIF): \"Nel 2025 abbiamo avuto 38.000 furti di identità, in crescita del 24% rispetto all'anno precedente\" - Il Giornale d'Italia",
-      "detected_at": "2026-10-05T17:26:05.480756+00:00",
+      "detected_at": "2026-10-05T17:31:42.395222+00:00",
       "score_discovery": 50,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -121,13 +184,14 @@
       "official_links": [],
       "official_domain_hints": [],
       "primary_resolution": null,
+      "editorial_excluded": false,
       "status": "needs_primary_source"
     },
     {
       "radar": "Google News - economia lavoro",
       "discovery_url": "https://news.google.com/rss/articles/CBMiyAJBVV95cUxNeUhjN2FHZkRPcV9FZ3FqdEptZ3lGZWd5WDNfWlh0N0ZjX3VfNzhvSl9rU1NUYkdaTE5UNUhpdERHRERSOV9kWjFiY3dOVUpoYjlqVTZBNkJJSllaalN3czBoR25MV3dXT1RUVUhKM3hLLVFDWFlZbGxOYXFTeC1wM0piWGd2bk9hYXphUmhrYnhnYnhDTUtTN1h0bHRtOUxQekxZbGt5c2FSWkFFaUprdU5lSml3b29LX2stNmdEdHdLRmstWXF0YkZHckVKejI3SHFBQi1VQ3A0Mk5RQUpaQld3bmJzeVN3Z09OYVdadl9jbkFKalNPZDQzWTRWZGY0VGJoU1QyYnVId1FvaXdDUzI1VW1adUpPcWtqUk1LVUVTdEtFeEY5RmFhYUNWc3BRWURuX0trLU8zd3FvY2xQa21BWWFOenJL?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Turismo nautico in Italia vale 5,7 mld: i superyacht generano il 42% dell’impatto economico, ma hanno il 2% dei posti barca - Report di Confindustria nautica e Deloitte - Il Giornale d'Italia",
-      "detected_at": "2026-10-05T17:26:05.480756+00:00",
+      "detected_at": "2026-10-05T17:31:42.395222+00:00",
       "score_discovery": 35,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -141,13 +205,14 @@
       "official_links": [],
       "official_domain_hints": [],
       "primary_resolution": null,
+      "editorial_excluded": false,
       "status": "needs_primary_source"
     },
     {
       "radar": "Google News - salute scuola ambiente",
       "discovery_url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOLTRWdmxzMk1fNWVNb0hLdkk4dkYwSUt6SUt4bzlILUo0MElLRWt0LWM3bkpDSDV6NjNhdG9HbWRVVm5zdzFUalB3dExtbXhtSEp1ekluWWQ4T05SSkFrZWU2Y0xnczJ4Y0RYRkxLaVAwY2ZVUGFUVEpadkN0WDlRX05qZ3VNakVKdFV5WXNoRmVOajM5Skk4SW8yMTBDb1pHQy0wTjdERkk4TzdzT2lNNXZYMUhtdVk4NHhzZWUyQkEtSEU2SGRzb0cyQVA?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Rapporto Ecomafia di Legambiente: in Veneto 1.186 reati ambientali accertati nel 2025 - www.lavitadelpopolo.it",
-      "detected_at": "2026-10-05T17:26:05.480756+00:00",
+      "detected_at": "2026-10-05T17:31:42.395222+00:00",
       "score_discovery": 44,
       "topic": "AMBIENTE",
       "numbers_detected": [
@@ -159,13 +224,77 @@
       "official_links": [],
       "official_domain_hints": [],
       "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - salute scuola ambiente",
+      "discovery_url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPRDNaOVV2WjZjNFB0UHJ4ZmtwdUItOFZJY3pYdENqNXVRVDNrbnpiZjBYZFBlUUt6aGhCclQxdFR5cUtnRzhVekJ2VTB6aWtUU1BjNGRfbEhyWXZfV0lheEFVMmtzS0lyaEVUSk1GLTdmUXBQanNBdHZ2LTlmRHl0TUlwQ0NUUHR4azRPWWdzeWtaLU1wbUNVSGV3YjhGQmhFdGRGT1M2ZXJVMEZUN3k0aTVVak80OVp1WEZlT0Fmdk1NSDdfRmVKeE93M3N0UQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Decreto Scuola, dal 2027/28 limite del 30% per gli alunni stranieri. UIL Scuola: “Servono più docenti di italiano L2, mediatori e organici stabili” - Ascuolaoggi",
+      "detected_at": "2026-10-05T17:31:42.395222+00:00",
+      "score_discovery": 55,
+      "topic": "ISTRUZIONE",
+      "numbers_detected": [
+        "2027",
+        "28 ",
+        "30%",
+        "2027",
+        "28 ",
+        "30%"
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": true,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - salute scuola ambiente",
+      "discovery_url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOZ0wwWnUtWklwV01hc1F2VjRuTVNTS0hnS3ZzaU9IYmdoMVA0MkRLWExSMWliVk9mNWJUNjNsczR1VTNwbHAyZ04wc202ZFRkbWxlc3dRbmUyeG8zT25LcklncGFKSXVLRkZpU3N5UG16eThDQjVWRWdTQlRIbUljdExiMmVINTdzMGlqMERPU0FiZF9feVNvRkNkbDRqUm9TQ09uTWt4NlJsQ2hEV1c0cDZIY2tNcGJxVHZOa19TM2dkNG82bk13OHl3bnozTFF2dHR3Umh0Q3hjdnJyWHk1YmdB0gHnAUFVX3lxTE9iR2RsWFFMNldvUXBwN2gxZEdkeE1Yd0htUU9tYTBnUVRjcjZkeVlfNUFiU0hROVRpY1hTNWpzZm9VSm5JTkFZZHVzazFJNV9JaE9QbmxIVzdRNjl2Rnk3VVk5WVByUVV2MmlkTTFHb21FV3FwVWVvUjBPMnJmLTBNSEtaRzBnUDh4bDJOdHpCN3doUVdJRVBwaGQyV0ViY1hxWGdjWElEWkVUMEx5MGdtVHFORVZYYXliTHFvNVdpYnZzeXNlTEtGalhCYUgzT0JHLW5hU1hwaXNKY2NXandrcVgwUmdjZw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Arte bianca, salute e sostenibilità: da venerdì 9 a domenica 11 ottobre il Foro Annonario di Senigallia ospita Pane Nostrum 2026 - corriereadriatico.it",
+      "detected_at": "2026-10-05T17:31:42.395222+00:00",
+      "score_discovery": 45,
+      "topic": "SALUTE",
+      "numbers_detected": [
+        "9 ",
+        "11 ",
+        "2026 ",
+        "9 ",
+        "11 ",
+        "2026 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": true,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - salute scuola ambiente",
+      "discovery_url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQcWhEaUdvSkU4Q3hScWtqOUpzbWFJbXF5VUgzRU9EVlJBUzZ4ektTb3g5eER1LVM0RU1xdjRqbFZuVkFQcDZvZmM1UkN4RnF2UU9zcGtreVNKSWVnWGhKTjF5X1FYTU5qZFd0VUZUWFZCNnFxNWY1RTFucFA1SDVaLWZoUGhwWEpsLWpjcndTbmNrSHBCam9ySG95TmVuVENCSndBVTZsRjJwVUVtenJOa0g5V0tLWi1YeUtCVjdVSWVrMVE2RUZYNkh2N1EtODV6QXZOTUtwN1BwWjhB?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Violenza sul lavoro in sanità: 68,1% ha assistito ad aggressioni verbali e 1 su 6 subisce svalutazione - My-personaltrainer",
+      "detected_at": "2026-10-05T17:31:42.395222+00:00",
+      "score_discovery": 40,
+      "topic": "LAVORO",
+      "numbers_detected": [
+        "68,1%",
+        "1 ",
+        "6 ",
+        "68,1%",
+        "1 ",
+        "6 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
       "status": "needs_primary_source"
     },
     {
       "radar": "Repubblica Economia",
       "discovery_url": "https://www.repubblica.it/economia/rapporti/energitalia/storie/2026/10/05/news/edison_energia_tre_acquisizioni_per_crescere_nell_efficienza_energetica-425627746/?rss",
       "discovery_title": "Edison Energia, tre acquisizioni per crescere nell’efficienza energetica",
-      "detected_at": "2026-10-05T17:26:05.480756+00:00",
+      "detected_at": "2026-10-05T17:31:42.395222+00:00",
       "score_discovery": 54,
       "topic": "LAVORO",
       "numbers_detected": [
@@ -177,13 +306,14 @@
       "official_links": [],
       "official_domain_hints": [],
       "primary_resolution": null,
+      "editorial_excluded": false,
       "status": "needs_primary_source"
     },
     {
       "radar": "Repubblica Economia",
       "discovery_url": "https://www.repubblica.it/economia/rapporti/energitalia/sostenibilita/2026/10/05/news/rifiuti_industriali_mercato_verso_55_miliardi_di_euro_ma_gli_impianti_non_bastano-425627464/?rss",
       "discovery_title": "Rifiuti industriali, mercato verso 5,5 miliardi di euro ma gli impianti non bastano",
-      "detected_at": "2026-10-05T17:26:05.480756+00:00",
+      "detected_at": "2026-10-05T17:31:42.395222+00:00",
       "score_discovery": 48,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -196,13 +326,14 @@
         "aci.it"
       ],
       "primary_resolution": null,
+      "editorial_excluded": false,
       "status": "needs_primary_source"
     },
     {
       "radar": "Repubblica Economia",
       "discovery_url": "https://www.repubblica.it/economia/2026/10/05/news/multa_iqvia_solutions_dati_pazienti_privacy_garante-425627059/?rss",
       "discovery_title": "I dati di un milione di pazienti usati per gli studi clinici: maxi-sanzione del Garante privacy",
-      "detected_at": "2026-10-05T17:26:05.480756+00:00",
+      "detected_at": "2026-10-05T17:31:42.395222+00:00",
       "score_discovery": 36,
       "topic": "LAVORO",
       "numbers_detected": [
@@ -211,6 +342,7 @@
       "official_links": [],
       "official_domain_hints": [],
       "primary_resolution": null,
+      "editorial_excluded": false,
       "status": "needs_primary_source"
     }
   ]
