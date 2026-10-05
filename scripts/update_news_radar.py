@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import hashlib, html, json, re, time, urllib.parse, urllib.request
+import hashlib, html, io, json, re, time, urllib.parse, urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -133,21 +133,76 @@ def ddg_search(query, limit=6):
     except Exception:
         return []
 
+
+def bing_search(query, limit=8):
+    url="https://www.bing.com/search?"+urllib.parse.urlencode({"q":query,"format":"rss","setlang":"it-IT"})
+    try:
+        raw,_,_=fetch(url,timeout=20,max_bytes=700000)
+        root=ET.fromstring(raw)
+        out=[]
+        for item in root.findall(".//item"):
+            link=(item.findtext("link") or "").strip()
+            title=(item.findtext("title") or "").strip()
+            if link:
+                out.append({"url":link,"title":title})
+            if len(out)>=limit: break
+        return out
+    except Exception:
+        return []
+
+def multi_search(query, limit=10):
+    out=[]; seen=set()
+    for provider in (bing_search,ddg_search):
+        for r in provider(query,limit=limit):
+            u=r.get("url")
+            if u and u not in seen:
+                seen.add(u); out.append(r)
+            if len(out)>=limit: return out
+    return out
+
+def extract_document_text(raw, content_type, url):
+    ct=(content_type or "").lower()
+    if "pdf" in ct or url.lower().split("?")[0].endswith(".pdf"):
+        try:
+            from pypdf import PdfReader
+            reader=PdfReader(io.BytesIO(raw))
+            parts=[]
+            for page in reader.pages[:25]:
+                try: parts.append(page.extract_text() or "")
+                except: pass
+            return re.sub(r"\s+"," "," ".join(parts))[:120000]
+        except Exception:
+            return ""
+    try:
+        return clean_text(raw.decode("utf-8","ignore"))[:120000]
+    except Exception:
+        return ""
+
+
+def numeric_variants(token):
+    raw=(token or "").lower().strip()
+    core=normalize_number_token(raw)
+    if not core: return []
+    vars={core,core.replace(",", "."),core.replace(".", ",")}
+    # thousands separators: 38.000 <-> 38000
+    if re.fullmatch(r"\d{1,3}\.\d{3}",core): vars.add(core.replace(".",""))
+    if re.fullmatch(r"\d{1,3},\d{3}",core): vars.add(core.replace(",",""))
+    return [v for v in vars if v]
+
 def verify_primary_page(url, numbers, keywords, allowed_domains):
     host=canonical_host(url)
     dom=official_domain(host,allowed_domains)
     if not dom: return None
     try:
-        raw,final,ct=fetch(url,timeout=20,max_bytes=900000)
-        if "html" not in ct.lower() and "text" not in ct.lower() and "json" not in ct.lower():
-            return None
-        text=clean_text(raw.decode("utf-8","ignore"))[:60000]
+        raw,final,ct=fetch(url,timeout=25,max_bytes=6000000)
+        text=extract_document_text(raw,ct,final)
+        if not text: return None
         low=text.lower()
         matched_numbers=[]
         matched_non_year_numbers=[]
         for n in numbers:
             nn=normalize_number_token(n)
-            if len(nn)>=1 and (nn in low or nn.replace(",",".") in low or nn.replace(".",",") in low):
+            if len(nn)>=1 and any(v in low for v in numeric_variants(n)):
                 matched_numbers.append(n)
                 if not re.fullmatch(r"20\d{2}", nn):
                     matched_non_year_numbers.append(n)
@@ -204,6 +259,7 @@ def semantic_key(title, topic, numbers):
 
 def resolve_primary(discovery_title, discovery_text, topic, numbers, direct_links, hint_domains, cfg):
     institutional=cfg.get("official_domains",[])
+    attempts=[]
     named_domains=extract_named_primary_domains(discovery_title+" "+discovery_text[:5000])
     allowed=list(dict.fromkeys(institutional+named_domains))
     kws=title_keywords(discovery_title+" "+discovery_text[:1800])
@@ -212,7 +268,7 @@ def resolve_primary(discovery_title, discovery_text, topic, numbers, direct_link
     for u in direct_links:
         v=verify_primary_page(u,numbers,kws,allowed)
         if v:
-            v["method"]="direct_primary_link"; return v
+            v["method"]="direct_primary_link"; v["attempts"]=attempts; return v
 
     # 2) Search sources explicitly named in title/body, then likely topic domains.
     candidates=[]
@@ -228,10 +284,12 @@ def resolve_primary(discovery_title, discovery_text, topic, numbers, direct_link
           f'site:{dom} "{discovery_title[:110]}"'.strip()
         ]
         for query in queries:
-            for rr in ddg_search(query,limit=5):
+            results=multi_search(query,limit=8)
+            attempts.append({"stage":"domain_search","domain":dom,"query":query,"results":len(results)})
+            for rr in results:
                 v=verify_primary_page(rr["url"],numbers,kws,local_allowed)
                 if v:
-                    v["method"]="named_or_topic_domain_search"; v["search_domain"]=dom; return v
+                    v["method"]="named_or_topic_domain_search"; v["search_domain"]=dom; v["attempts"]=attempts; return v
 
     # 3) Broad web search: find the producer/report even when the newspaper gives no link.
     broad_queries=[
@@ -240,7 +298,9 @@ def resolve_primary(discovery_title, discovery_text, topic, numbers, direct_link
       f'{qwords} {nums}'
     ]
     for query in broad_queries:
-        for rr in ddg_search(query,limit=10):
+        results=multi_search(query,limit=12)
+        attempts.append({"stage":"broad_search","query":query,"results":len(results)})
+        for rr in results:
             host=canonical_host(rr["url"])
             if not host: continue
             # Do not use the news discovery page itself as primary.
@@ -249,7 +309,7 @@ def resolve_primary(discovery_title, discovery_text, topic, numbers, direct_link
             dynamic_allowed=list(dict.fromkeys(allowed+[host]))
             v=verify_primary_page(rr["url"],numbers,kws,dynamic_allowed)
             if v:
-                v["method"]="broad_primary_search"; v["search_domain"]=host; return v
+                v["method"]="broad_primary_search"; v["search_domain"]=host; v["attempts"]=attempts; return v
     return None
 
 
