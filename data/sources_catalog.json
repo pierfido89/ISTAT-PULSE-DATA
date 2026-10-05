@@ -5286,12 +5286,12 @@
       "url": "https://www1.agenziaentrate.gov.it/servizi/geopoi_omi/index.htm",
       "access_cost": "free",
       "integration_status": "feed",
-      "feed_status": "Attiva · quotazioni OMI e pubblicazioni trimestrali monitorate automaticamente",
-      "notes": "Feed pubblico su quotazioni semestrali OMI e statistiche trimestrali del mercato immobiliare.",
-      "level": "Nazionale, provinciale, comunale e zona OMI",
-      "frequency": "Semestrale e trimestrale",
-      "latest_period": "",
-      "checked_at": "2026-10-05T10:26:08.674739+00:00"
+      "feed_status": "Attiva · statistiche trimestrali OMI monitorate; quotazioni via servizio interattivo ufficiale",
+      "notes": "Feed automatico sulle statistiche trimestrali OMI. Le quotazioni semestrali restano consultate dal servizio Geopoi e non vengono dichiarate machine-feed finché il semestre non è esposto strutturalmente.",
+      "level": "Nazionale, territoriale e zone OMI",
+      "frequency": "Trimestrale; quotazioni semestrali",
+      "latest_period": "2026-Q2",
+      "checked_at": "2026-10-05T10:30:29.003195+00:00"
     }
   ]
 }

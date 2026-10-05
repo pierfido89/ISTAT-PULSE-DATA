@@ -1,11 +1,13 @@
 {
   "source": "Agenzia delle Entrate - OMI",
+  "source_family": "Agenzia Entrate - OMI",
   "quote_service": "https://www1.agenziaentrate.gov.it/servizi/geopoi_omi/index.htm",
-  "latest_semester": "",
+  "quotes_mode": "interactive_service",
+  "quarterly_latest_period": "2026-Q2",
   "quarterly_mentions": [
-    "Statistiche trimestrali Omi Online le statistiche dell’Osservatorio del mercato immobiliare (Omi) con i dati sulle compravendite nel settore residenziale, non residenziale e dei terreni nel secondo trimestre del 2026. Le pubblicazioni riportano una sintesi dell’andamento degli scambi, con dettagli per aree, capoluoghi e grandi città e forniscono informazioni sull’accesso al credito, sugli acquisti con agevolazione “prima casa”, sulle locazioni e sulle principali dinamiche che caratterizzano il m"
+    "Statistiche trimestrali Omi Online le statistiche dell’Osservatorio del mercato immobiliare (Omi) con i dati sulle compravendite nel settore residenziale, non residenziale e dei terreni nel secondo trimestre del 2026. Le pubblicazioni riportano una sintesi dell’andamento degli scambi, con dettagli per aree, capoluoghi e grandi città e forniscono informazioni sull’accesso al credito, sugli acquisti con agevolazione “prima casa”, sulle locazioni e sulle principali dinamiche che caratterizzano il mercato nazionale. Statistiche trimestrali OMI – II semestre Comunicato stampa 10/08/26 Concorso pubblico per 2700 funzionari – Assunzione di idonei Selezione pubblica per l’assunzione a tempo indeterm"
   ],
-  "checked_at": "2026-10-05T10:26:08.674739+00:00",
+  "checked_at": "2026-10-05T10:30:29.003195+00:00",
   "quote_page_sha256": "5b574b71dea4442e529da1aa1675dc76abde8ef45a143f2137a74b78492d544a",
   "status": "feed"
 }
