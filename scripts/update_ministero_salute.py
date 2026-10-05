@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import hashlib,json,subprocess,tempfile,os
+import hashlib,json,requests
 from datetime import datetime,timezone,timedelta
 from pathlib import Path
 
@@ -9,17 +9,11 @@ UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/154 Safari/537.36"
 BASE="https://www.dati.salute.gov.it/sites/default/files/opendata/"
 
 def curl_probe(url):
-    fd,path=tempfile.mkstemp();os.close(fd)
-    try:
-        cmd=["curl","-L","--fail","--silent","--show-error","--max-time","35","--http1.1","--tlsv1.2",
-             "-A",UA,"-H","Range: bytes=0-131071","-o",path,url]
-        subprocess.run(cmd,check=True,timeout=40)
-        b=Path(path).read_bytes()[:131072]
-        if len(b)<50: raise RuntimeError("empty")
-        return b,url
-    finally:
-        try: os.unlink(path)
-        except: pass
+    r=requests.get(url,headers={"User-Agent":UA,"Accept":"*/*"},timeout=45,stream=True,allow_redirects=True)
+    r.raise_for_status()
+    chunk=next(r.iter_content(chunk_size=131072),b"")
+    if len(chunk)<50 or chunk.lstrip().startswith(b"<"): raise RuntimeError("invalid file")
+    return chunk,r.url
 
 def discover(pattern):
     today=datetime.now(timezone.utc).date()
