@@ -1,0 +1,82 @@
+{
+  "source": "AIFA - OsMed",
+  "source_family": "AIFA OsMed - consumi e spesa farmaci",
+  "latest_update": "2026-08-06",
+  "validated_file_count": 9,
+  "files": [
+    {
+      "year": 2014,
+      "title": "Download",
+      "url": "https://www.aifa.gov.it/documents/20142/847578/dati2016_100519.csv/c6e2e4d7-2663-92ad-6554-c3668e581b2d",
+      "content_type": "text/csv",
+      "probe_bytes": 131072,
+      "sha256": "2db4d2a31904991e73373022c29077a5993cd4a0a9cd0784809005cf29b042cd"
+    },
+    {
+      "year": 2014,
+      "title": "Download",
+      "url": "https://www.aifa.gov.it/documents/20142/847578/dati2017_100519.csv/f4db1267-05c1-b65c-7a04-11633ff0a215",
+      "content_type": "text/csv",
+      "probe_bytes": 131072,
+      "sha256": "220fc0d82459655ffb97a6dcf4c564f5cedbd94b721dd0f799c314cf082d4002"
+    },
+    {
+      "year": 2014,
+      "title": "Download",
+      "url": "https://www.aifa.gov.it/documents/20142/847578/dati2018_23.09.2020.csv",
+      "content_type": "text/csv",
+      "probe_bytes": 131072,
+      "sha256": "fe0d7f67339477970a294bb526f9b22b5ab133431bba41385866eacfc7d89910"
+    },
+    {
+      "year": 2014,
+      "title": "Download",
+      "url": "https://www.aifa.gov.it/documents/20142/847578/dati2019_23.09.2020.csv",
+      "content_type": "text/csv",
+      "probe_bytes": 131072,
+      "sha256": "a9f0d479d6578cc8d8cce53b0fdf6ab9d135512c7fe33ae7b3d51794cdd87b09"
+    },
+    {
+      "year": 2014,
+      "title": "Download",
+      "url": "https://www.aifa.gov.it/documents/20142/847578/dati2020_22.10.2021.csv",
+      "content_type": "text/csv",
+      "probe_bytes": 131072,
+      "sha256": "325654b1d147408b12a4230f7285bcf1546b7d04ea4db00fdaa9432ba22c8730"
+    },
+    {
+      "year": 2014,
+      "title": "Download",
+      "url": "https://www.aifa.gov.it/documents/20142/847578/dati2021_24.10.2022.csv",
+      "content_type": "text/csv",
+      "probe_bytes": 131072,
+      "sha256": "7474b53b37c60fe5dab015b67870b15d5df215aa092d000d1bbc135f91ab880a"
+    },
+    {
+      "year": 2014,
+      "title": "Download",
+      "url": "https://www.aifa.gov.it/documents/20142/847578/dati2022_07.02.2024.csv",
+      "content_type": "text/csv",
+      "probe_bytes": 131072,
+      "sha256": "3db811ec5caecafcba97472d45b707d16980445824635ee43cc9a2faa0836ace"
+    },
+    {
+      "year": 2014,
+      "title": "Download",
+      "url": "https://www.aifa.gov.it/documents/20142/847578/dati2023_15.01.2025.csv",
+      "content_type": "text/csv",
+      "probe_bytes": 131072,
+      "sha256": "daf4176c85df1b16c4f2038bbe5ec2246f3c92411c16bb534b0a3ae75ab6b44f"
+    },
+    {
+      "year": 2014,
+      "title": "Download",
+      "url": "https://www.aifa.gov.it/documents/20142/847578/dati2024_04.12.2025.csv",
+      "content_type": "text/csv",
+      "probe_bytes": 131072,
+      "sha256": "8950a97ca58afdce1a45866c1bd09a520cefc2e0845781cb93826ac56b1b4a29"
+    }
+  ],
+  "checked_at": "2026-10-05T13:42:24.537066+00:00",
+  "status": "feed"
+}

@@ -5273,6 +5273,24 @@
           "status": "latest_public"
         }
       ]
+    },
+    {
+      "name": "AIFA - OsMed",
+      "category": "FARMACI_IT",
+      "topics": [
+        "FARMACI",
+        "SPESA_FARMACEUTICA",
+        "CONSUMI",
+        "ATC"
+      ],
+      "official": true,
+      "url": "https://www.aifa.gov.it/it/spesa-e-consumo-relativi-al-flusso-della-farmaceutica-convenzionata-e-degli-acquisti-diretti",
+      "access_cost": "free",
+      "integration_status": "feed",
+      "feed_status": "Attiva · CSV OsMed validati",
+      "frequency": "Annuale e monitoraggi periodici",
+      "latest_period": "2026-08-06",
+      "checked_at": "2026-10-05T13:42:24.537066+00:00"
     }
   ]
 }
