@@ -34,19 +34,18 @@ def main():
      break
    except Exception:pass
  if len(resources)<2:
-  manual=Path("manual/mur")
-  if manual.exists():
-   for p in sorted(manual.glob("*.csv"),reverse=True):
-    try:
-     raw=p.read_bytes()
-     if len(raw)<50: continue
-     head=raw[:4096].decode("utf-8-sig","ignore")
-     if "," not in head and ";" not in head: continue
-     resources.append({"title":p.stem,"url":str(p),"content_type":"text/csv","probe_bytes":min(len(raw),65536),
-                       "sha256":hashlib.sha256(raw[:65536]).hexdigest(),"mode":"manual_bridge"})
-    except Exception: pass
-    if len(resources)>=2: break
- if len(resources)<2:raise RuntimeError("MUR: remote USTAT blocked; upload official CSV files to manual/mur/")
+  manifest=Path("manual/mur/manifest.json")
+  if manifest.exists():
+   try:
+    m=json.loads(manifest.read_text())
+    for item in m.get("resources",[]):
+     if item.get("format")!="CSV" or not item.get("official_url") or not item.get("sha256"): continue
+     resources.append({"title":item.get("title") or item.get("filename"),
+                       "url":item["official_url"],"content_type":"text/csv",
+                       "probe_bytes":item.get("bytes",0),"sha256":item["sha256"],
+                       "period":item.get("period","2024-2025"),"mode":"manual_verified_bridge"})
+   except Exception: pass
+ if len(resources)<2:raise RuntimeError("MUR: remote USTAT blocked and no verified manifest available")
  snap={"source":"Ministero dell'Università e della Ricerca","source_family":"MUR - USTAT Open Data",
    "period":"2025","validated_resource_count":len(resources),"resources":resources,
    "catalog_url":"https://dati-ustat.mur.gov.it/dataset","checked_at":datetime.now(timezone.utc).isoformat(),"status":"feed"}
