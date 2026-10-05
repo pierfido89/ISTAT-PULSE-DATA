@@ -1,0 +1,16 @@
+{
+  "source": "ANAC",
+  "source_family": "ANAC - BDNCP Open Data",
+  "validated_resource_count": 1,
+  "resources": [
+    {
+      "title": "Open Data Anac",
+      "url": "https://www.anticorruzione.it/-/portale-dei-dati-aperti-dell-autorit%C3%A0-nazionale-anticorruzione#p2",
+      "bytes": 169298,
+      "content_type": "text/html;charset=UTF-8",
+      "sha256": "a08278abc7638608648a2c8abaaab8527d42f2e4f6c9bce7069a4246b779dda1"
+    }
+  ],
+  "checked_at": "2026-10-05T10:26:16.027242+00:00",
+  "status": "feed"
+}

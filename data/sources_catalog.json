@@ -5273,6 +5273,23 @@
           "status": "latest_public"
         }
       ]
+    },
+    {
+      "name": "ANAC - BDNCP Open Data",
+      "category": "CONTRATTI_PUBBLICI_IT",
+      "topics": [
+        "APPALTI",
+        "CONTRATTI_PUBBLICI",
+        "AGGIUDICAZIONI"
+      ],
+      "official": true,
+      "url": "https://www.anticorruzione.it/-/portale-dei-dati-aperti-dell-autorit%C3%A0-nazionale-anticorruzione",
+      "access_cost": "free",
+      "integration_status": "feed",
+      "feed_status": "Attiva · dataset BDNCP CSV/JSON monitorati automaticamente",
+      "frequency": "Mensile",
+      "level": "Nazionale, stazione appaltante e procedura",
+      "checked_at": "2026-10-05T10:26:16.027242+00:00"
     }
   ]
 }
