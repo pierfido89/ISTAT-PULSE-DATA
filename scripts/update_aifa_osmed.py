@@ -29,7 +29,7 @@ def main():
    b,u,ct=get(h,True)
    if len(b)>50 and "text/html" not in ct.lower():
     yr=re.search(r"20\d{2}",lab+" "+u)
-    files.append({"year":int(yr.group()) if yr else None,"title":lab,"url":u,"content_type":ct,"probe_bytes":len(b),"sha256":hashlib.sha256(b).hexdigest()})
+    files.append({"year":int(yr.group(1)) if yr else None,"title":lab,"url":u,"content_type":ct,"probe_bytes":len(b),"sha256":hashlib.sha256(b).hexdigest()})
   except: pass
  if len(files)<3: raise RuntimeError("AIFA OsMed: insufficient CSV files")
  snap={"source":"AIFA - OsMed","source_family":"AIFA OsMed - consumi e spesa farmaci","latest_update":upd,"validated_file_count":len(files),"files":files,"checked_at":datetime.now(timezone.utc).isoformat(),"status":"feed"}
