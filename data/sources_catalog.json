@@ -5273,6 +5273,23 @@
           "status": "latest_public"
         }
       ]
+    },
+    {
+      "name": "INAIL - Open Data infortuni e malattie professionali",
+      "category": "LAVORO_SICUREZZA_IT",
+      "topics": [
+        "INFORTUNI",
+        "MALATTIE_PROFESSIONALI",
+        "LAVORO"
+      ],
+      "official": true,
+      "url": "https://dati.inail.it/portale/it.html",
+      "access_cost": "free",
+      "integration_status": "feed",
+      "feed_status": "Attiva · file CSV ufficiali INAIL validati",
+      "frequency": "Mensile e semestrale",
+      "latest_period": "2026-09-22",
+      "checked_at": "2026-10-05T13:36:05.777048+00:00"
     }
   ]
 }

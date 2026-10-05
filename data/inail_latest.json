@@ -1,0 +1,41 @@
+{
+  "source": "INAIL",
+  "source_family": "INAIL - Open Data infortuni e malattie professionali",
+  "datasets": {
+    "diseases_monthly": {
+      "page": "https://dati.inail.it/portale/it/dataset/malattie-professionali/dati-con-cadenza-mensile/italia.html",
+      "publication_date": "2026-09-08",
+      "observation_date": "2026-07-31",
+      "csv_url": "https://dati.inail.it/opendata/downloads/datimensilimalattieprofessionali/csv/DatiMensiliMalattieProfessionaliDataProtItalia.csv",
+      "content_type": "application/csv",
+      "probe_bytes": 65536,
+      "probe_sha256": "8c728c8684d6a2dbcb767af8112fe86ccfed14584e469a6df7b5e0d56e27e035",
+      "status": "ok"
+    },
+    "diseases_halfyear": {
+      "page": "https://dati.inail.it/portale/it/dataset/malattie-professionali/dati-con-cadenza-semestrale/protocollo/italia.html",
+      "publication_date": "2026-09-22",
+      "observation_date": "2026-04-30",
+      "csv_url": "https://dati.inail.it/opendata/downloads/datisemestralimalattieprofessionali/csv/DatiSemestraliMalattieProfessionaliDataProtItalia.csv",
+      "content_type": "application/csv",
+      "probe_bytes": 65536,
+      "probe_sha256": "8f7e9d9ed08706edf597a934c0ac5d3c46c5c1769e20e8a5dc2829f8337e59b4",
+      "status": "ok"
+    },
+    "accidents_monthly": {
+      "page": "https://dati.inail.it/portale/it/dataset/infortuni-sul-lavoro/dati-con-cadenza-mensile/lombardia.html",
+      "publication_date": "2026-09-08",
+      "observation_date": "2026-07-31",
+      "csv_url": "https://dati.inail.it/opendata/downloads/daticoncadenzamensileinfortuni/zip/DatiConCadenzaMensileInfortuniLombardia_csv.zip",
+      "content_type": "application/zip",
+      "probe_bytes": 65536,
+      "probe_sha256": "e637a363a20bfea6c0316bf675a555c6219ce924af501970934794c4fec0551c",
+      "status": "ok"
+    }
+  },
+  "dataset_count": 3,
+  "failures": {},
+  "latest_publication_date": "2026-09-22",
+  "checked_at": "2026-10-05T13:36:05.777048+00:00",
+  "status": "feed"
+}
