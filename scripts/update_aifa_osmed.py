@@ -1,16 +1,22 @@
 #!/usr/bin/env python3
-import json,hashlib,re,urllib.parse,urllib.request
+import json,hashlib,re,time,urllib.parse,urllib.request
 from datetime import datetime,timezone
 from pathlib import Path
 from bs4 import BeautifulSoup
 OUT=Path("data/aifa_osmed_latest.json"); CAT=Path("data/sources_catalog.json")
 UA="ISTAT-PULSE/AIFA-OsMed"; PAGE="https://www.aifa.gov.it/it/spesa-e-consumo-relativi-al-flusso-della-farmaceutica-convenzionata-e-degli-acquisti-diretti"
 def get(u,probe=False):
- h={"User-Agent":UA,"Accept":"*/*"}; 
+ h={"User-Agent":UA,"Accept":"*/*","Accept-Language":"it-IT,it;q=0.9"}
  if probe:h["Range"]="bytes=0-131071"
- r=urllib.request.Request(u,headers=h)
- with urllib.request.urlopen(r,timeout=180) as x:
-  b=x.read(131072 if probe else -1); return b,x.geturl(),x.headers.get("Content-Type","")
+ err=None
+ for attempt in range(4):
+  try:
+   r=urllib.request.Request(u,headers=h)
+   with urllib.request.urlopen(r,timeout=180) as x:
+    b=x.read(131072 if probe else -1); return b,x.geturl(),x.headers.get("Content-Type","")
+  except Exception as e:
+   err=e; time.sleep(2*(attempt+1))
+ raise err
 def main():
  raw,final,_=get(PAGE); s=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser"); txt=" ".join(s.stripped_strings)
  upd=""; m=re.search(r"Data ultimo aggiornamento:\s*(\d{2})/(\d{2})/(20\d{2})",txt,re.I)
