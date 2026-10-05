@@ -13,9 +13,12 @@ KNOWN_PAGES=[
  "https://www.dati.salute.gov.it/it/dataset/utenti-carico-secondo-la-sostanza-dabuso-primaria-anno-2025/",
  "https://www.dati.salute.gov.it/it/dataset/personale-dei-serd-anno-2024/",
 ]
-def get(u):
- r=urllib.request.Request(u,headers={"User-Agent":UA,"Accept":"*/*"})
- with urllib.request.urlopen(r,timeout=120) as x:return x.read(),x.geturl(),x.headers.get("Content-Type","")
+def get(u,probe=False):
+ headers={"User-Agent":UA,"Accept":"*/*"}
+ if probe: headers["Range"]="bytes=0-131071"
+ r=urllib.request.Request(u,headers=headers)
+ with urllib.request.urlopen(r,timeout=180) as x:
+  return x.read(131072 if probe else -1),x.geturl(),x.headers.get("Content-Type","")
 def main():
  pages=[{"title":"","url":u} for u in KNOWN_PAGES]
  datasets=[]
@@ -28,7 +31,7 @@ def main():
     low=(tx+" "+h).lower()
     if any(k in low for k in ("scarica","csv","json","xml")):
      try:
-      rb,ru,rct=get(h)
+      rb,ru,rct=get(h,True)
       if len(rb)>30 and "text/html" not in rct.lower():
        files.append({"title":tx[:100],"url":ru,"content_type":rct,"bytes":len(rb),"sha256":hashlib.sha256(rb[:131072]).hexdigest()})
      except:pass
