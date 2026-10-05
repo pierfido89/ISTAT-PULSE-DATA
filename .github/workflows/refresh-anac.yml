@@ -5,6 +5,10 @@ on:
     - cron: '10 9 * * *'
   push:
     branches: [ main, feat/anac-feed ]
+    paths:
+      - 'scripts/update_anac.py'
+      - '.github/workflows/refresh-anac.yml'
+      - 'manual/anac/**'
 permissions:
   contents: write
 jobs:
