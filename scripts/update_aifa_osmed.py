@@ -31,6 +31,15 @@ def main():
     yr=re.search(r"20\d{2}",lab+" "+u)
     files.append({"year":int(yr.group(1)) if yr else None,"title":lab,"url":u,"content_type":ct,"probe_bytes":len(b),"sha256":hashlib.sha256(b).hexdigest()})
   except: pass
+ # AIFA exposes 2025 as a ZIP resource even though the page labels the family as CSV.
+ known2025="https://www.aifa.gov.it/documents/20142/847578/dati_2025_260514.zip"
+ if not any(x.get("year")==2025 for x in files):
+  try:
+   b,u,ct=get(known2025,True)
+   if len(b)>50 and "text/html" not in ct.lower():
+    files.append({"year":2025,"title":"Download - Anno 2025","url":u,"content_type":ct,
+     "probe_bytes":len(b),"sha256":hashlib.sha256(b).hexdigest()})
+  except Exception: pass
  if len(files)<3 and OUT.exists():
   try:
    old=json.loads(OUT.read_text())
