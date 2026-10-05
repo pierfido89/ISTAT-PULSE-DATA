@@ -14,8 +14,8 @@ FILES=[
 def probe(u):
  fd,path=tempfile.mkstemp();os.close(fd)
  try:
-  cmd=["curl","-L","--fail","--silent","--show-error","--max-time","30","--http1.1","-A",UA,"-H","Range: bytes=0-65535","-o",path,u]
-  subprocess.run(cmd,check=True,timeout=35)
+  cmd=["curl","-L","--fail","--silent","--show-error","--max-time","20","--http1.1","-A",UA,"-H","Range: bytes=0-65535","-o",path,u]
+  subprocess.run(cmd,check=True,timeout=25)
   b=Path(path).read_bytes()[:65536]
   if len(b)<50: raise RuntimeError("empty")
   return b,u,"text/csv"
@@ -25,11 +25,14 @@ def probe(u):
 def main():
  resources=[]
  for title,url in FILES:
-  try:
-   b,u,ct=probe(url)
-   if len(b)>50 and "text/html" not in ct.lower():
-    resources.append({"title":title,"url":u,"content_type":ct,"probe_bytes":len(b),"sha256":hashlib.sha256(b).hexdigest()})
-  except Exception:pass
+  candidates=[url,url.replace("dati-ustat.mur.gov.it","dati.ustat.miur.it")]
+  for candidate in candidates:
+   try:
+    b,u,ct=probe(candidate)
+    if len(b)>50 and "text/html" not in ct.lower():
+     resources.append({"title":title,"url":u,"content_type":ct,"probe_bytes":len(b),"sha256":hashlib.sha256(b).hexdigest()})
+     break
+   except Exception:pass
  if len(resources)<2:raise RuntimeError("MUR: direct official CSV resources unavailable from runner")
  snap={"source":"Ministero dell'Università e della Ricerca","source_family":"MUR - USTAT Open Data",
    "period":"2025","validated_resource_count":len(resources),"resources":resources,
