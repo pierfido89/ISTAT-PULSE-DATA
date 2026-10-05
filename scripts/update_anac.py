@@ -32,7 +32,22 @@ def main():
                               "probe_bytes":len(b),"sha256":hashlib.sha256(b).hexdigest()})
             if len(resources)>=3:break
         except Exception:pass
-    if not resources:raise RuntimeError("ANAC: OCDS bulk files blocked from GitHub runner")
+    if not resources:
+        manual=Path("manual/anac")
+        if manual.exists():
+            files=sorted(manual.glob("*.json"),reverse=True)
+            for p in files:
+                try:
+                    raw=p.read_bytes()
+                    obj=json.loads(raw.decode("utf-8","ignore"))
+                    if not raw or not isinstance(obj,(dict,list)): continue
+                    period=p.stem.replace("_","-")
+                    resources.append({"period":period,"url":str(p),"content_type":"application/json",
+                                      "probe_bytes":min(len(raw),131072),"sha256":hashlib.sha256(raw[:131072]).hexdigest(),
+                                      "mode":"manual_bridge"})
+                    break
+                except Exception: pass
+    if not resources:raise RuntimeError("ANAC: remote OCDS blocked; upload latest JSON to manual/anac/YYYY-MM.json")
     latest=max(x["period"] for x in resources)
     snap={"source":"ANAC","source_family":"ANAC - BDNCP OCDS bulk open data","validated_resource_count":len(resources),
           "resources":resources,"latest_period":latest,"checked_at":datetime.now(timezone.utc).isoformat(),"status":"feed"}
