@@ -1,0 +1,50 @@
+name: Refresh INPS feed
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '10 7 * * *'
+  push:
+    branches: [ main, feat/inps-feed ]
+    paths:
+      - 'scripts/update_inps.py'
+      - '.github/workflows/refresh-inps.yml'
+      - 'requirements.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Refresh INPS
+        run: python scripts/update_inps.py
+      - name: Validate INPS snapshot
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("data/inps_latest.json").read_text(encoding="utf-8"))
+          assert d["source"]=="INPS"
+          assert d["dataset_catalog_count"]>=10
+          assert d["family_count"]==3
+          assert d["validated_resource_count"]>=3
+          for key in ("labour_market","pensions","single_allowance"):
+              assert key in d["families"] and d["families"][key]
+          print("INPS OK",d["dataset_catalog_count"],d["validated_resource_count"],d["latest_metadata_date"])
+          PY
+      - name: Commit refreshed INPS data
+        run: |
+          if git diff --quiet -- data/inps_latest.json data/sources_catalog.json; then
+            echo "No INPS changes"
+            exit 0
+          fi
+          git config user.name "istat-pulse-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/inps_latest.json data/sources_catalog.json
+          git commit -m "data: refresh INPS feed"
+          git push
