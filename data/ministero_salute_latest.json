@@ -1,0 +1,24 @@
+{
+  "source": "Ministero della Salute",
+  "source_family": "Ministero della Salute - Open Data",
+  "dataset_count": 2,
+  "datasets": {
+    "apparecchiature": {
+      "format": "CSV",
+      "date": "2026-10-05",
+      "url": "https://www.dati.salute.gov.it/sites/default/files/opendata/DISPO_GAP_80_20261005.csv",
+      "probe_bytes": 131072,
+      "sha256": "437992dd39d21ce2d73d8d8ed7fa5aa3eb9bf43b6c120ceb762ed6b5f9dec6d5"
+    },
+    "dispositivi_medici": {
+      "format": "ZIP",
+      "date": "2026-10-05",
+      "url": "https://www.dati.salute.gov.it/sites/default/files/opendata/DISPO_RDM_1_20261005_csv.zip",
+      "probe_bytes": 131072,
+      "sha256": "a6d6121ac757c654a1ac12b39f5a159c2feeb2b50d1d49522c3069a5637ef43a"
+    }
+  },
+  "latest_update": "2026-10-05",
+  "checked_at": "2026-10-05T14:28:54.192512+00:00",
+  "status": "feed"
+}

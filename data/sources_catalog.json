@@ -5273,6 +5273,23 @@
           "status": "latest_public"
         }
       ]
+    },
+    {
+      "name": "Ministero della Salute - Open Data",
+      "category": "SALUTE_IT",
+      "topics": [
+        "SSN",
+        "APPARECCHIATURE",
+        "DISPOSITIVI_MEDICI"
+      ],
+      "official": true,
+      "url": "https://www.dati.salute.gov.it/",
+      "access_cost": "free",
+      "integration_status": "feed",
+      "feed_status": "Attiva · file ufficiali giornalieri CSV/ZIP validati direttamente",
+      "frequency": "Giornaliera/settimanale",
+      "latest_period": "2026-10-05",
+      "checked_at": "2026-10-05T14:28:54.192512+00:00"
     }
   ]
 }
