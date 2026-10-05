@@ -1,0 +1,38 @@
+name: Refresh IVASS feed
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '35 9 * * *'
+  push:
+    branches: [ main, feat/ivass-feed ]
+    paths:
+      - 'scripts/update_ivass.py'
+      - '.github/workflows/refresh-ivass.yml'
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python -m pip install beautifulsoup4
+      - run: python scripts/update_ivass.py
+      - run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("data/ivass_latest.json").read_text())
+          assert d["source"]=="IVASS"
+          assert d["release_count"]>=1
+          assert d["latest_release"]["attachments"]
+          print("IVASS OK",d["latest_release"]["publication_date"],d["release_count"])
+          PY
+      - run: |
+          if git diff --quiet -- data/ivass_latest.json data/sources_catalog.json; then exit 0; fi
+          git config user.name "istat-pulse-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/ivass_latest.json data/sources_catalog.json
+          git commit -m "data: refresh IVASS feed"
+          git push
