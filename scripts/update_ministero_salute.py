@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import hashlib,json,urllib.request
+import hashlib,json,requests
 from datetime import datetime,timezone,timedelta
 from pathlib import Path
 
@@ -9,15 +9,15 @@ UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/154 Safari/537.36"
 BASE="https://www.dati.salute.gov.it/sites/default/files/opendata/"
 
 def probe(u):
- req=urllib.request.Request(u,headers={"User-Agent":UA,"Accept":"*/*","Referer":"https://www.dati.salute.gov.it/"})
- with urllib.request.urlopen(req,timeout=120) as r:
-  b=r.read(131072);return b,r.geturl(),r.headers.get("Content-Type","")
+ r=requests.get(u,headers={"User-Agent":UA,"Accept":"*/*","Referer":"https://www.dati.salute.gov.it/"},timeout=90,stream=True)
+ r.raise_for_status()
+ b=next(r.iter_content(131072),b"")
+ return b,r.url,r.headers.get("Content-Type","")
 
 def discover(pattern):
  today=datetime.now(timezone.utc).date()
- for delta in range(0,21):
-  day=today-timedelta(days=delta);stamp=day.strftime("%Y%m%d")
-  u=BASE+pattern.format(date=stamp)
+ for delta in range(21):
+  day=today-timedelta(days=delta);u=BASE+pattern.format(date=day.strftime("%Y%m%d"))
   try:
    b,final,ct=probe(u)
    if len(b)>50 and "text/html" not in ct.lower():
@@ -36,9 +36,8 @@ def main():
   if r:datasets[key]={"title":cfg["title"],**r}
  if len(datasets)<2:raise RuntimeError("Ministero Salute: current official open-data files not validated")
  latest=max(x["date"] for x in datasets.values())
- snap={"source":"Ministero della Salute","source_family":"Ministero della Salute - Open Data",
-       "dataset_count":len(datasets),"datasets":datasets,"latest_update":latest,
-       "checked_at":datetime.now(timezone.utc).isoformat(),"status":"feed"}
+ snap={"source":"Ministero della Salute","source_family":"Ministero della Salute - Open Data","dataset_count":len(datasets),
+       "datasets":datasets,"latest_update":latest,"checked_at":datetime.now(timezone.utc).isoformat(),"status":"feed"}
  OUT.write_text(json.dumps(snap,ensure_ascii=False,indent=2)+"\n")
  root=json.loads(CAT.read_text()) if CAT.exists() else {"sources":[]};name="Ministero della Salute - Open Data"
  src=next((x for x in root["sources"] if x.get("name")==name),None)
