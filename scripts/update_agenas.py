@@ -9,7 +9,7 @@ OUT=Path("data/agenas_latest.json");CAT=Path("data/sources_catalog.json")
 UA="ISTAT-PULSE/AGENAS (+https://github.com/pierfido89/ISTAT-PULSE-DATA)"
 PAGES=[
  "https://www.agenas.gov.it/?id=96&view=category",
- "https://www.agenas.gov.it/i-quaderni-di-monitor-%E2%80%93-supplementi-alla-rivista"
+ "https://www.agenas.gov.it/i-quaderni-di-monitor-%E2%80%93-supplementi-alla-rivista/2743-la-mobilit%C3%A0-sanitaria-in-italia-edizione-2025"
 ]
 
 def get(u,probe=False):
@@ -25,9 +25,11 @@ def main():
   try:b,u,_=get(page);s=BeautifulSoup(b.decode("utf-8","ignore"),"html.parser")
   except Exception:continue
   for a in s.find_all("a",href=True):
-   h=urllib.parse.urljoin(u,a["href"]);lab=" ".join(a.stripped_strings);ctx=(lab+" "+h).lower()
+   h=urllib.parse.urljoin(u,a["href"]);lab=" ".join(a.stripped_strings)
+   parent=" ".join(a.parent.stripped_strings) if a.parent else lab
+   ctx=(parent+" "+lab+" "+h).lower()
    if h in seen:continue
-   if not any(k in ctx for k in ("pne 2025","programma nazionale esiti","mobilità sanitaria","report 2025","quaderno")):continue
+   if not any(k in ctx for k in ("pne 2025","programma nazionale esiti","mobilità sanitaria","edizione 2025","report 2025")):continue
    if not any(x in ctx for x in (".pdf","download","scarica","document")):continue
    try:
     rb,ru,ct=get(h,True)
