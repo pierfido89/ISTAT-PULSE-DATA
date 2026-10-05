@@ -1,0 +1,83 @@
+{
+  "source": "Banca d'Italia",
+  "source_family": "Banca d'Italia - Base Dati Statistica",
+  "a2a_base": "https://a2a.bancaditalia.it/infostat/dataservices/export/IT/CSV/DATA/CUBE/BANKITALIA/DIFF",
+  "dataset_count": 4,
+  "datasets": {
+    "banking_money": {
+      "key": "banking_money",
+      "cube": "BSIB0400",
+      "label": "Banche e moneta / statistiche bancarie",
+      "topic": "MONETA_BANCHE",
+      "url": "https://a2a.bancaditalia.it/infostat/dataservices/export/IT/CSV/DATA/CUBE/BANKITALIA/DIFF/BSIB0400",
+      "content_type": "application/zip",
+      "download_bytes": 8378,
+      "download_sha256": "19ca1074f77508b2f8c3c557bf139ab90145a788a416d18486e7a989a09b55ce",
+      "status": "ok",
+      "file_count": 1,
+      "files": [
+        "20260908_095234-TIMESERIES-MULTICUBE.csv"
+      ],
+      "uncompressed_bytes_sampled": 21256,
+      "latest_period_detected": "2099",
+      "sample_sha256": "d5acf68fca17ef279705b1299617550c7e7ff7ecd25ba40e82b935c64c7cf3d5"
+    },
+    "interest_rates": {
+      "key": "interest_rates",
+      "cube": "MIR0300",
+      "label": "Tassi di interesse bancari",
+      "topic": "TASSI_INTERESSE",
+      "url": "https://a2a.bancaditalia.it/infostat/dataservices/export/IT/CSV/DATA/CUBE/BANKITALIA/DIFF/MIR0300",
+      "content_type": "application/zip",
+      "download_bytes": 9165,
+      "download_sha256": "af48567d7c730e7b255f87c7644140f31da98e0ba02444b2ab70f2260ee954cf",
+      "status": "ok",
+      "file_count": 1,
+      "files": [
+        "20260908_095422-TIMESERIES-MULTICUBE.csv"
+      ],
+      "uncompressed_bytes_sampled": 26662,
+      "latest_period_detected": "2087",
+      "sample_sha256": "efef37052fba75dfcf44e987a92c26816ac44a3460f77da4f8679ce893efd84f"
+    },
+    "gross_public_debt": {
+      "key": "gross_public_debt",
+      "cube": "TUEE0140",
+      "label": "Debito pubblico lordo",
+      "topic": "DEBITO_PUBBLICO",
+      "url": "https://a2a.bancaditalia.it/infostat/dataservices/export/IT/CSV/DATA/CUBE/BANKITALIA/DIFF/TUEE0140",
+      "content_type": "application/zip",
+      "download_bytes": 3725,
+      "download_sha256": "eca57a0ba53e1201bb8bb76c0c7a411a5301e35eaa84c00ad64e4faf0cd461a2",
+      "status": "ok",
+      "file_count": 1,
+      "files": [
+        "20260609_125051-TIMESERIES-MULTICUBE.csv"
+      ],
+      "uncompressed_bytes_sampled": 12842,
+      "latest_period_detected": "2025-12",
+      "sample_sha256": "3c8350cff8ead6aafb8445d681069cac7cdfd69e515eab686dda609b0aee4339"
+    },
+    "public_debt_by_sector": {
+      "key": "public_debt_by_sector",
+      "cube": "TCCE0200",
+      "label": "Debito delle amministrazioni pubbliche per settore",
+      "topic": "DEBITO_PUBBLICO",
+      "url": "https://a2a.bancaditalia.it/infostat/dataservices/export/IT/CSV/DATA/CUBE/BANKITALIA/DIFF/TCCE0200",
+      "content_type": "application/zip",
+      "download_bytes": 43564,
+      "download_sha256": "a89f0495c72f2a6e11150253b81551a8e211ef4e5a0ffa2ac845433d4e3216dc",
+      "status": "ok",
+      "file_count": 1,
+      "files": [
+        "20260914_155250-TIMESERIES-MULTICUBE.csv"
+      ],
+      "uncompressed_bytes_sampled": 196727,
+      "latest_period_detected": "2092",
+      "sample_sha256": "9bbf94788180516e6fdc48150713cf5643cddb81c714d34376c9e755df90403b"
+    }
+  },
+  "failures": {},
+  "latest_period": "2099",
+  "checked_at": "2026-10-05T10:14:44.502066+00:00"
+}

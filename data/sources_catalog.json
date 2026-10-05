@@ -5273,6 +5273,51 @@
           "status": "latest_public"
         }
       ]
+    },
+    {
+      "name": "Banca d'Italia - Base Dati Statistica",
+      "category": "ECONOMIA_FINANZA_IT",
+      "topics": [
+        "MONETA",
+        "BANCHE",
+        "TASSI",
+        "CREDITO",
+        "DEBITO_PUBBLICO"
+      ],
+      "official": true,
+      "url": "https://www.bancaditalia.it/statistiche/basi-dati/bds/index.html",
+      "access_cost": "free",
+      "access_note": "Servizi A2A REST ufficiali della Base Dati Statistica di Banca d'Italia.",
+      "integration_status": "feed",
+      "feed_status": "Attiva · acquisizione automatica BDS via servizi A2A ufficiali",
+      "notes": "Feed PULSE su 4 cubi BDS validati: banche/moneta, tassi e debito pubblico.",
+      "level": "Nazionale e territoriale secondo cubo BDS",
+      "frequency": "Secondo calendario statistico di Banca d'Italia",
+      "latest_period": "2099",
+      "checked_at": "2026-10-05T10:14:44.502066+00:00",
+      "provides": [
+        {
+          "area": "Moneta e banche",
+          "series": "Statistiche bancarie e monetarie",
+          "description": "Cubo BDS ufficiale acquisito via A2A.",
+          "latest_period": "2099",
+          "status": "latest_public"
+        },
+        {
+          "area": "Tassi",
+          "series": "Tassi di interesse bancari",
+          "description": "Cubo BDS ufficiale acquisito via A2A.",
+          "latest_period": "2087",
+          "status": "latest_public"
+        },
+        {
+          "area": "Finanza pubblica",
+          "series": "Debito pubblico",
+          "description": "Cubi BDS ufficiali acquisiti via A2A.",
+          "latest_period": "2092",
+          "status": "latest_public"
+        }
+      ]
     }
   ]
 }
