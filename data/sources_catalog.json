@@ -5273,6 +5273,22 @@
           "status": "latest_public"
         }
       ]
+    },
+    {
+      "name": "Ministero della Giustizia - DGStat",
+      "category": "GIUSTIZIA_IT",
+      "topics": [
+        "GIUSTIZIA_CIVILE",
+        "GIUSTIZIA_PENALE",
+        "UFFICI_GIUDIZIARI"
+      ],
+      "official": true,
+      "url": "https://datiestatistiche.giustizia.it/",
+      "access_cost": "free",
+      "integration_status": "feed",
+      "feed_status": "Attiva · CSV/XLSX DGStat validati",
+      "frequency": "Mensile e annuale",
+      "checked_at": "2026-10-05T13:40:18.610943+00:00"
     }
   ]
 }

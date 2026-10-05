@@ -1,0 +1,78 @@
+{
+  "source": "Ministero della Giustizia - DGStat",
+  "source_family": "DGStat - Statistiche giudiziarie",
+  "dataset_count": 4,
+  "validated_resource_count": 5,
+  "datasets": [
+    {
+      "title": "Direzione Generale di Statistica e Analisi Organizzativa",
+      "url": "https://datiestatistiche.giustizia.it/page/it/monitoraggio-mensile-dei-tribunal",
+      "period": "",
+      "files": [
+        {
+          "title": "Monitoraggio mensile.xlsx",
+          "format": "XLSX",
+          "url": "https://datiestatistiche.giustizia.it/cmsresources/cms/documents/Monitoraggio_mensile.xlsx",
+          "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "probe_bytes": 131072,
+          "sha256": "35cf6df0e3804c4fff3064424036a1fffdc9f84f1236e717382fb8145784165c"
+        }
+      ]
+    },
+    {
+      "title": "Direzione Generale di Statistica e Analisi Organizzativa",
+      "url": "https://datiestatistiche.giustizia.it/page/it/flussi-tribunali-ordinari-e-corti-di-appello",
+      "period": "",
+      "files": [
+        {
+          "title": "CivileFlussi2014-2025.xlsx",
+          "format": "XLSX",
+          "url": "https://datiestatistiche.giustizia.it/cmsresources/cms/documents/CivileFlussi20142025.xlsx",
+          "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "probe_bytes": 131072,
+          "sha256": "ed15bb79c5f4a84aec166e9eb074b69e390f10b953c2601cdac3d70c8e72bb9f"
+        }
+      ]
+    },
+    {
+      "title": "Direzione Generale di Statistica e Analisi Organizzativa",
+      "url": "https://datiestatistiche.giustizia.it/page/it/giustizia-flussi-per-ufficio-penale",
+      "period": "",
+      "files": [
+        {
+          "title": "PenaleFlussi2005-2013",
+          "format": "XLSX",
+          "url": "https://datiestatistiche.giustizia.it/cmsresources/cms/documents/PenaleFlussi20052013.xlsx",
+          "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "probe_bytes": 131072,
+          "sha256": "b54a221c56a8abeae296cc6f22efed4ab9168f24b3df619f9694ce43042da33c"
+        },
+        {
+          "title": "PenaleFlussi2014-2025",
+          "format": "XLSX",
+          "url": "https://datiestatistiche.giustizia.it/cmsresources/cms/documents/PenaleFlussi20142025.xlsx",
+          "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "probe_bytes": 131072,
+          "sha256": "51e8128b5dd7f5cdf6b89070fd800a034fdf659dc990f14ed7a1cdccac69bbb0"
+        }
+      ]
+    },
+    {
+      "title": "Direzione Generale di Statistica e Analisi Organizzativa",
+      "url": "https://datiestatistiche.giustizia.it/page/it/flussi-dei-giudici-di-pace",
+      "period": "",
+      "files": [
+        {
+          "title": "Flussi Civili GDP 2023-2025.xlsx",
+          "format": "XLSX",
+          "url": "https://datiestatistiche.giustizia.it/cmsresources/cms/documents/Flussi_Civili_GDP_20232025.xlsx",
+          "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "probe_bytes": 131072,
+          "sha256": "601b9354c032dbc0249d0c229a885591a0ebadac5cdc0fd30f4573af600b0713"
+        }
+      ]
+    }
+  ],
+  "checked_at": "2026-10-05T13:40:18.610943+00:00",
+  "status": "feed"
+}
