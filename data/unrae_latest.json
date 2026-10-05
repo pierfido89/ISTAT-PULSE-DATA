@@ -1,0 +1,62 @@
+{
+  "source": "UNRAE",
+  "source_family": "UNRAE - Mercato auto e immatricolazioni",
+  "landing_url": "https://www.unrae.it/dati-statistici/immatricolazioni",
+  "period": "2026-09",
+  "publication_date": "2026-10-01",
+  "press_release_url": "",
+  "press_release_title": "",
+  "datasets": {
+    "market_structure": {
+      "title": "Analisi di dettaglio delle vendite di autovetture e veicoli commerciali e industriali in Italia ed Europa: le top 10, la struttura del mercato, gli utilizzatori, i segmenti, le alimentazioni, le carrozzerie, le aree geog",
+      "url": "http://www.unrae.it/dati-statistici/immatricolazioni/rss",
+      "period": "2026-09",
+      "publication_date": "2026-10-01"
+    },
+    "brands": {
+      "title": "Immatricolazioni di autovetture per marca – Settembre 2026",
+      "url": "https://www.unrae.it/dati-statistici/immatricolazioni/7816/immatricolazioni-di-autovetture-per-marca-settembre-2026",
+      "period": "2026-09",
+      "publication_date": "2026-10-01"
+    },
+    "groups": {
+      "title": "Immatricolazioni di autovetture per gruppi – Settembre 2026",
+      "url": "https://www.unrae.it/dati-statistici/immatricolazioni/7815/immatricolazioni-di-autovetture-per-gruppi-settembre-2026",
+      "period": "2026-09",
+      "publication_date": "2026-10-01"
+    },
+    "co2_bands": {
+      "title": "Immatricolazioni di autovetture per fasce di CO2 - Settembre 2026",
+      "url": "https://www.unrae.it/dati-statistici/immatricolazioni/7813/immatricolazioni-di-autovetture-per-fasce-di-co2-settembre-2026",
+      "period": "2026-09",
+      "publication_date": "2026-10-01"
+    },
+    "top50_models": {
+      "title": "Immatricolazioni in Italia di autovetture e fuoristrada: Top 50 modelli - Settembre 2026",
+      "url": "https://www.unrae.it/dati-statistici/immatricolazioni/7812/immatricolazioni-in-italia-di-autovetture-e-fuoristrada-top-50-modelli-settembre-2026",
+      "period": "2026-09",
+      "publication_date": "2026-10-01"
+    },
+    "fuel_top10": {
+      "title": "Top 10 per alimentazione - Settembre 2026",
+      "url": "https://www.unrae.it/dati-statistici/immatricolazioni/7811/top-10-per-alimentazione-settembre-2026",
+      "period": "2026-09",
+      "publication_date": "2026-10-01"
+    },
+    "bev": {
+      "title": "Il mercato italiano delle autovetture BEV per marca - Settembre 2026",
+      "url": "https://www.unrae.it/dati-statistici/immatricolazioni/7810/il-mercato-italiano-delle-autovetture-bev-per-marca-settembre-2026",
+      "period": "2026-09",
+      "publication_date": "2026-10-01"
+    },
+    "phev": {
+      "title": "Il mercato italiano delle autovetture PHEV per marca - Settembre 2026",
+      "url": "https://www.unrae.it/dati-statistici/immatricolazioni/7809/il-mercato-italiano-delle-autovetture-phev-per-marca-settembre-2026",
+      "period": "2026-09",
+      "publication_date": "2026-10-01"
+    }
+  },
+  "dataset_count": 8,
+  "checked_at": "2026-10-05T10:02:35.828687+00:00",
+  "landing_sha256": "b511148a59e8426536e7e86071fd91c867e571cfcf5d0c47cb09fa66a6e48bb7"
+}

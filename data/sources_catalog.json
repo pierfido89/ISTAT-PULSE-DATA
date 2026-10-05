@@ -5273,6 +5273,50 @@
           "status": "latest_public"
         }
       ]
+    },
+    {
+      "name": "UNRAE - Mercato auto e immatricolazioni",
+      "category": "MOBILITA_IT",
+      "topics": [
+        "MOBILITA",
+        "AUTO",
+        "IMMATRICOLAZIONI"
+      ],
+      "official": true,
+      "url": "https://www.unrae.it/dati-statistici/immatricolazioni",
+      "access_cost": "free",
+      "access_note": "Tavole statistiche pubbliche UNRAE accessibili senza abbonamento.",
+      "integration_status": "feed",
+      "feed_status": "Attiva · acquisizione automatica delle tavole pubbliche UNRAE",
+      "notes": "Connettore pubblico UNRAE: 8 famiglie statistiche individuate per l'ultimo periodo disponibile.",
+      "level": "Nazionale e territoriale secondo tavola",
+      "frequency": "Mensile",
+      "latest_period": "2026-09",
+      "publication_date": "2026-10-01",
+      "checked_at": "2026-10-05T10:02:35.828687+00:00",
+      "provides": [
+        {
+          "area": "Mobilità e trasporti",
+          "series": "Immatricolazioni autovetture",
+          "description": "Totale mercato mensile autovetture Italia.",
+          "latest_period": "2026-09",
+          "status": "latest_public"
+        },
+        {
+          "area": "Mobilità e trasporti",
+          "series": "Struttura del mercato per alimentazione/utilizzatore/segmento/area",
+          "description": "Tavola statistica pubblica UNRAE.",
+          "latest_period": "2026-09",
+          "status": "latest_public"
+        },
+        {
+          "area": "Mobilità e trasporti",
+          "series": "Marche, gruppi e modelli",
+          "description": "Classifiche mensili pubbliche UNRAE.",
+          "latest_period": "2026-09",
+          "status": "latest_public"
+        }
+      ]
     }
   ]
 }
