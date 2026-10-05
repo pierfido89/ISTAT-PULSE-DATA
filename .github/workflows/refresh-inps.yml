@@ -30,12 +30,12 @@ jobs:
           from pathlib import Path
           d=json.loads(Path("data/inps_latest.json").read_text(encoding="utf-8"))
           assert d["source"]=="INPS"
-          assert d["dataset_catalog_count"]>=10
-          assert d["family_count"]==3
+          assert d["catalog_count"]>=10
+          assert len(d["families"])==3
           assert d["validated_resource_count"]>=3
           for key in ("labour_market","pensions","single_allowance"):
               assert key in d["families"] and d["families"][key]
-          print("INPS OK",d["dataset_catalog_count"],d["validated_resource_count"],d["latest_metadata_date"])
+          print("INPS OK",d["catalog_count"],d["validated_resource_count"],d["latest_metadata_date"])
           PY
       - name: Commit refreshed INPS data
         run: |
