@@ -308,7 +308,14 @@ def main():
     ROOT.mkdir(parents=True,exist_ok=True)
     cfg=load_json(CFG,{})
     old_articles=load_json(ARTICLES,{"articles":[]}).get("articles",[])
-    by_id={x.get("id"):x for x in old_articles if x.get("id")}
+    cleaned_articles=[]
+    for x in old_articles:
+        verified_vals=[normalize_number_token(c.get("raw_value","")) for c in x.get("statistical_claims",[]) if c.get("verified")]
+        substantive=[v for v in verified_vals if v and not re.fullmatch(r"20\d{2}",v)]
+        if x.get("publication_status")=="published" and not substantive:
+            continue
+        cleaned_articles.append(x)
+    by_id={x.get("id"):x for x in cleaned_articles if x.get("id")}
     candidates=[]
     seen_story_keys=set()
     now=datetime.now(timezone.utc)
