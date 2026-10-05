@@ -5273,6 +5273,24 @@
           "status": "latest_public"
         }
       ]
+    },
+    {
+      "name": "Ragioneria Generale dello Stato - BDAP",
+      "category": "FINANZA_PUBBLICA_IT",
+      "topics": [
+        "BILANCIO_STATO",
+        "SPESA_PUBBLICA",
+        "ENTRATE",
+        "OPERE_PUBBLICHE"
+      ],
+      "official": true,
+      "url": "https://bdap-opendata.rgs.mef.gov.it/",
+      "access_cost": "free",
+      "integration_status": "feed",
+      "feed_status": "Attiva · monitor catalogo Open BDAP; API CKAN ufficiale disponibile separatamente",
+      "frequency": "Secondo pubblicazione",
+      "latest_period": "2026-10-01",
+      "checked_at": "2026-10-05T14:24:01.246616+00:00"
     }
   ]
 }

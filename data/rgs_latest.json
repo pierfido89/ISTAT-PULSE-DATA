@@ -1,0 +1,171 @@
+{
+  "source": "Ragioneria Generale dello Stato",
+  "source_family": "RGS - BDAP Open Data catalog",
+  "dataset_count": 40,
+  "datasets": [
+    {
+      "title": "Rendiconto Pubblicato - Serie storica - Spese Aggregato per Titolo e Macroaggregato",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/rendiconto-pubblicato-serie-storica-spese-aggregato-titolo-e-macroaggregato-0"
+    },
+    {
+      "title": "Visualizza",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/rendiconto-pubblicato-serie-storica-spese-aggregato-titolo-e-macroaggregato-0?t=Tabella"
+    },
+    {
+      "title": "Scarica",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/rendiconto-pubblicato-serie-storica-spese-aggregato-titolo-e-macroaggregato-0?t=Scarica"
+    },
+    {
+      "title": "Rendiconto Pubblicato - Serie storica - Spese Aggregato per Missione, Programma e Macroaggregato",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/rendiconto-pubblicato-serie-storica-spese-aggregato-missione-programma-e-macroaggregato-0"
+    },
+    {
+      "title": "Visualizza",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/rendiconto-pubblicato-serie-storica-spese-aggregato-missione-programma-e-macroaggregato-0?t=Tabella"
+    },
+    {
+      "title": "Scarica",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/rendiconto-pubblicato-serie-storica-spese-aggregato-missione-programma-e-macroaggregato-0?t=Scarica"
+    },
+    {
+      "title": "Rendiconto Pubblicato - Serie storica - Spese Aggregato per Amministrazione e Missione",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/rendiconto-pubblicato-serie-storica-spese-aggregato-amministrazione-e-missione"
+    },
+    {
+      "title": "Visualizza",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/rendiconto-pubblicato-serie-storica-spese-aggregato-amministrazione-e-missione?t=Tabella"
+    },
+    {
+      "title": "Scarica",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/rendiconto-pubblicato-serie-storica-spese-aggregato-amministrazione-e-missione?t=Scarica"
+    },
+    {
+      "title": "Rendiconto Pubblicato - Serie storica - Spese Aggregato per Classificazione Economica (Titolo, Categoria, CE2)",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/rendiconto-pubblicato-serie-storica-spese-aggregato-classificazione-economica-titolo-1"
+    },
+    {
+      "title": "Visualizza",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/rendiconto-pubblicato-serie-storica-spese-aggregato-classificazione-economica-titolo-1?t=Tabella"
+    },
+    {
+      "title": "Scarica",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/rendiconto-pubblicato-serie-storica-spese-aggregato-classificazione-economica-titolo-1?t=Scarica"
+    },
+    {
+      "title": "Rendiconto Pubblicato - Serie storica - Spese Aggregato per Amministrazione, Missione, Programma e Macroaggregato",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/rendiconto-pubblicato-serie-storica-spese-aggregato-amministrazione-missione-programma-e-1"
+    },
+    {
+      "title": "Visualizza",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/rendiconto-pubblicato-serie-storica-spese-aggregato-amministrazione-missione-programma-e-1?t=Tabella"
+    },
+    {
+      "title": "Scarica",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/rendiconto-pubblicato-serie-storica-spese-aggregato-amministrazione-missione-programma-e-1?t=Scarica"
+    },
+    {
+      "title": "2025 - Rendiconto Pubblicato Elaborabile Spese Piano di Gestione",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/2025-rendiconto-pubblicato-elaborabile-spese-piano-di-gestione"
+    },
+    {
+      "title": "Visualizza",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/2025-rendiconto-pubblicato-elaborabile-spese-piano-di-gestione?t=Tabella"
+    },
+    {
+      "title": "Scarica",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/2025-rendiconto-pubblicato-elaborabile-spese-piano-di-gestione?t=Scarica"
+    },
+    {
+      "title": "2025 - Rendiconto Pubblicato Elaborabile Spese Capitolo",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/2025-rendiconto-pubblicato-elaborabile-spese-capitolo"
+    },
+    {
+      "title": "Visualizza",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/2025-rendiconto-pubblicato-elaborabile-spese-capitolo?t=Tabella"
+    },
+    {
+      "title": "Scarica",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/2025-rendiconto-pubblicato-elaborabile-spese-capitolo?t=Scarica"
+    },
+    {
+      "title": "2025 - Rendiconto Pubblicato triennio G8 OD action plan Capitolo",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/2025-rendiconto-pubblicato-triennio-g8-od-action-plan-capitolo"
+    },
+    {
+      "title": "Visualizza",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/2025-rendiconto-pubblicato-triennio-g8-od-action-plan-capitolo?t=Tabella"
+    },
+    {
+      "title": "Scarica",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/2025-rendiconto-pubblicato-triennio-g8-od-action-plan-capitolo?t=Scarica"
+    },
+    {
+      "title": "2025 - Rendiconto - 02 Economia e Finanze - DPCM 22/09/2014 art.3",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/2025-rendiconto-02-economia-e-finanze-dpcm-22092014-art3"
+    },
+    {
+      "title": "Visualizza",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/2025-rendiconto-02-economia-e-finanze-dpcm-22092014-art3?t=Tabella"
+    },
+    {
+      "title": "Scarica",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/2025-rendiconto-02-economia-e-finanze-dpcm-22092014-art3?t=Scarica"
+    },
+    {
+      "title": "2025 - Rendiconto - 03 Imprese e Made in Italy - DPCM 22/09/2014 art.3",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/2025-rendiconto-03-imprese-e-made-italy-dpcm-22092014-art3"
+    },
+    {
+      "title": "Visualizza",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/2025-rendiconto-03-imprese-e-made-italy-dpcm-22092014-art3?t=Tabella"
+    },
+    {
+      "title": "Scarica",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/2025-rendiconto-03-imprese-e-made-italy-dpcm-22092014-art3?t=Scarica"
+    },
+    {
+      "title": "Progetti Opere Pubbliche MOP - Totale",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/content/progetti-opere-pubbliche-mop-totale"
+    },
+    {
+      "title": "Progetti Opere Pubbliche MOP - Emilia-Romagna",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/opendata/spd_mop_prg_mon_reg08_01_9999"
+    },
+    {
+      "title": "Progetti Opere Pubbliche MOP - Veneto",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/opendata/spd_mop_prg_mon_reg05_01_9999"
+    },
+    {
+      "title": "Progetti Opere Pubbliche MOP - Piemonte",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/opendata/spd_mop_prg_mon_reg01_01_9999"
+    },
+    {
+      "title": "Progetti Opere Pubbliche MOP - Lombardia",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/opendata/spd_mop_prg_mon_reg03_01_9999"
+    },
+    {
+      "title": "Progetti Opere Pubbliche MOP - Trentino-Alto Adige",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/opendata/spd_mop_prg_mon_reg04_01_9999"
+    },
+    {
+      "title": "Progetti Opere Pubbliche MOP - Puglia",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/opendata/spd_mop_prg_mon_reg16_01_9999"
+    },
+    {
+      "title": "Progetti Opere Pubbliche MOP - Liguria",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/opendata/spd_mop_prg_mon_reg07_01_9999"
+    },
+    {
+      "title": "Progetti Opere Pubbliche MOP - Sicilia",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/opendata/spd_mop_prg_mon_reg19_01_9999"
+    },
+    {
+      "title": "Progetti Opere Pubbliche MOP - Valle d'Aosta",
+      "url": "https://bdap-opendata.rgs.mef.gov.it/opendata/spd_mop_prg_mon_reg02_01_9999"
+    }
+  ],
+  "latest_catalog_date": "2026-10-01",
+  "api_url": "https://bdap-opendata.rgs.mef.gov.it/content/api",
+  "checked_at": "2026-10-05T14:24:01.246616+00:00",
+  "status": "feed"
+}
