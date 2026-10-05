@@ -1,6 +1,54 @@
 {
-  "generated_at": "2026-10-05T17:42:59.967859+00:00",
+  "generated_at": "2026-10-05T17:47:58.550675+00:00",
   "articles": [
+    {
+      "id": "PULSE-190592FD27B9D2A1",
+      "published_at": "2026-10-05T17:47:58.550675+00:00",
+      "topic": "ISTRUZIONE",
+      "pulse_score": 74,
+      "public_source": {
+        "url": "https://serviziostatistico.invalsi.it/",
+        "domain": "invalsi.it",
+        "role": "primary_statistical_source",
+        "verification_method": "named_or_topic_domain_search",
+        "verification_score": 63
+      },
+      "discovery": {
+        "visible": false,
+        "role": "hidden_radar"
+      },
+      "period_reference": null,
+      "latest_source_update": null,
+      "headline": "Istruzione, nuovo dato per Italia: 30%",
+      "summary": "Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+      "statistical_claims": [
+        {
+          "raw_value": "9,1%",
+          "verified": false
+        },
+        {
+          "raw_value": "30%",
+          "verified": true
+        },
+        {
+          "raw_value": "9,1%",
+          "verified": false
+        },
+        {
+          "raw_value": "30%",
+          "verified": true
+        }
+      ],
+      "territories": [],
+      "chart_spec": {
+        "type": "auto",
+        "status": "requires_primary_series",
+        "reason": "candidate_contains_multiple_numeric_values"
+      },
+      "map_spec": null,
+      "editorial_status": "verified_primary_match",
+      "publication_status": "published"
+    },
     {
       "id": "PULSE-28A8F5622DC6757D",
       "published_at": "2026-10-05T17:42:59.967859+00:00",
