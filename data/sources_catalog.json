@@ -5273,6 +5273,50 @@
           "status": "latest_public"
         }
       ]
+    },
+    {
+      "name": "Unioncamere - Excelsior",
+      "category": "LAVORO_IT",
+      "topics": [
+        "LAVORO",
+        "PROFESSIONI",
+        "FABBISOGNI_OCCUPAZIONALI",
+        "MISMATCH"
+      ],
+      "official": true,
+      "url": "https://excelsior.unioncamere.net/",
+      "access_cost": "free",
+      "access_note": "Pubblicazioni e tavole statistiche pubbliche Excelsior; citare integralmente la fonte richiesta.",
+      "integration_status": "feed",
+      "feed_status": "Attiva · pubblicazioni mensili Excelsior e allegati ufficiali acquisiti automaticamente",
+      "notes": "Feed PULSE sulla domanda di lavoro delle imprese: entrate programmate, professioni, mismatch e dettaglio territoriale.",
+      "level": "Nazionale, regionale e provinciale",
+      "frequency": "Mensile",
+      "latest_period": "2025-05",
+      "checked_at": "2026-10-05T10:19:50.892987+00:00",
+      "provides": [
+        {
+          "area": "Lavoro",
+          "series": "Entrate programmate dalle imprese",
+          "description": "Previsioni mensili Excelsior.",
+          "latest_period": "2025-05",
+          "status": "latest_public"
+        },
+        {
+          "area": "Lavoro",
+          "series": "Professioni richieste e difficoltà di reperimento",
+          "description": "Bollettini e tavole Excelsior.",
+          "latest_period": "2025-05",
+          "status": "latest_public"
+        },
+        {
+          "area": "Territorio",
+          "series": "Previsioni occupazionali regionali e provinciali",
+          "description": "Bollettini territoriali Excelsior.",
+          "latest_period": "2025-05",
+          "status": "latest_public"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,77 @@
+{
+  "source": "Unioncamere - Excelsior",
+  "source_family": "Unioncamere - Excelsior",
+  "period": "2025-05",
+  "release_title": "544mila contratti programmati dalle imprese a maggio, in flessione rispetto a maggio 2025. L’arrivo dell’estate traina la domanda di lavoro del turismo. Si riduce la difficoltà di reperimento (42,9%)",
+  "release_url": "https://excelsior.unioncamere.net/notizie/544mila-contratti-programmati-dalle-imprese-maggio-flessione-rispetto-maggio-2025-larrivo",
+  "entrate_programmate": 544000,
+  "mismatch_percent": null,
+  "validated_attachment_count": 9,
+  "attachments": [
+    {
+      "title": "Nota metodologica",
+      "url": "https://excelsior.unioncamere.net/sites/default/files/documenti/Nota_Metodologica.pdf",
+      "content_type": "application/pdf",
+      "bytes": 1909307,
+      "sha256": "3c3102db6863203692c8cc0a5d8172f75ddb03287a69e68c7dcec08e7b9f7629"
+    },
+    {
+      "title": "Corrispondenza tra ATECO 2007 e settori Excelsior",
+      "url": "https://excelsior.unioncamere.net/sites/default/files/documenti/ATECO_vers_2025.pdf",
+      "content_type": "application/pdf",
+      "bytes": 140642,
+      "sha256": "804af7a241a2aff34e7b2f16963ec906a92be17f5db35a2d2bfcf40d48b733ad"
+    },
+    {
+      "title": "Classificazione dei titoli di studio",
+      "url": "https://excelsior.unioncamere.net/sites/default/files/documenti/Appendice_Livelli_Istruzione.pdf",
+      "content_type": "application/pdf",
+      "bytes": 196661,
+      "sha256": "68c219b5f556448649eee6a43a2ffa2e498624b3c070a10cf3f26dd684b47e33"
+    },
+    {
+      "title": "Figure professionali e collocazione nella CP 2021",
+      "url": "https://excelsior.unioncamere.net/sites/default/files/documenti/Professioni_ISTAT.pdf",
+      "content_type": "application/pdf",
+      "bytes": 1158285,
+      "sha256": "9cc193b906e1b7f9d5598f4fcba0d7957b7a0cea2abd9ee65f2af53b7433818b"
+    },
+    {
+      "title": "Questionario",
+      "url": "https://excelsior.unioncamere.net/sites/default/files/documenti/Schema_questionario_Excelsior_2025.pdf",
+      "content_type": "application/pdf",
+      "bytes": 516608,
+      "sha256": "1a216fa0a99de6127e9dcab50cc961958ec09d57ddcd9ee73bca8ea181081b27"
+    },
+    {
+      "title": "comunicato stampa",
+      "url": "https://excelsior.unioncamere.net/sites/default/files/comunicati/08052026_com_Excelsior_FIN_MLPS.pdf",
+      "content_type": "application/pdf",
+      "bytes": 944660,
+      "sha256": "5821e142f41b88c1a63126df26488787c962f70753d5cd556f19817fc674c2a2"
+    },
+    {
+      "title": "",
+      "url": "https://excelsior.unioncamere.net/sites/default/files/comunicati/10042025_com_Excelsior_aprile.pdf",
+      "content_type": "application/pdf",
+      "bytes": 897793,
+      "sha256": "367c56cae6ef2d310e2b7f098960ecccb6b483c4c8093173f7bf9c600fb9db1e"
+    },
+    {
+      "title": "Excelsior INFORMA",
+      "url": "https://excelsior.unioncamere.net/excelsior-bts/document/bollettino/month/15269",
+      "content_type": "application/pdf",
+      "bytes": 957173,
+      "sha256": "4790ee7981846d2aa07277b050204146f4d7a3900ce80f3b9355193be809e980"
+    },
+    {
+      "title": "tavole statistiche",
+      "url": "https://excelsior.unioncamere.net/excelsior-bts/document/tavola-statistica/month/15269",
+      "content_type": "application/pdf",
+      "bytes": 1516395,
+      "sha256": "05477a0a4112edc0991b855ad0d209c84920b576d3525c2270eeafbb077ea2e0"
+    }
+  ],
+  "checked_at": "2026-10-05T10:19:50.892987+00:00",
+  "status": "feed"
+}
