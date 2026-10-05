@@ -19,12 +19,18 @@ def main():
  current=datetime.now(timezone.utc).year
  chosen=None
  for year in range(current,current-3,-1):
-  url=f"https://www.invalsiopen.it/risultati/risultati-prove-invalsi-{year}/"
-  try:
-   b,u,_=get(url);s=BeautifulSoup(b.decode("utf-8","ignore"),"html.parser");txt=" ".join(s.stripped_strings)
-   if f"INVALSI {year}" in txt or f"Rilevazioni nazionali {year}" in txt:
-    chosen=(year,u,s,txt);break
-  except Exception:pass
+  urls=[
+   f"https://www.invalsiopen.it/risultati/risultati-prove-invalsi-{year}/",
+   f"https://invalsiopen.it/risultati/risultati-prove-invalsi-{year}/",
+   f"https://ftp.invalsiopen.it/risultati/risultati-prove-invalsi-{year}/"
+  ]
+  for url in urls:
+   try:
+    b,u,_=get(url);s=BeautifulSoup(b.decode("utf-8","ignore"),"html.parser");txt=" ".join(s.stripped_strings)
+    if len(txt)>500 and (str(year) in txt and ("INVALSI" in txt or "Rilevazioni" in txt)):
+     chosen=(year,u,s,txt);break
+   except Exception:pass
+  if chosen:break
  if not chosen:raise RuntimeError("INVALSI: no annual results page")
  year,u,s,text=chosen
  metrics={}
