@@ -25,8 +25,8 @@ jobs:
           from pathlib import Path
           d=json.loads(Path("data/unioncamere_infocamere_latest.json").read_text())
           assert d["source"]=="Unioncamere - InfoCamere"
-          assert d["validated_resource_count"]>=1
-          print("UNIONCAMERE INFOCAMERE OK",d["validated_resource_count"])
+          assert d["validated_csv_count"]>=1
+          print("UNIONCAMERE INFOCAMERE OK",d["validated_csv_count"])
           PY
       - run: |
           if git diff --quiet -- data/unioncamere_infocamere_latest.json data/sources_catalog.json; then exit 0; fi
