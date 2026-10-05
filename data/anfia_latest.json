@@ -1,0 +1,15 @@
+{
+  "source": "ANFIA",
+  "source_family": "ANFIA - Immatricolazioni e mercato auto",
+  "period": "2026-09",
+  "publication_date": "2026-10-01",
+  "dataset": {
+    "publication_date": "2026-10-01",
+    "url": "https://www.anfia.it/it/attivita/studi-e-statistiche/dati-statistici/immatricolazioni/italia/182-autovetture-tabelle-comunicato-stampa/file",
+    "content_type": "application/pdf;charset=utf-8",
+    "probe_bytes": 65536,
+    "probe_sha256": "0ecff807c7e6972430e13be75d3cb7b60cd22ffa90004b7c84fdaeab0d587cb2"
+  },
+  "checked_at": "2026-10-05T10:41:24.908773+00:00",
+  "status": "feed"
+}
