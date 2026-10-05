@@ -5273,6 +5273,24 @@
           "status": "latest_public"
         }
       ]
+    },
+    {
+      "name": "Dipartimento delle Finanze - Statistiche fiscali",
+      "category": "FISCO_IT",
+      "topics": [
+        "IRPEF",
+        "IVA",
+        "IRES",
+        "DICHIARAZIONI",
+        "REDDITI"
+      ],
+      "official": true,
+      "url": "https://www1.finanze.gov.it/finanze/analisi_stat/public/index.php?opendata=yes",
+      "access_cost": "free",
+      "integration_status": "feed",
+      "feed_status": "Attiva · open data fiscali scaricabili validati",
+      "frequency": "Annuale e secondo pubblicazione",
+      "checked_at": "2026-10-05T13:04:00.639136+00:00"
     }
   ]
 }

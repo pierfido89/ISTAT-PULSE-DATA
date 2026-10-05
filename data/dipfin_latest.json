@@ -1,0 +1,79 @@
+{
+  "source": "Dipartimento delle Finanze",
+  "source_family": "Dipartimento Finanze - Statistiche dichiarazioni",
+  "validated_resource_count": 10,
+  "resources": [
+    {
+      "title": "Scarica CSV",
+      "url": "https://www1.finanze.gov.it/finanze/analisi_stat/public/v_4_0_0/contenuti/Redditi_e_principali_variabili_IRPEF_su_base_comunale_CSV_2024.zip?d=1615465800",
+      "content_type": "application/zip",
+      "probe_bytes": 131072,
+      "probe_sha256": "a8e050fc566f11a1f57c66f7e8006d3e505e5501511466327575920b7c37209f"
+    },
+    {
+      "title": "Scarica RDF",
+      "url": "https://www1.finanze.gov.it/finanze/analisi_stat/public/v_4_0_0/contenuti/Redditi_e_principali_variabili_IRPEF_su_base_comunale_RDF_2024.zip?d=1615465800",
+      "content_type": "application/zip",
+      "probe_bytes": 131072,
+      "probe_sha256": "8a26ed2fa77049c84ca2356188dec3516b9895e6f9a9ff68a2b2c6895fe57394"
+    },
+    {
+      "title": "Scarica CSV",
+      "url": "https://www1.finanze.gov.it/finanze/analisi_stat/public/v_4_0_0/contenuti/Redditi_e_principali_variabili_IRPEF_su_base_subcomunale_CSV_2024.zip?d=1615465800",
+      "content_type": "application/zip",
+      "probe_bytes": 89542,
+      "probe_sha256": "083cba5e39823e2e38b1a251573339aa8b0c023d8a5661657cf5c78a2f6db47b"
+    },
+    {
+      "title": "Scarica RDF",
+      "url": "https://www1.finanze.gov.it/finanze/analisi_stat/public/v_4_0_0/contenuti/Redditi_e_principali_variabili_IRPEF_su_base_subcomunale_RDF_2024.zip?d=1615465800",
+      "content_type": "application/zip",
+      "probe_bytes": 131072,
+      "probe_sha256": "85e7ef4161b055278832a910e7597dfb62e0fca9b1294854547dcd69389f9cdb"
+    },
+    {
+      "title": "Scarica CSV",
+      "url": "https://www1.finanze.gov.it/finanze/analisi_stat/public/v_4_0_0/contenuti/Redditi_e_principali_variabili_IRPEF_su_base_comunale_CSV_2023.zip?d=1615465800",
+      "content_type": "application/zip",
+      "probe_bytes": 131072,
+      "probe_sha256": "f34dde2c690236726f75ed6e52f3d62e829854925ee5870d67f16365d605100d"
+    },
+    {
+      "title": "Scarica RDF",
+      "url": "https://www1.finanze.gov.it/finanze/analisi_stat/public/v_4_0_0/contenuti/Redditi_e_principali_variabili_IRPEF_su_base_comunale_RDF_2023.zip?d=1615465800",
+      "content_type": "application/zip",
+      "probe_bytes": 131072,
+      "probe_sha256": "85453bb80cdd28064bbe84096f125cb1ffc89b177b53420862a77174ff282472"
+    },
+    {
+      "title": "Scarica CSV",
+      "url": "https://www1.finanze.gov.it/finanze/analisi_stat/public/v_4_0_0/contenuti/Redditi_e_principali_variabili_IRPEF_su_base_subcomunale_CSV_2023.zip?d=1615465800",
+      "content_type": "application/zip",
+      "probe_bytes": 89443,
+      "probe_sha256": "3a2e8c64cbae004f21358fbd6097d36562b02ee4b4b578edab7b34d9484089b5"
+    },
+    {
+      "title": "Scarica RDF",
+      "url": "https://www1.finanze.gov.it/finanze/analisi_stat/public/v_4_0_0/contenuti/Redditi_e_principali_variabili_IRPEF_su_base_subcomunale_RDF_2023.zip?d=1615465800",
+      "content_type": "application/zip",
+      "probe_bytes": 131072,
+      "probe_sha256": "08e46e20749ec5b74f4a14dd2b644dad21e8decb591abc4c4b55b1460b0aa0e1"
+    },
+    {
+      "title": "Scarica CSV",
+      "url": "https://www1.finanze.gov.it/finanze/analisi_stat/public/v_4_0_0/contenuti/Redditi_e_principali_variabili_IRPEF_su_base_comunale_CSV_2022.zip?d=1615465800",
+      "content_type": "application/zip",
+      "probe_bytes": 131072,
+      "probe_sha256": "06d2212d155e4db09e6e7036f01261d4b49dbe3426568d1cae79d0ba9e8cb899"
+    },
+    {
+      "title": "Scarica RDF",
+      "url": "https://www1.finanze.gov.it/finanze/analisi_stat/public/v_4_0_0/contenuti/Redditi_e_principali_variabili_IRPEF_su_base_comunale_RDF_2022.zip?d=1615465800",
+      "content_type": "application/zip",
+      "probe_bytes": 131072,
+      "probe_sha256": "8c23ac86de6de0e910491e70716c1fea00439744c1036380347871b66e0a3125"
+    }
+  ],
+  "checked_at": "2026-10-05T13:04:00.639136+00:00",
+  "status": "feed"
+}
