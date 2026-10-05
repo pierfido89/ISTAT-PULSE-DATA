@@ -33,7 +33,20 @@ def main():
      resources.append({"title":title,"url":u,"content_type":ct,"probe_bytes":len(b),"sha256":hashlib.sha256(b).hexdigest()})
      break
    except Exception:pass
- if len(resources)<2:raise RuntimeError("MUR: direct official CSV resources unavailable from runner")
+ if len(resources)<2:
+  manual=Path("manual/mur")
+  if manual.exists():
+   for p in sorted(manual.glob("*.csv"),reverse=True):
+    try:
+     raw=p.read_bytes()
+     if len(raw)<50: continue
+     head=raw[:4096].decode("utf-8-sig","ignore")
+     if "," not in head and ";" not in head: continue
+     resources.append({"title":p.stem,"url":str(p),"content_type":"text/csv","probe_bytes":min(len(raw),65536),
+                       "sha256":hashlib.sha256(raw[:65536]).hexdigest(),"mode":"manual_bridge"})
+    except Exception: pass
+    if len(resources)>=2: break
+ if len(resources)<2:raise RuntimeError("MUR: remote USTAT blocked; upload official CSV files to manual/mur/")
  snap={"source":"Ministero dell'Università e della Ricerca","source_family":"MUR - USTAT Open Data",
    "period":"2025","validated_resource_count":len(resources),"resources":resources,
    "catalog_url":"https://dati-ustat.mur.gov.it/dataset","checked_at":datetime.now(timezone.utc).isoformat(),"status":"feed"}
