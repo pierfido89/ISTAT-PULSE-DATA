@@ -5273,6 +5273,24 @@
           "status": "latest_public"
         }
       ]
+    },
+    {
+      "name": "ACI - Open Data mobilità",
+      "category": "MOBILITA_AUTO_IT",
+      "topics": [
+        "PARCO_VEICOLARE",
+        "PRIME_ISCRIZIONI",
+        "PASSAGGI_PROPRIETA",
+        "RADIAZIONI"
+      ],
+      "official": true,
+      "url": "https://aci.gov.it/attivita-e-progetti/studi-e-ricerche/autoritratto/",
+      "access_cost": "free",
+      "integration_status": "feed",
+      "feed_status": "Attiva · allegati Autoritratto ZIP/XLS validati; OPV disponibile come consultazione",
+      "frequency": "Annuale",
+      "latest_period": "2026-07-22",
+      "checked_at": "2026-10-05T13:56:48.444371+00:00"
     }
   ]
 }

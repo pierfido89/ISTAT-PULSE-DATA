@@ -1,0 +1,67 @@
+{
+  "source": "ACI",
+  "source_family": "ACI - Autoritratto / Open Data mobilità",
+  "latest_update": "2026-07-22",
+  "validated_resource_count": 8,
+  "resources": [
+    {
+      "title": "zip , 983 KB",
+      "url": "https://aci.gov.it//app/uploads/2026/06/Autoritratto-2025-Radiazioni.zip",
+      "content_type": "application/zip",
+      "probe_bytes": 131072,
+      "sha256": "f13f0b51fabd371fef8c051a356951ed61d7070aa4353aeb5bca6b06bd7077f8"
+    },
+    {
+      "title": "rar , 703 KB",
+      "url": "https://aci.gov.it//app/uploads/2024/06/Radiazioni_veicoli_2021.rar",
+      "content_type": "application/vnd.rar",
+      "probe_bytes": 131072,
+      "sha256": "f2ca64ab7822b2a60b3a1b2343cefe8e3df9dfaf990181cfcf8ec6bacbc78e3a"
+    },
+    {
+      "title": "zip , 981 KB",
+      "url": "https://aci.gov.it//app/uploads/2024/06/Autoritratto2020_Radiazioni.zip",
+      "content_type": "application/zip",
+      "probe_bytes": 131072,
+      "sha256": "71d058d2b768ed6afc53544dd446b2b96c544996a4b3cb0d12b5cf1195ebad36"
+    },
+    {
+      "title": "zip , 714 KB",
+      "url": "https://aci.gov.it//app/uploads/2024/06/Radiazioni_2019.zip",
+      "content_type": "application/zip",
+      "probe_bytes": 131072,
+      "sha256": "1931cb78978b87d50834fdd65785dbb066ee6365b9be5c33abb590b0ab6c203f"
+    },
+    {
+      "title": "zip , 718 KB",
+      "url": "https://aci.gov.it//app/uploads/2025/02/Radiazioni_2018.zip",
+      "content_type": "application/zip",
+      "probe_bytes": 131072,
+      "sha256": "6b1cfed324b2eee6c3263f8822f23ae0aa742c4d98d78803200245255a76b7ff"
+    },
+    {
+      "title": "zip , 708 KB",
+      "url": "https://aci.gov.it//app/uploads/2025/02/Radiazioni_veicoli_2017.zip",
+      "content_type": "application/zip",
+      "probe_bytes": 131072,
+      "sha256": "a1e122f55a1ac667a89b0baf5c6d51b3f13a64c3edd1f6e319a7ff07224c648e"
+    },
+    {
+      "title": "zip , 711 KB",
+      "url": "https://aci.gov.it//app/uploads/2025/02/Radiazioni_veicoli_2016.zip",
+      "content_type": "application/zip",
+      "probe_bytes": 131072,
+      "sha256": "3bc915af73dc0a2bb42a9502d6bf90b38bd4766f0ce880bdb9a852cba5ad29d9"
+    },
+    {
+      "title": "zip , 736 KB",
+      "url": "https://aci.gov.it//app/uploads/2025/02/Radiazioni_veicoli_2015.zip",
+      "content_type": "application/zip",
+      "probe_bytes": 131072,
+      "sha256": "c385f9461f88b27041b283d04dff27a0463cd807511b89b18278c4ddf9d3d4b7"
+    }
+  ],
+  "opv_url": "https://opv.aci.it/",
+  "checked_at": "2026-10-05T13:56:48.444371+00:00",
+  "status": "feed"
+}
