@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import hashlib,json,re,urllib.parse,urllib.request
+import hashlib,json,re,urllib.parse,requests
 from datetime import datetime,timezone
 from pathlib import Path
 from bs4 import BeautifulSoup
@@ -13,9 +13,13 @@ PAGES={
 def get(u,probe=False):
  h={"User-Agent":UA,"Accept":"*/*","Accept-Language":"it-IT,it;q=0.9"}
  if probe:h["Range"]="bytes=0-131071"
- req=urllib.request.Request(u,headers=h)
- with urllib.request.urlopen(req,timeout=180) as r:
-  b=r.read(131072 if probe else -1);return b,r.geturl(),r.headers.get("Content-Type","")
+ r=requests.get(u,headers=h,timeout=90,stream=probe)
+ r.raise_for_status()
+ if probe:
+  b=next(r.iter_content(131072),b"")
+ else:
+  b=r.content
+ return b,r.url,r.headers.get("Content-Type","")
 def iso_date(text):
  m=re.search(r"Data ultimo aggiornamento\s*(\d{2})/(\d{2})/(20\d{2})",text,re.I)
  return f"{m.group(3)}-{m.group(2)}-{m.group(1)}" if m else ""
