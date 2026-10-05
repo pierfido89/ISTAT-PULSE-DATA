@@ -2,7 +2,7 @@
   "source": "AIFA - OsMed",
   "source_family": "AIFA OsMed - consumi e spesa farmaci",
   "latest_update": "2026-08-06",
-  "validated_file_count": 9,
+  "validated_file_count": 10,
   "files": [
     {
       "year": 2016,
@@ -75,8 +75,16 @@
       "content_type": "text/csv",
       "probe_bytes": 131072,
       "sha256": "8950a97ca58afdce1a45866c1bd09a520cefc2e0845781cb93826ac56b1b4a29"
+    },
+    {
+      "year": 2025,
+      "title": "Download - Anno 2025",
+      "url": "https://www.aifa.gov.it/documents/20142/847578/dati_2025_260514.zip",
+      "content_type": "application/zip",
+      "probe_bytes": 131072,
+      "sha256": "848d5be66fd3536ca3508321549b83bdc7c49e419147e18331c30ce4e32823b4"
     }
   ],
-  "checked_at": "2026-10-05T14:14:30.236545+00:00",
+  "checked_at": "2026-10-05T14:28:56.715467+00:00",
   "status": "feed"
 }
