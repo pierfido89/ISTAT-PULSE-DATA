@@ -17,12 +17,12 @@ def main():
  for a in soup.find_all("a",href=True):
   href=urllib.parse.urljoin(final,a["href"]);title=clean(a.get_text(" ",strip=True))
   if "/dataset/" in href and href.rstrip("/")!=DATASETS.rstrip("/") and href not in seen:
-   if any(k in title.lower() for k in ("impres","moviment","consistenza","iscrizioni","cessazioni")):
-    seen.add(href);pages.append({"title":title[:220],"url":href})
+   seen.add(href);pages.append({"title":title[:220],"url":href})
  datasets=[];csvs=[]
  for p in pages[:25]:
   try:
    b,u,_=get(p["url"]);ps=BeautifulSoup(b.decode("utf-8","ignore"),"html.parser");txt=clean(ps.get_text(" ",strip=True))
+   if not any(k in txt.lower() for k in ("impres","registro imprese","startup","iscrizioni","cessazioni","imprenditor")): continue
    mod="";m=re.search(r"Data ultima modifica dataset:\s*(\d{1,2}/\d{1,2}/20\d{2})",txt,re.I)
    if m:
     d,mo,y=m.group(1).split("/");mod=f"{y}-{int(mo):02d}-{int(d):02d}"
