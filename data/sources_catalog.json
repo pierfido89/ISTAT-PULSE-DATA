@@ -5273,6 +5273,24 @@
           "status": "latest_public"
         }
       ]
+    },
+    {
+      "name": "Ministero Università e Ricerca - USTAT Open Data",
+      "category": "UNIVERSITA_RICERCA_IT",
+      "topics": [
+        "UNIVERSITA",
+        "DSU",
+        "AFAM",
+        "CONTRIBUZIONE"
+      ],
+      "official": true,
+      "url": "https://dati-ustat.mur.gov.it/dataset",
+      "access_cost": "free",
+      "integration_status": "feed",
+      "feed_status": "Attiva · risorse ufficiali USTAT validate; bridge verificato se il runner è bloccato",
+      "frequency": "Annuale e secondo dataset",
+      "latest_period": "2024-2025",
+      "checked_at": "2026-10-05T16:43:50.986419+00:00"
     }
   ]
 }
