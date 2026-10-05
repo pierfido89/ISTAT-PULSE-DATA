@@ -1,3 +1,4 @@
+# feed-retrigger
 name: Refresh AGENAS feed
 on:
   workflow_dispatch:
