@@ -1,0 +1,106 @@
+{
+  "source": "GME",
+  "source_family": "GME - Mercati Energetici",
+  "pun_url": "https://gme.mercatoelettrico.org/it-it/Home/Esiti/Elettricita/MGP/Esiti/PUN",
+  "pun_latest_date": "",
+  "pun_rows_sample": [],
+  "pun_row_count": 0,
+  "daily_reports": [
+    {
+      "title": "",
+      "url": "https://gme.mercatoelettrico.org/it-it/Home/Esiti/Elettricita/MGP/Statistiche/Rapporti/moduleId/9436/controller/StatRapportiME/action/Download?report=20261001MgpReportGiornaliero.pdf",
+      "content_type": "application/pdf",
+      "bytes_sampled": 65536,
+      "sha256": "b8e30f9076faa94a203b99f56f38c4c75d5ff91ff378358ddd0c0c9b50f43ad7"
+    },
+    {
+      "title": "consultare il report del giorno 01/10/2026",
+      "url": "https://gme.mercatoelettrico.org/it-it/Home/Esiti/Elettricita/MGP/Statistiche/Rapporti/moduleId/9436/controller/StatRapportiME/action/Download?report=20261001MgpReportGiornaliero.pdf",
+      "content_type": "application/pdf",
+      "bytes_sampled": 65536,
+      "sha256": "b8e30f9076faa94a203b99f56f38c4c75d5ff91ff378358ddd0c0c9b50f43ad7"
+    },
+    {
+      "title": "",
+      "url": "https://gme.mercatoelettrico.org/it-it/Home/Esiti/Elettricita/MGP/Statistiche/Rapporti/moduleId/9436/controller/StatRapportiME/action/Download?report=20261002MgpReportGiornaliero.pdf",
+      "content_type": "application/pdf",
+      "bytes_sampled": 65536,
+      "sha256": "020de124d2e7e4a83d2e8115759ef8bb80f44c5796c0d8d83e93ba65b58d44cf"
+    },
+    {
+      "title": "consultare il report del giorno 02/10/2026",
+      "url": "https://gme.mercatoelettrico.org/it-it/Home/Esiti/Elettricita/MGP/Statistiche/Rapporti/moduleId/9436/controller/StatRapportiME/action/Download?report=20261002MgpReportGiornaliero.pdf",
+      "content_type": "application/pdf",
+      "bytes_sampled": 65536,
+      "sha256": "020de124d2e7e4a83d2e8115759ef8bb80f44c5796c0d8d83e93ba65b58d44cf"
+    },
+    {
+      "title": "",
+      "url": "https://gme.mercatoelettrico.org/it-it/Home/Esiti/Elettricita/MGP/Statistiche/Rapporti/moduleId/9436/controller/StatRapportiME/action/Download?report=20261003MgpReportGiornaliero.pdf",
+      "content_type": "application/pdf",
+      "bytes_sampled": 65536,
+      "sha256": "a96379125f66e585f6d3245c2ffc4484a86802e4052f846c7bc82307b056691a"
+    },
+    {
+      "title": "consultare il report del giorno 03/10/2026",
+      "url": "https://gme.mercatoelettrico.org/it-it/Home/Esiti/Elettricita/MGP/Statistiche/Rapporti/moduleId/9436/controller/StatRapportiME/action/Download?report=20261003MgpReportGiornaliero.pdf",
+      "content_type": "application/pdf",
+      "bytes_sampled": 65536,
+      "sha256": "a96379125f66e585f6d3245c2ffc4484a86802e4052f846c7bc82307b056691a"
+    },
+    {
+      "title": "",
+      "url": "https://gme.mercatoelettrico.org/it-it/Home/Esiti/Elettricita/MGP/Statistiche/Rapporti/moduleId/9436/controller/StatRapportiME/action/Download?report=20261004MgpReportGiornaliero.pdf",
+      "content_type": "application/pdf",
+      "bytes_sampled": 65536,
+      "sha256": "c864273987e1415351cc9160bdbde8d7a999dbb835f6729c89c8678525f25483"
+    },
+    {
+      "title": "consultare il report del giorno 04/10/2026",
+      "url": "https://gme.mercatoelettrico.org/it-it/Home/Esiti/Elettricita/MGP/Statistiche/Rapporti/moduleId/9436/controller/StatRapportiME/action/Download?report=20261004MgpReportGiornaliero.pdf",
+      "content_type": "application/pdf",
+      "bytes_sampled": 65536,
+      "sha256": "c864273987e1415351cc9160bdbde8d7a999dbb835f6729c89c8678525f25483"
+    }
+  ],
+  "historical_archives": [
+    {
+      "title": "Anno 2026.zip",
+      "url": "https://gme.mercatoelettrico.org/Home/Esiti/Elettricita/MGP/Statistiche/DatiStorici/moduleId/10874/controller/GmeDatiStoriciItem/action/DownloadFile?fileName=Anno2026.zip",
+      "content_type": "application/octet-stream",
+      "bytes_sampled": 65536,
+      "sha256": "9b1d2043e1aa9f2c067d5ac356e39687aedc40cafdc0a2ea239a6a4827819dd1"
+    },
+    {
+      "title": "Anno 2025.zip",
+      "url": "https://gme.mercatoelettrico.org/Home/Esiti/Elettricita/MGP/Statistiche/DatiStorici/moduleId/10874/controller/GmeDatiStoriciItem/action/DownloadFile?fileName=Anno2025.zip",
+      "content_type": "application/octet-stream",
+      "bytes_sampled": 65536,
+      "sha256": "d73778658c9ad77976ca3600e4a99f88df6c082c4639372c498bee558bee9603"
+    },
+    {
+      "title": "Anno 2024.zip",
+      "url": "https://gme.mercatoelettrico.org/Home/Esiti/Elettricita/MGP/Statistiche/DatiStorici/moduleId/10874/controller/GmeDatiStoriciItem/action/DownloadFile?fileName=Anno2024.zip",
+      "content_type": "application/octet-stream",
+      "bytes_sampled": 65536,
+      "sha256": "20e83e85eacb0a0b7539acebc8f567d126e51a546d508333de28355077c01b4c"
+    },
+    {
+      "title": "Anno 2023.zip",
+      "url": "https://gme.mercatoelettrico.org/Home/Esiti/Elettricita/MGP/Statistiche/DatiStorici/moduleId/10874/controller/GmeDatiStoriciItem/action/DownloadFile?fileName=Anno2023.zip",
+      "content_type": "application/octet-stream",
+      "bytes_sampled": 65536,
+      "sha256": "858d168ba64bdb1ac14e3ee0a4922bd9a27288ec34c705841cdf1d54c6228bfe"
+    },
+    {
+      "title": "Anno 2022.zip",
+      "url": "https://gme.mercatoelettrico.org/Home/Esiti/Elettricita/MGP/Statistiche/DatiStorici/moduleId/10874/controller/GmeDatiStoriciItem/action/DownloadFile?fileName=Anno2022.zip",
+      "content_type": "application/octet-stream",
+      "bytes_sampled": 65536,
+      "sha256": "f04a3dcab0faec52e592981f495a715390649c6722767ae432f1a21c128ad4ef"
+    }
+  ],
+  "api_requires_credentials": true,
+  "checked_at": "2026-10-05T10:24:42.784957+00:00",
+  "status": "feed"
+}

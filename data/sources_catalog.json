@@ -5273,6 +5273,51 @@
           "status": "latest_public"
         }
       ]
+    },
+    {
+      "name": "GME - Gestore Mercati Energetici",
+      "category": "ENERGIA_MERCATI_IT",
+      "topics": [
+        "ELETTRICITA",
+        "PUN",
+        "MGP",
+        "GAS",
+        "MERCATI_ENERGETICI"
+      ],
+      "official": true,
+      "url": "https://gme.mercatoelettrico.org/",
+      "access_cost": "free",
+      "access_note": "Dati pubblici GME accessibili dal sito; l'API ufficiale avanzata richiede registrazione e credenziali.",
+      "integration_status": "feed",
+      "feed_status": "Attiva · dati pubblici GME acquisiti automaticamente; API autenticata opzionale",
+      "notes": "Feed PULSE su PUN Index GME, report giornalieri MGP e archivi storici pubblici. API GME non necessaria per il feed base.",
+      "level": "Nazionale e zone di mercato secondo dataset",
+      "frequency": "Giornaliera/infragiornaliera secondo mercato",
+      "latest_period": "",
+      "checked_at": "2026-10-05T10:24:42.784957+00:00",
+      "provides": [
+        {
+          "area": "Energia",
+          "series": "PUN Index GME",
+          "description": "Indice di riferimento del mercato elettrico italiano.",
+          "latest_period": "",
+          "status": "latest_public"
+        },
+        {
+          "area": "Energia",
+          "series": "Mercato del Giorno Prima - report",
+          "description": "Report ufficiali MGP.",
+          "latest_period": "",
+          "status": "latest_public"
+        },
+        {
+          "area": "Energia",
+          "series": "Storico MGP",
+          "description": "Archivi storici GME pubblici.",
+          "latest_period": "",
+          "status": "latest_public"
+        }
+      ]
     }
   ]
 }
