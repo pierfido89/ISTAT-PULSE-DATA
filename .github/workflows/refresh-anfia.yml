@@ -39,8 +39,8 @@ jobs:
           assert d["source"]=="ANFIA"
           assert d["period"]
           assert d["publication_date"]
-          assert d["download_bytes"]>1000
-          print("ANFIA", d["period"], d.get("passenger_cars_registered"), d.get("yoy_percent"))
+          assert d["dataset"]["probe_bytes"]>50
+          print("ANFIA", d["period"], d["publication_date"], d["dataset"]["content_type"])
           PY
       - name: Commit refreshed ANFIA data
         run: |
