@@ -1,3 +1,4 @@
+# feed-retrigger
 name: Refresh RGS feed
 on:
   workflow_dispatch:
