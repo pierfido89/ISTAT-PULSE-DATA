@@ -5284,15 +5284,15 @@
         "IMPRENDITORIA"
       ],
       "official": true,
-      "url": "https://www.infocamere.it/movimprese",
+      "url": "https://opengovernment.unioncamere.gov.it/dataset",
       "access_cost": "free",
       "access_note": "Dati pubblici Unioncamere/InfoCamere e dataset Open Government; verificare la licenza del singolo dataset.",
       "integration_status": "feed",
-      "feed_status": "Attiva · risorse pubbliche CSV/download validate automaticamente",
+      "feed_status": "Attiva · vere distribuzioni CSV Open Government validate",
       "notes": "Feed PULSE basato su Movimprese e Open Government Unioncamere per demografia d'impresa e dataset camerali.",
       "level": "Nazionale, regionale, provinciale e comunale secondo dataset",
-      "frequency": "Trimestrale e secondo aggiornamento dataset",
-      "checked_at": "2026-10-05T10:19:30.339124+00:00",
+      "frequency": "Trimestrale e secondo dataset",
+      "checked_at": "2026-10-05T10:40:06.637024+00:00",
       "provides": [
         {
           "area": "Imprese",
@@ -5308,7 +5308,8 @@
           "latest_period": "",
           "status": "latest_public"
         }
-      ]
+      ],
+      "latest_period": "2026-10-05"
     }
   ]
 }

@@ -1,53 +1,103 @@
 {
   "source": "Unioncamere - InfoCamere",
-  "source_family": "Unioncamere - InfoCamere - Demografia d'impresa",
-  "open_government_url": "https://opengovernment.unioncamere.gov.it/",
-  "movimprese_url": "https://www.infocamere.it/movimprese",
-  "validated_resource_count": 6,
-  "resources": [
+  "source_family": "Unioncamere - InfoCamere - Open Data imprese",
+  "dataset_count": 4,
+  "validated_csv_count": 9,
+  "datasets": [
     {
-      "title": "",
-      "url": "https://www.infocamere.it/movimprese",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes_sampled": 33607,
-      "sha256": "1fb97361bcece31dc7040ed01243e986b88f06cc4bf573eaf34bf2e9dcc40b81"
+      "title": "Modena - Movimentazione e consistenza a fine periodo delle imprese in provincia per grandi settori dal 2025",
+      "url": "https://opengovernment.unioncamere.gov.it/dataset/modena-movimentazione-e-consistenza-fine-periodo-delle-imprese-provincia-grandi-settori-dal-2025",
+      "modified": "2026-10-05",
+      "distributions": [
+        {
+          "title": "Movimentazione e consistenza a fine periodo delle imprese in provincia di Modena per grandi settori ATECO 2025 dal 2025",
+          "url": "https://opengovernment.unioncamere.gov.it/download/21306",
+          "content_type": "text/csv; charset=UTF-8",
+          "bytes": 371,
+          "sha256": "98779add5482f4a598a5628daf87c5e59fb25a1edbbd04cf89229898a2acb05d"
+        },
+        {
+          "title": "Movimentazione e consistenza a fine periodo delle imprese in provincia di Modena per grandi settori ATECO 2007 dal 2009 al 2024",
+          "url": "https://opengovernment.unioncamere.gov.it/download/21307",
+          "content_type": "text/csv; charset=UTF-8",
+          "bytes": 1743,
+          "sha256": "c4390c2017c97709ea641e172d3d6af61e19d76e368552ba4d947792960fc203"
+        },
+        {
+          "title": "Movimentazione e consistenza a fine periodo delle imprese in provincia di Modena per grandi settori ATECO 2002 dal 2004 al 2009",
+          "url": "https://opengovernment.unioncamere.gov.it/download/21308",
+          "content_type": "text/csv; charset=UTF-8",
+          "bytes": 891,
+          "sha256": "c2408609ae3576272c073dfa8f91d37787e80af4bcd2250a297871afd735eab3"
+        },
+        {
+          "title": "Movimentazione e consistenza a fine periodo delle imprese in provincia di Modena per grandi settori dal 1995 al 2004",
+          "url": "https://opengovernment.unioncamere.gov.it/download/21309",
+          "content_type": "text/csv; charset=UTF-8",
+          "bytes": 1163,
+          "sha256": "241d4f68fd8307b6a070313970d2843ab94916f4c2b0a25a349f02ca851b2e0f"
+        },
+        {
+          "title": "Movimentazione e consistenza a fine periodo delle imprese in provincia di Modena per grandi settori dal 1988 al 1994",
+          "url": "https://opengovernment.unioncamere.gov.it/download/21310",
+          "content_type": "text/csv; charset=UTF-8",
+          "bytes": 1991,
+          "sha256": "8bc0c5990fee488a474bc51bc755a386e01557b34036584366a27d6aca1286d9"
+        }
+      ]
     },
     {
-      "title": "Movimprese",
-      "url": "https://www.infocamere.it/movimprese",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes_sampled": 33607,
-      "sha256": "1fb97361bcece31dc7040ed01243e986b88f06cc4bf573eaf34bf2e9dcc40b81"
+      "title": "Modena - Movimentazione e consistenza a fine periodo delle imprese in provincia per forma giuridica dal 1990 al 2025",
+      "url": "https://opengovernment.unioncamere.gov.it/dataset/modena-movimentazione-e-consistenza-fine-periodo-delle-imprese-provincia-forma-giuridica-dal-1990-al-2025",
+      "modified": "2026-09-30",
+      "distributions": [
+        {
+          "title": "Movimentazione e consistenza a fine periodo delle imprese in provincia di Modena per forma giuridica dal 1990 al 2025",
+          "url": "https://opengovernment.unioncamere.gov.it/download/21303",
+          "content_type": "text/csv; charset=UTF-8",
+          "bytes": 3285,
+          "sha256": "6cd4456f47f8420ff666b90a66e963480405e3d117dbf2a9d530ed411fc9bdb9"
+        }
+      ]
     },
     {
-      "title": "Altre Analisi",
-      "url": "https://www.infocamere.it/principali-soluzioni/movimprese/dashboard.html",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes_sampled": 24115,
-      "sha256": "37d2b8f52227c73fea0cea9749af49870ab2dc7f2e55bebd4e0c86680bb7bf52"
+      "title": "Modena - Movimentazione e consistenza a fine periodo imprese, unità locali e addetti nei comuni della provincia dal 1993 al 2025 semestrale",
+      "url": "https://opengovernment.unioncamere.gov.it/dataset/modena-movimentazione-e-consistenza-fine-periodo-imprese-unita-locali-e-addetti-nei-comuni-della-provincia-dal-1993-al-2025-semestrale",
+      "modified": "2026-09-30",
+      "distributions": [
+        {
+          "title": "Movimentazione e consistenza a fine periodo imprese, unità locali e addetti nei comuni provincia dal 1993 al 2025 (semestrale)",
+          "url": "https://opengovernment.unioncamere.gov.it/download/21302",
+          "content_type": "text/csv; charset=UTF-8",
+          "bytes": 200595,
+          "sha256": "80a1d963778ef739e95b59f817903b23792b454d8a65e42a79f19cb9206444f9"
+        }
+      ]
     },
     {
-      "title": "condizioni di utilizzo",
-      "url": "https://www.infocamere.it/dam/jcr:e9da8e0a-5e8b-49d7-bf3a-dc5f5ea86d3b/Movimprese%20-%20Condizioni%20di%20utilizzo.2025-04-30-17-11-02.pdf",
-      "content_type": "application/pdf;charset=UTF-8",
-      "bytes_sampled": 131072,
-      "sha256": "94c9de8eea4394ca1296561308aa6a165e3f52dbe5c29439c75adf9e75b2bbf9"
-    },
-    {
-      "title": "glossario",
-      "url": "https://www.infocamere.it/dam/jcr:b6d1a47f-fc07-40a2-a1ed-d0ff9278972d/Glossario_Movimprese.2025-05-15-09-02-55.pdf",
-      "content_type": "application/pdf;charset=UTF-8",
-      "bytes_sampled": 131072,
-      "sha256": "54186971ddfa8154892378d241ae34c724a9df2bcb4876481ef44db3bd2834f2"
-    },
-    {
-      "title": "Leggi",
-      "url": "https://www.infocamere.it/news-landing-page/movimprese_giornaleradiofm.html",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes_sampled": 18431,
-      "sha256": "b4050441a705b1ff9cd7cdeefe9f9282c30918b89cc5b0a3fe1ab278ffdcb831"
+      "title": "Pistoia Prato - Cessazioni di Imprese per settore economico anno 2025",
+      "url": "https://opengovernment.unioncamere.gov.it/dataset/pistoia-prato-cessazioni-di-imprese-settore-economico-anno-2025",
+      "modified": "2026-08-27",
+      "distributions": [
+        {
+          "title": "Cessazioni di Imprese per settore economico in provincia di Pistoia anno 2025",
+          "url": "https://opengovernment.unioncamere.gov.it/download/21278",
+          "content_type": "text/csv; charset=UTF-8",
+          "bytes": 9611,
+          "sha256": "837a7a9bd0ab3be2f4343f52e80d3a343d06768b26ebdd2579af447bcef7510f"
+        },
+        {
+          "title": "Cessazioni di Imprese per settore economico in provincia di Prato anno 2025",
+          "url": "https://opengovernment.unioncamere.gov.it/download/21279",
+          "content_type": "text/csv; charset=UTF-8",
+          "bytes": 9612,
+          "sha256": "60fa583951d93c6ecf477dce398f96afcb27e24a1bac96e099c4106fb8c69342"
+        }
+      ]
     }
   ],
-  "checked_at": "2026-10-05T10:19:30.339124+00:00",
+  "movimprese_url": "https://www.infocamere.it/movimprese",
+  "latest_publication_date": "2026-10-05",
+  "checked_at": "2026-10-05T10:40:06.637024+00:00",
   "status": "feed"
 }
