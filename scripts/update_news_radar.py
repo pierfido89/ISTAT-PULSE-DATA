@@ -218,6 +218,13 @@ def verify_primary_page(url, numbers, keywords, allowed_domains):
 
 PRIMARY_ENTITY_PATTERNS=[
  ("istat","istat.it"),
+ ("asso franchising","assofranchising.it"),
+ ("assofranchising","assofranchising.it"),
+ ("garante privacy","garanteprivacy.it"),
+ ("garante per la protezione dei dati personali","garanteprivacy.it"),
+ ("edison energia","edison.it"),
+ ("life turtlenest","legambiente.it"),
+ ("brave-wow","iss.it"),
  ("tuttoscuola","tuttoscuola.com"),
  ("crif","crif.it"),
  ("confindustria nautica","confindustrianautica.net"),
@@ -237,6 +244,15 @@ PRIMARY_ENTITY_PATTERNS=[
  ("unrae","unrae.it")
 ]
 
+TRUSTED_PRIMARY_DOMAINS={
+ "istat.it","inps.it","inail.it","bancaditalia.it","mef.gov.it","agenziaentrate.gov.it",
+ "salute.gov.it","iss.it","agenas.gov.it","aifa.gov.it","invalsi.it","istruzione.it","mur.gov.it",
+ "isprambiente.gov.it","arera.it","gse.it","terna.it","aci.it","anfia.it","unrae.it",
+ "unioncamere.gov.it","assofranchising.it","tuttoscuola.com","crif.it","confindustrianautica.net",
+ "deloitte.com","legambiente.it","legambienteveneto.it","garanteprivacy.it","edison.it",
+ "confcommerciomilano.it"
+}
+
 def extract_named_primary_domains(text):
     low=(text or "").lower()
     out=[]
@@ -247,14 +263,20 @@ def extract_named_primary_domains(text):
 def looks_editorially_irrelevant(title):
     low=(title or "").lower()
     bad=("pronostico","quote e statistiche","scommesse","oddschecker","calendario partite",
-         "ospita","evento","festival","dal 2027/28 limite","decreto scuola")
+         "ospita","evento","festival","dal 2027/28 limite","decreto scuola",
+         "sarà a industria italiana summit","summit 2026")
     return any(x in low for x in bad)
 
 def semantic_key(title, topic, numbers):
-    clean=re.sub(r"[^a-z0-9à-ù ]"," ",(title or "").lower())
-    words=[w for w in clean.split() if len(w)>=4 and w not in {"italia","dati","statistiche","rapporto","news"}]
-    core=" ".join(sorted(set(words[:8])))
-    nums="|".join(sorted(set(normalize_number_token(n) for n in numbers if normalize_number_token(n))))
+    clean=(title or "").lower().split(" - ")[0].split(" | ")[0]
+    clean=re.sub(r"[^a-z0-9à-ù ]"," ",clean)
+    words=[w for w in clean.split() if len(w)>=4 and w not in {"italia","dati","statistiche","statistica","rapporto","news","record"}]
+    core=" ".join(sorted(set(words[:7])))
+    vals=[]
+    for n in numbers:
+        v=normalize_number_token(n)
+        if v and not re.fullmatch(r"20\d{2}",v): vals.append(v)
+    nums="|".join(sorted(set(vals)))
     return hashlib.sha256(f"{topic}|{core}|{nums}".encode()).hexdigest()[:20]
 
 def resolve_primary(discovery_title, discovery_text, topic, numbers, direct_links, hint_domains, cfg):
@@ -305,6 +327,8 @@ def resolve_primary(discovery_title, discovery_text, topic, numbers, direct_link
             if not host: continue
             # Do not use the news discovery page itself as primary.
             if any(x in host for x in ("news.google.","repubblica.it","ansa.it","adnkronos.com","ilgiornaleditalia.it","torinonews24.it","zazoom.it","ore12.net")):
+                continue
+            if not any(host==d or host.endswith("."+d) for d in TRUSTED_PRIMARY_DOMAINS):
                 continue
             dynamic_allowed=list(dict.fromkeys(allowed+[host]))
             v=verify_primary_page(rr["url"],numbers,kws,dynamic_allowed)
