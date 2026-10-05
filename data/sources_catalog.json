@@ -5273,6 +5273,23 @@
           "status": "latest_public"
         }
       ]
+    },
+    {
+      "name": "AGENAS - PNE e rapporti statistici",
+      "category": "SANITA_SSR_IT",
+      "topics": [
+        "PNE",
+        "MOBILITA_SANITARIA",
+        "PERFORMANCE",
+        "ESITI"
+      ],
+      "official": true,
+      "url": "https://www.agenas.gov.it/",
+      "access_cost": "free",
+      "integration_status": "feed",
+      "feed_status": "Attiva · rapporti statistici ufficiali AGENAS/PNE validati; dashboard PNE consultabile separatamente",
+      "frequency": "Annuale e secondo pubblicazione",
+      "checked_at": "2026-10-05T13:59:14.689245+00:00"
     }
   ]
 }
