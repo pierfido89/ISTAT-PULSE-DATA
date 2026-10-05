@@ -1,0 +1,171 @@
+{
+  "source": "INPS",
+  "source_family": "INPS - Open Data e Osservatori statistici",
+  "catalog_count": 2499,
+  "families": {
+    "labour_market": [
+      {
+        "id": "04d24813-c3b3-4d6d-bfc8-689703ffdc27",
+        "title": "Agricoli dipendenti Rapporti di lavoro attivati per attivita e area geografica 2015",
+        "metadata_modified": "2026-07-10T22:06:17.795351",
+        "resource": {
+          "name": "ID-3433.json",
+          "format": "JSON",
+          "last_modified": "2026-07-10T22:05:45.458257",
+          "url": "https://opendata.inps.it/download/dataset/migr2016/ID-3433.json",
+          "bytes": 29406,
+          "content_type": "application/json",
+          "sha256": "ccd2581570bcdc1e66924bbf8f4440a05f2a7686ea6a55a123aa9e8acb2daa0a"
+        }
+      },
+      {
+        "id": "6989bd0c-8707-4f8a-a410-684f752539e0",
+        "title": "Agricoli dipendenti Rapporti di lavoro attivati per settore 2011-2014",
+        "metadata_modified": "2026-07-01T13:38:40.963319",
+        "resource": {
+          "name": "ID-2945.csv",
+          "format": "CSV",
+          "last_modified": "2026-06-24T15:00:19.426638",
+          "url": "https://opendata.inps.it/download/dataset/migr2015/ID-2945.csv",
+          "bytes": 4645,
+          "content_type": "text/csv",
+          "sha256": "8684d66eea6121fc9a8ceb19e77b7d9ea68962971fd9fd8a9a39aa141ed94ac5"
+        }
+      },
+      {
+        "id": "540ca75b-8cc5-4a20-ba58-39b9cb22b941",
+        "title": "Agricoli dipendenti Rapporti di lavoro attivati per settore 2014",
+        "metadata_modified": "2026-07-01T13:24:49.700981",
+        "resource": {
+          "name": "ID-2940.csv",
+          "format": "CSV",
+          "last_modified": "2026-06-24T14:55:56.568222",
+          "url": "https://opendata.inps.it/download/dataset/migr2015/ID-2940.csv",
+          "bytes": 4681,
+          "content_type": "text/csv",
+          "sha256": "5325904a397433e8a1f2af8ad951ffc3eb04ecc81d984b3287342743181d30a1"
+        }
+      },
+      {
+        "id": "25dbb51c-aa9a-49d4-b377-154113537389",
+        "title": "Agricoli dipendenti Rapporti di lavoro attivati per settore 2015",
+        "metadata_modified": "2026-07-09T22:09:52.934456",
+        "resource": {
+          "name": "ID-3434.csv",
+          "format": "CSV",
+          "last_modified": "2026-06-30T18:18:18.548194",
+          "url": "https://opendata.inps.it/download/dataset/migr2016/ID-3434.csv",
+          "bytes": 1729,
+          "content_type": "text/csv",
+          "sha256": "a76a9888ec3c67fbd719eda4efb47f5f97b81c1fc60a23006bc28e92098097aa"
+        }
+      },
+      {
+        "id": "dd313d05-c195-4e1f-8c6a-f8cb79b7b0b5",
+        "title": "ASPI disoccupazione non agricola per regione 2014",
+        "metadata_modified": "2026-07-03T08:53:05.425873",
+        "resource": {
+          "name": "ID-3044.csv",
+          "format": "CSV",
+          "last_modified": "2026-06-26T08:50:48.029429",
+          "url": "https://opendata.inps.it/download/dataset/migr2016/ID-3044.csv",
+          "bytes": 1143,
+          "content_type": "text/csv",
+          "sha256": "242ee80879e33e32148959dd6cb080c29f80b474c04a3fe955aebdd7e98a6eff"
+        }
+      }
+    ],
+    "pensions": [
+      {
+        "id": "66ff9d23-1a47-48ad-81e6-e5fe52342f1b",
+        "title": "ANF Dipendenti privati Beneficiari e importo per categoria e componenti nucleo 2014 II",
+        "metadata_modified": "2026-07-06T18:20:22.051596",
+        "resource": {
+          "name": "ID-3204.json",
+          "format": "JSON",
+          "last_modified": "2026-07-06T18:19:49.251477",
+          "url": "https://opendata.inps.it/download/dataset/migr2016/ID-3204.json",
+          "bytes": 5383,
+          "content_type": "application/json",
+          "sha256": "ad13a331bc07288b5924e3de8e7d4c842fe2271a6455661a5f4bffef9235f1f0"
+        }
+      },
+      {
+        "id": "3c7c6f1e-8197-4a72-9442-60c6ec4469fe",
+        "title": "ANF Dipendenti privati Beneficiari e importo per categoria e regione 2014",
+        "metadata_modified": "2026-07-07T20:29:58.310776",
+        "resource": {
+          "name": "ID-3205.csv",
+          "format": "CSV",
+          "last_modified": "2026-06-30T14:56:43.440353",
+          "url": "https://opendata.inps.it/download/dataset/migr2016/ID-3205.csv",
+          "bytes": 4813,
+          "content_type": "text/csv",
+          "sha256": "bae734934a99c2b4e2136ff4132b55239be7c7949c9f0c6d82de4617e96dd356"
+        }
+      },
+      {
+        "id": "d84afc8c-a099-44c6-9a77-6709954cb42d",
+        "title": "ANF Dipendenti privati Beneficiari e importo per categoria, sesso e area geografica 2014",
+        "metadata_modified": "2026-07-07T20:37:07.929903",
+        "resource": {
+          "name": "ID-3206.csv",
+          "format": "CSV",
+          "last_modified": "2026-06-30T15:02:27.643082",
+          "url": "https://opendata.inps.it/download/dataset/migr2016/ID-3206.csv",
+          "bytes": 5199,
+          "content_type": "text/csv",
+          "sha256": "a4c21bd9dd24924718ee4e3707f8982488223e6eb24c44a802d8a83a8d5528e6"
+        }
+      },
+      {
+        "id": "438e6257-164b-40a3-80dd-c4caad18527b",
+        "title": "ANF Dipendenti privati Beneficiari e importo per sesso e categoria 2014",
+        "metadata_modified": "2026-07-06T18:05:41.146101",
+        "resource": {
+          "name": "ID-3207.csv",
+          "format": "CSV",
+          "last_modified": "2026-06-30T14:20:14.389262",
+          "url": "https://opendata.inps.it/download/dataset/migr2016/ID-3207.csv",
+          "bytes": 806,
+          "content_type": "text/csv",
+          "sha256": "cd167f4f3f507b305469daf86bc8b0fca7a61f46bebf5236e153510196b5b933"
+        }
+      },
+      {
+        "id": "9a03630f-c227-4027-9f96-5db42fc295cd",
+        "title": "ANF Dipendenti privati Beneficiari e importo per sesso e classe eta 2014",
+        "metadata_modified": "2026-07-07T20:24:20.757171",
+        "resource": {
+          "name": "ID-3208.csv",
+          "format": "CSV",
+          "last_modified": "2026-06-30T14:53:04.550961",
+          "url": "https://opendata.inps.it/download/dataset/migr2016/ID-3208.csv",
+          "bytes": 1245,
+          "content_type": "text/csv",
+          "sha256": "93a06f920a5ba7609c0717296ff8dc6a63edd8d5ebc758fbc084695477c85e59"
+        }
+      }
+    ],
+    "single_allowance": [
+      {
+        "id": "65a1fa45-6cf0-40d5-9f2e-722a01afaadc",
+        "title": "Assegno Unico Figli con disabilita 2022-2024",
+        "metadata_modified": "2026-01-17T08:46:36.486151",
+        "resource": {
+          "name": "dataset_6007.json",
+          "format": "JSON",
+          "last_modified": "2026-01-17T08:45:48.848929",
+          "url": "https://opendata.inps.it/download/dataset/migr2024/dataset_6007.json",
+          "bytes": 65536,
+          "content_type": "application/json",
+          "sha256": "3054f546f8ce672647f18453e3d73fa8dcc62150edfcc008e52f46e9b95e577e"
+        }
+      }
+    ]
+  },
+  "validated_resource_count": 22,
+  "latest_metadata_date": "2026-07-10T22:06:17.795351",
+  "checked_at": "2026-10-05T12:43:53.432954+00:00",
+  "status": "feed"
+}

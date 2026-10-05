@@ -5273,6 +5273,24 @@
           "status": "latest_public"
         }
       ]
+    },
+    {
+      "name": "INPS - Open Data e Osservatori statistici",
+      "category": "SOCIALE_LAVORO_IT",
+      "topics": [
+        "LAVORO",
+        "PENSIONI",
+        "WELFARE",
+        "ASSEGNO_UNICO"
+      ],
+      "official": true,
+      "url": "https://www.inps.it/it/it/dati-e-bilanci/open-data.html",
+      "access_cost": "free",
+      "integration_status": "feed",
+      "feed_status": "Attiva · package_list/package_show INPS e risorse ufficiali validate",
+      "frequency": "Secondo calendario INPS",
+      "latest_period": "2026-07-10T22:06:17.795351",
+      "checked_at": "2026-10-05T12:43:53.432954+00:00"
     }
   ]
 }
