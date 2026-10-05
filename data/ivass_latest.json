@@ -1,0 +1,65 @@
+{
+  "source": "IVASS",
+  "source_family": "IVASS - Comunicazioni statistiche",
+  "latest_release": {
+    "title": "Comunicazione statistica - Anno V - n. 7 - settembre 2026",
+    "url": "https://www.ivass.it/pubblicazioni-e-statistiche/statistiche/comunicazioni-statistiche/2026/cs-n-7-2026/index.html",
+    "publication_date": "2026-09-24",
+    "attachments": [
+      {
+        "title": "Tavole II trimestre 2026 xlsx 132.0 KB",
+        "url": "https://www.ivass.it/pubblicazioni-e-statistiche/statistiche/comunicazioni-statistiche/2026/cs-n-7-2026/cs_n_7_2026_tavole_II_trimestre.xlsx?force_download=1",
+        "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "probe_bytes": 131072,
+        "probe_sha256": "069764c6b4ea4c1b5286f006d740eea8ed5e27b8a6dd3f2d1e0787925d3025de"
+      }
+    ]
+  },
+  "release_count": 3,
+  "releases": [
+    {
+      "title": "Comunicazione statistica - Anno V - n. 7 - settembre 2026",
+      "url": "https://www.ivass.it/pubblicazioni-e-statistiche/statistiche/comunicazioni-statistiche/2026/cs-n-7-2026/index.html",
+      "publication_date": "2026-09-24",
+      "attachments": [
+        {
+          "title": "Tavole II trimestre 2026 xlsx 132.0 KB",
+          "url": "https://www.ivass.it/pubblicazioni-e-statistiche/statistiche/comunicazioni-statistiche/2026/cs-n-7-2026/cs_n_7_2026_tavole_II_trimestre.xlsx?force_download=1",
+          "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "probe_bytes": 131072,
+          "probe_sha256": "069764c6b4ea4c1b5286f006d740eea8ed5e27b8a6dd3f2d1e0787925d3025de"
+        }
+      ]
+    },
+    {
+      "title": "Comunicazione statistica - Anno V - n. 6 - luglio 2026",
+      "url": "https://www.ivass.it/pubblicazioni-e-statistiche/statistiche/comunicazioni-statistiche/2026/cs-n-6-2026/index.html",
+      "publication_date": "2026-07-14",
+      "attachments": [
+        {
+          "title": "Tavole I trimestre 2026 xlsx 129.1 KB",
+          "url": "https://www.ivass.it/pubblicazioni-e-statistiche/statistiche/comunicazioni-statistiche/2026/cs-n-6-2026/CS_N_6_2026_tavole_I_trimestre.xlsx?force_download=1",
+          "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "probe_bytes": 131072,
+          "probe_sha256": "e3e1dce602984453001bb306110005f838f58b7882375d7533b358b2ce382131"
+        }
+      ]
+    },
+    {
+      "title": "Comunicazione statistica - Anno V - n. 4 - aprile 2026",
+      "url": "https://www.ivass.it/pubblicazioni-e-statistiche/statistiche/comunicazioni-statistiche/2026/cs-n-4-2026/index.html",
+      "publication_date": "2026-04-20",
+      "attachments": [
+        {
+          "title": "Tavole IV trimestre 2025 xlsx 128.0 KB",
+          "url": "https://www.ivass.it/pubblicazioni-e-statistiche/statistiche/comunicazioni-statistiche/2026/cs-n-4-2026/tavole_IV_trimestre.xlsx?force_download=1",
+          "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "probe_bytes": 131040,
+          "probe_sha256": "991b7962cbb5fd679b4f6a317560e93982f70d408977dde0c7495e6be2f82792"
+        }
+      ]
+    }
+  ],
+  "checked_at": "2026-10-05T12:38:23.240934+00:00",
+  "status": "feed"
+}

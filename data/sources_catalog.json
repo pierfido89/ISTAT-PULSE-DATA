@@ -5273,6 +5273,24 @@
           "status": "latest_public"
         }
       ]
+    },
+    {
+      "name": "IVASS - Comunicazioni statistiche",
+      "category": "ASSICURAZIONI_IT",
+      "topics": [
+        "ASSICURAZIONI",
+        "RC_AUTO",
+        "PREMI",
+        "MERCATO_ASSICURATIVO"
+      ],
+      "official": true,
+      "url": "https://www.ivass.it/pubblicazioni-e-statistiche/statistiche/comunicazioni-statistiche/",
+      "access_cost": "free",
+      "integration_status": "feed",
+      "feed_status": "Attiva · comunicazioni statistiche e allegati XLSX/ZIP validati",
+      "frequency": "Trimestrale e periodica",
+      "latest_period": "2026-09-24",
+      "checked_at": "2026-10-05T12:38:23.240934+00:00"
     }
   ]
 }
