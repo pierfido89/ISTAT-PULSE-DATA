@@ -1,38 +1,28 @@
 {
   "source": "AGENAS",
   "source_family": "AGENAS - PNE e rapporti statistici",
-  "validated_resource_count": 4,
+  "validated_resource_count": 2,
   "resources": [
     {
-      "title": "PDF",
-      "url": "https://www.agenas.gov.it/images/agenas/comunicati/aprile2022/comunicato_quaderno_cure_primarie.pdf",
+      "title": "Principali risultati PNE - Edizione 2025",
+      "url": "https://www.agenas.gov.it/images/2025/9_dic_pne/RISULTATI_per_comunicato_STAMPA_09-12-2025.pdf",
+      "period": "2025",
+      "topic": "PNE",
       "content_type": "application/pdf",
       "probe_bytes": 131072,
-      "sha256": "68fd51dab541398560c72efff17824b52ae5da9f7c802444180ea89005150c74"
+      "sha256": "07f589411034faeb5d774d28514e4b70ee9b5fc6a386a2b63a2ebb93af0fdc9d"
     },
     {
-      "title": "PDF",
-      "url": "https://www.agenas.gov.it/images/agenas/comunicati/gennaio2022/comunicato_quaderno_monitor_centrali_operative.pdf",
+      "title": "La Mobilità Sanitaria in Italia - Edizione 2025",
+      "url": "https://www.agenas.gov.it/images/Terzo_Rapporto_mobilita.pdf",
+      "period": "2025",
+      "topic": "MOBILITA_SANITARIA",
       "content_type": "application/pdf",
       "probe_bytes": 131072,
-      "sha256": "41a415d5493200ce805b82299d3c09cdeb8b773fa91167a5536bbd1d05d79bc9"
-    },
-    {
-      "title": "PDF",
-      "url": "https://www.agenas.gov.it/images/agenas/comunicati/novembre2016/quaderno_marcatori_tumorali.pdf",
-      "content_type": "application/pdf",
-      "probe_bytes": 131072,
-      "sha256": "0951c073173e8acf461d7dc09239dd0e42fd9f5714ddf2df19779aa13d313793"
-    },
-    {
-      "title": "PDF",
-      "url": "https://www.agenas.gov.it/images/agenas/comunicati/Quaderno_accessi_impropri_al_PS_comunicato.pdf",
-      "content_type": "application/pdf",
-      "probe_bytes": 131072,
-      "sha256": "d04c7a76b6a00e82913fda06dc2ceea4377e883558d755c8a9e94f1ef71baf4b"
+      "sha256": "be012452e0aa46b17cbe8530fd6e9d309d5bec0543dfa4cb9ddc03ef43d2af3b"
     }
   ],
   "pne_url": "https://pne.agenas.it/",
-  "checked_at": "2026-10-05T13:59:14.689245+00:00",
+  "checked_at": "2026-10-05T14:12:45.945771+00:00",
   "status": "feed"
 }

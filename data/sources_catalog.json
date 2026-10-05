@@ -5287,9 +5287,10 @@
       "url": "https://www.agenas.gov.it/",
       "access_cost": "free",
       "integration_status": "feed",
-      "feed_status": "Attiva · rapporti statistici ufficiali AGENAS/PNE validati; dashboard PNE consultabile separatamente",
+      "feed_status": "Attiva · PNE 2025 e Mobilità sanitaria 2025 validati",
       "frequency": "Annuale e secondo pubblicazione",
-      "checked_at": "2026-10-05T13:59:14.689245+00:00"
+      "checked_at": "2026-10-05T14:12:45.945771+00:00",
+      "latest_period": "2025"
     }
   ]
 }
