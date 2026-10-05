@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
-      - run: python -m pip install beautifulsoup4
+      - run: python -m pip install beautifulsoup4 requests
       - run: python scripts/update_ministero_salute.py
       - run: |
           test -s data/ministero_salute_latest.json
