@@ -5273,6 +5273,25 @@
           "status": "latest_public"
         }
       ]
+    },
+    {
+      "name": "AGCOM - Osservatorio sulle comunicazioni",
+      "category": "COMUNICAZIONI_MEDIA_IT",
+      "topics": [
+        "TELECOMUNICAZIONI",
+        "INTERNET",
+        "MEDIA",
+        "POSTE"
+      ],
+      "official": true,
+      "url": "https://www.agcom.it/pubblicazioni/osservatori",
+      "access_cost": "free",
+      "integration_status": "feed",
+      "feed_status": "Attiva · allegati OPEN DATA AGCOM XLSX validati",
+      "frequency": "Trimestrale",
+      "latest_period": "2026-Q2",
+      "publication_date": "2026-07-31",
+      "checked_at": "2026-10-05T12:38:12.255435+00:00"
     }
   ]
 }

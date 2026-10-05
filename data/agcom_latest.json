@@ -1,0 +1,20 @@
+{
+  "source": "AGCOM",
+  "source_family": "AGCOM - Osservatorio sulle comunicazioni",
+  "issue": 2,
+  "year": 2026,
+  "publication_date": "2026-07-31",
+  "release_title": "Osservatorio sulle comunicazioni n. 2/2026",
+  "release_url": "https://www.agcom.it/pubblicazioni/osservatori/osservatorio-sulle-comunicazioni-n-2-2026",
+  "open_data": [
+    {
+      "title": "OPEN DATA Oss. 2-2026_start.xlsx",
+      "url": "https://www.agcom.it/sites/default/files/media/allegato/2026/OPEN%20DATA%20Oss.%202-2026_start_0.xlsx",
+      "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "probe_bytes": 131072,
+      "probe_sha256": "9f4bc001087f3e5c907c5aacb99a436ca3934fa443ec722e5ce3a7da656b04ef"
+    }
+  ],
+  "checked_at": "2026-10-05T12:38:12.255435+00:00",
+  "status": "feed"
+}
