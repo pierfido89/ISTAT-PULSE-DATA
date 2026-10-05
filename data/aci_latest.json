@@ -5,63 +5,63 @@
   "validated_resource_count": 8,
   "resources": [
     {
-      "title": "zip , 983 KB",
+      "title": "Consistenza parco veicoli zip , 8 MB",
+      "url": "https://aci.gov.it//app/uploads/2026/06/Autoritratto2025_Parco_veicolare.zip",
+      "content_type": "application/zip",
+      "probe_bytes": 131072,
+      "sha256": "bb714fac349907f9255279ad9459918d8e9a17ff8637972a5ad6d215534e353f"
+    },
+    {
+      "title": "Consistenza parco veicoli - soggetto utilizzatore zip , 8 MB",
+      "url": "https://aci.gov.it//app/uploads/2026/07/Autoritratto2025_Parco_veicolare_UTILIZZATORE.zip",
+      "content_type": "application/zip",
+      "probe_bytes": 131072,
+      "sha256": "af199add0b96ea1beea643f1fbc40c7143329ffee6f77f70bf9bb10720492945"
+    },
+    {
+      "title": "Prime iscrizioni veicoli zip , 923 KB",
+      "url": "https://aci.gov.it//app/uploads/2026/06/Autoritratto2025_Prime_Iscrizioni.zip",
+      "content_type": "application/zip",
+      "probe_bytes": 131072,
+      "sha256": "d23317d12a8ed67f2c399a1cf47191acec644b4461724b8f68881c447103bfc6"
+    },
+    {
+      "title": "Passaggi di proprietà veicoli excel , 948 KB",
+      "url": "https://aci.gov.it//app/uploads/2026/06/Autoritratto2025_-Usato.xlsx",
+      "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "probe_bytes": 131072,
+      "sha256": "7de281082f624bffd41c3b1072df14363bf82134bd9733115efb0d8eea57aaf8"
+    },
+    {
+      "title": "Radiazioni veicoli zip , 983 KB",
       "url": "https://aci.gov.it//app/uploads/2026/06/Autoritratto-2025-Radiazioni.zip",
       "content_type": "application/zip",
       "probe_bytes": 131072,
       "sha256": "f13f0b51fabd371fef8c051a356951ed61d7070aa4353aeb5bca6b06bd7077f8"
     },
     {
-      "title": "rar , 703 KB",
-      "url": "https://aci.gov.it//app/uploads/2024/06/Radiazioni_veicoli_2021.rar",
-      "content_type": "application/vnd.rar",
-      "probe_bytes": 131072,
-      "sha256": "f2ca64ab7822b2a60b3a1b2343cefe8e3df9dfaf990181cfcf8ec6bacbc78e3a"
-    },
-    {
-      "title": "zip , 981 KB",
-      "url": "https://aci.gov.it//app/uploads/2024/06/Autoritratto2020_Radiazioni.zip",
+      "title": "Consistenza parco veicoli zip , 8 MB",
+      "url": "https://aci.gov.it//app/uploads/2025/06/Autoritratto-2024-Parco-Veicolare.zip",
       "content_type": "application/zip",
       "probe_bytes": 131072,
-      "sha256": "71d058d2b768ed6afc53544dd446b2b96c544996a4b3cb0d12b5cf1195ebad36"
+      "sha256": "c86915ca6553c9deff1b877b8d9993e76274ec35f38f9deb0f76f491c82d01c7"
     },
     {
-      "title": "zip , 714 KB",
-      "url": "https://aci.gov.it//app/uploads/2024/06/Radiazioni_2019.zip",
+      "title": "Prime iscrizioni veicoli zip , 926 KB",
+      "url": "https://aci.gov.it//app/uploads/2025/06/Autoritratto-2024-Prime-Iscrizioni.zip",
       "content_type": "application/zip",
       "probe_bytes": 131072,
-      "sha256": "1931cb78978b87d50834fdd65785dbb066ee6365b9be5c33abb590b0ab6c203f"
+      "sha256": "9d6089b436f4d13b3b9132ce97a57dd5edb4d494f6ef7a145dec2df759d4110b"
     },
     {
-      "title": "zip , 718 KB",
-      "url": "https://aci.gov.it//app/uploads/2025/02/Radiazioni_2018.zip",
-      "content_type": "application/zip",
+      "title": "Passaggi di proprietà veicoli excel , 900 KB",
+      "url": "https://aci.gov.it//app/uploads/2025/06/Autoritratto-2024-Usato.xlsx",
+      "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
       "probe_bytes": 131072,
-      "sha256": "6b1cfed324b2eee6c3263f8822f23ae0aa742c4d98d78803200245255a76b7ff"
-    },
-    {
-      "title": "zip , 708 KB",
-      "url": "https://aci.gov.it//app/uploads/2025/02/Radiazioni_veicoli_2017.zip",
-      "content_type": "application/zip",
-      "probe_bytes": 131072,
-      "sha256": "a1e122f55a1ac667a89b0baf5c6d51b3f13a64c3edd1f6e319a7ff07224c648e"
-    },
-    {
-      "title": "zip , 711 KB",
-      "url": "https://aci.gov.it//app/uploads/2025/02/Radiazioni_veicoli_2016.zip",
-      "content_type": "application/zip",
-      "probe_bytes": 131072,
-      "sha256": "3bc915af73dc0a2bb42a9502d6bf90b38bd4766f0ce880bdb9a852cba5ad29d9"
-    },
-    {
-      "title": "zip , 736 KB",
-      "url": "https://aci.gov.it//app/uploads/2025/02/Radiazioni_veicoli_2015.zip",
-      "content_type": "application/zip",
-      "probe_bytes": 131072,
-      "sha256": "c385f9461f88b27041b283d04dff27a0463cd807511b89b18278c4ddf9d3d4b7"
+      "sha256": "d8d6d838a20c2cd1ef2d153810f4436907717d8a61b255e5d814ab7436d56d76"
     }
   ],
   "opv_url": "https://opv.aci.it/",
-  "checked_at": "2026-10-05T13:56:48.444371+00:00",
+  "checked_at": "2026-10-05T14:02:44.741039+00:00",
   "status": "feed"
 }
