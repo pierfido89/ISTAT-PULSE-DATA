@@ -5273,6 +5273,25 @@
           "status": "latest_public"
         }
       ]
+    },
+    {
+      "name": "Agenzia delle Entrate - OMI",
+      "category": "IMMOBILIARE_IT",
+      "topics": [
+        "IMMOBILI",
+        "PREZZI_CASE",
+        "COMPRAVENDITE"
+      ],
+      "official": true,
+      "url": "https://www1.agenziaentrate.gov.it/servizi/geopoi_omi/index.htm",
+      "access_cost": "free",
+      "integration_status": "feed",
+      "feed_status": "Attiva · quotazioni OMI e pubblicazioni trimestrali monitorate automaticamente",
+      "notes": "Feed pubblico su quotazioni semestrali OMI e statistiche trimestrali del mercato immobiliare.",
+      "level": "Nazionale, provinciale, comunale e zona OMI",
+      "frequency": "Semestrale e trimestrale",
+      "latest_period": "",
+      "checked_at": "2026-10-05T10:26:08.674739+00:00"
     }
   ]
 }
