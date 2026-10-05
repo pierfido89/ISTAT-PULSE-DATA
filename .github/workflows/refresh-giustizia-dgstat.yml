@@ -7,7 +7,7 @@ on:
     branches: [ main, feat/giustizia-dgstat-feed ]
     paths:
       - 'scripts/update_giustizia_dgstat.py'
-      - '.github/workflows/refresh-giustizia_dgstat.yml'
+      - '.github/workflows/refresh-giustizia-dgstat.yml'
 permissions:
   contents: write
 jobs:
