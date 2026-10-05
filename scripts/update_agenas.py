@@ -1,39 +1,53 @@
 #!/usr/bin/env python3
-import json,hashlib,urllib.parse,urllib.request
+from __future__ import annotations
+import hashlib,json,re,urllib.parse,urllib.request
 from datetime import datetime,timezone
 from pathlib import Path
 from bs4 import BeautifulSoup
-OUT=Path("data/agenas_latest.json");CAT=Path("data/sources_catalog.json");UA="ISTAT-PULSE/AGENAS";HOME="https://stat.agenas.it/"
+
+OUT=Path("data/agenas_latest.json");CAT=Path("data/sources_catalog.json")
+UA="ISTAT-PULSE/AGENAS (+https://github.com/pierfido89/ISTAT-PULSE-DATA)"
+PAGES=[
+ "https://www.agenas.gov.it/?id=96&view=category",
+ "https://www.agenas.gov.it/i-quaderni-di-monitor-%E2%80%93-supplementi-alla-rivista"
+]
+
 def get(u,probe=False):
- h={"User-Agent":UA,"Accept":"*/*"}; 
+ h={"User-Agent":UA,"Accept":"*/*","Accept-Language":"it-IT,it;q=0.9"}
  if probe:h["Range"]="bytes=0-131071"
- r=urllib.request.Request(u,headers=h)
- with urllib.request.urlopen(r,timeout=180) as x:
-  b=x.read(131072 if probe else -1);return b,x.geturl(),x.headers.get("Content-Type","")
+ req=urllib.request.Request(u,headers=h)
+ with urllib.request.urlopen(req,timeout=180) as r:
+  b=r.read(131072 if probe else -1);return b,r.geturl(),r.headers.get("Content-Type","")
+
 def main():
- raw,final,_=get(HOME);s=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
- reports=[];files=[]
- for a in s.find_all("a",href=True):
-  h=urllib.parse.urljoin(final,a["href"]);t=" ".join(a.stripped_strings)
-  if "report=" in h: reports.append({"title":t,"url":h})
- for p in reports[:60]:
-  try:b,u,_=get(p["url"]);ps=BeautifulSoup(b.decode("utf-8","ignore"),"html.parser")
-  except:continue
-  for a in ps.find_all("a",href=True):
-   h=urllib.parse.urljoin(u,a["href"]);lab=" ".join(a.stripped_strings);low=(lab+" "+h).lower()
-   if not any(x in low for x in (".csv",".xlsx",".xls",".zip","download","scarica")):continue
+ resources=[];seen=set()
+ for page in PAGES:
+  try:b,u,_=get(page);s=BeautifulSoup(b.decode("utf-8","ignore"),"html.parser")
+  except Exception:continue
+  for a in s.find_all("a",href=True):
+   h=urllib.parse.urljoin(u,a["href"]);lab=" ".join(a.stripped_strings);ctx=(lab+" "+h).lower()
+   if h in seen:continue
+   if not any(k in ctx for k in ("pne 2025","programma nazionale esiti","mobilità sanitaria","report 2025","quaderno")):continue
+   if not any(x in ctx for x in (".pdf","download","scarica","document")):continue
    try:
     rb,ru,ct=get(h,True)
-    if len(rb)>50 and "text/html" not in ct.lower():
-     files.append({"report":p["title"],"title":lab,"url":ru,"content_type":ct,"probe_bytes":len(rb),"sha256":hashlib.sha256(rb).hexdigest()})
-   except:pass
-  if len(files)>=6:break
- if not files:raise RuntimeError("AGENAS: no structured downloadable resources")
- snap={"source":"AGENAS","source_family":"AGENAS Portale Statistico","validated_resource_count":len(files),"resources":files,"checked_at":datetime.now(timezone.utc).isoformat(),"status":"feed"}
+    if len(rb)>50 and ("pdf" in ct.lower() or ".pdf" in ru.lower()):
+     seen.add(h);resources.append({"title":lab[:220],"url":ru,"content_type":ct,"probe_bytes":len(rb),"sha256":hashlib.sha256(rb).hexdigest()})
+   except Exception:pass
+   if len(resources)>=6:break
+  if len(resources)>=6:break
+ if not resources:raise RuntimeError("AGENAS: no official statistical report validated")
+ snap={"source":"AGENAS","source_family":"AGENAS - PNE e rapporti statistici",
+       "validated_resource_count":len(resources),"resources":resources,
+       "pne_url":"https://pne.agenas.it/","checked_at":datetime.now(timezone.utc).isoformat(),"status":"feed"}
  OUT.write_text(json.dumps(snap,ensure_ascii=False,indent=2)+"\n")
- root=json.loads(CAT.read_text()) if CAT.exists() else {"sources":[]};name="AGENAS - Portale Statistico"
+ root=json.loads(CAT.read_text()) if CAT.exists() else {"sources":[]};name="AGENAS - PNE e rapporti statistici"
  src=next((x for x in root["sources"] if x.get("name")==name),None)
  if src is None:src={};root["sources"].append(src)
- src.update({"name":name,"category":"SANITA_SSR_IT","topics":["PNE","MOBILITA_SANITARIA","PERFORMANCE","TEMPI_ATTESA"],"official":True,"url":HOME,"access_cost":"free","integration_status":"feed","feed_status":"Attiva · risorse statistiche scaricabili validate","frequency":"Secondo report","checked_at":snap["checked_at"]})
+ src.update({"name":name,"category":"SANITA_SSR_IT","topics":["PNE","MOBILITA_SANITARIA","PERFORMANCE","ESITI"],
+   "official":True,"url":"https://www.agenas.gov.it/","access_cost":"free","integration_status":"feed",
+   "feed_status":"Attiva · rapporti statistici ufficiali AGENAS/PNE validati; dashboard PNE consultabile separatamente",
+   "frequency":"Annuale e secondo pubblicazione","checked_at":snap["checked_at"]})
  CAT.write_text(json.dumps(root,ensure_ascii=False,indent=2)+"\n")
+ print(json.dumps({"resources":len(resources)},ensure_ascii=False))
 if __name__=="__main__":main()
