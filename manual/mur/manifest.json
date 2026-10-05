@@ -1,0 +1,25 @@
+{
+  "source": "MUR - USTAT Open Data",
+  "verification_mode": "manual_bridge",
+  "verified_at": "2026-10-05",
+  "resources": [
+    {
+      "title": "2025 TC AFAM Gettito Contribuzione",
+      "official_url": "https://dati-ustat.mur.gov.it/dataset/3d994969-6b6c-4c61-af53-5ecdfb75c796/resource/8be1b336-dd44-4bee-a5e0-5b749e4ef372/download/2025_tc_afam_gettito_contribuzione.csv",
+      "filename": "2025_tc_afam_gettito_contribuzione.csv",
+      "bytes": 163523,
+      "sha256": "f6499af7f51cf6b081f758f94d1a20c9c567ecaeb67ad453134cad85fcad9aae",
+      "period": "2024-2025",
+      "format": "CSV"
+    },
+    {
+      "title": "2025 TC AFAM Esonero Totale",
+      "official_url": "https://dati-ustat.mur.gov.it/dataset/3d994969-6b6c-4c61-af53-5ecdfb75c796/resource/2b1bcfa0-ba55-4a7b-b4f4-cb35e7b39190/download/2025_tc_afam_esonero_totale.csv",
+      "filename": "2025_tc_afam_esonero_totale.csv",
+      "bytes": 266056,
+      "sha256": "e9cf82cc065670c77dcd8ee671efc45605fef91a6917b6d7338f91811c49cb11",
+      "period": "2024-2025",
+      "format": "CSV"
+    }
+  ]
+}
