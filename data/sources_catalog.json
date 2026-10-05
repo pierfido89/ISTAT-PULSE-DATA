@@ -5273,6 +5273,36 @@
           "status": "latest_public"
         }
       ]
+    },
+    {
+      "name": "ANFIA - Immatricolazioni e mercato auto",
+      "category": "MOBILITA_IT",
+      "topics": [
+        "MOBILITA",
+        "AUTO",
+        "IMMATRICOLAZIONI"
+      ],
+      "official": true,
+      "url": "https://www.anfia.it/it/attivita/studi-e-statistiche/dati-statistici/immatricolazioni/italia",
+      "access_cost": "free",
+      "access_note": "Dati statistici pubblici ANFIA; esclusi i portali statistici in abbonamento.",
+      "integration_status": "connected",
+      "feed_status": "Connettore implementato · prima acquisizione automatica da validare",
+      "notes": "Connettore dedicato alla pagina pubblica ANFIA. Rileva nuove pubblicazioni e acquisisce il documento statistico ufficiale; dopo il primo run validato passerà a feed.",
+      "level": "Nazionale; ulteriori tavole provinciali disponibili dalla fonte",
+      "frequency": "Mensile",
+      "latest_period": "2026-09",
+      "publication_date": "2026-10-01",
+      "checked_at": "2026-10-05",
+      "provides": [
+        {
+          "area": "Mobilità e trasporti",
+          "series": "Immatricolazioni autovetture",
+          "description": "Mercato mensile autovetture Italia da pubblicazione statistica ANFIA.",
+          "latest_period": "2026-09",
+          "status": "latest_public"
+        }
+      ]
     }
   ]
 }
