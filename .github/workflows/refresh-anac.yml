@@ -1,0 +1,27 @@
+name: Refresh ANAC feed
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '10 9 * * *'
+  push:
+    branches: [ main, feat/anac-feed ]
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python -m pip install beautifulsoup4
+      - run: python scripts/update_anac.py
+      - run: |
+          test -s data/anac_latest.json
+      - run: |
+          if git diff --quiet -- data/anac_latest.json data/sources_catalog.json; then exit 0; fi
+          git config user.name "istat-pulse-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/anac_latest.json data/sources_catalog.json
+          git commit -m "data: refresh ANAC feed"
+          git push
