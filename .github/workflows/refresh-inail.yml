@@ -1,0 +1,48 @@
+name: Refresh INAIL feed
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '25 7 * * *'
+  push:
+    branches: [ main, feat/inail-feed ]
+    paths:
+      - 'scripts/update_inail.py'
+      - '.github/workflows/refresh-inail.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Refresh INAIL
+        run: python scripts/update_inail.py
+      - name: Validate snapshot
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("data/inail_latest.json").read_text(encoding="utf-8"))
+          assert d["source"]=="INAIL"
+          assert d["dataset_count"]>=3
+          for k,v in d["datasets"].items():
+              assert v["status"]=="ok"
+              assert v["row_count"]>0
+          print("INAIL OK",d["dataset_count"],d["latest_date"],d["failures"])
+          PY
+      - name: Commit refreshed INAIL data
+        run: |
+          if git diff --quiet -- data/inail_latest.json data/sources_catalog.json; then
+            echo "No INAIL changes"
+            exit 0
+          fi
+          git config user.name "istat-pulse-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/inail_latest.json data/sources_catalog.json
+          git commit -m "data: refresh INAIL feed"
+          git push
