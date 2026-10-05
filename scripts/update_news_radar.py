@@ -200,30 +200,55 @@ def semantic_key(title, topic, numbers):
     return hashlib.sha256(f"{topic}|{core}|{nums}".encode()).hexdigest()[:20]
 
 def resolve_primary(discovery_title, discovery_text, topic, numbers, direct_links, hint_domains, cfg):
-    domains=cfg.get("official_domains",[])
-    kws=title_keywords(discovery_title+" "+discovery_text[:1500])
-    # 1) direct official links from the article
+    institutional=cfg.get("official_domains",[])
+    named_domains=extract_named_primary_domains(discovery_title+" "+discovery_text[:5000])
+    allowed=list(dict.fromkeys(institutional+named_domains))
+    kws=title_keywords(discovery_title+" "+discovery_text[:1800])
+
+    # 1) Direct links found in the discovery article.
     for u in direct_links:
-        v=verify_primary_page(u,numbers,kws,domains)
+        v=verify_primary_page(u,numbers,kws,allowed)
         if v:
-            v["method"]="direct_official_link"; return v
-    # 2) domains inferred from named entities + topic
+            v["method"]="direct_primary_link"; return v
+
+    # 2) Search sources explicitly named in title/body, then likely topic domains.
     candidates=[]
-    named_domains=extract_named_primary_domains(discovery_title+" "+discovery_text[:4000])
     for d in named_domains+list(hint_domains)+TOPIC_DOMAINS.get(topic,[]):
         if d not in candidates: candidates.append(d)
-    qwords=" ".join(kws[:5])
-    nums=" ".join(numbers[:2])
-    for dom in candidates[:8]:
-        query=f'site:{dom} "{qwords}" {nums}'.strip()
-        results=ddg_search(query,limit=4)
-        if not results and qwords:
-            results=ddg_search(f"site:{dom} {qwords}",limit=4)
-        for rr in results:
-            v=verify_primary_page(rr["url"],numbers,kws,domains)
+    qwords=" ".join(kws[:6])
+    nums=" ".join(numbers[:3])
+    for dom in candidates[:10]:
+        local_allowed=list(dict.fromkeys(allowed+[dom]))
+        queries=[
+          f'site:{dom} "{qwords}" {nums}'.strip(),
+          f'site:{dom} {qwords} {nums}'.strip(),
+          f'site:{dom} "{discovery_title[:110]}"'.strip()
+        ]
+        for query in queries:
+            for rr in ddg_search(query,limit=5):
+                v=verify_primary_page(rr["url"],numbers,kws,local_allowed)
+                if v:
+                    v["method"]="named_or_topic_domain_search"; v["search_domain"]=dom; return v
+
+    # 3) Broad web search: find the producer/report even when the newspaper gives no link.
+    broad_queries=[
+      f'"{discovery_title[:150]}"',
+      f'{qwords} {nums} rapporto studio',
+      f'{qwords} {nums}'
+    ]
+    for query in broad_queries:
+        for rr in ddg_search(query,limit=10):
+            host=canonical_host(rr["url"])
+            if not host: continue
+            # Do not use the news discovery page itself as primary.
+            if any(x in host for x in ("news.google.","repubblica.it","ansa.it","adnkronos.com","ilgiornaleditalia.it","torinonews24.it","zazoom.it","ore12.net")):
+                continue
+            dynamic_allowed=list(dict.fromkeys(allowed+[host]))
+            v=verify_primary_page(rr["url"],numbers,kws,dynamic_allowed)
             if v:
-                v["method"]="official_domain_search"; v["search_domain"]=dom; return v
+                v["method"]="broad_primary_search"; v["search_domain"]=host; return v
     return None
+
 
 def derive_headline(topic, primary, geos, numbers):
     where=(geos[0].title() if geos else "Italia")
@@ -292,7 +317,7 @@ def main():
             candidates.append({"radar":feed.get("name"),"status":"radar_error","error":str(e)[:180]})
             continue
         for item in items:
-            if looks_editorially_irrelevant(item["title"]): continue
+            editorial_excluded=looks_editorially_irrelevant(item["title"])
             discovery=(item["title"]+" "+item.get("summary",""))[:7000]
             s,nums=score_candidate(discovery)
             if s<35: continue
@@ -311,10 +336,12 @@ def main():
               "discovery_title":item["title"],"detected_at":now.isoformat(),"score_discovery":s,"topic":topic,
               "numbers_detected":nums,"official_links":official_links,"official_domain_hints":hints,
               "primary_resolution":resolved,
+              "editorial_excluded":editorial_excluded,
               "status":"primary_statistical_source_verified" if resolved else "needs_primary_source"
             }
             candidates.append(cand)
             if not resolved: continue
+            if editorial_excluded: continue
             verified_nums=resolved.get("matched_numbers",[])
             if not verified_nums: continue
             pulse=min(100,50+s//2+(10 if geos else 0)+(5 if len(verified_nums)>=2 else 0))
