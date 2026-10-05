@@ -31,6 +31,22 @@ def main():
     yr=re.search(r"20\d{2}",lab+" "+u)
     files.append({"year":int(yr.group(1)) if yr else None,"title":lab,"url":u,"content_type":ct,"probe_bytes":len(b),"sha256":hashlib.sha256(b).hexdigest()})
   except: pass
+ if len(files)<3 and OUT.exists():
+  try:
+   old=json.loads(OUT.read_text())
+   recovered=[]
+   for item in old.get("files",[]):
+    u=item.get("url","")
+    if not u: continue
+    try:
+     b,ru,ct=get(u,True)
+     if len(b)>50 and "text/html" not in ct.lower():
+      yr=re.search(r"dati(20\d{2})",ru,re.I)
+      recovered.append({"year":int(yr.group(1)) if yr else None,"title":item.get("title","Download"),"url":ru,
+       "content_type":ct,"probe_bytes":len(b),"sha256":hashlib.sha256(b).hexdigest()})
+    except Exception: pass
+   if len(recovered)>=3: files=recovered
+  except Exception: pass
  if len(files)<3: raise RuntimeError("AIFA OsMed: insufficient CSV files")
  snap={"source":"AIFA - OsMed","source_family":"AIFA OsMed - consumi e spesa farmaci","latest_update":upd,"validated_file_count":len(files),"files":files,"checked_at":datetime.now(timezone.utc).isoformat(),"status":"feed"}
  OUT.write_text(json.dumps(snap,ensure_ascii=False,indent=2)+"\n")
