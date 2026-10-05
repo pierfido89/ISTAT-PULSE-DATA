@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "purpose": "Hidden discovery radar only. Media sources are never shown as the public statistical source.",
+  "feeds": [
+    {
+      "name": "Google News - statistiche Italia",
+      "url": "https://news.google.com/rss/search?q=Italia%20(dati%20OR%20statistiche%20OR%20rapporto%20OR%20record)%20when%3A1d&hl=it&gl=IT&ceid=IT%3Ait"
+    },
+    {
+      "name": "Google News - economia lavoro",
+      "url": "https://news.google.com/rss/search?q=Italia%20(occupazione%20OR%20disoccupazione%20OR%20salari%20OR%20imprese)%20(dati%20OR%20rapporto)%20when%3A1d&hl=it&gl=IT&ceid=IT%3Ait"
+    },
+    {
+      "name": "Google News - salute scuola ambiente",
+      "url": "https://news.google.com/rss/search?q=Italia%20(salute%20OR%20scuola%20OR%20ambiente)%20(dati%20OR%20statistiche%20OR%20rapporto)%20when%3A1d&hl=it&gl=IT&ceid=IT%3Ait"
+    },
+    {
+      "name": "Repubblica Economia",
+      "url": "http://www.repubblica.it/rss/economia/rss2.0.xml"
+    }
+  ],
+  "official_domains": [
+    "istat.it","bancaditalia.it","inps.it","inail.it","aifa.gov.it","iss.it","agenas.gov.it",
+    "agcom.it","ivass.it","mef.gov.it","rgs.mef.gov.it","agenziaentrate.gov.it","salute.gov.it",
+    "dati.salute.gov.it","mur.gov.it","ustat.mur.gov.it","dati-ustat.mur.gov.it","istruzione.it",
+    "dati.istruzione.it","invalsi.it","giustizia.it","datiestatistiche.giustizia.it","ispraambiente.gov.it",
+    "isprambiente.gov.it","arera.it","gse.it","terna.it","aci.it","anfia.it","unrae.it","unioncamere.gov.it",
+    "opengovernment.unioncamere.gov.it","infocamere.it","ec.europa.eu","europa.eu","eea.europa.eu"
+  ],
+  "entity_domain_hints": {
+    "istat": "istat.it",
+    "banca d'italia": "bancaditalia.it",
+    "bankitalia": "bancaditalia.it",
+    "inps": "inps.it",
+    "inail": "inail.it",
+    "aifa": "aifa.gov.it",
+    "istituto superiore di sanità": "iss.it",
+    "iss": "iss.it",
+    "agenas": "agenas.gov.it",
+    "agcom": "agcom.it",
+    "ivass": "ivass.it",
+    "ministero della salute": "salute.gov.it",
+    "mur": "mur.gov.it",
+    "ministero dell'istruzione": "istruzione.it",
+    "invalsi": "invalsi.it",
+    "ispra": "isprambiente.gov.it",
+    "arera": "arera.it",
+    "gse": "gse.it",
+    "terna": "terna.it",
+    "aci": "aci.it",
+    "anfia": "anfia.it",
+    "unrae": "unrae.it",
+    "unioncamere": "unioncamere.gov.it",
+    "eurostat": "ec.europa.eu"
+  }
+}
