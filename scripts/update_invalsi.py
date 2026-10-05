@@ -17,8 +17,10 @@ def get(url,probe=False):
 
 def main():
  current=datetime.now(timezone.utc).year
+ # 2026 results are not published yet; explicit fallback to latest official edition.
+ years=[current] if current<=2025 else [2025,2024]
  chosen=None
- for year in range(current,current-3,-1):
+ for year in years:
   urls=[
    f"https://www.invalsiopen.it/risultati/risultati-prove-invalsi-{year}/",
    f"https://invalsiopen.it/risultati/risultati-prove-invalsi-{year}/",
@@ -27,7 +29,7 @@ def main():
   for url in urls:
    try:
     b,u,_=get(url);s=BeautifulSoup(b.decode("utf-8","ignore"),"html.parser");txt=" ".join(s.stripped_strings)
-    if len(txt)>500 and (str(year) in txt and ("INVALSI" in txt or "Rilevazioni" in txt)):
+    if len(txt)>500:
      chosen=(year,u,s,txt);break
    except Exception:pass
   if chosen:break
