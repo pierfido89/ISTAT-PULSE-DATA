@@ -29,15 +29,18 @@ def main():
    dist=[]
    for a in ps.find_all("a",href=True):
     href=urllib.parse.urljoin(u,a["href"]);title=clean(a.get_text(" ",strip=True));low=(href+" "+title).lower()
-    if any(x in low for x in (".csv","download","scarica")):
-     try:
-      rb,ru,ct=get(href)
-      magic=rb[:300].decode("utf-8","ignore")
-      if len(rb)>20 and ("csv" in ct.lower() or ".csv" in ru.lower() or ";" in magic or "," in magic):
-       if "text/html" not in ct.lower():
-        item={"title":title[:180],"url":ru,"content_type":ct,"bytes":len(rb),"sha256":hashlib.sha256(rb).hexdigest()}
-        dist.append(item);csvs.append(item)
-     except:pass
+    if any(x in low for x in ("facebook","twitter","linkedin","telegram","whatsapp","mailto:")): continue
+    try:
+     rb,ru,ct=get(href)
+     ctype=ct.lower()
+     magic=rb[:2000].decode("utf-8-sig","ignore")
+     structured=("csv" in ctype or ".csv" in ru.lower() or
+       ((";" in magic or "," in magic) and "<html" not in magic.lower() and "<!doctype" not in magic.lower()))
+     if len(rb)>20 and structured and "text/html" not in ctype:
+      item={"title":title[:180],"url":ru,"content_type":ct,"bytes":len(rb),"sha256":hashlib.sha256(rb).hexdigest()}
+      if item["url"] not in [x["url"] for x in csvs]:
+       dist.append(item);csvs.append(item)
+    except:pass
    if dist:datasets.append({"title":p["title"],"url":u,"modified":mod,"distributions":dist})
   except:pass
   if len(csvs)>=8:break
