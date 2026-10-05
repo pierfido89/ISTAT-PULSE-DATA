@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import hashlib,json,urllib.request
+import hashlib,json,subprocess,tempfile,os
 from datetime import datetime,timezone
 from pathlib import Path
 OUT=Path("data/mur_latest.json");CAT=Path("data/sources_catalog.json")
@@ -12,9 +12,16 @@ FILES=[
  ("AFAM 2025 - esonero totale","https://dati-ustat.mur.gov.it/dataset/3d994969-6b6c-4c61-af53-5ecdfb75c796/resource/2b1bcfa0-ba55-4a7b-b4f4-cb35e7b39190/download/2025_tc_afam_esonero_totale.csv")
 ]
 def probe(u):
- req=urllib.request.Request(u,headers={"User-Agent":UA,"Accept":"text/csv,*/*","Range":"bytes=0-65535"})
- with urllib.request.urlopen(req,timeout=45) as r:
-  b=r.read(65536);return b,r.geturl(),r.headers.get("Content-Type","")
+ fd,path=tempfile.mkstemp();os.close(fd)
+ try:
+  cmd=["curl","-L","--fail","--silent","--show-error","--max-time","30","--http1.1","-A",UA,"-H","Range: bytes=0-65535","-o",path,u]
+  subprocess.run(cmd,check=True,timeout=35)
+  b=Path(path).read_bytes()[:65536]
+  if len(b)<50: raise RuntimeError("empty")
+  return b,u,"text/csv"
+ finally:
+  try:os.unlink(path)
+  except:pass
 def main():
  resources=[]
  for title,url in FILES:
