@@ -1,0 +1,46 @@
+{
+  "source": "INVALSI",
+  "source_family": "INVALSI - Risultati rilevazioni nazionali",
+  "year": 2026,
+  "release_url": "https://www.invalsi.it/rilevazioni-nazionali/materiali-approfondimento/",
+  "validated_resource_count": 5,
+  "resources": [
+    {
+      "title": "Sintesi primi risultati prove INVALSI 2026",
+      "url": "https://www.invalsi.it/wp-content/uploads/2026/07/Sintesi-primi-risultati-prove-INVALSI-2026.pdf",
+      "content_type": "application/pdf",
+      "probe_bytes": 131072,
+      "sha256": "b71c268b07f4e3ff13c3203865b4cd41a4afe45edf09f5482b850795ab4550fb"
+    },
+    {
+      "title": "Slide Sintesi primi risultati prove INVALSI 2026",
+      "url": "https://www.invalsi.it/wp-content/uploads/2026/07/Slide-Sintesi-primi-risultati-prove-INVALSI-2026.pdf",
+      "content_type": "application/pdf",
+      "probe_bytes": 131072,
+      "sha256": "28eb66dd20aa93c38681063817a19318020c62ccc0796bede4bb0730d74ab827"
+    },
+    {
+      "title": "Comunicato stampa",
+      "url": "https://www.invalsi.it/wp-content/uploads/2026/07/COMUNICATO-STAMPA.pdf",
+      "content_type": "application/pdf",
+      "probe_bytes": 131072,
+      "sha256": "d53a6b0fbe798df5d12fca5be1c311b7abbe5b8ceb260f7f8ac4d23977b32192"
+    },
+    {
+      "title": "Rapporto prove INVALSI 2024",
+      "url": "https://www.invalsi.it/wp-content/uploads/2024/09/Rapporto-Prove-INVALSI-2024-1.pdf",
+      "content_type": "application/pdf",
+      "probe_bytes": 131072,
+      "sha256": "7c3f2a8971521eb9134eecda2b5441d1b652d80d72612389029dfdc7024effd2"
+    },
+    {
+      "title": "Rapporto prove INVALSI 2023",
+      "url": "https://www.invalsi.it/wp-content/uploads/2024/09/Rapporto-Prove-INVALSI-2023-1.pdf",
+      "content_type": "application/pdf",
+      "probe_bytes": 131072,
+      "sha256": "abcff60784ff3bc089afe5bf8e36a764f82a6339a895f6ba88ecefb2de21bde9"
+    }
+  ],
+  "checked_at": "2026-10-05T14:03:20.680327+00:00",
+  "status": "feed"
+}

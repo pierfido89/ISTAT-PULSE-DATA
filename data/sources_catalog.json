@@ -5273,6 +5273,25 @@
           "status": "latest_public"
         }
       ]
+    },
+    {
+      "name": "INVALSI - Risultati rilevazioni nazionali",
+      "category": "ISTRUZIONE_VALUTAZIONE_IT",
+      "topics": [
+        "INVALSI",
+        "APPRENDIMENTI",
+        "ITALIANO",
+        "MATEMATICA",
+        "INGLESE"
+      ],
+      "official": true,
+      "url": "https://www.invalsi.it/rilevazioni-nazionali/materiali-approfondimento/",
+      "access_cost": "free",
+      "integration_status": "feed",
+      "feed_status": "Attiva · rapporto nazionale e materiali INVALSI validati",
+      "frequency": "Annuale",
+      "latest_period": "2026",
+      "checked_at": "2026-10-05T14:03:20.680327+00:00"
     }
   ]
 }
