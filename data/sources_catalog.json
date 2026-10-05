@@ -5289,12 +5289,12 @@
       "access_cost": "free",
       "access_note": "Servizi A2A REST ufficiali della Base Dati Statistica di Banca d'Italia.",
       "integration_status": "feed",
-      "feed_status": "Attiva · acquisizione automatica BDS via servizi A2A ufficiali",
+      "feed_status": "Attiva · BDS A2A validata con periodi reali",
       "notes": "Feed PULSE su 4 cubi BDS validati: banche/moneta, tassi e debito pubblico.",
       "level": "Nazionale e territoriale secondo cubo BDS",
-      "frequency": "Secondo calendario statistico di Banca d'Italia",
-      "latest_period": "2099",
-      "checked_at": "2026-10-05T10:14:44.502066+00:00",
+      "frequency": "Secondo calendario statistico",
+      "latest_period": "2026",
+      "checked_at": "2026-10-05T10:30:16.249194+00:00",
       "provides": [
         {
           "area": "Moneta e banche",

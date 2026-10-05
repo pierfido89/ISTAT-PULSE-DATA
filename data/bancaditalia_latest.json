@@ -19,7 +19,7 @@
         "20260908_095234-TIMESERIES-MULTICUBE.csv"
       ],
       "uncompressed_bytes_sampled": 21256,
-      "latest_period_detected": "2099",
+      "latest_period_detected": "2026-07",
       "sample_sha256": "d5acf68fca17ef279705b1299617550c7e7ff7ecd25ba40e82b935c64c7cf3d5"
     },
     "interest_rates": {
@@ -37,7 +37,7 @@
         "20260908_095422-TIMESERIES-MULTICUBE.csv"
       ],
       "uncompressed_bytes_sampled": 26662,
-      "latest_period_detected": "2087",
+      "latest_period_detected": "2026-07",
       "sample_sha256": "efef37052fba75dfcf44e987a92c26816ac44a3460f77da4f8679ce893efd84f"
     },
     "gross_public_debt": {
@@ -55,7 +55,7 @@
         "20260609_125051-TIMESERIES-MULTICUBE.csv"
       ],
       "uncompressed_bytes_sampled": 12842,
-      "latest_period_detected": "2025-12",
+      "latest_period_detected": "2025-01",
       "sample_sha256": "3c8350cff8ead6aafb8445d681069cac7cdfd69e515eab686dda609b0aee4339"
     },
     "public_debt_by_sector": {
@@ -73,11 +73,12 @@
         "20260914_155250-TIMESERIES-MULTICUBE.csv"
       ],
       "uncompressed_bytes_sampled": 196727,
-      "latest_period_detected": "2092",
+      "latest_period_detected": "2026",
       "sample_sha256": "9bbf94788180516e6fdc48150713cf5643cddb81c714d34376c9e755df90403b"
     }
   },
   "failures": {},
-  "latest_period": "2099",
-  "checked_at": "2026-10-05T10:14:44.502066+00:00"
+  "latest_period": "2026",
+  "checked_at": "2026-10-05T10:30:16.249194+00:00",
+  "status": "feed"
 }
