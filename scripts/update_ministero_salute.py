@@ -14,8 +14,8 @@ KNOWN_PAGES=[
  "https://www.dati.salute.gov.it/it/dataset/personale-dei-serd-anno-2024/",
 ]
 def get(u,probe=False):
- headers={"User-Agent":UA,"Accept":"*/*"}
- if probe: headers["Range"]="bytes=0-131071"
+ headers={"User-Agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/154 Safari/537.36","Accept":"*/*","Accept-Language":"it-IT,it;q=0.9"}
+ if probe: headers["Referer"]="https://www.dati.salute.gov.it/"
  r=urllib.request.Request(u,headers=headers)
  with urllib.request.urlopen(r,timeout=180) as x:
   return x.read(131072 if probe else -1),x.geturl(),x.headers.get("Content-Type","")
