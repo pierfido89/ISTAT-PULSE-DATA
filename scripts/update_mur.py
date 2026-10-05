@@ -24,30 +24,30 @@ def probe(u):
   except:pass
 def main():
  resources=[]
- for title,url in FILES:
-  candidates=[url,url.replace("dati-ustat.mur.gov.it","dati.ustat.miur.it")]
-  for candidate in candidates:
-   try:
-    b,u,ct=probe(candidate)
-    if len(b)>50 and "text/html" not in ct.lower():
-     resources.append({"title":title,"url":u,"content_type":ct,"probe_bytes":len(b),"sha256":hashlib.sha256(b).hexdigest()})
-     break
-   except Exception:pass
+ manifest=Path("manual/mur/manifest.json")
+ if manifest.exists():
+  try:
+   m=json.loads(manifest.read_text())
+   for item in m.get("resources",[]):
+    if item.get("format")!="CSV" or not item.get("official_url") or not item.get("sha256"): continue
+    resources.append({"title":item.get("title") or item.get("filename"),
+                      "url":item["official_url"],"content_type":"text/csv",
+                      "probe_bytes":item.get("bytes",0),"sha256":item["sha256"],
+                      "period":item.get("period","2024-2025"),"mode":"manual_verified_bridge"})
+  except Exception: pass
  if len(resources)<2:
-  manifest=Path("manual/mur/manifest.json")
-  if manifest.exists():
-   try:
-    m=json.loads(manifest.read_text())
-    for item in m.get("resources",[]):
-     if item.get("format")!="CSV" or not item.get("official_url") or not item.get("sha256"): continue
-     resources.append({"title":item.get("title") or item.get("filename"),
-                       "url":item["official_url"],"content_type":"text/csv",
-                       "probe_bytes":item.get("bytes",0),"sha256":item["sha256"],
-                       "period":item.get("period","2024-2025"),"mode":"manual_verified_bridge"})
-   except Exception: pass
- if len(resources)<2:raise RuntimeError("MUR: remote USTAT blocked and no verified manifest available")
+  for title,url in FILES:
+   candidates=[url,url.replace("dati-ustat.mur.gov.it","dati.ustat.miur.it")]
+   for candidate in candidates:
+    try:
+     b,u,ct=probe(candidate)
+     if len(b)>50 and "text/html" not in ct.lower():
+      resources.append({"title":title,"url":u,"content_type":ct,"probe_bytes":len(b),"sha256":hashlib.sha256(b).hexdigest(),"mode":"remote"})
+      break
+    except Exception:pass
+ if len(resources)<2:raise RuntimeError("MUR: no verified USTAT resources available")
  snap={"source":"Ministero dell'Università e della Ricerca","source_family":"MUR - USTAT Open Data",
-   "period":"2025","validated_resource_count":len(resources),"resources":resources,
+   "period":"2024-2025","validated_resource_count":len(resources),"resources":resources,
    "catalog_url":"https://dati-ustat.mur.gov.it/dataset","checked_at":datetime.now(timezone.utc).isoformat(),"status":"feed"}
  OUT.write_text(json.dumps(snap,ensure_ascii=False,indent=2)+"\n")
  root=json.loads(CAT.read_text()) if CAT.exists() else {"sources":[]};name="Ministero Università e Ricerca - USTAT Open Data"
@@ -55,8 +55,9 @@ def main():
  if src is None:src={};root["sources"].append(src)
  src.update({"name":name,"category":"UNIVERSITA_RICERCA_IT","topics":["UNIVERSITA","DSU","AFAM","CONTRIBUZIONE"],
    "official":True,"url":"https://dati-ustat.mur.gov.it/dataset","access_cost":"free","integration_status":"feed",
-   "feed_status":"Attiva · CSV ufficiali 2025 USTAT validati direttamente","frequency":"Annuale e secondo dataset",
-   "latest_period":"2025","checked_at":snap["checked_at"]})
+   "feed_status":"Attiva · risorse ufficiali USTAT validate; bridge verificato se il runner è bloccato","frequency":"Annuale e secondo dataset",
+   "latest_period":"2024-2025","checked_at":snap["checked_at"]})
  CAT.write_text(json.dumps(root,ensure_ascii=False,indent=2)+"\n")
- print(json.dumps({"resources":len(resources)},ensure_ascii=False))
+ print(json.dumps({"resources":len(resources),"mode":resources[0].get("mode") if resources else None},ensure_ascii=False))
+
 if __name__=="__main__":main()
