@@ -291,7 +291,7 @@ def main():
 
     arts=sorted(by_id.values(),key=lambda x:x.get("published_at",""),reverse=True)
     # Safety gate: only verified articles may be publicly visible.
-    public=[a for a in arts if a.get("publication_status")=="published" and a.get("editorial_status")=="verified"]
+    public=[a for a in arts if a.get("publication_status")=="published" and a.get("editorial_status") in ("verified","verified_primary_match")]
     idx={"generated_at":now.isoformat(),"counts":{},
          "oggi":[],"ieri":[],"archivio":[]}
     for a in public:
