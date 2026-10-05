@@ -59,7 +59,14 @@ def main():
     except Exception: pass
    if len(recovered)>=3: files=recovered
   except Exception: pass
- if len(files)<3: raise RuntimeError("AIFA OsMed: insufficient CSV files")
+ years={x.get("year") for x in files}
+ if 2025 not in years:
+  try:
+   b,u,ct=get("https://www.aifa.gov.it/documents/20142/847578/dati_2025_260514.zip",True)
+   if len(b)>50 and "text/html" not in ct.lower():
+    files.append({"year":2025,"title":"Download - Anno 2025","url":u,"content_type":ct,"probe_bytes":len(b),"sha256":hashlib.sha256(b).hexdigest()})
+  except Exception: pass
+ if len(files)<3: raise RuntimeError("AIFA OsMed: insufficient official annual files")
  snap={"source":"AIFA - OsMed","source_family":"AIFA OsMed - consumi e spesa farmaci","latest_update":upd,"validated_file_count":len(files),"files":files,"checked_at":datetime.now(timezone.utc).isoformat(),"status":"feed"}
  OUT.write_text(json.dumps(snap,ensure_ascii=False,indent=2)+"\n")
  root=json.loads(CAT.read_text()) if CAT.exists() else {"sources":[]}; name="AIFA - OsMed"
