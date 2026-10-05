@@ -5273,6 +5273,22 @@
           "status": "latest_public"
         }
       ]
+    },
+    {
+      "name": "Istituto Superiore di Sanità - Open Data",
+      "category": "SALUTE_RICERCA_IT",
+      "topics": [
+        "SORVEGLIANZA",
+        "REGISTRI",
+        "EPIDEMIOLOGIA"
+      ],
+      "official": true,
+      "url": "https://www.iss.it/dati",
+      "access_cost": "free",
+      "integration_status": "feed",
+      "feed_status": "Attiva · dataset ISS scaricabili validati",
+      "frequency": "Secondo dataset",
+      "checked_at": "2026-10-05T13:36:16.648435+00:00"
     }
   ]
 }

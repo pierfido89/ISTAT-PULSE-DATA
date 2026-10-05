@@ -1,0 +1,225 @@
+{
+  "source": "Istituto Superiore di Sanità",
+  "source_family": "ISS Open Data",
+  "dataset_count": 8,
+  "datasets": [
+    {
+      "title": "Open data e data governance",
+      "url": "https://docs.italia.it/italia/piano-triennale-ict/pianotriennale-ict-doc/it/2024-2026/capitolo-5_dati-e-intelligenza-artificiale/open-data-e-data-governance.html",
+      "files": [
+        {
+          "title": "html",
+          "url": "https://docs.italia.it/media/htmlzip/pianotriennale-ict-doc/2024-2026/pianotriennale-ict-doc.zip",
+          "content_type": "application/zip",
+          "probe_bytes": 131072,
+          "sha256": "ea8268402d7fecbc4fadb168f39916548e3c6efc350b74d1f7bae9e0f84f4826"
+        },
+        {
+          "title": "epub",
+          "url": "https://docs.italia.it/media/epub/pianotriennale-ict-doc/2024-2026/pianotriennale-ict-doc.epub",
+          "content_type": "application/epub+zip",
+          "probe_bytes": 131072,
+          "sha256": "eb1d7d91da787226c79f515acf762b367b8475ae48bf223ceea1239c64561cca"
+        },
+        {
+          "title": "html",
+          "url": "https://docs.italia.it/media/htmlzip/pianotriennale-ict-doc/2024-2026/pianotriennale-ict-doc.zip",
+          "content_type": "application/zip",
+          "probe_bytes": 131072,
+          "sha256": "ea8268402d7fecbc4fadb168f39916548e3c6efc350b74d1f7bae9e0f84f4826"
+        }
+      ]
+    },
+    {
+      "title": "Registro Italiano ArtroProtesi (RIAP) - Open data 2020",
+      "url": "https://www.iss.it/-/dati-riap-2020",
+      "files": [
+        {
+          "title": "Registro Italiano ArtroProtesi (RIAP) - Open data 2020",
+          "url": "https://www.iss.it/documents/20126/9841667/2021_RIAP_Open-data-2020.zip/e224da51-594d-9b50-df8b-fa4a60faa8d0?t=1734628635207",
+          "content_type": "application/zip",
+          "probe_bytes": 104374,
+          "sha256": "c3437122e3e5e7e3e8db8656f59227fe7a703b1cb1c865e62f5480c6a063b5bd"
+        },
+        {
+          "title": "",
+          "url": "https://www.iss.it/documents/20126/9841667/2021_RIAP_Open-data-2020.zip/e224da51-594d-9b50-df8b-fa4a60faa8d0?t=1734628635207",
+          "content_type": "application/zip",
+          "probe_bytes": 104374,
+          "sha256": "c3437122e3e5e7e3e8db8656f59227fe7a703b1cb1c865e62f5480c6a063b5bd"
+        },
+        {
+          "title": "Riepilogo-2021_RIAP_Open-data-2020 (.csv)",
+          "url": "https://www.iss.it/documents/20126/9841667/Riepilogo-2021_RIAP_Open-data-2020.csv/94d89908-0048-30f5-1907-e8835a2e0d5c?t=1734629024530",
+          "content_type": "text/csv",
+          "probe_bytes": 3680,
+          "sha256": "5ee683124fe6d2a09c68bee39fe775c83b69f4940079e42084ba557a8999a4b7"
+        }
+      ]
+    },
+    {
+      "title": "Registro Italiano ArtroProtesi (RIAP) - Open data ANCA 2021",
+      "url": "https://www.iss.it/-/riap-open-data-anca-2021",
+      "files": [
+        {
+          "title": "Registro Italiano ArtroProtesi (RIAP) - Open data 2021",
+          "url": "https://www.iss.it/documents/20126/9842361/2022_RIAP_Open-data-2021_A.zip/82ab4806-e10d-2170-e986-b1f19ee87f6d?t=1734630522704",
+          "content_type": "application/zip",
+          "probe_bytes": 65264,
+          "sha256": "69e6ab78a4665885cbd2ab99ef88d38e6a47c86a966ab87aafdc0e7fffd4965b"
+        },
+        {
+          "title": "",
+          "url": "https://www.iss.it/documents/20126/9842361/2022_RIAP_Open-data-2021_A.zip/82ab4806-e10d-2170-e986-b1f19ee87f6d?t=1734630522704",
+          "content_type": "application/zip",
+          "probe_bytes": 65264,
+          "sha256": "69e6ab78a4665885cbd2ab99ef88d38e6a47c86a966ab87aafdc0e7fffd4965b"
+        },
+        {
+          "title": "Riepilogo-2022_RIAP_Open-data-2021_A (.csv)",
+          "url": "https://www.iss.it/documents/20126/9842361/Riepilogo-2022_RIAP_Open-data-2021_A.csv/69468951-f762-1e78-a5d4-cf3ebf5d5af2?t=1734630726779",
+          "content_type": "text/csv",
+          "probe_bytes": 2182,
+          "sha256": "b65c5f137ed4c2d5143f76bbcc68f02f2a2dbbb820cc37fe82cbbbc99107a451"
+        }
+      ]
+    },
+    {
+      "title": "Registro Italiano ArtroProtesi (RIAP) - Open data GINOCCHIO 2021",
+      "url": "https://www.iss.it/-/riap-open-data-ginocchio-2021",
+      "files": [
+        {
+          "title": "Registro Italiano ArtroProtesi (RIAP) - Open data 2021",
+          "url": "https://www.iss.it/documents/20126/9842643/2022_RIAP_Open-data-2021_G.zip/1703d415-c476-d704-4209-5eb185778a1c?t=1734631507250",
+          "content_type": "application/zip",
+          "probe_bytes": 49492,
+          "sha256": "cdc70f06f1bc98db13f1d74a7f1ad025d139ce1037acc34ba912d61200959ee3"
+        },
+        {
+          "title": "",
+          "url": "https://www.iss.it/documents/20126/9842643/2022_RIAP_Open-data-2021_G.zip/1703d415-c476-d704-4209-5eb185778a1c?t=1734631507250",
+          "content_type": "application/zip",
+          "probe_bytes": 49492,
+          "sha256": "cdc70f06f1bc98db13f1d74a7f1ad025d139ce1037acc34ba912d61200959ee3"
+        },
+        {
+          "title": "Riepilogo_2022_RIAP_Open-data-2021_G (.csv)",
+          "url": "https://www.iss.it/documents/20126/9842643/Riepilogo_2022_RIAP_Open-data-2021_G.csv/379446f4-e49a-5a03-b031-a894ad18c729?t=1734631708671",
+          "content_type": "text/csv",
+          "probe_bytes": 1636,
+          "sha256": "8bd5f35de96b1f0507ed465349d63011e17bd9939ec9d5a03f6f8156ec9db34a"
+        }
+      ]
+    },
+    {
+      "title": "Registro Italiano ArtroProtesi (RIAP) - Open data SPALLA 2021",
+      "url": "https://www.iss.it/-/riap-open-data-spalla-2021",
+      "files": [
+        {
+          "title": "Registro Italiano ArtroProtesi (RIAP) - Open data 2021",
+          "url": "https://www.iss.it/documents/20126/9842876/2022_RIAP_Open-data-2021_S-1.zip/e6c8b93f-ae59-1ff6-5030-6b8c6ef87993?t=1734632160049",
+          "content_type": "application/zip",
+          "probe_bytes": 46638,
+          "sha256": "05928616ef95eea456321b62791397bdc57416f340f3613e4c11a552ab783d00"
+        },
+        {
+          "title": "",
+          "url": "https://www.iss.it/documents/20126/9842876/2022_RIAP_Open-data-2021_S-1.zip/e6c8b93f-ae59-1ff6-5030-6b8c6ef87993?t=1734632160049",
+          "content_type": "application/zip",
+          "probe_bytes": 46638,
+          "sha256": "05928616ef95eea456321b62791397bdc57416f340f3613e4c11a552ab783d00"
+        },
+        {
+          "title": "Riepilogo-2022_RIAP_Open-data-2021_S-1 (.csv)",
+          "url": "https://www.iss.it/documents/20126/9842876/Riepilogo-2022_RIAP_Open-data-2021_S-1.csv/c7be0f0b-5616-fde2-4a14-0d52632408b2?t=1734632334679",
+          "content_type": "text/csv",
+          "probe_bytes": 1642,
+          "sha256": "680d8f9e7e5c1e07f15395a214486019c02ee908b8544428bd0d3e714e28464e"
+        }
+      ]
+    },
+    {
+      "title": "Registro Italiano ArtroProtesi (RIAP) - Open data ANCA 2022",
+      "url": "https://www.iss.it/-/riap-open-data-anca-2022",
+      "files": [
+        {
+          "title": "Registro Italiano ArtroProtesi (RIAP) - Open data 2022",
+          "url": "https://www.iss.it/documents/20126/9843109/2023_RIAP_Open-data-2022_A-1.zip/b838dd13-2112-9e5f-e722-81dd849edad1?t=1734632829241",
+          "content_type": "application/zip",
+          "probe_bytes": 62688,
+          "sha256": "17153c3811aa563cd2b6b078b177a1261cd59edf9b4f7529abc980586eb3a3c9"
+        },
+        {
+          "title": "",
+          "url": "https://www.iss.it/documents/20126/9843109/2023_RIAP_Open-data-2022_A-1.zip/b838dd13-2112-9e5f-e722-81dd849edad1?t=1734632829241",
+          "content_type": "application/zip",
+          "probe_bytes": 62688,
+          "sha256": "17153c3811aa563cd2b6b078b177a1261cd59edf9b4f7529abc980586eb3a3c9"
+        },
+        {
+          "title": "Riepilogo-2023_RIAP_Open-data-2022_A-1 (.csv)",
+          "url": "https://www.iss.it/documents/20126/9843109/Riepilogo-2023_RIAP_Open-data-2022_A-1.csv/991b89a6-512b-6dd8-9ea6-6f0cd700694f?t=1734633121215",
+          "content_type": "text/csv",
+          "probe_bytes": 2094,
+          "sha256": "648f6d58d7e8b3ccad67e8615bf1dabbb062cf2bd3d243949c1663e77e155631"
+        }
+      ]
+    },
+    {
+      "title": "Registro Italiano ArtroProtesi (RIAP) - Open data GINOCCHIO 2022",
+      "url": "https://www.iss.it/-/riap-open-data-ginocchio-2022",
+      "files": [
+        {
+          "title": "Registro Italiano ArtroProtesi (RIAP) - Open data 2022",
+          "url": "https://www.iss.it/documents/20126/9843112/2023_RIAP_Open-data-2022_G-1.zip/6a28e62d-6da9-924f-3cc5-42a3f934fb5f?t=1734632849210",
+          "content_type": "application/zip",
+          "probe_bytes": 47207,
+          "sha256": "461dc252b26c71ea5401235cd8609800b965b7c507f92d715713e3f11e0e6d33"
+        },
+        {
+          "title": "",
+          "url": "https://www.iss.it/documents/20126/9843112/2023_RIAP_Open-data-2022_G-1.zip/6a28e62d-6da9-924f-3cc5-42a3f934fb5f?t=1734632849210",
+          "content_type": "application/zip",
+          "probe_bytes": 47207,
+          "sha256": "461dc252b26c71ea5401235cd8609800b965b7c507f92d715713e3f11e0e6d33"
+        },
+        {
+          "title": "Riepilogo-2023_RIAP_Open-data-2022_G-1 (.csv)",
+          "url": "https://www.iss.it/documents/20126/9843112/Riepilogo-2023_RIAP_Open-data-2022_G-1.csv/d2f0114d-0bd5-da3a-97b1-9ab4cedb27f4?t=1734633408018",
+          "content_type": "text/csv",
+          "probe_bytes": 1634,
+          "sha256": "b29e2eaead43221c42578dc1f4342c0986c6a2338c7305da6c5ca3d90432619e"
+        }
+      ]
+    },
+    {
+      "title": "Registro Italiano ArtroProtesi (RIAP) - Open data SPALLA 2022",
+      "url": "https://www.iss.it/-/riap-open-data-spalla-2022",
+      "files": [
+        {
+          "title": "Registro Italiano ArtroProtesi (RIAP) - Open data 2022",
+          "url": "https://www.iss.it/documents/20126/9843115/2023_RIAP_Open-data-2022_S.zip/6467906b-9cc8-8ce5-2675-7037cd4b0b8a?t=1734632870601",
+          "content_type": "application/zip",
+          "probe_bytes": 44198,
+          "sha256": "3be3cc56e4fd4311841d027c143792d01b349007c9a02a25812a63d2cab12421"
+        },
+        {
+          "title": "",
+          "url": "https://www.iss.it/documents/20126/9843115/2023_RIAP_Open-data-2022_S.zip/6467906b-9cc8-8ce5-2675-7037cd4b0b8a?t=1734632870601",
+          "content_type": "application/zip",
+          "probe_bytes": 44198,
+          "sha256": "3be3cc56e4fd4311841d027c143792d01b349007c9a02a25812a63d2cab12421"
+        },
+        {
+          "title": "Riepilogo-2023_RIAP_Open-data-2022_S (.csv)",
+          "url": "https://www.iss.it/documents/20126/9843115/Riepilogo-2023_RIAP_Open-data-2022_S.csv/7340ff3d-ca8d-5edf-6bdb-89b98684f4ea?t=1734633614495",
+          "content_type": "text/csv",
+          "probe_bytes": 1636,
+          "sha256": "45144c87702842568cd39ede9e7e592d145947dc95126011c84b9d4dee8c2829"
+        }
+      ]
+    }
+  ],
+  "checked_at": "2026-10-05T13:36:16.648435+00:00",
+  "status": "feed"
+}
