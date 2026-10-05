@@ -1,62 +1,52 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import json,re,urllib.parse,urllib.request,hashlib
-from datetime import datetime,timezone
+import hashlib,json,urllib.request
+from datetime import datetime,timezone,timedelta
 from pathlib import Path
-from bs4 import BeautifulSoup
+
 OUT=Path("data/ministero_salute_latest.json");CAT=Path("data/sources_catalog.json")
-UA="ISTAT-PULSE/MinisteroSalute (+https://github.com/pierfido89/ISTAT-PULSE-DATA)"
-PORTAL="https://www.dati.salute.gov.it/"
-KNOWN_PAGES=[
- "https://www.dati.salute.gov.it/it/dataset/apparecchiature-sanitarie/",
- "https://www.dati.salute.gov.it/it/dataset/dispositivi-medici/",
- "https://www.dati.salute.gov.it/it/dataset/utenti-carico-secondo-la-sostanza-dabuso-primaria-anno-2025/",
- "https://www.dati.salute.gov.it/it/dataset/personale-dei-serd-anno-2024/",
-]
-def get(u,probe=False):
- headers={"User-Agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/154 Safari/537.36","Accept":"*/*","Accept-Language":"it-IT,it;q=0.9"}
- if probe: headers["Referer"]="https://www.dati.salute.gov.it/"
- r=urllib.request.Request(u,headers=headers)
- with urllib.request.urlopen(r,timeout=180) as x:
-  return x.read(131072 if probe else -1),x.geturl(),x.headers.get("Content-Type","")
-def main():
- pages=[{"title":"","url":u} for u in KNOWN_PAGES]
- datasets=[]
- for p in pages[:40]:
+UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/154 Safari/537.36"
+BASE="https://www.dati.salute.gov.it/sites/default/files/opendata/"
+
+def probe(u):
+ req=urllib.request.Request(u,headers={"User-Agent":UA,"Accept":"*/*","Referer":"https://www.dati.salute.gov.it/"})
+ with urllib.request.urlopen(req,timeout=120) as r:
+  b=r.read(131072);return b,r.geturl(),r.headers.get("Content-Type","")
+
+def discover(pattern):
+ today=datetime.now(timezone.utc).date()
+ for delta in range(0,21):
+  day=today-timedelta(days=delta);stamp=day.strftime("%Y%m%d")
+  u=BASE+pattern.format(date=stamp)
   try:
-   b,u,c=get(p["url"]);ps=BeautifulSoup(b.decode("utf-8","ignore"),"html.parser")
-   files=[]
-   for a in ps.find_all("a",href=True):
-    h=urllib.parse.urljoin(u,a["href"]);tx=" ".join(a.stripped_strings)
-    low=(tx+" "+h).lower()
-    if any(k in low for k in ("scarica","csv","json","xml")):
-     try:
-      rb,ru,rct=get(h,True)
-      if len(rb)>30 and "text/html" not in rct.lower():
-       files.append({"title":tx[:100],"url":ru,"content_type":rct,"bytes":len(rb),"sha256":hashlib.sha256(rb[:131072]).hexdigest()})
-     except:pass
-   if files:
-    title=ps.find("h1").get_text(" ",strip=True) if ps.find("h1") else p["url"]
-    txt=" ".join(ps.stripped_strings)
-    m=re.search(r"Data ultimo aggiornamento\s*(\d{2}/\d{2}/20\d{2})",txt,re.I)
-    upd=""
-    if m:
-     d,mo,y=m.group(1).split("/");upd=f"{y}-{mo}-{d}"
-    datasets.append({"title":title,"url":u,"latest_update":upd,"files":files[:5]})
-  except:pass
-  if len(datasets)>=12:break
- if not datasets:raise RuntimeError("Ministero Salute: nessun dataset scaricabile validato")
- latest=max((d.get("latest_update","") for d in datasets if d.get("latest_update")),default="")
+   b,final,ct=probe(u)
+   if len(b)>50 and "text/html" not in ct.lower():
+    return {"date":day.isoformat(),"url":final,"content_type":ct,"probe_bytes":len(b),"sha256":hashlib.sha256(b).hexdigest()}
+  except Exception:pass
+ return None
+
+def main():
+ defs={
+  "apparecchiature":{"pattern":"DISPO_GAP_80_{date}.csv","title":"Apparecchiature sanitarie"},
+  "dispositivi_medici":{"pattern":"DISPO_RDM_1_{date}_csv.zip","title":"Dispositivi medici"}
+ }
+ datasets={}
+ for key,cfg in defs.items():
+  r=discover(cfg["pattern"])
+  if r:datasets[key]={"title":cfg["title"],**r}
+ if len(datasets)<2:raise RuntimeError("Ministero Salute: current official open-data files not validated")
+ latest=max(x["date"] for x in datasets.values())
  snap={"source":"Ministero della Salute","source_family":"Ministero della Salute - Open Data",
- "dataset_count":len(datasets),"datasets":datasets,"latest_update":latest,"checked_at":datetime.now(timezone.utc).isoformat(),"status":"feed"}
+       "dataset_count":len(datasets),"datasets":datasets,"latest_update":latest,
+       "checked_at":datetime.now(timezone.utc).isoformat(),"status":"feed"}
  OUT.write_text(json.dumps(snap,ensure_ascii=False,indent=2)+"\n")
  root=json.loads(CAT.read_text()) if CAT.exists() else {"sources":[]};name="Ministero della Salute - Open Data"
  src=next((x for x in root["sources"] if x.get("name")==name),None)
  if src is None:src={};root["sources"].append(src)
- src.update({"name":name,"category":"SALUTE_IT","topics":["SSN","RICOVERI","POSTI_LETTO","PERSONALE_SANITARIO","FARMACIE"],
- "official":True,"url":PORTAL,"access_cost":"free","access_note":"Italian Open Data Licence v2.0.",
- "integration_status":"feed","feed_status":"Attiva · dataset CSV/JSON/XML del Ministero acquisiti automaticamente",
- "frequency":"Secondo dataset","level":"Nazionale, regionale e struttura secondo dataset","checked_at":snap["checked_at"]})
+ src.update({"name":name,"category":"SALUTE_IT","topics":["SSN","APPARECCHIATURE","DISPOSITIVI_MEDICI"],
+   "official":True,"url":"https://www.dati.salute.gov.it/","access_cost":"free","integration_status":"feed",
+   "feed_status":"Attiva · file Open Data ufficiali giornalieri validati","frequency":"Secondo dataset",
+   "latest_period":latest,"checked_at":snap["checked_at"]})
  CAT.write_text(json.dumps(root,ensure_ascii=False,indent=2)+"\n")
- print(json.dumps({"dataset_count":len(datasets)},ensure_ascii=False))
+ print(json.dumps({"datasets":len(datasets),"latest":latest},ensure_ascii=False))
 if __name__=="__main__":main()
