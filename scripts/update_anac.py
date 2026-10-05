@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import hashlib,json,re,urllib.parse,urllib.request
+import hashlib,json,re,urllib.parse,urllib.request\nfrom bs4 import BeautifulSoup
 from datetime import datetime,timezone
 from pathlib import Path
 OUT=Path("data/anac_latest.json");CAT=Path("data/sources_catalog.json")
