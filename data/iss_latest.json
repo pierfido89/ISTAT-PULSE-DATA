@@ -4,33 +4,6 @@
   "dataset_count": 8,
   "datasets": [
     {
-      "title": "Open data e data governance",
-      "url": "https://docs.italia.it/italia/piano-triennale-ict/pianotriennale-ict-doc/it/2024-2026/capitolo-5_dati-e-intelligenza-artificiale/open-data-e-data-governance.html",
-      "files": [
-        {
-          "title": "html",
-          "url": "https://docs.italia.it/media/htmlzip/pianotriennale-ict-doc/2024-2026/pianotriennale-ict-doc.zip",
-          "content_type": "application/zip",
-          "probe_bytes": 131072,
-          "sha256": "ea8268402d7fecbc4fadb168f39916548e3c6efc350b74d1f7bae9e0f84f4826"
-        },
-        {
-          "title": "epub",
-          "url": "https://docs.italia.it/media/epub/pianotriennale-ict-doc/2024-2026/pianotriennale-ict-doc.epub",
-          "content_type": "application/epub+zip",
-          "probe_bytes": 131072,
-          "sha256": "eb1d7d91da787226c79f515acf762b367b8475ae48bf223ceea1239c64561cca"
-        },
-        {
-          "title": "html",
-          "url": "https://docs.italia.it/media/htmlzip/pianotriennale-ict-doc/2024-2026/pianotriennale-ict-doc.zip",
-          "content_type": "application/zip",
-          "probe_bytes": 131072,
-          "sha256": "ea8268402d7fecbc4fadb168f39916548e3c6efc350b74d1f7bae9e0f84f4826"
-        }
-      ]
-    },
-    {
       "title": "Registro Italiano ArtroProtesi (RIAP) - Open data 2020",
       "url": "https://www.iss.it/-/dati-riap-2020",
       "files": [
@@ -218,8 +191,35 @@
           "sha256": "45144c87702842568cd39ede9e7e592d145947dc95126011c84b9d4dee8c2829"
         }
       ]
+    },
+    {
+      "title": "Registro Italiano ArtroProtesi (RIAP) - Open data CAVIGLIA 2022",
+      "url": "https://www.iss.it/-/riap-open-data-caviglia-2022",
+      "files": [
+        {
+          "title": "Registro Italiano ArtroProtesi (RIAP) - Open data 2022",
+          "url": "https://www.iss.it/documents/20126/9843118/2023_RIAP_Open-data-2022_C-1.zip/85943f20-d698-9bd5-59d5-a37cde863fc9?t=1734632897708",
+          "content_type": "application/zip",
+          "probe_bytes": 13622,
+          "sha256": "2e4dc46195e3128c622d2841780aa1f25a57ad4534cbcd4e086e4c7e9f413ed8"
+        },
+        {
+          "title": "",
+          "url": "https://www.iss.it/documents/20126/9843118/2023_RIAP_Open-data-2022_C-1.zip/85943f20-d698-9bd5-59d5-a37cde863fc9?t=1734632897708",
+          "content_type": "application/zip",
+          "probe_bytes": 13622,
+          "sha256": "2e4dc46195e3128c622d2841780aa1f25a57ad4534cbcd4e086e4c7e9f413ed8"
+        },
+        {
+          "title": "Riepilogo-2023_RIAP_Open-data-2022_C-1 (.csv)",
+          "url": "https://www.iss.it/documents/20126/9843118/Riepilogo-2023_RIAP_Open-data-2022_C-1.csv/fac6bb09-1d51-d2f1-8a63-492aad8c8ab1?t=1734633703213",
+          "content_type": "text/csv",
+          "probe_bytes": 383,
+          "sha256": "57f144ff7fc43c5c92d5bd6a5fafb2babc0ccf9b4b8c561b43739a84eb25c67c"
+        }
+      ]
     }
   ],
-  "checked_at": "2026-10-05T13:36:16.648435+00:00",
+  "checked_at": "2026-10-05T13:43:11.323497+00:00",
   "status": "feed"
 }
