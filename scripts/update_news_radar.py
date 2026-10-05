@@ -144,14 +144,17 @@ def verify_primary_page(url, numbers, keywords, allowed_domains):
         text=clean_text(raw.decode("utf-8","ignore"))[:60000]
         low=text.lower()
         matched_numbers=[]
+        matched_non_year_numbers=[]
         for n in numbers:
             nn=normalize_number_token(n)
             if len(nn)>=1 and (nn in low or nn.replace(",",".") in low or nn.replace(".",",") in low):
                 matched_numbers.append(n)
+                if not re.fullmatch(r"20\d{2}", nn):
+                    matched_non_year_numbers.append(n)
         matched_keywords=[k for k in keywords if k in low]
-        score=(35 if matched_numbers else 0)+min(40,len(matched_keywords)*8)+(15 if dom else 0)
-        if score<50: return None
-        return {"url":final,"domain":dom,"matched_numbers":matched_numbers[:6],
+        score=(40 if matched_non_year_numbers else 0)+min(40,len(matched_keywords)*8)+(15 if dom else 0)
+        if not matched_non_year_numbers or score<55: return None
+        return {"url":final,"domain":dom,"matched_numbers":matched_numbers[:6],"matched_non_year_numbers":matched_non_year_numbers[:6],
                 "matched_keywords":matched_keywords[:8],"verification_score":min(100,score),
                 "text_excerpt":text[:900]}
     except Exception:
