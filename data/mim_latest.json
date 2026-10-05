@@ -1,0 +1,115 @@
+{
+  "source": "Ministero dell'Istruzione e del Merito",
+  "source_family": "MIM - Open Data scuola",
+  "dataset_count": 3,
+  "datasets": [
+    {
+      "title": "SCUOLE",
+      "url": "https://dati.istruzione.it/opendata/opendata/catalogo/elements1/?area=Scuole",
+      "latest_period": "202627",
+      "files": [
+        {
+          "title": "Distribuzione per ANNOSCOLASTICO 202627",
+          "url": "https://dati.istruzione.it/opendata/opendata/catalogo/elements1/SCUANAGRAFESTAT20262720260901.csv",
+          "content_type": "application/octet-stream",
+          "probe_bytes": 131072,
+          "sha256": "b5e25ef74c391fe76fcdfc715c2a9a15cd893d717e09639ef12133d55fdd1f2a"
+        },
+        {
+          "title": "",
+          "url": "https://dati.istruzione.it/opendata/opendata/catalogo/elements1/SCUANAGRAFESTAT20262720260901.csv",
+          "content_type": "application/octet-stream",
+          "probe_bytes": 131072,
+          "sha256": "b5e25ef74c391fe76fcdfc715c2a9a15cd893d717e09639ef12133d55fdd1f2a"
+        },
+        {
+          "title": "Distribuzione per ANNOSCOLASTICO 202526",
+          "url": "https://dati.istruzione.it/opendata/opendata/catalogo/elements1/SCUANAGRAFESTAT20252620250901.csv",
+          "content_type": "application/octet-stream",
+          "probe_bytes": 131072,
+          "sha256": "6911e4344335b00e67f48c264a671c6f638ee20a0f5afcd076afaa35e1cc6324"
+        },
+        {
+          "title": "",
+          "url": "https://dati.istruzione.it/opendata/opendata/catalogo/elements1/SCUANAGRAFESTAT20252620250901.csv",
+          "content_type": "application/octet-stream",
+          "probe_bytes": 131072,
+          "sha256": "6911e4344335b00e67f48c264a671c6f638ee20a0f5afcd076afaa35e1cc6324"
+        }
+      ]
+    },
+    {
+      "title": "Conto consuntivo annuale delle scuole",
+      "url": "https://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0755BISCONSUNTIVO",
+      "latest_period": "2026",
+      "files": [
+        {
+          "title": "Distribuzione per ANNOFINANZIARIO 2026",
+          "url": "https://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/BISCONSUNTIVO202620260921.csv",
+          "content_type": "application/octet-stream",
+          "probe_bytes": 8989,
+          "sha256": "776bd47e4cfef12b4e92ad778d206e34152a63ffa8b0806065cc565d2d2a9242"
+        },
+        {
+          "title": "",
+          "url": "https://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/BISCONSUNTIVO202620260921.csv",
+          "content_type": "application/octet-stream",
+          "probe_bytes": 8989,
+          "sha256": "776bd47e4cfef12b4e92ad778d206e34152a63ffa8b0806065cc565d2d2a9242"
+        },
+        {
+          "title": "Distribuzione per ANNOFINANZIARIO 2025",
+          "url": "https://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/BISCONSUNTIVO202520260921.csv",
+          "content_type": "application/octet-stream",
+          "probe_bytes": 131072,
+          "sha256": "d362f92676e95cf766ace9cafc57c1fa3a848eee7567652d21abcca9da9953cb"
+        },
+        {
+          "title": "",
+          "url": "https://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/BISCONSUNTIVO202520260921.csv",
+          "content_type": "application/octet-stream",
+          "probe_bytes": 131072,
+          "sha256": "d362f92676e95cf766ace9cafc57c1fa3a848eee7567652d21abcca9da9953cb"
+        }
+      ]
+    },
+    {
+      "title": "Programma annuale delle scuole",
+      "url": "https://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0750BISPROGANNO",
+      "latest_period": "2026",
+      "files": [
+        {
+          "title": "Distribuzione per ANNOFINANZIARIO 2026",
+          "url": "https://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/BISPROGANNO202620260921.csv",
+          "content_type": "application/octet-stream",
+          "probe_bytes": 131072,
+          "sha256": "7e74f00e31d1a56702ccbdade87127bf0a8daec9e9ca7793625ea4e2929aa4f8"
+        },
+        {
+          "title": "",
+          "url": "https://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/BISPROGANNO202620260921.csv",
+          "content_type": "application/octet-stream",
+          "probe_bytes": 131072,
+          "sha256": "7e74f00e31d1a56702ccbdade87127bf0a8daec9e9ca7793625ea4e2929aa4f8"
+        },
+        {
+          "title": "Distribuzione per ANNOFINANZIARIO 2025",
+          "url": "https://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/BISPROGANNO202520260921.csv",
+          "content_type": "application/octet-stream",
+          "probe_bytes": 131072,
+          "sha256": "d3763bfa6e74b6017903c3e67bca224ee6b092fc103d11ef50ed67c5a24fc8a8"
+        },
+        {
+          "title": "",
+          "url": "https://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/BISPROGANNO202520260921.csv",
+          "content_type": "application/octet-stream",
+          "probe_bytes": 131072,
+          "sha256": "d3763bfa6e74b6017903c3e67bca224ee6b092fc103d11ef50ed67c5a24fc8a8"
+        }
+      ]
+    }
+  ],
+  "latest_period": "202627",
+  "checked_at": "2026-10-05T13:40:37.693465+00:00",
+  "status": "feed"
+}

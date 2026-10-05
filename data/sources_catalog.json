@@ -5273,6 +5273,23 @@
           "status": "latest_public"
         }
       ]
+    },
+    {
+      "name": "Ministero dell'Istruzione e del Merito - Open Data",
+      "category": "ISTRUZIONE_IT",
+      "topics": [
+        "SCUOLE",
+        "BILANCI_SCUOLE",
+        "EDILIZIA_SCOLASTICA"
+      ],
+      "official": true,
+      "url": "https://dati.istruzione.it/opendata/",
+      "access_cost": "free",
+      "integration_status": "feed",
+      "feed_status": "Attiva · CSV MIM validati",
+      "frequency": "Annuale e secondo dataset",
+      "latest_period": "202627",
+      "checked_at": "2026-10-05T13:40:37.693465+00:00"
     }
   ]
 }
