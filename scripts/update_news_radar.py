@@ -396,7 +396,9 @@ def main():
     for x in old_articles:
         verified_vals=[normalize_number_token(c.get("raw_value","")) for c in x.get("statistical_claims",[]) if c.get("verified")]
         substantive=[v for v in verified_vals if v and not re.fullmatch(r"20\d{2}",v)]
-        if x.get("publication_status")=="published" and not substantive:
+        source_domain=((x.get("public_source") or {}).get("domain") or "").lower()
+        trusted_source=any(source_domain==d or source_domain.endswith("."+d) for d in TRUSTED_PRIMARY_DOMAINS)
+        if x.get("publication_status")=="published" and (not substantive or not trusted_source):
             continue
         cleaned_articles.append(x)
     by_id={x.get("id"):x for x in cleaned_articles if x.get("id")}
