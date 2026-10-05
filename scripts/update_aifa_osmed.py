@@ -24,11 +24,11 @@ def main():
  files=[]
  for a in s.find_all("a",href=True):
   h=urllib.parse.urljoin(final,a["href"]); lab=" ".join(a.stripped_strings); low=(lab+" "+h).lower()
-  if "download - anno" not in low and ".csv" not in low: continue
+  if "download - anno" not in low and ".csv" not in low and ".zip" not in low: continue
   try:
    b,u,ct=get(h,True)
    if len(b)>50 and "text/html" not in ct.lower():
-    yr=re.search(r"20\d{2}",lab+" "+u)
+    yr=re.search(r"(20\d{2})",lab+" "+u)
     files.append({"year":int(yr.group(1)) if yr else None,"title":lab,"url":u,"content_type":ct,"probe_bytes":len(b),"sha256":hashlib.sha256(b).hexdigest()})
   except: pass
  # AIFA exposes 2025 as a ZIP resource even though the page labels the family as CSV.
