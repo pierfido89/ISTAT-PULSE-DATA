@@ -7,7 +7,7 @@ on:
     branches: [ main, feat/aifa-osmed-feed ]
     paths:
       - 'scripts/update_aifa_osmed.py'
-      - '.github/workflows/refresh-aifa_osmed.yml'
+      - '.github/workflows/refresh-aifa-osmed.yml'
 permissions:
   contents: write
 jobs:
