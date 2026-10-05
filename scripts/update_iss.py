@@ -15,7 +15,9 @@ def main():
  pages=[]
  for a in s.find_all("a",href=True):
   h=urllib.parse.urljoin(final,a["href"]); t=" ".join(a.stripped_strings)
-  if ("open data" in t.lower() or "/dati/" in h.lower()) and h!=final: pages.append({"title":t,"url":h})
+  host=urllib.parse.urlparse(h).netloc.lower()
+  if host.endswith("iss.it") and ("open data" in t.lower() or "open-data" in h.lower() or "/-/" in h) and h!=final:
+   pages.append({"title":t,"url":h})
  data=[]
  for p in pages[:40]:
   try:b,u,_=get(p["url"]);ps=BeautifulSoup(b.decode("utf-8","ignore"),"html.parser")
