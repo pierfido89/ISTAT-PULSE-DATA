@@ -1,0 +1,48 @@
+name: Refresh UNRAE feed
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '40 6 * * *'
+  push:
+    branches: [ main, feat/unrae-feed ]
+    paths:
+      - 'scripts/update_unrae.py'
+      - '.github/workflows/refresh-unrae.yml'
+      - 'requirements.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python -m pip install --disable-pip-version-check -r requirements.txt
+      - run: python scripts/update_unrae.py
+      - name: Validate snapshot
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("data/unrae_latest.json").read_text(encoding="utf-8"))
+          assert d["source"]=="UNRAE"
+          assert d["period"]
+          assert d["dataset_count"]>=3
+          assert d["publication_date"]
+          print("UNRAE",d["period"],d["dataset_count"],d.get("passenger_cars_registered"),d.get("yoy_percent"))
+          PY
+      - name: Commit refreshed UNRAE data
+        run: |
+          if git diff --quiet -- data/unrae_latest.json data/sources_catalog.json; then
+            echo "No UNRAE changes"
+            exit 0
+          fi
+          git config user.name "istat-pulse-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/unrae_latest.json data/sources_catalog.json
+          git commit -m "data: refresh UNRAE market feed"
+          git push
