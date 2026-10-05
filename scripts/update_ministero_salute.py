@@ -7,15 +7,17 @@ from bs4 import BeautifulSoup
 OUT=Path("data/ministero_salute_latest.json");CAT=Path("data/sources_catalog.json")
 UA="ISTAT-PULSE/MinisteroSalute (+https://github.com/pierfido89/ISTAT-PULSE-DATA)"
 PORTAL="https://www.dati.salute.gov.it/"
+KNOWN_PAGES=[
+ "https://www.dati.salute.gov.it/it/dataset/apparecchiature-sanitarie/",
+ "https://www.dati.salute.gov.it/it/dataset/dispositivi-medici/",
+ "https://www.dati.salute.gov.it/it/dataset/utenti-carico-secondo-la-sostanza-dabuso-primaria-anno-2025/",
+ "https://www.dati.salute.gov.it/it/dataset/personale-dei-serd-anno-2024/",
+]
 def get(u):
  r=urllib.request.Request(u,headers={"User-Agent":UA,"Accept":"*/*"})
  with urllib.request.urlopen(r,timeout=120) as x:return x.read(),x.geturl(),x.headers.get("Content-Type","")
 def main():
- raw,final,ct=get(PORTAL);soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
- pages=[]
- for a in soup.find_all("a",href=True):
-  href=urllib.parse.urljoin(final,a["href"]);t=" ".join(a.stripped_strings)
-  if "/dataset/" in href:pages.append({"title":t[:180],"url":href})
+ pages=[{"title":"","url":u} for u in KNOWN_PAGES]
  datasets=[]
  for p in pages[:40]:
   try:
@@ -23,13 +25,27 @@ def main():
    files=[]
    for a in ps.find_all("a",href=True):
     h=urllib.parse.urljoin(u,a["href"]);tx=" ".join(a.stripped_strings)
-    if any(ext in h.lower() for ext in (".csv",".json",".xml")):files.append({"title":tx[:100],"url":h})
-   if files:datasets.append({**p,"files":files[:5]})
+    low=(tx+" "+h).lower()
+    if any(k in low for k in ("scarica","csv","json","xml")):
+     try:
+      rb,ru,rct=get(h)
+      if len(rb)>30 and "text/html" not in rct.lower():
+       files.append({"title":tx[:100],"url":ru,"content_type":rct,"bytes":len(rb),"sha256":hashlib.sha256(rb[:131072]).hexdigest()})
+     except:pass
+   if files:
+    title=ps.find("h1").get_text(" ",strip=True) if ps.find("h1") else p["url"]
+    txt=" ".join(ps.stripped_strings)
+    m=re.search(r"Data ultimo aggiornamento\s*(\d{2}/\d{2}/20\d{2})",txt,re.I)
+    upd=""
+    if m:
+     d,mo,y=m.group(1).split("/");upd=f"{y}-{mo}-{d}"
+    datasets.append({"title":title,"url":u,"latest_update":upd,"files":files[:5]})
   except:pass
   if len(datasets)>=12:break
  if not datasets:raise RuntimeError("Ministero Salute: nessun dataset scaricabile validato")
+ latest=max((d.get("latest_update","") for d in datasets if d.get("latest_update")),default="")
  snap={"source":"Ministero della Salute","source_family":"Ministero della Salute - Open Data",
- "dataset_count":len(datasets),"datasets":datasets,"checked_at":datetime.now(timezone.utc).isoformat(),"status":"feed"}
+ "dataset_count":len(datasets),"datasets":datasets,"latest_update":latest,"checked_at":datetime.now(timezone.utc).isoformat(),"status":"feed"}
  OUT.write_text(json.dumps(snap,ensure_ascii=False,indent=2)+"\n")
  root=json.loads(CAT.read_text()) if CAT.exists() else {"sources":[]};name="Ministero della Salute - Open Data"
  src=next((x for x in root["sources"] if x.get("name")==name),None)
