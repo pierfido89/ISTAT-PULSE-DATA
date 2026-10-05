@@ -25,13 +25,14 @@ def main():
  files=[]
  seen=set()
  for a in s.find_all("a",href=True):
-  lab=" ".join(a.stripped_strings);h=urllib.parse.urljoin(final,a["href"]);low=(lab+" "+h).lower()
+  lab=" ".join(a.stripped_strings);row=" ".join(a.parent.parent.stripped_strings) if a.parent and a.parent.parent else lab
+  h=urllib.parse.urljoin(final,a["href"]);low=(row+" "+h).lower()
   if not any(k in low for k in ("consistenza parco","prime iscrizioni","passaggi di proprietà","radiazioni")):continue
   if h in seen:continue
   try:
    b,u,ct=get(h,True)
    if len(b)>50 and "text/html" not in ct.lower():
-    seen.add(h);files.append({"title":lab[:180],"url":u,"content_type":ct,"probe_bytes":len(b),"sha256":hashlib.sha256(b).hexdigest()})
+    seen.add(h);files.append({"title":row[:180],"url":u,"content_type":ct,"probe_bytes":len(b),"sha256":hashlib.sha256(b).hexdigest()})
   except Exception:pass
   if len(files)>=8:break
  if len(files)<4:raise RuntimeError("ACI Autoritratto: insufficient downloadable resources")
