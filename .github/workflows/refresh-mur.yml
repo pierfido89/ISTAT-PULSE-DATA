@@ -9,9 +9,6 @@ on:
       - 'scripts/update_mur.py'
       - '.github/workflows/refresh-mur.yml'
       - 'manual/mur/**'
-    paths:
-      - 'scripts/update_mur.py'
-      - '.github/workflows/refresh-mur.yml'
 permissions:
   contents: write
 jobs:
