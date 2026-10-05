@@ -5273,6 +5273,42 @@
           "status": "latest_public"
         }
       ]
+    },
+    {
+      "name": "Unioncamere - InfoCamere - Demografia d'impresa",
+      "category": "IMPRESE_IT",
+      "topics": [
+        "IMPRESE",
+        "DEMOGRAFIA_IMPRESE",
+        "STARTUP",
+        "IMPRENDITORIA"
+      ],
+      "official": true,
+      "url": "https://www.infocamere.it/movimprese",
+      "access_cost": "free",
+      "access_note": "Dati pubblici Unioncamere/InfoCamere e dataset Open Government; verificare la licenza del singolo dataset.",
+      "integration_status": "feed",
+      "feed_status": "Attiva · risorse pubbliche CSV/download validate automaticamente",
+      "notes": "Feed PULSE basato su Movimprese e Open Government Unioncamere per demografia d'impresa e dataset camerali.",
+      "level": "Nazionale, regionale, provinciale e comunale secondo dataset",
+      "frequency": "Trimestrale e secondo aggiornamento dataset",
+      "checked_at": "2026-10-05T10:19:30.339124+00:00",
+      "provides": [
+        {
+          "area": "Imprese",
+          "series": "Nati-mortalità e consistenza delle imprese",
+          "description": "Movimprese / Registro Imprese.",
+          "latest_period": "",
+          "status": "latest_public"
+        },
+        {
+          "area": "Imprese",
+          "series": "Open data camerali su demografia e profili imprenditoriali",
+          "description": "Unioncamere Open Government.",
+          "latest_period": "",
+          "status": "latest_public"
+        }
+      ]
     }
   ]
 }

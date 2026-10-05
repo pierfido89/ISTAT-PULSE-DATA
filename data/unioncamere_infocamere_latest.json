@@ -1,0 +1,53 @@
+{
+  "source": "Unioncamere - InfoCamere",
+  "source_family": "Unioncamere - InfoCamere - Demografia d'impresa",
+  "open_government_url": "https://opengovernment.unioncamere.gov.it/",
+  "movimprese_url": "https://www.infocamere.it/movimprese",
+  "validated_resource_count": 6,
+  "resources": [
+    {
+      "title": "",
+      "url": "https://www.infocamere.it/movimprese",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes_sampled": 33607,
+      "sha256": "1fb97361bcece31dc7040ed01243e986b88f06cc4bf573eaf34bf2e9dcc40b81"
+    },
+    {
+      "title": "Movimprese",
+      "url": "https://www.infocamere.it/movimprese",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes_sampled": 33607,
+      "sha256": "1fb97361bcece31dc7040ed01243e986b88f06cc4bf573eaf34bf2e9dcc40b81"
+    },
+    {
+      "title": "Altre Analisi",
+      "url": "https://www.infocamere.it/principali-soluzioni/movimprese/dashboard.html",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes_sampled": 24115,
+      "sha256": "37d2b8f52227c73fea0cea9749af49870ab2dc7f2e55bebd4e0c86680bb7bf52"
+    },
+    {
+      "title": "condizioni di utilizzo",
+      "url": "https://www.infocamere.it/dam/jcr:e9da8e0a-5e8b-49d7-bf3a-dc5f5ea86d3b/Movimprese%20-%20Condizioni%20di%20utilizzo.2025-04-30-17-11-02.pdf",
+      "content_type": "application/pdf;charset=UTF-8",
+      "bytes_sampled": 131072,
+      "sha256": "94c9de8eea4394ca1296561308aa6a165e3f52dbe5c29439c75adf9e75b2bbf9"
+    },
+    {
+      "title": "glossario",
+      "url": "https://www.infocamere.it/dam/jcr:b6d1a47f-fc07-40a2-a1ed-d0ff9278972d/Glossario_Movimprese.2025-05-15-09-02-55.pdf",
+      "content_type": "application/pdf;charset=UTF-8",
+      "bytes_sampled": 131072,
+      "sha256": "54186971ddfa8154892378d241ae34c724a9df2bcb4876481ef44db3bd2834f2"
+    },
+    {
+      "title": "Leggi",
+      "url": "https://www.infocamere.it/news-landing-page/movimprese_giornaleradiofm.html",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes_sampled": 18431,
+      "sha256": "b4050441a705b1ff9cd7cdeefe9f9282c30918b89cc5b0a3fe1ab278ffdcb831"
+    }
+  ],
+  "checked_at": "2026-10-05T10:19:30.339124+00:00",
+  "status": "feed"
+}
