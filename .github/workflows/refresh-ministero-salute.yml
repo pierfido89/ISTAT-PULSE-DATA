@@ -1,0 +1,27 @@
+name: Refresh Ministero Salute feed
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '10 9 * * *'
+  push:
+    branches: [ main, feat/ministero-salute-feed ]
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python -m pip install beautifulsoup4
+      - run: python scripts/update_ministero_salute.py
+      - run: |
+          test -s data/ministero_salute_latest.json
+      - run: |
+          if git diff --quiet -- data/ministero_salute_latest.json data/sources_catalog.json; then exit 0; fi
+          git config user.name "istat-pulse-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/ministero_salute_latest.json data/sources_catalog.json
+          git commit -m "data: refresh Ministero Salute feed"
+          git push
