@@ -1,0 +1,29 @@
+name: Refresh MIM feed
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '5 10 * * *'
+  push:
+    branches: [ main, feat/mim-feed ]
+    paths:
+      - 'scripts/update_mim.py'
+      - '.github/workflows/refresh-mim.yml'
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python -m pip install beautifulsoup4
+      - run: python scripts/update_mim.py
+      - run: test -s data/mim_latest.json
+      - run: |
+          if git diff --quiet -- data/mim_latest.json data/sources_catalog.json; then exit 0; fi
+          git config user.name "istat-pulse-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/mim_latest.json data/sources_catalog.json
+          git commit -m "data: refresh MIM feed"
+          git push
