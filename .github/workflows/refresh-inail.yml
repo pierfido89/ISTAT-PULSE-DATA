@@ -32,8 +32,8 @@ jobs:
           assert d["dataset_count"]>=3
           for k,v in d["datasets"].items():
               assert v["status"]=="ok"
-              assert v["row_count"]>0
-          print("INAIL OK",d["dataset_count"],d["latest_date"],d["failures"])
+              assert v["probe_bytes"]>0
+          print("INAIL OK",d["dataset_count"],d["latest_publication_date"],d["failures"])
           PY
       - name: Commit refreshed INAIL data
         run: |
