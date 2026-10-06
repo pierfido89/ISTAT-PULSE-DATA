@@ -176,6 +176,12 @@
         "osservatorio",
         "indagine",
         "open data"
+      ],
+      "adapter": "dated_listing",
+      "entrypoints": [
+        "https://www.legambiente.it/comunicati-stampa/",
+        "https://www.legambiente.it/news/",
+        "https://www.legambiente.it/area-stampa/"
       ]
     },
     {
@@ -749,18 +755,18 @@
         "open data"
       ],
       "entrypoints": [
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/1",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/2",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/3",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/4",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/5",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/6",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/7",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/8",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/9",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/10",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/11",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/12"
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=1&YY=2026",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=2&YY=2026",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=3&YY=2026",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=4&YY=2026",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=5&YY=2026",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=6&YY=2026",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=7&YY=2026",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=8&YY=2026",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=9&YY=2026",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=10&YY=2026",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=11&YY=2026",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=12&YY=2026"
       ],
       "adapter": "year_month_listing"
     },
@@ -905,8 +911,12 @@
         "open data"
       ],
       "entrypoints": [
-        "https://www.mit.gov.it/comunicazione/news",
-        "https://mit.gov.it/comunicazione/news"
+        "https://mit.gov.it/comunicazione/news",
+        "https://mit.gov.it/comunicazione/news?page=1",
+        "https://mit.gov.it/comunicazione/news?page=2",
+        "https://mit.gov.it/comunicazione/news?page=3",
+        "https://mit.gov.it/comunicazione/news?page=4",
+        "https://mit.gov.it/comunicazione/news?page=5"
       ],
       "adapter": "dated_listing"
     },
@@ -925,7 +935,10 @@
       ],
       "adapter": "dataset_updated_at",
       "entrypoints": [
-        "https://opencoesione.gov.it/it/opendata/"
+        "https://opencoesione.gov.it/it/opendata/",
+        "https://opencoesione.gov.it/it/opendata/dataset/pagamenti/",
+        "https://opencoesione.gov.it/it/opendata/dataset/progetti_esteso_fsc_2021-2027/",
+        "https://opencoesione.gov.it/it/opendata/dataset/progetti_esteso_fesr_2021-2027/"
       ]
     },
     {
