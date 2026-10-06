@@ -379,6 +379,14 @@
         "osservatorio",
         "indagine",
         "open data"
+      ],
+      "adapter": "anfia_listing",
+      "entrypoints": [
+        "https://www.anfia.it/it/comunicazione/notizie-e-comunicati",
+        "https://www.anfia.it/it/comunicazione/notizie-e-comunicati/comunicati-stampa",
+        "https://www.anfia.it/it/attivita/studi-e-statistiche",
+        "https://www.anfia.it/it/attivita/studi-e-statistiche/dati-statistici/immatricolazioni/italia",
+        "https://www.anfia.it/it/attivita/studi-e-statistiche/dati-statistici/immatricolazioni/eu-efta"
       ]
     },
     {
