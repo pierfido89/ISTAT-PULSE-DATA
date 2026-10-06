@@ -678,15 +678,21 @@ def anfia_candidates(entrypoints,domains,year=2026,limit=420):
             for start in range(12, 121, 12):
                 page_urls.append(f"{root}{sep}start={start}")
 
+    debug = {"pages_ok":0,"pages_non_html":0,"pages_error":0,"headings":0,"heading_dates":0,"stat_links":0,"stat_dates":0}
     for root in page_urls:
         try:
             raw,final,ct=fetch(root,timeout=10,max_bytes=2600000)
             if "html" not in ct.lower():
+                debug["pages_non_html"] += 1
+                if domains and domains[0]=="anfia.it":
+                    print(f"ANFIA fetch non-html: {root} -> {final} [{ct}]", flush=True)
                 continue
+            debug["pages_ok"] += 1
             soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
 
             # Communication/news cards: headline and date live in the same nearby card.
             for h in soup.find_all(["h2","h3","h4"]):
+                debug["headings"] += 1
                 a=h.find("a",href=True)
                 if not a:
                     continue
@@ -705,12 +711,15 @@ def anfia_candidates(entrypoints,domains,year=2026,limit=420):
                 for txt in contexts:
                     pub=parse_date(txt)
                     if pub: break
+                if pub and pub.year==year:
+                    debug["heading_dates"] += 1
                 if pub and pub.year==year and href not in seen:
                     seen.add(href); out.append((title,href,pub))
                     if len(out)>=limit:return out
 
             # Statistics pages: "Pubblicato il DD Mese YYYY" near spreadsheet/pdf links.
             for a in soup.find_all("a",href=True):
+                debug["stat_links"] += 1
                 href=urllib.parse.urljoin(final,a["href"]).split("#",1)[0]
                 if not host_allowed(canonical_host(href),domains):
                     continue
@@ -729,6 +738,7 @@ def anfia_candidates(entrypoints,domains,year=2026,limit=420):
                         if pub: break
                 if not pub or pub.year!=year:
                     continue
+                debug["stat_dates"] += 1
                 title=""
                 if block:
                     m=re.search(r"^(.*?)(?:Pubblicato il\\s+[0-3]?\\d\\s+(?:"+keys+r")\\.?\\s+20\\d{2})",block,re.I)
@@ -738,8 +748,19 @@ def anfia_candidates(entrypoints,domains,year=2026,limit=420):
                 if href not in seen:
                     seen.add(href); out.append((title,href,pub))
                     if len(out)>=limit:return out
-        except Exception:
+        except Exception as exc:
+            debug["pages_error"] += 1
+            if domains and domains[0]=="anfia.it":
+                print(f"ANFIA fetch/parse error: {root} -> {type(exc).__name__}: {exc}", flush=True)
             continue
+    if domains and domains[0]=="anfia.it":
+        print(
+            "ANFIA dedicated listing candidates: "
+            f"{len(out)} | pages_ok={debug['pages_ok']} non_html={debug['pages_non_html']} "
+            f"errors={debug['pages_error']} headings={debug['headings']} "
+            f"heading_dates={debug['heading_dates']} links={debug['stat_links']} stat_dates={debug['stat_dates']}",
+            flush=True
+        )
     return out
 
 
@@ -929,7 +950,8 @@ def process_source(src, now):
                 listing_dates[url]=(title,pub_date)
 
         if src.get("adapter")=="anfia_listing":
-            for title,url,pub_date in anfia_candidates(entrypoints,domains,year,420):
+            anfia_rows=anfia_candidates(entrypoints,domains,year,420)
+            for title,url,pub_date in anfia_rows:
                 candidates.setdefault(url,title)
                 listing_dates[url]=(title,pub_date)
 
@@ -950,34 +972,46 @@ def process_source(src, now):
 
         # 1) Official source discovery first.
         if not dedicated_only:
+            sitemap_total=0
             with ThreadPoolExecutor(max_workers=min(2,max(1,len(domains[:2])))) as pool:
                 jobs={pool.submit(sitemap_candidates,domain,year,140):domain for domain in domains[:2]}
                 for fut in as_completed(jobs):
                     try: results=fut.result()
                     except Exception: results=[]
+                    sitemap_total += len(results)
                     for title,url in results:
                         if url and url not in candidates:
                             candidates[url]=title
+            if name=="ANFIA":
+                print(f"ANFIA sitemap candidates: {sitemap_total}", flush=True)
 
             # 2) Crawl official newsroom/statistics sections directly.
+            crawl_total=0
             with ThreadPoolExecutor(max_workers=min(2,max(1,len(domains[:2])))) as pool:
                 jobs={pool.submit(site_crawl_candidates,domain,year,140,entrypoints):domain for domain in domains[:2]}
                 for fut in as_completed(jobs):
                     try: results=fut.result()
                     except Exception: results=[]
+                    crawl_total += len(results)
                     for title,url in results:
                         if url and url not in candidates:
                             candidates[url]=title
+            if name=="ANFIA":
+                print(f"ANFIA crawl candidates: {crawl_total}", flush=True)
 
             # 3) Official RSS/Atom feeds.
+            feed_total=0
             with ThreadPoolExecutor(max_workers=min(2,max(1,len(domains[:2])))) as pool:
                 jobs={pool.submit(feed_candidates,domain,year,120,src.get("feed_urls",[])):domain for domain in domains[:2]}
                 for fut in as_completed(jobs):
                     try: results=fut.result()
                     except Exception: results=[]
+                    feed_total += len(results)
                     for title,url in results:
                         if url and url not in candidates:
                             candidates[url]=title
+            if name=="ANFIA":
+                print(f"ANFIA feed candidates: {feed_total}", flush=True)
 
         # 4) Search engines are fallback only for non-dedicated sources.
         if (not dedicated_only) and (len(candidates) < 24 or src.get("adapter")):
@@ -988,14 +1022,18 @@ def process_source(src, now):
                     f'site:{domain} {year} (mercato OR monitoraggio OR rilevazione OR "open data")',
                     f'site:{domain} {year} (comunicato OR pubblicazione OR bollettino OR analisi)'
                 ])
+            search_total=0
             with ThreadPoolExecutor(max_workers=min(6,max(1,len(queries)))) as pool:
                 jobs=[pool.submit(web_search,q,12) for q in queries]
                 for fut in as_completed(jobs):
                     try: results=fut.result()
                     except Exception: results=[]
+                    search_total += len(results)
                     for title,url in results:
                         if url and url not in candidates:
                             candidates[url]=title
+            if name=="ANFIA":
+                print(f"ANFIA search candidates: {search_total}", flush=True)
 
         year_found=0
 
@@ -1031,6 +1069,7 @@ def process_source(src, now):
 
         # Additional sitemap/feed/search candidates require detail-page verification.
         items=[(u,t) for u,t in candidates.items() if u not in listing_dates][:220]
+        verified_pages=0
         with ThreadPoolExecutor(max_workers=6) as pool:
             future_pages={
                 pool.submit(page_info,url,domains):(title,url)
@@ -1042,6 +1081,7 @@ def process_source(src, now):
                 except Exception: info=None
                 if not info or info["date"].year!=year: continue
                 if info["date"]>now: continue
+                verified_pages += 1
 
                 aid=stable_id(name,info["url"])
                 local_articles[aid]={
@@ -1066,6 +1106,8 @@ def process_source(src, now):
                 if year_found>=MAX_RESULTS_PER_SOURCE_YEAR:
                     break
 
+        if name=="ANFIA":
+            print(f"ANFIA verified pages: {verified_pages} | listing_dates={len(listing_dates)} | total_candidates={len(candidates)} | year_found={year_found}", flush=True)
         stats[str(year)]=year_found
 
     return name,stats,local_articles
