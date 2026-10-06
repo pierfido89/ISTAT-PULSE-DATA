@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T19:22:41.725051+00:00",
+  "generated_at": "2026-10-06T20:29:52.841500+00:00",
   "min_year": 2026,
   "max_year": 2026,
   "source_count": 65,
@@ -11,8 +11,8 @@
     },
     "CGIA Mestre": {
       "2026": 55,
-      "scan_2026": 0,
-      "connector_status": "degraded_preserved"
+      "scan_2026": 55,
+      "connector_status": "ok"
     },
     "CNA": {
       "2026": 125,
@@ -21,8 +21,8 @@
     },
     "CNR": {
       "2026": 147,
-      "scan_2026": 0,
-      "connector_status": "degraded_preserved"
+      "scan_2026": 121,
+      "connector_status": "ok"
     },
     "Coldiretti": {
       "2026": 27,
@@ -66,7 +66,7 @@
     },
     "ACI": {
       "2026": 52,
-      "scan_2026": 51,
+      "scan_2026": 29,
       "connector_status": "ok"
     },
     "AGENAS": {
@@ -106,7 +106,7 @@
     },
     "ANAC": {
       "2026": 145,
-      "scan_2026": 24,
+      "scan_2026": 105,
       "connector_status": "ok"
     },
     "ANFIA": {
@@ -136,8 +136,8 @@
     },
     "CONSOB": {
       "2026": 54,
-      "scan_2026": 0,
-      "connector_status": "degraded_preserved"
+      "scan_2026": 54,
+      "connector_status": "ok"
     },
     "Copernicus": {
       "2026": 37,
@@ -221,12 +221,12 @@
     },
     "INVALSI": {
       "2026": 40,
-      "scan_2026": 39,
+      "scan_2026": 37,
       "connector_status": "ok"
     },
     "ISPRA / SNPA": {
       "2026": 54,
-      "scan_2026": 40,
+      "scan_2026": 39,
       "connector_status": "ok"
     },
     "ISMEA": {
@@ -260,9 +260,9 @@
       "connector_status": "ok"
     },
     "Ministero della Salute": {
-      "2026": 2,
-      "scan_2026": 0,
-      "connector_status": "degraded_preserved"
+      "2026": 14,
+      "scan_2026": 12,
+      "connector_status": "ok"
     },
     "Ministero dell'Istruzione e del Merito": {
       "2026": 0,
@@ -286,7 +286,7 @@
     },
     "Ragioneria Generale dello Stato · BDAP": {
       "2026": 113,
-      "scan_2026": 115,
+      "scan_2026": 114,
       "connector_status": "ok"
     },
     "SIAE · Osservatorio Spettacolo": {
@@ -300,9 +300,9 @@
       "connector_status": "empty_error"
     },
     "SNAM": {
-      "2026": 0,
-      "scan_2026": 0,
-      "connector_status": "empty_error"
+      "2026": 32,
+      "scan_2026": 32,
+      "connector_status": "ok"
     },
     "Terna": {
       "2026": 5,
@@ -311,7 +311,7 @@
     },
     "Unioncamere / InfoCamere": {
       "2026": 58,
-      "scan_2026": 47,
+      "scan_2026": 46,
       "connector_status": "ok"
     },
     "UNRAE": {
@@ -326,8 +326,8 @@
     },
     "Istituto Superiore di Sanità": {
       "2026": 20,
-      "scan_2026": 17,
-      "connector_status": "ok"
+      "scan_2026": 0,
+      "connector_status": "degraded_preserved"
     }
   },
   "articles": [
@@ -472,27 +472,6 @@
       },
       "headline": "Preferenze cookie",
       "summary": "Agenzia delle Dogane e dei Monopoli ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 38, 24, 2026, 1); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-D72BA6D052BB67DE37",
-      "published_at": "2026-10-06T00:00:00Z",
-      "observer": "Agenzia delle Dogane e dei Monopoli",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.adm.gov.it/portale/novita-accise",
-        "domain": "adm.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "Preferenze cookie",
-      "summary": "Agenzia delle Dogane e dei Monopoli ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 7, 2026, 17); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -2025,7 +2004,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "WD01 - Rome Water Dialogue - Technical Session on Strengthening governance of water tenure through innovation and inclusive dialogue",
-      "summary": "FAO ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 789, 798, 10, 6, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "FAO ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 782, 791, 10, 6, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -2780,7 +2759,7 @@
         "role": "primary_institutional_source",
         "verification_method": "official_listing_date"
       },
-      "headline": "Leggi di più Whistleblowing, violata la riservatezza dell’identità del segnalante: sanzioni di 15.000 euro →",
+      "headline": "Whistleblowing, violata la riservatezza dell’identità del segnalante: sanzioni di 15.000 euro",
       "summary": "ANAC ha pubblicato questo aggiornamento quantitativo il 06/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
@@ -3685,6 +3664,69 @@
       },
       "headline": "Rigenerazione urbana",
       "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 06/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-0E5A3723C323850BBB",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Ministero della Salute",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.salute.gov.it/new/it/ufficio-stampa/",
+        "domain": "salute.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Ufficio stampa",
+      "summary": "Ministero della Salute ha pubblicato questo aggiornamento quantitativo il 06/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-68FB780A835DADF403",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Ministero della Salute",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.salute.gov.it/new/it/sezione/comunicati-stampa/",
+        "domain": "salute.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "CONDIVIDI",
+      "summary": "Ministero della Salute ha pubblicato questo aggiornamento quantitativo il 06/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-DF030BABFFE33B5647",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Ministero della Salute",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.salute.gov.it/new/it/comunicato-stampa/il-ministro-schillaci-ha-incontrato-la-vicepremier-del-montenegro-jelena/",
+        "domain": "salute.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Il Ministro Schillaci ha incontrato la Vicepremier del Montenegro, Jelena Borovinić Bojović",
+      "summary": "Ministero della Salute ha pubblicato questo aggiornamento quantitativo il 06/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -5511,7 +5553,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "MOSTRA FOTOGRAFICA | A Palagonia l’esposizione per ricordare Gaetano Ponte, scienziato e fotografo siciliano",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 26, 2025, 6); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 05/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -5826,7 +5868,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "SETTIMANA DEL PIANETA TERRA | I Geoeventi dell’INGV per conoscere insieme la nostra casa comune",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 05/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 01, 2025, 5); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -6729,7 +6771,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "L’ASSESSORE REGIONALE VALERIA MANTOVAN IN CGIA",
-      "summary": "CGIA Mestre ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 270, 836 euro, 2011, 1, 30); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "CGIA Mestre ha pubblicato questo aggiornamento quantitativo il 05/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -6793,27 +6835,6 @@
       },
       "headline": "Categoria: Pubblicazioni",
       "summary": "CGIA Mestre ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 270, 836 euro, 2011, 1, 30); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-CB52418C8BEB070F42",
-      "published_at": "2026-10-05T00:00:00Z",
-      "observer": "INGV",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.ingv.it/stampa-urp/ufficio-stampa/comunicati-stampa/etna-chiarimento-e-smentita-in-merito-al-progetto-aerdust",
-        "domain": "ingv.it",
-        "role": "primary_institutional_source",
-        "verification_method": "official_listing_date"
-      },
-      "headline": "ETNA | Chiarimento e smentita in merito al progetto “Aerdust”",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 05, 2026, 605); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -13667,6 +13688,69 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-A9D7EE20DC8B929E70",
+      "published_at": "2026-10-01T00:00:00Z",
+      "observer": "Ministero della Salute",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.salute.gov.it/new/it/comunicato-stampa/il-ministro-schillaci-dublino-lepsco-accelerare-linnovazione-e-sostenere-la/",
+        "domain": "salute.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Il Ministro Schillaci a Dublino per l’EPSCO: “Accelerare l’innovazione e sostenere la prevenzione”",
+      "summary": "Ministero della Salute ha pubblicato questo aggiornamento quantitativo il 01/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-7CEF154FADF7BF3C01",
+      "published_at": "2026-10-01T00:00:00Z",
+      "observer": "Ministero della Salute",
+      "topic": "SALUTE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.salute.gov.it/new/it/comunicato-stampa/schillaci-con-i-nuovi-lea-diamo-ai-cittadini-un-servizio-sanitario-nazionale-piu/",
+        "domain": "salute.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Schillaci: “Con i nuovi Lea diamo ai cittadini un Servizio Sanitario Nazionale più moderno, equo e sostenibile” In Gazzetta Ufficiale il dpcm e il dm con l’aggiornamento: oltre 800 fra nuovi servizi e prestazioni",
+      "summary": "Ministero della Salute ha pubblicato questo aggiornamento quantitativo il 01/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-D72BA6D052BB67DE37",
+      "published_at": "2026-09-30T00:00:00Z",
+      "observer": "Agenzia delle Dogane e dei Monopoli",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.adm.gov.it/portale/novita-accise",
+        "domain": "adm.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Preferenze cookie",
+      "summary": "Agenzia delle Dogane e dei Monopoli ha pubblicato questo aggiornamento quantitativo il 30/09/2026. La pagina contiene valori e indicatori numerici (tra cui 2027, 30, 09, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-2922F20B91CBA07C8F",
       "published_at": "2026-09-30T00:00:00Z",
       "observer": "IVASS",
@@ -15066,7 +15150,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "ETNA | Una “macchina del tempo” ricostruisce 160 anni di evoluzione dei crateri sommitali",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 30/09/2026. La pagina contiene valori e indicatori numerici (tra cui 160, 25); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 30/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -15214,6 +15298,48 @@
       },
       "headline": "Determinazione a contrarre n. 6024/DG del 30/09/2026",
       "summary": "ISPRA / SNPA ha pubblicato questo aggiornamento quantitativo il 30/09/2026. La pagina contiene valori e indicatori numerici (tra cui 602, 30, 09, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-4154A6C6250CD63816",
+      "published_at": "2026-09-30T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/it/media/news-e-comunicati-stampa/comunicati-stampa/2026/snam-cda-rinnova-programmi-finanziamento-emtn-ecp.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Snam: il CdA rinnova i programmi di finanziamento Euro Medium Term Notes (EMTN) ed Euro Commercial Paper (ECP)",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 30/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-DF8965F9C971AC5D2F",
+      "published_at": "2026-09-30T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/en/media/news-and-press-releases/comunicati-stampa/2026/snam-board-directors-renews-EMTN-and-ECP-funding-programmes.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Snam: Board of Directors renews the Euro Medium Term Notes (EMTN) and Euro Commercial Paper (ECP) funding programmes",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 30/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -18636,7 +18762,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "Memoria Confindustria schema di decreto qualità dell’aria",
-      "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 25/09/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 2026, 30, 001, 39); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 25/09/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 2026, 5.0, 1,5 miliardi); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -19265,7 +19391,7 @@
         "role": "primary_institutional_source",
         "verification_method": "official_listing_date"
       },
-      "headline": "Leggi di più Ritorsioni verso il dipendente comunale, sanzione di 10.000 euro al Segretario Generale →",
+      "headline": "Ritorsioni verso il dipendente comunale, sanzione di 10.000 euro al Segretario Generale",
       "summary": "ANAC ha pubblicato questo aggiornamento quantitativo il 24/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
@@ -20022,7 +20148,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "L’obbligo assicurativo per la protezione delle imprese dai rischi catastrofali – Guida operativa",
-      "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 24/09/2026. La pagina contiene valori e indicatori numerici (tra cui 24, 2026, 30, 001, 39); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 24/09/2026. La pagina contiene valori e indicatori numerici (tra cui 24, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -22109,6 +22235,132 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-D55394707B7DA342FC",
+      "published_at": "2026-09-22T00:00:00Z",
+      "observer": "Ministero della Salute",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.salute.gov.it/new/it/comunicato-stampa/il-ministro-schillaci-ha-incontrato-la-ministra-dellagricoltura-della-francia/",
+        "domain": "salute.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Il Ministro Schillaci ha incontrato la Ministra dell’Agricoltura della Francia, Annie Genevard",
+      "summary": "Ministero della Salute ha pubblicato questo aggiornamento quantitativo il 22/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BCC39BF475EC00EC1A",
+      "published_at": "2026-09-22T00:00:00Z",
+      "observer": "Ministero della Salute",
+      "topic": "SALUTE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.salute.gov.it/new/it/comunicato-stampa/il-ministro-schillaci-ha-incontrato-il-ministro-della-salute-della-tunisia/",
+        "domain": "salute.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Il Ministro Schillaci ha incontrato il Ministro della Salute della Tunisia, Mustapha Ferjani",
+      "summary": "Ministero della Salute ha pubblicato questo aggiornamento quantitativo il 22/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-B4E7D7DE6B2888B9C9",
+      "published_at": "2026-09-22T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/it/media/news-e-comunicati-stampa/comunicati-stampa/2026/snam-vendita-10-milioni-azioni-de-nora-investitori-istituzionali.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Snam annuncia la vendita di circa 10 milioni di azioni ordinarie di Industrie De Nora presso investitori istituzionali",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 22/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-45479EF9DA5033C8B2",
+      "published_at": "2026-09-22T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/it/media/news-e-comunicati-stampa/comunicati-stampa/2026/snam-snam-presenta-polaris-osservatorio-sistema-energetico-italiano.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Snam presenta Polaris, l’osservatorio sul sistema energetico italiano",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 22/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-DB36486A409BFE06AD",
+      "published_at": "2026-09-22T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/en/media/news-and-press-releases/comunicati-stampa/2026/snam-sale-10-million-shares-De%20Nora-institutional-investors.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Snam announces the sale of approx. 10 million of existing ordinary shares of Industrie De Nora to institutional investors",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 22/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-D1E409A85BFEF849FC",
+      "published_at": "2026-09-22T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/en/media/news-and-press-releases/comunicati-stampa/2026/snam-snam-presenta-polaris-osservatorio-sistema-energetico-italiano.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Snam presents Polaris, the new industry watch on the Italian energy system",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 22/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-B0064DCA3771C6509D",
       "published_at": "2026-09-21T00:00:00Z",
       "observer": "UNRAE",
@@ -23222,6 +23474,69 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-0718BD2C590ACC481F",
+      "published_at": "2026-09-21T00:00:00Z",
+      "observer": "Ministero della Salute",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.salute.gov.it/new/it/comunicato-stampa/giornata-alzheimer-presentato-al-ministero-il-nuovo-piano-nazionale-demenze/",
+        "domain": "salute.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Giornata Alzheimer, presentato al Ministero il nuovo Piano Nazionale Demenze. Schillaci: “Aggiorniamo strumenti di programmazione per dare risposte concrete ai cittadini”",
+      "summary": "Ministero della Salute ha pubblicato questo aggiornamento quantitativo il 21/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-897F3111EF67CAC78B",
+      "published_at": "2026-09-21T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/it/media/news-e-comunicati-stampa/comunicati-stampa/2026/snam-accelerated-bookbuilding-cessione-azioni-de-nora.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Snam avvia un accelerated bookbuilding per la cessione di circa 10 milioni di azioni ordinarie di Industrie De Nora presso investitori istituzionali",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 21/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-0CF0D915F0520E0C83",
+      "published_at": "2026-09-21T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/en/media/news-and-press-releases/comunicati-stampa/2026/snam-accelerated-bookbuilding-sell-shares-de-nora.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Snam launches an accelerated bookbuilding to sell approx. 10 million existing ordinary shares of Industrie De Nora to institutional investors",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 21/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-C676F40B03ED8A4B78",
       "published_at": "2026-09-20T00:00:00Z",
       "observer": "Aeronautica Militare",
@@ -23991,7 +24306,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "NOTTE EUROPEA DEI RICERCATORI 2026 | Gli appuntamenti dell’INGV per conoscere il nostro pianeta",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 17/09/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 25); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 17/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -25273,6 +25588,27 @@
       },
       "headline": "Coefficienti TFR e crediti di lavoro – agosto 2026",
       "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 16/09/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 16); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-2B614093DBDCE2CCFF",
+      "published_at": "2026-09-16T00:00:00Z",
+      "observer": "Ministero della Salute",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.salute.gov.it/new/it/comunicato-stampa/il-ministro-schillaci-ha-incontrato-il-nuovo-ambasciatore-dellucraina-italia/",
+        "domain": "salute.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Il Ministro Schillaci ha incontrato il nuovo Ambasciatore dell’Ucraina in Italia",
+      "summary": "Ministero della Salute ha pubblicato questo aggiornamento quantitativo il 16/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -27716,6 +28052,27 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-5839FD368EA0E2DE80",
+      "published_at": "2026-09-10T00:00:00Z",
+      "observer": "Ministero della Salute",
+      "topic": "LAVORO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.salute.gov.it/new/it/comunicato-stampa/giornata-prevenzione-suicidio-ministero-salute-al-lavoro-piano-nazionaleschillaci/",
+        "domain": "salute.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Giornata prevenzione suicidio, Ministero Salute: al lavoro per Piano nazionale Schillaci: “Intervenire prima sul disagio e rafforzare la capacità di presa in carico”",
+      "summary": "Ministero della Salute ha pubblicato questo aggiornamento quantitativo il 10/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-65055D0BB58FB44594",
       "published_at": "2026-09-09T00:00:00Z",
       "observer": "Coldiretti",
@@ -28443,7 +28800,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "Settimana Europea della Mobilità: il 22 settembre il Bike to Work Day 2026 del CNR",
-      "summary": "CNR ha pubblicato questo aggiornamento quantitativo il 08/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "CNR ha pubblicato questo aggiornamento quantitativo il 08/09/2026. La pagina contiene valori e indicatori numerici (tra cui 22, 2026, 2014, 2020, 2015); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -29431,6 +29788,27 @@
       },
       "headline": "Osservatorio - Assegno Unico Universale",
       "summary": "INPS ha pubblicato questo aggiornamento quantitativo il 04/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-1B6125379CFCFCDC8C",
+      "published_at": "2026-09-04T00:00:00Z",
+      "observer": "Ministero della Salute",
+      "topic": "LAVORO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.salute.gov.it/new/it/comunicato-stampa/governo-schillaci-stabilita-valore-litalia-meloni-guida-autorevolein-sanita/",
+        "domain": "salute.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Governo, Schillaci: “Stabilità valore per l’Italia, Meloni guida autorevole. In Sanità risultati importanti, lavoro va avanti\"",
+      "summary": "Ministero della Salute ha pubblicato questo aggiornamento quantitativo il 04/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -30962,7 +31340,7 @@
         "role": "primary_institutional_source",
         "verification_method": "official_listing_date"
       },
-      "headline": "Vai al contenuto principale",
+      "headline": "Salta al contenuto",
       "summary": "ANAC ha pubblicato questo aggiornamento quantitativo il 01/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
@@ -32938,6 +33316,69 @@
       },
       "headline": "Una \"Fire-Box\" per prevenire il rischio",
       "summary": "CNR ha pubblicato questo aggiornamento quantitativo il 26/08/2026. La pagina contiene valori e indicatori numerici (tra cui 2014, 2020, 2015, 2017, 5); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-ECECBC4973DB80BEA2",
+      "published_at": "2026-08-26T00:00:00Z",
+      "observer": "Ministero della Salute",
+      "topic": "SALUTE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.salute.gov.it/new/it/comunicato-stampa/sanita-ministero-uffici-di-frontiera-allertati-su-casi-malaria-aeroporto/",
+        "domain": "salute.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Sanità, Ministero: Uffici di frontiera allertati su casi malaria in aeroporto Francoforte",
+      "summary": "Ministero della Salute ha pubblicato questo aggiornamento quantitativo il 26/08/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-3F4D74AA90A9726CC1",
+      "published_at": "2026-08-26T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ENERGIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/it/media/news-e-comunicati-stampa/comunicati-stampa/2026/global-gas-report-snam-igu-domanda-mondiale-record-2025.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "GLOBAL GAS REPORT SNAM-IGU: DOMANDA RECORD A LIVELLO MONDIALE NEL 2025. UN SISTEMA GAS PIÙ RESILIENTE DI FRONTE A UN FUTURO SEMPRE PIÙ SFIDANTE",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 26/08/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-6BDBB44095872F4D88",
+      "published_at": "2026-08-26T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ENERGIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/en/media/news-and-press-releases/comunicati-stampa/2026/global-gas-report-snam-igu-record-gas-demand-2025.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "FOLLOWING A RECORD GAS DEMAND IN 2025, THE 2026 GLOBAL GAS REPORT SHOWS. A MORE RESILIENT GAS SYSTEM FACES A MORE DEMANDING ENERGY FUTURE",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 26/08/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -35570,6 +36011,27 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-CB52418C8BEB070F42",
+      "published_at": "2026-08-02T00:00:00Z",
+      "observer": "INGV",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.ingv.it/stampa-urp/ufficio-stampa/comunicati-stampa/etna-chiarimento-e-smentita-in-merito-al-progetto-aerdust",
+        "domain": "ingv.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "ETNA | Chiarimento e smentita in merito al progetto “Aerdust”",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 02/08/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 05, 2026, 605); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-F943D6B6420BEC4FDC",
       "published_at": "2026-08-02T00:00:00Z",
       "observer": "INVALSI",
@@ -35667,7 +36129,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "CAMPI FLEGREI | Applicata l’Intelligenza Artificiale per sviluppare un catalogo sismico di alta definizione",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 02/08/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 02/08/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 05, 2025, 50.000); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -35898,7 +36360,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "ISOLE EOLIE | Al via le nuove aperture estive degli InfoPoint INGV di Stromboli e Vulcano",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 02/08/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 2025, 30); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 02/08/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -35991,7 +36453,7 @@
     },
     {
       "id": "OBS-ABCF79C72118680C22",
-      "published_at": "2026-08-01T00:00:00Z",
+      "published_at": "2026-08-02T00:00:00Z",
       "observer": "INGV",
       "topic": "ALTRO",
       "pulse_score": 0,
@@ -36003,7 +36465,28 @@
         "verification_method": "official_listing_date"
       },
       "headline": "CAMPI FLEGREI | Florindo (INGV): «Massimo impegno dell’Istituto nelle attività di monitoraggio. La valutazione scientifica si basa sull’insieme di tutti i dati osservati»",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 01/08/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 01, 2026, 31); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 02/08/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-6F4E192C3662C79795",
+      "published_at": "2026-08-02T00:00:00Z",
+      "observer": "INGV",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.ingv.it/stampa-urp/ufficio-stampa/comunicati-stampa/dalla-connettivita-alla-rete-come-infrastruttura-tecnologica-nazionale-ingv-e-garr-potenziano-l-interconnessione-dei-centri-elaborazione-dati",
+        "domain": "ingv.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Dalla connettività alla rete come infrastruttura tecnologica nazionale: INGV e GARR potenziano l’interconnessione dei Centri Elaborazione Dati",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 02/08/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 30, 2026, 2027); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -36382,27 +36865,6 @@
       },
       "headline": "Claudia Cappelletti",
       "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 31/07/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-6F4E192C3662C79795",
-      "published_at": "2026-07-30T00:00:00Z",
-      "observer": "INGV",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.ingv.it/stampa-urp/ufficio-stampa/comunicati-stampa/dalla-connettivita-alla-rete-come-infrastruttura-tecnologica-nazionale-ingv-e-garr-potenziano-l-interconnessione-dei-centri-elaborazione-dati",
-        "domain": "ingv.it",
-        "role": "primary_institutional_source",
-        "verification_method": "official_listing_date"
-      },
-      "headline": "Dalla connettività alla rete come infrastruttura tecnologica nazionale: INGV e GARR potenziano l’interconnessione dei Centri Elaborazione Dati",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 30/07/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 30, 2026, 2027); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -37096,6 +37558,48 @@
       },
       "headline": "Concluso il contributo italiano alla sorveglianza dello spazio aereo della Romania",
       "summary": "Aeronautica Militare ha pubblicato questo aggiornamento quantitativo il 29/07/2026. La pagina contiene valori e indicatori numerici (tra cui 31, 07, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-C5F7FA012B08B67F19",
+      "published_at": "2026-07-29T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ENERGIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/it/media/news-e-comunicati-stampa/comunicati-stampa/2026/snam-risultati-finanziari-solidi-primo-semestre-2026-guidance-confermata-miglioramento-target-indebitamento-netto.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Risultati finanziari solidi nel primo semestre. Guidance 2026 confermata, con miglioramento del target di indebitamento netto. Domanda gas in crescita; livello degli stoccaggi al 75% a fine luglio.                   L’AD Scornajenchi: \"Investimenti in crescita a sostegno della sicurezza energetica dell’Italia, della diversificazione degli approvvigionamenti e dell’integrazione del sistema europeo\"",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 29/07/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-27F8A540D52766B382",
+      "published_at": "2026-07-29T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ENERGIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/en/media/news-and-press-releases/comunicati-stampa/2026/snam-solid-first-half-financial-results-FY-guidance-confirmed-with-improved-net-debt-target.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Solid first half financial results. FY guidance confirmed with improved net debt target. Domestic gas demand growing, storage filling levels at 75% as of end-July.  CEO Scornajenchi: “Investments increased to strengthen Italy’s energy security, diversify gas supply routes and support a more integrated European energy system”",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 29/07/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -39783,7 +40287,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "Protocollo d’intesa Confindustria-GSE",
-      "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 14/07/2026. La pagina contiene valori e indicatori numerici (tra cui 14, 2026, 27, 30, 001); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 14/07/2026. La pagina contiene valori e indicatori numerici (tra cui 14, 2026, 27, 1.000); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -41316,7 +41820,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "Risposta alla consultazione sulle Linee Guida sul trattamento dei dati personali per finalità di ricerca scientifica dell’European Data Protection Board",
-      "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 02/07/2026. La pagina contiene valori e indicatori numerici (tra cui 02, 2026, 89, 30, 001); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 02/07/2026. La pagina contiene valori e indicatori numerici (tra cui 02, 2026, 89, 2025); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -42807,7 +43311,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "DDL Nucleare – Audizione Confindustria",
-      "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 01/07/2026. La pagina contiene valori e indicatori numerici (tra cui 01, 2026, 30, 001, 39); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 01/07/2026. La pagina contiene valori e indicatori numerici (tra cui 01, 2026, 1.000); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -44151,7 +44655,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "DDL Riforma della portualità nazionale – Audizione Confindustria",
-      "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 24/06/2026. La pagina contiene valori e indicatori numerici (tra cui 24, 2026, 30, 001, 39); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 24/06/2026. La pagina contiene valori e indicatori numerici (tra cui 24, 2026, 216 miliardi, 175 mila); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -45936,7 +46440,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "INGV | Italia e Turchia rafforzano la collaborazione scientifica per la stima della pericolosità sismica e vulcanica",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 15/06/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 15, 2026, 605); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 15/06/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -46063,6 +46567,48 @@
       },
       "headline": "InfoCamere e la sostenibilità concreta: dal digitale ai benefici per il pianeta",
       "summary": "Unioncamere / InfoCamere ha pubblicato questo aggiornamento quantitativo il 15/06/2026. La pagina contiene valori e indicatori numerici (tra cui 15, 06, 2026, 2025, 24.943); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-301CC4C43B06E4B452",
+      "published_at": "2026-06-15T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "AMBIENTE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/it/media/news-e-comunicati-stampa/comunicati-stampa/2026/snam-colloca-con-successo-emissione-obbligazionaria-dual-tranche-per-un-ammontare-complessivo-di-1-5-miliardi-euro.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Snam colloca con successo un’emissione obbligazionaria dual tranche per un ammontare complessivo di 1,5 miliardi di euro, in formato European Green Bond per 750 milioni di euro a 4 anni e Sustainability-Linked per 750 milioni di euro a 10 anni",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 15/06/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-C2DAB7298F86D249BD",
+      "published_at": "2026-06-15T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/en/media/news-and-press-releases/comunicati-stampa/2026/snam-successfully-places-a-dual-tranche-bond-offering-for-a-total-amount-of-eur-1-5-billion.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Snam successfully places a dual-tranche bond offering for a total amount of €1.5 billion, across a €750 million European Green Bond with 4-year maturity and a €750 million Sustainability-Linked Bond with 10-year maturity",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 15/06/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -50976,7 +51522,49 @@
         "verification_method": "official_listing_date"
       },
       "headline": "TERRA e OCEANI | Evidenziati gli effetti della migrazione del polo di rotazione terrestre sui livelli del mare nell’Olocene",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 13/05/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 13, 2026, 2000); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 13/05/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-FF15C18C3B3D738A7A",
+      "published_at": "2026-05-13T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/it/media/news-e-comunicati-stampa/comunicati-stampa/2026/snam-risultati-solidi-primo-trimestre-2026-in-linea-con-guidance.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Snam: risultati solidi nel primo trimestre 2026, pienamente in linea con la guidance 2026. Livello degli stoccaggi al 50% a fine aprile, con obiettivo del 90% di riempimento raggiunto attraverso le ultime aste",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 13/05/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-AB73F9E062A5AC95B5",
+      "published_at": "2026-05-13T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/en/media/news-and-press-releases/comunicati-stampa/2026/Snam-solid-1Q-2026-results-fully-on-track-with-FY-2026-guidance%20.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Snam: solid 1Q2026 results, fully on track with FY 2026 guidance. Storage level at 50% as of end-April, with 90% filling target achieved through latest auctions",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 13/05/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -52475,6 +53063,48 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-77CBCD72D09C0AF807",
+      "published_at": "2026-04-29T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/it/media/news-e-comunicati-stampa/comunicati-stampa/2026/snam-assemblea-azionisti-approva-bilancio-2025.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Snam: l’Assemblea degli Azionisti approva il bilancio 2025",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 29/04/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-87A236DF2FEB918B51",
+      "published_at": "2026-04-29T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/en/media/news-and-press-releases/comunicati-stampa/2026/Snam-Shareholders-meeting-approves-2025-financial-statements.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Snam: Shareholders’ meeting approves the 2025 financial statements",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 29/04/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-C7716CF71CA818D206",
       "published_at": "2026-04-28T00:00:00Z",
       "observer": "CENSIS",
@@ -52677,7 +53307,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "VULCANI | Dati satellitari e intelligenza artificiale per il monitoraggio del sistema idrotermale dell’isola di Vulcano",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 27/04/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 27, 2026, 2016); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 27/04/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -53105,6 +53735,48 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-E9FF0CFC8BE8A597CF",
+      "published_at": "2026-04-23T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ENERGIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/it/media/news-e-comunicati-stampa/comunicati-stampa/2026/snam-stoccaggi-gas-ultime-aste-raggiunto-target-90-riempimento-depositi-italiani-iniezione.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Stoccaggi gas: raggiunto con le ultime aste il target del 90% di riempimento. Ad oggi i depositi italiani, in fase di iniezione, sono già al 46,5% della capacità complessiva",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 23/04/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-0412FD04A19C697C7C",
+      "published_at": "2026-04-23T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ENERGIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/en/media/news-and-press-releases/comunicati-stampa/2026/Snam-gas%20storage-90-filling-target-achieved-latest-auctions-Italian-storage-facilities-injection-phase.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Gas storage: 90% filling target achieved through latest auctions. As of today, Italian storage facilities—currently in the injection phase—are already at 46.5% of total filling capacity",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 23/04/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-3892E2210DB3D572D0",
       "published_at": "2026-04-22T00:00:00Z",
       "observer": "AgID",
@@ -53139,7 +53811,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "La CoPER al Quirinale per la Giornata della ricerca italiana nel mondo",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 22/04/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 22, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 22/04/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -54231,7 +54903,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "Accelerating innovative forest monitoring for communities, climate and sustainable livelihoods",
-      "summary": "FAO ha pubblicato questo aggiornamento quantitativo il 10/04/2026. La pagina contiene valori e indicatori numerici (tra cui 656, 649, 10, 6, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "FAO ha pubblicato questo aggiornamento quantitativo il 10/04/2026. La pagina contiene valori e indicatori numerici (tra cui 663, 655, 10, 6, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -54252,7 +54924,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "GO01 - WFF 2026 Grand Opening",
-      "summary": "FAO ha pubblicato questo aggiornamento quantitativo il 10/04/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 819, 837, 10, 6); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "FAO ha pubblicato questo aggiornamento quantitativo il 10/04/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 812, 830, 10, 6); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -55751,6 +56423,48 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-97FA749EB2D16FD733",
+      "published_at": "2026-04-03T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/it/media/news-e-comunicati-stampa/comunicati-stampa/2026/moodys-migliora-rating-snam-baa1-outlook-stabile.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Moody’s migliora il rating di Snam a Baa1 con outlook stabile",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 03/04/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-5D8375C257681AC0E2",
+      "published_at": "2026-04-03T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/en/media/news-and-press-releases/comunicati-stampa/2026/Snam-rating-raised-Baa1-stable-outlook-Moodys.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Snam rating raised to Baa1 stable outlook by Moody’s",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 03/04/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-1D3F7373C0EA67C0F0",
       "published_at": "2026-04-02T00:00:00Z",
       "observer": "ART",
@@ -56360,6 +57074,48 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-424AA84319809A2244",
+      "published_at": "2026-03-30T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/it/media/news-e-comunicati-stampa/comunicati-stampa/2026/snam-cda-convoca-assemblea-azionisti-mercoledi-29-aprile-2026.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Snam: il CdA convoca l’Assemblea degli Azionisti per mercoledì 29 aprile 2026",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 30/03/2026. La pagina contiene valori e indicatori numerici (tra cui 29, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-667451F7418EB0AA7C",
+      "published_at": "2026-03-30T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/en/media/news-and-press-releases/comunicati-stampa/2026/Snam-board-convenes-shareholders-meeting-wednesday-29-april-2026.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Snam: The BoD convenes the Shareholders’ Meeting for Wednesday 29 April 2026",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 30/03/2026. La pagina contiene valori e indicatori numerici (tra cui 29, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-9EE48CD9054A70D850",
       "published_at": "2026-03-28T00:00:00Z",
       "observer": "Confindustria",
@@ -56814,7 +57570,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "EINSTEIN TELESCOPE | L’Italia presenta al Parlamento Europeo il futuro osservatorio di onde gravitazionali",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 25/03/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 25/03/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 2026, 24); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -58523,6 +59279,48 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-47545C6CF9F99FF327",
+      "published_at": "2026-03-05T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/it/media/news-e-comunicati-stampa/comunicati-stampa/2026/snam-risultati-finanziari-2025-e-piano-strategico-2026-2030.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Snam: risultati finanziari 2025 e Piano Strategico 2026-2030",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 05/03/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-F40BCDB99488FDA999",
+      "published_at": "2026-03-05T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/en/media/news-and-press-releases/comunicati-stampa/2026/snam-2025-financial-results-and-2026-2030-strategic-plan.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Snam: 2025 Financial Results and 2026-2030 Strategic Plan",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 05/03/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-64DBEA9881D695D333",
       "published_at": "2026-03-04T00:00:00Z",
       "observer": "Fondazione GIMBE",
@@ -58599,7 +59397,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "EVENTI | Al via a Roma la prima Conferenza Nazionale Polare",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 04/03/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 05, 2026, 7); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 04/03/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -58620,7 +59418,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "PIANETA DINAMICO | A Fiorano Modenese la presentazione dei risultati del progetto PROMUD sullo studio dei vulcani di fango",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 04/03/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 18, 2026, 20); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 04/03/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -63576,7 +64374,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "TERREMOTI | Nel 2025 localizzati in Italia oltre 15.000 eventi",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 12/01/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 12/01/2026. La pagina contiene valori e indicatori numerici (tra cui 2025, 15.000, 25); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -63640,6 +64438,48 @@
       },
       "headline": "CONFINDUSTRIA, CGIL, CISL, UIL SIGLATO ACCORDO PER IL FONDO SANITARIO INTEGRATIVO FASIOPEN | Confindustria",
       "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 09/01/2026. La pagina contiene valori e indicatori numerici (tra cui 19, 2025, 30); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-798C2CDB3E8D88DF78",
+      "published_at": "2026-01-09T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ENERGIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/it/media/news-e-comunicati-stampa/comunicati-stampa/2026/snam-annuncia-prezzo-conversione-green-bond-convertibile-azioni-scadenza-2031-importo-500-milioni-euro-prezzo-riacquisto-finale-obbligazioni-in-circolazione-scadenza-2028.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "SNAM ANNUNCIA IL PREZZO DI CONVERSIONE DEL GREEN BOND CONVERTIBILE IN AZIONI ORDINARIE ESISTENTI DI ITALGAS E CON SCADENZA NEL 2031 PER UN IMPORTO NOMINALE DI 500 MILIONI DI EURO E IL PREZZO DI RIACQUISTO FINALE DELLE OBBLIGAZIONI ATTUALMENTE IN CIRCOLAZIONE CONVERTIBILI IN AZIONI ORDINARIE ESISTENTI DI ITALGAS E CON SCADENZA NEL 2028",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 09/01/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-4983CE6F064A26E9C7",
+      "published_at": "2026-01-09T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ENERGIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/en/media/news-and-press-releases/comunicati-stampa/2026/snam-announces-exchange-price-500-million-green-bonds-exchangeable-existing-ordinary-shares-italgas-2031-final-repurchase-price-outstanding-exchangeable-bonds-2028.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "SNAM ANNOUNCES THE EXCHANGE PRICE OF ITS €500M GREEN BONDS EXCHANGEABLE INTO EXISTING ORDINARY SHARES OF ITALGAS DUE 2031 AND THE FINAL REPURCHASE PRICE OF THE OUTSTANDING EXCHANGEABLE BONDS DUE 2028",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 09/01/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -63808,6 +64648,90 @@
       },
       "headline": "Nel nuovo numero del magazine Unioncamere Economia & Imprese si parla di lavoro, politiche di coesione, formazione per l’export",
       "summary": "Unioncamere / InfoCamere ha pubblicato questo aggiornamento quantitativo il 07/01/2026. La pagina contiene valori e indicatori numerici (tra cui 5.0, 4.0, 4, 2, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-8490E7A6B3FBB01910",
+      "published_at": "2026-01-07T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ENERGIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/it/media/news-e-comunicati-stampa/comunicati-stampa/2026/snam-avvio-collocamento-green-bond-convertibile-azioni-ordinarie-esistenti-italgas-scadenza-2031-importo-nominale-500-milioni-euro-riacquisto-obbligazioni-in-circolazione-convertibili-scadenza-2028.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "SNAM ANNUNCIA L’AVVIO DEL COLLOCAMENTO DI UN GREEN BOND CONVERTIBILE IN AZIONI ORDINARIE ESISTENTI DI ITALGAS E CON SCADENZA NEL 2031 PER UN IMPORTO NOMINALE DI 500 MILIONI DI EURO E IL CONTESTUALE RIACQUISTO DELLE OBBLIGAZIONI ATTUALMENTE IN CIRCOLAZIONE CONVERTIBILI IN AZIONI ORDINARIE ESISTENTI DI ITALGAS E CON SCADENZA NEL 2028",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 07/01/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-55760EAA6C2260D044",
+      "published_at": "2026-01-07T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ENERGIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/it/media/news-e-comunicati-stampa/comunicati-stampa/2026/snam-annuncia-successo-collocamento-green-bond-convertibile-azioni-ordinarie-esistenti-italgas-scadenza-2031-importo-nominale-500-milioni-euro-riacquisto-obbligazioni-in-circolazione-scadenza-2028.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "SNAM ANNUNCIA IL SUCCESSO DEL COLLOCAMENTO DEL GREEN BOND CONVERTIBILE IN AZIONI ORDINARIE ESISTENTI DI ITALGAS E CON SCADENZA NEL 2031 PER UN IMPORTO NOMINALE DI 500 MILIONI DI EURO E IL RISULTATO DEL CONTESTUALE RIACQUISTO DELLE OBBLIGAZIONI ATTUALMENTE IN CIRCOLAZIONE CONVERTIBILI IN AZIONI ORDINARIE ESISTENTI DI ITALGAS E CON SCADENZA NEL 2028",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 07/01/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-79FB72FBF2F6067A2E",
+      "published_at": "2026-01-07T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ENERGIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/en/media/news-and-press-releases/comunicati-stampa/2026/Snam-announces-offer-500-million-green-bonds-exchangeable-existing-ordinary-shares-italgas-due-2031-concurrent-repurchase-of-outstanding-exchangeable-bonds-due-2028.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "SNAM ANNOUNCES THE OFFER OF €500M GREEN BONDS EXCHANGEABLE INTO EXISTING ORDINARY SHARES OF ITALGAS DUE 2031 AND THE CONCURRENT REPURCHASE OF THE OUTSTANDING EXCHANGEABLE BONDS DUE 2028",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 07/01/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-CB73162DEC3ED153C2",
+      "published_at": "2026-01-07T00:00:00Z",
+      "observer": "SNAM",
+      "topic": "ENERGIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.snam.it/en/media/news-and-press-releases/comunicati-stampa/2026/snam-announces-successful-placement-500-%20million-green-bonds-exchangeable-existing-ordinary%20shares-italgas-2031-result-repurchase-outstanding-exchangeable-bonds-2028.html",
+        "domain": "snam.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "SNAM ANNOUNCES THE SUCCESSFUL PLACEMENT OF €500M GREEN BONDS EXCHANGEABLE INTO EXISTING ORDINARY SHARES OF ITALGAS DUE 2031 AND THE RESULT OF THE CONCURRENT REPURCHASE OF THE OUTSTANDING EXCHANGEABLE BONDS DUE 2028",
+      "summary": "SNAM ha pubblicato questo aggiornamento quantitativo il 07/01/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
