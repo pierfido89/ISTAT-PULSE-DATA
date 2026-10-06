@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-06T08:00:47.913647+00:00",
+  "generated_at": "2026-10-06T09:39:41.186720+00:00",
   "articles": [
     {
       "id": "PULSE-4259FF6FEDA81813",
-      "published_at": "2026-10-06T08:00:47.913647+00:00",
+      "published_at": "2026-10-06T09:39:41.186720+00:00",
       "topic": "AMBIENTE",
       "pulse_score": 82,
       "patterns": [
@@ -47,7 +47,7 @@
     },
     {
       "id": "PULSE-65C919386D1DCB72",
-      "published_at": "2026-10-06T08:00:47.913647+00:00",
+      "published_at": "2026-10-06T09:39:41.186720+00:00",
       "topic": "ISTRUZIONE",
       "pulse_score": 86,
       "patterns": [
@@ -99,7 +99,7 @@
     },
     {
       "id": "PULSE-A63D9142B503DAD7",
-      "published_at": "2026-10-06T08:00:47.913647+00:00",
+      "published_at": "2026-10-06T09:39:41.186720+00:00",
       "topic": "LAVORO",
       "pulse_score": 88,
       "patterns": [
@@ -151,7 +151,7 @@
     },
     {
       "id": "PULSE-E88264CC5C569055",
-      "published_at": "2026-10-06T08:00:47.913647+00:00",
+      "published_at": "2026-10-06T09:39:41.186720+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 90,
       "patterns": [
@@ -183,7 +183,7 @@
         }
       ],
       "territories": [
-        "italia"
+        "venezia"
       ],
       "chart_spec": {
         "type": "auto",
@@ -195,7 +195,7 @@
     },
     {
       "id": "PULSE-2E149AF8984F993E",
-      "published_at": "2026-10-06T08:00:47.913647+00:00",
+      "published_at": "2026-10-06T09:39:41.186720+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 87,
       "patterns": [
@@ -227,6 +227,102 @@
         },
         {
           "raw_value": "165",
+          "verified": true
+        }
+      ],
+      "territories": [
+        "italia"
+      ],
+      "chart_spec": {
+        "type": "auto",
+        "status": "ready_for_primary_series"
+      },
+      "map_spec": null,
+      "editorial_status": "verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-88AAED2F6B14D365",
+      "published_at": "2026-10-06T09:39:41.186720+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 84,
+      "patterns": [
+        "ACCELERAZIONE"
+      ],
+      "public_source": {
+        "url": "https://assofranchising.it/news/stampa/comunicati-stampa/franchising-il-comparto-in-italia-e-sempre-piu-solido-nel-2025-il-giro-daffari-raggiunge-39-mld-di-euro-8-rispetto-al-2024.html",
+        "domain": "assofranchising.it",
+        "role": "primary_statistical_source",
+        "verification_method": "curated_primary_verification",
+        "verification_score": 100
+      },
+      "discovery": {
+        "visible": false,
+        "role": "hidden_radar"
+      },
+      "period_reference": "2025",
+      "latest_source_update": "2026-10-06",
+      "headline": "Franchising italiano a 39 miliardi di euro: +8% nel 2025",
+      "summary": "Il Rapporto Assofranchising Italia 2026 rileva che nel 2025 il comparto ha raggiunto 39 miliardi di euro di giro d'affari, con una crescita dell'8% rispetto al 2024. Il settore continua quindi a crescere nonostante il rallentamento generale dell'economia.",
+      "statistical_claims": [
+        {
+          "raw_value": "39",
+          "verified": true
+        },
+        {
+          "raw_value": "8%",
+          "verified": true
+        }
+      ],
+      "territories": [
+        "milano"
+      ],
+      "chart_spec": {
+        "type": "auto",
+        "status": "ready_for_primary_series"
+      },
+      "map_spec": null,
+      "editorial_status": "verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-7EC68CFA4E5C3AA7",
+      "published_at": "2026-10-06T09:39:41.186720+00:00",
+      "topic": "SALUTE",
+      "pulse_score": 89,
+      "patterns": [
+        "ANOMALIA"
+      ],
+      "public_source": {
+        "url": "https://www.iss.it/",
+        "domain": "iss.it",
+        "role": "primary_statistical_source",
+        "verification_method": "curated_primary_verification",
+        "verification_score": 100
+      },
+      "discovery": {
+        "visible": false,
+        "role": "hidden_radar"
+      },
+      "period_reference": "2026",
+      "latest_source_update": "2026-10-06",
+      "headline": "Sanità: il 68,1% degli operatori ha assistito a episodi di violenza verbale",
+      "summary": "La prima indagine del progetto europeo Brave-Wow rileva che il 68,1% degli operatori sanitari segnala episodi di violenza verbale almeno occasionali e il 65,7% violenza psicologica. In Italia hanno risposto 2.149 operatori di 14 strutture, con rilevazione coordinata dall'Istituto Superiore di Sanità.",
+      "statistical_claims": [
+        {
+          "raw_value": "68,1%",
+          "verified": true
+        },
+        {
+          "raw_value": "65,7%",
+          "verified": true
+        },
+        {
+          "raw_value": "2.149",
+          "verified": true
+        },
+        {
+          "raw_value": "14",
           "verified": true
         }
       ],
@@ -280,50 +376,6 @@
       ],
       "territories": [
         "italia"
-      ],
-      "chart_spec": {
-        "type": "auto",
-        "status": "ready_for_primary_series"
-      },
-      "map_spec": null,
-      "editorial_status": "verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "PULSE-88AAED2F6B14D365",
-      "published_at": "2026-10-06T08:00:47.913647+00:00",
-      "topic": "ECONOMIA",
-      "pulse_score": 84,
-      "patterns": [
-        "ACCELERAZIONE"
-      ],
-      "public_source": {
-        "url": "https://assofranchising.it/news/stampa/comunicati-stampa/franchising-il-comparto-in-italia-e-sempre-piu-solido-nel-2025-il-giro-daffari-raggiunge-39-mld-di-euro-8-rispetto-al-2024.html",
-        "domain": "assofranchising.it",
-        "role": "primary_statistical_source",
-        "verification_method": "curated_primary_verification",
-        "verification_score": 100
-      },
-      "discovery": {
-        "visible": false,
-        "role": "hidden_radar"
-      },
-      "period_reference": "2025",
-      "latest_source_update": "2026-10-06",
-      "headline": "Franchising italiano a 39 miliardi di euro: +8% nel 2025",
-      "summary": "Il Rapporto Assofranchising Italia 2026 rileva che nel 2025 il comparto ha raggiunto 39 miliardi di euro di giro d'affari, con una crescita dell'8% rispetto al 2024. Il settore continua quindi a crescere nonostante il rallentamento generale dell'economia.",
-      "statistical_claims": [
-        {
-          "raw_value": "39",
-          "verified": true
-        },
-        {
-          "raw_value": "8%",
-          "verified": true
-        }
-      ],
-      "territories": [
-        "milano"
       ],
       "chart_spec": {
         "type": "auto",

@@ -1,64 +1,58 @@
 {
-  "generated_at": "2026-10-06T09:17:24.836552+00:00",
+  "generated_at": "2026-10-06T09:42:13.060189+00:00",
   "min_year": 2026,
   "max_year": 2026,
-  "source_count": 63,
+  "source_count": 65,
   "source_stats": {
     "CNA": {
-      "2026": 0
-    },
-    "CNR": {
       "2026": 0
     },
     "Confcommercio": {
       "2026": 0
     },
-    "Fondazione GIMBE": {
-      "2026": 0
-    },
     "SVIMEZ": {
       "2026": 0
     },
-    "Agenzia delle Dogane e dei Monopoli": {
+    "Fondazione GIMBE": {
+      "2026": 0
+    },
+    "CNR": {
       "2026": 0
     },
     "Agenzia delle Entrate · OMI": {
       "2026": 0
     },
-    "CGIA Mestre": {
+    "Agenzia delle Dogane e dei Monopoli": {
       "2026": 0
     },
-    "Confartigianato": {
+    "CGIA Mestre": {
       "2026": 0
     },
     "AGENAS": {
       "2026": 0
     },
-    "AGCOM": {
+    "Confartigianato": {
       "2026": 0
     },
-    "Confindustria": {
+    "AGCOM": {
       "2026": 0
     },
     "Coldiretti": {
       "2026": 0
     },
+    "Confindustria": {
+      "2026": 0
+    },
     "ANFIA": {
       "2026": 0
     },
-    "ART": {
-      "2026": 0
-    },
-    "Assoporti": {
+    "Aeronautica Militare": {
       "2026": 0
     },
     "CENSIS": {
       "2026": 0
     },
-    "Legambiente": {
-      "2026": 0
-    },
-    "Nomisma": {
+    "Assoporti": {
       "2026": 0
     },
     "CONSOB": {
@@ -67,28 +61,34 @@
     "Banca d'Italia": {
       "2026": 0
     },
+    "Nomisma": {
+      "2026": 0
+    },
     "ANAC": {
       "2026": 0
-    },
-    "AIFA · OsMed": {
-      "2026": 1
-    },
-    "Aeronautica Militare": {
-      "2026": 0
-    },
-    "AgID": {
-      "2026": 3
     },
     "Dipartimento delle Finanze": {
       "2026": 0
     },
-    "ENEA": {
+    "ART": {
       "2026": 0
     },
     "DIPE · OpenCUP": {
       "2026": 0
     },
+    "ENEA": {
+      "2026": 0
+    },
+    "AgID": {
+      "2026": 3
+    },
     "ENIT": {
+      "2026": 0
+    },
+    "AIFA · OsMed": {
+      "2026": 0
+    },
+    "GME": {
       "2026": 0
     },
     "FAO": {
@@ -97,17 +97,17 @@
     "GSE": {
       "2026": 0
     },
-    "GME": {
-      "2026": 0
+    "Copernicus": {
+      "2026": 3
     },
     "INGV": {
       "2026": 0
     },
+    "Eurostat": {
+      "2026": 5
+    },
     "ENAC": {
       "2026": 0
-    },
-    "Copernicus": {
-      "2026": 3
     },
     "ISPRA / SNPA": {
       "2026": 0
@@ -118,25 +118,19 @@
     "ARERA": {
       "2026": 4
     },
-    "Eurostat": {
-      "2026": 5
-    },
-    "Ministero dell'Interno": {
+    "ACI": {
       "2026": 0
     },
     "MIMIT": {
       "2026": 0
     },
+    "ISTAT": {
+      "2026": 0
+    },
     "IVASS": {
       "2026": 14
     },
-    "ACI": {
-      "2026": 0
-    },
-    "EEA": {
-      "2026": 11
-    },
-    "ISTAT": {
+    "Ministero dell'Interno": {
       "2026": 0
     },
     "Ministero della Salute": {
@@ -145,38 +139,50 @@
     "Ministero dell'Istruzione e del Merito": {
       "2026": 0
     },
-    "Ministero dell'Università e della Ricerca": {
+    "MIT": {
       "2026": 0
     },
-    "MIT": {
+    "Ministero dell'Università e della Ricerca": {
       "2026": 0
     },
     "OpenCoesione": {
       "2026": 0
     },
-    "INAIL": {
-      "2026": 3
+    "Ragioneria Generale dello Stato · BDAP": {
+      "2026": 0
+    },
+    "Legambiente": {
+      "2026": 6
+    },
+    "EEA": {
+      "2026": 11
     },
     "SINAB": {
-      "2026": 0
-    },
-    "INPS": {
-      "2026": 0
-    },
-    "Ragioneria Generale dello Stato · BDAP": {
       "2026": 0
     },
     "SIAE · Osservatorio Spettacolo": {
       "2026": 0
     },
+    "Unioncamere · Excelsior": {
+      "2026": 0
+    },
     "SNAM": {
       "2026": 0
     },
-    "Ministero della Giustizia · DGStat": {
-      "2026": 1
+    "INPS": {
+      "2026": 0
     },
     "INVALSI": {
       "2026": 0
+    },
+    "INAIL": {
+      "2026": 3
+    },
+    "Istituto Superiore di Sanità": {
+      "2026": 1
+    },
+    "Ministero della Giustizia · DGStat": {
+      "2026": 1
     },
     "Terna": {
       "2026": 0
@@ -294,6 +300,27 @@
       },
       "headline": "Comunicati stampa",
       "summary": "ARERA ha pubblicato questo aggiornamento quantitativo il 02/10/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 2025, 2024, 2023, 2022); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-47A56D1E1B98C3C93D",
+      "published_at": "2026-10-02T00:00:00Z",
+      "observer": "Legambiente",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.legambiente.it/comunicati-stampa",
+        "domain": "legambiente.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Comunicati Stampa",
+      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 02/10/2026. La pagina contiene valori e indicatori numerici (tra cui 1,5, 2, 2026, 2025); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -574,6 +601,27 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-187C8B6AEAAFFABFF3",
+      "published_at": "2026-09-10T00:00:00Z",
+      "observer": "Legambiente",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.legambiente.it/comunicati-stampa/44-tappa-cantieri-transizione",
+        "domain": "legambiente.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "La 44° tappa de I Cantieri della Transizione",
+      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 10/09/2026. La pagina contiene valori e indicatori numerici (tra cui 44, 10, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-40B58DEF2552C2CEF5",
       "published_at": "2026-09-03T00:00:00Z",
       "observer": "UNRAE",
@@ -763,6 +811,27 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-800A72128E0607EB2A",
+      "published_at": "2026-07-23T00:00:00Z",
+      "observer": "Istituto Superiore di Sanità",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.iss.it/incidenti-e-violenza-report-e-dati",
+        "domain": "iss.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Report e Dati",
+      "summary": "Istituto Superiore di Sanità ha pubblicato questo aggiornamento quantitativo il 23/07/2026. La pagina contiene valori e indicatori numerici (tra cui 19, 18.10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-E79F96D110C2D6A6E1",
       "published_at": "2026-07-21T00:00:00Z",
       "observer": "UNRAE",
@@ -777,6 +846,27 @@
       },
       "headline": "A giugno veicoli rimorchiati in crescita del 16,7% ma 1 semestre 2026 in stallo (+0,9%). UNRAE: rivedere il Regolamento CO2 HDV per scongiurare sanzioni sproporzionate ai Costruttori",
       "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 21/07/2026. La pagina contiene valori e indicatori numerici (tra cui 16,7%, 1, 2026, 0,9%, 2025); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-CCC3C8C765E99B239A",
+      "published_at": "2026-07-17T00:00:00Z",
+      "observer": "Legambiente",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.legambiente.it/attivita-scientifiche/rapporto-spiagge",
+        "domain": "legambiente.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Rapporto Spiagge",
+      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 17/07/2026. La pagina contiene valori e indicatori numerici (tra cui 17, 2026, 821, 1,5, 2); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -861,6 +951,27 @@
       },
       "headline": "UNRAE amplia la propria rappresentanza con sei nuovi marchi: Jameel Motors, ATFlow e Campello entrano nell'associazione",
       "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 06/07/2026. La pagina contiene valori e indicatori numerici (tra cui 2025, 75, 10, 06, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-CE30668C92BFC0ED5E",
+      "published_at": "2026-07-02T00:00:00Z",
+      "observer": "Legambiente",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.legambiente.it/attivita-scientifiche/laghi-sotto-pressione-2",
+        "domain": "legambiente.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Laghi sotto pressione",
+      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 02/07/2026. La pagina contiene valori e indicatori numerici (tra cui 2, 2026, 821, 1,5); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -1008,6 +1119,27 @@
       },
       "headline": "Il 2025 dell'automotive. Diffusa la 29° Sintesi Statistica UNRAE",
       "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 18/06/2026. La pagina contiene valori e indicatori numerici (tra cui 2025, 29, 75, 10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-6FD6C00F4AC8B56573",
+      "published_at": "2026-06-15T00:00:00Z",
+      "observer": "Legambiente",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.legambiente.it/comunicati-stampa/41-tappa-cantieri-transizione",
+        "domain": "legambiente.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "La 41° tappa dei Cantieri della Transizione",
+      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 15/06/2026. La pagina contiene valori e indicatori numerici (tra cui 41, 15, 2026, 29); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -1785,6 +1917,27 @@
       },
       "headline": "Il CREA – Centro Zootecnia e Acquacoltura ad AQUAFARM 2026 - Il CREA – Centro Zootecnia e Acquacoltura ad AQUAFARM 2026",
       "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 11/02/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 11); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-3A5E78E21095066DD6",
+      "published_at": "2026-02-10T00:00:00Z",
+      "observer": "Legambiente",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.legambiente.it/comunicati-stampa/accordo-legacoop-agroalimentare",
+        "domain": "legambiente.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Con Legacoop Agroalimentare per una gestione sostenibile dei boschi",
+      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 10/02/2026. La pagina contiene valori e indicatori numerici (tra cui 10, 2026, 821, 1,5, 2); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
