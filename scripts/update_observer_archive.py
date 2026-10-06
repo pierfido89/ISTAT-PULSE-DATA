@@ -217,15 +217,33 @@ def page_info(url,domains):
             if t.get("datetime"): meta_candidates.append(t.get("datetime"))
         meta_candidates += re.findall(r"\b(20(?:2[5-9]|[3-9]\d)[-/]\d{1,2}[-/]\d{1,2})\b",text[:12000])
         for rawd in meta_candidates:
-            m=re.search(r"(20\d{2})[-/]([01]?\d)[-/]([0-3]?\d)",rawd or "")
+            rawd=rawd or ""
+            # ISO / year-first dates: 2026-10-06, 2026/10/06
+            m=re.search(r"(20\d{2})[-/]([01]?\d)[-/]([0-3]?\d)",rawd)
             if m:
                 try:
                     y,mo,d=map(int,m.groups())
                     date=datetime(y,mo,d,tzinfo=timezone.utc)
                     break
                 except: pass
+            # Common Italian / European dates: 06/10/2026 or 06-10-2026.
+            m=re.search(r"\b([0-3]?\d)[-/]([01]?\d)[-/](20\d{2})\b",rawd)
+            if m:
+                try:
+                    d,mo,y=map(int,m.groups())
+                    date=datetime(y,mo,d,tzinfo=timezone.utc)
+                    break
+                except: pass
         if not date:
-            # Italian textual dates, e.g. 26 marzo 2025
+            # Also inspect visible text for numeric Italian dates.
+            m=re.search(r"\b([0-3]?\d)[-/]([01]?\d)[-/](20\d{2})\b",text[:16000])
+            if m:
+                try:
+                    d,mo,y=map(int,m.groups())
+                    date=datetime(y,mo,d,tzinfo=timezone.utc)
+                except: pass
+        if not date:
+            # Italian textual dates, e.g. 26 marzo 2026
             months={"gennaio":1,"febbraio":2,"marzo":3,"aprile":4,"maggio":5,"giugno":6,
                     "luglio":7,"agosto":8,"settembre":9,"ottobre":10,"novembre":11,"dicembre":12}
             m=re.search(r"\b([0-3]?\d)\s+("+"|".join(months)+r")\s+(20\d{2})\b",low[:16000])
@@ -307,14 +325,9 @@ def main():
                 for domain in domains[:2]:
                     queries.extend([
                         f'site:{domain} {year} (dati OR statistiche OR rapporto OR osservatorio OR indagine)',
-                        f'site:{domain} {year} (mercato OR monitoraggio OR rilevazione OR "open data")'
+                        f'site:{domain} {year} (mercato OR monitoraggio OR rilevazione OR "open data")',
+                        f'site:{domain} {year} (comunicato OR pubblicazione OR bollettino OR analisi)'
                     ])
-                    # Monthly queries improve recall for sites without useful
-                    # sitemaps, while the six-second provider timeout bounds cost.
-                    queries.extend(
-                        f'site:{domain} "{month} {year}" (dati OR statistiche OR rapporto OR osservatorio OR indagine)'
-                        for month in MONTHS_IT
-                    )
 
                 with ThreadPoolExecutor(max_workers=8) as pool:
                     future_searches=[pool.submit(web_search,q,12) for q in queries]
