@@ -774,56 +774,68 @@ def anfia_candidates(entrypoints,domains,year=2026,limit=420):
 
 
 def snam_sitemap_candidates(domains,year=2026,limit=420):
-    """Dedicated SNAM discovery from the official sitemap.
-    SNAM serves article shells to non-JS crawlers, so publication-page HTML often
-    lacks a readable date. For official 2026 press-release URLs, use sitemap
-    lastmod as the authoritative archive date fallback.
+    """Discover SNAM press releases from the sitemap and resolve canonical
+    title/date from AEM .model.json, which exposes jcr:created / repo:modifyDate.
     """
-    out=[]; seen=set()
-    seeds=[
-        "https://www.snam.it/sitemap.xml",
-        "https://snam.it/sitemap.xml",
-    ]
-    for sm in seeds:
+    urls=[]; seen=set(); out=[]
+    try:
+        raw,_,_=fetch("https://www.snam.it/sitemap.xml",timeout=10,max_bytes=5000000)
+        root=ET.fromstring(raw.decode("utf-8","ignore"))
+        for node in root.iter():
+            if not str(node.tag).lower().endswith("loc"):
+                continue
+            loc=(node.text or "").strip()
+            if not loc.startswith("http") or not host_allowed(canonical_host(loc),domains):
+                continue
+            if f"/comunicati-stampa/{year}/" not in loc.lower():
+                continue
+            if loc in seen:
+                continue
+            seen.add(loc); urls.append(loc)
+    except Exception as exc:
+        print(f"SNAM sitemap error: {type(exc).__name__}: {exc}", flush=True)
+
+    def resolve(url):
+        model=url[:-5]+".model.json" if url.endswith(".html") else url+".model.json"
         try:
-            raw,_,_=fetch(sm,timeout=10,max_bytes=5000000)
-            root=ET.fromstring(raw.decode("utf-8","ignore"))
-            for node in list(root):
-                loc_el=node.find("{*}loc")
-                if loc_el is None:
-                    continue
-                loc=(loc_el.text or "").strip()
-                if not loc.startswith("http") or not host_allowed(canonical_host(loc),domains):
-                    continue
-                low=loc.lower()
-                # Restrict the authoritative-date fallback to actual SNAM press
-                # releases for the requested year, avoiding generic pages/assets.
-                if f"/comunicati-stampa/{year}/" not in low:
-                    continue
-                lastmod_el=node.find("{*}lastmod")
-                lastmod=(lastmod_el.text or "").strip() if lastmod_el is not None else ""
-                pub=None
-                m=re.search(r"(20\d{2})[-/]([01]?\d)[-/]([0-3]?\d)",lastmod)
+            raw,_,ct=fetch(model,timeout=10,max_bytes=1200000)
+            data=json.loads(raw.decode("utf-8","ignore"))
+            title=str(data.get("title") or "").strip()
+            created=str(data.get("jcr:created") or "").strip()
+            modified=""
+            # Fallback scan for repo:modifyDate matching the current page.
+            def walk(obj):
+                nonlocal modified
+                if isinstance(obj,dict):
+                    if not modified and obj.get("repo:modifyDate"):
+                        modified=str(obj.get("repo:modifyDate"))
+                    for v in obj.values(): walk(v)
+                elif isinstance(obj,list):
+                    for v in obj: walk(v)
+            walk(data)
+            pub=None
+            for rawd in (created,modified):
+                m=re.search(r"(20\d{2})[-/]([01]?\d)[-/]([0-3]?\d)",rawd)
                 if m:
                     try:
                         y,mo,d=map(int,m.groups())
                         pub=datetime(y,mo,d,tzinfo=timezone.utc)
+                        break
                     except Exception:
-                        pub=None
-                if not pub or pub.year!=year:
-                    continue
-                if loc in seen:
-                    continue
-                seen.add(loc)
-                title=urllib.parse.unquote(loc.rsplit("/",1)[-1]).replace(".html","").replace("-"," ")
-                out.append((title,loc,pub))
-                if len(out)>=limit:
-                    return out
-        except Exception as exc:
-            if domains and domains[0]=="snam.it":
-                print(f"SNAM sitemap error: {type(exc).__name__}: {exc}", flush=True)
-    if domains and domains[0]=="snam.it":
-        print(f"SNAM sitemap dedicated dated candidates: {len(out)}", flush=True)
+                        pass
+            if not pub or pub.year!=year:
+                return None
+            if not title:
+                title=urllib.parse.unquote(url.rsplit("/",1)[-1]).replace(".html","").replace("-"," ")
+            return (title,url,pub)
+        except Exception:
+            return None
+
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        for row in pool.map(resolve,urls[:limit]):
+            if row:
+                out.append(row)
+    print(f"SNAM AEM dated candidates: {len(out)} / sitemap_urls={len(urls)}", flush=True)
     return out
 
 
