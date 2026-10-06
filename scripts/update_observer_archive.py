@@ -660,6 +660,27 @@ def main():
             print(f"{name}: 2026={stats.get('2026',0)}", flush=True)
 
     arts=sorted(by_id.values(),key=lambda a:a.get("published_at",""),reverse=True)
+
+    # Final coverage must describe the persistent archive, not only what one
+    # network scan managed to rediscover today. A temporary source failure must
+    # never turn a previously populated observer back to zero.
+    archived_counts={src.get("name",""):0 for src in sources}
+    for article in arts:
+        observer=article.get("observer","")
+        if observer in archived_counts and str(article.get("published_at","")).startswith("2026-"):
+            archived_counts[observer]+=1
+
+    scan_stats=source_stats
+    source_stats={
+        name:{
+            "2026":archived_counts.get(name,0),
+            "scan_2026":scan_stats.get(name,{}).get("2026",0),
+            "connector_status":"ok" if scan_stats.get(name,{}).get("2026",0)>0
+                               else ("degraded_preserved" if archived_counts.get(name,0)>0 else "empty_error")
+        }
+        for name in archived_counts
+    }
+
     OUT.write_text(json.dumps({
         "generated_at":now.isoformat(),
         "min_year":2026,
