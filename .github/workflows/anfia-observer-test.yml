@@ -24,5 +24,32 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install beautifulsoup4 pypdf
-      - name: Test ANFIA only
-        run: python scripts/update_observer_archive.py --only ANFIA
+      - name: Probe ANFIA live pages
+        run: |
+          python - <<'PY'
+          import re, urllib.request
+          from bs4 import BeautifulSoup
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+          urls=[
+            "https://www.anfia.it/it/comunicazione/notizie-e-comunicati",
+            "https://www.anfia.it/it/comunicazione/notizie-e-comunicati/comunicati-stampa",
+            "https://www.anfia.it/it/comunicazione/notizie-e-comunicati/comunicati-stampa?start=12",
+            "https://www.anfia.it/it/attivita/studi-e-statistiche",
+          ]
+          for url in urls:
+              try:
+                  req=urllib.request.Request(url,headers={"User-Agent":UA,"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.6"})
+                  with urllib.request.urlopen(req,timeout=8) as r:
+                      raw=r.read(2600000); final=r.geturl(); ct=r.headers.get("Content-Type","")
+                  html=raw.decode("utf-8","ignore")
+                  soup=BeautifulSoup(html,"html.parser")
+                  heads=soup.find_all(["h2","h3","h4"])
+                  links=soup.find_all("a",href=True)
+                  dates=re.findall(r"\\b[0-3]?\\d\\s+(?:gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre)\\s+2026\\b",soup.get_text(" ",strip=True),re.I)
+                  print(f"PROBE OK {url} -> {final} ct={ct} bytes={len(raw)} headings={len(heads)} links={len(links)} dates2026={len(dates)}",flush=True)
+                  for h in heads[:8]:
+                      a=h.find("a",href=True)
+                      print("  HEAD:",re.sub(r"\\s+"," ",h.get_text(" ",strip=True))[:180],"| href=",a.get("href") if a else None,flush=True)
+              except Exception as exc:
+                  print(f"PROBE ERROR {url}: {type(exc).__name__}: {exc}",flush=True)
+          PY
