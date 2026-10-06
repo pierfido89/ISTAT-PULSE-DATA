@@ -10,6 +10,11 @@ ROOT=Path("data/news")
 REGISTRY=Path("data/observer_sources.json")
 OUT=ROOT/"observer_articles.json"
 UA="Mozilla/5.0 ISTAT-PULSE-ObserverArchive/1.0"
+ARCHIVE_YEARS=(2025,2026)
+MONTHS_IT=("gennaio","febbraio","marzo","aprile","maggio","giugno",
+           "luglio","agosto","settembre","ottobre","novembre","dicembre")
+MAX_RESULTS_PER_SOURCE_YEAR=120
+
 STAT_TERMS=("dati","statistic","rapporto","osservatorio","indagine","rilevazione","open data",
             "percent","milioni","miliardi","tasso","indice","variazione","occup","pension",
             "prezzi","credito","energia","ambiente","salute","scuola","imprese","turismo",
@@ -122,26 +127,31 @@ def main():
     current=json.loads(OUT.read_text()) if OUT.exists() else {"articles":[]}
     by_id={a["id"]:a for a in current.get("articles",[]) if a.get("id")}
     now=datetime.now(timezone.utc)
-    years=list(range(2025,now.year+1))
-
+    source_stats={}
     for src in cfg.get("sources",[]):
         name=src["name"]; domains=src.get("domains",[])
-        found=0
         seen=set()
-        for year in years:
+        source_stats[name]={str(y):0 for y in ARCHIVE_YEARS}
+        for year in ARCHIVE_YEARS:
+            year_found=0
             for domain in domains[:2]:
-                queries=[
+                annual_queries=[
                     f'site:{domain} {year} (dati OR statistiche OR rapporto OR osservatorio)',
-                    f'site:{domain} {year} (indagine OR "open data" OR rilevazione)'
+                    f'site:{domain} {year} (indagine OR "open data" OR rilevazione OR monitoraggio)'
                 ]
-                for q in queries:
+                monthly_queries=[
+                    f'site:{domain} "{month} {year}" (dati OR statistiche OR rapporto OR osservatorio OR indagine)'
+                    for month in MONTHS_IT
+                ]
+                for q in annual_queries + monthly_queries:
                     for title,url in bing_search(q,limit=12):
                         if url in seen: continue
                         seen.add(url)
                         info=page_info(url,domains)
                         if not info or info["date"].year!=year: continue
+                        if info["date"]>now: continue
                         low=(info["title"]+" "+title).lower()
-                        if not any(t in low for t in ("dati","stat","rapport","osserv","indagin","rilev","mercato","bilancio","monitor")):
+                        if not any(t in low for t in ("dati","stat","rapport","osserv","indagin","rilev","mercato","bilancio","monitor","analisi","pubblic")):
                             continue
                         aid=stable_id(name,info["url"])
                         if aid not in by_id:
@@ -163,18 +173,20 @@ def main():
                                 "editorial_status":"source_publication_verified",
                                 "publication_status":"published"
                             }
-                        found+=1
-                        if found>=24: break
-                    if found>=24: break
-                if found>=24: break
-            if found>=24: break
-        print(f"{name}: {found}")
+                        year_found+=1
+                        if year_found>=MAX_RESULTS_PER_SOURCE_YEAR: break
+                    if year_found>=MAX_RESULTS_PER_SOURCE_YEAR: break
+                if year_found>=MAX_RESULTS_PER_SOURCE_YEAR: break
+            source_stats[name][str(year)]=year_found
+        print(f"{name}: 2025={source_stats[name]['2025']} 2026={source_stats[name]['2026']}")
 
     arts=sorted(by_id.values(),key=lambda a:a.get("published_at",""),reverse=True)
     OUT.write_text(json.dumps({
         "generated_at":now.isoformat(),
         "min_year":2025,
+        "max_year":2026,
         "source_count":len(cfg.get("sources",[])),
+        "source_stats":source_stats,
         "articles":arts
     },ensure_ascii=False,indent=2)+"\n")
 
