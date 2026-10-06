@@ -205,7 +205,7 @@ def sitemap_candidates(domain,year=2026,limit=180):
                     out.append((urllib.parse.unquote(loc.rsplit("/",1)[-1]).replace("-"," "),loc))
     return _dedupe_results(out,limit)
 
-def site_crawl_candidates(domain,year=2026,limit=140):
+def site_crawl_candidates(domain,year=2026,limit=140,extra_roots=None):
     # Generic official-site discovery independent of sitemap/search-engine quality.
     # Start from the institutional home and conventional newsroom/statistics paths,
     # then follow a bounded set of internal listing pages.
@@ -220,6 +220,9 @@ def site_crawl_candidates(domain,year=2026,limit=140):
         f"https://{domain}/osservatori", f"https://www.{domain}/osservatori",
         f"https://{domain}/studi-e-ricerche", f"https://www.{domain}/studi-e-ricerche",
     ]
+    for root in (extra_roots or []):
+        if isinstance(root,str) and root.startswith("http"):
+            roots.append(root)
     listing_terms=("news","notiz","comunicat","pubblic","statist","osserv","rapport",
                    "bollett","dati","studi","ricer","analisi","monitor","indagin",
                    "mercato","archiv","press","media")
@@ -441,7 +444,8 @@ def process_source(src, now):
         # 2) Crawl official newsroom/statistics sections directly. This is
         # crucial for institutions whose sitemap does not expose article URLs.
         with ThreadPoolExecutor(max_workers=min(2,max(1,len(domains[:2])))) as pool:
-            jobs={pool.submit(site_crawl_candidates,domain,year,140):domain for domain in domains[:2]}
+            entrypoints=src.get("entrypoints",[])
+            jobs={pool.submit(site_crawl_candidates,domain,year,140,entrypoints):domain for domain in domains[:2]}
             for fut in as_completed(jobs):
                 try: results=fut.result()
                 except Exception: results=[]
