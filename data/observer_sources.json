@@ -32,9 +32,10 @@
       ],
       "entrypoints": [
         "https://www.cgiamestre.com/category/news/",
-        "https://www.cgiamestre.com/category/area-stampa/"
+        "https://www.cgiamestre.com/category/area-stampa/",
+        "https://www.cgiamestre.com/category/pubblicazioni/"
       ],
-      "adapter": "wordpress_listing"
+      "adapter": "cgiamestre"
     },
     {
       "name": "CNA",
