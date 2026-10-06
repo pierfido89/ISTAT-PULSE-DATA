@@ -1,0 +1,646 @@
+{
+  "generated_at": "2026-10-06T07:25:31.396Z",
+  "min_year": 2025,
+  "articles": [
+    {
+      "id": "OBS-INPS-FAMIGLIA-20251219",
+      "published_at": "2025-12-19T12:00:00Z",
+      "topic": "LAVORO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2025.12.prestazioni-a-sostegno-della-famiglia-pubblicato-l-osservatorio-2025.html",
+        "domain": "inps.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Prestazioni familiari: pubblicato l’Osservatorio INPS 2025",
+      "summary": "INPS ha pubblicato l’Osservatorio sulle prestazioni a sostegno della famiglia con serie relative a assegni familiari, maternità e paternità, congedi, legge 104, congedo straordinario e bonus asilo nido. L’archivio copre i dati completi 2020-2024.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-MERCATO-20251215",
+      "published_at": "2025-12-15T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/mercato-finanziario/2025-mercato-finanziario/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Mercato finanziario: aggiornati i dati di ottobre-novembre 2025",
+      "summary": "Banca d’Italia ha pubblicato il nuovo aggiornamento delle statistiche sul mercato finanziario, riferito al periodo ottobre-novembre 2025. L’articolo è archiviato come pubblicazione ufficiale, senza forzare un punteggio PULSE.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-INPS-ENTI-20251212",
+      "published_at": "2025-12-12T12:00:00Z",
+      "topic": "LAVORO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2025.12.osservatorio-enti-dipendenti-pubblici-i-dati-del-2024.html",
+        "domain": "inps.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Enti pubblici: 12.536 istituzioni e 132,1 miliardi di retribuzioni",
+      "summary": "L’Osservatorio INPS sugli enti con dipendenti pubblici censisce 12.536 istituzioni nel 2024. Le retribuzioni complessivamente erogate ammontano a 132,1 miliardi di euro, con una forte concentrazione del monte retributivo nelle amministrazioni statali.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-MONETA-20251210",
+      "published_at": "2025-12-10T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/moneta-banche/2025-moneta/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Banche e moneta: l’aggiornamento di ottobre 2025",
+      "summary": "Banca d’Italia ha aggiornato le statistiche nazionali su banche e moneta con i dati riferiti a ottobre 2025. PULSE archivia la pubblicazione nell’osservatorio della fonte per seguirne l’evoluzione mensile.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-MERCATO-20251114",
+      "published_at": "2025-11-14T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/mercato-finanziario/2025-mercato-finanziario/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Mercato finanziario: aggiornati i dati di settembre-ottobre 2025",
+      "summary": "Banca d’Italia ha pubblicato il nuovo aggiornamento delle statistiche sul mercato finanziario, riferito al periodo settembre-ottobre 2025. L’articolo è archiviato come pubblicazione ufficiale, senza forzare un punteggio PULSE.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-MONETA-20251111",
+      "published_at": "2025-11-11T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/moneta-banche/2025-moneta/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Banche e moneta: l’aggiornamento di settembre 2025",
+      "summary": "Banca d’Italia ha aggiornato le statistiche nazionali su banche e moneta con i dati riferiti a settembre 2025. PULSE archivia la pubblicazione nell’osservatorio della fonte per seguirne l’evoluzione mensile.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-INPS-PUBBLICI-20251111",
+      "published_at": "2025-11-11T12:00:00Z",
+      "topic": "LAVORO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2025.11.osservatorio-sui-lavoratori-pubblici-i-dati-del-2024.html",
+        "domain": "inps.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Lavoro pubblico: 3,74 milioni di addetti e retribuzione media di 35.350 euro",
+      "summary": "Secondo l’Osservatorio INPS sui lavoratori pubblici, nel 2024 gli addetti con almeno una giornata retribuita sono 3.738.171. La retribuzione media è pari a 35.350 euro e cresce dello 0,6% rispetto al 2023.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-INPS-FLUSSI-20251024",
+      "published_at": "2025-10-24T12:00:00Z",
+      "topic": "LAVORO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2025.10.osservatorio-monitoraggio-flussi-di-pensionamento-i-dati-2024-2025.html",
+        "domain": "inps.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Flussi pensionistici: 628.712 pensioni nei primi nove mesi del 2025",
+      "summary": "L’INPS aggiorna il monitoraggio dei flussi di pensionamento: nei primi nove mesi del 2025 risultano 628.712 pensioni, con importo medio mensile di 1.253 euro. Il confronto 2024 viene mantenuto nello stesso osservatorio.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-MERCATO-20251015",
+      "published_at": "2025-10-15T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/mercato-finanziario/2025-mercato-finanziario/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Mercato finanziario: aggiornati i dati di agosto-settembre 2025",
+      "summary": "Banca d’Italia ha pubblicato il nuovo aggiornamento delle statistiche sul mercato finanziario, riferito al periodo agosto-settembre 2025. L’articolo è archiviato come pubblicazione ufficiale, senza forzare un punteggio PULSE.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-MONETA-20251009",
+      "published_at": "2025-10-09T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/moneta-banche/2025-moneta/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Banche e moneta: l’aggiornamento di agosto 2025",
+      "summary": "Banca d’Italia ha aggiornato le statistiche nazionali su banche e moneta con i dati riferiti a agosto 2025. PULSE archivia la pubblicazione nell’osservatorio della fonte per seguirne l’evoluzione mensile.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-MERCATO-20250915",
+      "published_at": "2025-09-15T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/mercato-finanziario/2025-mercato-finanziario/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Mercato finanziario: aggiornati i dati di luglio-agosto 2025",
+      "summary": "Banca d’Italia ha pubblicato il nuovo aggiornamento delle statistiche sul mercato finanziario, riferito al periodo luglio-agosto 2025. L’articolo è archiviato come pubblicazione ufficiale, senza forzare un punteggio PULSE.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-MONETA-20250909",
+      "published_at": "2025-09-09T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/moneta-banche/2025-moneta/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Banche e moneta: l’aggiornamento di luglio 2025",
+      "summary": "Banca d’Italia ha aggiornato le statistiche nazionali su banche e moneta con i dati riferiti a luglio 2025. PULSE archivia la pubblicazione nell’osservatorio della fonte per seguirne l’evoluzione mensile.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-MERCATO-20250814",
+      "published_at": "2025-08-14T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/mercato-finanziario/2025-mercato-finanziario/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Mercato finanziario: aggiornati i dati di giugno-luglio 2025",
+      "summary": "Banca d’Italia ha pubblicato il nuovo aggiornamento delle statistiche sul mercato finanziario, riferito al periodo giugno-luglio 2025. L’articolo è archiviato come pubblicazione ufficiale, senza forzare un punteggio PULSE.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-MONETA-20250811",
+      "published_at": "2025-08-11T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/moneta-banche/2025-moneta/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Banche e moneta: l’aggiornamento di giugno 2025",
+      "summary": "Banca d’Italia ha aggiornato le statistiche nazionali su banche e moneta con i dati riferiti a giugno 2025. PULSE archivia la pubblicazione nell’osservatorio della fonte per seguirne l’evoluzione mensile.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-INPS-FLUSSI-20250723",
+      "published_at": "2025-07-23T12:00:00Z",
+      "topic": "LAVORO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2025.07.osservatorio-flussi-di-pensionamento-dati-2024-e-primo-semestre-2025.html",
+        "domain": "inps.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Pensionamenti: 397.691 nuovi trattamenti nel primo semestre 2025",
+      "summary": "Nel monitoraggio INPS aggiornato al 2 luglio 2025 risultano 397.691 pensioni con decorrenza nel primo semestre dell’anno, con un importo medio mensile di 1.215 euro. Per il 2024 la rilevazione conta 889.642 pensioni.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-MERCATO-20250715",
+      "published_at": "2025-07-15T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/mercato-finanziario/2025-mercato-finanziario/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Mercato finanziario: aggiornati i dati di maggio-giugno 2025",
+      "summary": "Banca d’Italia ha pubblicato il nuovo aggiornamento delle statistiche sul mercato finanziario, riferito al periodo maggio-giugno 2025. L’articolo è archiviato come pubblicazione ufficiale, senza forzare un punteggio PULSE.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-MONETA-20250709",
+      "published_at": "2025-07-09T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/moneta-banche/2025-moneta/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Banche e moneta: l’aggiornamento di maggio 2025",
+      "summary": "Banca d’Italia ha aggiornato le statistiche nazionali su banche e moneta con i dati riferiti a maggio 2025. PULSE archivia la pubblicazione nell’osservatorio della fonte per seguirne l’evoluzione mensile.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-MERCATO-20250616",
+      "published_at": "2025-06-16T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/mercato-finanziario/2025-mercato-finanziario/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Mercato finanziario: aggiornati i dati di aprile-maggio 2025",
+      "summary": "Banca d’Italia ha pubblicato il nuovo aggiornamento delle statistiche sul mercato finanziario, riferito al periodo aprile-maggio 2025. L’articolo è archiviato come pubblicazione ufficiale, senza forzare un punteggio PULSE.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-MONETA-20250611",
+      "published_at": "2025-06-11T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/moneta-banche/2025-moneta/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Banche e moneta: l’aggiornamento di aprile 2025",
+      "summary": "Banca d’Italia ha aggiornato le statistiche nazionali su banche e moneta con i dati riferiti a aprile 2025. PULSE archivia la pubblicazione nell’osservatorio della fonte per seguirne l’evoluzione mensile.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-MERCATO-20250515",
+      "published_at": "2025-05-15T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/mercato-finanziario/2025-mercato-finanziario/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Mercato finanziario: aggiornati i dati di marzo-aprile 2025",
+      "summary": "Banca d’Italia ha pubblicato il nuovo aggiornamento delle statistiche sul mercato finanziario, riferito al periodo marzo-aprile 2025. L’articolo è archiviato come pubblicazione ufficiale, senza forzare un punteggio PULSE.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-MONETA-20250512",
+      "published_at": "2025-05-12T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/moneta-banche/2025-moneta/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Banche e moneta: l’aggiornamento di marzo 2025",
+      "summary": "Banca d’Italia ha aggiornato le statistiche nazionali su banche e moneta con i dati riferiti a marzo 2025. PULSE archivia la pubblicazione nell’osservatorio della fonte per seguirne l’evoluzione mensile.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-MERCATO-20250415",
+      "published_at": "2025-04-15T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/mercato-finanziario/2025-mercato-finanziario/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Mercato finanziario: aggiornati i dati di febbraio-marzo 2025",
+      "summary": "Banca d’Italia ha pubblicato il nuovo aggiornamento delle statistiche sul mercato finanziario, riferito al periodo febbraio-marzo 2025. L’articolo è archiviato come pubblicazione ufficiale, senza forzare un punteggio PULSE.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-MONETA-20250409",
+      "published_at": "2025-04-09T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/moneta-banche/2025-moneta/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Banche e moneta: l’aggiornamento di febbraio 2025",
+      "summary": "Banca d’Italia ha aggiornato le statistiche nazionali su banche e moneta con i dati riferiti a febbraio 2025. PULSE archivia la pubblicazione nell’osservatorio della fonte per seguirne l’evoluzione mensile.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-INPS-PENSIONI-20250326",
+      "published_at": "2025-03-26T12:00:00Z",
+      "topic": "LAVORO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2025.03.osservatorio-sulle-pensioni-i-dati-2024-e-2025.html",
+        "domain": "inps.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Pensioni vigenti: quasi 18 milioni di trattamenti al 1° gennaio 2025",
+      "summary": "L’Osservatorio INPS registra 17.986.149 pensioni vigenti al 1° gennaio 2025. Il 76,1% è di natura previdenziale e il 23,9% assistenziale, per un importo complessivo annuo pari a 253,9 miliardi di euro.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-MERCATO-20250314",
+      "published_at": "2025-03-14T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/mercato-finanziario/2025-mercato-finanziario/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Mercato finanziario: aggiornati i dati di gennaio-febbraio 2025",
+      "summary": "Banca d’Italia ha pubblicato il nuovo aggiornamento delle statistiche sul mercato finanziario, riferito al periodo gennaio-febbraio 2025. L’articolo è archiviato come pubblicazione ufficiale, senza forzare un punteggio PULSE.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-MONETA-20250311",
+      "published_at": "2025-03-11T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/moneta-banche/2025-moneta/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Banche e moneta: l’aggiornamento di gennaio 2025",
+      "summary": "Banca d’Italia ha aggiornato le statistiche nazionali su banche e moneta con i dati riferiti a gennaio 2025. PULSE archivia la pubblicazione nell’osservatorio della fonte per seguirne l’evoluzione mensile.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-INPS-ISEE-20250220",
+      "published_at": "2025-02-20T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2025.02.osservatorio-su-dsu-e-isee-i-dati-2016-2024.html",
+        "domain": "inps.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "ISEE: le DSU salgono da 5,9 a 10,4 milioni tra 2016 e 2024",
+      "summary": "Il nuovo Osservatorio INPS su DSU e ISEE mostra una crescita del 77% delle dichiarazioni presentate: da 5,9 milioni nel 2016 a 10,4 milioni nel 2024. Il dato fotografa l’espansione dell’uso dell’ISEE nell’accesso alle prestazioni.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-MERCATO-20250214",
+      "published_at": "2025-02-14T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/mercato-finanziario/2025-mercato-finanziario/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Mercato finanziario: aggiornati i dati di dicembre 2024-gennaio 2025",
+      "summary": "Banca d’Italia ha pubblicato il nuovo aggiornamento delle statistiche sul mercato finanziario, riferito al periodo dicembre 2024-gennaio 2025. L’articolo è archiviato come pubblicazione ufficiale, senza forzare un punteggio PULSE.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-MONETA-20250211",
+      "published_at": "2025-02-11T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/moneta-banche/2025-moneta/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Banche e moneta: l’aggiornamento di dicembre 2024",
+      "summary": "Banca d’Italia ha aggiornato le statistiche nazionali su banche e moneta con i dati riferiti a dicembre 2024. PULSE archivia la pubblicazione nell’osservatorio della fonte per seguirne l’evoluzione mensile.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-INPS-PENSIONI-20250123",
+      "published_at": "2025-01-23T12:00:00Z",
+      "topic": "LAVORO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2025.01.osservatorio-monitoraggio-flussi-di-pensionamento-dati-2023-e-2024.html",
+        "domain": "inps.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Pensionamenti: nel 2024 830 mila nuovi trattamenti nella prima rilevazione",
+      "summary": "L’INPS ha pubblicato il monitoraggio dei flussi di pensionamento aggiornato a inizio 2025. Nella rilevazione risultano 830.452 pensioni con decorrenza 2024, con importo medio mensile alla decorrenza di 1.246 euro.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-MERCATO-20250115",
+      "published_at": "2025-01-15T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/mercato-finanziario/2025-mercato-finanziario/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Mercato finanziario: aggiornati i dati di novembre-dicembre 2024",
+      "summary": "Banca d’Italia ha pubblicato il nuovo aggiornamento delle statistiche sul mercato finanziario, riferito al periodo novembre-dicembre 2024. L’articolo è archiviato come pubblicazione ufficiale, senza forzare un punteggio PULSE.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-MONETA-20250113",
+      "published_at": "2025-01-13T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/moneta-banche/2025-moneta/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "Banche e moneta: l’aggiornamento di novembre 2024",
+      "summary": "Banca d’Italia ha aggiornato le statistiche nazionali su banche e moneta con i dati riferiti a novembre 2024. PULSE archivia la pubblicazione nell’osservatorio della fonte per seguirne l’evoluzione mensile.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    }
+  ]
+}
