@@ -111,6 +111,45 @@ def web_search(query,limit=12):
             except Exception: pass
     return _dedupe_results(merged,limit*2)
 
+def sitemap_candidates(domain,year=2026,limit=180):
+    # Direct discovery from the official site. This is deliberately independent
+    # from search engines and follows sitemap indexes recursively with strict caps.
+    seeds=[
+        f"https://{domain}/sitemap.xml",
+        f"https://www.{domain}/sitemap.xml",
+        f"https://{domain}/sitemap_index.xml",
+        f"https://www.{domain}/sitemap_index.xml",
+    ]
+    queue=list(seeds); visited=set(); out=[]
+    while queue and len(visited)<24 and len(out)<limit:
+        sm=queue.pop(0)
+        if sm in visited: continue
+        visited.add(sm)
+        try:
+            raw,final,ct=fetch(sm,timeout=12,max_bytes=2400000)
+            text=raw.decode("utf-8","ignore")
+            root=ET.fromstring(text)
+        except Exception:
+            continue
+        locs=[(el.text or "").strip() for el in root.findall(".//{*}loc") if (el.text or "").strip()]
+        is_index=root.tag.lower().endswith("sitemapindex")
+        if is_index:
+            for loc in locs:
+                low=loc.lower()
+                if str(year) in low or any(k in low for k in ("post","news","notiz","pubblic","article","comunicat","stat","sitemap")):
+                    if loc not in visited and len(queue)<40: queue.append(loc)
+            continue
+        for loc in locs:
+            if len(out)>=limit: break
+            host=canonical_host(loc)
+            if not host_allowed(host,[domain]): continue
+            low=loc.lower()
+            # Prefer URLs that look like publications; date verification remains
+            # mandatory in page_info, so this is only a cheap candidate filter.
+            if str(year) in low or any(k in low for k in ("news","notiz","pubblic","rapport","osserv","stat","comunicat","dati","analisi")):
+                out.append((urllib.parse.unquote(loc.rsplit("/",1)[-1]).replace("-"," "),loc))
+    return _dedupe_results(out,limit)
+
 def page_info(url,domains):
     try:
         raw,final,ct=fetch(url)
@@ -226,6 +265,16 @@ def main():
                     for title,url in results:
                         if url and url not in candidates:
                             candidates[url]=title
+
+            # Add candidates published in official sitemaps. This prevents
+            # Google/Bing throttling from making an entire source look empty.
+            for domain in domains[:2]:
+                try:
+                    for title,url in sitemap_candidates(domain,year,180):
+                        if url not in candidates:
+                            candidates[url]=title
+                except Exception:
+                    pass
 
             year_found=0
             # Page verification is independent too; keep the same conservative pool.
