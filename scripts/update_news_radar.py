@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib, html, io, json, re, time, urllib.parse, urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 from pathlib import Path
 from bs4 import BeautifulSoup
 
@@ -456,13 +457,15 @@ def curated_story_for(title):
             return rule
     return None
 
-def article_from_curated(rule, candidate, now):
+def article_from_curated(rule, candidate, now, existing=None):
     geos=detect_geo(candidate.get("discovery_title","")+" Italia")
     primary=rule["source_url"]
-    aid=stable_id(primary,rule["topic"],now.date().isoformat())
+    aid=stable_id(primary,rule["topic"],rule["headline"],rule["verified_numbers"])
+    first_seen=(existing or {}).get("published_at") or now.isoformat()
     return {
       "id":aid,
-      "published_at":now.isoformat(),
+      "published_at":first_seen,
+      "last_seen_at":now.isoformat(),
       "topic":rule["topic"],
       "pulse_score":rule["pulse_score"],
       "patterns":rule["patterns"],
@@ -526,15 +529,42 @@ def make_visual_specs(topic, geos, numbers):
         map_spec={"level":"auto","territories":geos,"status":"requires_primary_geodata"}
     return chart,map_spec
 
-def stable_id(primary_url, topic, day):
-    seed=f"{primary_url}|{topic}|{day}".encode()
-    return "PULSE-"+hashlib.sha256(seed).hexdigest()[:16].upper()
+def canonical_story_url(url):
+    try:
+        p=urllib.parse.urlsplit(url or "")
+        host=p.netloc.lower().split(":")[0].removeprefix("www.")
+        path=re.sub(r"/+$","",p.path or "/")
+        # Tracking/query parameters never define a new story.
+        return urllib.parse.urlunsplit(("https",host,path,"",""))
+    except Exception:
+        return (url or "").strip()
+
+def story_fingerprint(primary_url, topic, headline="", numbers=None):
+    url=canonical_story_url(primary_url)
+    vals=[]
+    for n in numbers or []:
+        v=normalize_number_token(n)
+        if v and not re.fullmatch(r"20\d{2}",v):
+            vals.append(v)
+    title=re.sub(r"[^a-z0-9à-ù ]"," ",(headline or "").lower())
+    title=" ".join(title.split())
+    seed=f"{url}|{topic}|{title}|{'|'.join(sorted(set(vals)))}".encode()
+    return hashlib.sha256(seed).hexdigest()[:24]
+
+def stable_id(primary_url, topic, headline="", numbers=None):
+    return "PULSE-"+story_fingerprint(primary_url,topic,headline,numbers)[:16].upper()
+
+ROME=ZoneInfo("Europe/Rome")
 
 def bucket_date(iso, now):
-    try:d=datetime.fromisoformat(iso.replace("Z","+00:00")).date()
+    try:
+        d=datetime.fromisoformat(iso.replace("Z","+00:00"))
+        if d.tzinfo is None: d=d.replace(tzinfo=timezone.utc)
+        d=d.astimezone(ROME).date()
     except:return "ARCHIVIO"
-    if d==now.date(): return "OGGI"
-    if d==now.date()-timedelta(days=1): return "IERI"
+    local_now=now.astimezone(ROME).date()
+    if d==local_now: return "OGGI"
+    if d==local_now-timedelta(days=1): return "IERI"
     return "ARCHIVIO"
 
 def main():
@@ -542,19 +572,43 @@ def main():
     cfg=load_json(CFG,{})
     old_articles=load_json(ARTICLES,{"articles":[]}).get("articles",[])
     cleaned_articles=[]
+    # Migrate old day-dependent IDs into one permanent story identity.
+    # When duplicates already exist across days, keep the earliest first-seen
+    # date so a story cannot be reborn in OGGI merely because the radar saw it again.
+    migrated={}
     for x in old_articles:
-        verified_vals=[normalize_number_token(c.get("raw_value","")) for c in x.get("statistical_claims",[]) if c.get("verified")]
+        verified_raw=[c.get("raw_value","") for c in x.get("statistical_claims",[]) if c.get("verified")]
+        verified_vals=[normalize_number_token(v) for v in verified_raw]
         substantive=[v for v in verified_vals if v and not re.fullmatch(r"20\d{2}",v)]
+        source=((x.get("public_source") or {}).get("url") or "")
         source_domain=((x.get("public_source") or {}).get("domain") or "").lower()
         trusted_source=any(source_domain==d or source_domain.endswith("."+d) for d in TRUSTED_PRIMARY_DOMAINS)
         if x.get("publication_status")=="published" and (not substantive or not trusted_source):
             continue
-        cleaned_articles.append(x)
+        fp=story_fingerprint(source,x.get("topic",""),x.get("headline",""),verified_raw)
+        permanent_id="PULSE-"+fp[:16].upper()
+        x=dict(x); x["id"]=permanent_id; x["story_fingerprint"]=fp
+        prev=migrated.get(fp)
+        if prev:
+            dates=[d for d in (prev.get("published_at"),x.get("published_at")) if d]
+            if dates: prev["published_at"]=min(dates)
+            last=[d for d in (prev.get("last_seen_at"),x.get("last_seen_at"),x.get("published_at")) if d]
+            if last: prev["last_seen_at"]=max(last)
+            # Prefer the richer/current representation but never change first_seen.
+            if len(json.dumps(x,ensure_ascii=False)) > len(json.dumps(prev,ensure_ascii=False)):
+                first=prev.get("published_at")
+                latest=prev.get("last_seen_at")
+                migrated[fp]=x
+                migrated[fp]["published_at"]=first or x.get("published_at")
+                migrated[fp]["last_seen_at"]=max([d for d in (latest,x.get("last_seen_at"),x.get("published_at")) if d] or [""])
+        else:
+            migrated[fp]=x
+    cleaned_articles=list(migrated.values())
     by_id={x.get("id"):x for x in cleaned_articles if x.get("id")}
     candidates=[]
     seen_story_keys=set()
     now=datetime.now(timezone.utc)
-    today=now.date().isoformat()
+    today=now.astimezone(ROME).date().isoformat()
 
     for feed in cfg.get("feeds",[]):
         try: items=rss_items(feed["url"])
@@ -592,7 +646,10 @@ def main():
             candidates.append(cand)
             if editorial_excluded: continue
             if curated:
-                article=article_from_curated(curated,cand,now)
+                permanent_id=stable_id(curated["source_url"],curated["topic"],curated["headline"],curated["verified_numbers"])
+                article=article_from_curated(curated,cand,now,by_id.get(permanent_id))
+                article["story_fingerprint"]=story_fingerprint(
+                    curated["source_url"],curated["topic"],curated["headline"],curated["verified_numbers"])
                 by_id[article["id"]]=article
                 continue
             if not resolved: continue
@@ -600,10 +657,15 @@ def main():
             if not verified_nums: continue
             pulse=min(100,50+s//2+(10 if geos else 0)+(5 if len(verified_nums)>=2 else 0))
             chart,map_spec=make_visual_specs(topic,geos,verified_nums)
-            aid=stable_id(primary,topic,today)
             headline=derive_headline(topic,resolved,geos,verified_nums)
+            aid=stable_id(primary,topic,headline,verified_nums)
+            existing=by_id.get(aid)
             article={
-              "id":aid,"published_at":now.isoformat(),"topic":topic,"pulse_score":pulse,
+              "id":aid,
+              "story_fingerprint":story_fingerprint(primary,topic,headline,verified_nums),
+              "published_at":(existing or {}).get("published_at") or now.isoformat(),
+              "last_seen_at":now.isoformat(),
+              "topic":topic,"pulse_score":pulse,
               "public_source":{"url":primary,"domain":resolved.get("domain"),"role":"primary_statistical_source",
                                "verification_method":resolved.get("method"),"verification_score":resolved.get("verification_score")},
               "discovery":{"visible":False,"role":"hidden_radar"},
@@ -616,16 +678,29 @@ def main():
               "editorial_status":"verified_primary_match",
               "publication_status":"published"
             }
-            if aid not in by_id or by_id[aid].get("publication_status")!="published": by_id[aid]=article
+            by_id[aid]=article
 
     arts=sorted(by_id.values(),key=lambda x:x.get("published_at",""),reverse=True)
     # Safety gate: only verified articles may be publicly visible.
     public=[a for a in arts if a.get("publication_status")=="published" and a.get("editorial_status") in ("verified","verified_primary_match")]
     idx={"generated_at":now.isoformat(),"counts":{},
          "oggi":[],"ieri":[],"archivio":[]}
+    bucket_seen=set()
     for a in public:
+        fp=a.get("story_fingerprint") or story_fingerprint(
+            (a.get("public_source") or {}).get("url",""),
+            a.get("topic",""),a.get("headline",""),
+            [c.get("raw_value","") for c in a.get("statistical_claims",[]) if c.get("verified")]
+        )
+        if fp in bucket_seen: continue
+        bucket_seen.add(fp)
         b=bucket_date(a.get("published_at",""),now)
         idx[b.lower()].append(a["id"])
+
+    # Invariant: one story identity may exist in exactly one time bucket.
+    assert not (set(idx["oggi"]) & set(idx["ieri"]))
+    assert not (set(idx["oggi"]) & set(idx["archivio"]))
+    assert not (set(idx["ieri"]) & set(idx["archivio"]))
     idx["counts"]={"oggi":len(idx["oggi"]),"ieri":len(idx["ieri"]),"archivio":len(idx["archivio"]),
                    "withheld":len(arts)-len(public),"candidates":len(candidates)}
     ARTICLES.write_text(json.dumps({"generated_at":now.isoformat(),"articles":arts},ensure_ascii=False,indent=2)+"\n")
