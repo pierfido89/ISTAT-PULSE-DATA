@@ -76,11 +76,11 @@
         "open data"
       ],
       "entrypoints": [
-        "https://www.cnr.it/it/news?page=1",
-        "https://www.cnr.it/it/comunicati-stampa?page=1",
+        "https://www.cnr.it/it/news",
+        "https://www.cnr.it/it/comunicati-stampa",
         "https://www.cnr.it/it/note-stampa"
       ],
-      "adapter": "rss_plus_listing",
+      "adapter": "dated_listing",
       "feed_urls": [
         "https://www.cnr.it/it/news/rss"
       ]
@@ -588,7 +588,7 @@
       "adapter": "dated_listing",
       "entrypoints": [
         "https://www.enit.it/it/comunicati-stampa",
-        "https://www.enit.it/it/"
+        "https://www.enit.it/it/ricerca?pag=1&tipoarticolo=Comunicati%20stampa"
       ]
     },
     {
@@ -749,18 +749,18 @@
         "open data"
       ],
       "entrypoints": [
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=1&YY=2026",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=2&YY=2026",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=3&YY=2026",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=4&YY=2026",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=5&YY=2026",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=6&YY=2026",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=7&YY=2026",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=8&YY=2026",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=9&YY=2026",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=10&YY=2026",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=11&YY=2026",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=12&YY=2026"
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/1",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/2",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/3",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/4",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/5",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/6",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/7",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/8",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/9",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/10",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/11",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/12"
       ],
       "adapter": "year_month_listing"
     },
@@ -849,8 +849,7 @@
         "open data"
       ],
       "entrypoints": [
-        "https://www.salute.gov.it/new/it/sezione/comunicati-stampa/",
-        "https://www.salute.gov.it/new/it/sezione/notizie/"
+        "https://www.salute.gov.it/new/it/sezione/comunicati-stampa/"
       ],
       "adapter": "dated_listing"
     },
@@ -906,7 +905,7 @@
         "open data"
       ],
       "entrypoints": [
-        "https://mit.gov.it/index.php/comunicazione/news",
+        "https://www.mit.gov.it/comunicazione/news",
         "https://mit.gov.it/comunicazione/news"
       ],
       "adapter": "dated_listing"
