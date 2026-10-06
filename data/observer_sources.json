@@ -33,7 +33,8 @@
       "entrypoints": [
         "https://www.cgiamestre.com/category/news/",
         "https://www.cgiamestre.com/category/area-stampa/"
-      ]
+      ],
+      "adapter": "wordpress_listing"
     },
     {
       "name": "CNA",
@@ -49,8 +50,10 @@
         "open data"
       ],
       "entrypoints": [
-        "https://www.cna.it/categoria/comunicati/"
-      ]
+        "https://www.cna.it/categoria/comunicati/",
+        "https://www.cna.it/categoria/notizie/"
+      ],
+      "adapter": "listing_first"
     },
     {
       "name": "CNR",
@@ -110,6 +113,10 @@
         "osservatorio",
         "indagine",
         "open data"
+      ],
+      "adapter": "liferay_listing",
+      "entrypoints": [
+        "https://www.confcommercio.it/it/archivio-notizie"
       ]
     },
     {
@@ -126,9 +133,10 @@
         "open data"
       ],
       "entrypoints": [
-        "https://www.confindustria.it/news",
-        "https://www.confindustria.it/comunicati-stampa/"
-      ]
+        "https://www.confindustria.it/comunicati-stampa",
+        "https://www.confindustria.it/cerca-news/"
+      ],
+      "adapter": "listing_first"
     },
     {
       "name": "Fondazione GIMBE",
@@ -184,6 +192,10 @@
         "osservatorio",
         "indagine",
         "open data"
+      ],
+      "adapter": "wordpress_listing",
+      "entrypoints": [
+        "https://lnx.svimez.info/svimez/"
       ]
     },
     {
@@ -200,9 +212,10 @@
         "open data"
       ],
       "entrypoints": [
-        "https://www.aci.it/notizie/",
-        "https://www.aci.it/comunicati/"
-      ]
+        "https://www.aci.it/comunicati/",
+        "https://www.aci.it/notizie/"
+      ],
+      "adapter": "listing_first"
     },
     {
       "name": "AGENAS",
@@ -301,6 +314,11 @@
         "osservatorio",
         "indagine",
         "open data"
+      ],
+      "adapter": "liferay_listing",
+      "entrypoints": [
+        "https://www.aifa.gov.it/it/comunicati-stampa",
+        "https://www.aifa.gov.it/rapporti-osmed"
       ]
     },
     {
@@ -315,6 +333,12 @@
         "osservatorio",
         "indagine",
         "open data"
+      ],
+      "adapter": "liferay_listing",
+      "entrypoints": [
+        "https://www.anticorruzione.it/it/focus-atti-anac",
+        "https://www.anticorruzione.it/it/consultazioni-online",
+        "https://www.anticorruzione.it/"
       ]
     },
     {
@@ -402,7 +426,8 @@
       ],
       "entrypoints": [
         "https://www.consob.it/web/area-pubblica/bollettino-statistico"
-      ]
+      ],
+      "adapter": "publication_listing"
     },
     {
       "name": "Copernicus",
@@ -492,9 +517,9 @@
       ],
       "entrypoints": [
         "https://www.eea.europa.eu/en/newsroom/news",
-        "https://www.eea.europa.eu/en/newsroom/editorial",
         "https://www.eea.europa.eu/en/analysis/publications/"
-      ]
+      ],
+      "adapter": "listing_first"
     },
     {
       "name": "ENAC",
@@ -596,6 +621,13 @@
         "osservatorio",
         "indagine",
         "open data"
+      ],
+      "adapter": "gse_listing",
+      "entrypoints": [
+        "https://www.gse.it/media/comunicati",
+        "https://www.gse.it/dati-e-scenari/rapporti",
+        "https://www.gse.it/dati-e-scenari/statistiche",
+        "https://www.gse.it/media/focus"
       ]
     },
     {
@@ -646,7 +678,8 @@
       "entrypoints": [
         "https://www.inps.it/it/it/inps-comunica/notizie.html",
         "https://www.inps.it/it/it/dati-e-bilanci/osservatori-statistici-e-altre-statistiche/calendario-osservatori-statistici.html"
-      ]
+      ],
+      "adapter": "calendar_plus_news"
     },
     {
       "name": "INVALSI",
@@ -691,8 +724,20 @@
         "open data"
       ],
       "entrypoints": [
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa"
-      ]
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=1&YY=2026",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=2&YY=2026",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=3&YY=2026",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=4&YY=2026",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=5&YY=2026",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=6&YY=2026",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=7&YY=2026",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=8&YY=2026",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=9&YY=2026",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=10&YY=2026",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=11&YY=2026",
+        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=12&YY=2026"
+      ],
+      "adapter": "year_month_listing"
     },
     {
       "name": "ISTAT",
@@ -785,6 +830,7 @@
     {
       "name": "Ministero dell'Istruzione e del Merito",
       "domains": [
+        "mim.gov.it",
         "istruzione.it"
       ],
       "query_terms": [
@@ -794,6 +840,11 @@
         "osservatorio",
         "indagine",
         "open data"
+      ],
+      "adapter": "liferay_listing",
+      "entrypoints": [
+        "https://www.mim.gov.it/web/guest/comunicati",
+        "https://www.mim.gov.it/it"
       ]
     },
     {
@@ -812,7 +863,8 @@
       ],
       "entrypoints": [
         "https://www.mur.gov.it/it/stampa/notizie-e-comunicati-stampa"
-      ]
+      ],
+      "adapter": "drupal_listing"
     },
     {
       "name": "MIT",
@@ -828,8 +880,9 @@
         "open data"
       ],
       "entrypoints": [
-        "https://mit.gov.it/comunicazione/news"
-      ]
+        "https://www.mit.gov.it/comunicazione/news"
+      ],
+      "adapter": "drupal_listing"
     },
     {
       "name": "OpenCoesione",
@@ -843,6 +896,12 @@
         "osservatorio",
         "indagine",
         "open data"
+      ],
+      "adapter": "django_listing",
+      "entrypoints": [
+        "https://opencoesione.gov.it/it/",
+        "https://opencoesione.gov.it/it/opendata/",
+        "https://opencoesione.gov.it/it/opportunita_2021_2027/"
       ]
     },
     {
@@ -863,7 +922,8 @@
     {
       "name": "SIAE · Osservatorio Spettacolo",
       "domains": [
-        "siae.it"
+        "siae.it",
+        "rapporto.siae.it"
       ],
       "query_terms": [
         "dati",
@@ -874,8 +934,11 @@
         "open data"
       ],
       "entrypoints": [
-        "https://www.siae.it/it/cosa-facciamo/dati-dello-spettacolo/annuario-statistico-spettacolo/"
-      ]
+        "https://www.siae.it/it/cosa-facciamo/dati-dello-spettacolo/",
+        "https://www.siae.it/it/cosa-facciamo/dati-dello-spettacolo/top-ten-siae/",
+        "https://rapporto.siae.it/it"
+      ],
+      "adapter": "publication_listing"
     },
     {
       "name": "SINAB",
@@ -889,6 +952,11 @@
         "osservatorio",
         "indagine",
         "open data"
+      ],
+      "adapter": "wordpress_listing",
+      "entrypoints": [
+        "https://sinab.it/bionovita/",
+        "https://sinab.it/"
       ]
     },
     {
@@ -906,7 +974,8 @@
       ],
       "entrypoints": [
         "https://www.snam.it/it/media/news-e-comunicati-stampa/comunicati-stampa/2026/"
-      ]
+      ],
+      "adapter": "year_archive"
     },
     {
       "name": "Terna",
