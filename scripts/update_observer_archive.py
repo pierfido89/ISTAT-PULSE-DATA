@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 ROOT=Path("data/news")
 REGISTRY=Path("data/observer_sources.json")
 OUT=ROOT/"observer_articles.json"
-UA="Mozilla/5.0 ISTAT-PULSE-ObserverArchive/1.0"
+UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
 ARCHIVE_YEARS=(2026,)
 MONTHS_IT=("gennaio","febbraio","marzo","aprile","maggio","giugno",
            "luglio","agosto","settembre","ottobre","novembre","dicembre")
@@ -33,20 +33,83 @@ def canonical_host(url):
 def host_allowed(host,domains):
     return any(host==d or host.endswith("."+d) for d in domains)
 
+def _dedupe_results(items,limit):
+    out=[]; seen=set()
+    for title,link in items:
+        link=(link or "").strip()
+        title=re.sub(r"\\s+"," ",title or "").strip()
+        if not link or not title or link in seen: continue
+        seen.add(link); out.append((title,link))
+        if len(out)>=limit: break
+    return out
+
 def bing_search(query,limit=12):
-    url="https://www.bing.com/search?"+urllib.parse.urlencode({"q":query,"format":"rss","setlang":"it-IT"})
+    # Bing RSS silently started returning empty/non-useful payloads for many
+    # site: queries. Prefer the normal HTML results and retain RSS as fallback.
+    out=[]
     try:
+        url="https://www.bing.com/search?"+urllib.parse.urlencode({
+            "q":query,"setlang":"it-IT","count":max(10,min(limit,50))
+        })
+        raw,_,_=fetch(url,max_bytes=1400000)
+        soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
+        for li in soup.select("li.b_algo"):
+            a=li.find("a",href=True)
+            if a and a.get_text(" ",strip=True):
+                out.append((a.get_text(" ",strip=True),a["href"]))
+        if out:
+            return _dedupe_results(out,limit)
+    except Exception:
+        pass
+
+    try:
+        url="https://www.bing.com/search?"+urllib.parse.urlencode({
+            "q":query,"format":"rss","setlang":"it-IT"
+        })
         raw,_,_=fetch(url,max_bytes=800000)
         root=ET.fromstring(raw)
-        out=[]
         for item in root.findall(".//item"):
             link=(item.findtext("link") or "").strip()
             title=(item.findtext("title") or "").strip()
             if link and title: out.append((title,link))
-            if len(out)>=limit: break
-        return out
     except Exception:
-        return []
+        pass
+    return _dedupe_results(out,limit)
+
+def google_search(query,limit=12):
+    # Secondary discovery provider. Google is used only to discover candidate
+    # URLs; every candidate must still pass official-domain and publication-date
+    # verification in page_info().
+    out=[]
+    try:
+        url="https://www.google.com/search?"+urllib.parse.urlencode({
+            "q":query,"num":max(10,min(limit,50)),"filter":"0","hl":"it"
+        })
+        raw,_,_=fetch(url,max_bytes=1400000)
+        soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
+        for h3 in soup.find_all("h3"):
+            a=h3.find_parent("a",href=True)
+            if not a: continue
+            href=a.get("href","")
+            if href.startswith("/url?"):
+                qs=urllib.parse.parse_qs(urllib.parse.urlparse(href).query)
+                href=(qs.get("q") or qs.get("url") or [""])[0]
+            if href.startswith("http"):
+                out.append((h3.get_text(" ",strip=True),href))
+    except Exception:
+        pass
+    return _dedupe_results(out,limit)
+
+def web_search(query,limit=12):
+    # Merge independent providers so one blocked/empty engine cannot zero the
+    # whole archive. Official-domain validation happens later.
+    merged=[]
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        futures=[pool.submit(bing_search,query,limit),pool.submit(google_search,query,limit)]
+        for fut in as_completed(futures):
+            try: merged.extend(fut.result())
+            except Exception: pass
+    return _dedupe_results(merged,limit*2)
 
 def page_info(url,domains):
     try:
@@ -154,7 +217,7 @@ def main():
             # small bounded pool instead of waiting for every request sequentially.
             candidates={}
             with ThreadPoolExecutor(max_workers=8) as pool:
-                future_searches=[pool.submit(bing_search,q,12) for q in queries]
+                future_searches=[pool.submit(web_search,q,12) for q in queries]
                 for fut in as_completed(future_searches):
                     try:
                         results=fut.result()
