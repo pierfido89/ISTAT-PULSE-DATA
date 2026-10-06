@@ -669,7 +669,16 @@ def anfia_candidates(entrypoints,domains,year=2026,limit=420):
             except Exception:return None
         return None
 
+    page_urls=[]
     for root in entrypoints or []:
+        page_urls.append(root)
+        if "/comunicazione/notizie-e-comunicati" in root:
+            # ANFIA uses Joomla-style offset pagination: ?start=12, ?start=24, ...
+            sep="&" if "?" in root else "?"
+            for start in range(12, 121, 12):
+                page_urls.append(f"{root}{sep}start={start}")
+
+    for root in page_urls:
         try:
             raw,final,ct=fetch(root,timeout=10,max_bytes=2600000)
             if "html" not in ct.lower():
@@ -937,7 +946,7 @@ def process_source(src, now):
         for title,url,pub_raw in rss_directory_candidates(src.get("rss_directory",""),domains,year,200) if src.get("rss_directory") else []:
             candidates.setdefault(url,title)
 
-        dedicated_only = src.get("adapter") in {"anfia_listing","cgiamestre"}
+        dedicated_only = src.get("adapter") in {"cgiamestre"}
 
         # 1) Official source discovery first.
         if not dedicated_only:
