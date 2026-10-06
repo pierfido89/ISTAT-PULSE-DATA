@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T07:25:31.396Z",
+  "generated_at": "2026-10-06T07:29:03.064Z",
   "min_year": 2025,
   "articles": [
     {
@@ -83,6 +83,26 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-BDI-ECONOMIA-20251210",
+      "published_at": "2025-12-10T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/economia-italiana-in-breve/2025/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "L’economia italiana in breve: il quadro di dicembre 2025",
+      "summary": "Banca d’Italia ha pubblicato il numero 12 del 2025 de “L’economia italiana in breve”, con indicatori sull’attività economica, prezzi, transazioni internazionali, situazione finanziaria, sistema bancario, finanza pubblica e proiezioni macroeconomiche.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-BDI-MERCATO-20251114",
       "published_at": "2025-11-14T12:00:00Z",
       "topic": "ECONOMIA",
@@ -136,6 +156,26 @@
       },
       "headline": "Lavoro pubblico: 3,74 milioni di addetti e retribuzione media di 35.350 euro",
       "summary": "Secondo l’Osservatorio INPS sui lavoratori pubblici, nel 2024 gli addetti con almeno una giornata retribuita sono 3.738.171. La retribuzione media è pari a 35.350 euro e cresce dello 0,6% rispetto al 2023.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-ECONOMIA-20251111",
+      "published_at": "2025-11-11T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/economia-italiana-in-breve/2025/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "L’economia italiana in breve: il quadro di novembre 2025",
+      "summary": "Banca d’Italia ha pubblicato il numero 11 del 2025 de “L’economia italiana in breve”, con indicatori sull’attività economica, prezzi, transazioni internazionali, situazione finanziaria, sistema bancario, finanza pubblica e proiezioni macroeconomiche.",
       "territories": [
         "italia"
       ],
@@ -203,6 +243,26 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-BDI-ECONOMIA-20251009",
+      "published_at": "2025-10-09T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/economia-italiana-in-breve/2025/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "L’economia italiana in breve: il quadro di ottobre 2025",
+      "summary": "Banca d’Italia ha pubblicato il numero 10 del 2025 de “L’economia italiana in breve”, con indicatori sull’attività economica, prezzi, transazioni internazionali, situazione finanziaria, sistema bancario, finanza pubblica e proiezioni macroeconomiche.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-BDI-MERCATO-20250915",
       "published_at": "2025-09-15T12:00:00Z",
       "topic": "ECONOMIA",
@@ -243,6 +303,26 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-BDI-ECONOMIA-20250909",
+      "published_at": "2025-09-09T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/economia-italiana-in-breve/2025/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "L’economia italiana in breve: il quadro di settembre 2025",
+      "summary": "Banca d’Italia ha pubblicato il numero 9 del 2025 de “L’economia italiana in breve”, con indicatori sull’attività economica, prezzi, transazioni internazionali, situazione finanziaria, sistema bancario, finanza pubblica e proiezioni macroeconomiche.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-BDI-MERCATO-20250814",
       "published_at": "2025-08-14T12:00:00Z",
       "topic": "ECONOMIA",
@@ -276,6 +356,26 @@
       },
       "headline": "Banche e moneta: l’aggiornamento di giugno 2025",
       "summary": "Banca d’Italia ha aggiornato le statistiche nazionali su banche e moneta con i dati riferiti a giugno 2025. PULSE archivia la pubblicazione nell’osservatorio della fonte per seguirne l’evoluzione mensile.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-ECONOMIA-20250811",
+      "published_at": "2025-08-11T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/economia-italiana-in-breve/2025/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "L’economia italiana in breve: il quadro di agosto 2025",
+      "summary": "Banca d’Italia ha pubblicato il numero 8 del 2025 de “L’economia italiana in breve”, con indicatori sull’attività economica, prezzi, transazioni internazionali, situazione finanziaria, sistema bancario, finanza pubblica e proiezioni macroeconomiche.",
       "territories": [
         "italia"
       ],
@@ -343,6 +443,26 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-BDI-ECONOMIA-20250709",
+      "published_at": "2025-07-09T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/economia-italiana-in-breve/2025/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "L’economia italiana in breve: il quadro di luglio 2025",
+      "summary": "Banca d’Italia ha pubblicato il numero 7 del 2025 de “L’economia italiana in breve”, con indicatori sull’attività economica, prezzi, transazioni internazionali, situazione finanziaria, sistema bancario, finanza pubblica e proiezioni macroeconomiche.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-BDI-MERCATO-20250616",
       "published_at": "2025-06-16T12:00:00Z",
       "topic": "ECONOMIA",
@@ -376,6 +496,26 @@
       },
       "headline": "Banche e moneta: l’aggiornamento di aprile 2025",
       "summary": "Banca d’Italia ha aggiornato le statistiche nazionali su banche e moneta con i dati riferiti a aprile 2025. PULSE archivia la pubblicazione nell’osservatorio della fonte per seguirne l’evoluzione mensile.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-ECONOMIA-20250611",
+      "published_at": "2025-06-11T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/economia-italiana-in-breve/2025/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "L’economia italiana in breve: il quadro di giugno 2025",
+      "summary": "Banca d’Italia ha pubblicato il numero 6 del 2025 de “L’economia italiana in breve”, con indicatori sull’attività economica, prezzi, transazioni internazionali, situazione finanziaria, sistema bancario, finanza pubblica e proiezioni macroeconomiche.",
       "territories": [
         "italia"
       ],
@@ -423,6 +563,26 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-BDI-ECONOMIA-20250512",
+      "published_at": "2025-05-12T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/economia-italiana-in-breve/2025/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "L’economia italiana in breve: il quadro di maggio 2025",
+      "summary": "Banca d’Italia ha pubblicato il numero 5 del 2025 de “L’economia italiana in breve”, con indicatori sull’attività economica, prezzi, transazioni internazionali, situazione finanziaria, sistema bancario, finanza pubblica e proiezioni macroeconomiche.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-BDI-MERCATO-20250415",
       "published_at": "2025-04-15T12:00:00Z",
       "topic": "ECONOMIA",
@@ -456,6 +616,26 @@
       },
       "headline": "Banche e moneta: l’aggiornamento di febbraio 2025",
       "summary": "Banca d’Italia ha aggiornato le statistiche nazionali su banche e moneta con i dati riferiti a febbraio 2025. PULSE archivia la pubblicazione nell’osservatorio della fonte per seguirne l’evoluzione mensile.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-ECONOMIA-20250409",
+      "published_at": "2025-04-09T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/economia-italiana-in-breve/2025/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "L’economia italiana in breve: il quadro di aprile 2025",
+      "summary": "Banca d’Italia ha pubblicato il numero 4 del 2025 de “L’economia italiana in breve”, con indicatori sull’attività economica, prezzi, transazioni internazionali, situazione finanziaria, sistema bancario, finanza pubblica e proiezioni macroeconomiche.",
       "territories": [
         "italia"
       ],
@@ -523,6 +703,26 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-BDI-ECONOMIA-20250311",
+      "published_at": "2025-03-11T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/economia-italiana-in-breve/2025/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "L’economia italiana in breve: il quadro di marzo 2025",
+      "summary": "Banca d’Italia ha pubblicato il numero 3 del 2025 de “L’economia italiana in breve”, con indicatori sull’attività economica, prezzi, transazioni internazionali, situazione finanziaria, sistema bancario, finanza pubblica e proiezioni macroeconomiche.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-INPS-ISEE-20250220",
       "published_at": "2025-02-20T12:00:00Z",
       "topic": "ECONOMIA",
@@ -583,6 +783,26 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-BDI-ECONOMIA-20250211",
+      "published_at": "2025-02-11T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/economia-italiana-in-breve/2025/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "L’economia italiana in breve: il quadro di febbraio 2025",
+      "summary": "Banca d’Italia ha pubblicato il numero 2 del 2025 de “L’economia italiana in breve”, con indicatori sull’attività economica, prezzi, transazioni internazionali, situazione finanziaria, sistema bancario, finanza pubblica e proiezioni macroeconomiche.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-INPS-PENSIONI-20250123",
       "published_at": "2025-01-23T12:00:00Z",
       "topic": "LAVORO",
@@ -636,6 +856,26 @@
       },
       "headline": "Banche e moneta: l’aggiornamento di novembre 2024",
       "summary": "Banca d’Italia ha aggiornato le statistiche nazionali su banche e moneta con i dati riferiti a novembre 2024. PULSE archivia la pubblicazione nell’osservatorio della fonte per seguirne l’evoluzione mensile.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BDI-ECONOMIA-20250113",
+      "published_at": "2025-01-13T12:00:00Z",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/economia-italiana-in-breve/2025/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_source_archive"
+      },
+      "headline": "L’economia italiana in breve: il quadro di gennaio 2025",
+      "summary": "Banca d’Italia ha pubblicato il numero 1 del 2025 de “L’economia italiana in breve”, con indicatori sull’attività economica, prezzi, transazioni internazionali, situazione finanziaria, sistema bancario, finanza pubblica e proiezioni macroeconomiche.",
       "territories": [
         "italia"
       ],
