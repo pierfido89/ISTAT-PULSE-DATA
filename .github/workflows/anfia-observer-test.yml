@@ -24,5 +24,12 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install beautifulsoup4 pypdf
-      - name: Test ANFIA only
-        run: python scripts/update_observer_archive.py --only ANFIA
+      - name: Test ANFIA search-dated fallback only
+        run: |
+          python - <<'PY'
+          from scripts.update_observer_archive import search_dated_candidates
+          rows=search_dated_candidates("anfia.it",2026,160)
+          print(f"ANFIA SEARCH-DATED COUNT={len(rows)}",flush=True)
+          for title,url,pub in sorted(rows,key=lambda x:x[2],reverse=True):
+              print(pub.date().isoformat(),"|",title[:140],"|",url,flush=True)
+          PY
