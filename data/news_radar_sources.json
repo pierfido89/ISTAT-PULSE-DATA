@@ -37,6 +37,30 @@
     {
       "name": "Google News - Corriere dati e statistiche",
       "url": "https://news.google.com/rss/search?q=site%3Acorriere.it%20(dati%20OR%20statistiche%20OR%20rapporto%20OR%20record)%20when%3A1d&hl=it&gl=IT&ceid=IT%3Ait"
+    },
+    {
+      "name": "Google News - Italia economia e famiglie",
+      "url": "https://news.google.com/rss/search?q=Italia%20(prezzi%20OR%20inflazione%20OR%20redditi%20OR%20consumi%20OR%20famiglie%20OR%20mutui%20OR%20casa)%20when%3A1d&hl=it&gl=IT&ceid=IT%3Ait"
+    },
+    {
+      "name": "Google News - Italia lavoro e imprese",
+      "url": "https://news.google.com/rss/search?q=Italia%20(lavoro%20OR%20occupazione%20OR%20salari%20OR%20imprese%20OR%20export%20OR%20industria)%20when%3A1d&hl=it&gl=IT&ceid=IT%3Ait"
+    },
+    {
+      "name": "Google News - Italia salute e welfare",
+      "url": "https://news.google.com/rss/search?q=Italia%20(sanità%20OR%20salute%20OR%20pensioni%20OR%20welfare%20OR%20farmaci)%20when%3A1d&hl=it&gl=IT&ceid=IT%3Ait"
+    },
+    {
+      "name": "Google News - Italia scuola e università",
+      "url": "https://news.google.com/rss/search?q=Italia%20(scuola%20OR%20studenti%20OR%20università%20OR%20istruzione)%20when%3A1d&hl=it&gl=IT&ceid=IT%3Ait"
+    },
+    {
+      "name": "Google News - Italia ambiente energia mobilità",
+      "url": "https://news.google.com/rss/search?q=Italia%20(ambiente%20OR%20energia%20OR%20clima%20OR%20rifiuti%20OR%20auto%20OR%20trasporti)%20when%3A1d&hl=it&gl=IT&ceid=IT%3Ait"
+    },
+    {
+      "name": "Google News - Italia popolazione e territori",
+      "url": "https://news.google.com/rss/search?q=Italia%20(popolazione%20OR%20nascite%20OR%20mortalità%20OR%20residenti%20OR%20demografia)%20when%3A1d&hl=it&gl=IT&ceid=IT%3Ait"
     }
   ],
   "official_domains": [
