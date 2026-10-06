@@ -18,10 +18,10 @@ TOPIC_DOMAINS={
  "LAVORO":["istat.it","inps.it","inail.it","unioncamere.gov.it"],
  "ECONOMIA":["istat.it","bancaditalia.it","mef.gov.it","unioncamere.gov.it"],
  "SALUTE":["salute.gov.it","iss.it","agenas.gov.it","aifa.gov.it"],
- "ISTRUZIONE":["invalsi.it","istruzione.it","istat.it","mur.gov.it"],
+ "ISTRUZIONE":["invalsi.it","istruzione.it","istat.it","mur.gov.it","skuola.net","gigroupholding.com"],
  "AMBIENTE":["isprambiente.gov.it","istat.it","eea.europa.eu"],
  "ENERGIA":["terna.it","gse.it","arera.it","istat.it"],
- "MOBILITA":["aci.it","unrae.it","anfia.it","istat.it"],
+ "MOBILITA":["aci.it","unrae.it","anfia.it","aniasa.it","istat.it"],
  "CASA":["agenziaentrate.gov.it","bancaditalia.it","istat.it"],
  "DEMOGRAFIA":["istat.it"]
 }
@@ -242,7 +242,12 @@ PRIMARY_ENTITY_PATTERNS=[
  ("invalsi","invalsi.it"),
  ("unioncamere","unioncamere.gov.it"),
  ("anfia","anfia.it"),
- ("unrae","unrae.it")
+ ("unrae","unrae.it"),
+ ("aniasa","aniasa.it"),
+ ("dataforce","aniasa.it"),
+ ("skuola.net","skuola.net"),
+ ("gi edu","gigroupholding.com"),
+ ("gi group","gigroupholding.com")
 ]
 
 TRUSTED_PRIMARY_DOMAINS={
@@ -251,7 +256,7 @@ TRUSTED_PRIMARY_DOMAINS={
  "isprambiente.gov.it","arera.it","gse.it","terna.it","aci.it","anfia.it","unrae.it",
  "unioncamere.gov.it","assofranchising.it","tuttoscuola.com","crif.it","confindustrianautica.net",
  "deloitte.com","legambiente.it","legambienteveneto.it","garanteprivacy.it","edison.it",
- "confcommerciomilano.it","lifeturtlenest.eu"
+ "confcommerciomilano.it","lifeturtlenest.eu","aniasa.it","dataforce.de","skuola.net","gigroupholding.com"
 }
 
 def extract_named_primary_domains(text):
@@ -279,6 +284,9 @@ def semantic_key(title, topic, numbers):
         if v and not re.fullmatch(r"20\d{2}",v): vals.append(v)
     nums="|".join(sorted(set(vals)))
     return hashlib.sha256(f"{topic}|{core}|{nums}".encode()).hexdigest()[:20]
+
+SELF_PRIMARY_DOMAINS={"aniasa.it","skuola.net","gigroupholding.com","assofranchising.it","crif.it",
+                      "confindustrianautica.net","legambiente.it","lifeturtlenest.eu"}
 
 def resolve_primary(discovery_title, discovery_text, topic, numbers, direct_links, hint_domains, cfg):
     institutional=cfg.get("official_domains",[])
