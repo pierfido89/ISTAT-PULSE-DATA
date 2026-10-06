@@ -1,57 +1,6 @@
 {
-  "generated_at": "2026-10-06T17:05:06.952298+00:00",
+  "generated_at": "2026-10-06T20:10:52.501160+00:00",
   "articles": [
-    {
-      "id": "PULSE-196B72DB547B784B",
-      "published_at": "2026-10-06T17:05:06.952298+00:00",
-      "last_seen_at": "2026-10-06T17:05:06.952298+00:00",
-      "topic": "ISTRUZIONE",
-      "pulse_score": 88,
-      "patterns": [
-        "ANOMALIA",
-        "DIVERGENZA_TERRITORIALE"
-      ],
-      "public_source": {
-        "url": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/edn-20261005-1",
-        "domain": "ec.europa.eu",
-        "role": "primary_statistical_source",
-        "verification_method": "curated_primary_verification",
-        "verification_score": 100
-      },
-      "discovery": {
-        "visible": false,
-        "role": "hidden_radar"
-      },
-      "period_reference": "2024",
-      "latest_source_update": "2026-10-06",
-      "headline": "Docenti sempre più anziani: in Italia il 54,3% ha almeno 50 anni",
-      "summary": "Secondo Eurostat, nel 2024 il 54,3% degli insegnanti italiani della scuola primaria e secondaria aveva almeno 50 anni, contro il 40,4% della media UE. Nella sola scuola primaria la quota italiana sale al 58,2%, il valore più alto nell'Unione europea.",
-      "statistical_claims": [
-        {
-          "raw_value": "54,3%",
-          "verified": true
-        },
-        {
-          "raw_value": "40,4%",
-          "verified": true
-        },
-        {
-          "raw_value": "58,2%",
-          "verified": true
-        }
-      ],
-      "territories": [
-        "italia"
-      ],
-      "chart_spec": {
-        "type": "auto",
-        "status": "ready_for_primary_series"
-      },
-      "map_spec": null,
-      "editorial_status": "verified",
-      "publication_status": "published",
-      "story_fingerprint": "196b72db547b784b93941edd"
-    },
     {
       "id": "PULSE-5C650D98691FB5F5",
       "story_fingerprint": "5c650d98691fb5f589823259",
@@ -111,58 +60,8 @@
       "publication_status": "published"
     },
     {
-      "id": "PULSE-DFB77A3DF205B8E7",
-      "story_fingerprint": "dfb77a3df205b8e7b08584d8",
-      "published_at": "2026-10-06T16:20:04.408720+00:00",
-      "last_seen_at": "2026-10-06T16:20:04.408720+00:00",
-      "topic": "ISTRUZIONE",
-      "pulse_score": 88,
-      "public_source": {
-        "url": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/edn-20261005-1",
-        "domain": "ec.europa.eu",
-        "role": "primary_statistical_source",
-        "verification_method": "curated_primary_verification",
-        "verification_score": 100
-      },
-      "discovery": {
-        "visible": false,
-        "role": "hidden_radar"
-      },
-      "period_reference": "2024",
-      "latest_source_update": null,
-      "headline": "Docenti sempre più anziani: in Italia il 54,3% ha almeno 50 anni",
-      "summary": "Secondo Eurostat, nel 2024 il 54,3% degli insegnanti italiani della scuola primaria e secondaria aveva almeno 50 anni, contro il 40,4% della media UE. Nella sola scuola primaria la quota italiana sale al 58,2%, il valore più alto nell'Unione europea.",
-      "statistical_claims": [
-        {
-          "raw_value": "54,3%",
-          "verified": true
-        },
-        {
-          "raw_value": "40,4%",
-          "verified": true
-        },
-        {
-          "raw_value": "58,2%",
-          "verified": true
-        }
-      ],
-      "territories": [],
-      "chart_spec": {
-        "type": "auto",
-        "status": "requires_primary_series",
-        "reason": "candidate_contains_multiple_numeric_values"
-      },
-      "map_spec": null,
-      "editorial_status": "verified",
-      "publication_status": "published",
-      "patterns": [
-        "ANOMALIA",
-        "DIVERGENZA_TERRITORIALE"
-      ]
-    },
-    {
-      "id": "PULSE-A4CEB4621740F865",
-      "story_fingerprint": "a4ceb4621740f865fe52b6f6",
+      "id": "PULSE-8BBE005239640A36",
+      "story_fingerprint": "8bbe005239640a36ba1fe1fa",
       "published_at": "2026-10-06T16:20:04.408720+00:00",
       "last_seen_at": "2026-10-06T16:20:04.408720+00:00",
       "topic": "ISTRUZIONE",
