@@ -772,6 +772,53 @@ def anfia_candidates(entrypoints,domains,year=2026,limit=420):
     return out
 
 
+
+def snam_sitemap_candidates(domains,year=2026,limit=420):
+    """Dedicated SNAM discovery from the official sitemap.
+    SNAM does not expose a stable year archive page, but the sitemap contains
+    individual 2026 press-release/document URLs. Discover those directly and
+    let page_info() verify title/date/content.
+    """
+    out=[]; seen=set()
+    seeds=[
+        "https://www.snam.it/sitemap.xml",
+        "https://snam.it/sitemap.xml",
+    ]
+    for sm in seeds:
+        try:
+            raw,_,_=fetch(sm,timeout=10,max_bytes=5000000)
+            root=ET.fromstring(raw.decode("utf-8","ignore"))
+            for node in root.iter():
+                if not str(node.tag).lower().endswith("loc"):
+                    continue
+                loc=(node.text or "").strip()
+                if not loc.startswith("http"):
+                    continue
+                if not host_allowed(canonical_host(loc),domains):
+                    continue
+                low=loc.lower()
+                if f"/{year}/" not in low and str(year) not in low:
+                    continue
+                if not any(k in low for k in (
+                    "/comunicati-stampa/","/news/","/media/","/documenti/",
+                    "report","risultati","mercato","gas","sostenibil"
+                )):
+                    continue
+                if loc in seen:
+                    continue
+                seen.add(loc)
+                title=urllib.parse.unquote(loc.rsplit("/",1)[-1]).replace(".html","").replace("-"," ")
+                out.append((title,loc))
+                if len(out)>=limit:
+                    return out
+        except Exception as exc:
+            if domains and domains[0]=="snam.it":
+                print(f"SNAM sitemap error: {type(exc).__name__}: {exc}", flush=True)
+    if domains and domains[0]=="snam.it":
+        print(f"SNAM sitemap dedicated candidates: {len(out)}", flush=True)
+    return out
+
+
 def dataset_updated_candidates(entrypoints,domains,year=2026,limit=220):
     """Discover dataset detail pages and use their declared 'Ultimo aggiornamento' date."""
     links=[]; out=[]; seen=set()
@@ -963,6 +1010,10 @@ def process_source(src, now):
                 candidates.setdefault(url,title)
                 listing_dates[url]=(title,pub_date)
 
+        if src.get("adapter")=="snam_sitemap":
+            for title,url in snam_sitemap_candidates(domains,year,420):
+                candidates.setdefault(url,title)
+
         if src.get("adapter")=="dataset_updated_at":
             dataset_roots=list(entrypoints)
             for domain in domains[:2]:
@@ -1116,6 +1167,8 @@ def process_source(src, now):
 
         if name=="ANFIA":
             print(f"ANFIA verified pages: {verified_pages} | listing_dates={len(listing_dates)} | total_candidates={len(candidates)} | year_found={year_found}", flush=True)
+        if name=="SNAM":
+            print(f"SNAM verified pages: {verified_pages} | listing_dates={len(listing_dates)} | total_candidates={len(candidates)} | year_found={year_found}", flush=True)
         stats[str(year)]=year_found
 
     return name,stats,local_articles
