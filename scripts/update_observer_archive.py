@@ -191,7 +191,7 @@ def sitemap_candidates(domain,year=2026,limit=180):
 
 def page_info(url,domains):
     try:
-        raw,final,ct=fetch(url)
+        raw,final,ct=fetch(url,timeout=7)
         if "html" not in ct.lower(): return None
         host=canonical_host(final)
         if not host_allowed(host,domains): return None
@@ -293,7 +293,7 @@ def process_source(src, now):
 
         # 1) Official source discovery first.
         with ThreadPoolExecutor(max_workers=min(2,max(1,len(domains[:2])))) as pool:
-            jobs={pool.submit(sitemap_candidates,domain,year,220):domain for domain in domains[:2]}
+            jobs={pool.submit(sitemap_candidates,domain,year,140):domain for domain in domains[:2]}
             for fut in as_completed(jobs):
                 try: results=fut.result()
                 except Exception: results=[]
@@ -321,7 +321,7 @@ def process_source(src, now):
 
         year_found=0
         # Bound verification work per source while keeping generous recall.
-        items=list(candidates.items())[:260]
+        items=list(candidates.items())[:80]
         with ThreadPoolExecutor(max_workers=6) as pool:
             future_pages={
                 pool.submit(page_info,url,domains):(title,url)
@@ -374,7 +374,7 @@ def main():
 
     # Process independent institutions in parallel. A slow sitemap can no longer
     # hold up the other 62 sources.
-    with ThreadPoolExecutor(max_workers=8) as pool:
+    with ThreadPoolExecutor(max_workers=12) as pool:
         futures={pool.submit(process_source,src,now):src.get("name","") for src in sources}
         for fut in as_completed(futures):
             name=futures[fut]
