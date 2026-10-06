@@ -7,54 +7,34 @@
       "published_at": "2026-10-06T16:20:04.408720+00:00",
       "last_seen_at": "2026-10-06T16:20:04.408720+00:00",
       "topic": "ISTRUZIONE",
-      "pulse_score": 77,
+      "pulse_score": 88,
       "public_source": {
-        "url": "https://www.invalsi.it/",
-        "domain": "invalsi.it",
+        "url": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/edn-20261005-1",
+        "domain": "ec.europa.eu",
         "role": "primary_statistical_source",
-        "verification_method": "named_or_topic_domain_search",
-        "verification_score": 79
+        "verification_method": "curated_primary_verification",
+        "verification_score": 100
       },
       "discovery": {
         "visible": false,
         "role": "hidden_radar"
       },
-      "period_reference": null,
+      "period_reference": "2024",
       "latest_source_update": null,
-      "headline": "Istruzione, nuovo dato per Italia: 50 ",
-      "summary": "Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+      "headline": "Docenti sempre più anziani: in Italia il 54,3% ha almeno 50 anni",
+      "summary": "Secondo Eurostat, nel 2024 il 54,3% degli insegnanti italiani della scuola primaria e secondaria aveva almeno 50 anni, contro il 40,4% della media UE. Nella sola scuola primaria la quota italiana sale al 58,2%, il valore più alto nell'Unione europea.",
       "statistical_claims": [
         {
           "raw_value": "54,3%",
-          "verified": false
-        },
-        {
-          "raw_value": "50 ",
           "verified": true
         },
         {
-          "raw_value": "50 ",
+          "raw_value": "40,4%",
           "verified": true
         },
         {
           "raw_value": "58,2%",
-          "verified": false
-        },
-        {
-          "raw_value": "54,3%",
-          "verified": false
-        },
-        {
-          "raw_value": "50 ",
           "verified": true
-        },
-        {
-          "raw_value": "50 ",
-          "verified": true
-        },
-        {
-          "raw_value": "58,2%",
-          "verified": false
         }
       ],
       "territories": [],
@@ -64,8 +44,12 @@
         "reason": "candidate_contains_multiple_numeric_values"
       },
       "map_spec": null,
-      "editorial_status": "verified_primary_match",
-      "publication_status": "published"
+      "editorial_status": "verified",
+      "publication_status": "published",
+      "patterns": [
+        "ANOMALIA",
+        "DIVERGENZA_TERRITORIALE"
+      ]
     },
     {
       "id": "PULSE-A4CEB4621740F865",
@@ -73,53 +57,45 @@
       "published_at": "2026-10-06T16:20:04.408720+00:00",
       "last_seen_at": "2026-10-06T16:20:04.408720+00:00",
       "topic": "ISTRUZIONE",
-      "pulse_score": 72,
+      "pulse_score": 90,
       "public_source": {
-        "url": "https://www.invalsi.it/",
-        "domain": "invalsi.it",
+        "url": "https://www.skuola.net/",
+        "domain": "skuola.net",
         "role": "primary_statistical_source",
-        "verification_method": "named_or_topic_domain_search",
-        "verification_score": 55
+        "verification_method": "curated_primary_verification",
+        "verification_score": 100
       },
       "discovery": {
         "visible": false,
         "role": "hidden_radar"
       },
-      "period_reference": null,
+      "period_reference": "2026",
       "latest_source_update": null,
-      "headline": "Istruzione, nuovo dato per Italia: 8 ",
-      "summary": "Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+      "headline": "IA a scuola: 8 studenti su 10 usano chatbot, ma i docenti restano indietro",
+      "summary": "L'Osservatorio Giovani e Lavoro di Skuola.net e Gi Edu, su 2.500 studenti delle superiori, rileva che circa 8 su 10 usano chatbot nello studio. Solo il 19% giudica prevalentemente aperto l'atteggiamento dei docenti verso l'IA e appena 1 su 6 ha ricevuto indicazioni o linee guida ufficiali dalla scuola.",
       "statistical_claims": [
         {
-          "raw_value": "8 ",
+          "raw_value": "2.500",
           "verified": true
         },
         {
-          "raw_value": "10 ",
+          "raw_value": "8",
           "verified": true
         },
         {
-          "raw_value": "1 ",
+          "raw_value": "10",
           "verified": true
         },
         {
-          "raw_value": "5 ",
+          "raw_value": "19%",
           "verified": true
         },
         {
-          "raw_value": "8 ",
+          "raw_value": "1",
           "verified": true
         },
         {
-          "raw_value": "10 ",
-          "verified": true
-        },
-        {
-          "raw_value": "1 ",
-          "verified": true
-        },
-        {
-          "raw_value": "5 ",
+          "raw_value": "6",
           "verified": true
         }
       ],
@@ -130,8 +106,12 @@
         "reason": "candidate_contains_multiple_numeric_values"
       },
       "map_spec": null,
-      "editorial_status": "verified_primary_match",
-      "publication_status": "published"
+      "editorial_status": "verified",
+      "publication_status": "published",
+      "patterns": [
+        "ANOMALIA",
+        "DIVERGENZA"
+      ]
     },
     {
       "id": "PULSE-F61649487B13ED63",
