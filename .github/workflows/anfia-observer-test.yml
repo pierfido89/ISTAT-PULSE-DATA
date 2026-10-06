@@ -4,8 +4,6 @@ on:
   push:
     branches: [feat/news-engine]
     paths:
-      - 'scripts/update_observer_archive.py'
-      - 'data/observer_sources.json'
       - '.github/workflows/anfia-observer-test.yml'
   workflow_dispatch:
 
@@ -13,38 +11,33 @@ permissions:
   contents: read
 
 jobs:
-  test-anfia:
-    runs-on: ubuntu-latest
-    timeout-minutes: 8
+  probe-anfia:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 4
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: feat/news-engine
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m pip install beautifulsoup4 pypdf
-      - name: Probe ANFIA relay candidates
+      - name: Probe ANFIA direct
+        shell: bash
         run: |
           python - <<'PY'
-          import urllib.parse, urllib.request, re
-          from bs4 import BeautifulSoup
-          target="https://www.anfia.it/it/comunicazione/notizie-e-comunicati/comunicati-stampa"
-          urls=[
-            ("allorigins","https://api.allorigins.win/raw?"+urllib.parse.urlencode({"url":target})),
-            ("gtranslate","https://translate.google.com/translate?"+urllib.parse.urlencode({"sl":"auto","tl":"it","u":target})),
-          ]
-          for name,url in urls:
-              print("===",name,url,flush=True)
-              try:
-                  req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0"})
-                  with urllib.request.urlopen(req,timeout=25) as r:
-                      raw=r.read(3000000); final=r.geturl(); ct=r.headers.get("Content-Type","")
-                  txt=raw.decode("utf-8","ignore")
-                  soup=BeautifulSoup(txt,"html.parser")
-                  flat=re.sub(r"\s+"," ",soup.get_text(" ",strip=True))
-                  print("OK",name,"bytes",len(raw),"ct",ct,"final",final,"contains2026",("2026" in flat),"containsSETTEMBRE",("SETTEMBRE" in flat.upper()),flush=True)
-                  print("TEXT",flat[:1400],flush=True)
-              except Exception as exc:
-                  print("ERROR",name,type(exc).__name__,exc,flush=True)
+          import urllib.request, time
+          url="https://www.anfia.it/it/comunicazione/notizie-e-comunicati/comunicati-stampa"
+          req=urllib.request.Request(url,headers={
+              "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/154.0.0.0 Safari/537.36",
+              "Accept":"text/html,application/xhtml+xml"
+          })
+          t=time.time()
+          try:
+              with urllib.request.urlopen(req,timeout=20) as r:
+                  raw=r.read(3000000)
+                  print("ANFIA_DIRECT_OK",len(raw),r.geturl(),r.headers.get("Content-Type",""),"seconds",round(time.time()-t,2),flush=True)
+                  print("HAS_2026",b"2026" in raw,flush=True)
+          except Exception as exc:
+              print("ANFIA_DIRECT_ERROR",type(exc).__name__,exc,"seconds",round(time.time()-t,2),flush=True)
           PY
