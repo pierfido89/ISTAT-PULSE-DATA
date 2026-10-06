@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import hashlib, json, re, urllib.parse, urllib.request
+import gzip, hashlib, json, re, urllib.parse, urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
@@ -145,10 +145,19 @@ def sitemap_candidates(domain,year=2026,limit=180):
 
     def read_sitemap(sm):
         try:
-            raw,_,_=fetch(sm,timeout=8,max_bytes=2400000)
+            raw,_,_=fetch(sm,timeout=8,max_bytes=3200000)
+            if raw[:2] == b"\\x1f\\x8b":
+                raw=gzip.decompress(raw)
             root=ET.fromstring(raw.decode("utf-8","ignore"))
-            locs=[(el.text or "").strip() for el in root.findall(".//{*}loc") if (el.text or "").strip()]
-            return sm,root.tag.lower().endswith("sitemapindex"),locs
+            is_index=root.tag.lower().endswith("sitemapindex")
+            rows=[]
+            for node in list(root):
+                loc_el=node.find("{*}loc")
+                if loc_el is None or not (loc_el.text or "").strip():
+                    continue
+                lastmod_el=node.find("{*}lastmod")
+                rows.append(((loc_el.text or "").strip(), (lastmod_el.text or "").strip() if lastmod_el is not None else ""))
+            return sm,is_index,rows
         except Exception:
             return sm,False,[]
 
@@ -166,28 +175,81 @@ def sitemap_candidates(domain,year=2026,limit=180):
         with ThreadPoolExecutor(max_workers=min(8,len(batch))) as pool:
             docs=list(pool.map(read_sitemap,batch))
 
-        for _,is_index,locs in docs:
+        for _,is_index,rows in docs:
             if is_index:
-                for loc in locs:
+                for loc,lastmod in rows:
                     low=loc.lower()
-                    if str(year) in low or any(k in low for k in (
+                    # Sitemap indexes often use generic filenames. Prefer indexes
+                    # explicitly updated in 2026, but also follow a bounded set of
+                    # generic children so active institutional sites are not missed.
+                    if str(year) in lastmod or str(year) in low or any(k in low for k in (
                         "post","news","notiz","pubblic","article","comunicat",
                         "stat","sitemap","press","rapport"
                     )):
-                        if loc not in visited and loc not in queue and len(queue)<48:
+                        if loc not in visited and loc not in queue and len(queue)<64:
                             queue.append(loc)
+                    elif len(queue)<28 and loc not in visited and loc not in queue:
+                        queue.append(loc)
                 continue
-            for loc in locs:
+            for loc,lastmod in rows:
                 if len(out)>=limit: break
                 host=canonical_host(loc)
                 if not host_allowed(host,[domain]): continue
                 low=loc.lower()
-                if str(year) in low or any(k in low for k in (
+                # lastmod is authoritative discovery metadata. Do not require
+                # descriptive words inside the URL when the sitemap says 2026.
+                if str(year) in lastmod or str(year) in low or any(k in low for k in (
                     "news","notiz","pubblic","rapport","osserv","stat",
                     "comunicat","dati","analisi","press"
                 )):
                     out.append((urllib.parse.unquote(loc.rsplit("/",1)[-1]).replace("-"," "),loc))
     return _dedupe_results(out,limit)
+
+def feed_candidates(domain,year=2026,limit=100):
+    seeds=[
+        f"https://{domain}/feed/",
+        f"https://www.{domain}/feed/",
+        f"https://{domain}/feed",
+        f"https://www.{domain}/feed",
+        f"https://{domain}/rss",
+        f"https://www.{domain}/rss",
+        f"https://{domain}/rss.xml",
+        f"https://www.{domain}/rss.xml",
+        f"https://{domain}/atom.xml",
+        f"https://www.{domain}/atom.xml",
+    ]
+    out=[]
+    def read_feed(url):
+        try:
+            raw,_,_=fetch(url,timeout=6,max_bytes=1800000)
+            root=ET.fromstring(raw.decode("utf-8","ignore"))
+            rows=[]
+            for item in root.findall(".//item"):
+                title=(item.findtext("title") or "").strip()
+                link=(item.findtext("link") or "").strip()
+                pub=(item.findtext("pubDate") or item.findtext("date") or "").strip()
+                rows.append((title,link,pub))
+            for entry in root.findall(".//{*}entry"):
+                title=(entry.findtext("{*}title") or "").strip()
+                link=""
+                for a in entry.findall("{*}link"):
+                    href=(a.attrib.get("href") or "").strip()
+                    if href:
+                        link=href; break
+                pub=(entry.findtext("{*}published") or entry.findtext("{*}updated") or "").strip()
+                rows.append((title,link,pub))
+            return rows
+        except Exception:
+            return []
+    with ThreadPoolExecutor(max_workers=5) as pool:
+        for rows in pool.map(read_feed,seeds):
+            for title,link,pub in rows:
+                if not link or not title: continue
+                if str(year) in pub or str(year) in link or str(year) in title:
+                    out.append((title,link))
+                    if len(out)>=limit: return _dedupe_results(out,limit)
+    return _dedupe_results(out,limit)
+
 
 def page_info(url,domains):
     try:
@@ -301,7 +363,17 @@ def process_source(src, now):
                     if url and url not in candidates:
                         candidates[url]=title
 
-        # 2) Search engines are fallback only.
+        # 2) Official RSS/Atom feeds catch newsrooms that expose weak sitemaps.
+        with ThreadPoolExecutor(max_workers=min(2,max(1,len(domains[:2])))) as pool:
+            jobs={pool.submit(feed_candidates,domain,year,120):domain for domain in domains[:2]}
+            for fut in as_completed(jobs):
+                try: results=fut.result()
+                except Exception: results=[]
+                for title,url in results:
+                    if url and url not in candidates:
+                        candidates[url]=title
+
+        # 3) Search engines are fallback only.
         if len(candidates) < 24:
             queries=[]
             for domain in domains[:2]:
