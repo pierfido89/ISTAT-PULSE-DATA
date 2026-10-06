@@ -1,6 +1,198 @@
 {
-  "generated_at": "2026-10-06T07:57:20.029Z",
+  "generated_at": "2026-10-06T08:02:38.601226+00:00",
   "min_year": 2026,
-  "articles": [],
-  "max_year": 2026
+  "max_year": 2026,
+  "source_count": 63,
+  "source_stats": {
+    "CENSIS": {
+      "2026": 0
+    },
+    "CGIA Mestre": {
+      "2026": 0
+    },
+    "CNA": {
+      "2026": 0
+    },
+    "CNR": {
+      "2026": 0
+    },
+    "Coldiretti": {
+      "2026": 0
+    },
+    "Confartigianato": {
+      "2026": 0
+    },
+    "Confcommercio": {
+      "2026": 0
+    },
+    "Confindustria": {
+      "2026": 0
+    },
+    "Fondazione GIMBE": {
+      "2026": 0
+    },
+    "Legambiente": {
+      "2026": 0
+    },
+    "Nomisma": {
+      "2026": 0
+    },
+    "SVIMEZ": {
+      "2026": 0
+    },
+    "ACI": {
+      "2026": 0
+    },
+    "AGENAS": {
+      "2026": 0
+    },
+    "Aeronautica Militare": {
+      "2026": 0
+    },
+    "Agenzia delle Dogane e dei Monopoli": {
+      "2026": 0
+    },
+    "Agenzia delle Entrate · OMI": {
+      "2026": 0
+    },
+    "AgID": {
+      "2026": 0
+    },
+    "AGCOM": {
+      "2026": 0
+    },
+    "AIFA · OsMed": {
+      "2026": 0
+    },
+    "ANAC": {
+      "2026": 0
+    },
+    "ANFIA": {
+      "2026": 0
+    },
+    "ARERA": {
+      "2026": 0
+    },
+    "ART": {
+      "2026": 0
+    },
+    "Assoporti": {
+      "2026": 0
+    },
+    "Banca d'Italia": {
+      "2026": 0
+    },
+    "CONSOB": {
+      "2026": 0
+    },
+    "Copernicus": {
+      "2026": 0
+    },
+    "COVIP": {
+      "2026": 0
+    },
+    "CREA · RICA": {
+      "2026": 0
+    },
+    "Dipartimento delle Finanze": {
+      "2026": 0
+    },
+    "DIPE · OpenCUP": {
+      "2026": 0
+    },
+    "EEA": {
+      "2026": 0
+    },
+    "ENAC": {
+      "2026": 0
+    },
+    "ENEA": {
+      "2026": 0
+    },
+    "ENIT": {
+      "2026": 0
+    },
+    "Eurostat": {
+      "2026": 0
+    },
+    "FAO": {
+      "2026": 0
+    },
+    "GME": {
+      "2026": 0
+    },
+    "GSE": {
+      "2026": 0
+    },
+    "INGV": {
+      "2026": 0
+    },
+    "INAIL": {
+      "2026": 0
+    },
+    "INPS": {
+      "2026": 0
+    },
+    "INVALSI": {
+      "2026": 0
+    },
+    "ISPRA / SNPA": {
+      "2026": 0
+    },
+    "ISMEA": {
+      "2026": 0
+    },
+    "ISTAT": {
+      "2026": 0
+    },
+    "IVASS": {
+      "2026": 0
+    },
+    "MIMIT": {
+      "2026": 0
+    },
+    "Ministero dell'Interno": {
+      "2026": 0
+    },
+    "Ministero della Giustizia · DGStat": {
+      "2026": 0
+    },
+    "Ministero della Salute": {
+      "2026": 0
+    },
+    "Ministero dell'Istruzione e del Merito": {
+      "2026": 0
+    },
+    "Ministero dell'Università e della Ricerca": {
+      "2026": 0
+    },
+    "MIT": {
+      "2026": 0
+    },
+    "OpenCoesione": {
+      "2026": 0
+    },
+    "Ragioneria Generale dello Stato · BDAP": {
+      "2026": 0
+    },
+    "SIAE · Osservatorio Spettacolo": {
+      "2026": 0
+    },
+    "SINAB": {
+      "2026": 0
+    },
+    "SNAM": {
+      "2026": 0
+    },
+    "Terna": {
+      "2026": 0
+    },
+    "Unioncamere / InfoCamere": {
+      "2026": 0
+    },
+    "UNRAE": {
+      "2026": 0
+    }
+  },
+  "articles": []
 }

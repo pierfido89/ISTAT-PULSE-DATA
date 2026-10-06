@@ -1,6 +1,338 @@
 {
-  "generated_at": "2026-10-05T19:40:00+00:00",
+  "generated_at": "2026-10-06T08:00:47.913647+00:00",
   "articles": [
+    {
+      "id": "PULSE-4259FF6FEDA81813",
+      "published_at": "2026-10-06T08:00:47.913647+00:00",
+      "topic": "AMBIENTE",
+      "pulse_score": 82,
+      "patterns": [
+        "RALLENTAMENTO"
+      ],
+      "public_source": {
+        "url": "https://www.lifeturtlenest.eu/",
+        "domain": "lifeturtlenest.eu",
+        "role": "primary_statistical_source",
+        "verification_method": "curated_primary_verification",
+        "verification_score": 100
+      },
+      "discovery": {
+        "visible": false,
+        "role": "hidden_radar"
+      },
+      "period_reference": "2026",
+      "latest_source_update": "2026-10-06",
+      "headline": "Tartarughe marine: 358 nidi nel 2026 dopo il record dell'anno precedente",
+      "summary": "Il monitoraggio Life Turtlenest, coordinato da Legambiente, censisce 358 nidi di Caretta caretta lungo le coste italiane nell'estate 2026. Dopo oltre 700 deposizioni nel 2025, il calo viene interpretato come una fisiologica pausa riproduttiva, mentre il trend di lungo periodo resta positivo.",
+      "statistical_claims": [
+        {
+          "raw_value": "358",
+          "verified": true
+        },
+        {
+          "raw_value": "700",
+          "verified": true
+        }
+      ],
+      "territories": [
+        "italia"
+      ],
+      "chart_spec": {
+        "type": "auto",
+        "status": "ready_for_primary_series"
+      },
+      "map_spec": null,
+      "editorial_status": "verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-65C919386D1DCB72",
+      "published_at": "2026-10-06T08:00:47.913647+00:00",
+      "topic": "ISTRUZIONE",
+      "pulse_score": 86,
+      "patterns": [
+        "DIVERGENZA_TERRITORIALE"
+      ],
+      "public_source": {
+        "url": "https://www.tuttoscuola.com/tetto-stranieri-in-classe-2-la-mappa-nazionale-delle-classi-con-oltre-il-30-di-stranieri/",
+        "domain": "tuttoscuola.com",
+        "role": "primary_statistical_source",
+        "verification_method": "curated_primary_verification",
+        "verification_score": 100
+      },
+      "discovery": {
+        "visible": false,
+        "role": "hidden_radar"
+      },
+      "period_reference": "2024-2025",
+      "latest_source_update": "2026-10-06",
+      "headline": "Il 9,1% delle classi italiane supera il 30% di alunni stranieri",
+      "summary": "L'elaborazione Tuttoscuola sui dati del Portale Unico MIM per l'anno scolastico 2024-25 rileva 33.222 classi con oltre il 30% di alunni stranieri, pari al 9,1% delle 365.935 classi statali considerate. La distribuzione territoriale è fortemente differenziata.",
+      "statistical_claims": [
+        {
+          "raw_value": "9,1%",
+          "verified": true
+        },
+        {
+          "raw_value": "30%",
+          "verified": true
+        },
+        {
+          "raw_value": "33.222",
+          "verified": true
+        },
+        {
+          "raw_value": "365.935",
+          "verified": true
+        }
+      ],
+      "territories": [
+        "italia"
+      ],
+      "chart_spec": {
+        "type": "auto",
+        "status": "ready_for_primary_series"
+      },
+      "map_spec": null,
+      "editorial_status": "verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-A63D9142B503DAD7",
+      "published_at": "2026-10-06T08:00:47.913647+00:00",
+      "topic": "LAVORO",
+      "pulse_score": 88,
+      "patterns": [
+        "RECORD"
+      ],
+      "public_source": {
+        "url": "https://www.istat.it/comunicato-stampa/occupati-e-disoccupati-dati-provvisori-agosto-2026/",
+        "domain": "istat.it",
+        "role": "primary_statistical_source",
+        "verification_method": "curated_primary_verification",
+        "verification_score": 100
+      },
+      "discovery": {
+        "visible": false,
+        "role": "hidden_radar"
+      },
+      "period_reference": "2026-08",
+      "latest_source_update": "2026-10-06",
+      "headline": "Occupazione sopra 24 milioni: il mercato del lavoro resta su livelli record",
+      "summary": "I dati ISTAT del 2026 confermano oltre 24 milioni di occupati. Ad agosto gli occupati sono 24 milioni 352 mila, con una crescita di 291 mila unità rispetto ad agosto 2025, mentre il tasso di disoccupazione sale al 6,2%.",
+      "statistical_claims": [
+        {
+          "raw_value": "24 milioni",
+          "verified": true
+        },
+        {
+          "raw_value": "24.352.000",
+          "verified": true
+        },
+        {
+          "raw_value": "291.000",
+          "verified": true
+        },
+        {
+          "raw_value": "6,2%",
+          "verified": true
+        }
+      ],
+      "territories": [
+        "torino"
+      ],
+      "chart_spec": {
+        "type": "auto",
+        "status": "ready_for_primary_series"
+      },
+      "map_spec": null,
+      "editorial_status": "verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-E88264CC5C569055",
+      "published_at": "2026-10-06T08:00:47.913647+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 90,
+      "patterns": [
+        "RECORD"
+      ],
+      "public_source": {
+        "url": "https://www.istat.it/comunicato-stampa/conto-trimestrale-ap-reddito-famiglie-profitti-societa-ii-trimestre-2026/",
+        "domain": "istat.it",
+        "role": "primary_statistical_source",
+        "verification_method": "curated_primary_verification",
+        "verification_score": 100
+      },
+      "discovery": {
+        "visible": false,
+        "role": "hidden_radar"
+      },
+      "period_reference": "2026-Q2",
+      "latest_source_update": "2026-10-06",
+      "headline": "Pressione fiscale al 43,5% nel secondo trimestre 2026",
+      "summary": "Nel secondo trimestre 2026 la pressione fiscale in Italia ha raggiunto il 43,5%, aumentando di 0,5 punti percentuali rispetto allo stesso trimestre del 2025. Nello stesso quadro, il reddito disponibile delle famiglie è cresciuto meno dei consumi e il potere d'acquisto è diminuito.",
+      "statistical_claims": [
+        {
+          "raw_value": "43,5%",
+          "verified": true
+        },
+        {
+          "raw_value": "0,5",
+          "verified": true
+        }
+      ],
+      "territories": [
+        "italia"
+      ],
+      "chart_spec": {
+        "type": "auto",
+        "status": "ready_for_primary_series"
+      },
+      "map_spec": null,
+      "editorial_status": "verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-2E149AF8984F993E",
+      "published_at": "2026-10-06T08:00:47.913647+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 87,
+      "patterns": [
+        "ACCELERAZIONE"
+      ],
+      "public_source": {
+        "url": "https://www.crif.it/risorse/ricerche/osservatorio-frodi-creditizie-2025",
+        "domain": "crif.it",
+        "role": "primary_statistical_source",
+        "verification_method": "curated_primary_verification",
+        "verification_score": 100
+      },
+      "discovery": {
+        "visible": false,
+        "role": "hidden_radar"
+      },
+      "period_reference": "2025",
+      "latest_source_update": "2026-10-06",
+      "headline": "Frodi creditizie: oltre 38 mila casi nel 2025, +23,8%",
+      "summary": "L'Osservatorio CRIF-Mister Credit registra oltre 38.300 casi di frode creditizia basata sul furto d'identità nel 2025, in aumento del 23,8% rispetto all'anno precedente. L'importo complessivo frodato supera 165 milioni di euro.",
+      "statistical_claims": [
+        {
+          "raw_value": "38.300",
+          "verified": true
+        },
+        {
+          "raw_value": "23,8%",
+          "verified": true
+        },
+        {
+          "raw_value": "165",
+          "verified": true
+        }
+      ],
+      "territories": [
+        "italia"
+      ],
+      "chart_spec": {
+        "type": "auto",
+        "status": "ready_for_primary_series"
+      },
+      "map_spec": null,
+      "editorial_status": "verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-FD7B977A1262A3B7",
+      "published_at": "2026-10-06T08:00:47.913647+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 88,
+      "patterns": [
+        "ANOMALIA"
+      ],
+      "public_source": {
+        "url": "https://confindustrianautica.net/nautica-57-miliardi-di-impatto-economico-e-un-potenziale-ancora-da-valorizzare-infrastrutture-semplificazione-e-competenze-al-centro-della-tavola-rotonda/",
+        "domain": "confindustrianautica.net",
+        "role": "primary_statistical_source",
+        "verification_method": "curated_primary_verification",
+        "verification_score": 100
+      },
+      "discovery": {
+        "visible": false,
+        "role": "hidden_radar"
+      },
+      "period_reference": "2026",
+      "latest_source_update": "2026-10-06",
+      "headline": "Turismo nautico: 5,7 miliardi di impatto, ma solo il 2% dei posti barca è per superyacht",
+      "summary": "Lo studio commissionato da Confindustria Nautica a Deloitte stima in 5,7 miliardi di euro l'impatto economico dello yachting sulle economie costiere italiane. I superyacht generano una quota molto rilevante dell'impatto, ma solo circa il 2% dei posti barca italiani è destinato a unità oltre i 24 metri.",
+      "statistical_claims": [
+        {
+          "raw_value": "5,7",
+          "verified": true
+        },
+        {
+          "raw_value": "42%",
+          "verified": true
+        },
+        {
+          "raw_value": "2%",
+          "verified": true
+        }
+      ],
+      "territories": [
+        "italia"
+      ],
+      "chart_spec": {
+        "type": "auto",
+        "status": "ready_for_primary_series"
+      },
+      "map_spec": null,
+      "editorial_status": "verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-88AAED2F6B14D365",
+      "published_at": "2026-10-06T08:00:47.913647+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 84,
+      "patterns": [
+        "ACCELERAZIONE"
+      ],
+      "public_source": {
+        "url": "https://assofranchising.it/news/stampa/comunicati-stampa/franchising-il-comparto-in-italia-e-sempre-piu-solido-nel-2025-il-giro-daffari-raggiunge-39-mld-di-euro-8-rispetto-al-2024.html",
+        "domain": "assofranchising.it",
+        "role": "primary_statistical_source",
+        "verification_method": "curated_primary_verification",
+        "verification_score": 100
+      },
+      "discovery": {
+        "visible": false,
+        "role": "hidden_radar"
+      },
+      "period_reference": "2025",
+      "latest_source_update": "2026-10-06",
+      "headline": "Franchising italiano a 39 miliardi di euro: +8% nel 2025",
+      "summary": "Il Rapporto Assofranchising Italia 2026 rileva che nel 2025 il comparto ha raggiunto 39 miliardi di euro di giro d'affari, con una crescita dell'8% rispetto al 2024. Il settore continua quindi a crescere nonostante il rallentamento generale dell'economia.",
+      "statistical_claims": [
+        {
+          "raw_value": "39",
+          "verified": true
+        },
+        {
+          "raw_value": "8%",
+          "verified": true
+        }
+      ],
+      "territories": [
+        "milano"
+      ],
+      "chart_spec": {
+        "type": "auto",
+        "status": "ready_for_primary_series"
+      },
+      "map_spec": null,
+      "editorial_status": "verified",
+      "publication_status": "published"
+    },
     {
       "id": "PULSE-E640A545D2B9EDCA",
       "published_at": "2026-10-05T19:40:00+00:00",
