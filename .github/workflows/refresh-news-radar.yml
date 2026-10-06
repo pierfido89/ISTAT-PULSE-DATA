@@ -18,11 +18,12 @@ permissions:
 
 concurrency:
   group: pulse-news-radar-production
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    timeout-minutes: 18
     steps:
       - name: Check Rome news slot
         id: slot
