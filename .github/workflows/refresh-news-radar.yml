@@ -17,7 +17,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: pulse-news-radar-production
+  group: pulse-news-radar-production-v2
   cancel-in-progress: true
 
 jobs:
