@@ -575,6 +575,72 @@ def listing_dated_candidates(entrypoints,domains,year=2026,limit=300):
     return out
 
 
+
+def cgiamestre_candidates(entrypoints,domains,year=2026,limit=420):
+    """Dedicated parser for CGIA Mestre WordPress category archives.
+    CGIA renders each article title in h2 with an Italian textual date nearby.
+    Follow /page/N/ archives until pages stop yielding the requested year.
+    """
+    out=[]; seen=set()
+    months={"gen":1,"feb":2,"mar":3,"apr":4,"mag":5,"giu":6,"lug":7,"ago":8,"set":9,"sett":9,"ott":10,"nov":11,"dic":12}
+    rx=re.compile(r"\\b([0-3]?\\d)\\s+(gen|feb|mar|apr|mag|giu|lug|ago|set|sett|ott|nov|dic)\\s+(20\\d{2})\\b",re.I)
+    roots=list(entrypoints or [])
+    for root in roots:
+        root=root.rstrip("/")+"/"
+        empty_pages=0
+        for page in range(1,45):
+            url=root if page==1 else urllib.parse.urljoin(root,f"page/{page}/")
+            try:
+                raw,final,ct=fetch(url,timeout=8,max_bytes=2200000)
+                if "html" not in ct.lower():
+                    break
+                soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
+                page_found=0
+                page_has_older=False
+                for h in soup.find_all(["h2","h3"]):
+                    a=h.find("a",href=True)
+                    if not a:
+                        continue
+                    title=re.sub(r"\\s+"," ",a.get_text(" ",strip=True)).strip()
+                    href=urllib.parse.urljoin(final,a["href"]).split("#",1)[0]
+                    if len(title)<8 or not host_allowed(canonical_host(href),domains):
+                        continue
+                    block=""
+                    node=h
+                    for _ in range(4):
+                        node=getattr(node,"parent",None)
+                        if node is None:
+                            break
+                        block=re.sub(r"\\s+"," ",node.get_text(" ",strip=True))
+                        if rx.search(block):
+                            break
+                    m=rx.search(block)
+                    if not m:
+                        continue
+                    try:
+                        d=int(m.group(1)); mo=months[m.group(2).lower()]; y=int(m.group(3))
+                        pub=datetime(y,mo,d,tzinfo=timezone.utc)
+                    except Exception:
+                        continue
+                    if y < year:
+                        page_has_older=True
+                    if y==year and href not in seen:
+                        seen.add(href); out.append((title,href,pub)); page_found+=1
+                        if len(out)>=limit:
+                            return out
+                if page_found==0:
+                    empty_pages+=1
+                else:
+                    empty_pages=0
+                if page_has_older or empty_pages>=2:
+                    break
+            except Exception:
+                empty_pages+=1
+                if empty_pages>=2:
+                    break
+    return out
+
+
 def dataset_updated_candidates(entrypoints,domains,year=2026,limit=220):
     """Discover dataset detail pages and use their declared 'Ultimo aggiornamento' date."""
     links=[]; out=[]; seen=set()
@@ -754,6 +820,11 @@ def process_source(src, now):
         for title,url,pub_date in wordpress_rest_candidates(src.get("api_urls",[]),domains,year,300):
             candidates.setdefault(url,title)
             listing_dates[url]=(title,pub_date)
+
+        if src.get("adapter")=="cgiamestre":
+            for title,url,pub_date in cgiamestre_candidates(entrypoints,domains,year,420):
+                candidates.setdefault(url,title)
+                listing_dates[url]=(title,pub_date)
 
         if src.get("adapter")=="dataset_updated_at":
             dataset_roots=list(entrypoints)
