@@ -826,6 +826,15 @@ def process_source(src, now):
                 candidates.setdefault(url,title)
                 listing_dates[url]=(title,pub_date)
 
+        if src.get("adapter")=="anfia_listing":
+            # ANFIA exposes stable dated cards on communication and statistics pages.
+            for title,url,pub_date in listing_dated_candidates(entrypoints,domains,year,420):
+                candidates.setdefault(url,title)
+                listing_dates[url]=(title,pub_date)
+            for title,url,pub_date in anchor_nearby_date_candidates(entrypoints,domains,year,420):
+                candidates.setdefault(url,title)
+                listing_dates.setdefault(url,(title,pub_date))
+
         if src.get("adapter")=="dataset_updated_at":
             dataset_roots=list(entrypoints)
             for domain in domains[:2]:
