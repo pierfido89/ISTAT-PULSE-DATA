@@ -111,6 +111,127 @@ def web_search(query,limit=12):
             except Exception: pass
     return _dedupe_results(merged,limit*2)
 
+
+def search_dated_candidates(domain,year=2026,limit=160):
+    """Search-engine transport fallback for official pages when the source domain
+    is unreachable from GitHub Actions. Dates are accepted only when visible in
+    the search-result block itself; URLs must still belong to the official domain.
+    """
+    months={
+        "gennaio":1,"gen":1,"febbraio":2,"feb":2,"marzo":3,"mar":3,
+        "aprile":4,"apr":4,"maggio":5,"mag":5,"giugno":6,"giu":6,
+        "luglio":7,"lug":7,"agosto":8,"ago":8,"settembre":9,"set":9,"sett":9,
+        "ottobre":10,"ott":10,"novembre":11,"nov":11,"dicembre":12,"dic":12,
+        "january":1,"jan":1,"february":2,"march":3,"april":4,"may":5,
+        "june":6,"jun":6,"july":7,"jul":7,"august":8,"aug":8,
+        "september":9,"sep":9,"sept":9,"october":10,"oct":10,
+        "november":11,"december":12,"dec":12
+    }
+    keys="|".join(sorted(months,key=len,reverse=True))
+    def parse_date(txt):
+        low=re.sub(r"\s+"," ",txt or "").lower()
+        patterns=[
+            (r"\b([0-3]?\d)[-/]([01]?\d)[-/](20\d{2}|\d{2})\b","dmy"),
+            (r"\b(20\d{2})[-/]([01]?\d)[-/]([0-3]?\d)\b","ymd"),
+        ]
+        for pat,kind in patterns:
+            m=re.search(pat,low)
+            if not m: continue
+            try:
+                a,b,c=map(int,m.groups())
+                if kind=="dmy":
+                    d,mo,y=a,b,c; y=y+2000 if y<100 else y
+                else:
+                    y,mo,d=a,b,c
+                return datetime(y,mo,d,tzinfo=timezone.utc)
+            except Exception:
+                pass
+        m=re.search(r"\b([0-3]?\d)\s+("+keys+r")\.?\s+(20\d{2})\b",low)
+        if m:
+            try:return datetime(int(m.group(3)),months[m.group(2)],int(m.group(1)),tzinfo=timezone.utc)
+            except Exception: pass
+        return None
+
+    queries=[
+        f'site:{domain}/it/comunicazione/notizie-e-comunicati {year}',
+        f'site:{domain}/it/comunicazione/notizie-e-comunicati/comunicati-stampa {year}',
+        f'site:{domain}/it/comunicazione {year} ANFIA',
+        f'site:{domain}/it/attivita/studi-e-statistiche {year}',
+    ]
+    # Monthly slices increase recall and avoid the first search page hiding older items.
+    for m in MONTHS_IT:
+        queries.append(f'site:{domain}/it/comunicazione/notizie-e-comunicati {m} {year}')
+
+    out=[]; seen=set()
+
+    def bing_rows(query):
+        rows=[]
+        try:
+            url="https://www.bing.com/search?"+urllib.parse.urlencode({
+                "q":query,"setlang":"it-IT","count":50
+            })
+            raw,_,_=fetch(url,timeout=8,max_bytes=1600000)
+            soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
+            for li in soup.select("li.b_algo"):
+                a=li.find("a",href=True)
+                if not a: continue
+                title=re.sub(r"\s+"," ",a.get_text(" ",strip=True)).strip()
+                href=a.get("href","")
+                block=re.sub(r"\s+"," ",li.get_text(" ",strip=True))
+                rows.append((title,href,block))
+        except Exception:
+            pass
+        return rows
+
+    def google_rows(query):
+        rows=[]
+        try:
+            url="https://www.google.com/search?"+urllib.parse.urlencode({
+                "q":query,"num":50,"filter":"0","hl":"it"
+            })
+            raw,_,_=fetch(url,timeout=8,max_bytes=1600000)
+            soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
+            for h3 in soup.find_all("h3"):
+                a=h3.find_parent("a",href=True)
+                if not a: continue
+                href=a.get("href","")
+                if href.startswith("/url?"):
+                    qs=urllib.parse.parse_qs(urllib.parse.urlparse(href).query)
+                    href=(qs.get("q") or qs.get("url") or [""])[0]
+                if not href.startswith("http"): continue
+                title=re.sub(r"\s+"," ",h3.get_text(" ",strip=True)).strip()
+                node=h3
+                for _ in range(4):
+                    if getattr(node,"parent",None) is None: break
+                    node=node.parent
+                block=re.sub(r"\s+"," ",node.get_text(" ",strip=True))
+                rows.append((title,href,block))
+        except Exception:
+            pass
+        return rows
+
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        jobs=[]
+        for q in queries:
+            jobs.append(pool.submit(bing_rows,q))
+            jobs.append(pool.submit(google_rows,q))
+        for fut in as_completed(jobs):
+            try: rows=fut.result()
+            except Exception: rows=[]
+            for title,href,block in rows:
+                if not href or href in seen: continue
+                if not host_allowed(canonical_host(href),[domain]): continue
+                pub=parse_date(block)
+                if not pub or pub.year!=year: continue
+                low=href.lower()
+                if any(x in low for x in ("/rss","/privacy","/cookie","/contatti")): continue
+                seen.add(href)
+                out.append((title,href,pub))
+                if len(out)>=limit:
+                    return out
+    return out
+
+
 def sitemap_candidates(domain,year=2026,limit=180):
     # Direct discovery from the official site. Search engines are optional:
     # sitemap documents are fetched in small parallel batches to avoid turning
@@ -1034,6 +1155,13 @@ def process_source(src, now):
                             candidates[url]=title
             if name=="ANFIA":
                 print(f"ANFIA search candidates: {search_total}", flush=True)
+
+        if name=="ANFIA":
+            dated_search_rows=search_dated_candidates("anfia.it",year,160)
+            for title,url,pub_date in dated_search_rows:
+                candidates.setdefault(url,title)
+                listing_dates.setdefault(url,(title,pub_date))
+            print(f"ANFIA search dated candidates: {len(dated_search_rows)}", flush=True)
 
         year_found=0
 
