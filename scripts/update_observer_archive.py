@@ -504,6 +504,11 @@ def process_source(src, now):
 
     for year in ARCHIVE_YEARS:
         candidates={}
+        listing_dates={}
+        entrypoints=src.get("entrypoints",[])
+        for title,url,pub_date in listing_dated_candidates(entrypoints,domains,year,300):
+            candidates.setdefault(url,title)
+            listing_dates[url]=(title,pub_date)
 
         # 1) Official source discovery first.
         with ThreadPoolExecutor(max_workers=min(2,max(1,len(domains[:2])))) as pool:
@@ -518,7 +523,6 @@ def process_source(src, now):
         # 2) Crawl official newsroom/statistics sections directly. This is
         # crucial for institutions whose sitemap does not expose article URLs.
         with ThreadPoolExecutor(max_workers=min(2,max(1,len(domains[:2])))) as pool:
-            entrypoints=src.get("entrypoints",[])
             jobs={pool.submit(site_crawl_candidates,domain,year,140,entrypoints):domain for domain in domains[:2]}
             for fut in as_completed(jobs):
                 try: results=fut.result()
@@ -556,8 +560,39 @@ def process_source(src, now):
                             candidates[url]=title
 
         year_found=0
-        # Bound verification work per source while keeping generous recall.
-        items=list(candidates.items())[:220]
+
+        # Curated listing pages are authoritative for publication date.
+        for url,(listing_title,listing_date) in listing_dates.items():
+            if listing_date>now or listing_date.year!=year: continue
+            info=page_info(url,domains)
+            title=(info or {}).get("title") or listing_title
+            numbers=(info or {}).get("numbers") or []
+            final_url=(info or {}).get("url") or url
+            host=(info or {}).get("domain") or canonical_host(url)
+            aid=stable_id(name,final_url)
+            local_articles[aid]={
+                "id":aid,
+                "published_at":listing_date.isoformat().replace("+00:00","Z"),
+                "observer":name,
+                "topic":topic_of(title),
+                "pulse_score":0,
+                "patterns":[],
+                "public_source":{
+                    "url":final_url,"domain":host,
+                    "role":"primary_institutional_source",
+                    "verification_method":"official_listing_date"
+                },
+                "headline":title,
+                "summary":safe_summary(name,title,listing_date,numbers),
+                "territories":["italia"],
+                "editorial_status":"source_publication_verified",
+                "publication_status":"published"
+            }
+            year_found+=1
+            if year_found>=MAX_RESULTS_PER_SOURCE_YEAR: break
+
+        # Additional sitemap/feed/search candidates require detail-page verification.
+        items=[(u,t) for u,t in candidates.items() if u not in listing_dates][:220]
         with ThreadPoolExecutor(max_workers=6) as pool:
             future_pages={
                 pool.submit(page_info,url,domains):(title,url)
