@@ -1016,8 +1016,10 @@
         "open data"
       ],
       "entrypoints": [
-        "https://www.snam.it/it/media/news-e-comunicati-stampa/comunicati-stampa/2026/"
-      ]
+        "https://www.snam.it/it/media/news-e-comunicati-stampa/comunicati-stampa.html",
+        "https://www.snam.it/it/home.html"
+      ],
+      "adapter": "snam_sitemap"
     },
     {
       "name": "Terna",
