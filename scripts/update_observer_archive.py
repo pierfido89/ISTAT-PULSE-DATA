@@ -937,39 +937,41 @@ def process_source(src, now):
         for title,url,pub_raw in rss_directory_candidates(src.get("rss_directory",""),domains,year,200) if src.get("rss_directory") else []:
             candidates.setdefault(url,title)
 
+        dedicated_only = src.get("adapter") in {"anfia_listing","cgiamestre"}
+
         # 1) Official source discovery first.
-        with ThreadPoolExecutor(max_workers=min(2,max(1,len(domains[:2])))) as pool:
-            jobs={pool.submit(sitemap_candidates,domain,year,140):domain for domain in domains[:2]}
-            for fut in as_completed(jobs):
-                try: results=fut.result()
-                except Exception: results=[]
-                for title,url in results:
-                    if url and url not in candidates:
-                        candidates[url]=title
+        if not dedicated_only:
+            with ThreadPoolExecutor(max_workers=min(2,max(1,len(domains[:2])))) as pool:
+                jobs={pool.submit(sitemap_candidates,domain,year,140):domain for domain in domains[:2]}
+                for fut in as_completed(jobs):
+                    try: results=fut.result()
+                    except Exception: results=[]
+                    for title,url in results:
+                        if url and url not in candidates:
+                            candidates[url]=title
 
-        # 2) Crawl official newsroom/statistics sections directly. This is
-        # crucial for institutions whose sitemap does not expose article URLs.
-        with ThreadPoolExecutor(max_workers=min(2,max(1,len(domains[:2])))) as pool:
-            jobs={pool.submit(site_crawl_candidates,domain,year,140,entrypoints):domain for domain in domains[:2]}
-            for fut in as_completed(jobs):
-                try: results=fut.result()
-                except Exception: results=[]
-                for title,url in results:
-                    if url and url not in candidates:
-                        candidates[url]=title
+            # 2) Crawl official newsroom/statistics sections directly.
+            with ThreadPoolExecutor(max_workers=min(2,max(1,len(domains[:2])))) as pool:
+                jobs={pool.submit(site_crawl_candidates,domain,year,140,entrypoints):domain for domain in domains[:2]}
+                for fut in as_completed(jobs):
+                    try: results=fut.result()
+                    except Exception: results=[]
+                    for title,url in results:
+                        if url and url not in candidates:
+                            candidates[url]=title
 
-        # 3) Official RSS/Atom feeds catch newsrooms that expose weak sitemaps.
-        with ThreadPoolExecutor(max_workers=min(2,max(1,len(domains[:2])))) as pool:
-            jobs={pool.submit(feed_candidates,domain,year,120,src.get("feed_urls",[])):domain for domain in domains[:2]}
-            for fut in as_completed(jobs):
-                try: results=fut.result()
-                except Exception: results=[]
-                for title,url in results:
-                    if url and url not in candidates:
-                        candidates[url]=title
+            # 3) Official RSS/Atom feeds.
+            with ThreadPoolExecutor(max_workers=min(2,max(1,len(domains[:2])))) as pool:
+                jobs={pool.submit(feed_candidates,domain,year,120,src.get("feed_urls",[])):domain for domain in domains[:2]}
+                for fut in as_completed(jobs):
+                    try: results=fut.result()
+                    except Exception: results=[]
+                    for title,url in results:
+                        if url and url not in candidates:
+                            candidates[url]=title
 
-        # 4) Search engines are fallback only.
-        if len(candidates) < 24 or src.get("adapter"):
+        # 4) Search engines are fallback only for non-dedicated sources.
+        if (not dedicated_only) and (len(candidates) < 24 or src.get("adapter")):
             queries=[]
             for domain in domains[:2]:
                 queries.extend([
