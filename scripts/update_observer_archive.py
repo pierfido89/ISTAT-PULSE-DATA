@@ -112,8 +112,9 @@ def web_search(query,limit=12):
     return _dedupe_results(merged,limit*2)
 
 def sitemap_candidates(domain,year=2026,limit=180):
-    # Direct discovery from the official site. This is deliberately independent
-    # from search engines and follows sitemap indexes recursively with strict caps.
+    # Direct discovery from the official site. Search engines are optional:
+    # sitemap documents are fetched in small parallel batches to avoid turning
+    # 63 sources into a long serial crawl.
     seeds=[
         f"https://{domain}/sitemap.xml",
         f"https://www.{domain}/sitemap.xml",
@@ -122,43 +123,70 @@ def sitemap_candidates(domain,year=2026,limit=180):
         f"https://{domain}/wp-sitemap.xml",
         f"https://www.{domain}/wp-sitemap.xml",
     ]
-    for robots in (f"https://{domain}/robots.txt", f"https://www.{domain}/robots.txt"):
+
+    def robots_sitemaps(url):
         try:
-            raw,_,_=fetch(robots,timeout=8,max_bytes=250000)
+            raw,_,_=fetch(url,timeout=6,max_bytes=250000)
+            found=[]
             for line in raw.decode("utf-8","ignore").splitlines():
                 if line.lower().startswith("sitemap:"):
                     sm=line.split(":",1)[1].strip()
-                    if sm.startswith("http"): seeds.append(sm)
+                    if sm.startswith("http"): found.append(sm)
+            return found
         except Exception:
-            pass
-    queue=list(dict.fromkeys(seeds)); visited=set(); out=[]
-    while queue and len(visited)<24 and len(out)<limit:
-        sm=queue.pop(0)
-        if sm in visited: continue
-        visited.add(sm)
+            return []
+
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        for found in pool.map(robots_sitemaps,(
+            f"https://{domain}/robots.txt",
+            f"https://www.{domain}/robots.txt"
+        )):
+            seeds.extend(found)
+
+    def read_sitemap(sm):
         try:
-            raw,final,ct=fetch(sm,timeout=12,max_bytes=2400000)
-            text=raw.decode("utf-8","ignore")
-            root=ET.fromstring(text)
+            raw,_,_=fetch(sm,timeout=8,max_bytes=2400000)
+            root=ET.fromstring(raw.decode("utf-8","ignore"))
+            locs=[(el.text or "").strip() for el in root.findall(".//{*}loc") if (el.text or "").strip()]
+            return sm,root.tag.lower().endswith("sitemapindex"),locs
         except Exception:
-            continue
-        locs=[(el.text or "").strip() for el in root.findall(".//{*}loc") if (el.text or "").strip()]
-        is_index=root.tag.lower().endswith("sitemapindex")
-        if is_index:
+            return sm,False,[]
+
+    queue=list(dict.fromkeys(seeds))
+    visited=set()
+    out=[]
+    while queue and len(visited)<28 and len(out)<limit:
+        batch=[]
+        while queue and len(batch)<8:
+            sm=queue.pop(0)
+            if sm not in visited:
+                visited.add(sm); batch.append(sm)
+        if not batch: continue
+
+        with ThreadPoolExecutor(max_workers=min(8,len(batch))) as pool:
+            docs=list(pool.map(read_sitemap,batch))
+
+        for _,is_index,locs in docs:
+            if is_index:
+                for loc in locs:
+                    low=loc.lower()
+                    if str(year) in low or any(k in low for k in (
+                        "post","news","notiz","pubblic","article","comunicat",
+                        "stat","sitemap","press","rapport"
+                    )):
+                        if loc not in visited and loc not in queue and len(queue)<48:
+                            queue.append(loc)
+                continue
             for loc in locs:
+                if len(out)>=limit: break
+                host=canonical_host(loc)
+                if not host_allowed(host,[domain]): continue
                 low=loc.lower()
-                if str(year) in low or any(k in low for k in ("post","news","notiz","pubblic","article","comunicat","stat","sitemap")):
-                    if loc not in visited and len(queue)<40: queue.append(loc)
-            continue
-        for loc in locs:
-            if len(out)>=limit: break
-            host=canonical_host(loc)
-            if not host_allowed(host,[domain]): continue
-            low=loc.lower()
-            # Prefer URLs that look like publications; date verification remains
-            # mandatory in page_info, so this is only a cheap candidate filter.
-            if str(year) in low or any(k in low for k in ("news","notiz","pubblic","rapport","osserv","stat","comunicat","dati","analisi")):
-                out.append((urllib.parse.unquote(loc.rsplit("/",1)[-1]).replace("-"," "),loc))
+                if str(year) in low or any(k in low for k in (
+                    "news","notiz","pubblic","rapport","osserv","stat",
+                    "comunicat","dati","analisi","press"
+                )):
+                    out.append((urllib.parse.unquote(loc.rsplit("/",1)[-1]).replace("-"," "),loc))
     return _dedupe_results(out,limit)
 
 def page_info(url,domains):
