@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import hashlib, html, io, json, re, time, urllib.parse, urllib.request
+import hashlib, html, io, json, re, time, urllib.parse, urllib.request, signal
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
@@ -12,7 +12,10 @@ CFG=Path("data/news_radar_sources.json")
 ARTICLES=ROOT/"articles.json"
 CANDIDATES=ROOT/"candidates.json"
 INDEX=ROOT/"index.json"
-UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/154 Safari/537.36 ISTAT-PULSE-NewsRadar/1.1"
+UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/154 Safari/537.36 ISTAT-PULSE-NewsRadar/1.2"
+MAX_RUNTIME_SECONDS=720
+MAX_ITEMS_PER_FEED=40
+MAX_CANDIDATES_TOTAL=180
 
 TOPIC_DOMAINS={
  "LAVORO":["istat.it","inps.it","inail.it","unioncamere.gov.it"],
@@ -38,7 +41,7 @@ GEO={"abruzzo","basilicata","calabria","campania","emilia-romagna","friuli-venez
 "trentino-alto adige","umbria","valle d'aosta","veneto","roma","milano","napoli","torino",
 "palermo","bologna","firenze","genova","venezia","bari"}
 
-def fetch(url, timeout=25, max_bytes=700000):
+def fetch(url, timeout=12, max_bytes=700000):
     req=urllib.request.Request(url,headers={"User-Agent":UA,"Accept":"text/html,application/rss+xml,application/xml;q=0.9,*/*;q=0.5"})
     with urllib.request.urlopen(req,timeout=timeout) as r:
         return r.read(max_bytes),r.geturl(),r.headers.get("Content-Type","")
@@ -59,7 +62,7 @@ def rss_items(url):
             el=item.find(tag); return (el.text or "").strip() if el is not None else ""
         title=t("title"); link=t("link"); desc=t("description"); pub=t("pubDate")
         if title and link: out.append({"title":title,"url":link,"summary":clean_text(desc),"published_raw":pub})
-    return out[:60]
+    return out[:MAX_ITEMS_PER_FEED]
 
 def score_candidate(text):
     low=text.lower()
@@ -82,7 +85,7 @@ def official_domain(host, domains):
 
 def article_probe(url, domains, hints):
     try:
-        raw,final,ct=fetch(url,timeout=18,max_bytes=500000)
+        raw,final,ct=fetch(url,timeout=10,max_bytes=500000)
         if "html" not in ct.lower(): return {"final_url":final,"text":"","official_links":[],"hint_domains":[]}
         soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
         for tag in soup(["script","style","nav","footer","header","aside"]): tag.decompose()
@@ -117,7 +120,7 @@ def title_keywords(text):
 def ddg_search(query, limit=6):
     url="https://html.duckduckgo.com/html/?"+urllib.parse.urlencode({"q":query})
     try:
-        raw,_,_=fetch(url,timeout=20,max_bytes=600000)
+        raw,_,_=fetch(url,timeout=10,max_bytes=600000)
         soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
         out=[]
         for a in soup.select("a.result__a"):
@@ -138,7 +141,7 @@ def ddg_search(query, limit=6):
 def bing_search(query, limit=8):
     url="https://www.bing.com/search?"+urllib.parse.urlencode({"q":query,"format":"rss","setlang":"it-IT"})
     try:
-        raw,_,_=fetch(url,timeout=20,max_bytes=700000)
+        raw,_,_=fetch(url,timeout=10,max_bytes=700000)
         root=ET.fromstring(raw)
         out=[]
         for item in root.findall(".//item"):
@@ -195,7 +198,7 @@ def verify_primary_page(url, numbers, keywords, allowed_domains):
     dom=official_domain(host,allowed_domains)
     if not dom: return None
     try:
-        raw,final,ct=fetch(url,timeout=25,max_bytes=6000000)
+        raw,final,ct=fetch(url,timeout=12,max_bytes=6000000)
         text=extract_document_text(raw,ct,final)
         if not text: return None
         low=text.lower()
@@ -584,6 +587,10 @@ def bucket_date(iso, now):
     return "ARCHIVIO"
 
 def main():
+    started=time.monotonic()
+    def runtime_exceeded():
+        return time.monotonic()-started >= MAX_RUNTIME_SECONDS
+
     ROOT.mkdir(parents=True,exist_ok=True)
     cfg=load_json(CFG,{})
     old_articles=load_json(ARTICLES,{"articles":[]}).get("articles",[])
@@ -627,11 +634,16 @@ def main():
     today=now.astimezone(ROME).date().isoformat()
 
     for feed in cfg.get("feeds",[]):
+        if runtime_exceeded() or len(candidates) >= MAX_CANDIDATES_TOTAL:
+            break
+        print(f"[RADAR] feed={feed.get('name')} candidates={len(candidates)}", flush=True)
         try: items=rss_items(feed["url"])
         except Exception as e:
             candidates.append({"radar":feed.get("name"),"status":"radar_error","error":str(e)[:180]})
             continue
         for item in items:
+            if runtime_exceeded() or len(candidates) >= MAX_CANDIDATES_TOTAL:
+                break
             editorial_excluded=looks_editorially_irrelevant(item["title"])
             discovery=(item["title"]+" "+item.get("summary",""))[:7000]
             s,nums=score_candidate(discovery)
@@ -695,6 +707,9 @@ def main():
               "publication_status":"published"
             }
             by_id[aid]=article
+
+    if runtime_exceeded():
+        print("[RADAR] runtime budget reached; publishing partial verified results", flush=True)
 
     arts=sorted(by_id.values(),key=lambda x:x.get("published_at",""),reverse=True)
     # Safety gate: only verified articles may be publicly visible.
