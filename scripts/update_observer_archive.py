@@ -775,9 +775,9 @@ def anfia_candidates(entrypoints,domains,year=2026,limit=420):
 
 def snam_sitemap_candidates(domains,year=2026,limit=420):
     """Dedicated SNAM discovery from the official sitemap.
-    SNAM does not expose a stable year archive page, but the sitemap contains
-    individual 2026 press-release/document URLs. Discover those directly and
-    let page_info() verify title/date/content.
+    SNAM serves article shells to non-JS crawlers, so publication-page HTML often
+    lacks a readable date. For official 2026 press-release URLs, use sitemap
+    lastmod as the authoritative archive date fallback.
     """
     out=[]; seen=set()
     seeds=[
@@ -788,34 +788,42 @@ def snam_sitemap_candidates(domains,year=2026,limit=420):
         try:
             raw,_,_=fetch(sm,timeout=10,max_bytes=5000000)
             root=ET.fromstring(raw.decode("utf-8","ignore"))
-            for node in root.iter():
-                if not str(node.tag).lower().endswith("loc"):
+            for node in list(root):
+                loc_el=node.find("{*}loc")
+                if loc_el is None:
                     continue
-                loc=(node.text or "").strip()
-                if not loc.startswith("http"):
-                    continue
-                if not host_allowed(canonical_host(loc),domains):
+                loc=(loc_el.text or "").strip()
+                if not loc.startswith("http") or not host_allowed(canonical_host(loc),domains):
                     continue
                 low=loc.lower()
-                if f"/{year}/" not in low and str(year) not in low:
+                # Restrict the authoritative-date fallback to actual SNAM press
+                # releases for the requested year, avoiding generic pages/assets.
+                if f"/comunicati-stampa/{year}/" not in low:
                     continue
-                if not any(k in low for k in (
-                    "/comunicati-stampa/","/news/","/media/","/documenti/",
-                    "report","risultati","mercato","gas","sostenibil"
-                )):
+                lastmod_el=node.find("{*}lastmod")
+                lastmod=(lastmod_el.text or "").strip() if lastmod_el is not None else ""
+                pub=None
+                m=re.search(r"(20\d{2})[-/]([01]?\d)[-/]([0-3]?\d)",lastmod)
+                if m:
+                    try:
+                        y,mo,d=map(int,m.groups())
+                        pub=datetime(y,mo,d,tzinfo=timezone.utc)
+                    except Exception:
+                        pub=None
+                if not pub or pub.year!=year:
                     continue
                 if loc in seen:
                     continue
                 seen.add(loc)
                 title=urllib.parse.unquote(loc.rsplit("/",1)[-1]).replace(".html","").replace("-"," ")
-                out.append((title,loc))
+                out.append((title,loc,pub))
                 if len(out)>=limit:
                     return out
         except Exception as exc:
             if domains and domains[0]=="snam.it":
                 print(f"SNAM sitemap error: {type(exc).__name__}: {exc}", flush=True)
     if domains and domains[0]=="snam.it":
-        print(f"SNAM sitemap dedicated candidates: {len(out)}", flush=True)
+        print(f"SNAM sitemap dedicated dated candidates: {len(out)}", flush=True)
     return out
 
 
@@ -1011,8 +1019,9 @@ def process_source(src, now):
                 listing_dates[url]=(title,pub_date)
 
         if src.get("adapter")=="snam_sitemap":
-            for title,url in snam_sitemap_candidates(domains,year,420):
+            for title,url,pub_date in snam_sitemap_candidates(domains,year,420):
                 candidates.setdefault(url,title)
+                listing_dates[url]=(title,pub_date)
 
         if src.get("adapter")=="dataset_updated_at":
             dataset_roots=list(entrypoints)
