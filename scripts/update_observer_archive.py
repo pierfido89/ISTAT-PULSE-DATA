@@ -456,6 +456,64 @@ def sequential_listing_candidates(entrypoints,domains,year=2026,limit=360):
             continue
     return out
 
+
+def anchor_nearby_date_candidates(entrypoints,domains,year=2026,limit=360):
+    """For each article link, search nearby DOM text for a publication date."""
+    out=[]; seen=set()
+    months={"gennaio":1,"febbraio":2,"marzo":3,"aprile":4,"maggio":5,"giugno":6,
+            "luglio":7,"agosto":8,"settembre":9,"ottobre":10,"novembre":11,"dicembre":12,
+            "gen":1,"feb":2,"mar":3,"apr":4,"mag":5,"giu":6,"lug":7,"ago":8,"set":9,"sett":9,"ott":10,"nov":11,"dic":12,
+            "january":1,"february":2,"march":3,"april":4,"may":5,"june":6,"july":7,"august":8,
+            "september":9,"october":10,"november":11,"december":12,"jan":1,"jun":6,"jul":7,"aug":8,"sep":9,"sept":9,"oct":10,"dec":12}
+    keys="|".join(sorted(months,key=len,reverse=True))
+    def parse(txt):
+        low=(txt or "").lower()
+        m=re.search(r"\b([0-3]?\d)[-/]([01]?\d)[-/](20\d{2}|\d{2})\b",low)
+        if m:
+            try:
+                d,mo,y=map(int,m.groups()); y=y+2000 if y<100 else y
+                return datetime(y,mo,d,tzinfo=timezone.utc)
+            except: pass
+        m=re.search(r"\b([0-3]?\d)\s+("+keys+r")\.?\s+(20\d{2})\b",low)
+        if m:
+            try:return datetime(int(m.group(3)),months[m.group(2)],int(m.group(1)),tzinfo=timezone.utc)
+            except: pass
+        return None
+    for root_url in entrypoints or []:
+        try:
+            raw,final,ct=fetch(root_url,timeout=8,max_bytes=2200000)
+            if "html" not in ct.lower(): continue
+            soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
+            for a in soup.find_all("a",href=True):
+                title=re.sub(r"\s+"," ",a.get_text(" ",strip=True)).strip()
+                href=urllib.parse.urljoin(final,a["href"]).split("#",1)[0]
+                if len(title)<8 or not host_allowed(canonical_host(href),domains) or href in seen: continue
+                contexts=[]
+                # Parent cards/containers.
+                node=a
+                for _ in range(8):
+                    node=getattr(node,"parent",None)
+                    if node is None: break
+                    txt=re.sub(r"\s+"," ",node.get_text(" ",strip=True))
+                    if txt: contexts.append(txt[:2500])
+                # Nearby siblings and preceding text.
+                for sib in list(a.previous_siblings)[-8:]:
+                    try:
+                        txt=re.sub(r"\s+"," ",sib.get_text(" ",strip=True) if hasattr(sib,"get_text") else str(sib))
+                        if txt: contexts.append(txt[:1200])
+                    except: pass
+                date=None
+                for txt in contexts:
+                    d=parse(txt)
+                    if d and d.year==year:
+                        date=d; break
+                if date:
+                    seen.add(href); out.append((title,href,date))
+                    if len(out)>=limit:return out
+        except Exception:
+            continue
+    return out
+
 def listing_dated_candidates(entrypoints,domains,year=2026,limit=300):
     out=[]; seen=set()
     for root_url in entrypoints or []:
@@ -689,13 +747,21 @@ def process_source(src, now):
         for title,url,pub_date in sequential_listing_candidates(entrypoints,domains,year,360):
             candidates.setdefault(url,title)
             listing_dates.setdefault(url,(title,pub_date))
+        for title,url,pub_date in anchor_nearby_date_candidates(entrypoints,domains,year,360):
+            candidates.setdefault(url,title)
+            listing_dates.setdefault(url,(title,pub_date))
 
         for title,url,pub_date in wordpress_rest_candidates(src.get("api_urls",[]),domains,year,300):
             candidates.setdefault(url,title)
             listing_dates[url]=(title,pub_date)
 
         if src.get("adapter")=="dataset_updated_at":
-            for title,url,pub_date in dataset_updated_candidates(entrypoints,domains,year,260):
+            dataset_roots=list(entrypoints)
+            for domain in domains[:2]:
+                for _,u in sitemap_candidates(domain,year,320):
+                    if "/dataset/" in u:
+                        dataset_roots.append(u.rsplit("/dataset/",1)[0]+"/dataset/")
+            for title,url,pub_date in dataset_updated_candidates(dataset_roots,domains,year,260):
                 candidates.setdefault(url,title)
                 listing_dates[url]=(title,pub_date)
 
