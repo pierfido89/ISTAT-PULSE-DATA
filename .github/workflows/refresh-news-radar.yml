@@ -13,6 +13,9 @@ on:
       - '.github/workflows/refresh-news-radar.yml'
 permissions:
   contents: write
+concurrency:
+  group: pulse-news-radar-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   refresh:
     runs-on: ubuntu-latest
