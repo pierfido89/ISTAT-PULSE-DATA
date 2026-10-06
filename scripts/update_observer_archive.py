@@ -322,9 +322,19 @@ def page_info(url,domains):
         if h1 and h1.get_text(" ",strip=True): title=h1.get_text(" ",strip=True)
         text=" ".join(soup.stripped_strings)
         low=text.lower()
-        if not any(t in low for t in STAT_TERMS): return None
         nums=re.findall(r"(?<!\w)(?:20\d{2}|\d{1,3}(?:[\.,]\d{1,3})?)\s*(?:%|milioni|miliardi|mila|euro)?",low)
-        if not nums: return None
+
+        # OSSERVATORI is an institutional publication archive, not the PULSE
+        # statistical-pattern detector. Do not discard valid official news merely
+        # because the page lacks percentages/numeric indicators.
+        generic_titles={
+            "news","notizie","comunicati","comunicati stampa","pubblicazioni",
+            "archivio","eventi","navigazione","home","homepage","press area",
+            "media","ufficio stampa","ultime news"
+        }
+        normalized_title=re.sub(r"\s+"," ",title).strip().lower()
+        if normalized_title in generic_titles or len(normalized_title)<8:
+            return None
 
         date=None
         meta_candidates=[]
