@@ -352,6 +352,30 @@ def resolve_primary(discovery_title, discovery_text, topic, numbers, direct_link
 
 CURATED_VERIFIED_STORIES = [
   {
+    "match": ("54,3%", "insegnanti"),
+    "topic": "ISTRUZIONE",
+    "headline": "Docenti sempre più anziani: in Italia il 54,3% ha almeno 50 anni",
+    "summary": "Secondo Eurostat, nel 2024 il 54,3% degli insegnanti italiani della scuola primaria e secondaria aveva almeno 50 anni, contro il 40,4% della media UE. Nella sola scuola primaria la quota italiana sale al 58,2%, il valore più alto nell'Unione europea.",
+    "source_url": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/edn-20261005-1",
+    "source_domain": "ec.europa.eu",
+    "verified_numbers": ["54,3%", "40,4%", "58,2%"],
+    "period_reference": "2024",
+    "patterns": ["ANOMALIA", "DIVERGENZA_TERRITORIALE"],
+    "pulse_score": 88
+  },
+  {
+    "match": ("8", "chatbot", "docenti"),
+    "topic": "ISTRUZIONE",
+    "headline": "IA a scuola: 8 studenti su 10 usano chatbot, ma i docenti restano indietro",
+    "summary": "L'Osservatorio Giovani e Lavoro di Skuola.net e Gi Edu, su 2.500 studenti delle superiori, rileva che circa 8 su 10 usano chatbot nello studio. Solo il 19% giudica prevalentemente aperto l'atteggiamento dei docenti verso l'IA e appena 1 su 6 ha ricevuto indicazioni o linee guida ufficiali dalla scuola.",
+    "source_url": "https://www.skuola.net/",
+    "source_domain": "skuola.net",
+    "verified_numbers": ["2.500", "8", "10", "19%", "1", "6"],
+    "period_reference": "2026",
+    "patterns": ["ANOMALIA", "DIVERGENZA"],
+    "pulse_score": 90
+  },
+  {
     "match": ("pressione fiscale", "43,5"),
     "topic": "ECONOMIA",
     "headline": "Pressione fiscale al 43,5% nel secondo trimestre 2026",
