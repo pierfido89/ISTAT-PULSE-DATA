@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import gzip, hashlib, json, re, urllib.parse, urllib.request
+import argparse, gzip, hashlib, json, re, urllib.parse, urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
@@ -1060,6 +1060,9 @@ def process_source(src, now):
     return name,stats,local_articles
 
 def main():
+    parser=argparse.ArgumentParser()
+    parser.add_argument("--only", default="", help="Process only one observer source by exact name")
+    args=parser.parse_args()
     cfg=json.loads(REGISTRY.read_text())
     current=json.loads(OUT.read_text()) if OUT.exists() else {"articles":[]}
     by_id={
