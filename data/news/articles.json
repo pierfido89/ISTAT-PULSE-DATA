@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-06T15:08:00.774Z",
+  "generated_at": "2026-10-06T15:09:09.370Z",
   "articles": [
     {
       "id": "PULSE-A63D9142B503DAD7",
-      "published_at": "2026-10-06T09:39:41.186720+00:00",
+      "published_at": "2026-10-05T19:40:00+00:00",
       "topic": "LAVORO",
       "pulse_score": 88,
       "patterns": [
@@ -51,7 +51,8 @@
       },
       "map_spec": null,
       "editorial_status": "verified",
-      "publication_status": "published"
+      "publication_status": "published",
+      "last_seen_at": "2026-10-06T09:39:41.186720+00:00"
     },
     {
       "id": "PULSE-4259FF6FEDA81813",
@@ -391,54 +392,6 @@
       "editorial_status": "verified",
       "publication_status": "published",
       "last_seen_at": "2026-10-06T08:00:47.913647+00:00"
-    },
-    {
-      "id": "PULSE-C3417952A2045D4F",
-      "published_at": "2026-10-05T19:40:00+00:00",
-      "topic": "LAVORO",
-      "pulse_score": 88,
-      "patterns": [
-        "RECORD"
-      ],
-      "public_source": {
-        "url": "https://www.istat.it/comunicato-stampa/occupati-e-disoccupati-dati-provvisori-agosto-2026/",
-        "domain": "istat.it",
-        "role": "primary_statistical_source",
-        "verification_method": "curated_primary_verification",
-        "verification_score": 100
-      },
-      "discovery": {
-        "visible": false,
-        "role": "hidden_radar"
-      },
-      "period_reference": "2026-08",
-      "latest_source_update": "2026-10-05",
-      "headline": "Occupazione sopra 24 milioni: il mercato del lavoro resta su livelli record",
-      "summary": "I dati ISTAT del 2026 confermano oltre 24 milioni di occupati. Ad agosto gli occupati sono 24 milioni 352 mila, con una crescita di 291 mila unità rispetto ad agosto 2025, mentre il tasso di disoccupazione sale al 6,2%.",
-      "statistical_claims": [
-        {
-          "raw_value": "24.352.000",
-          "verified": true
-        },
-        {
-          "raw_value": "291.000",
-          "verified": true
-        },
-        {
-          "raw_value": "6,2%",
-          "verified": true
-        }
-      ],
-      "territories": [
-        "italia"
-      ],
-      "chart_spec": {
-        "type": "auto",
-        "status": "ready_for_primary_series"
-      },
-      "map_spec": null,
-      "editorial_status": "verified",
-      "publication_status": "published"
     },
     {
       "id": "PULSE-7C04F16A0F291989",
