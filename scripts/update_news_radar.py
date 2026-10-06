@@ -541,14 +541,22 @@ def canonical_story_url(url):
 
 def story_fingerprint(primary_url, topic, headline="", numbers=None):
     url=canonical_story_url(primary_url)
-    vals=[]
-    for n in numbers or []:
-        v=normalize_number_token(n)
-        if v and not re.fullmatch(r"20\d{2}",v):
-            vals.append(v)
     title=re.sub(r"[^a-z0-9à-ù ]"," ",(headline or "").lower())
     title=" ".join(title.split())
-    seed=f"{url}|{topic}|{title}|{'|'.join(sorted(set(vals)))}".encode()
+    # Story identity must stay stable even if a later scan verifies one more
+    # number from the same underlying article. URL + editorial headline define
+    # the story; numeric claims are content, not identity.
+    if url and title:
+        seed=f"{url}|{title}".encode()
+    elif url:
+        seed=f"{url}|{topic}".encode()
+    else:
+        vals=[]
+        for n in numbers or []:
+            v=normalize_number_token(n)
+            if v and not re.fullmatch(r"20\d{2}",v):
+                vals.append(v)
+        seed=f"{topic}|{title}|{'|'.join(sorted(set(vals)))}".encode()
     return hashlib.sha256(seed).hexdigest()[:24]
 
 def stable_id(primary_url, topic, headline="", numbers=None):
