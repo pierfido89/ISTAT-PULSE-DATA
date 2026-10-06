@@ -1073,6 +1073,10 @@ def main():
     }
     now=datetime.now(timezone.utc)
     sources=cfg.get("sources",[])
+    if args.only:
+        sources=[s for s in sources if s.get("name")==args.only]
+        if not sources:
+            raise SystemExit(f"Observer source not found: {args.only}")
     source_stats={}
 
     # Process independent institutions in parallel. A slow sitemap can no longer
