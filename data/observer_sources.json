@@ -385,7 +385,8 @@
         "https://www.anfia.it/it/attivita/studi-e-statistiche",
         "https://www.anfia.it/it/attivita/studi-e-statistiche/dati-statistici/immatricolazioni/italia",
         "https://www.anfia.it/it/attivita/studi-e-statistiche/dati-statistici/immatricolazioni/eu-efta"
-      ]
+      ],
+      "adapter": "anfia_listing"
     },
     {
       "name": "ARERA",
