@@ -14,7 +14,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: pulse-news-radar-${{ github.ref }}
+  group: pulse-news-radar-v2-${{ github.ref }}
   cancel-in-progress: true
 jobs:
   refresh:
