@@ -1,0 +1,898 @@
+{
+  "version": 1,
+  "min_year": 2025,
+  "purpose": "Official-source publication archive for ISTAT PULSE OSSERVATORI. Includes relevant quantitative publications even when no PULSE statistical pattern is triggered.",
+  "sources": [
+    {
+      "name": "CENSIS",
+      "domains": [
+        "censis.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "CGIA Mestre",
+      "domains": [
+        "cgiamestre.com"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "CNA",
+      "domains": [
+        "cna.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "CNR",
+      "domains": [
+        "cnr.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "Coldiretti",
+      "domains": [
+        "coldiretti.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "Confartigianato",
+      "domains": [
+        "confartigianato.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "Confcommercio",
+      "domains": [
+        "confcommercio.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "Confindustria",
+      "domains": [
+        "confindustria.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "Fondazione GIMBE",
+      "domains": [
+        "gimbe.org"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "Legambiente",
+      "domains": [
+        "legambiente.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "Nomisma",
+      "domains": [
+        "nomisma.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "SVIMEZ",
+      "domains": [
+        "svimez.info"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "ACI",
+      "domains": [
+        "aci.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "AGENAS",
+      "domains": [
+        "agenas.gov.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "Aeronautica Militare",
+      "domains": [
+        "aeronautica.difesa.it",
+        "meteoam.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "Agenzia delle Dogane e dei Monopoli",
+      "domains": [
+        "adm.gov.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "Agenzia delle Entrate · OMI",
+      "domains": [
+        "agenziaentrate.gov.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "AgID",
+      "domains": [
+        "agid.gov.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "AGCOM",
+      "domains": [
+        "agcom.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "AIFA · OsMed",
+      "domains": [
+        "aifa.gov.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "ANAC",
+      "domains": [
+        "anticorruzione.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "ANFIA",
+      "domains": [
+        "anfia.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "ARERA",
+      "domains": [
+        "arera.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "ART",
+      "domains": [
+        "autorita-trasporti.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "Assoporti",
+      "domains": [
+        "assoporti.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "Banca d'Italia",
+      "domains": [
+        "bancaditalia.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "CONSOB",
+      "domains": [
+        "consob.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "Copernicus",
+      "domains": [
+        "climate.copernicus.eu",
+        "copernicus.eu"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "COVIP",
+      "domains": [
+        "covip.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "CREA · RICA",
+      "domains": [
+        "crea.gov.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "Dipartimento delle Finanze",
+      "domains": [
+        "finanze.gov.it",
+        "mef.gov.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "DIPE · OpenCUP",
+      "domains": [
+        "programmazioneeconomica.gov.it",
+        "opencup.gov.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "EEA",
+      "domains": [
+        "eea.europa.eu"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "ENAC",
+      "domains": [
+        "enac.gov.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "ENEA",
+      "domains": [
+        "enea.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "ENIT",
+      "domains": [
+        "enit.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "Eurostat",
+      "domains": [
+        "ec.europa.eu"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "FAO",
+      "domains": [
+        "fao.org"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "GME",
+      "domains": [
+        "mercatoelettrico.org"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "GSE",
+      "domains": [
+        "gse.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "INGV",
+      "domains": [
+        "ingv.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "INAIL",
+      "domains": [
+        "inail.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "INPS",
+      "domains": [
+        "inps.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "INVALSI",
+      "domains": [
+        "invalsi.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "ISPRA / SNPA",
+      "domains": [
+        "isprambiente.gov.it",
+        "snpa.gov.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "ISMEA",
+      "domains": [
+        "ismea.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "ISTAT",
+      "domains": [
+        "istat.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "IVASS",
+      "domains": [
+        "ivass.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "MIMIT",
+      "domains": [
+        "mimit.gov.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "Ministero dell'Interno",
+      "domains": [
+        "interno.gov.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "Ministero della Giustizia · DGStat",
+      "domains": [
+        "giustizia.it",
+        "datiestatistiche.giustizia.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "Ministero della Salute",
+      "domains": [
+        "salute.gov.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "Ministero dell'Istruzione e del Merito",
+      "domains": [
+        "istruzione.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "Ministero dell'Università e della Ricerca",
+      "domains": [
+        "mur.gov.it",
+        "ustat.mur.gov.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "MIT",
+      "domains": [
+        "mit.gov.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "OpenCoesione",
+      "domains": [
+        "opencoesione.gov.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "Ragioneria Generale dello Stato · BDAP",
+      "domains": [
+        "rgs.mef.gov.it",
+        "bdap-opendata.rgs.mef.gov.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "SIAE · Osservatorio Spettacolo",
+      "domains": [
+        "siae.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "SINAB",
+      "domains": [
+        "sinab.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "SNAM",
+      "domains": [
+        "snam.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "Terna",
+      "domains": [
+        "terna.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "Unioncamere / InfoCamere",
+      "domains": [
+        "unioncamere.gov.it",
+        "infocamere.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    },
+    {
+      "name": "UNRAE",
+      "domains": [
+        "unrae.it"
+      ],
+      "query_terms": [
+        "dati",
+        "statistiche",
+        "rapporto",
+        "osservatorio",
+        "indagine",
+        "open data"
+      ]
+    }
+  ]
+}
