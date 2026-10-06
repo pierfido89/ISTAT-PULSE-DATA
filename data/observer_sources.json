@@ -127,7 +127,6 @@
         "indagine",
         "open data"
       ],
-      "adapter": "liferay_listing",
       "entrypoints": [
         "https://www.confcommercio.it/it/archivio-notizie"
       ]
@@ -660,7 +659,6 @@
         "indagine",
         "open data"
       ],
-      "adapter": "dated_listing",
       "entrypoints": [
         "https://www.gse.it/media/comunicati",
         "https://www.gse.it/dati-e-scenari/rapporti",
@@ -775,8 +773,7 @@
         "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=10&YY=2026",
         "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=11&YY=2026",
         "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=12&YY=2026"
-      ],
-      "adapter": "year_month_listing"
+      ]
     },
     {
       "name": "ISTAT",
@@ -864,8 +861,7 @@
       ],
       "entrypoints": [
         "https://www.salute.gov.it/new/it/sezione/comunicati-stampa/"
-      ],
-      "adapter": "dated_listing"
+      ]
     },
     {
       "name": "Ministero dell'Istruzione e del Merito",
@@ -881,7 +877,6 @@
         "indagine",
         "open data"
       ],
-      "adapter": "liferay_listing",
       "entrypoints": [
         "https://www.mim.gov.it/web/guest/comunicati"
       ]
@@ -925,8 +920,7 @@
         "https://mit.gov.it/comunicazione/news?page=3",
         "https://mit.gov.it/comunicazione/news?page=4",
         "https://mit.gov.it/comunicazione/news?page=5"
-      ],
-      "adapter": "dated_listing"
+      ]
     },
     {
       "name": "OpenCoesione",
@@ -941,7 +935,6 @@
         "indagine",
         "open data"
       ],
-      "adapter": "dataset_updated_at",
       "entrypoints": [
         "https://opencoesione.gov.it/it/opendata/",
         "https://opencoesione.gov.it/it/opendata/dataset/pagamenti/",
@@ -998,7 +991,6 @@
         "indagine",
         "open data"
       ],
-      "adapter": "wordpress_rest",
       "entrypoints": [
         "https://sinab.it/bionovita/"
       ],
@@ -1024,8 +1016,7 @@
       ],
       "entrypoints": [
         "https://www.snam.it/it/media/news-e-comunicati-stampa/comunicati-stampa/2026/"
-      ],
-      "adapter": "year_archive"
+      ]
     },
     {
       "name": "Terna",
