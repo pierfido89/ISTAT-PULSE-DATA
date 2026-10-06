@@ -380,7 +380,6 @@
         "indagine",
         "open data"
       ],
-      "adapter": "anfia_listing",
       "entrypoints": [
         "https://www.anfia.it/it/comunicazione/notizie-e-comunicati",
         "https://www.anfia.it/it/comunicazione/notizie-e-comunicati/comunicati-stampa",
