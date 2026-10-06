@@ -51,7 +51,7 @@ def bing_search(query,limit=12):
         url="https://www.bing.com/search?"+urllib.parse.urlencode({
             "q":query,"setlang":"it-IT","count":max(10,min(limit,50))
         })
-        raw,_,_=fetch(url,max_bytes=1400000)
+        raw,_,_=fetch(url,timeout=6,max_bytes=1400000)
         soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
         for li in soup.select("li.b_algo"):
             a=li.find("a",href=True)
@@ -66,7 +66,7 @@ def bing_search(query,limit=12):
         url="https://www.bing.com/search?"+urllib.parse.urlencode({
             "q":query,"format":"rss","setlang":"it-IT"
         })
-        raw,_,_=fetch(url,max_bytes=800000)
+        raw,_,_=fetch(url,timeout=6,max_bytes=800000)
         root=ET.fromstring(raw)
         for item in root.findall(".//item"):
             link=(item.findtext("link") or "").strip()
@@ -280,23 +280,16 @@ def main():
         source_stats[name]={"2026":0}
 
         for year in ARCHIVE_YEARS:
-            queries=[]
-            for domain in domains[:2]:
-                queries.extend([
-                    f'site:{domain} {year} (dati OR statistiche OR rapporto OR osservatorio)',
-                    f'site:{domain} {year} (indagine OR "open data" OR rilevazione OR monitoraggio)'
-                ])
-                queries.extend(
-                    f'site:{domain} "{month} {year}" (dati OR statistiche OR rapporto OR osservatorio OR indagine)'
-                    for month in MONTHS_IT
-                )
-
-            # Network I/O is the bottleneck. Search queries are independent, so run a
-            # small bounded pool instead of waiting for every request sequentially.
+            # PRIMARY discovery: crawl the source's own sitemap/robots archive.
+            # This is more authoritative and much less fragile than depending on
+            # search-engine HTML from a CI runner.
             candidates={}
-            with ThreadPoolExecutor(max_workers=8) as pool:
-                future_searches=[pool.submit(web_search,q,12) for q in queries]
-                for fut in as_completed(future_searches):
+            with ThreadPoolExecutor(max_workers=min(2,max(1,len(domains[:2])))) as pool:
+                sitemap_jobs={
+                    pool.submit(sitemap_candidates,domain,year,220):domain
+                    for domain in domains[:2]
+                }
+                for fut in as_completed(sitemap_jobs):
                     try:
                         results=fut.result()
                     except Exception:
@@ -305,15 +298,34 @@ def main():
                         if url and url not in candidates:
                             candidates[url]=title
 
-            # Add candidates published in official sitemaps. This prevents
-            # Google/Bing throttling from making an entire source look empty.
-            for domain in domains[:2]:
-                try:
-                    for title,url in sitemap_candidates(domain,year,180):
-                        if url not in candidates:
-                            candidates[url]=title
-                except Exception:
-                    pass
+            # FALLBACK discovery: retain Google + Bing, as requested, but only
+            # when the official archive produced too few candidates. This avoids
+            # dozens of slow/blocked engine requests for sources whose own site
+            # already exposes the publications.
+            if len(candidates) < 24:
+                queries=[]
+                for domain in domains[:2]:
+                    queries.extend([
+                        f'site:{domain} {year} (dati OR statistiche OR rapporto OR osservatorio OR indagine)',
+                        f'site:{domain} {year} (mercato OR monitoraggio OR rilevazione OR "open data")'
+                    ])
+                    # Monthly queries improve recall for sites without useful
+                    # sitemaps, while the six-second provider timeout bounds cost.
+                    queries.extend(
+                        f'site:{domain} "{month} {year}" (dati OR statistiche OR rapporto OR osservatorio OR indagine)'
+                        for month in MONTHS_IT
+                    )
+
+                with ThreadPoolExecutor(max_workers=8) as pool:
+                    future_searches=[pool.submit(web_search,q,12) for q in queries]
+                    for fut in as_completed(future_searches):
+                        try:
+                            results=fut.result()
+                        except Exception:
+                            results=[]
+                        for title,url in results:
+                            if url and url not in candidates:
+                                candidates[url]=title
 
             year_found=0
             # Page verification is independent too; keep the same conservative pool.
