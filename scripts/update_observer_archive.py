@@ -282,119 +282,118 @@ def safe_summary(entity,title,date,numbers):
         base+=f"La pagina contiene valori e indicatori numerici (tra cui {values}); "
     return base+"ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato."
 
+def process_source(src, now):
+    name=src["name"]
+    domains=src.get("domains",[])
+    local_articles={}
+    stats={"2026":0}
+
+    for year in ARCHIVE_YEARS:
+        candidates={}
+
+        # 1) Official source discovery first.
+        with ThreadPoolExecutor(max_workers=min(2,max(1,len(domains[:2])))) as pool:
+            jobs={pool.submit(sitemap_candidates,domain,year,220):domain for domain in domains[:2]}
+            for fut in as_completed(jobs):
+                try: results=fut.result()
+                except Exception: results=[]
+                for title,url in results:
+                    if url and url not in candidates:
+                        candidates[url]=title
+
+        # 2) Search engines are fallback only.
+        if len(candidates) < 24:
+            queries=[]
+            for domain in domains[:2]:
+                queries.extend([
+                    f'site:{domain} {year} (dati OR statistiche OR rapporto OR osservatorio OR indagine)',
+                    f'site:{domain} {year} (mercato OR monitoraggio OR rilevazione OR "open data")',
+                    f'site:{domain} {year} (comunicato OR pubblicazione OR bollettino OR analisi)'
+                ])
+            with ThreadPoolExecutor(max_workers=min(6,max(1,len(queries)))) as pool:
+                jobs=[pool.submit(web_search,q,12) for q in queries]
+                for fut in as_completed(jobs):
+                    try: results=fut.result()
+                    except Exception: results=[]
+                    for title,url in results:
+                        if url and url not in candidates:
+                            candidates[url]=title
+
+        year_found=0
+        # Bound verification work per source while keeping generous recall.
+        items=list(candidates.items())[:260]
+        with ThreadPoolExecutor(max_workers=6) as pool:
+            future_pages={
+                pool.submit(page_info,url,domains):(title,url)
+                for url,title in items
+            }
+            for fut in as_completed(future_pages):
+                title,url=future_pages[fut]
+                try: info=fut.result()
+                except Exception: info=None
+                if not info or info["date"].year!=year: continue
+                if info["date"]>now: continue
+
+                aid=stable_id(name,info["url"])
+                local_articles[aid]={
+                    "id":aid,
+                    "published_at":info["date"].isoformat().replace("+00:00","Z"),
+                    "observer":name,
+                    "topic":topic_of(info["title"]),
+                    "pulse_score":0,
+                    "patterns":[],
+                    "public_source":{
+                        "url":info["url"],"domain":info["domain"],
+                        "role":"primary_statistical_source",
+                        "verification_method":"official_domain_backfill"
+                    },
+                    "headline":info["title"],
+                    "summary":safe_summary(name,info["title"],info["date"],info["numbers"]),
+                    "territories":["italia"],
+                    "editorial_status":"source_publication_verified",
+                    "publication_status":"published"
+                }
+                year_found+=1
+                if year_found>=MAX_RESULTS_PER_SOURCE_YEAR:
+                    break
+
+        stats[str(year)]=year_found
+
+    return name,stats,local_articles
+
 def main():
     cfg=json.loads(REGISTRY.read_text())
     current=json.loads(OUT.read_text()) if OUT.exists() else {"articles":[]}
-    # From now on OSSERVATORI is a live archive starting on 1 January 2026.
-    # Purge legacy 2025 material so every entity follows the same rule.
     by_id={
         a["id"]:a for a in current.get("articles",[])
         if a.get("id") and str(a.get("published_at","")).startswith("2026-")
     }
     now=datetime.now(timezone.utc)
+    sources=cfg.get("sources",[])
     source_stats={}
-    for src in cfg.get("sources",[]):
-        name=src["name"]; domains=src.get("domains",[])
-        source_stats[name]={"2026":0}
 
-        for year in ARCHIVE_YEARS:
-            # PRIMARY discovery: crawl the source's own sitemap/robots archive.
-            # This is more authoritative and much less fragile than depending on
-            # search-engine HTML from a CI runner.
-            candidates={}
-            with ThreadPoolExecutor(max_workers=min(2,max(1,len(domains[:2])))) as pool:
-                sitemap_jobs={
-                    pool.submit(sitemap_candidates,domain,year,220):domain
-                    for domain in domains[:2]
-                }
-                for fut in as_completed(sitemap_jobs):
-                    try:
-                        results=fut.result()
-                    except Exception:
-                        results=[]
-                    for title,url in results:
-                        if url and url not in candidates:
-                            candidates[url]=title
-
-            # FALLBACK discovery: retain Google + Bing, as requested, but only
-            # when the official archive produced too few candidates. This avoids
-            # dozens of slow/blocked engine requests for sources whose own site
-            # already exposes the publications.
-            if len(candidates) < 24:
-                queries=[]
-                for domain in domains[:2]:
-                    queries.extend([
-                        f'site:{domain} {year} (dati OR statistiche OR rapporto OR osservatorio OR indagine)',
-                        f'site:{domain} {year} (mercato OR monitoraggio OR rilevazione OR "open data")',
-                        f'site:{domain} {year} (comunicato OR pubblicazione OR bollettino OR analisi)'
-                    ])
-
-                with ThreadPoolExecutor(max_workers=8) as pool:
-                    future_searches=[pool.submit(web_search,q,12) for q in queries]
-                    for fut in as_completed(future_searches):
-                        try:
-                            results=fut.result()
-                        except Exception:
-                            results=[]
-                        for title,url in results:
-                            if url and url not in candidates:
-                                candidates[url]=title
-
-            year_found=0
-            # Page verification is independent too; keep the same conservative pool.
-            with ThreadPoolExecutor(max_workers=8) as pool:
-                future_pages={
-                    pool.submit(page_info,url,domains):(title,url)
-                    for url,title in candidates.items()
-                }
-                for fut in as_completed(future_pages):
-                    title,url=future_pages[fut]
-                    try:
-                        info=fut.result()
-                    except Exception:
-                        info=None
-                    if not info or info["date"].year!=year: continue
-                    if info["date"]>now: continue
-                    # page_info() already requires statistical language and numeric
-                    # content on the official page. Do not reject valid publications
-                    # merely because the headline itself lacks words such as "dati"
-                    # or "rapporto" (e.g. "Banche e moneta").
-                    aid=stable_id(name,info["url"])
-                    if aid not in by_id:
-                        topic=topic_of(info["title"])
-                        by_id[aid]={
-                            "id":aid,
-                            "published_at":info["date"].isoformat().replace("+00:00","Z"),
-                            "observer":name,
-                            "topic":topic,
-                            "pulse_score":0,
-                            "patterns":[],
-                            "public_source":{
-                                "url":info["url"],"domain":info["domain"],
-                                "role":"primary_statistical_source",
-                                "verification_method":"official_domain_backfill"
-                            },
-                            "headline":info["title"],
-                            "summary":safe_summary(name,info["title"],info["date"],info["numbers"]),
-                            "territories":["italia"],
-                            "editorial_status":"source_publication_verified",
-                            "publication_status":"published"
-                        }
-                    year_found+=1
-                    if year_found>=MAX_RESULTS_PER_SOURCE_YEAR:
-                        for pending in future_pages:
-                            pending.cancel()
-                        break
-
-            source_stats[name][str(year)]=year_found
-        print(f"{name}: 2026={source_stats[name]['2026']}")
+    # Process independent institutions in parallel. A slow sitemap can no longer
+    # hold up the other 62 sources.
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        futures={pool.submit(process_source,src,now):src.get("name","") for src in sources}
+        for fut in as_completed(futures):
+            name=futures[fut]
+            try:
+                name,stats,articles=fut.result()
+            except Exception as exc:
+                print(f"{name}: ERROR {exc}", flush=True)
+                source_stats[name]={"2026":0}
+                continue
+            source_stats[name]=stats
+            by_id.update(articles)
+            print(f"{name}: 2026={stats.get('2026',0)}", flush=True)
 
     arts=sorted(by_id.values(),key=lambda a:a.get("published_at",""),reverse=True)
     OUT.write_text(json.dumps({
         "generated_at":now.isoformat(),
         "min_year":2026,
         "max_year":2026,
-        "source_count":len(cfg.get("sources",[])),
+        "source_count":len(sources),
         "source_stats":source_stats,
         "articles":arts
     },ensure_ascii=False,indent=2)+"\n")
