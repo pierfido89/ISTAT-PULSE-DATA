@@ -245,13 +245,18 @@ def site_crawl_candidates(domain,year=2026,limit=140,extra_roots=None):
         except Exception:
             return []
 
+    explicit_roots=set(extra_roots or [])
     with ThreadPoolExecutor(max_workers=8) as pool:
-        for rows in pool.map(read_links,roots):
+        root_rows=list(pool.map(read_links,roots))
+        for root_url,rows in zip(roots,root_rows):
+            is_explicit=root_url in explicit_roots
             for title,url in rows:
                 low=(title+" "+url).lower()
-                if str(year) in low or any(t in low for t in STAT_TERMS) or any(t in low for t in listing_terms):
+                # A source-specific entrypoint is curated by us: every internal
+                # editorial link is a candidate. Generic guessed roots remain filtered.
+                if is_explicit or str(year) in low or any(t in low for t in STAT_TERMS) or any(t in low for t in listing_terms):
                     out.append((title,url))
-                if any(t in low for t in listing_terms) and len(listing_pages)<36:
+                if (is_explicit or any(t in low for t in listing_terms)) and len(listing_pages)<60:
                     listing_pages.append(url)
 
     # Follow likely archive/listing pages one additional level.
@@ -383,10 +388,23 @@ def page_info(url,domains):
                     date=datetime(y,mo,d,tzinfo=timezone.utc)
                 except: pass
         if not date:
-            # Italian textual dates, e.g. 26 marzo 2026
-            months={"gennaio":1,"febbraio":2,"marzo":3,"aprile":4,"maggio":5,"giugno":6,
-                    "luglio":7,"agosto":8,"settembre":9,"ottobre":10,"novembre":11,"dicembre":12}
-            m=re.search(r"\b([0-3]?\d)\s+("+"|".join(months)+r")\s+(20\d{2})\b",low[:16000])
+            # Italian/English textual dates, including abbreviated CMS formats:
+            # 26 marzo 2026, 01 ott 2026, 14 Sept 2026.
+            months={
+                "gennaio":1,"gen":1,"january":1,"jan":1,
+                "febbraio":2,"feb":2,"february":2,
+                "marzo":3,"mar":3,"march":3,
+                "aprile":4,"apr":4,"april":4,
+                "maggio":5,"mag":5,"may":5,
+                "giugno":6,"giu":6,"june":6,"jun":6,
+                "luglio":7,"lug":7,"july":7,"jul":7,
+                "agosto":8,"ago":8,"august":8,"aug":8,
+                "settembre":9,"set":9,"sett":9,"september":9,"sep":9,"sept":9,
+                "ottobre":10,"ott":10,"october":10,"oct":10,
+                "novembre":11,"nov":11,"november":11,
+                "dicembre":12,"dic":12,"december":12,"dec":12
+            }
+            m=re.search(r"\b([0-3]?\d)\s+("+"|".join(sorted(months,key=len,reverse=True))+r")\.?\s+(20\d{2})\b",low[:20000])
             if m:
                 try: date=datetime(int(m.group(3)),months[m.group(2)],int(m.group(1)),tzinfo=timezone.utc)
                 except: pass
@@ -483,7 +501,7 @@ def process_source(src, now):
 
         year_found=0
         # Bound verification work per source while keeping generous recall.
-        items=list(candidates.items())[:140]
+        items=list(candidates.items())[:220]
         with ThreadPoolExecutor(max_workers=6) as pool:
             future_pages={
                 pool.submit(page_info,url,domains):(title,url)
