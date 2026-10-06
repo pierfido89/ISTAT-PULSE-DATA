@@ -51,9 +51,16 @@
       ],
       "entrypoints": [
         "https://www.cna.it/categoria/comunicati/",
-        "https://www.cna.it/categoria/notizie/"
+        "https://www.cna.it/categoria/notizie/",
+        "https://www.cna.it/categoria/area-stampa/download/"
       ],
-      "adapter": "listing_first"
+      "adapter": "wordpress_rest",
+      "feed_urls": [
+        "https://www.cna.it/feed/"
+      ],
+      "api_urls": [
+        "https://www.cna.it/wp-json/wp/v2/posts"
+      ]
     },
     {
       "name": "CNR",
@@ -69,8 +76,13 @@
         "open data"
       ],
       "entrypoints": [
-        "https://www.cnr.it/it/news",
-        "https://www.cnr.it/it/comunicati-stampa"
+        "https://www.cnr.it/it/news?page=1",
+        "https://www.cnr.it/it/comunicati-stampa?page=1",
+        "https://www.cnr.it/it/note-stampa"
+      ],
+      "adapter": "rss_plus_listing",
+      "feed_urls": [
+        "https://www.cnr.it/it/news/rss"
       ]
     },
     {
@@ -183,7 +195,8 @@
     {
       "name": "SVIMEZ",
       "domains": [
-        "svimez.info"
+        "svimez.info",
+        "lnx.svimez.info"
       ],
       "query_terms": [
         "dati",
@@ -193,9 +206,15 @@
         "indagine",
         "open data"
       ],
-      "adapter": "wordpress_listing",
+      "adapter": "wordpress_rest",
       "entrypoints": [
         "https://lnx.svimez.info/svimez/"
+      ],
+      "feed_urls": [
+        "https://lnx.svimez.info/svimez/feed/"
+      ],
+      "api_urls": [
+        "https://lnx.svimez.info/svimez/wp-json/wp/v2/posts"
       ]
     },
     {
@@ -427,7 +446,7 @@
       "entrypoints": [
         "https://www.consob.it/web/area-pubblica/bollettino-statistico"
       ],
-      "adapter": "publication_listing"
+      "adapter": "month_publication"
     },
     {
       "name": "Copernicus",
@@ -565,6 +584,11 @@
         "osservatorio",
         "indagine",
         "open data"
+      ],
+      "adapter": "dated_listing",
+      "entrypoints": [
+        "https://www.enit.it/it/comunicati-stampa",
+        "https://www.enit.it/it/"
       ]
     },
     {
@@ -622,7 +646,7 @@
         "indagine",
         "open data"
       ],
-      "adapter": "gse_listing",
+      "adapter": "dated_listing",
       "entrypoints": [
         "https://www.gse.it/media/comunicati",
         "https://www.gse.it/dati-e-scenari/rapporti",
@@ -679,7 +703,8 @@
         "https://www.inps.it/it/it/inps-comunica/notizie.html",
         "https://www.inps.it/it/it/dati-e-bilanci/osservatori-statistici-e-altre-statistiche/calendario-osservatori-statistici.html"
       ],
-      "adapter": "calendar_plus_news"
+      "adapter": "rss_directory_plus_calendar",
+      "rss_directory": "https://www.inps.it/it/it/rss.html"
     },
     {
       "name": "INVALSI",
@@ -824,8 +849,10 @@
         "open data"
       ],
       "entrypoints": [
-        "https://www.salute.gov.it/new/it/sezione/comunicati-stampa/"
-      ]
+        "https://www.salute.gov.it/new/it/sezione/comunicati-stampa/",
+        "https://www.salute.gov.it/new/it/sezione/notizie/"
+      ],
+      "adapter": "dated_listing"
     },
     {
       "name": "Ministero dell'Istruzione e del Merito",
@@ -843,8 +870,7 @@
       ],
       "adapter": "liferay_listing",
       "entrypoints": [
-        "https://www.mim.gov.it/web/guest/comunicati",
-        "https://www.mim.gov.it/it"
+        "https://www.mim.gov.it/web/guest/comunicati"
       ]
     },
     {
@@ -880,9 +906,10 @@
         "open data"
       ],
       "entrypoints": [
-        "https://www.mit.gov.it/comunicazione/news"
+        "https://mit.gov.it/index.php/comunicazione/news",
+        "https://mit.gov.it/comunicazione/news"
       ],
-      "adapter": "drupal_listing"
+      "adapter": "dated_listing"
     },
     {
       "name": "OpenCoesione",
@@ -897,11 +924,9 @@
         "indagine",
         "open data"
       ],
-      "adapter": "django_listing",
+      "adapter": "dataset_updated_at",
       "entrypoints": [
-        "https://opencoesione.gov.it/it/",
-        "https://opencoesione.gov.it/it/opendata/",
-        "https://opencoesione.gov.it/it/opportunita_2021_2027/"
+        "https://opencoesione.gov.it/it/opendata/"
       ]
     },
     {
@@ -953,10 +978,15 @@
         "indagine",
         "open data"
       ],
-      "adapter": "wordpress_listing",
+      "adapter": "wordpress_rest",
       "entrypoints": [
-        "https://sinab.it/bionovita/",
-        "https://sinab.it/"
+        "https://sinab.it/bionovita/"
+      ],
+      "feed_urls": [
+        "https://sinab.it/feed/"
+      ],
+      "api_urls": [
+        "https://sinab.it/wp-json/wp/v2/posts"
       ]
     },
     {
