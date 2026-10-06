@@ -388,6 +388,74 @@ def rss_directory_candidates(directory_url,domains,year=2026,limit=160):
         return []
 
 
+
+def sequential_listing_candidates(entrypoints,domains,year=2026,limit=360):
+    """Parse institutional listings where date and headline are adjacent siblings,
+    not wrapped in the same card/container. Follows common ?page=N pagination."""
+    out=[]; seen=set(); queue=list(entrypoints or []); visited=set()
+    months={"gennaio":1,"febbraio":2,"marzo":3,"aprile":4,"maggio":5,"giugno":6,
+            "luglio":7,"agosto":8,"settembre":9,"ottobre":10,"novembre":11,"dicembre":12,
+            "gen":1,"feb":2,"mar":3,"apr":4,"mag":5,"giu":6,"lug":7,"ago":8,"set":9,
+            "sett":9,"ott":10,"nov":11,"dic":12,
+            "january":1,"february":2,"march":3,"april":4,"may":5,"june":6,"july":7,
+            "august":8,"september":9,"october":10,"november":11,"december":12,
+            "jan":1,"jun":6,"jul":7,"aug":8,"sep":9,"sept":9,"oct":10,"dec":12}
+    keys="|".join(sorted(months,key=len,reverse=True))
+    date_rx=re.compile(
+        r"\b(?:([0-3]?\d)[-/]([01]?\d)[-/](20\d{2}|\d{2})|"
+        r"([0-3]?\d)\s+("+keys+r")\.?\s+(20\d{2}))\b",re.I)
+
+    def parse_date(txt):
+        m=date_rx.search(txt or "")
+        if not m:return None
+        try:
+            if m.group(1):
+                d=int(m.group(1)); mo=int(m.group(2)); y=int(m.group(3)); y=y+2000 if y<100 else y
+            else:
+                d=int(m.group(4)); mo=months[m.group(5).lower()]; y=int(m.group(6))
+            return datetime(y,mo,d,tzinfo=timezone.utc)
+        except:return None
+
+    while queue and len(visited)<40 and len(out)<limit:
+        url=queue.pop(0)
+        if url in visited: continue
+        visited.add(url)
+        try:
+            raw,final,ct=fetch(url,timeout=8,max_bytes=2200000)
+            if "html" not in ct.lower(): continue
+            soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
+            current_date=None
+            steps_since_date=0
+            for el in soup.find_all(["time","span","p","div","h2","h3","a"]):
+                txt=re.sub(r"\s+"," ",el.get_text(" ",strip=True)).strip()
+                if not txt: continue
+                d=parse_date(txt)
+                if d and d.year==year:
+                    current_date=d; steps_since_date=0
+                    continue
+                if current_date:
+                    steps_since_date+=1
+                    a=el if el.name=="a" and el.get("href") else el.find("a",href=True)
+                    if a:
+                        title=re.sub(r"\s+"," ",a.get_text(" ",strip=True)).strip()
+                        href=urllib.parse.urljoin(final,a.get("href","")).split("#",1)[0]
+                        if len(title)>=8 and host_allowed(canonical_host(href),domains) and href not in seen:
+                            seen.add(href); out.append((title,href,current_date))
+                            current_date=None
+                            if len(out)>=limit: break
+                    if steps_since_date>12: current_date=None
+
+            # common pagination links
+            for a in soup.find_all("a",href=True):
+                label=(a.get_text(" ",strip=True)+" "+a.get("href","")).lower()
+                if any(k in label for k in ("next","successiv","page=","?page=","/page/")):
+                    href=urllib.parse.urljoin(final,a["href"]).split("#",1)[0]
+                    if host_allowed(canonical_host(href),domains) and href not in visited and href not in queue:
+                        queue.append(href)
+        except Exception:
+            continue
+    return out
+
 def listing_dated_candidates(entrypoints,domains,year=2026,limit=300):
     out=[]; seen=set()
     for root_url in entrypoints or []:
@@ -584,6 +652,9 @@ def process_source(src, now):
         for title,url,pub_date in listing_dated_candidates(entrypoints,domains,year,300):
             candidates.setdefault(url,title)
             listing_dates[url]=(title,pub_date)
+        for title,url,pub_date in sequential_listing_candidates(entrypoints,domains,year,360):
+            candidates.setdefault(url,title)
+            listing_dates.setdefault(url,(title,pub_date))
 
         for title,url,pub_date in wordpress_rest_candidates(src.get("api_urls",[]),domains,year,300):
             candidates.setdefault(url,title)
