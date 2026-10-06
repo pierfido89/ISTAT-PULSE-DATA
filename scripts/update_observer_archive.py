@@ -10,7 +10,7 @@ ROOT=Path("data/news")
 REGISTRY=Path("data/observer_sources.json")
 OUT=ROOT/"observer_articles.json"
 UA="Mozilla/5.0 ISTAT-PULSE-ObserverArchive/1.0"
-ARCHIVE_YEARS=(2025,2026)
+ARCHIVE_YEARS=(2026,)
 MONTHS_IT=("gennaio","febbraio","marzo","aprile","maggio","giugno",
            "luglio","agosto","settembre","ottobre","novembre","dicembre")
 MAX_RESULTS_PER_SOURCE_YEAR=120
@@ -125,13 +125,18 @@ def safe_summary(entity,title,date,numbers):
 def main():
     cfg=json.loads(REGISTRY.read_text())
     current=json.loads(OUT.read_text()) if OUT.exists() else {"articles":[]}
-    by_id={a["id"]:a for a in current.get("articles",[]) if a.get("id")}
+    # From now on OSSERVATORI is a live archive starting on 1 January 2026.
+    # Purge legacy 2025 material so every entity follows the same rule.
+    by_id={
+        a["id"]:a for a in current.get("articles",[])
+        if a.get("id") and str(a.get("published_at","")).startswith("2026-")
+    }
     now=datetime.now(timezone.utc)
     source_stats={}
     for src in cfg.get("sources",[]):
         name=src["name"]; domains=src.get("domains",[])
         seen=set()
-        source_stats[name]={str(y):0 for y in ARCHIVE_YEARS}
+        source_stats[name]={"2026":0}
         for year in ARCHIVE_YEARS:
             year_found=0
             for domain in domains[:2]:
@@ -178,12 +183,12 @@ def main():
                     if year_found>=MAX_RESULTS_PER_SOURCE_YEAR: break
                 if year_found>=MAX_RESULTS_PER_SOURCE_YEAR: break
             source_stats[name][str(year)]=year_found
-        print(f"{name}: 2025={source_stats[name]['2025']} 2026={source_stats[name]['2026']}")
+        print(f"{name}: 2026={source_stats[name]['2026']}")
 
     arts=sorted(by_id.values(),key=lambda a:a.get("published_at",""),reverse=True)
     OUT.write_text(json.dumps({
         "generated_at":now.isoformat(),
-        "min_year":2025,
+        "min_year":2026,
         "max_year":2026,
         "source_count":len(cfg.get("sources",[])),
         "source_stats":source_stats,
