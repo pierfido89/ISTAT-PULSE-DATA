@@ -448,7 +448,7 @@ def sequential_listing_candidates(entrypoints,domains,year=2026,limit=360):
             # common pagination links
             for a in soup.find_all("a",href=True):
                 label=(a.get_text(" ",strip=True)+" "+a.get("href","")).lower()
-                if any(k in label for k in ("next","successiv","page=","?page=","/page/")):
+                if any(k in label for k in ("next","successiv","page=","?page=","/page/","_cur=","p_p_id=")):
                     href=urllib.parse.urljoin(final,a["href"]).split("#",1)[0]
                     if host_allowed(canonical_host(href),domains) and href not in visited and href not in queue:
                         queue.append(href)
@@ -512,6 +512,40 @@ def listing_dated_candidates(entrypoints,domains,year=2026,limit=300):
                 if date and date.year==year and href not in seen:
                     seen.add(href); out.append((title,href,date))
                     if len(out)>=limit:return out
+        except Exception:
+            continue
+    return out
+
+
+def dataset_updated_candidates(entrypoints,domains,year=2026,limit=220):
+    """Discover dataset detail pages and use their declared 'Ultimo aggiornamento' date."""
+    links=[]; out=[]; seen=set()
+    for root_url in entrypoints or []:
+        try:
+            raw,final,ct=fetch(root_url,timeout=8,max_bytes=2200000)
+            if "html" not in ct.lower(): continue
+            soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
+            for a in soup.find_all("a",href=True):
+                href=urllib.parse.urljoin(final,a["href"]).split("#",1)[0]
+                if host_allowed(canonical_host(href),domains) and "/dataset/" in href and href not in links:
+                    links.append(href)
+        except Exception:
+            continue
+    for url in links[:limit*2]:
+        try:
+            raw,final,ct=fetch(url,timeout=8,max_bytes=1800000)
+            if "html" not in ct.lower(): continue
+            soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
+            text=re.sub(r"\s+"," ",soup.get_text(" ",strip=True))
+            m=re.search(r"Ultimo\s+aggiornamento\s*:\s*([0-3]?\d)[-/]([01]?\d)[-/](20\d{2})",text,re.I)
+            if not m: continue
+            d,mo,y=map(int,m.groups())
+            if y!=year: continue
+            h1=soup.find("h1")
+            title=h1.get_text(" ",strip=True) if h1 else (soup.title.get_text(" ",strip=True) if soup.title else url)
+            if final not in seen:
+                seen.add(final); out.append((re.sub(r"\s+"," ",title),final,datetime(y,mo,d,tzinfo=timezone.utc)))
+                if len(out)>=limit: break
         except Exception:
             continue
     return out
@@ -659,6 +693,11 @@ def process_source(src, now):
         for title,url,pub_date in wordpress_rest_candidates(src.get("api_urls",[]),domains,year,300):
             candidates.setdefault(url,title)
             listing_dates[url]=(title,pub_date)
+
+        if src.get("adapter")=="dataset_updated_at":
+            for title,url,pub_date in dataset_updated_candidates(entrypoints,domains,year,260):
+                candidates.setdefault(url,title)
+                listing_dates[url]=(title,pub_date)
 
         for title,url,pub_raw in rss_directory_candidates(src.get("rss_directory",""),domains,year,200) if src.get("rss_directory") else []:
             candidates.setdefault(url,title)
