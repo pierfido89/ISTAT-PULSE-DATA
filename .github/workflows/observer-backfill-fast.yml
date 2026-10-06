@@ -3,6 +3,10 @@ name: Fast Observer Backfill
 permissions:
   contents: write
 
+concurrency:
+  group: pulse-observer-fast-${{ github.ref }}
+  cancel-in-progress: true
+
 on:
   push:
     branches: [ feat/news-engine ]
@@ -19,6 +23,8 @@ jobs:
           python-version: '3.12'
       - run: python -m pip install beautifulsoup4 pypdf
       - run: python scripts/update_observer_archive.py
+        env:
+          PYTHONUNBUFFERED: '1'
       - run: test -s data/news/observer_articles.json
       - name: Commit observer archive
         run: |
