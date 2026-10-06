@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T18:59:57.207169+00:00",
+  "generated_at": "2026-10-06T19:22:41.725051+00:00",
   "min_year": 2026,
   "max_year": 2026,
   "source_count": 65,
@@ -11,8 +11,8 @@
     },
     "CGIA Mestre": {
       "2026": 55,
-      "scan_2026": 55,
-      "connector_status": "ok"
+      "scan_2026": 0,
+      "connector_status": "degraded_preserved"
     },
     "CNA": {
       "2026": 125,
@@ -51,7 +51,7 @@
     },
     "Legambiente": {
       "2026": 74,
-      "scan_2026": 65,
+      "scan_2026": 68,
       "connector_status": "ok"
     },
     "Nomisma": {
@@ -76,7 +76,7 @@
     },
     "Aeronautica Militare": {
       "2026": 85,
-      "scan_2026": 57,
+      "scan_2026": 46,
       "connector_status": "ok"
     },
     "Agenzia delle Dogane e dei Monopoli": {
@@ -101,12 +101,12 @@
     },
     "AIFA · OsMed": {
       "2026": 94,
-      "scan_2026": 64,
-      "connector_status": "ok"
+      "scan_2026": 0,
+      "connector_status": "degraded_preserved"
     },
     "ANAC": {
       "2026": 145,
-      "scan_2026": 105,
+      "scan_2026": 24,
       "connector_status": "ok"
     },
     "ANFIA": {
@@ -175,18 +175,18 @@
       "connector_status": "ok"
     },
     "ENEA": {
-      "2026": 76,
-      "scan_2026": 67,
+      "2026": 78,
+      "scan_2026": 58,
       "connector_status": "ok"
     },
     "ENIT": {
       "2026": 71,
-      "scan_2026": 70,
-      "connector_status": "ok"
+      "scan_2026": 0,
+      "connector_status": "degraded_preserved"
     },
     "Eurostat": {
       "2026": 5,
-      "scan_2026": 6,
+      "scan_2026": 5,
       "connector_status": "ok"
     },
     "FAO": {
@@ -221,12 +221,12 @@
     },
     "INVALSI": {
       "2026": 40,
-      "scan_2026": 38,
+      "scan_2026": 39,
       "connector_status": "ok"
     },
     "ISPRA / SNPA": {
       "2026": 54,
-      "scan_2026": 39,
+      "scan_2026": 40,
       "connector_status": "ok"
     },
     "ISMEA": {
@@ -310,8 +310,8 @@
       "connector_status": "ok"
     },
     "Unioncamere / InfoCamere": {
-      "2026": 52,
-      "scan_2026": 46,
+      "2026": 58,
+      "scan_2026": 47,
       "connector_status": "ok"
     },
     "UNRAE": {
@@ -2025,7 +2025,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "WD01 - Rome Water Dialogue - Technical Session on Strengthening governance of water tenure through innovation and inclusive dialogue",
-      "summary": "FAO ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 791, 800, 10, 6, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "FAO ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 789, 798, 10, 6, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -2780,7 +2780,7 @@
         "role": "primary_institutional_source",
         "verification_method": "official_listing_date"
       },
-      "headline": "Whistleblowing, violata la riservatezza dell’identità del segnalante: sanzioni di 15.000 euro",
+      "headline": "Leggi di più Whistleblowing, violata la riservatezza dell’identità del segnalante: sanzioni di 15.000 euro →",
       "summary": "ANAC ha pubblicato questo aggiornamento quantitativo il 06/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
@@ -3622,6 +3622,69 @@
       },
       "headline": "Seduta CIPESS del 6 ottobre 2026: Esito e Comunicato stampa",
       "summary": "DIPE · OpenCUP ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 6, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-DE6AD53A0BDDE7025F",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Legambiente",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.legambiente.it/area-tematica/agroecologia",
+        "domain": "legambiente.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Agroecologia",
+      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 06/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-EFE7F1F50793F5E01E",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Legambiente",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.legambiente.it/area-tematica/illegalita-ambientale",
+        "domain": "legambiente.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Illegalità ambientale",
+      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 06/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-B5284DBAD9CD4DC8A8",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Legambiente",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.legambiente.it/area-tematica/rigenerazione-urbana",
+        "domain": "legambiente.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Rigenerazione urbana",
+      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 06/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -5469,7 +5532,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "RICERCA SCIENTIFICA | L’INGV presenta i risultati dei suoi Progetti dipartimentali su terremoti, vulcani e ambiente",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 05/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 24, 2025, 18); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -5763,7 +5826,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "SETTIMANA DEL PIANETA TERRA | I Geoeventi dell’INGV per conoscere insieme la nostra casa comune",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 01, 2025, 5); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 05/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -5889,7 +5952,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "INGV | Precisazioni in merito allo studio sui Campi Flegrei recentemente pubblicato su Solid Earth",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 05/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 13, 2025, 40); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -7192,69 +7255,6 @@
       },
       "headline": "Caro energia, stangata da 16,5 miliardi: quasi 5 solo a settembre",
       "summary": "CNA ha pubblicato questo aggiornamento quantitativo il 03/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-DE6AD53A0BDDE7025F",
-      "published_at": "2026-10-02T00:00:00Z",
-      "observer": "Legambiente",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.legambiente.it/area-tematica/agroecologia",
-        "domain": "legambiente.it",
-        "role": "primary_institutional_source",
-        "verification_method": "official_listing_date"
-      },
-      "headline": "Agroecologia",
-      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 02/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-EFE7F1F50793F5E01E",
-      "published_at": "2026-10-02T00:00:00Z",
-      "observer": "Legambiente",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.legambiente.it/area-tematica/illegalita-ambientale",
-        "domain": "legambiente.it",
-        "role": "primary_institutional_source",
-        "verification_method": "official_listing_date"
-      },
-      "headline": "Illegalità ambientale",
-      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 02/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-B5284DBAD9CD4DC8A8",
-      "published_at": "2026-10-02T00:00:00Z",
-      "observer": "Legambiente",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.legambiente.it/area-tematica/rigenerazione-urbana",
-        "domain": "legambiente.it",
-        "role": "primary_institutional_source",
-        "verification_method": "official_listing_date"
-      },
-      "headline": "Rigenerazione urbana",
-      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 02/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -13646,6 +13646,27 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-154D20149A89F4F1DE",
+      "published_at": "2026-10-01T00:00:00Z",
+      "observer": "Legambiente",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.legambiente.it/tag/ecomafia/",
+        "domain": "legambiente.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "#Ecomafia",
+      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 01/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-2922F20B91CBA07C8F",
       "published_at": "2026-09-30T00:00:00Z",
       "observer": "IVASS",
@@ -17825,27 +17846,6 @@
       "publication_status": "published"
     },
     {
-      "id": "OBS-D294BBF147CF5D9C1D",
-      "published_at": "2026-09-28T00:00:00Z",
-      "observer": "Legambiente",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.legambiente.it/area-tematica/cittadinanza-attiva",
-        "domain": "legambiente.it",
-        "role": "primary_institutional_source",
-        "verification_method": "official_listing_date"
-      },
-      "headline": "Cittadinanza attiva",
-      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 28/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
       "id": "OBS-6CE0C0748FAEDE3BA8",
       "published_at": "2026-09-27T00:00:00Z",
       "observer": "ENIT",
@@ -18741,7 +18741,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "TERREMOTI | Tsunami della Kamčatka 2025: la complessità della rottura sismica ne ha limitato l’impatto",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 25/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 25/09/2026. La pagina contiene valori e indicatori numerici (tra cui 2025, 25); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -19265,7 +19265,7 @@
         "role": "primary_institutional_source",
         "verification_method": "official_listing_date"
       },
-      "headline": "Ritorsioni verso il dipendente comunale, sanzione di 10.000 euro al Segretario Generale",
+      "headline": "Leggi di più Ritorsioni verso il dipendente comunale, sanzione di 10.000 euro al Segretario Generale →",
       "summary": "ANAC ha pubblicato questo aggiornamento quantitativo il 24/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
@@ -23991,7 +23991,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "NOTTE EUROPEA DEI RICERCATORI 2026 | Gli appuntamenti dell’INGV per conoscere il nostro pianeta",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 17/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 17/09/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 25); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -25840,6 +25840,27 @@
       },
       "headline": "Navigation",
       "summary": "AIFA · OsMed ha pubblicato questo aggiornamento quantitativo il 15/09/2026. La pagina contiene valori e indicatori numerici (tra cui 19); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-D294BBF147CF5D9C1D",
+      "published_at": "2026-09-14T00:00:00Z",
+      "observer": "Legambiente",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.legambiente.it/area-tematica/cittadinanza-attiva",
+        "domain": "legambiente.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Cittadinanza attiva",
+      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 14/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -30194,6 +30215,27 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-EF4C6648F328BA718D",
+      "published_at": "2026-09-03T00:00:00Z",
+      "observer": "ENEA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.media.enea.it/en/press-releases-and-news/years-archive/year-2026/energy-enea-an-innovative-geothermal-system-for-building-heating-and-cooling.html",
+        "domain": "media.enea.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Energy: ENEA develops an innovative geothermal system for building heating and cooling",
+      "summary": "ENEA ha pubblicato questo aggiornamento quantitativo il 03/09/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 03, 22); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-B91A18D8D18D508557",
       "published_at": "2026-09-02T00:00:00Z",
       "observer": "Fondazione GIMBE",
@@ -30920,7 +30962,7 @@
         "role": "primary_institutional_source",
         "verification_method": "official_listing_date"
       },
-      "headline": "Salta al contenuto",
+      "headline": "Vai al contenuto principale",
       "summary": "ANAC ha pubblicato questo aggiornamento quantitativo il 01/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
@@ -32434,27 +32476,6 @@
       },
       "headline": "RICERCA | INGV e l'Università Nazionale An-Najah insieme per la valutazione del Rischio Tsunami in Palestina",
       "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 28/08/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 28, 2026, 605); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-9B2D92352F899FC88F",
-      "published_at": "2026-08-28T00:00:00Z",
-      "observer": "Legambiente",
-      "topic": "AMBIENTE",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.legambiente.it/tag/crisi-climatica/",
-        "domain": "legambiente.it",
-        "role": "primary_institutional_source",
-        "verification_method": "official_listing_date"
-      },
-      "headline": "#Crisi climatica",
-      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 28/08/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -34499,6 +34520,27 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-9B2D92352F899FC88F",
+      "published_at": "2026-08-07T00:00:00Z",
+      "observer": "Legambiente",
+      "topic": "AMBIENTE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.legambiente.it/tag/crisi-climatica/",
+        "domain": "legambiente.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "#Crisi climatica",
+      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 07/08/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-9DBA15AC3574E2B853",
       "published_at": "2026-08-07T00:00:00Z",
       "observer": "ANAC",
@@ -34786,27 +34828,6 @@
       },
       "headline": "#Agricoltura",
       "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 06/08/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-154D20149A89F4F1DE",
-      "published_at": "2026-08-05T00:00:00Z",
-      "observer": "Legambiente",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.legambiente.it/tag/ecomafia/",
-        "domain": "legambiente.it",
-        "role": "primary_institutional_source",
-        "verification_method": "official_listing_date"
-      },
-      "headline": "#Ecomafia",
-      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 05/08/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -35646,7 +35667,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "CAMPI FLEGREI | Applicata l’Intelligenza Artificiale per sviluppare un catalogo sismico di alta definizione",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 02/08/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 05, 2025, 50.000); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 02/08/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -35709,7 +35730,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "INGV | Roma ospita la conferenza finale del progetto europeo IMPROVE: quattro anni di ricerca per formare la nuova generazione di vulcanologi",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 02/08/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 02/08/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 04, 2025, 2020); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -39059,7 +39080,7 @@
       "id": "OBS-DD41A5BCB7E810ADDC",
       "published_at": "2026-07-17T00:00:00Z",
       "observer": "Legambiente",
-      "topic": "ALTRO",
+      "topic": "LAVORO",
       "pulse_score": 0,
       "patterns": [],
       "public_source": {
@@ -39068,8 +39089,8 @@
         "role": "primary_institutional_source",
         "verification_method": "official_listing_date"
       },
-      "headline": "Chi siamo",
-      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 17/07/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "headline": "Siamo l’associazione che da più tempo in Italia si occupa di ambiente e di inquinamento , la più diffusa, la più conosciuta e sicuramente tra le più amate.",
+      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 17/07/2026. La pagina contiene valori e indicatori numerici (tra cui 46, 18, 472, 100.000); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -41408,6 +41429,27 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-92EB9EFEA95FB02A88",
+      "published_at": "2026-07-02T00:00:00Z",
+      "observer": "ENEA",
+      "topic": "AMBIENTE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.media.enea.it/comunicati-e-news/archivio-anni/anno-2026/energia-geotermia-da-enea-impianto-innovativo-per-la-climatizzazione-degli-edifici.html?sigplus=3362",
+        "domain": "media.enea.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Energia: geotermia, da ENEA impianto innovativo per la climatizzazione degli edifici",
+      "summary": "ENEA ha pubblicato questo aggiornamento quantitativo il 02/07/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 02, 03); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-32C1AAB1F415AB13A4",
       "published_at": "2026-07-01T00:00:00Z",
       "observer": "EEA",
@@ -41673,7 +41715,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "MOSTRA | L’Aquila Capitale italiana della Cultura 2026 ospita la mostra dell’INGV che racconta le Geoscienze attraverso i cinque sensi",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 01/07/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 01/07/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 25); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -44949,7 +44991,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "FORMAZIONE | Al via in Sardegna la Summer School in Prevenzione e Gestione dei Rischi",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 22/06/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 22/06/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 22, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -44992,6 +45034,48 @@
       },
       "headline": "Posti letto PNRR, affitto comprensivo di spese per utenze | Ministero dell'Università e della Ricerca",
       "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 22/06/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 22, 06, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-607EAEDEFEB6206021",
+      "published_at": "2026-06-22T00:00:00Z",
+      "observer": "Unioncamere / InfoCamere",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://infocamere.it/news-landing-page/fuga_talenti.html",
+        "domain": "infocamere.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "La fuga interna: quando i talenti del Sud cercano il Nord",
+      "summary": "Unioncamere / InfoCamere ha pubblicato questo aggiornamento quantitativo il 22/06/2026. La pagina contiene valori e indicatori numerici (tra cui 22, 06, 2026, 200mila, 2012); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-AEF747E6091A527FC9",
+      "published_at": "2026-06-22T00:00:00Z",
+      "observer": "Unioncamere / InfoCamere",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.infocamere.it/news-landing-page/fuga_talenti.html",
+        "domain": "infocamere.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "La fuga interna: quando i talenti del Sud cercano il Nord",
+      "summary": "Unioncamere / InfoCamere ha pubblicato questo aggiornamento quantitativo il 22/06/2026. La pagina contiene valori e indicatori numerici (tra cui 22, 06, 2026, 200mila, 2012); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -45937,6 +46021,48 @@
       },
       "headline": "Archivio Documenti Confindustria",
       "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 15/06/2026. La pagina contiene valori e indicatori numerici (tra cui 135, 2026, 15, 7); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BAA8F6C24B86FFED0C",
+      "published_at": "2026-06-15T00:00:00Z",
+      "observer": "Unioncamere / InfoCamere",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://infocamere.it/news-landing-page/salone_csr_sostenibilita.html",
+        "domain": "infocamere.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "InfoCamere e la sostenibilità concreta: dal digitale ai benefici per il pianeta",
+      "summary": "Unioncamere / InfoCamere ha pubblicato questo aggiornamento quantitativo il 15/06/2026. La pagina contiene valori e indicatori numerici (tra cui 15, 06, 2026, 2025, 24.943); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-EB763475A8A501E8CC",
+      "published_at": "2026-06-15T00:00:00Z",
+      "observer": "Unioncamere / InfoCamere",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.infocamere.it/news-landing-page/salone_csr_sostenibilita.html",
+        "domain": "infocamere.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "InfoCamere e la sostenibilità concreta: dal digitale ai benefici per il pianeta",
+      "summary": "Unioncamere / InfoCamere ha pubblicato questo aggiornamento quantitativo il 15/06/2026. La pagina contiene valori e indicatori numerici (tra cui 15, 06, 2026, 2025, 24.943); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -48695,6 +48821,27 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-66FBDBA5B8FB743616",
+      "published_at": "2026-05-28T00:00:00Z",
+      "observer": "Legambiente",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.legambiente.it/tag/economia-circolare/",
+        "domain": "legambiente.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "#economia circolare",
+      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 28/05/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-1CAE445E3AB8256DD7",
       "published_at": "2026-05-27T00:00:00Z",
       "observer": "Agenzia delle Dogane e dei Monopoli",
@@ -49801,6 +49948,48 @@
       },
       "headline": "Sanzione di 1000 euro alla ex consigliera per non aver comunicato i propri redditi",
       "summary": "ANAC ha pubblicato questo aggiornamento quantitativo il 21/05/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-61C345E8B150CEFBAE",
+      "published_at": "2026-05-21T00:00:00Z",
+      "observer": "Unioncamere / InfoCamere",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://infocamere.it/news-landing-page/InfoCamere_leader_sostenibilita_2026.html",
+        "domain": "infocamere.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "InfoCamere \"Leader della Sostenibilità 2026\": sesto anno consecutivo",
+      "summary": "Unioncamere / InfoCamere ha pubblicato questo aggiornamento quantitativo il 21/05/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 21, 05, 240); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-49E215C5068E8F5F89",
+      "published_at": "2026-05-21T00:00:00Z",
+      "observer": "Unioncamere / InfoCamere",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.infocamere.it/news-landing-page/InfoCamere_leader_sostenibilita_2026.html",
+        "domain": "infocamere.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "InfoCamere \"Leader della Sostenibilità 2026\": sesto anno consecutivo",
+      "summary": "Unioncamere / InfoCamere ha pubblicato questo aggiornamento quantitativo il 21/05/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 21, 05, 240); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -54042,7 +54231,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "Accelerating innovative forest monitoring for communities, climate and sustainable livelihoods",
-      "summary": "FAO ha pubblicato questo aggiornamento quantitativo il 10/04/2026. La pagina contiene valori e indicatori numerici (tra cui 654, 647, 10, 6, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "FAO ha pubblicato questo aggiornamento quantitativo il 10/04/2026. La pagina contiene valori e indicatori numerici (tra cui 656, 649, 10, 6, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -54063,7 +54252,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "GO01 - WFF 2026 Grand Opening",
-      "summary": "FAO ha pubblicato questo aggiornamento quantitativo il 10/04/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 821, 839, 10, 6); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "FAO ha pubblicato questo aggiornamento quantitativo il 10/04/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 819, 837, 10, 6); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -56625,7 +56814,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "EINSTEIN TELESCOPE | L’Italia presenta al Parlamento Europeo il futuro osservatorio di onde gravitazionali",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 25/03/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 2026, 24); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 25/03/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -58032,7 +58221,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "ARCHIVIO DELLA SISMOLOGIA | All’Archivio Centrale dello Stato la presentazione e i primi risultati del Polo Documentario Storico Italiano della Sismologia e Meteorologia",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 10/03/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 10/03/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 10, 2026, 17); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -58327,27 +58516,6 @@
       },
       "headline": "Natura 2000 data - the European network of protected sites",
       "summary": "EEA ha pubblicato questo aggiornamento quantitativo il 05/03/2026. La pagina contiene valori e indicatori numerici (tra cui 2000, 68, 05, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-66FBDBA5B8FB743616",
-      "published_at": "2026-03-04T00:00:00Z",
-      "observer": "Legambiente",
-      "topic": "ECONOMIA",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.legambiente.it/tag/economia-circolare/",
-        "domain": "legambiente.it",
-        "role": "primary_institutional_source",
-        "verification_method": "official_listing_date"
-      },
-      "headline": "#economia circolare",
-      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 04/03/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -63408,7 +63576,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "TERREMOTI | Nel 2025 localizzati in Italia oltre 15.000 eventi",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 12/01/2026. La pagina contiene valori e indicatori numerici (tra cui 2025, 15.000, 25); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 12/01/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
