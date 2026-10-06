@@ -1,8 +1,140 @@
 {
-  "generated_at": "2026-10-06T15:09:09.370Z",
+  "generated_at": "2026-10-06T16:20:04.408720+00:00",
   "articles": [
     {
-      "id": "PULSE-A63D9142B503DAD7",
+      "id": "PULSE-DFB77A3DF205B8E7",
+      "story_fingerprint": "dfb77a3df205b8e7b08584d8",
+      "published_at": "2026-10-06T16:20:04.408720+00:00",
+      "last_seen_at": "2026-10-06T16:20:04.408720+00:00",
+      "topic": "ISTRUZIONE",
+      "pulse_score": 77,
+      "public_source": {
+        "url": "https://www.invalsi.it/",
+        "domain": "invalsi.it",
+        "role": "primary_statistical_source",
+        "verification_method": "named_or_topic_domain_search",
+        "verification_score": 79
+      },
+      "discovery": {
+        "visible": false,
+        "role": "hidden_radar"
+      },
+      "period_reference": null,
+      "latest_source_update": null,
+      "headline": "Istruzione, nuovo dato per Italia: 50 ",
+      "summary": "Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+      "statistical_claims": [
+        {
+          "raw_value": "54,3%",
+          "verified": false
+        },
+        {
+          "raw_value": "50 ",
+          "verified": true
+        },
+        {
+          "raw_value": "50 ",
+          "verified": true
+        },
+        {
+          "raw_value": "58,2%",
+          "verified": false
+        },
+        {
+          "raw_value": "54,3%",
+          "verified": false
+        },
+        {
+          "raw_value": "50 ",
+          "verified": true
+        },
+        {
+          "raw_value": "50 ",
+          "verified": true
+        },
+        {
+          "raw_value": "58,2%",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "chart_spec": {
+        "type": "auto",
+        "status": "requires_primary_series",
+        "reason": "candidate_contains_multiple_numeric_values"
+      },
+      "map_spec": null,
+      "editorial_status": "verified_primary_match",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-A4CEB4621740F865",
+      "story_fingerprint": "a4ceb4621740f865fe52b6f6",
+      "published_at": "2026-10-06T16:20:04.408720+00:00",
+      "last_seen_at": "2026-10-06T16:20:04.408720+00:00",
+      "topic": "ISTRUZIONE",
+      "pulse_score": 72,
+      "public_source": {
+        "url": "https://www.invalsi.it/",
+        "domain": "invalsi.it",
+        "role": "primary_statistical_source",
+        "verification_method": "named_or_topic_domain_search",
+        "verification_score": 55
+      },
+      "discovery": {
+        "visible": false,
+        "role": "hidden_radar"
+      },
+      "period_reference": null,
+      "latest_source_update": null,
+      "headline": "Istruzione, nuovo dato per Italia: 8 ",
+      "summary": "Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+      "statistical_claims": [
+        {
+          "raw_value": "8 ",
+          "verified": true
+        },
+        {
+          "raw_value": "10 ",
+          "verified": true
+        },
+        {
+          "raw_value": "1 ",
+          "verified": true
+        },
+        {
+          "raw_value": "5 ",
+          "verified": true
+        },
+        {
+          "raw_value": "8 ",
+          "verified": true
+        },
+        {
+          "raw_value": "10 ",
+          "verified": true
+        },
+        {
+          "raw_value": "1 ",
+          "verified": true
+        },
+        {
+          "raw_value": "5 ",
+          "verified": true
+        }
+      ],
+      "territories": [],
+      "chart_spec": {
+        "type": "auto",
+        "status": "requires_primary_series",
+        "reason": "candidate_contains_multiple_numeric_values"
+      },
+      "map_spec": null,
+      "editorial_status": "verified_primary_match",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-F61649487B13ED63",
       "published_at": "2026-10-05T19:40:00+00:00",
       "topic": "LAVORO",
       "pulse_score": 88,
@@ -52,10 +184,11 @@
       "map_spec": null,
       "editorial_status": "verified",
       "publication_status": "published",
-      "last_seen_at": "2026-10-06T09:39:41.186720+00:00"
+      "last_seen_at": "2026-10-06T09:39:41.186720+00:00",
+      "story_fingerprint": "f61649487b13ed63b5ae58a8"
     },
     {
-      "id": "PULSE-4259FF6FEDA81813",
+      "id": "PULSE-8C837A390087AEC6",
       "published_at": "2026-10-05T19:40:00+00:00",
       "topic": "AMBIENTE",
       "pulse_score": 82,
@@ -97,10 +230,11 @@
       "map_spec": null,
       "editorial_status": "verified",
       "publication_status": "published",
-      "last_seen_at": "2026-10-06T09:39:41.186720+00:00"
+      "last_seen_at": "2026-10-06T09:39:41.186720+00:00",
+      "story_fingerprint": "8c837a390087aec674b572c7"
     },
     {
-      "id": "PULSE-65C919386D1DCB72",
+      "id": "PULSE-726C3DD1A7CABD52",
       "published_at": "2026-10-05T19:40:00+00:00",
       "topic": "ISTRUZIONE",
       "pulse_score": 86,
@@ -150,11 +284,13 @@
       "map_spec": null,
       "editorial_status": "verified",
       "publication_status": "published",
-      "last_seen_at": "2026-10-06T09:39:41.186720+00:00"
+      "last_seen_at": "2026-10-06T09:39:41.186720+00:00",
+      "story_fingerprint": "726c3dd1a7cabd52419716f5"
     },
     {
-      "id": "PULSE-E88264CC5C569055",
+      "id": "PULSE-849B1F2948DA12D9",
       "published_at": "2026-10-05T19:40:00+00:00",
+      "last_seen_at": "2026-10-06T16:20:04.408720+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 90,
       "patterns": [
@@ -186,7 +322,7 @@
         }
       ],
       "territories": [
-        "venezia"
+        "italia"
       ],
       "chart_spec": {
         "type": "auto",
@@ -195,10 +331,10 @@
       "map_spec": null,
       "editorial_status": "verified",
       "publication_status": "published",
-      "last_seen_at": "2026-10-06T09:39:41.186720+00:00"
+      "story_fingerprint": "849b1f2948da12d98b307dbc"
     },
     {
-      "id": "PULSE-2E149AF8984F993E",
+      "id": "PULSE-A8F7E0567298E0A2",
       "published_at": "2026-10-05T19:40:00+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 87,
@@ -244,10 +380,11 @@
       "map_spec": null,
       "editorial_status": "verified",
       "publication_status": "published",
-      "last_seen_at": "2026-10-06T09:39:41.186720+00:00"
+      "last_seen_at": "2026-10-06T09:39:41.186720+00:00",
+      "story_fingerprint": "a8f7e0567298e0a29c3a1f55"
     },
     {
-      "id": "PULSE-88AAED2F6B14D365",
+      "id": "PULSE-167D62042CFE7639",
       "published_at": "2026-10-05T19:40:00+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 84,
@@ -289,10 +426,11 @@
       "map_spec": null,
       "editorial_status": "verified",
       "publication_status": "published",
-      "last_seen_at": "2026-10-06T09:39:41.186720+00:00"
+      "last_seen_at": "2026-10-06T09:39:41.186720+00:00",
+      "story_fingerprint": "167d62042cfe76391247b8ab"
     },
     {
-      "id": "PULSE-7EC68CFA4E5C3AA7",
+      "id": "PULSE-93840BF56162F778",
       "published_at": "2026-10-05T19:40:00+00:00",
       "topic": "SALUTE",
       "pulse_score": 89,
@@ -342,10 +480,11 @@
       "map_spec": null,
       "editorial_status": "verified",
       "publication_status": "published",
-      "last_seen_at": "2026-10-06T09:39:41.186720+00:00"
+      "last_seen_at": "2026-10-06T09:39:41.186720+00:00",
+      "story_fingerprint": "93840bf56162f778dd8262ed"
     },
     {
-      "id": "PULSE-FD7B977A1262A3B7",
+      "id": "PULSE-1B0D7556C1411B99",
       "published_at": "2026-10-05T19:40:00+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 88,
@@ -391,10 +530,11 @@
       "map_spec": null,
       "editorial_status": "verified",
       "publication_status": "published",
-      "last_seen_at": "2026-10-06T08:00:47.913647+00:00"
+      "last_seen_at": "2026-10-06T08:00:47.913647+00:00",
+      "story_fingerprint": "1b0d7556c1411b99eea3e055"
     },
     {
-      "id": "PULSE-7C04F16A0F291989",
+      "id": "PULSE-5634C8423DB12585",
       "published_at": "2026-10-05T19:40:00+00:00",
       "topic": "AMBIENTE",
       "pulse_score": 83,
@@ -435,7 +575,8 @@
       },
       "map_spec": null,
       "editorial_status": "verified",
-      "publication_status": "published"
+      "publication_status": "published",
+      "story_fingerprint": "5634c8423db1258562e930a8"
     }
   ]
 }
