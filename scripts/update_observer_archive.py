@@ -272,8 +272,8 @@ def site_crawl_candidates(domain,year=2026,limit=140,extra_roots=None):
     return _dedupe_results(out,limit)
 
 
-def feed_candidates(domain,year=2026,limit=100):
-    seeds=[
+def feed_candidates(domain,year=2026,limit=100,extra_seeds=None):
+    seeds=list(extra_seeds or [])+[
         f"https://{domain}/feed/",
         f"https://www.{domain}/feed/",
         f"https://{domain}/feed",
@@ -317,6 +317,75 @@ def feed_candidates(domain,year=2026,limit=100):
                     if len(out)>=limit: return _dedupe_results(out,limit)
     return _dedupe_results(out,limit)
 
+
+
+
+def wordpress_rest_candidates(api_urls,domains,year=2026,limit=240):
+    out=[]
+    for base in api_urls or []:
+        for page in range(1,5):
+            try:
+                qs=urllib.parse.urlencode({
+                    "after":f"{year}-01-01T00:00:00",
+                    "before":f"{year}-12-31T23:59:59",
+                    "per_page":100,"page":page,
+                    "_fields":"link,date,title"
+                })
+                raw,_,ct=fetch(base+"?"+qs,timeout=8,max_bytes=2200000)
+                data=json.loads(raw.decode("utf-8","ignore"))
+                if not isinstance(data,list) or not data: break
+                for item in data:
+                    link=str(item.get("link","")).strip()
+                    date_raw=str(item.get("date","")).strip()
+                    title_obj=item.get("title") or {}
+                    title=title_obj.get("rendered","") if isinstance(title_obj,dict) else str(title_obj)
+                    title=BeautifulSoup(title,"html.parser").get_text(" ",strip=True)
+                    if not link or not host_allowed(canonical_host(link),domains): continue
+                    m=re.match(r"(20\d{2})-(\d{2})-(\d{2})",date_raw)
+                    if not m: continue
+                    y,mo,d=map(int,m.groups())
+                    if y!=year: continue
+                    out.append((title,link,datetime(y,mo,d,tzinfo=timezone.utc)))
+                    if len(out)>=limit:return out
+            except Exception:
+                break
+    return out
+
+def rss_directory_candidates(directory_url,domains,year=2026,limit=160):
+    try:
+        raw,final,ct=fetch(directory_url,timeout=7,max_bytes=1600000)
+        if "html" not in ct.lower(): return []
+        soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
+        feeds=[]
+        for a in soup.find_all("a",href=True):
+            label=a.get_text(" ",strip=True).lower()
+            href=urllib.parse.urljoin(final,a.get("href",""))
+            if any(k in label for k in ("news","comunicati","rss")) or any(k in href.lower() for k in ("rss","feed","xml")):
+                feeds.append(href)
+        out=[]
+        for feed in list(dict.fromkeys(feeds))[:12]:
+            try:
+                rawf,_,_=fetch(feed,timeout=7,max_bytes=1800000)
+                root=ET.fromstring(rawf.decode("utf-8","ignore"))
+                for item in root.findall(".//item"):
+                    title=(item.findtext("title") or "").strip()
+                    link=(item.findtext("link") or "").strip()
+                    pub=(item.findtext("pubDate") or item.findtext("date") or "").strip()
+                    if title and link and host_allowed(canonical_host(link),domains):
+                        out.append((title,link,pub))
+                for entry in root.findall(".//{*}entry"):
+                    title=(entry.findtext("{*}title") or "").strip()
+                    link=""
+                    for a in entry.findall("{*}link"):
+                        if a.attrib.get("href"): link=a.attrib["href"]; break
+                    pub=(entry.findtext("{*}published") or entry.findtext("{*}updated") or "").strip()
+                    if title and link and host_allowed(canonical_host(link),domains):
+                        out.append((title,link,pub))
+            except Exception:
+                continue
+        return out[:limit]
+    except Exception:
+        return []
 
 
 def listing_dated_candidates(entrypoints,domains,year=2026,limit=300):
@@ -367,6 +436,11 @@ def listing_dated_candidates(entrypoints,domains,year=2026,limit=300):
                     if m:
                         try: date=datetime(int(m.group(3)),months[m.group(2)],int(m.group(1)),tzinfo=timezone.utc)
                         except: pass
+                    if not date:
+                        m=re.search(r"\b("+keys+r")\.?\s+(20\d{2})\b",block.lower())
+                        if m:
+                            try: date=datetime(int(m.group(2)),months[m.group(1)],1,tzinfo=timezone.utc)
+                            except: pass
                 if date and date.year==year and href not in seen:
                     seen.add(href); out.append((title,href,date))
                     if len(out)>=limit:return out
@@ -506,9 +580,17 @@ def process_source(src, now):
         candidates={}
         listing_dates={}
         entrypoints=src.get("entrypoints",[])
+
         for title,url,pub_date in listing_dated_candidates(entrypoints,domains,year,300):
             candidates.setdefault(url,title)
             listing_dates[url]=(title,pub_date)
+
+        for title,url,pub_date in wordpress_rest_candidates(src.get("api_urls",[]),domains,year,300):
+            candidates.setdefault(url,title)
+            listing_dates[url]=(title,pub_date)
+
+        for title,url,pub_raw in rss_directory_candidates(src.get("rss_directory",""),domains,year,200) if src.get("rss_directory") else []:
+            candidates.setdefault(url,title)
 
         # 1) Official source discovery first.
         with ThreadPoolExecutor(max_workers=min(2,max(1,len(domains[:2])))) as pool:
@@ -533,7 +615,7 @@ def process_source(src, now):
 
         # 3) Official RSS/Atom feeds catch newsrooms that expose weak sitemaps.
         with ThreadPoolExecutor(max_workers=min(2,max(1,len(domains[:2])))) as pool:
-            jobs={pool.submit(feed_candidates,domain,year,120):domain for domain in domains[:2]}
+            jobs={pool.submit(feed_candidates,domain,year,120,src.get("feed_urls",[])):domain for domain in domains[:2]}
             for fut in as_completed(jobs):
                 try: results=fut.result()
                 except Exception: results=[]
@@ -542,7 +624,7 @@ def process_source(src, now):
                         candidates[url]=title
 
         # 4) Search engines are fallback only.
-        if len(candidates) < 24:
+        if len(candidates) < 24 or src.get("adapter"):
             queries=[]
             for domain in domains[:2]:
                 queries.extend([
