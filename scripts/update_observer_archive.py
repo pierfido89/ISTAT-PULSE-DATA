@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 import hashlib, json, re, urllib.parse, urllib.request
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from pathlib import Path
@@ -135,53 +136,79 @@ def main():
     source_stats={}
     for src in cfg.get("sources",[]):
         name=src["name"]; domains=src.get("domains",[])
-        seen=set()
         source_stats[name]={"2026":0}
+
         for year in ARCHIVE_YEARS:
-            year_found=0
+            queries=[]
             for domain in domains[:2]:
-                annual_queries=[
+                queries.extend([
                     f'site:{domain} {year} (dati OR statistiche OR rapporto OR osservatorio)',
                     f'site:{domain} {year} (indagine OR "open data" OR rilevazione OR monitoraggio)'
-                ]
-                monthly_queries=[
+                ])
+                queries.extend(
                     f'site:{domain} "{month} {year}" (dati OR statistiche OR rapporto OR osservatorio OR indagine)'
                     for month in MONTHS_IT
-                ]
-                for q in annual_queries + monthly_queries:
-                    for title,url in bing_search(q,limit=12):
-                        if url in seen: continue
-                        seen.add(url)
-                        info=page_info(url,domains)
-                        if not info or info["date"].year!=year: continue
-                        if info["date"]>now: continue
-                        low=(info["title"]+" "+title).lower()
-                        if not any(t in low for t in ("dati","stat","rapport","osserv","indagin","rilev","mercato","bilancio","monitor","analisi","pubblic")):
-                            continue
-                        aid=stable_id(name,info["url"])
-                        if aid not in by_id:
-                            topic=topic_of(info["title"])
-                            by_id[aid]={
-                                "id":aid,
-                                "published_at":info["date"].isoformat().replace("+00:00","Z"),
-                                "topic":topic,
-                                "pulse_score":0,
-                                "patterns":[],
-                                "public_source":{
-                                    "url":info["url"],"domain":info["domain"],
-                                    "role":"primary_statistical_source",
-                                    "verification_method":"official_domain_backfill"
-                                },
-                                "headline":info["title"],
-                                "summary":safe_summary(name,info["title"],info["date"],info["numbers"]),
-                                "territories":["italia"],
-                                "editorial_status":"source_publication_verified",
-                                "publication_status":"published"
-                            }
-                        year_found+=1
-                        if year_found>=MAX_RESULTS_PER_SOURCE_YEAR: break
-                    if year_found>=MAX_RESULTS_PER_SOURCE_YEAR: break
-                if year_found>=MAX_RESULTS_PER_SOURCE_YEAR: break
+                )
+
+            # Network I/O is the bottleneck. Search queries are independent, so run a
+            # small bounded pool instead of waiting for every request sequentially.
+            candidates={}
+            with ThreadPoolExecutor(max_workers=8) as pool:
+                future_searches=[pool.submit(bing_search,q,12) for q in queries]
+                for fut in as_completed(future_searches):
+                    try:
+                        results=fut.result()
+                    except Exception:
+                        results=[]
+                    for title,url in results:
+                        if url and url not in candidates:
+                            candidates[url]=title
+
+            year_found=0
+            # Page verification is independent too; keep the same conservative pool.
+            with ThreadPoolExecutor(max_workers=8) as pool:
+                future_pages={
+                    pool.submit(page_info,url,domains):(title,url)
+                    for url,title in candidates.items()
+                }
+                for fut in as_completed(future_pages):
+                    title,url=future_pages[fut]
+                    try:
+                        info=fut.result()
+                    except Exception:
+                        info=None
+                    if not info or info["date"].year!=year: continue
+                    if info["date"]>now: continue
+                    low=(info["title"]+" "+title).lower()
+                    if not any(t in low for t in ("dati","stat","rapport","osserv","indagin","rilev","mercato","bilancio","monitor","analisi","pubblic")):
+                        continue
+
+                    aid=stable_id(name,info["url"])
+                    if aid not in by_id:
+                        topic=topic_of(info["title"])
+                        by_id[aid]={
+                            "id":aid,
+                            "published_at":info["date"].isoformat().replace("+00:00","Z"),
+                            "topic":topic,
+                            "pulse_score":0,
+                            "patterns":[],
+                            "public_source":{
+                                "url":info["url"],"domain":info["domain"],
+                                "role":"primary_statistical_source",
+                                "verification_method":"official_domain_backfill"
+                            },
+                            "headline":info["title"],
+                            "summary":safe_summary(name,info["title"],info["date"],info["numbers"]),
+                            "territories":["italia"],
+                            "editorial_status":"source_publication_verified",
+                            "publication_status":"published"
+                        }
+                    year_found+=1
+                    if year_found>=MAX_RESULTS_PER_SOURCE_YEAR:
+                        for pending in future_pages:
+                            pending.cancel()
+                        break
+
             source_stats[name][str(year)]=year_found
         print(f"{name}: 2026={source_stats[name]['2026']}")
 
