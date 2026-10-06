@@ -125,5 +125,31 @@ jobs:
           for src in re.findall(r'<script[^>]+src=["\']([^"\']+)["\']',raw,re.I):
               print("SCRIPT",src,flush=True)
           PY
+      - name: Probe SNAM AEM JSON
+        run: |
+          python - <<'PY'
+          import urllib.request,re
+          base="https://www.snam.it/it/media/news-e-comunicati-stampa/comunicati-stampa/2026/snam-risultati-solidi-primo-trimestre-2026-in-linea-con-guidance"
+          urls=[
+            base+".model.json",
+            base+".infinity.json",
+            base+".1.json",
+            base+".json",
+            base+".html.model.json",
+          ]
+          for u in urls:
+              try:
+                  req=urllib.request.Request(u,headers={"User-Agent":"Mozilla/5.0","Accept":"application/json,text/plain,*/*"})
+                  with urllib.request.urlopen(req,timeout=15) as r:
+                      raw=r.read(2000000).decode("utf-8","ignore")
+                      print("AEM",u,"OK",r.status,r.headers.get("Content-Type",""),"LEN",len(raw),flush=True)
+                      for pat in [r'20\d{2}[-/]\d{2}[-/]\d{2}',r'date',r'publish',r'title',r'created',r'modified']:
+                          ms=list(re.finditer(pat,raw,re.I))
+                          print("P",pat,"COUNT",len(ms),flush=True)
+                          for m in ms[:5]:
+                              print("CTX",re.sub(r'\s+',' ',raw[max(0,m.start()-220):m.end()+420])[:800],flush=True)
+              except Exception as e:
+                  print("AEM",u,"ERROR",type(e).__name__,e,flush=True)
+          PY
       - name: Test SNAM only
         run: python scripts/update_observer_archive.py --only SNAM
