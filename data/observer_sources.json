@@ -893,6 +893,19 @@
         "indagine",
         "open data"
       ]
+    },
+    {
+      "name": "Unioncamere · Excelsior",
+      "domains": [
+        "excelsior.unioncamere.net"
+      ]
+    },
+    {
+      "name": "Istituto Superiore di Sanità",
+      "domains": [
+        "iss.it",
+        "epicentro.iss.it"
+      ]
     }
   ]
 }
