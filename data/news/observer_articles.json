@@ -1,52 +1,22 @@
 {
-  "generated_at": "2026-10-06T08:02:38.601226+00:00",
+  "generated_at": "2026-10-06T09:17:24.836552+00:00",
   "min_year": 2026,
   "max_year": 2026,
   "source_count": 63,
   "source_stats": {
-    "CENSIS": {
-      "2026": 0
-    },
-    "CGIA Mestre": {
-      "2026": 0
-    },
     "CNA": {
       "2026": 0
     },
     "CNR": {
       "2026": 0
     },
-    "Coldiretti": {
-      "2026": 0
-    },
-    "Confartigianato": {
-      "2026": 0
-    },
     "Confcommercio": {
-      "2026": 0
-    },
-    "Confindustria": {
       "2026": 0
     },
     "Fondazione GIMBE": {
       "2026": 0
     },
-    "Legambiente": {
-      "2026": 0
-    },
-    "Nomisma": {
-      "2026": 0
-    },
     "SVIMEZ": {
-      "2026": 0
-    },
-    "ACI": {
-      "2026": 0
-    },
-    "AGENAS": {
-      "2026": 0
-    },
-    "Aeronautica Militare": {
       "2026": 0
     },
     "Agenzia delle Dogane e dei Monopoli": {
@@ -55,22 +25,25 @@
     "Agenzia delle Entrate · OMI": {
       "2026": 0
     },
-    "AgID": {
+    "CGIA Mestre": {
+      "2026": 0
+    },
+    "Confartigianato": {
+      "2026": 0
+    },
+    "AGENAS": {
       "2026": 0
     },
     "AGCOM": {
       "2026": 0
     },
-    "AIFA · OsMed": {
+    "Confindustria": {
       "2026": 0
     },
-    "ANAC": {
+    "Coldiretti": {
       "2026": 0
     },
     "ANFIA": {
-      "2026": 0
-    },
-    "ARERA": {
       "2026": 0
     },
     "ART": {
@@ -79,62 +52,62 @@
     "Assoporti": {
       "2026": 0
     },
-    "Banca d'Italia": {
+    "CENSIS": {
+      "2026": 0
+    },
+    "Legambiente": {
+      "2026": 0
+    },
+    "Nomisma": {
       "2026": 0
     },
     "CONSOB": {
       "2026": 0
     },
-    "Copernicus": {
+    "Banca d'Italia": {
       "2026": 0
     },
-    "COVIP": {
+    "ANAC": {
       "2026": 0
     },
-    "CREA · RICA": {
+    "AIFA · OsMed": {
+      "2026": 1
+    },
+    "Aeronautica Militare": {
       "2026": 0
+    },
+    "AgID": {
+      "2026": 3
     },
     "Dipartimento delle Finanze": {
-      "2026": 0
-    },
-    "DIPE · OpenCUP": {
-      "2026": 0
-    },
-    "EEA": {
-      "2026": 0
-    },
-    "ENAC": {
       "2026": 0
     },
     "ENEA": {
       "2026": 0
     },
-    "ENIT": {
+    "DIPE · OpenCUP": {
       "2026": 0
     },
-    "Eurostat": {
+    "ENIT": {
       "2026": 0
     },
     "FAO": {
       "2026": 0
     },
-    "GME": {
+    "GSE": {
       "2026": 0
     },
-    "GSE": {
+    "GME": {
       "2026": 0
     },
     "INGV": {
       "2026": 0
     },
-    "INAIL": {
+    "ENAC": {
       "2026": 0
     },
-    "INPS": {
-      "2026": 0
-    },
-    "INVALSI": {
-      "2026": 0
+    "Copernicus": {
+      "2026": 3
     },
     "ISPRA / SNPA": {
       "2026": 0
@@ -142,19 +115,28 @@
     "ISMEA": {
       "2026": 0
     },
-    "ISTAT": {
-      "2026": 0
+    "ARERA": {
+      "2026": 4
     },
-    "IVASS": {
+    "Eurostat": {
+      "2026": 5
+    },
+    "Ministero dell'Interno": {
       "2026": 0
     },
     "MIMIT": {
       "2026": 0
     },
-    "Ministero dell'Interno": {
+    "IVASS": {
+      "2026": 14
+    },
+    "ACI": {
       "2026": 0
     },
-    "Ministero della Giustizia · DGStat": {
+    "EEA": {
+      "2026": 11
+    },
+    "ISTAT": {
       "2026": 0
     },
     "Ministero della Salute": {
@@ -172,27 +154,1768 @@
     "OpenCoesione": {
       "2026": 0
     },
+    "INAIL": {
+      "2026": 3
+    },
+    "SINAB": {
+      "2026": 0
+    },
+    "INPS": {
+      "2026": 0
+    },
     "Ragioneria Generale dello Stato · BDAP": {
       "2026": 0
     },
     "SIAE · Osservatorio Spettacolo": {
       "2026": 0
     },
-    "SINAB": {
+    "SNAM": {
       "2026": 0
     },
-    "SNAM": {
+    "Ministero della Giustizia · DGStat": {
+      "2026": 1
+    },
+    "INVALSI": {
       "2026": 0
     },
     "Terna": {
       "2026": 0
     },
     "Unioncamere / InfoCamere": {
-      "2026": 0
+      "2026": 12
     },
     "UNRAE": {
+      "2026": 24
+    },
+    "COVIP": {
       "2026": 0
+    },
+    "CREA · RICA": {
+      "2026": 3
     }
   },
-  "articles": []
+  "articles": [
+    {
+      "id": "OBS-EBB567180F82109467",
+      "published_at": "2026-10-05T00:00:00Z",
+      "observer": "ARERA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.arera.it/comunicati-operatore",
+        "domain": "arera.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Comunicati per operatori",
+      "summary": "ARERA ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 2025, 2024, 2023, 2022); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-D5D0D2B3555D752064",
+      "published_at": "2026-10-04T00:00:00Z",
+      "observer": "Unioncamere / InfoCamere",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.infocamere.it/composizione_negoziata_10_2026",
+        "domain": "infocamere.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Crisi d’impresa, la composizione negoziata salva 777 aziende",
+      "summary": "Unioncamere / InfoCamere ha pubblicato questo aggiornamento quantitativo il 04/10/2026. La pagina contiene valori e indicatori numerici (tra cui 777, 4mila, 04, 10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-0A81BD81B4E2E38E34",
+      "published_at": "2026-10-04T00:00:00Z",
+      "observer": "Unioncamere / InfoCamere",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.infocamere.it/news-landing-page",
+        "domain": "infocamere.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Ultime news",
+      "summary": "Unioncamere / InfoCamere ha pubblicato questo aggiornamento quantitativo il 04/10/2026. La pagina contiene valori e indicatori numerici (tra cui 05, 2026, 777, 04, 10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-94E1CB81E4F206DF3E",
+      "published_at": "2026-10-04T00:00:00Z",
+      "observer": "Unioncamere / InfoCamere",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.infocamere.it/news",
+        "domain": "infocamere.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Eventi",
+      "summary": "Unioncamere / InfoCamere ha pubblicato questo aggiornamento quantitativo il 04/10/2026. La pagina contiene valori e indicatori numerici (tra cui 777, 05, 2026, 24); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-48DD32C16CAE574779",
+      "published_at": "2026-10-02T00:00:00Z",
+      "observer": "ARERA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.arera.it/comunicati-stampa",
+        "domain": "arera.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Comunicati stampa",
+      "summary": "ARERA ha pubblicato questo aggiornamento quantitativo il 02/10/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 2025, 2024, 2023, 2022); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-556CC5D8B716C63444",
+      "published_at": "2026-10-01T00:00:00Z",
+      "observer": "AIFA · OsMed",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.aifa.gov.it/-/rapporto-nazionale-2020-l-uso-dei-farmaci-in-italia-",
+        "domain": "aifa.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Navigazione",
+      "summary": "AIFA · OsMed ha pubblicato questo aggiornamento quantitativo il 01/10/2026. La pagina contiene valori e indicatori numerici (tra cui 19); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-B5F60141BFE85A271A",
+      "published_at": "2026-10-01T00:00:00Z",
+      "observer": "IVASS",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.ivass.it/media/comunicati/index.html",
+        "domain": "ivass.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Comunicati stampa",
+      "summary": "IVASS ha pubblicato questo aggiornamento quantitativo il 01/10/2026. La pagina contiene valori e indicatori numerici (tra cui 1, 105, 338.9, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-2922F20B91CBA07C8F",
+      "published_at": "2026-09-30T00:00:00Z",
+      "observer": "IVASS",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.ivass.it/pubblicazioni-e-statistiche/pubblicazioni/bollettino-vigilanza/index.html",
+        "domain": "ivass.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Bollettino di Vigilanza",
+      "summary": "IVASS ha pubblicato questo aggiornamento quantitativo il 30/09/2026. La pagina contiene valori e indicatori numerici (tra cui 8, 2026, 30, 7); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-6C8D7BC048BC31957E",
+      "published_at": "2026-09-30T00:00:00Z",
+      "observer": "IVASS",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.ivass.it/operatori/imprese/raccolta-dati/index.html",
+        "domain": "ivass.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Raccolta dati",
+      "summary": "IVASS ha pubblicato questo aggiornamento quantitativo il 30/09/2026. La pagina contiene valori e indicatori numerici (tra cui 5, 2025, 435.3, 30, 09); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-33EFEDE0C97CA22157",
+      "published_at": "2026-09-28T00:00:00Z",
+      "observer": "Eurostat",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://policy.trade.ec.europa.eu/news_en",
+        "domain": "policy.trade.ec.europa.eu",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "News",
+      "summary": "Eurostat ha pubblicato questo aggiornamento quantitativo il 28/09/2026. La pagina contiene valori e indicatori numerici (tra cui 697, 1, 10, 28, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-0AB3995BD34DA910E1",
+      "published_at": "2026-09-25T00:00:00Z",
+      "observer": "IVASS",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.ivass.it/pubblicazioni-e-statistiche/statistiche/comunicazioni-statistiche/index.html",
+        "domain": "ivass.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Comunicazioni statistiche",
+      "summary": "IVASS ha pubblicato questo aggiornamento quantitativo il 25/09/2026. La pagina contiene valori e indicatori numerici (tra cui 8, 2026, 2012, 25); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-B4C9EA5077B18432F1",
+      "published_at": "2026-09-24T00:00:00Z",
+      "observer": "IVASS",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.ivass.it/pubblicazioni-e-statistiche/statistiche/rilevazioni-mensili-iper/index.html",
+        "domain": "ivass.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Indagine IPER",
+      "summary": "IVASS ha pubblicato questo aggiornamento quantitativo il 24/09/2026. La pagina contiene valori e indicatori numerici (tra cui 2023, 2024, 7, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-850B79DECACC991EFC",
+      "published_at": "2026-09-23T00:00:00Z",
+      "observer": "UNRAE",
+      "topic": "MOBILITA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://unrae.it/sala-stampa/altri-comunicati/7794/unrae-cambia-volto-per-accompagnare-litalia-nella-nuova-mobilita",
+        "domain": "unrae.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "UNRAE cambia volto per accompagnare l'Italia nella nuova mobilità",
+      "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 23/09/2026. La pagina contiene valori e indicatori numerici (tra cui 2025, 75, 10, 23, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-F70A0EB0066AD6EE4D",
+      "published_at": "2026-09-23T00:00:00Z",
+      "observer": "UNRAE",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://unrae.it/sala-stampa/altri-comunicati",
+        "domain": "unrae.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Altri comunicati",
+      "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 23/09/2026. La pagina contiene valori e indicatori numerici (tra cui 2025, 75, 10, 23, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-D11F8E9E90129362BE",
+      "published_at": "2026-09-22T00:00:00Z",
+      "observer": "UNRAE",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://unrae.it/sala-stampa/veicoli-commerciali/7791/rimorchi-e-semirimorchi-estate-senza-slancio-luglio-a-66-agosto-a-58-otto-mesi-a-05",
+        "domain": "unrae.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Rimorchi e semirimorchi, estate senza slancio. Luglio a -6,6%, agosto a +5,8%. Otto mesi a +0,5%",
+      "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 22/09/2026. La pagina contiene valori e indicatori numerici (tra cui 6,6%, 5,8%, 0,5%, 2025, 75); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-B0064DCA3771C6509D",
+      "published_at": "2026-09-21T00:00:00Z",
+      "observer": "UNRAE",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://unrae.it/sala-stampa/altri-comunicati/7787/fiscalita-delle-flotte-aziendali-la-proposta-di-riforma-per-sostenere-le-imprese-italiane-e-rafforzare-un-canale-di-mercato-strategico",
+        "domain": "unrae.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Fiscalità delle flotte aziendali: la proposta di riforma per sostenere le imprese italiane e rafforzare un canale di mercato strategico",
+      "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 21/09/2026. La pagina contiene valori e indicatori numerici (tra cui 2025, 75, 10, 21, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-734774D056B5A6E154",
+      "published_at": "2026-09-17T00:00:00Z",
+      "observer": "UNRAE",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://unrae.it/sala-stampa/altri-comunicati/7784/bollo-auto-unrae-positivo-ridurre-il-carico-fiscale-ma-servono-confronto-e-visione-strutturale-per-approntare-misure-davvero-efficaci",
+        "domain": "unrae.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Bollo auto, UNRAE: positivo ridurre il carico fiscale, ma servono confronto e visione strutturale per approntare misure davvero efficaci",
+      "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 17/09/2026. La pagina contiene valori e indicatori numerici (tra cui 2025, 75, 10, 17, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-032925FB69CC9E4BBC",
+      "published_at": "2026-09-14T00:00:00Z",
+      "observer": "EEA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.eea.europa.eu/en/newsroom/news/vote-now-to-pick-winner-of-this-years-eea-resilient-by-nature-photo-competition-public-choice-award",
+        "domain": "eea.europa.eu",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Vote now to pick the winner of Public Choice Award 2026 in our photo competition",
+      "summary": "EEA ha pubblicato questo aggiornamento quantitativo il 14/09/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 14); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-40B58DEF2552C2CEF5",
+      "published_at": "2026-09-03T00:00:00Z",
+      "observer": "UNRAE",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://unrae.it/sala-stampa/altri-comunicati/7772/osservatorio-credit-mobility-experian-e-unrae-mercato-auto-ecco-i-trend-del-primo-semestre-2026-accelerano-il-nuovo-98-e-le-richieste-di-finanziamento-67-il-sud-cresce-piu-della-media-nazionale",
+        "domain": "unrae.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Osservatorio Credit & Mobility – Experian e UNRAE | Mercato auto, ecco i trend del primo semestre 2026: accelerano il nuovo (+9,8%) e le richieste di finanziamento (+6,7%) il Sud cresce più della media nazionale",
+      "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 03/09/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 9,8%, 6,7%, 2025, 75); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-A51B33348E6730E619",
+      "published_at": "2026-08-31T00:00:00Z",
+      "observer": "IVASS",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.ivass.it/pubblicazioni-e-statistiche/pubblicazioni/stabilita-finanziaria/index.html",
+        "domain": "ivass.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Stabilità finanziaria",
+      "summary": "IVASS ha pubblicato questo aggiornamento quantitativo il 31/08/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 31, 26); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-956E58E115101943DC",
+      "published_at": "2026-08-28T00:00:00Z",
+      "observer": "Unioncamere / InfoCamere",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.infocamere.it/comunicati-stampa",
+        "domain": "infocamere.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Comunicati Stampa",
+      "summary": "Unioncamere / InfoCamere ha pubblicato questo aggiornamento quantitativo il 28/08/2026. La pagina contiene valori e indicatori numerici (tra cui 28, 2026, 4.500, 2mila, 17); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-E5BFEBE7D56E423C89",
+      "published_at": "2026-08-26T00:00:00Z",
+      "observer": "IVASS",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.ivass.it/pubblicazioni-e-statistiche/pubblicazioni/pubblicazioni-antifrode/index.html",
+        "domain": "ivass.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Antifrode",
+      "summary": "IVASS ha pubblicato questo aggiornamento quantitativo il 26/08/2026. La pagina contiene valori e indicatori numerici (tra cui 134, 135, 148, 21, 179); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-5EC2DF4E72A602A550",
+      "published_at": "2026-08-25T00:00:00Z",
+      "observer": "CREA · RICA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.crea.gov.it/-/al-crea-open-day-riso-2026",
+        "domain": "crea.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Al CREA Open day riso 2026 - Al CREA Open day riso 2026",
+      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 25/08/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 25); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-4151323C631DDC5A6F",
+      "published_at": "2026-08-03T00:00:00Z",
+      "observer": "UNRAE",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://unrae.it/sala-stampa/autovetture/7748/immatricolazioni-a-39-nel-mercato-auto-italiano-a-luglio-rivista-al-rialzo-la-stima-2026-a-1610-milioni-di-unita-55-sul-2025-il-mercato-cresce-la-vera-sfida-e-rinnovare-il-parco-circolante",
+        "domain": "unrae.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Immatricolazioni a +3,9% nel mercato auto italiano a luglio. Rivista al rialzo la stima 2026 a 1,610 milioni di unità (+5,5% sul 2025). Il mercato cresce, la vera sfida è rinnovare il parco circolante",
+      "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 03/08/2026. La pagina contiene valori e indicatori numerici (tra cui 3,9%, 2026, 1,610 milioni, 5,5%, 2025); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-15B241ABA689B28913",
+      "published_at": "2026-07-31T00:00:00Z",
+      "observer": "Eurostat",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://policy.trade.ec.europa.eu/eu-trade-relationships-country-and-region/countries-and-regions/united-states_en",
+        "domain": "policy.trade.ec.europa.eu",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "United States",
+      "summary": "Eurostat ha pubblicato questo aggiornamento quantitativo il 31/07/2026. La pagina contiene valori e indicatori numerici (tra cui 1.7, 4.6, 20.8, 1.3%, 910.6); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-B12E33380F174C904B",
+      "published_at": "2026-07-30T00:00:00Z",
+      "observer": "IVASS",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.ivass.it/pubblicazioni-e-statistiche/pubblicazioni/quaderni/index.html",
+        "domain": "ivass.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Quaderni",
+      "summary": "IVASS ha pubblicato questo aggiornamento quantitativo il 30/07/2026. La pagina contiene valori e indicatori numerici (tra cui 35, 30, 2026, 34, 21); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-96F550E3A04E81E546",
+      "published_at": "2026-07-28T00:00:00Z",
+      "observer": "IVASS",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.ivass.it/pubblicazioni-e-statistiche/pubblicazioni/altre-pubblicazioni/index.html",
+        "domain": "ivass.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Altre pubblicazioni",
+      "summary": "IVASS ha pubblicato questo aggiornamento quantitativo il 28/07/2026. La pagina contiene valori e indicatori numerici (tra cui 2019, 2025, 28, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-E79F96D110C2D6A6E1",
+      "published_at": "2026-07-21T00:00:00Z",
+      "observer": "UNRAE",
+      "topic": "MOBILITA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://unrae.it/sala-stampa/veicoli-commerciali/7725/a-giugno-veicoli-rimorchiati-in-crescita-del-167-ma-1-semestre-2026-in-stallo-09-unrae-rivedere-il-regolamento-co2-hdv-per-scongiurare-sanzioni-sproporzionate-ai-costruttori",
+        "domain": "unrae.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "A giugno veicoli rimorchiati in crescita del 16,7% ma 1 semestre 2026 in stallo (+0,9%). UNRAE: rivedere il Regolamento CO2 HDV per scongiurare sanzioni sproporzionate ai Costruttori",
+      "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 21/07/2026. La pagina contiene valori e indicatori numerici (tra cui 16,7%, 1, 2026, 0,9%, 2025); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-60600CB52994DEB80C",
+      "published_at": "2026-07-16T00:00:00Z",
+      "observer": "UNRAE",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://unrae.it/sala-stampa/altri-comunicati/7722/11-edizione-dellanalisi-unrae-in-collaborazione-con-istat-privati-con-partita-iva-immatricolazioni-in-calo-del-7-nel-2025",
+        "domain": "unrae.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "11^ edizione dell’analisi UNRAE in collaborazione con ISTAT | Privati con Partita IVA: immatricolazioni in calo del 7% nel 2025",
+      "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 16/07/2026. La pagina contiene valori e indicatori numerici (tra cui 11, 7%, 2025, 75); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-2EF48A4DC6595318D7",
+      "published_at": "2026-07-15T00:00:00Z",
+      "observer": "Eurostat",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://policy.trade.ec.europa.eu/analysis-and-assessment/statistics_en",
+        "domain": "policy.trade.ec.europa.eu",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Statistics",
+      "summary": "Eurostat ha pubblicato questo aggiornamento quantitativo il 15/07/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 15, 2025, 2); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-6BD06976925987509A",
+      "published_at": "2026-07-09T00:00:00Z",
+      "observer": "UNRAE",
+      "topic": "MOBILITA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://unrae.it/sala-stampa/autovetture/7711/noleggio-a-lungo-termine-autovetture-nel-primo-semestre-2026-526167-contratti-26-i-privati-salgono-al-148",
+        "domain": "unrae.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Noleggio a lungo termine autovetture: nel primo semestre 2026 526.167 contratti (-2,6%), i privati salgono al 14,8%",
+      "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 09/07/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 526.167, 2,6%, 14,8%, 2025); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-E2DD3AA5FA924A1088",
+      "published_at": "2026-07-06T00:00:00Z",
+      "observer": "UNRAE",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://unrae.it/sala-stampa/altri-comunicati/7708/unrae-amplia-la-propria-rappresentanza-con-sei-nuovi-marchi-jameel-motors-atflow-e-campello-entrano-nellassociazione",
+        "domain": "unrae.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "UNRAE amplia la propria rappresentanza con sei nuovi marchi: Jameel Motors, ATFlow e Campello entrano nell'associazione",
+      "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 06/07/2026. La pagina contiene valori e indicatori numerici (tra cui 2025, 75, 10, 06, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-A8D9188363382664A9",
+      "published_at": "2026-07-01T00:00:00Z",
+      "observer": "EEA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.eea.europa.eu/en/newsroom/news/renewables-lower-energy-prices",
+        "domain": "eea.europa.eu",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Renewables lower energy prices and play key role to reduce vulnerability to fossil fuel supply shocks",
+      "summary": "EEA ha pubblicato questo aggiornamento quantitativo il 01/07/2026. La pagina contiene valori e indicatori numerici (tra cui 02, 2026, 13, 29, 85%); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-32C1AAB1F415AB13A4",
+      "published_at": "2026-07-01T00:00:00Z",
+      "observer": "EEA",
+      "topic": "AMBIENTE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.eea.europa.eu/en/newsroom/news/most-eu-member-states-on-track-to-meet-key-air-pollutant-emission-reduction-commitments",
+        "domain": "eea.europa.eu",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Most EU Member States on track to meet key air pollutant emission reduction commitments",
+      "summary": "EEA ha pubblicato questo aggiornamento quantitativo il 01/07/2026. La pagina contiene valori e indicatori numerici (tra cui 01, 2026, 2020, 2029, 2024); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-F763B42ACE9AF7BA29",
+      "published_at": "2026-06-25T00:00:00Z",
+      "observer": "AgID",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.agid.gov.it/it/agenzia/piano-triennale/censimento-del-patrimonio-ict-della-pubblica-amministrazione",
+        "domain": "agid.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Censimento del patrimonio ICT della Pubblica Amministrazione | Agid",
+      "summary": "AgID ha pubblicato questo aggiornamento quantitativo il 25/06/2026. La pagina contiene valori e indicatori numerici (tra cui 1, 5); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-D8BB332A3C67035CFB",
+      "published_at": "2026-06-25T00:00:00Z",
+      "observer": "EEA",
+      "topic": "AMBIENTE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.eea.europa.eu/en/newsroom/news/average-co2-emissions-from-new-cars-and-vans-significantly-decreased-in-2025",
+        "domain": "eea.europa.eu",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Average CO2 emissions from new cars and vans significantly decreased in 2025",
+      "summary": "EEA ha pubblicato questo aggiornamento quantitativo il 25/06/2026. La pagina contiene valori e indicatori numerici (tra cui 2025, 25, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-BFE678527812D0F94C",
+      "published_at": "2026-06-18T00:00:00Z",
+      "observer": "IVASS",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.ivass.it/pubblicazioni-e-statistiche/pubblicazioni/relazione-annuale/index.html",
+        "domain": "ivass.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Relazione Annuale",
+      "summary": "IVASS ha pubblicato questo aggiornamento quantitativo il 18/06/2026. La pagina contiene valori e indicatori numerici (tra cui 2025, 18, 2026, 2024, 19); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-552B308CA1846C9376",
+      "published_at": "2026-06-18T00:00:00Z",
+      "observer": "EEA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.eea.europa.eu/en/newsroom/news/eea-and-eionet-welcome-ukraine-as-a-cooperating-country",
+        "domain": "eea.europa.eu",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "EEA and Eionet welcome Ukraine as a cooperating country",
+      "summary": "EEA ha pubblicato questo aggiornamento quantitativo il 18/06/2026. La pagina contiene valori e indicatori numerici (tra cui 18, 2026, 32, 8, 2022); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-2703C11B296BF8D3BA",
+      "published_at": "2026-06-18T00:00:00Z",
+      "observer": "UNRAE",
+      "topic": "MOBILITA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://unrae.it/sala-stampa/altri-comunicati/7680/il-2025-dellautomotive-diffusa-la-29-sintesi-statistica-unrae",
+        "domain": "unrae.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Il 2025 dell'automotive. Diffusa la 29° Sintesi Statistica UNRAE",
+      "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 18/06/2026. La pagina contiene valori e indicatori numerici (tra cui 2025, 29, 75, 10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-600E619F304B9D1C26",
+      "published_at": "2026-06-10T00:00:00Z",
+      "observer": "AgID",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.agid.gov.it/en/press-and-communication-office",
+        "domain": "agid.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Communication",
+      "summary": "AgID ha pubblicato questo aggiornamento quantitativo il 10/06/2026. La pagina contiene valori e indicatori numerici (tra cui 1, 5); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-38FF6EFB626EE20908",
+      "published_at": "2026-06-10T00:00:00Z",
+      "observer": "UNRAE",
+      "topic": "MOBILITA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://unrae.it/sala-stampa/altri-comunicati/7672/unrae-celebra-25-anni-di-premi-di-laurea-consegnati-i-riconoscimenti-a-5-giovani-laureati-nellautomotive",
+        "domain": "unrae.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "UNRAE celebra 25 anni di premi di laurea: consegnati i riconoscimenti a 5 giovani laureati nell'automotive",
+      "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 10/06/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 5, 2025, 75, 10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-7ECACAF477EA8F7629",
+      "published_at": "2026-06-09T00:00:00Z",
+      "observer": "UNRAE",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://unrae.it/sala-stampa/altri-comunicati/7669/italia-prima-in-europa-per-numero-di-ztl-ma-senza-una-strategia-nazionale",
+        "domain": "unrae.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Italia prima in Europa per numero di ZTL ma senza una strategia nazionale",
+      "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 09/06/2026. La pagina contiene valori e indicatori numerici (tra cui 2025, 75, 10, 09, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-9EA3F445E6828B018A",
+      "published_at": "2026-05-26T00:00:00Z",
+      "observer": "ARERA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.arera.it/amministrazione-trasparente/altri-contenuti-albo-consulenti-e-prestatori-dopera",
+        "domain": "arera.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Altri contenuti - Albo consulenti e prestatori d’opera",
+      "summary": "ARERA ha pubblicato questo aggiornamento quantitativo il 26/05/2026. La pagina contiene valori e indicatori numerici (tra cui 198, 21, 26, 2026, 45); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-391706198B2857A9B5",
+      "published_at": "2026-05-23T00:00:00Z",
+      "observer": "Unioncamere / InfoCamere",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.infocamere.it/open_house_2026",
+        "domain": "infocamere.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "InfoCamere a Open House Roma 2026: sede aperta sabato 23 maggio",
+      "summary": "Unioncamere / InfoCamere ha pubblicato questo aggiornamento quantitativo il 23/05/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 23, 05); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-B73C9A1FEF5A9BD555",
+      "published_at": "2026-05-21T00:00:00Z",
+      "observer": "Unioncamere / InfoCamere",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.infocamere.it/InfoCamere_leader_sostenibilita_2026",
+        "domain": "infocamere.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "InfoCamere \"Leader della Sostenibilità 2026\": sesto anno consecutivo",
+      "summary": "Unioncamere / InfoCamere ha pubblicato questo aggiornamento quantitativo il 21/05/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 21, 05, 240); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-2DFE93F530AC09B10E",
+      "published_at": "2026-05-11T00:00:00Z",
+      "observer": "IVASS",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.ivass.it/pubblicazioni-e-statistiche/statistiche/reportistica-reclami/index.html",
+        "domain": "ivass.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Reportistica reclami",
+      "summary": "IVASS ha pubblicato questo aggiornamento quantitativo il 11/05/2026. La pagina contiene valori e indicatori numerici (tra cui 20, 2025, 11, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-89F956A2693D6B7ADB",
+      "published_at": "2026-05-05T00:00:00Z",
+      "observer": "Copernicus",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://climate.copernicus.eu/c3s2452-development-statistical-framework-event-attribution",
+        "domain": "climate.copernicus.eu",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "C3S2_452 Development of a statistical framework for event attribution",
+      "summary": "Copernicus ha pubblicato questo aggiornamento quantitativo il 05/05/2026. La pagina contiene valori e indicatori numerici (tra cui 01, 02, 03, 04, 05); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-F1EDD8298994902170",
+      "published_at": "2026-05-05T00:00:00Z",
+      "observer": "EEA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.eea.europa.eu/en/newsroom/news/europe-must-steer-ai-and-digitalisation-to-support-its-green-transition",
+        "domain": "eea.europa.eu",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Europe must steer AI and digitalisation to support its green transition",
+      "summary": "EEA ha pubblicato questo aggiornamento quantitativo il 05/05/2026. La pagina contiene valori e indicatori numerici (tra cui 05, 2026, 22, 18); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-C934C2F04B7C1E02B3",
+      "published_at": "2026-05-04T00:00:00Z",
+      "observer": "UNRAE",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://unrae.it/sala-stampa/autovetture/7628/mercato-auto-aprile-a-116-con-155210-immatricolazioni-ma-riviste-in-lieve-ribasso-le-stime-2026-trump-e-automotive-europeo-no-dazi-o-barriere-per-unrae-servono-investimenti-e-cooperazione-a-difesa-di-competitivita-e-sviluppo-del-settore",
+        "domain": "unrae.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Mercato auto: aprile a +11,6% con 155.210 immatricolazioni, ma riviste in lieve ribasso le stime 2026. Trump e automotive europeo: no dazi o barriere, per UNRAE servono investimenti e cooperazione a difesa di competitivi",
+      "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 04/05/2026. La pagina contiene valori e indicatori numerici (tra cui 11,6%, 155.210, 2026, 2025, 75); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-276BB1AF1A46D0AE06",
+      "published_at": "2026-04-29T00:00:00Z",
+      "observer": "Unioncamere / InfoCamere",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.infocamere.it/career_fair_2026",
+        "domain": "infocamere.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "InfoCamere al Career Fair del Politecnico di Bari 2026",
+      "summary": "Unioncamere / InfoCamere ha pubblicato questo aggiornamento quantitativo il 29/04/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 29, 04); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-6C49A5F7EA1C0AC331",
+      "published_at": "2026-04-27T00:00:00Z",
+      "observer": "Unioncamere / InfoCamere",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.infocamere.it/composizione_negoziata_2026",
+        "domain": "infocamere.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Decolla l`iter negoziato, incarichi al 25% dei professionisti",
+      "summary": "Unioncamere / InfoCamere ha pubblicato questo aggiornamento quantitativo il 27/04/2026. La pagina contiene valori e indicatori numerici (tra cui 25%, 27, 04, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-6A710EE32C9C375F76",
+      "published_at": "2026-04-23T00:00:00Z",
+      "observer": "Copernicus",
+      "topic": "AMBIENTE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://climate.copernicus.eu/european-state-climate-record-heatwaves-mediterranean-arctic-while-glaciers-shrink-and-snow-cover",
+        "domain": "climate.copernicus.eu",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "European State of the Climate: record heatwaves from the Mediterranean to the Arctic, while glaciers shrink and snow cover declines",
+      "summary": "Copernicus ha pubblicato questo aggiornamento quantitativo il 23/04/2026. La pagina contiene valori e indicatori numerici (tra cui 01, 02, 03, 04, 05); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-FFF3FC30B7361ABC41",
+      "published_at": "2026-04-20T00:00:00Z",
+      "observer": "EEA",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.eea.europa.eu/en/newsroom/news/creating-win-win-for-business-and-people-key-to-success-of-circular-economy",
+        "domain": "eea.europa.eu",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Creating win-win for business and people key to success of circular economy",
+      "summary": "EEA ha pubblicato questo aggiornamento quantitativo il 20/04/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 2026, 2030, 2014, 2023); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-C716E95AC03BD391AE",
+      "published_at": "2026-04-20T00:00:00Z",
+      "observer": "Unioncamere / InfoCamere",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.infocamere.it/osservatorio_reti_impresa_2026",
+        "domain": "infocamere.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "InfoCamere presenta il 7° Rapporto Osservatorio Reti d'Impresa",
+      "summary": "Unioncamere / InfoCamere ha pubblicato questo aggiornamento quantitativo il 20/04/2026. La pagina contiene valori e indicatori numerici (tra cui 7, 20, 04, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-AC7D0A27A836B56AF2",
+      "published_at": "2026-04-17T00:00:00Z",
+      "observer": "EEA",
+      "topic": "AMBIENTE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.eea.europa.eu/en/newsroom/news/the-eu-has-cut-its-greenhouse-gas-emissions-by-40-since-1990",
+        "domain": "eea.europa.eu",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "The EU has cut its greenhouse gas emissions by 40% since 1990",
+      "summary": "EEA ha pubblicato questo aggiornamento quantitativo il 17/04/2026. La pagina contiene valori e indicatori numerici (tra cui 40%, 199); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-26D516223E871E7FBC",
+      "published_at": "2026-04-13T00:00:00Z",
+      "observer": "IVASS",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.ivass.it/pubblicazioni-e-statistiche/pubblicazioni/att-sem-conv/index.html",
+        "domain": "ivass.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Atti, Seminari e Convegni",
+      "summary": "IVASS ha pubblicato questo aggiornamento quantitativo il 13/04/2026. La pagina contiene valori e indicatori numerici (tra cui 13, 2026, 17, 6); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-ECF47675EBF40FE96F",
+      "published_at": "2026-04-10T00:00:00Z",
+      "observer": "IVASS",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.ivass.it/pubblicazioni-e-statistiche/statistiche/bollettino-statistico/index.html",
+        "domain": "ivass.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Bollettino Statistico",
+      "summary": "IVASS ha pubblicato questo aggiornamento quantitativo il 10/04/2026. La pagina contiene valori e indicatori numerici (tra cui 4, 2026, 2019, 2024, 10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-A88118BDD245C8B5CC",
+      "published_at": "2026-04-09T00:00:00Z",
+      "observer": "UNRAE",
+      "topic": "MOBILITA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://unrae.it/sala-stampa/autovetture/7596/noleggio-auto-a-lungo-termine-nel-primo-trimestre-2026-251680-contratti-10-stabili-i-privati-al-152",
+        "domain": "unrae.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Noleggio auto a lungo termine: nel primo trimestre 2026 251.680 contratti (-1,0%), stabili i privati al 15,2%",
+      "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 09/04/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 251.680, 1,0%, 15,2%, 2025); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-ACB99D0D863915C876",
+      "published_at": "2026-03-30T00:00:00Z",
+      "observer": "Unioncamere / InfoCamere",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.infocamere.it/tech_lead_summit_2026",
+        "domain": "infocamere.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Paolo Ghezzi speaker al Tech Lead Summit 2026",
+      "summary": "Unioncamere / InfoCamere ha pubblicato questo aggiornamento quantitativo il 30/03/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 30, 03); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-694C8213EC97E53315",
+      "published_at": "2026-03-30T00:00:00Z",
+      "observer": "Unioncamere / InfoCamere",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.infocamere.it/talent_week_2026",
+        "domain": "infocamere.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Talent Week 2026: InfoCamere partecipa all'evento",
+      "summary": "Unioncamere / InfoCamere ha pubblicato questo aggiornamento quantitativo il 30/03/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 30, 03); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-85274B45E48E17B49B",
+      "published_at": "2026-03-23T00:00:00Z",
+      "observer": "UNRAE",
+      "topic": "MOBILITA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://unrae.it/sala-stampa/autovetture/7574/auto-usata-il-2026-apre-in-flessione-gennaio-a-67-il-calo-piu-forte-da-40-mesi-diesel-39-pp-e-benzina-02-pp-condividono-il-1-posto-sul-podio-al-392",
+        "domain": "unrae.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Auto usata: il 2026 apre in flessione (gennaio a -6,7%, il calo più forte da 40 mesi). Diesel (-3,9 p.p.) e benzina (+0,2 p.p.) condividono il 1° posto sul podio al 39,2%",
+      "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 23/03/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 6,7%, 40, 3,9, 0,2); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-663A4C7E5A45F1A5D0",
+      "published_at": "2026-03-17T00:00:00Z",
+      "observer": "UNRAE",
+      "topic": "ENERGIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://unrae.it/sala-stampa/altri-comunicati/7568/lanalisi-unrae-della-mobilita-femminile-in-italia-nel-2025-le-donne-accelerano-sullelettrico-bev-quasi-raddoppiate-al-56",
+        "domain": "unrae.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "L'analisi UNRAE della mobilità femminile in Italia: nel 2025 le donne accelerano sull'elettrico (BEV quasi raddoppiate al 5,6%)",
+      "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 17/03/2026. La pagina contiene valori e indicatori numerici (tra cui 2025, 5,6%, 75, 10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-0C1805EAB950F24159",
+      "published_at": "2026-03-05T00:00:00Z",
+      "observer": "EEA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.eea.europa.eu/en/newsroom/news/social-fairness-key-to-success-of-the-eus-new-ets2-cap-and-trade-system",
+        "domain": "eea.europa.eu",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Social fairness key to success of the EU’s new ETS2 cap and trade system",
+      "summary": "EEA ha pubblicato questo aggiornamento quantitativo il 05/03/2026. La pagina contiene valori e indicatori numerici (tra cui 05, 2026, 93 %, 4.4 %, 2005); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-3E81C2E0ADF46470CF",
+      "published_at": "2026-02-27T00:00:00Z",
+      "observer": "INAIL",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.inail.it/portale/assicurazione/it/focus/avvisi-pubblici-proposte-progettuali-per-reinserimento-nella-vit/avviso-pubblico---progetto--come-una-scatola-di-cioccolatini-.html",
+        "domain": "inail.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Avviso pubblico - Progetto \"Come una scatola di cioccolatini\"",
+      "summary": "INAIL ha pubblicato questo aggiornamento quantitativo il 27/02/2026. La pagina contiene valori e indicatori numerici (tra cui 3, 7, 2022, 12, 00); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-C1039813B1917A9391",
+      "published_at": "2026-02-27T00:00:00Z",
+      "observer": "INAIL",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.inail.it/portale/assicurazione/it/focus/avvisi-pubblici-proposte-progettuali-per-reinserimento-nella-vit/avviso-pubblico---progetto--tanghiamo-.html",
+        "domain": "inail.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Avviso pubblico - Progetto “TanghiAMO”",
+      "summary": "INAIL ha pubblicato questo aggiornamento quantitativo il 27/02/2026. La pagina contiene valori e indicatori numerici (tra cui 3, 7, 2022, 51, 301); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-E90F94D75288609363",
+      "published_at": "2026-02-27T00:00:00Z",
+      "observer": "UNRAE",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://unrae.it/sala-stampa/altri-comunicati/7544/book-unrae-2025-tutti-i-numeri-del-mercato-automotive",
+        "domain": "unrae.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "BOOK UNRAE 2025: Tutti i numeri del mercato automotive",
+      "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 27/02/2026. La pagina contiene valori e indicatori numerici (tra cui 2025, 75, 10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-B41FEC14D0568B52C4",
+      "published_at": "2026-02-26T00:00:00Z",
+      "observer": "AgID",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.agid.gov.it/it/stampa-e-comunicazione/comunicati-stampa-agid",
+        "domain": "agid.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Comunicati stampa",
+      "summary": "AgID ha pubblicato questo aggiornamento quantitativo il 26/02/2026. La pagina contiene valori e indicatori numerici (tra cui 1, 5); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-821FC5F1F4DBB3D66E",
+      "published_at": "2026-02-25T00:00:00Z",
+      "observer": "EEA",
+      "topic": "AMBIENTE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.eea.europa.eu/en/newsroom/news/industrial-transformation-key-to-cutting-emissions-and-pollution-further-in-europes-energy-intensive-industries",
+        "domain": "eea.europa.eu",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Industrial transformation key to cutting emissions and pollution further in Europe’s energy-intensive industries",
+      "summary": "EEA ha pubblicato questo aggiornamento quantitativo il 25/02/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 2026, 27%, 73, 42%); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-73400309EDD67AAC86",
+      "published_at": "2026-02-24T00:00:00Z",
+      "observer": "UNRAE",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://unrae.it/sala-stampa/autovetture/7539/mercato-auto-europa-il-2026-parte-con-una-flessione-35",
+        "domain": "unrae.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Mercato auto Europa, il 2026 parte con una flessione: -3,5%",
+      "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 24/02/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 3,5%, 2025, 75, 10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-999876E0D749C1A872",
+      "published_at": "2026-02-23T00:00:00Z",
+      "observer": "Unioncamere / InfoCamere",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.infocamere.it/analisi_imprese_decennio",
+        "domain": "infocamere.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "L'evoluzione del tessuto imprenditoriale italiano 2016-2025",
+      "summary": "Unioncamere / InfoCamere ha pubblicato questo aggiornamento quantitativo il 23/02/2026. La pagina contiene valori e indicatori numerici (tra cui 2016, 2025, 23); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-ED004C8C29020F8B02",
+      "published_at": "2026-02-20T00:00:00Z",
+      "observer": "UNRAE",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://unrae.it/sala-stampa/veicoli-commerciali/7533/avvio-positivo-dei-trainati-nel-2026-gennaio-a-132-unrae-evitare-attesa-prolungata-per-il-fondo-straordinario",
+        "domain": "unrae.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Avvio positivo dei trainati nel 2026: gennaio a +13,2%. UNRAE: \"Evitare attesa prolungata per il Fondo straordinario\"",
+      "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 20/02/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 13,2%, 2025, 75, 10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-D6DF4DADD3238387B3",
+      "published_at": "2026-02-19T00:00:00Z",
+      "observer": "INAIL",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.inail.it/portale/prevenzione-e-sicurezza/it/prevenzione-e-sicurezza/finanziamenti-per-la-sicurezza/finanziamenti-ad-enti-ed-organismi/manifestazioni-di-interesse-avvisi-pubblici-regionali.html",
+        "domain": "inail.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Manifestazioni di interesse - avvisi pubblici regionali",
+      "summary": "INAIL ha pubblicato questo aggiornamento quantitativo il 19/02/2026. La pagina contiene valori e indicatori numerici (tra cui 3, 19, 2026, 30); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-748CB2B1AC6BB37A43",
+      "published_at": "2026-02-19T00:00:00Z",
+      "observer": "UNRAE",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://unrae.it/sala-stampa/altri-comunicati/7530/mercato-auto-2025-crescono-i-finanziamenti-per-lusato-45-mentre-il-mercato-del-nuovo-si-stabilizza",
+        "domain": "unrae.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Mercato auto 2025: crescono i finanziamenti per l'usato (+4,5%) mentre il mercato del nuovo si stabilizza",
+      "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 19/02/2026. La pagina contiene valori e indicatori numerici (tra cui 2025, 4,5%, 75, 10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-AE7DFDAD28173C5179",
+      "published_at": "2026-02-15T00:00:00Z",
+      "observer": "Ministero della Giustizia · DGStat",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://datiestatistiche.giustizia.it/it/monitoraggio_mens_tribunali.page",
+        "domain": "datiestatistiche.giustizia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Direzione Generale di Statistica e Analisi Organizzativa",
+      "summary": "Ministero della Giustizia · DGStat ha pubblicato questo aggiornamento quantitativo il 15/02/2026. La pagina contiene valori e indicatori numerici (tra cui 1, 2, 3, 2019); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-62A29877F90D57ACD8",
+      "published_at": "2026-02-11T00:00:00Z",
+      "observer": "CREA · RICA",
+      "topic": "AMBIENTE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.crea.gov.it/-/il-crea-centro-zootecnia-e-acquacoltura-ad-aquafarm-2026-1",
+        "domain": "crea.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Il CREA – Centro Zootecnia e Acquacoltura ad AQUAFARM 2026 - Il CREA – Centro Zootecnia e Acquacoltura ad AQUAFARM 2026",
+      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 11/02/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 11); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-33405726F0A40E8437",
+      "published_at": "2026-02-11T00:00:00Z",
+      "observer": "CREA · RICA",
+      "topic": "AMBIENTE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.crea.gov.it/en/-/il-crea-centro-zootecnia-e-acquacoltura-ad-aquafarm-2026-1",
+        "domain": "crea.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Il CREA – Centro Zootecnia e Acquacoltura ad AQUAFARM 2026 - Il CREA – Centro Zootecnia e Acquacoltura ad AQUAFARM 2026",
+      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 11/02/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 11); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-AD278E00CB08D84684",
+      "published_at": "2026-02-09T00:00:00Z",
+      "observer": "Copernicus",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://climate.copernicus.eu/copernicus-fifth-warmest-january-sees-2026-start-weather-extremes-across-both-hemispheres",
+        "domain": "climate.copernicus.eu",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Copernicus: Fifth-warmest January sees 2026 start with weather extremes across both hemispheres",
+      "summary": "Copernicus ha pubblicato questo aggiornamento quantitativo il 09/02/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 01, 02, 03, 04); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-82F3E9FE5B17BAD8E5",
+      "published_at": "2026-02-08T00:00:00Z",
+      "observer": "EEA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.eea.europa.eu/en/newsroom/news/fire-and-ice-how-satellite-data-helps-illustrate-europes-changing-landscape",
+        "domain": "eea.europa.eu",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Fire and ice: how satellite data helps illustrate Europe’s changing landscape",
+      "summary": "EEA ha pubblicato questo aggiornamento quantitativo il 08/02/2026. La pagina contiene valori e indicatori numerici (tra cui 09, 2026, 800, 200, 250); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-096DCC13C020043665",
+      "published_at": "2026-02-03T00:00:00Z",
+      "observer": "IVASS",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.ivass.it/pubblicazioni-e-statistiche/statistiche/reportistica-sanzioni/index.html",
+        "domain": "ivass.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Reportistica sanzioni",
+      "summary": "IVASS ha pubblicato questo aggiornamento quantitativo il 03/02/2026. La pagina contiene valori e indicatori numerici (tra cui 10, 5, 2025, 3, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-AD2D8186F5B597E89D",
+      "published_at": "2026-02-02T00:00:00Z",
+      "observer": "UNRAE",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://unrae.it/sala-stampa/autovetture/7518/mercato-auto-italia-il-2026-apre-in-crescita-gennaio-a-62",
+        "domain": "unrae.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Mercato auto Italia: il 2026 apre in crescita. Gennaio a +6,2%",
+      "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 02/02/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 6,2%, 2025, 75, 10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-92E326E1A28AE6587A",
+      "published_at": "2026-01-30T00:00:00Z",
+      "observer": "UNRAE",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://unrae.it/sala-stampa/altri-comunicati/7505/automotive-italia-unrae-e-prometeia-presentano-losservatorio-previsioni-mercato",
+        "domain": "unrae.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Automotive Italia: UNRAE e Prometeia presentano l'Osservatorio \"Previsioni & Mercato\"",
+      "summary": "UNRAE ha pubblicato questo aggiornamento quantitativo il 30/01/2026. La pagina contiene valori e indicatori numerici (tra cui 2025, 75, 10, 30, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-21D530B58E7C580E1B",
+      "published_at": "2026-01-15T00:00:00Z",
+      "observer": "ARERA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.arera.it/amministrazione-trasparente/organizzazione/sanzioni-per-mancata-comunicazione-dei-dati",
+        "domain": "arera.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Sanzioni per mancata comunicazione dei dati",
+      "summary": "ARERA ha pubblicato questo aggiornamento quantitativo il 15/01/2026. La pagina contiene valori e indicatori numerici (tra cui 47, 33, 2013, 15, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    }
+  ]
 }
