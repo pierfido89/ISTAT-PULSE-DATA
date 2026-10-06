@@ -301,6 +301,7 @@ def main():
                         by_id[aid]={
                             "id":aid,
                             "published_at":info["date"].isoformat().replace("+00:00","Z"),
+                            "observer":name,
                             "topic":topic,
                             "pulse_score":0,
                             "patterns":[],
