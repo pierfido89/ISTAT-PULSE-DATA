@@ -2,7 +2,8 @@ name: Refresh PULSE News Radar
 on:
   workflow_dispatch:
   schedule:
-    - cron: '15 5,11,17 * * *'
+    # GitHub cron is UTC. Run both CET/CEST candidates and gate by Europe/Rome.
+    - cron: '0 4,5,9,10,14,15,20,21 * * *'
   push:
     branches: [ main, feat/news-engine ]
     paths:
@@ -20,16 +21,38 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
+      - name: Check Rome news slot
+        id: slot
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          hour="$(TZ=Europe/Rome date +%H)"
+          case "$hour" in
+            06|11|16|22) echo "run=true" >> "$GITHUB_OUTPUT" ;;
+            *) echo "run=false" >> "$GITHUB_OUTPUT" ;;
+          esac
+
       - uses: actions/checkout@v4
+        if: steps.slot.outputs.run == 'true'
       - uses: actions/setup-python@v5
+        if: steps.slot.outputs.run == 'true'
         with:
           python-version: '3.12'
-      - run: python -m pip install beautifulsoup4 pypdf
-      - run: python scripts/update_news_radar.py
-      - run: python scripts/update_observer_archive.py
-      - run: test -s data/news/index.json
-      - run: test -s data/news/observer_articles.json
-      - run: |
+      - if: steps.slot.outputs.run == 'true'
+        run: python -m pip install beautifulsoup4 pypdf
+      - if: steps.slot.outputs.run == 'true'
+        run: python scripts/update_news_radar.py
+      - if: steps.slot.outputs.run == 'true'
+        run: python scripts/update_observer_archive.py
+      - if: steps.slot.outputs.run == 'true'
+        run: test -s data/news/index.json
+      - if: steps.slot.outputs.run == 'true'
+        run: test -s data/news/observer_articles.json
+      - if: steps.slot.outputs.run == 'true'
+        run: |
           git add data/news
           if git diff --cached --quiet; then exit 0; fi
           git config user.name "istat-pulse-bot"
