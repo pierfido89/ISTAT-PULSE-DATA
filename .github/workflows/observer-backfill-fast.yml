@@ -12,6 +12,8 @@ on:
     branches: [ feat/news-engine ]
     paths:
       - '.github/workflows/observer-backfill-fast.yml'
+      - 'scripts/update_observer_archive.py'
+      - 'data/observer_sources.json'
 
 jobs:
   backfill:
