@@ -24,34 +24,5 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install beautifulsoup4 pypdf
-      - name: Probe ANFIA official RSS
-        run: |
-          set +e
-          for u in \
-            "https://www.anfia.it/it/rss/anfia-public-news-feed" \
-            "https://anfia.it/it/rss/anfia-public-news-feed"
-          do
-            echo "=== $u"
-            rm -f /tmp/anfia.xml
-            curl -4 --http1.1 -L --connect-timeout 6 --max-time 20 \
-              -A "Mozilla/5.0" -H "Accept: application/rss+xml,application/xml,text/xml,*/*" \
-              -o /tmp/anfia.xml \
-              -w "CURL code=%{http_code} size=%{size_download} connect=%{time_connect} start=%{time_starttransfer} total=%{time_total} final=%{url_effective}\n" \
-              "$u"
-            python - <<'PY'
-          from pathlib import Path
-          import xml.etree.ElementTree as ET
-          p=Path("/tmp/anfia.xml")
-          if p.exists() and p.stat().st_size:
-              raw=p.read_bytes()
-              print("RSS bytes=",len(raw),"head=",raw[:120])
-              try:
-                  root=ET.fromstring(raw.decode("utf-8","ignore"))
-                  items=root.findall(".//item")
-                  print("RSS items=",len(items))
-                  for item in items[:8]:
-                      print("ITEM", (item.findtext("pubDate") or ""), "|", (item.findtext("title") or "")[:120], "|", item.findtext("link") or "")
-              except Exception as exc:
-                  print("RSS parse error",type(exc).__name__,exc)
-          PY
-          done
+      - name: Test ANFIA only
+        run: python scripts/update_observer_archive.py --only ANFIA
