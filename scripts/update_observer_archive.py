@@ -205,6 +205,65 @@ def sitemap_candidates(domain,year=2026,limit=180):
                     out.append((urllib.parse.unquote(loc.rsplit("/",1)[-1]).replace("-"," "),loc))
     return _dedupe_results(out,limit)
 
+def site_crawl_candidates(domain,year=2026,limit=140):
+    # Generic official-site discovery independent of sitemap/search-engine quality.
+    # Start from the institutional home and conventional newsroom/statistics paths,
+    # then follow a bounded set of internal listing pages.
+    roots=[
+        f"https://{domain}/", f"https://www.{domain}/",
+        f"https://{domain}/news", f"https://www.{domain}/news",
+        f"https://{domain}/notizie", f"https://www.{domain}/notizie",
+        f"https://{domain}/comunicati-stampa", f"https://www.{domain}/comunicati-stampa",
+        f"https://{domain}/pubblicazioni", f"https://www.{domain}/pubblicazioni",
+        f"https://{domain}/statistiche", f"https://www.{domain}/statistiche",
+        f"https://{domain}/dati-e-statistiche", f"https://www.{domain}/dati-e-statistiche",
+        f"https://{domain}/osservatori", f"https://www.{domain}/osservatori",
+        f"https://{domain}/studi-e-ricerche", f"https://www.{domain}/studi-e-ricerche",
+    ]
+    listing_terms=("news","notiz","comunicat","pubblic","statist","osserv","rapport",
+                   "bollett","dati","studi","ricer","analisi","monitor","indagin",
+                   "mercato","archiv","press","media")
+    out=[]
+    listing_pages=[]
+
+    def read_links(url):
+        try:
+            raw,final,ct=fetch(url,timeout=6,max_bytes=1400000)
+            if "html" not in ct.lower(): return []
+            soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
+            rows=[]
+            for a in soup.find_all("a",href=True):
+                href=urllib.parse.urljoin(final,a.get("href","")).split("#",1)[0]
+                title=re.sub(r"\s+"," ",a.get_text(" ",strip=True))
+                if not href.startswith("http") or not title: continue
+                if host_allowed(canonical_host(href),[domain]):
+                    rows.append((title,href))
+            return rows
+        except Exception:
+            return []
+
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        for rows in pool.map(read_links,roots):
+            for title,url in rows:
+                low=(title+" "+url).lower()
+                if str(year) in low or any(t in low for t in STAT_TERMS) or any(t in low for t in listing_terms):
+                    out.append((title,url))
+                if any(t in low for t in listing_terms) and len(listing_pages)<36:
+                    listing_pages.append(url)
+
+    # Follow likely archive/listing pages one additional level.
+    listing_pages=list(dict.fromkeys(listing_pages))[:36]
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        for rows in pool.map(read_links,listing_pages):
+            for title,url in rows:
+                low=(title+" "+url).lower()
+                if str(year) in low or any(t in low for t in STAT_TERMS) or any(t in low for t in listing_terms):
+                    out.append((title,url))
+                    if len(out)>=limit*3: break
+
+    return _dedupe_results(out,limit)
+
+
 def feed_candidates(domain,year=2026,limit=100):
     seeds=[
         f"https://{domain}/feed/",
@@ -277,6 +336,12 @@ def page_info(url,domains):
             if el and el.get("content"): meta_candidates.append(el.get("content"))
         for t in soup.find_all("time"):
             if t.get("datetime"): meta_candidates.append(t.get("datetime"))
+        # Many institutional CMS expose the canonical publication date only in
+        # JSON-LD rather than meta/time tags.
+        for script in soup.find_all("script",attrs={"type":"application/ld+json"}):
+            raw_json=script.get_text(" ",strip=True)
+            for value in re.findall(r'"(?:datePublished|dateCreated|dateModified)"\s*:\s*"([^"]+)"',raw_json):
+                meta_candidates.append(value)
         meta_candidates += re.findall(r"\b(20(?:2[5-9]|[3-9]\d)[-/]\d{1,2}[-/]\d{1,2})\b",text[:12000])
         for rawd in meta_candidates:
             rawd=rawd or ""
@@ -363,7 +428,18 @@ def process_source(src, now):
                     if url and url not in candidates:
                         candidates[url]=title
 
-        # 2) Official RSS/Atom feeds catch newsrooms that expose weak sitemaps.
+        # 2) Crawl official newsroom/statistics sections directly. This is
+        # crucial for institutions whose sitemap does not expose article URLs.
+        with ThreadPoolExecutor(max_workers=min(2,max(1,len(domains[:2])))) as pool:
+            jobs={pool.submit(site_crawl_candidates,domain,year,140):domain for domain in domains[:2]}
+            for fut in as_completed(jobs):
+                try: results=fut.result()
+                except Exception: results=[]
+                for title,url in results:
+                    if url and url not in candidates:
+                        candidates[url]=title
+
+        # 3) Official RSS/Atom feeds catch newsrooms that expose weak sitemaps.
         with ThreadPoolExecutor(max_workers=min(2,max(1,len(domains[:2])))) as pool:
             jobs={pool.submit(feed_candidates,domain,year,120):domain for domain in domains[:2]}
             for fut in as_completed(jobs):
@@ -373,7 +449,7 @@ def process_source(src, now):
                     if url and url not in candidates:
                         candidates[url]=title
 
-        # 3) Search engines are fallback only.
+        # 4) Search engines are fallback only.
         if len(candidates) < 24:
             queries=[]
             for domain in domains[:2]:
@@ -393,7 +469,7 @@ def process_source(src, now):
 
         year_found=0
         # Bound verification work per source while keeping generous recall.
-        items=list(candidates.items())[:80]
+        items=list(candidates.items())[:140]
         with ThreadPoolExecutor(max_workers=6) as pool:
             future_pages={
                 pool.submit(page_info,url,domains):(title,url)
