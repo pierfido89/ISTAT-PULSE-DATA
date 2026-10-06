@@ -641,6 +641,99 @@ def cgiamestre_candidates(entrypoints,domains,year=2026,limit=420):
     return out
 
 
+
+def anfia_candidates(entrypoints,domains,year=2026,limit=420):
+    """Dedicated ANFIA parser for communication cards and statistical downloads."""
+    out=[]; seen=set()
+    months={
+        "gennaio":1,"gen":1,"febbraio":2,"feb":2,"marzo":3,"mar":3,
+        "aprile":4,"apr":4,"maggio":5,"mag":5,"giugno":6,"giu":6,
+        "luglio":7,"lug":7,"agosto":8,"ago":8,"settembre":9,"set":9,"sett":9,
+        "ottobre":10,"ott":10,"novembre":11,"nov":11,"dicembre":12,"dic":12
+    }
+    keys="|".join(sorted(months,key=len,reverse=True))
+    textual=re.compile(r"\\b([0-3]?\\d)\\s+("+keys+r")\\.?\\s+(20\\d{2})\\b",re.I)
+    numeric=re.compile(r"\\b([0-3]?\\d)[-/]([01]?\\d)[-/](20\\d{2}|\\d{2})\\b")
+
+    def parse_date(txt):
+        txt=txt or ""
+        m=textual.search(txt)
+        if m:
+            try:return datetime(int(m.group(3)),months[m.group(2).lower()],int(m.group(1)),tzinfo=timezone.utc)
+            except Exception:return None
+        m=numeric.search(txt)
+        if m:
+            try:
+                d,mo,y=map(int,m.groups()); y=y+2000 if y<100 else y
+                return datetime(y,mo,d,tzinfo=timezone.utc)
+            except Exception:return None
+        return None
+
+    for root in entrypoints or []:
+        try:
+            raw,final,ct=fetch(root,timeout=10,max_bytes=2600000)
+            if "html" not in ct.lower():
+                continue
+            soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
+
+            # Communication/news cards: headline and date live in the same nearby card.
+            for h in soup.find_all(["h2","h3","h4"]):
+                a=h.find("a",href=True)
+                if not a:
+                    continue
+                title=re.sub(r"\\s+"," ",a.get_text(" ",strip=True)).strip()
+                href=urllib.parse.urljoin(final,a["href"]).split("#",1)[0]
+                if len(title)<8 or not host_allowed(canonical_host(href),domains):
+                    continue
+                contexts=[]
+                node=h
+                for _ in range(7):
+                    node=getattr(node,"parent",None)
+                    if node is None: break
+                    txt=re.sub(r"\\s+"," ",node.get_text(" ",strip=True))
+                    if txt: contexts.append(txt[:2400])
+                pub=None
+                for txt in contexts:
+                    pub=parse_date(txt)
+                    if pub: break
+                if pub and pub.year==year and href not in seen:
+                    seen.add(href); out.append((title,href,pub))
+                    if len(out)>=limit:return out
+
+            # Statistics pages: "Pubblicato il DD Mese YYYY" near spreadsheet/pdf links.
+            for a in soup.find_all("a",href=True):
+                href=urllib.parse.urljoin(final,a["href"]).split("#",1)[0]
+                if not host_allowed(canonical_host(href),domains):
+                    continue
+                node=a
+                contexts=[]
+                for _ in range(7):
+                    node=getattr(node,"parent",None)
+                    if node is None: break
+                    txt=re.sub(r"\\s+"," ",node.get_text(" ",strip=True))
+                    if txt: contexts.append(txt[:2600])
+                pub=None; block=""
+                for txt in contexts:
+                    if "pubblicato il" in txt.lower():
+                        block=txt
+                        pub=parse_date(txt)
+                        if pub: break
+                if not pub or pub.year!=year:
+                    continue
+                title=""
+                if block:
+                    m=re.search(r"^(.*?)(?:Pubblicato il\\s+[0-3]?\\d\\s+(?:"+keys+r")\\.?\\s+20\\d{2})",block,re.I)
+                    if m:title=re.sub(r"\\s+"," ",m.group(1)).strip()
+                if len(title)<8:
+                    title=re.sub(r"\\s+"," ",a.get_text(" ",strip=True)).strip() or "ANFIA dati statistici"
+                if href not in seen:
+                    seen.add(href); out.append((title,href,pub))
+                    if len(out)>=limit:return out
+        except Exception:
+            continue
+    return out
+
+
 def dataset_updated_candidates(entrypoints,domains,year=2026,limit=220):
     """Discover dataset detail pages and use their declared 'Ultimo aggiornamento' date."""
     links=[]; out=[]; seen=set()
@@ -827,13 +920,9 @@ def process_source(src, now):
                 listing_dates[url]=(title,pub_date)
 
         if src.get("adapter")=="anfia_listing":
-            # ANFIA exposes stable dated cards on communication and statistics pages.
-            for title,url,pub_date in listing_dated_candidates(entrypoints,domains,year,420):
+            for title,url,pub_date in anfia_candidates(entrypoints,domains,year,420):
                 candidates.setdefault(url,title)
                 listing_dates[url]=(title,pub_date)
-            for title,url,pub_date in anchor_nearby_date_candidates(entrypoints,domains,year,420):
-                candidates.setdefault(url,title)
-                listing_dates.setdefault(url,(title,pub_date))
 
         if src.get("adapter")=="dataset_updated_at":
             dataset_roots=list(entrypoints)
