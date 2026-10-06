@@ -73,4 +73,10 @@ jobs:
           git config user.name "istat-pulse-bot"
           git config user.email "actions@users.noreply.github.com"
           git commit -m "data: refresh production PULSE news radar"
-          git push
+
+          # Other PULSE workflows may update main while the radar is running.
+          # Rebase the generated news commit onto the latest main instead of
+          # losing a valid radar refresh to a non-fast-forward rejection.
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
