@@ -99,7 +99,11 @@
     "infocamere.it",
     "ec.europa.eu",
     "europa.eu",
-    "eea.europa.eu"
+    "eea.europa.eu",
+    "aniasa.it",
+    "skuola.net",
+    "gigroupholding.com",
+    "dataforce.de"
   ],
   "entity_domain_hints": {
     "istat": "istat.it",
@@ -125,6 +129,11 @@
     "anfia": "anfia.it",
     "unrae": "unrae.it",
     "unioncamere": "unioncamere.gov.it",
-    "eurostat": "ec.europa.eu"
+    "eurostat": "ec.europa.eu",
+    "aniasa": "aniasa.it",
+    "dataforce": "aniasa.it",
+    "skuola.net": "skuola.net",
+    "gi edu": "gigroupholding.com",
+    "gi group": "gigroupholding.com"
   }
 }
