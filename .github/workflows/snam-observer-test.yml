@@ -56,5 +56,51 @@ jobs:
               except Exception as exc:
                   print("URL",url,"ERROR",type(exc).__name__,exc,flush=True)
           PY
+      - name: Diagnose SNAM date metadata
+        run: |
+          python - <<'PY'
+          import urllib.request, re, xml.etree.ElementTree as ET, urllib.parse
+          from bs4 import BeautifulSoup
+          sm="https://www.snam.it/sitemap.xml"
+          req=urllib.request.Request(sm,headers={"User-Agent":"Mozilla/5.0"})
+          with urllib.request.urlopen(req,timeout=20) as r:
+              root=ET.fromstring(r.read(5000000).decode("utf-8","ignore"))
+          urls=[]
+          for n in root.iter():
+              if str(n.tag).lower().endswith("loc"):
+                  u=(n.text or "").strip()
+                  if "/2026/" in u and "/comunicati-stampa/" in u:
+                      urls.append(u)
+          print("DIAG_URLS",len(urls),flush=True)
+          for u in urls[:12]:
+              try:
+                  req=urllib.request.Request(u,headers={"User-Agent":"Mozilla/5.0"})
+                  with urllib.request.urlopen(req,timeout=15) as r:
+                      raw=r.read(1200000); ct=r.headers.get("Content-Type","")
+                  soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
+                  title=soup.title.get_text(" ",strip=True) if soup.title else ""
+                  h1=soup.find("h1")
+                  txt=" ".join(soup.stripped_strings)[:25000]
+                  metas=[]
+                  for m in soup.find_all("meta"):
+                      k=m.get("name") or m.get("property") or m.get("itemprop") or ""
+                      v=m.get("content") or ""
+                      if re.search("date|publish|modified|article",k,re.I) or re.search(r"20\d{2}[-/]\d{1,2}[-/]\d{1,2}",v):
+                          metas.append((k,v))
+                  json_dates=[]
+                  for sc in soup.find_all("script"):
+                      t=sc.get_text(" ",strip=True)
+                      for x in re.findall(r'(?i)(?:datePublished|dateCreated|dateModified)[^0-9]{0,30}(20\d{2}[-/]\d{1,2}[-/]\d{1,2}[^"< ]*)',t):
+                          json_dates.append(x)
+                  visible_dates=re.findall(r'\b(?:[0-3]?\d[/-][01]?\d[/-]20\d{2}|20\d{2}[/-][01]?\d[/-][0-3]?\d|[0-3]?\d\s+[A-Za-zÀ-ÿ]+\s+20\d{2})\b',txt,re.I)
+                  print("PAGE",u,flush=True)
+                  print("TITLE",title[:180],flush=True)
+                  print("H1",(h1.get_text(" ",strip=True) if h1 else "")[:180],flush=True)
+                  print("METAS",metas[:20],flush=True)
+                  print("JSONDATES",json_dates[:20],flush=True)
+                  print("VISIBLE",visible_dates[:20],flush=True)
+              except Exception as e:
+                  print("PAGE_ERROR",u,type(e).__name__,e,flush=True)
+          PY
       - name: Test SNAM only
         run: python scripts/update_observer_archive.py --only SNAM
