@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T15:06:50.885584+00:00",
+  "generated_at": "2026-10-06T17:35:30.339320+00:00",
   "min_year": 2026,
   "max_year": 2026,
   "source_count": 65,
@@ -10,12 +10,12 @@
       "connector_status": "ok"
     },
     "CGIA Mestre": {
-      "2026": 39,
-      "scan_2026": 39,
+      "2026": 55,
+      "scan_2026": 55,
       "connector_status": "ok"
     },
     "CNA": {
-      "2026": 124,
+      "2026": 125,
       "scan_2026": 120,
       "connector_status": "ok"
     },
@@ -30,7 +30,7 @@
       "connector_status": "ok"
     },
     "Confartigianato": {
-      "2026": 32,
+      "2026": 33,
       "scan_2026": 29,
       "connector_status": "ok"
     },
@@ -51,7 +51,7 @@
     },
     "Legambiente": {
       "2026": 73,
-      "scan_2026": 51,
+      "scan_2026": 61,
       "connector_status": "ok"
     },
     "Nomisma": {
@@ -75,13 +75,13 @@
       "connector_status": "ok"
     },
     "Aeronautica Militare": {
-      "2026": 80,
-      "scan_2026": 46,
+      "2026": 82,
+      "scan_2026": 51,
       "connector_status": "ok"
     },
     "Agenzia delle Dogane e dei Monopoli": {
       "2026": 11,
-      "scan_2026": 12,
+      "scan_2026": 14,
       "connector_status": "ok"
     },
     "Agenzia delle Entrate · OMI": {
@@ -90,8 +90,8 @@
       "connector_status": "ok"
     },
     "AgID": {
-      "2026": 36,
-      "scan_2026": 37,
+      "2026": 37,
+      "scan_2026": 38,
       "connector_status": "ok"
     },
     "AGCOM": {
@@ -100,9 +100,9 @@
       "connector_status": "ok"
     },
     "AIFA · OsMed": {
-      "2026": 93,
-      "scan_2026": 0,
-      "connector_status": "degraded_preserved"
+      "2026": 94,
+      "scan_2026": 66,
+      "connector_status": "ok"
     },
     "ANAC": {
       "2026": 145,
@@ -111,8 +111,8 @@
     },
     "ANFIA": {
       "2026": 54,
-      "scan_2026": 56,
-      "connector_status": "ok"
+      "scan_2026": 0,
+      "connector_status": "degraded_preserved"
     },
     "ARERA": {
       "2026": 41,
@@ -121,7 +121,7 @@
     },
     "ART": {
       "2026": 79,
-      "scan_2026": 75,
+      "scan_2026": 79,
       "connector_status": "ok"
     },
     "Assoporti": {
@@ -150,13 +150,13 @@
       "connector_status": "ok"
     },
     "CREA · RICA": {
-      "2026": 59,
+      "2026": 61,
       "scan_2026": 56,
       "connector_status": "ok"
     },
     "Dipartimento delle Finanze": {
-      "2026": 31,
-      "scan_2026": 32,
+      "2026": 33,
+      "scan_2026": 33,
       "connector_status": "ok"
     },
     "DIPE · OpenCUP": {
@@ -176,7 +176,7 @@
     },
     "ENEA": {
       "2026": 64,
-      "scan_2026": 57,
+      "scan_2026": 56,
       "connector_status": "ok"
     },
     "ENIT": {
@@ -191,7 +191,7 @@
     },
     "FAO": {
       "2026": 43,
-      "scan_2026": 45,
+      "scan_2026": 46,
       "connector_status": "ok"
     },
     "GME": {
@@ -205,7 +205,7 @@
       "connector_status": "empty_error"
     },
     "INGV": {
-      "2026": 169,
+      "2026": 172,
       "scan_2026": 121,
       "connector_status": "ok"
     },
@@ -221,12 +221,12 @@
     },
     "INVALSI": {
       "2026": 40,
-      "scan_2026": 38,
+      "scan_2026": 39,
       "connector_status": "ok"
     },
     "ISPRA / SNPA": {
       "2026": 54,
-      "scan_2026": 40,
+      "scan_2026": 4,
       "connector_status": "ok"
     },
     "ISMEA": {
@@ -245,12 +245,12 @@
       "connector_status": "ok"
     },
     "MIMIT": {
-      "2026": 39,
-      "scan_2026": 36,
+      "2026": 40,
+      "scan_2026": 35,
       "connector_status": "ok"
     },
     "Ministero dell'Interno": {
-      "2026": 24,
+      "2026": 25,
       "scan_2026": 18,
       "connector_status": "ok"
     },
@@ -270,7 +270,7 @@
       "connector_status": "empty_error"
     },
     "Ministero dell'Università e della Ricerca": {
-      "2026": 128,
+      "2026": 129,
       "scan_2026": 121,
       "connector_status": "ok"
     },
@@ -702,7 +702,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "Ministero dell'Economia e delle Finanze",
-      "summary": "Dipartimento delle Finanze ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 0, 06, 10, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "Dipartimento delle Finanze ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 0, 06, 10, 2026, 19); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -849,7 +849,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "PER I MEDIA",
-      "summary": "MIMIT ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 2026, 3, 05); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "MIMIT ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 2026, 3); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -912,7 +912,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "PER I MEDIA",
-      "summary": "MIMIT ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 2026, 3, 05); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "MIMIT ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 2026, 3); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -1353,7 +1353,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "CREA - Consiglio per la ricerca in agricoltura e l'analisi dell'economia agraria",
-      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 2026, 02, 7); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 2026, 8, 12); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -1647,7 +1647,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "CREA - Consiglio per la ricerca in agricoltura e l'analisi dell'economia agraria",
-      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 2026, 02, 7); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 2026, 8, 12); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -2025,7 +2025,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "WD01 - Rome Water Dialogue - Technical Session on Strengthening governance of water tenure through innovation and inclusive dialogue",
-      "summary": "FAO ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 814, 823, 10, 6, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "FAO ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 799, 808, 10, 6, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -2633,7 +2633,7 @@
         "role": "primary_institutional_source",
         "verification_method": "official_listing_date"
       },
-      "headline": "Odontotecnici, Politi CNA SNO Odontotecnici : “Il percorso per il riconoscimento è già tracciato, ora va completato”",
+      "headline": "Odontotecnici, Politi CNA SNO: “Il percorso per il riconoscimento è già tracciato, ora va completato”",
       "summary": "CNA ha pubblicato questo aggiornamento quantitativo il 06/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
@@ -2887,6 +2887,720 @@
       },
       "headline": "Whistleblowing, violata la riservatezza dell’identità del segnalante: sanzioni di 15.000 euro",
       "summary": "ANAC ha pubblicato questo aggiornamento quantitativo il 06/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-D4F289E4EF456A4A0E",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Ministero dell'Università e della Ricerca",
+      "topic": "ISTRUZIONE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.mur.gov.it/it",
+        "domain": "mur.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Home | Ministero dell'Università e della Ricerca",
+      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 364 milioni, 239, 2026, 87%); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-847E1F6730D2B41DA2",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Dipartimento delle Finanze",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.mef.gov.it/",
+        "domain": "mef.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Ministero dell'Economia e delle Finanze",
+      "summary": "Dipartimento delle Finanze ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 0, 05, 2026, 1%); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-EB4AB2AE72FEE9414A",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Dipartimento delle Finanze",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.mef.gov.it/index.html",
+        "domain": "mef.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Ministero dell'Economia e delle Finanze",
+      "summary": "Dipartimento delle Finanze ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 0, 05, 2026, 1%); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-B5F1DB97DF3D84ED7D",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Dipartimento delle Finanze",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.mef.gov.it/ufficio-stampa/comunicati/2026/",
+        "domain": "mef.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Ministero dell'Economia e delle Finanze",
+      "summary": "Dipartimento delle Finanze ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 0, 06, 10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-81B5FFB54B77CAFB0B",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Ministero dell'Università e della Ricerca",
+      "topic": "ISTRUZIONE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.mur.gov.it/it/stampa/notizie-e-comunicati-stampa",
+        "domain": "mur.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Notizie e comunicati stampa | Ministero dell'Università e della Ricerca",
+      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 06, 10, 2026, 02); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-47293295A54955D9D3",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Ministero dell'Università e della Ricerca",
+      "topic": "ISTRUZIONE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.mur.gov.it/it/stampa/notizie-e-comunicati-stampa?page=1",
+        "domain": "mur.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Notizie e comunicati stampa | Ministero dell'Università e della Ricerca",
+      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 05, 08, 2026, 60 milioni); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-0575415E468CCDA1D2",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Ministero dell'Università e della Ricerca",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.mur.gov.it/it/stampa/notizie-e-comunicati-stampa?page=83",
+        "domain": "mur.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Last » Ultima pagina",
+      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 06/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-0FAC7F2E95CBA001F7",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Ministero dell'Università e della Ricerca",
+      "topic": "ISTRUZIONE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.mur.gov.it/it/stampa/campagne-di-comunicazione",
+        "domain": "mur.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Campagne di comunicazione | Ministero dell'Università e della Ricerca",
+      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 2005, 2022, 30, 2021); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-4BEF29507C653B030C",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Ministero dell'Università e della Ricerca",
+      "topic": "ISTRUZIONE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.mur.gov.it/it/stampa/accrediti-stampa",
+        "domain": "mur.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Accrediti Stampa | Ministero dell'Università e della Ricerca",
+      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 2020, 964, 16, 05); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-A22FA35E639ED344DA",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Ministero dell'Università e della Ricerca",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.mur.gov.it/it/ministero",
+        "domain": "mur.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Ministero",
+      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 2026, 2028, 270, 2020); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-D2DED4756FAC0D3799",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Ministero dell'Università e della Ricerca",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.mur.gov.it/it/atti-e-normativa",
+        "domain": "mur.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Atti e normativa",
+      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 2026, 6, 45); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-E3711AF7C07DABE8B3",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Ministero dell'Università e della Ricerca",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.mur.gov.it/it/siti-di-interesse",
+        "domain": "mur.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Siti di interesse",
+      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 2014, 2020, 964); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-B4388EEB2A9628DD9D",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Ministero dell'Università e della Ricerca",
+      "topic": "ISTRUZIONE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.mur.gov.it/it/piano-mattei-ricerca-e-alta-formazione",
+        "domain": "mur.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Piano Mattei Ricerca e Alta Formazione | Ministero dell'Università e della Ricerca",
+      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 9, 5, 2025, 2023); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-10B1E5E161F1AD53D3",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Ministero dell'Università e della Ricerca",
+      "topic": "ISTRUZIONE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.mur.gov.it/it/comunicazione",
+        "domain": "mur.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Comunicazione | Ministero dell'Università e della Ricerca",
+      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 150, 2000, 2020, 964); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-045A932AB1EE4FD89B",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Ministero dell'Università e della Ricerca",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.mur.gov.it/it/g7-ministers-meeting-science-and-technology",
+        "domain": "mur.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "G7 Ministers' Meeting on Science and Technology",
+      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 9, 11, 2024, 2020); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-777479BB70A4984B32",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Ministero dell'Università e della Ricerca",
+      "topic": "ISTRUZIONE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.mur.gov.it/it/housing-universitario",
+        "domain": "mur.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Housing universitario",
+      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 481, 2024, 1.7, 4); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-6BFCD0EA519EAB074E",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Ministero dell'Università e della Ricerca",
+      "topic": "ISTRUZIONE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.mur.gov.it/it/strategia-italiana-le-tecnologie-quantistiche",
+        "domain": "mur.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Strategia italiana per le tecnologie quantistiche | Ministero dell'Università e della Ricerca",
+      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 2023, 26, 2025, 14); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-B19AF39CC6F180E845",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "CREA · RICA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.crea.gov.it/dettaglio-evento",
+        "domain": "crea.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "dettaglio evento",
+      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 2026, 8, 12); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-48CBFD4A5596BBFFED",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "CREA · RICA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.crea.gov.it/en/dettaglio-bando-aih",
+        "domain": "crea.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "dettaglio bando AIH",
+      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 2026, 8, 12); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-EAEB7F12A8DB6DF1CB",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "CREA · RICA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.crea.gov.it/dettaglio-bando-aih",
+        "domain": "crea.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "dettaglio bando AIH",
+      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 2026, 8, 12); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-7ABB5DC15B352F2E97",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "CREA · RICA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.crea.gov.it/dettaglio-contratto-di-filiera",
+        "domain": "crea.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Dettaglio Contratto di Filiera",
+      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 2026, 8, 12); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-C0520933EEA3C2A9AD",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "CREA · RICA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.crea.gov.it/en/dettaglio-contratto-di-filiera",
+        "domain": "crea.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Dettaglio Contratto di Filiera",
+      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 2026, 8, 12); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-8171D188B514E0DCBA",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "CREA · RICA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.crea.gov.it/en/dettaglio-smallproject",
+        "domain": "crea.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "dettaglio smallproject",
+      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 2026, 8, 12); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-03B56058D90D59D62E",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "CREA · RICA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.crea.gov.it/dettaglio-smallproject",
+        "domain": "crea.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "dettaglio smallproject",
+      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 2026, 8, 12); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-EC3C6AE84D56FAA31C",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "CREA · RICA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.crea.gov.it/en/dettaglio-evento",
+        "domain": "crea.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "dettaglio evento",
+      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 2026, 8, 12); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-EB162BB4B4FBFAC2A3",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "CNA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.cna.it/al-via-il-corso-cultura-del-made-in-italy-e-pratiche-dellaccoglienza-il-9-ottobre-il-kick-off-del-progetto-formativo/",
+        "domain": "cna.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Al via il corso “Cultura del Made in Italy e Pratiche dell’Accoglienza”: il 9 ottobre il kick off del progetto formativo",
+      "summary": "CNA ha pubblicato questo aggiornamento quantitativo il 06/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-15CF29C59AB1C4C47F",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Confartigianato",
+      "topic": "ISTRUZIONE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.confartigianato.it/2026/10/tra-ministero-dellistruzione-e-confartigianato-alleanza-scuola-impresa-per-costruire-il-futuro-dei-giovani/",
+        "domain": "confartigianato.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Tra Ministero dell’Istruzione e Confartigianato alleanza scuola-impresa per costruire il futuro dei giovani",
+      "summary": "Confartigianato ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 6, 2026, 2050, 1,7 milioni, 35); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-8D835A352187278B73",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Dipartimento delle Finanze",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.mef.gov.it/ufficio-stampa/comunicati/2026/Emissioni-BOT-00571/",
+        "domain": "mef.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Ministero dell'Economia e delle Finanze",
+      "summary": "Dipartimento delle Finanze ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 0, 2026, 06, 10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-E9EA4B8E458561B3BB",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Dipartimento delle Finanze",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.mef.gov.it/focus/Documento-programmatico-di-finanza-pubblica-00002/",
+        "domain": "mef.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Ministero dell'Economia e delle Finanze",
+      "summary": "Dipartimento delle Finanze ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 0, 06, 2026, 2); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-ABC659AF8647733688",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Ministero dell'Interno",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.interno.gov.it/it/notizie/piemonte-accordo-prefetture-e-procura-distrettuale-contrasto-alla-criminalita-organizzata",
+        "domain": "interno.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Piemonte, accordo tra prefetture e procura distrettuale per il contrasto alla criminalità organizzata",
+      "summary": "Ministero dell'Interno ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 186, 188, 6, 2026, 2); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-0241D6D283B58BD103",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "MIMIT",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.mimit.gov.it/it/notizie-stampa/kuwait-urso-a-colloquio-con-primo-ministro-al-sabah",
+        "domain": "mimit.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Kuwait: Urso a colloquio con Primo Ministro Al-Sabah",
+      "summary": "MIMIT ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 448, 4.0, 2023, 2024); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-482B63AA7390763B00",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "CREA · RICA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.crea.gov.it/-/il-crea-a-from-seeds-to-foods-ricerca-e-innovazione-dal-seme-alla-tavola",
+        "domain": "crea.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Il CREA a “From Seeds to Foods”: ricerca e innovazione dal seme alla tavola - Il CREA a “From Seeds to Foods”: ricerca e innovazione dal seme alla tavola",
+      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 2026, 8, 12); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-DBA658EDE3F8102221",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "CREA · RICA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.crea.gov.it/web/guest/-/il-crea-a-from-seeds-to-foods-ricerca-e-innovazione-dal-seme-alla-tavola",
+        "domain": "crea.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Il CREA a “From Seeds to Foods”: ricerca e innovazione dal seme alla tavola - Il CREA a “From Seeds to Foods”: ricerca e innovazione dal seme alla tavola",
+      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 2026, 8, 12); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-4427C8CC7F98C90C4E",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "Ministero dell'Università e della Ricerca",
+      "topic": "ISTRUZIONE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.mur.gov.it/it/news/martedi-06102026/mur-programmazione-e-internazionalizzazione-i-nuovi-bandi-di-ricerca",
+        "domain": "mur.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "MUR: programmazione e internazionalizzazione per i nuovi bandi di ricerca | Ministero dell'Università e della Ricerca",
+      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 06, 10, 2026, 6); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -4776,7 +5490,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "EINSTEIN TELESCOPE | All’INGV la giornata per consolidare il contributo della geofisica per la candidatura italiana a ospitare il futuro osservatorio di onde gravitazionali",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 05/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 13, 2025, 20); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -4923,7 +5637,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "AMBIENTE | Scoperte a Grado palizzate di epoca romana e altomedievale che permettono di ricostruire le variazioni temporali del livello del mare",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 05/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 10, 2025, 2000); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -5771,6 +6485,258 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-CB52418C8BEB070F42",
+      "published_at": "2026-10-05T00:00:00Z",
+      "observer": "INGV",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.ingv.it/stampa-urp/ufficio-stampa/comunicati-stampa/etna-chiarimento-e-smentita-in-merito-al-progetto-aerdust",
+        "domain": "ingv.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "ETNA | Chiarimento e smentita in merito al progetto “Aerdust”",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 05/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-82E0658F1F68DE1D50",
+      "published_at": "2026-10-05T00:00:00Z",
+      "observer": "CGIA Mestre",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.cgiamestre.com/tutto-impresa-numero-6-2025/",
+        "domain": "cgiamestre.com",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "TUTTO IMPRESA. NUMERO 6/2025",
+      "summary": "CGIA Mestre ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 6, 2025, 270, 836 euro, 2011); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-8FAE942BB8E30A398C",
+      "published_at": "2026-10-05T00:00:00Z",
+      "observer": "CGIA Mestre",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.cgiamestre.com/tutto-impresa-numero-5-2025/",
+        "domain": "cgiamestre.com",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "TUTTO IMPRESA. NUMERO 5/2025",
+      "summary": "CGIA Mestre ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 5, 2025, 270, 836 euro, 2011); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-AD22961355A74D02FA",
+      "published_at": "2026-10-05T00:00:00Z",
+      "observer": "CGIA Mestre",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.cgiamestre.com/tutto-impresa-numero-4-2025/",
+        "domain": "cgiamestre.com",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "TUTTO IMPRESA. NUMERO 4/2025",
+      "summary": "CGIA Mestre ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 4, 2025, 270, 836 euro, 2011); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-D9B140D1DB5C14C370",
+      "published_at": "2026-10-05T00:00:00Z",
+      "observer": "CGIA Mestre",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.cgiamestre.com/veneto-e-nordest-72-2/",
+        "domain": "cgiamestre.com",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "VENETO E NORDEST – 73",
+      "summary": "CGIA Mestre ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 73, 270, 836 euro, 2011, 1); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-58069CE3AFC88A5B3B",
+      "published_at": "2026-10-05T00:00:00Z",
+      "observer": "CGIA Mestre",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.cgiamestre.com/veneto-e-nordest-72/",
+        "domain": "cgiamestre.com",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "VENETO E NORDEST – 72",
+      "summary": "CGIA Mestre ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 72, 270, 836 euro, 2011, 1); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-184DF49589DB366FFA",
+      "published_at": "2026-10-05T00:00:00Z",
+      "observer": "CGIA Mestre",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.cgiamestre.com/tutto-impresa-numero-2-2025/",
+        "domain": "cgiamestre.com",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "TUTTO IMPRESA. NUMERO 2/2025",
+      "summary": "CGIA Mestre ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 2, 2025, 270, 836 euro, 2011); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-CD0D55CB7CD0E9C40A",
+      "published_at": "2026-10-05T00:00:00Z",
+      "observer": "CGIA Mestre",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.cgiamestre.com/veneto-e-nordest-71/",
+        "domain": "cgiamestre.com",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "VENETO E NORDEST – 71",
+      "summary": "CGIA Mestre ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 71, 270, 836 euro, 2011, 1); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-2D28EB0ECDFD4FF021",
+      "published_at": "2026-10-05T00:00:00Z",
+      "observer": "CGIA Mestre",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.cgiamestre.com/lassessore-regionale-valeria-mantovan-in-cgia/",
+        "domain": "cgiamestre.com",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "L’ASSESSORE REGIONALE VALERIA MANTOVAN IN CGIA",
+      "summary": "CGIA Mestre ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 270, 836 euro, 2011, 1, 30); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-C1A20197CDD14547E7",
+      "published_at": "2026-10-05T00:00:00Z",
+      "observer": "CGIA Mestre",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.cgiamestre.com/tutto-impresa-numero-1-2025/",
+        "domain": "cgiamestre.com",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "TUTTO IMPRESA. NUMERO 1/2025",
+      "summary": "CGIA Mestre ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 1, 2025, 270, 836 euro, 2011); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-5C9C4D952E5F957679",
+      "published_at": "2026-10-05T00:00:00Z",
+      "observer": "CGIA Mestre",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.cgiamestre.com/tutto-impresa-numero-6-2024/",
+        "domain": "cgiamestre.com",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "TUTTO IMPRESA. NUMERO 6/2024",
+      "summary": "CGIA Mestre ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 6, 2024, 270, 836 euro, 2011); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-1445646D0D9D0A0653",
+      "published_at": "2026-10-05T00:00:00Z",
+      "observer": "CGIA Mestre",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.cgiamestre.com/category/pubblicazioni/",
+        "domain": "cgiamestre.com",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Categoria: Pubblicazioni",
+      "summary": "CGIA Mestre ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 270, 836 euro, 2011, 1, 30); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-D5D0D2B3555D752064",
       "published_at": "2026-10-04T00:00:00Z",
       "observer": "Unioncamere / InfoCamere",
@@ -6212,27 +7178,6 @@
       "publication_status": "published"
     },
     {
-      "id": "OBS-D4F289E4EF456A4A0E",
-      "published_at": "2026-10-02T00:00:00Z",
-      "observer": "Ministero dell'Università e della Ricerca",
-      "topic": "ISTRUZIONE",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.mur.gov.it/it",
-        "domain": "mur.gov.it",
-        "role": "primary_institutional_source",
-        "verification_method": "official_listing_date"
-      },
-      "headline": "Home | Ministero dell'Università e della Ricerca",
-      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 02/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 364 milioni, 239, 2026, 87%); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
       "id": "OBS-48DD32C16CAE574779",
       "published_at": "2026-10-02T00:00:00Z",
       "observer": "ARERA",
@@ -6506,48 +7451,6 @@
       "publication_status": "published"
     },
     {
-      "id": "OBS-847E1F6730D2B41DA2",
-      "published_at": "2026-10-02T00:00:00Z",
-      "observer": "Dipartimento delle Finanze",
-      "topic": "ECONOMIA",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.mef.gov.it/",
-        "domain": "mef.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "Ministero dell'Economia e delle Finanze",
-      "summary": "Dipartimento delle Finanze ha pubblicato questo aggiornamento quantitativo il 02/10/2026. La pagina contiene valori e indicatori numerici (tra cui 0, 05, 2026, 1%); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-EB4AB2AE72FEE9414A",
-      "published_at": "2026-10-02T00:00:00Z",
-      "observer": "Dipartimento delle Finanze",
-      "topic": "ECONOMIA",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.mef.gov.it/index.html",
-        "domain": "mef.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "Ministero dell'Economia e delle Finanze",
-      "summary": "Dipartimento delle Finanze ha pubblicato questo aggiornamento quantitativo il 02/10/2026. La pagina contiene valori e indicatori numerici (tra cui 0, 05, 2026, 1%); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
       "id": "OBS-6660C4DE7B40E6D845",
       "published_at": "2026-10-02T00:00:00Z",
       "observer": "Dipartimento delle Finanze",
@@ -6562,27 +7465,6 @@
       },
       "headline": "Ministero dell'Economia e delle Finanze",
       "summary": "Dipartimento delle Finanze ha pubblicato questo aggiornamento quantitativo il 02/10/2026. La pagina contiene valori e indicatori numerici (tra cui 0, 2026, 02, 10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-B5F1DB97DF3D84ED7D",
-      "published_at": "2026-10-02T00:00:00Z",
-      "observer": "Dipartimento delle Finanze",
-      "topic": "ECONOMIA",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.mef.gov.it/ufficio-stampa/comunicati/2026/",
-        "domain": "mef.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "Ministero dell'Economia e delle Finanze",
-      "summary": "Dipartimento delle Finanze ha pubblicato questo aggiornamento quantitativo il 02/10/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 0, 02, 10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -7619,27 +8501,6 @@
       "publication_status": "published"
     },
     {
-      "id": "OBS-81B5FFB54B77CAFB0B",
-      "published_at": "2026-10-02T00:00:00Z",
-      "observer": "Ministero dell'Università e della Ricerca",
-      "topic": "ISTRUZIONE",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.mur.gov.it/it/stampa/notizie-e-comunicati-stampa",
-        "domain": "mur.gov.it",
-        "role": "primary_institutional_source",
-        "verification_method": "official_listing_date"
-      },
-      "headline": "Notizie e comunicati stampa | Ministero dell'Università e della Ricerca",
-      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 02/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 02, 10, 2026, 364 milioni); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
       "id": "OBS-059B86C02E33B9C4F6",
       "published_at": "2026-10-02T00:00:00Z",
       "observer": "ISPRA / SNPA",
@@ -7801,258 +8662,6 @@
       },
       "headline": "Progetto IncreaseNET: al via due corsi di formazione per gli esperti delle Agenzie regolatorie",
       "summary": "AIFA · OsMed ha pubblicato questo aggiornamento quantitativo il 02/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-47293295A54955D9D3",
-      "published_at": "2026-10-02T00:00:00Z",
-      "observer": "Ministero dell'Università e della Ricerca",
-      "topic": "ISTRUZIONE",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.mur.gov.it/it/stampa/notizie-e-comunicati-stampa?page=1",
-        "domain": "mur.gov.it",
-        "role": "primary_institutional_source",
-        "verification_method": "official_listing_date"
-      },
-      "headline": "Notizie e comunicati stampa | Ministero dell'Università e della Ricerca",
-      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 02/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 60 milioni, 05, 08, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-0575415E468CCDA1D2",
-      "published_at": "2026-10-02T00:00:00Z",
-      "observer": "Ministero dell'Università e della Ricerca",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.mur.gov.it/it/stampa/notizie-e-comunicati-stampa?page=83",
-        "domain": "mur.gov.it",
-        "role": "primary_institutional_source",
-        "verification_method": "official_listing_date"
-      },
-      "headline": "Last » Ultima pagina",
-      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 02/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-0FAC7F2E95CBA001F7",
-      "published_at": "2026-10-02T00:00:00Z",
-      "observer": "Ministero dell'Università e della Ricerca",
-      "topic": "ISTRUZIONE",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.mur.gov.it/it/stampa/campagne-di-comunicazione",
-        "domain": "mur.gov.it",
-        "role": "primary_institutional_source",
-        "verification_method": "official_listing_date"
-      },
-      "headline": "Campagne di comunicazione | Ministero dell'Università e della Ricerca",
-      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 02/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 2005, 2022, 30, 2021); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-4BEF29507C653B030C",
-      "published_at": "2026-10-02T00:00:00Z",
-      "observer": "Ministero dell'Università e della Ricerca",
-      "topic": "ISTRUZIONE",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.mur.gov.it/it/stampa/accrediti-stampa",
-        "domain": "mur.gov.it",
-        "role": "primary_institutional_source",
-        "verification_method": "official_listing_date"
-      },
-      "headline": "Accrediti Stampa | Ministero dell'Università e della Ricerca",
-      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 02/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 2020, 964, 16, 05); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-A22FA35E639ED344DA",
-      "published_at": "2026-10-02T00:00:00Z",
-      "observer": "Ministero dell'Università e della Ricerca",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.mur.gov.it/it/ministero",
-        "domain": "mur.gov.it",
-        "role": "primary_institutional_source",
-        "verification_method": "official_listing_date"
-      },
-      "headline": "Ministero",
-      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 02/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 2026, 2028, 270, 2020); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-D2DED4756FAC0D3799",
-      "published_at": "2026-10-02T00:00:00Z",
-      "observer": "Ministero dell'Università e della Ricerca",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.mur.gov.it/it/atti-e-normativa",
-        "domain": "mur.gov.it",
-        "role": "primary_institutional_source",
-        "verification_method": "official_listing_date"
-      },
-      "headline": "Atti e normativa",
-      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 02/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 29, 05, 10, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-E3711AF7C07DABE8B3",
-      "published_at": "2026-10-02T00:00:00Z",
-      "observer": "Ministero dell'Università e della Ricerca",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.mur.gov.it/it/siti-di-interesse",
-        "domain": "mur.gov.it",
-        "role": "primary_institutional_source",
-        "verification_method": "official_listing_date"
-      },
-      "headline": "Siti di interesse",
-      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 02/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 2014, 2020, 964); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-B4388EEB2A9628DD9D",
-      "published_at": "2026-10-02T00:00:00Z",
-      "observer": "Ministero dell'Università e della Ricerca",
-      "topic": "ISTRUZIONE",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.mur.gov.it/it/piano-mattei-ricerca-e-alta-formazione",
-        "domain": "mur.gov.it",
-        "role": "primary_institutional_source",
-        "verification_method": "official_listing_date"
-      },
-      "headline": "Piano Mattei Ricerca e Alta Formazione | Ministero dell'Università e della Ricerca",
-      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 02/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 9, 5, 2025, 2023); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-10B1E5E161F1AD53D3",
-      "published_at": "2026-10-02T00:00:00Z",
-      "observer": "Ministero dell'Università e della Ricerca",
-      "topic": "ISTRUZIONE",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.mur.gov.it/it/comunicazione",
-        "domain": "mur.gov.it",
-        "role": "primary_institutional_source",
-        "verification_method": "official_listing_date"
-      },
-      "headline": "Comunicazione | Ministero dell'Università e della Ricerca",
-      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 02/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 150, 2000, 2020, 964); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-045A932AB1EE4FD89B",
-      "published_at": "2026-10-02T00:00:00Z",
-      "observer": "Ministero dell'Università e della Ricerca",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.mur.gov.it/it/g7-ministers-meeting-science-and-technology",
-        "domain": "mur.gov.it",
-        "role": "primary_institutional_source",
-        "verification_method": "official_listing_date"
-      },
-      "headline": "G7 Ministers' Meeting on Science and Technology",
-      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 02/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 9, 11, 2024, 2020); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-777479BB70A4984B32",
-      "published_at": "2026-10-02T00:00:00Z",
-      "observer": "Ministero dell'Università e della Ricerca",
-      "topic": "ISTRUZIONE",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.mur.gov.it/it/housing-universitario",
-        "domain": "mur.gov.it",
-        "role": "primary_institutional_source",
-        "verification_method": "official_listing_date"
-      },
-      "headline": "Housing universitario",
-      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 02/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 481, 2024, 1.7, 4); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-6BFCD0EA519EAB074E",
-      "published_at": "2026-10-02T00:00:00Z",
-      "observer": "Ministero dell'Università e della Ricerca",
-      "topic": "ISTRUZIONE",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.mur.gov.it/it/strategia-italiana-le-tecnologie-quantistiche",
-        "domain": "mur.gov.it",
-        "role": "primary_institutional_source",
-        "verification_method": "official_listing_date"
-      },
-      "headline": "Strategia italiana per le tecnologie quantistiche | Ministero dell'Università e della Ricerca",
-      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 02/10/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 2023, 26, 2025, 14); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -15360,7 +15969,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "CAMBIAMENTO CLIMATICO E DIVULGAZIONE SCIENTIFICA | La posizione dell’INGV sul dibattito in corso",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 29/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 29/09/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 29, 2026, 605); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -15487,6 +16096,69 @@
       },
       "headline": "Stefano Ciafani",
       "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 29/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-7429D1B5623DECA1DE",
+      "published_at": "2026-09-29T00:00:00Z",
+      "observer": "AgID",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.agid.gov.it/it/notizie/igf-italia-2026-aperte-le-iscrizioni-sul-sito-dellevento?utm_source=chatgpt.com",
+        "domain": "agid.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "IGF Italia 2026: aperte le iscrizioni sul sito dell’evento",
+      "summary": "AgID ha pubblicato questo aggiornamento quantitativo il 29/09/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 1, 5); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-CD2E28D56400502B52",
+      "published_at": "2026-09-29T00:00:00Z",
+      "observer": "Aeronautica Militare",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.aeronautica.difesa.it/news/bari-palese-cambio-al-vertice-del-quartier-generale-del-comando-delle-scuole-dellam-3a-regione-aerea/",
+        "domain": "aeronautica.difesa.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Bari Palese: cambio al vertice del Quartier Generale del Comando delle Scuole dell’AM/3ª Regione Aerea",
+      "summary": "Aeronautica Militare ha pubblicato questo aggiornamento quantitativo il 29/09/2026. La pagina contiene valori e indicatori numerici (tra cui 3, 29, 09, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-CE1526D4BC53F6C76E",
+      "published_at": "2026-09-29T00:00:00Z",
+      "observer": "Aeronautica Militare",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.aeronautica.difesa.it/news/pratica-di-mare-cambio-di-comando-al-14-stormo/",
+        "domain": "aeronautica.difesa.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Pratica di Mare: Cambio di Comando al 14° Stormo",
+      "summary": "Aeronautica Militare ha pubblicato questo aggiornamento quantitativo il 29/09/2026. La pagina contiene valori e indicatori numerici (tra cui 14, 29, 09, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -17922,7 +18594,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "INQUINAMENTO | Nuove immagini radar satellitari aiutano a individuare dallo spazio la plastica in mare",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 25/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 25/09/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 2026, 2024); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -22164,7 +22836,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "PAOLO ZABEO OSPITE DI UNOMATTINA SU RAI 1",
-      "summary": "CGIA Mestre ha pubblicato questo aggiornamento quantitativo il 21/09/2026. La pagina contiene valori e indicatori numerici (tra cui 1, 270, 836 euro, 2011); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "CGIA Mestre ha pubblicato questo aggiornamento quantitativo il 21/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -25028,6 +25700,27 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-53F8DC9E57CDAB5E53",
+      "published_at": "2026-09-15T00:00:00Z",
+      "observer": "AIFA · OsMed",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.aifa.gov.it/en/dettaglio-evento",
+        "domain": "aifa.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Navigation",
+      "summary": "AIFA · OsMed ha pubblicato questo aggiornamento quantitativo il 15/09/2026. La pagina contiene valori e indicatori numerici (tra cui 19); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-E6A25FE79C15D91F1B",
       "published_at": "2026-09-14T00:00:00Z",
       "observer": "EEA",
@@ -27624,7 +28317,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "Settimana Europea della Mobilità: il 22 settembre il Bike to Work Day 2026 del CNR",
-      "summary": "CNR ha pubblicato questo aggiornamento quantitativo il 08/09/2026. La pagina contiene valori e indicatori numerici (tra cui 22, 2026, 2014, 2020, 2015); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "CNR ha pubblicato questo aggiornamento quantitativo il 08/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -29368,6 +30061,27 @@
       },
       "headline": "ERC starting Grants 2026, premiati due progetti Cnr",
       "summary": "CNR ha pubblicato questo aggiornamento quantitativo il 03/09/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 2014, 2020, 2015, 2017); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-C2C1007DE9A5B412BC",
+      "published_at": "2026-09-03T00:00:00Z",
+      "observer": "Ministero dell'Università e della Ricerca",
+      "topic": "ISTRUZIONE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.mur.gov.it/it/stampa/notizie-e-comunicati-stampa?page=0",
+        "domain": "mur.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Notizie e comunicati stampa | Ministero dell'Università e della Ricerca",
+      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 03/09/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 06, 10, 2026, 02); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -34113,7 +34827,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "PANAREA | Scoperti nuovi camini idrotermali e un grande cratere sottomarino al largo dell'isola",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 05/08/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 05, 2026, 100); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 05/08/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -34688,27 +35402,6 @@
       "publication_status": "published"
     },
     {
-      "id": "OBS-CB52418C8BEB070F42",
-      "published_at": "2026-08-02T00:00:00Z",
-      "observer": "INGV",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.ingv.it/stampa-urp/ufficio-stampa/comunicati-stampa/etna-chiarimento-e-smentita-in-merito-al-progetto-aerdust",
-        "domain": "ingv.it",
-        "role": "primary_institutional_source",
-        "verification_method": "official_listing_date"
-      },
-      "headline": "ETNA | Chiarimento e smentita in merito al progetto “Aerdust”",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 02/08/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
       "id": "OBS-F943D6B6420BEC4FDC",
       "published_at": "2026-08-02T00:00:00Z",
       "observer": "INVALSI",
@@ -34785,7 +35478,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "TERREMOTI | In Svizzera una “finestra” sulla faglia per studiare da vicino gli eventi sismici",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 02/08/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 09, 2025, 120); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 02/08/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -34890,7 +35583,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "INGV | Nominati i nuovi Direttori dei Dipartimenti scientifici e delle Sezioni dell'Istituto",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 02/08/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 02/08/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 23, 2025, 2028); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -34974,7 +35667,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "CAMPI FLEGREI | Chiarimenti su notizie errate diffuse a mezzo stampa",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 02/08/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 02/08/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 03, 2025, 12); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -35058,7 +35751,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "MADE IN ITALY | L’INGV alla mostra promossa da AEFI e MIMIT per valorizzare le eccellenze italiane nell’innovazione e nella ricerca",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 02/08/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 23, 2025, 26); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 02/08/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -35087,20 +35780,62 @@
       "publication_status": "published"
     },
     {
-      "id": "OBS-6F4E192C3662C79795",
+      "id": "OBS-FEE2F2EDF865D65969",
       "published_at": "2026-08-02T00:00:00Z",
       "observer": "INGV",
       "topic": "ALTRO",
       "pulse_score": 0,
       "patterns": [],
       "public_source": {
-        "url": "https://www.ingv.it/stampa-urp/ufficio-stampa/comunicati-stampa/dalla-connettivita-alla-rete-come-infrastruttura-tecnologica-nazionale-ingv-e-garr-potenziano-l-interconnessione-dei-centri-elaborazione-dati",
+        "url": "https://www.ingv.it/stampa-urp/ufficio-stampa/comunicati-stampa/etna-a-trecastagni-il-festival-vulcani-2025-scienza-arte-e-divulgazione-per-raccontare-i-vulcani-del-mondo",
         "domain": "ingv.it",
         "role": "primary_institutional_source",
         "verification_method": "official_listing_date"
       },
-      "headline": "Dalla connettività alla rete come infrastruttura tecnologica nazionale: INGV e GARR potenziano l’interconnessione dei Centri Elaborazione Dati",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 02/08/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 30, 2026, 2027); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "headline": "ETNA | A Trecastagni il Festival Vulcani 2025: scienza, arte e divulgazione per raccontare i vulcani del mondo",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 02/08/2026. La pagina contiene valori e indicatori numerici (tra cui 2025, 25); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-3CA7CA12B731F44A70",
+      "published_at": "2026-08-02T00:00:00Z",
+      "observer": "INGV",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.ingv.it/stampa-urp/ufficio-stampa/comunicati-stampa/inquinamento-arriva-a-buenos-aires-la-sperimentazione-con-foglie-e-licheni-per-la-conservazione-preventiva-dei-beni-culturali",
+        "domain": "ingv.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "INQUINAMENTO | Arriva a Buenos Aires la sperimentazione con foglie e licheni per la conservazione preventiva dei beni culturali",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 02/08/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 11, 2025, 2020); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-613D8F485FADA11106",
+      "published_at": "2026-08-02T00:00:00Z",
+      "observer": "INGV",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.ingv.it/stampa-urp/ufficio-stampa/comunicati-stampa/terremoti-un-nuovo-studio-offre-la-rilettura-di-un-modello-che-esclude-il-ruolo-delle-forze-elastiche-negli-eventi-sismici-dell-appennino",
+        "domain": "ingv.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "TERREMOTI | Un nuovo studio offre la rilettura di un modello che esclude il ruolo delle forze elastiche negli eventi sismici dell’Appennino",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 02/08/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 09, 2025, 2015); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -35500,6 +36235,27 @@
       },
       "headline": "Claudia Cappelletti",
       "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 31/07/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-6F4E192C3662C79795",
+      "published_at": "2026-07-30T00:00:00Z",
+      "observer": "INGV",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.ingv.it/stampa-urp/ufficio-stampa/comunicati-stampa/dalla-connettivita-alla-rete-come-infrastruttura-tecnologica-nazionale-ingv-e-garr-potenziano-l-interconnessione-dei-centri-elaborazione-dati",
+        "domain": "ingv.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Dalla connettività alla rete come infrastruttura tecnologica nazionale: INGV e GARR potenziano l’interconnessione dei Centri Elaborazione Dati",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 30/07/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 30, 2026, 2027); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -38156,7 +38912,7 @@
       "id": "OBS-DD41A5BCB7E810ADDC",
       "published_at": "2026-07-17T00:00:00Z",
       "observer": "Legambiente",
-      "topic": "ALTRO",
+      "topic": "LAVORO",
       "pulse_score": 0,
       "patterns": [],
       "public_source": {
@@ -38165,8 +38921,8 @@
         "role": "primary_institutional_source",
         "verification_method": "official_listing_date"
       },
-      "headline": "Chi siamo",
-      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 17/07/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "headline": "Siamo l’associazione che da più tempo in Italia si occupa di ambiente e di inquinamento , la più diffusa, la più conosciuta e sicuramente tra le più amate.",
+      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 17/07/2026. La pagina contiene valori e indicatori numerici (tra cui 46, 18, 472, 100.000); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -38482,27 +39238,6 @@
       },
       "headline": "Ricerca, dal MUR oltre 2,8 milioni di euro per valorizzare le infrastrutture delle scienze religiose | Ministero dell'Università e della Ricerca",
       "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 16/07/2026. La pagina contiene valori e indicatori numerici (tra cui 2,8 milioni, 21, 16); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-C2C1007DE9A5B412BC",
-      "published_at": "2026-07-16T00:00:00Z",
-      "observer": "Ministero dell'Università e della Ricerca",
-      "topic": "ISTRUZIONE",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.mur.gov.it/it/stampa/notizie-e-comunicati-stampa?page=0",
-        "domain": "mur.gov.it",
-        "role": "primary_institutional_source",
-        "verification_method": "official_listing_date"
-      },
-      "headline": "Notizie e comunicati stampa | Ministero dell'Università e della Ricerca",
-      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 16/07/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 02, 10, 2026, 364 milioni); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -40560,7 +41295,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "MOSTRA | L’Aquila Capitale italiana della Cultura 2026 ospita la mostra dell’INGV che racconta le Geoscienze attraverso i cinque sensi",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 01/07/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 25); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 01/07/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -41652,7 +42387,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "DDL Nucleare – Audizione Confindustria",
-      "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 01/07/2026. La pagina contiene valori e indicatori numerici (tra cui 01, 2026, 1.000); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 01/07/2026. La pagina contiene valori e indicatori numerici (tra cui 01, 2026, 30, 001, 39); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -42080,6 +42815,27 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-CD981F2F43A9F35DA2",
+      "published_at": "2026-06-30T00:00:00Z",
+      "observer": "CGIA Mestre",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.cgiamestre.com/veneto-e-nordest-75/",
+        "domain": "cgiamestre.com",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "VENETO E NORDEST – 75",
+      "summary": "CGIA Mestre ha pubblicato questo aggiornamento quantitativo il 30/06/2026. La pagina contiene valori e indicatori numerici (tra cui 75, 270, 836 euro, 2011, 1); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-88B31CF51A90493754",
       "published_at": "2026-06-29T00:00:00Z",
       "observer": "CNR",
@@ -42178,6 +42934,27 @@
       },
       "headline": "Università, autorizzati oltre 30.000 posti per i percorsi di specializzazione sul sostegno didattico | Ministero dell'Università e della Ricerca",
       "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 29/06/2026. La pagina contiene valori e indicatori numerici (tra cui 30.000, 21, 29); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-89847979D8FD07F2DC",
+      "published_at": "2026-06-29T00:00:00Z",
+      "observer": "CGIA Mestre",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.cgiamestre.com/tutto-impresa-numero-3-2026/",
+        "domain": "cgiamestre.com",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "TUTTO IMPRESA. NUMERO 3/2026",
+      "summary": "CGIA Mestre ha pubblicato questo aggiornamento quantitativo il 29/06/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -45159,7 +45936,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "Notizie e comunicati stampa | Ministero dell'Università e della Ricerca",
-      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 11/06/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 13, 07, 2026, 10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "Ministero dell'Università e della Ricerca ha pubblicato questo aggiornamento quantitativo il 11/06/2026. La pagina contiene valori e indicatori numerici (tra cui 21, 2,8 milioni, 16, 07, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -47511,7 +48288,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "IL DIALOGO “IL SIMPOSIO DELLE SINAPSI” VINCE LA I EDIZIONE DI DialogAI",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 28/05/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 28/05/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 28, 2026, 27); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -49304,153 +50081,6 @@
       "publication_status": "published"
     },
     {
-      "id": "OBS-B19AF39CC6F180E845",
-      "published_at": "2026-05-15T00:00:00Z",
-      "observer": "CREA · RICA",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.crea.gov.it/dettaglio-evento",
-        "domain": "crea.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "dettaglio evento",
-      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 15/05/2026. La pagina contiene valori e indicatori numerici (tra cui 15, 2026, 3, 29); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-48CBFD4A5596BBFFED",
-      "published_at": "2026-05-15T00:00:00Z",
-      "observer": "CREA · RICA",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.crea.gov.it/en/dettaglio-bando-aih",
-        "domain": "crea.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "dettaglio bando AIH",
-      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 15/05/2026. La pagina contiene valori e indicatori numerici (tra cui 15, 2026, 3, 29); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-EAEB7F12A8DB6DF1CB",
-      "published_at": "2026-05-15T00:00:00Z",
-      "observer": "CREA · RICA",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.crea.gov.it/dettaglio-bando-aih",
-        "domain": "crea.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "dettaglio bando AIH",
-      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 15/05/2026. La pagina contiene valori e indicatori numerici (tra cui 15, 2026, 3, 29); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-7ABB5DC15B352F2E97",
-      "published_at": "2026-05-15T00:00:00Z",
-      "observer": "CREA · RICA",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.crea.gov.it/dettaglio-contratto-di-filiera",
-        "domain": "crea.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "Dettaglio Contratto di Filiera",
-      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 15/05/2026. La pagina contiene valori e indicatori numerici (tra cui 15, 2026, 3, 29); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-C0520933EEA3C2A9AD",
-      "published_at": "2026-05-15T00:00:00Z",
-      "observer": "CREA · RICA",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.crea.gov.it/en/dettaglio-contratto-di-filiera",
-        "domain": "crea.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "Dettaglio Contratto di Filiera",
-      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 15/05/2026. La pagina contiene valori e indicatori numerici (tra cui 15, 2026, 3, 29); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-8171D188B514E0DCBA",
-      "published_at": "2026-05-15T00:00:00Z",
-      "observer": "CREA · RICA",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.crea.gov.it/en/dettaglio-smallproject",
-        "domain": "crea.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "dettaglio smallproject",
-      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 15/05/2026. La pagina contiene valori e indicatori numerici (tra cui 15, 2026, 3, 29); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-03B56058D90D59D62E",
-      "published_at": "2026-05-15T00:00:00Z",
-      "observer": "CREA · RICA",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.crea.gov.it/dettaglio-smallproject",
-        "domain": "crea.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "dettaglio smallproject",
-      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 15/05/2026. La pagina contiene valori e indicatori numerici (tra cui 15, 2026, 3, 29); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
       "id": "OBS-6D79D99220DCE63EB3",
       "published_at": "2026-05-15T00:00:00Z",
       "observer": "ART",
@@ -49528,27 +50158,6 @@
       },
       "headline": "INGV | Cordoglio per la scomparsa dei connazionali ad Alimathà",
       "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 15/05/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 15, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-EC3C6AE84D56FAA31C",
-      "published_at": "2026-05-15T00:00:00Z",
-      "observer": "CREA · RICA",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.crea.gov.it/en/dettaglio-evento",
-        "domain": "crea.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "dettaglio evento",
-      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 15/05/2026. La pagina contiene valori e indicatori numerici (tra cui 15, 2026, 3, 29); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -49779,7 +50388,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "TERREMOTI | Completata l’installazione degli Osservatori Sismici Urbani nelle scuole di Messina e Reggio Calabria",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 14/05/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 14, 2026, 38); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 14/05/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -50053,6 +50662,27 @@
       },
       "headline": "Leadership femminile under 49 resiliente",
       "summary": "Unioncamere / InfoCamere ha pubblicato questo aggiornamento quantitativo il 10/05/2026. La pagina contiene valori e indicatori numerici (tra cui 24, 49, 10, 05); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-AF2FA853C4B0122E5C",
+      "published_at": "2026-05-10T00:00:00Z",
+      "observer": "Dipartimento delle Finanze",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.mef.gov.it/en/ufficio-stampa/notizie.html",
+        "domain": "mef.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Ministero dell'Economia e delle Finanze",
+      "summary": "Dipartimento delle Finanze ha pubblicato questo aggiornamento quantitativo il 10/05/2026. La pagina contiene valori e indicatori numerici (tra cui 0, 2020, 10, 05, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -50640,7 +51270,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "TERREMOTO IN FRIULI | A 50 anni dall’evento, INGV e OGS pubblicano una story maps che ripercorre le storie di una comunità tornata a vivere",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 05/05/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 05/05/2026. La pagina contiene valori e indicatori numerici (tra cui 50, 25); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -50662,6 +51292,27 @@
       },
       "headline": "all. n 1",
       "summary": "ACI ha pubblicato questo aggiornamento quantitativo il 05/05/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-D257B524E53E45D493",
+      "published_at": "2026-05-05T00:00:00Z",
+      "observer": "CGIA Mestre",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.cgiamestre.com/tutto-impresa-numero-2-2026/",
+        "domain": "cgiamestre.com",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "TUTTO IMPRESA. NUMERO 2/2026",
+      "summary": "CGIA Mestre ha pubblicato questo aggiornamento quantitativo il 05/05/2026. La pagina contiene valori e indicatori numerici (tra cui 2, 2026, 270, 836 euro, 2011); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -51438,7 +52089,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "VULCANI | Dati satellitari e intelligenza artificiale per il monitoraggio del sistema idrotermale dell’isola di Vulcano",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 27/04/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 27/04/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 27, 2026, 2016); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -51900,7 +52551,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "La CoPER al Quirinale per la Giornata della ricerca italiana nel mondo",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 22/04/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 22, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 22/04/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -52782,7 +53433,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "GEOTERMIA | La Toscana custodisce enormi serbatoi di magma",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 14/04/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 14/04/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 14, 2026, 8); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -52992,7 +53643,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "Accelerating innovative forest monitoring for communities, climate and sustainable livelihoods",
-      "summary": "FAO ha pubblicato questo aggiornamento quantitativo il 10/04/2026. La pagina contiene valori e indicatori numerici (tra cui 631, 623, 10, 6, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "FAO ha pubblicato questo aggiornamento quantitativo il 10/04/2026. La pagina contiene valori e indicatori numerici (tra cui 646, 638, 10, 6, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -53013,7 +53664,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "GO01 - WFF 2026 Grand Opening",
-      "summary": "FAO ha pubblicato questo aggiornamento quantitativo il 10/04/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 844, 862, 10, 6); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "FAO ha pubblicato questo aggiornamento quantitativo il 10/04/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 829, 847, 10, 6); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -57032,27 +57683,6 @@
       "publication_status": "published"
     },
     {
-      "id": "OBS-AF2FA853C4B0122E5C",
-      "published_at": "2026-03-09T00:00:00Z",
-      "observer": "Dipartimento delle Finanze",
-      "topic": "ECONOMIA",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.mef.gov.it/en/ufficio-stampa/notizie.html",
-        "domain": "mef.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "Ministero dell'Economia e delle Finanze",
-      "summary": "Dipartimento delle Finanze ha pubblicato questo aggiornamento quantitativo il 09/03/2026. La pagina contiene valori e indicatori numerici (tra cui 0, 2020, 09, 25, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
       "id": "OBS-0631A9745744D157D3",
       "published_at": "2026-03-09T00:00:00Z",
       "observer": "INGV",
@@ -58124,6 +58754,27 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-93FAA5812E971687DD",
+      "published_at": "2026-02-26T00:00:00Z",
+      "observer": "CGIA Mestre",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.cgiamestre.com/veneto-e-nordest-74/",
+        "domain": "cgiamestre.com",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "VENETO E NORDEST – 74",
+      "summary": "CGIA Mestre ha pubblicato questo aggiornamento quantitativo il 26/02/2026. La pagina contiene valori e indicatori numerici (tra cui 74, 270, 836 euro, 2011, 1); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-821FC5F1F4DBB3D66E",
       "published_at": "2026-02-25T00:00:00Z",
       "observer": "EEA",
@@ -59124,7 +59775,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "OPEN DAY | Porte aperte all’INGV per conoscere i segreti del nostro Pianeta",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 16/02/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 16, 2026, 21); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 16/02/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -59461,6 +60112,27 @@
       },
       "headline": "autentica procura generale alle liti",
       "summary": "ACI ha pubblicato questo aggiornamento quantitativo il 12/02/2026. La pagina contiene valori e indicatori numerici (tra cui 2019, 2018, 2017, 2016, 2015); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-69C415C5D822116D70",
+      "published_at": "2026-02-12T00:00:00Z",
+      "observer": "CGIA Mestre",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.cgiamestre.com/tutto-impresa-numero-1-2026/",
+        "domain": "cgiamestre.com",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "TUTTO IMPRESA. NUMERO 1/2026",
+      "summary": "CGIA Mestre ha pubblicato questo aggiornamento quantitativo il 12/02/2026. La pagina contiene valori e indicatori numerici (tra cui 1, 2026, 270, 836 euro, 2011); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -61749,7 +62421,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "ANTARTIDE | Perforata la calotta glaciale nel Mare di Ross per studiare il clima del passato e comprendere le evoluzioni future",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 22/01/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 22/01/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 22, 2026, 228); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
