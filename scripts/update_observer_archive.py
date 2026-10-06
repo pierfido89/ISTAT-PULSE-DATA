@@ -119,8 +119,19 @@ def sitemap_candidates(domain,year=2026,limit=180):
         f"https://www.{domain}/sitemap.xml",
         f"https://{domain}/sitemap_index.xml",
         f"https://www.{domain}/sitemap_index.xml",
+        f"https://{domain}/wp-sitemap.xml",
+        f"https://www.{domain}/wp-sitemap.xml",
     ]
-    queue=list(seeds); visited=set(); out=[]
+    for robots in (f"https://{domain}/robots.txt", f"https://www.{domain}/robots.txt"):
+        try:
+            raw,_,_=fetch(robots,timeout=8,max_bytes=250000)
+            for line in raw.decode("utf-8","ignore").splitlines():
+                if line.lower().startswith("sitemap:"):
+                    sm=line.split(":",1)[1].strip()
+                    if sm.startswith("http"): seeds.append(sm)
+        except Exception:
+            pass
+    queue=list(dict.fromkeys(seeds)); visited=set(); out=[]
     while queue and len(visited)<24 and len(out)<limit:
         sm=queue.pop(0)
         if sm in visited: continue
@@ -291,10 +302,10 @@ def main():
                         info=None
                     if not info or info["date"].year!=year: continue
                     if info["date"]>now: continue
-                    low=(info["title"]+" "+title).lower()
-                    if not any(t in low for t in ("dati","stat","rapport","osserv","indagin","rilev","mercato","bilancio","monitor","analisi","pubblic")):
-                        continue
-
+                    # page_info() already requires statistical language and numeric
+                    # content on the official page. Do not reject valid publications
+                    # merely because the headline itself lacks words such as "dati"
+                    # or "rapporto" (e.g. "Banche e moneta").
                     aid=stable_id(name,info["url"])
                     if aid not in by_id:
                         topic=topic_of(info["title"])
