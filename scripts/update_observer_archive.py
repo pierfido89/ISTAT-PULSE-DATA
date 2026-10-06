@@ -318,6 +318,62 @@ def feed_candidates(domain,year=2026,limit=100):
     return _dedupe_results(out,limit)
 
 
+
+def listing_dated_candidates(entrypoints,domains,year=2026,limit=300):
+    out=[]; seen=set()
+    for root_url in entrypoints or []:
+        try:
+            raw,final,ct=fetch(root_url,timeout=7,max_bytes=1800000)
+            if "html" not in ct.lower(): continue
+            soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
+            for a in soup.find_all("a",href=True):
+                href=urllib.parse.urljoin(final,a.get("href","")).split("#",1)[0]
+                title=re.sub(r"\s+"," ",a.get_text(" ",strip=True)).strip()
+                if len(title)<8 or not host_allowed(canonical_host(href),domains): continue
+                node=a
+                block=""
+                for _ in range(5):
+                    node=getattr(node,"parent",None)
+                    if node is None: break
+                    block=re.sub(r"\s+"," ",node.get_text(" ",strip=True))
+                    if str(year) in block and len(block)<1800: break
+                if str(year) not in block: continue
+                date=None
+                for pat,order in [
+                    (r"\b([0-3]?\d)[-/]([01]?\d)[-/](20\d{2}|\d{2})\b","dmy"),
+                    (r"\b(20\d{2})[-/]([01]?\d)[-/]([0-3]?\d)\b","ymd")
+                ]:
+                    m=re.search(pat,block)
+                    if not m: continue
+                    try:
+                        vals=list(map(int,m.groups()))
+                        if order=="dmy":
+                            d,mo,y=vals
+                            if y<100:y+=2000
+                        else:y,mo,d=vals
+                        date=datetime(y,mo,d,tzinfo=timezone.utc); break
+                    except: pass
+                if not date:
+                    months={"gennaio":1,"gen":1,"febbraio":2,"feb":2,"marzo":3,"mar":3,
+                            "aprile":4,"apr":4,"maggio":5,"mag":5,"giugno":6,"giu":6,
+                            "luglio":7,"lug":7,"agosto":8,"ago":8,"settembre":9,"set":9,"sett":9,
+                            "ottobre":10,"ott":10,"novembre":11,"nov":11,"dicembre":12,"dic":12,
+                            "january":1,"jan":1,"february":2,"march":3,"april":4,"may":5,
+                            "june":6,"jun":6,"july":7,"jul":7,"august":8,"aug":8,
+                            "september":9,"sep":9,"sept":9,"october":10,"oct":10,
+                            "november":11,"december":12,"dec":12}
+                    keys="|".join(sorted(months,key=len,reverse=True))
+                    m=re.search(r"\b([0-3]?\d)\s+("+keys+r")\.?\s+(20\d{2})\b",block.lower())
+                    if m:
+                        try: date=datetime(int(m.group(3)),months[m.group(2)],int(m.group(1)),tzinfo=timezone.utc)
+                        except: pass
+                if date and date.year==year and href not in seen:
+                    seen.add(href); out.append((title,href,date))
+                    if len(out)>=limit:return out
+        except Exception:
+            continue
+    return out
+
 def page_info(url,domains):
     try:
         raw,final,ct=fetch(url,timeout=7)
