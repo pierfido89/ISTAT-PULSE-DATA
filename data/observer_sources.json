@@ -871,26 +871,26 @@
             "connector_notes": "Permanent Ministero della Salute connector. Direct salute.gov.it pages and official RSS are masked to GitHub runners by Gcore browser validation. Use Google News RSS only as transport for title/date discovery, then decode each signed Google News URL with the pinned googlenewsdecoder 0.2.1 + selectolax 0.4.12 protocol (data-n-a-sg/data-n-a-ts -> Fbv4je/garturlreq). Accept and store only decoded publisher URLs on salute.gov.it; Google News URLs are never stored as the public source."
       },
     {
-      "name": "Ministero dell'Istruzione e del Merito",
-      "domains": [
-        "mim.gov.it",
-        "istruzione.it"
-      ],
-      "query_terms": [
-        "dati",
-        "statistiche",
-        "rapporto",
-        "osservatorio",
-        "indagine",
-        "open data"
-      ],
-      "entrypoints": [
-        "https://www.mim.gov.it/web/guest/comunicati"
-      ],
-      "adapter": "mim_datigov",
-      "max_results_per_year": 500,
-      "connector_notes": "MIM blocks GitHub-hosted runners with HTTP 403. Use official national catalog dati.gov.it for discovery and 2026 update dates; retain MIM/istruzione.it source URLs when exposed, otherwise keep the official dati.gov.it dataset page."
-    },
+            "name": "Ministero dell'Istruzione e del Merito",
+            "domains": [
+                  "mim.gov.it",
+                  "istruzione.it"
+            ],
+            "query_terms": [
+                  "dati",
+                  "statistiche",
+                  "rapporto",
+                  "osservatorio",
+                  "indagine",
+                  "open data"
+            ],
+            "entrypoints": [
+                  "https://www.mim.gov.it/web/guest/comunicati"
+            ],
+            "adapter": "mim_google_news_rss",
+            "max_results_per_year": 500,
+            "connector_notes": "Permanent MIM connector. Direct mim.gov.it newsroom, sitemap, RSS and Liferay APIs return HTTP 403 to GitHub-hosted runners. Use Google News RSS as transport for title/date discovery, decode each signed item with pinned googlenewsdecoder 0.2.1 + selectolax 0.4.12, and accept only final publisher URLs on mim.gov.it or istruzione.it. Retain dati.gov.it as a secondary official fallback for MIM datasets; Google News URLs are never stored."
+      },
     {
       "name": "Ministero dell'Università e della Ricerca",
       "domains": [
