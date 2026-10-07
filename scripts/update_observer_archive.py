@@ -849,6 +849,103 @@ def snam_sitemap_candidates(domains,year=2026,limit=420):
 
 
 
+
+def mim_datigov_candidates(year=2026,limit=500):
+    """Official fallback for MIM through dati.gov.it when mim.gov.it blocks
+    GitHub-hosted runners. Discover datasets published by the Ministry of
+    Education and Merit and retain the original MIM/istruzione URL when exposed.
+    """
+    seeds=[
+        "https://www.dati.gov.it/node/192?organization=ministero-dell-istruzione&page=1",
+        "https://www.dati.gov.it/node/192?organization=ministero-dell-istruzione&page=2",
+        "https://www.dati.gov.it/node/192?organization=ministero-dell-istruzione&page=3",
+        "https://www.dati.gov.it/node/192?organization=ministero-dell-istruzione&page=4",
+        "https://www.dati.gov.it/node/192?organization=ministero-dell-istruzione&page=5",
+    ]
+    out=[]; seen=set(); queue=list(seeds); visited=set()
+
+    def parse_date(text):
+        for p,order in [
+            (r"\b([0-3]?\d)[/-]([01]?\d)[/-](20\d{2})\b","dmy"),
+            (r"\b(20\d{2})[-/]([01]?\d)[-/]([0-3]?\d)\b","ymd")
+        ]:
+            m=re.search(p,text)
+            if m:
+                try:
+                    if order=="dmy": d,mo,y=map(int,m.groups())
+                    else: y,mo,d=map(int,m.groups())
+                    return datetime(y,mo,d,tzinfo=timezone.utc)
+                except Exception:
+                    pass
+        return None
+
+    while queue and len(visited)<120 and len(out)<limit:
+        url=queue.pop(0)
+        if url in visited: continue
+        visited.add(url)
+        try:
+            raw,final,ct=fetch(url,timeout=12,max_bytes=2200000)
+            if "html" not in ct.lower(): continue
+            soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
+        except Exception:
+            continue
+
+        page_text=re.sub(r"\s+"," ",soup.get_text(" ",strip=True))
+        low=page_text.lower()
+        if "ministero dell'istruzione" not in low and "ministero dell’istruzione" not in low:
+            continue
+
+        for a in soup.find_all("a",href=True):
+            href=urllib.parse.urljoin(final,a["href"]).split("#",1)[0]
+            if canonical_host(href)=="dati.gov.it" and ("view-dataset" in href or "dataset" in href):
+                if href not in visited and href not in queue and len(queue)<300:
+                    queue.append(href)
+
+        title=""
+        h1=soup.find("h1")
+        if h1: title=re.sub(r"\s+"," ",h1.get_text(" ",strip=True))
+        if not title and soup.title: title=re.sub(r"\s+"," ",soup.title.get_text(" ",strip=True))
+        if not title: title="MIM dataset"
+
+        date=None
+        for pat in (
+            r"(?:data\s+di\s+ultima\s+modifica|data\s+di\s+modifica|ultima\s+modifica|aggiornato\s+il|ultimo\s+aggiornamento)\s*[:\-]?\s*([^|•]{0,80})",
+            r"(20\d{2}[-/]\d{2}[-/]\d{2})"
+        ):
+            m=re.search(pat,page_text,re.I)
+            if m:
+                date=parse_date(m.group(1) if m.groups() else m.group(0))
+                if date: break
+        if not date:
+            dates=[parse_date(m.group(0)) for m in re.finditer(r"\b(?:[0-3]?\d[/-][01]?\d[/-]20\d{2}|20\d{2}[-/][01]?\d[-/][0-3]?\d)\b",page_text)]
+            dates=[d for d in dates if d]
+            if dates: date=max(dates)
+        if not date or date.year!=year:
+            continue
+
+        src_links=[]
+        for a in soup.find_all("a",href=True):
+            href=urllib.parse.urljoin(final,a["href"]).split("#",1)[0]
+            h=canonical_host(href)
+            if h in ("mim.gov.it","istruzione.it") or h.endswith(".mim.gov.it") or h.endswith(".istruzione.it"):
+                src_links.append(href)
+
+        if not src_links:
+            # Preserve a stable official catalog URL when the original Ministry
+            # resource URL is not exposed by the catalog page.
+            src_links=[final]
+
+        for src_url in src_links:
+            key=(src_url,date.date().isoformat(),title)
+            if key in seen: continue
+            seen.add(key)
+            out.append((title[:220],src_url,date))
+            if len(out)>=limit: break
+
+    print(f"MIM dati.gov.it dated candidates: {len(out)} | catalog_pages={len(visited)}", flush=True)
+    return out
+
+
 def opencoesione_datigov_candidates(year=2026,limit=500):
     """Official fallback for OpenCoesione when opencoesione.gov.it geoblocks
     GitHub-hosted US runners. Discover OpenCoesione datasets through the Italian
@@ -1168,6 +1265,11 @@ def process_source(src, now):
 
         if src.get("adapter")=="opencoesione_datigov":
             for title,url,pub_date in opencoesione_datigov_candidates(year,max(500,source_limit)):
+                candidates.setdefault(url,title)
+                listing_dates[url]=(title,pub_date)
+
+        if src.get("adapter")=="mim_datigov":
+            for title,url,pub_date in mim_datigov_candidates(year,max(500,source_limit)):
                 candidates.setdefault(url,title)
                 listing_dates[url]=(title,pub_date)
 
