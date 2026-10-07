@@ -20,7 +20,7 @@ jobs:
           python - <<'PY'
           import urllib.parse, urllib.request, xml.etree.ElementTree as ET
           from googlenewsdecoder import gnewsdecoder
-          q='site:mim.gov.it after:2026-10-01 before:2026-11-01'
+          q='site:mim.gov.it/web/guest/-/ after:2026-10-01 before:2026-11-01'
           u='https://news.google.com/rss/search?'+urllib.parse.urlencode({'q':q,'hl':'it','gl':'IT','ceid':'IT:it'})
           req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0'})
           with urllib.request.urlopen(req,timeout=20) as r:
