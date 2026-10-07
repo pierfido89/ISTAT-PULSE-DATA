@@ -7,6 +7,10 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from pathlib import Path
 from bs4 import BeautifulSoup
+try:
+    from googlenewsdecoder import new_decoderv1
+except Exception:
+    new_decoderv1 = None
 
 ROOT=Path("data/news")
 REGISTRY=Path("data/observer_sources.json")
@@ -657,18 +661,20 @@ def salute_search_candidates(year=2026,limit=500):
             if key not in {(t,d.date().isoformat()) for t,_,d in rss_items}:
                 rss_items.append((title,link,dt))
 
-    # Resolve the Google News transport link back to the Ministry source.
+    # Resolve Google News RSS transport URLs to their real publisher URL.
+    # googlenewsdecoder implements Google's current signed-token/batchexecute
+    # protocol (data-n-a-sg + data-n-a-ts -> Fbv4je/garturlreq).
     for title,gn_link,pub in sorted(rss_items,key=lambda x:x[2],reverse=True):
         official=None
-        # Some Google News article links still redirect directly to the source.
-        try:
-            req=urllib.request.Request(gn_link,headers={"User-Agent":UA})
-            with urllib.request.urlopen(req,timeout=8) as r:
-                final=r.geturl()
-            if host_allowed(canonical_host(final),["salute.gov.it"]) and "/new/it/comunicato-stampa/" in final:
-                official=final.split("#",1)[0]
-        except Exception:
-            pass
+        if new_decoderv1 is not None:
+            try:
+                decoded=new_decoderv1(gn_link, interval=0.15)
+                if isinstance(decoded,dict) and decoded.get("success"):
+                    candidate=(decoded.get("decoded_url") or "").strip()
+                    if host_allowed(canonical_host(candidate),["salute.gov.it"]) and "/new/it/comunicato-stampa/" in candidate:
+                        official=candidate.split("#",1)[0]
+            except Exception:
+                pass
 
         if not official:
             official=official_from_title(title)
