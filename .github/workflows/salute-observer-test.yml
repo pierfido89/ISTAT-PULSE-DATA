@@ -34,6 +34,8 @@ jobs:
               "https://www.salute.gov.it/portale/news/RSS_comunicati_stampa.xml",
               "https://www.salute.gov.it/portale/news/RSS_comunicati.xml",
               "https://www.salute.gov.it/portale/news/RSS_comunicatistampa.xml",
+              "https://r.jina.ai/https://www.salute.gov.it/new/it/sezione/comunicati-stampa/",
+              "https://r.jina.ai/http://www.salute.gov.it/new/it/sezione/comunicati-stampa/",
           ]
           for u in urls:
               print("===",u,flush=True)
