@@ -1,0 +1,49 @@
+name: MIM Decoder Smoke
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ feat/news-engine ]
+    paths:
+      - '.github/workflows/mim-decoder-smoke.yml'
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'googlenewsdecoder @ git+https://github.com/SSujitX/google-news-url-decoder.git@d38ddbdd510561859da0dae0c1176e3a2676c159' 'selectolax==0.4.12'
+      - name: Decode October MIM feed
+        run: |
+          python - <<'PY'
+          import urllib.parse, urllib.request, xml.etree.ElementTree as ET
+          from googlenewsdecoder import gnewsdecoder
+          q='site:mim.gov.it after:2026-10-01 before:2026-11-01'
+          u='https://news.google.com/rss/search?'+urllib.parse.urlencode({'q':q,'hl':'it','gl':'IT','ceid':'IT:it'})
+          req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0'})
+          with urllib.request.urlopen(req,timeout=20) as r:
+              raw=r.read(2000000)
+          root=ET.fromstring(raw)
+          items=[]
+          for item in root.findall('.//item'):
+              title=(item.findtext('title') or '').strip()
+              link=(item.findtext('link') or '').strip()
+              source=item.find('source')
+              src=(source.text or '').strip() if source is not None else ''
+              if link:
+                  items.append((title,link,src,item.findtext('pubDate') or ''))
+          print('INDEXED',len(items),flush=True)
+          links=[x[1] for x in items]
+          results=gnewsdecoder(links,interval=0.1,timeout=20.0) if links else []
+          ok=0
+          for item,res in zip(items,results):
+              url=(res.get('decoded_url') or '') if isinstance(res,dict) and res.get('success') else ''
+              if 'mim.gov.it' in url or 'istruzione.it' in url:
+                  ok+=1
+                  print('OK',item[3],item[0],url,flush=True)
+              else:
+                  print('MISS',item[0],res,flush=True)
+          print('DECODED_OFFICIAL',ok,flush=True)
+          PY
