@@ -24,12 +24,21 @@ jobs:
           for q in [
             'site:anfia.it after:2026-01-01 before:2027-01-01 ANFIA',
             'site:anfia.it after:2026-01-01 before:2027-01-01 "mercato auto"',
-            'site:anfia.it after:2026-01-01 before:2027-01-01 "produzione automotive"',
-            'site:anfia.it after:2026-01-01 before:2027-01-01 "Focus Italia"',
-            'site:anfia.it after:2026-01-01 before:2027-01-01 fatturato',
-            'site:anfia.it after:2026-01-01 before:2027-01-01 "veicoli commerciali"',
+            'site:anfia.it after:2026-01-01 before:2027-01-01 "mercato vetture"',
             'site:anfia.it after:2026-01-01 before:2027-01-01 "mercato auto europeo"',
-            'site:anfia.it after:2026-01-01 before:2027-01-01 comunicati'
+            'site:anfia.it after:2026-01-01 before:2027-01-01 "produzione automotive"',
+            'site:anfia.it after:2026-01-01 before:2027-01-01 "produzione industria automotive"',
+            'site:anfia.it after:2026-01-01 before:2027-01-01 "Focus Italia"',
+            'site:anfia.it after:2026-01-01 before:2027-01-01 "Focus Autovetture"',
+            'site:anfia.it after:2026-01-01 before:2027-01-01 "Focus UE-EFTA-UK"',
+            'site:anfia.it after:2026-01-01 before:2027-01-01 "veicoli commerciali"',
+            'site:anfia.it after:2026-01-01 before:2027-01-01 "veicoli industriali"',
+            'site:anfia.it after:2026-01-01 before:2027-01-01 aftermarket',
+            'site:anfia.it after:2026-01-01 before:2027-01-01 fatturato',
+            'site:anfia.it after:2026-01-01 before:2027-01-01 trade',
+            'site:anfia.it after:2026-01-01 before:2027-01-01 immatricolazioni',
+            'site:anfia.it after:2026-01-01 before:2027-01-01 comunicati',
+            'site:anfia.it after:2026-01-01 before:2027-01-01 notizie'
           ]:
               u='https://news.google.com/rss/search?'+urllib.parse.urlencode({'q':q,'hl':'it','gl':'IT','ceid':'IT:it'})
               req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0'})
