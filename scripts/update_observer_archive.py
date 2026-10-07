@@ -661,20 +661,36 @@ def salute_search_candidates(year=2026,limit=500):
             if key not in {(t,d.date().isoformat()) for t,_,d in rss_items}:
                 rss_items.append((title,link,dt))
 
-    # Resolve Google News RSS transport URLs to their real publisher URL.
-    # googlenewsdecoder implements Google's current signed-token/batchexecute
-    # protocol (data-n-a-sg + data-n-a-ts -> Fbv4je/garturlreq).
-    for title,gn_link,pub in sorted(rss_items,key=lambda x:x[2],reverse=True):
+    # Resolve all Google News transport URLs in one batch. The package shares
+    # the batchexecute POST across items, which is both faster and less likely
+    # to trigger Google rate limits than one POST per article.
+    sorted_items=sorted(rss_items,key=lambda x:x[2],reverse=True)
+    decoded_by_link={}
+    if gnewsdecoder is not None and sorted_items:
+        try:
+            links=[item[1] for item in sorted_items]
+            batch=gnewsdecoder(links, interval=0.10, timeout=20.0)
+            if isinstance(batch,list):
+                for link,result in zip(links,batch):
+                    if isinstance(result,dict):
+                        decoded_by_link[link]=result
+            elif isinstance(batch,dict) and len(links)==1:
+                decoded_by_link[links[0]]=batch
+        except Exception as e:
+            print(f"Ministero Salute decoder batch error: {type(e).__name__}: {e}", flush=True)
+
+    decode_failures=0
+    for title,gn_link,pub in sorted_items:
         official=None
-        if gnewsdecoder is not None:
-            try:
-                decoded=gnewsdecoder(gn_link, interval=0.15, timeout=15.0)
-                if isinstance(decoded,dict) and decoded.get("success"):
-                    candidate=(decoded.get("decoded_url") or "").strip()
-                    if host_allowed(canonical_host(candidate),["salute.gov.it"]) and "/new/it/comunicato-stampa/" in candidate:
-                        official=candidate.split("#",1)[0]
-            except Exception:
-                pass
+        decoded=decoded_by_link.get(gn_link)
+        if isinstance(decoded,dict) and decoded.get("success"):
+            candidate=(decoded.get("decoded_url") or "").strip()
+            if host_allowed(canonical_host(candidate),["salute.gov.it"]):
+                official=candidate.split("#",1)[0]
+        elif isinstance(decoded,dict):
+            decode_failures += 1
+            if decode_failures <= 5:
+                print(f"Ministero Salute decoder miss: {decoded.get('message','unknown')}", flush=True)
 
         if not official:
             official=official_from_title(title)
