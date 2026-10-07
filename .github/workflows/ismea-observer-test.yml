@@ -34,5 +34,17 @@ jobs:
             echo "BYTES=$(wc -c </tmp/b)"
             head -c 500 /tmp/b | tr '\n' ' ' ; echo
           done
+      - name: Inspect ISMEA April HTML
+        shell: bash
+        run: |
+          curl -k -L -A "Mozilla/5.0" -sS "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/4" -o /tmp/ismea-aprile.html
+          python - <<'PY'
+          from pathlib import Path
+          s=Path("/tmp/ismea-aprile.html").read_text(encoding="latin-1",errors="ignore")
+          for needle in ["22/04/2026","120 milioni","21/04/2026","Macfrut 2026"]:
+              i=s.find(needle)
+              print("\nNEEDLE",needle,"AT",i)
+              print(s[max(0,i-1200):i+2200] if i>=0 else "NOT FOUND")
+          PY
       - name: Test ISMEA only
         run: python scripts/update_observer_archive.py --only ISMEA
