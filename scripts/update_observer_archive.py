@@ -1,6 +1,6 @@
-from email.utils import parsedate_to_datetime
 #!/usr/bin/env python3
 from __future__ import annotations
+from email.utils import parsedate_to_datetime
 import argparse, gzip, hashlib, json, re, ssl, urllib.parse, urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import xml.etree.ElementTree as ET
