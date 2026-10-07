@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T05:41:41.442872+00:00",
+  "generated_at": "2026-10-07T07:55:33.564339+00:00",
   "min_year": 2026,
   "max_year": 2026,
   "source_count": 65,
@@ -11,8 +11,8 @@
     },
     "CGIA Mestre": {
       "2026": 55,
-      "scan_2026": 0,
-      "connector_status": "degraded_preserved"
+      "scan_2026": 55,
+      "connector_status": "ok"
     },
     "CNA": {
       "2026": 125,
@@ -21,8 +21,8 @@
     },
     "CNR": {
       "2026": 153,
-      "scan_2026": 0,
-      "connector_status": "degraded_preserved"
+      "scan_2026": 121,
+      "connector_status": "ok"
     },
     "Coldiretti": {
       "2026": 27,
@@ -51,7 +51,7 @@
     },
     "Legambiente": {
       "2026": 74,
-      "scan_2026": 36,
+      "scan_2026": 54,
       "connector_status": "ok"
     },
     "Nomisma": {
@@ -75,8 +75,8 @@
       "connector_status": "ok"
     },
     "Aeronautica Militare": {
-      "2026": 85,
-      "scan_2026": 48,
+      "2026": 99,
+      "scan_2026": 46,
       "connector_status": "ok"
     },
     "Agenzia delle Dogane e dei Monopoli": {
@@ -95,13 +95,13 @@
       "connector_status": "ok"
     },
     "AGCOM": {
-      "2026": 81,
+      "2026": 91,
       "scan_2026": 64,
       "connector_status": "ok"
     },
     "AIFA · OsMed": {
       "2026": 94,
-      "scan_2026": 66,
+      "scan_2026": 10,
       "connector_status": "ok"
     },
     "ANAC": {
@@ -111,8 +111,8 @@
     },
     "ANFIA": {
       "2026": 79,
-      "scan_2026": 95,
-      "connector_status": "ok"
+      "scan_2026": 0,
+      "connector_status": "degraded_preserved"
     },
     "ARERA": {
       "2026": 41,
@@ -151,7 +151,7 @@
     },
     "CREA · RICA": {
       "2026": 62,
-      "scan_2026": 56,
+      "scan_2026": 54,
       "connector_status": "ok"
     },
     "Dipartimento delle Finanze": {
@@ -191,7 +191,7 @@
     },
     "FAO": {
       "2026": 43,
-      "scan_2026": 46,
+      "scan_2026": 44,
       "connector_status": "ok"
     },
     "GME": {
@@ -221,11 +221,11 @@
     },
     "INVALSI": {
       "2026": 41,
-      "scan_2026": 38,
+      "scan_2026": 39,
       "connector_status": "ok"
     },
     "ISPRA / SNPA": {
-      "2026": 61,
+      "2026": 63,
       "scan_2026": 46,
       "connector_status": "ok"
     },
@@ -265,9 +265,9 @@
       "connector_status": "degraded_preserved"
     },
     "Ministero dell'Istruzione e del Merito": {
-      "2026": 0,
-      "scan_2026": 0,
-      "connector_status": "empty_error"
+      "2026": 1,
+      "scan_2026": 1,
+      "connector_status": "ok"
     },
     "Ministero dell'Università e della Ricerca": {
       "2026": 129,
@@ -275,7 +275,7 @@
       "connector_status": "ok"
     },
     "MIT": {
-      "2026": 121,
+      "2026": 144,
       "scan_2026": 121,
       "connector_status": "ok"
     },
@@ -286,7 +286,7 @@
     },
     "Ragioneria Generale dello Stato · BDAP": {
       "2026": 113,
-      "scan_2026": 115,
+      "scan_2026": 114,
       "connector_status": "ok"
     },
     "SIAE · Osservatorio Spettacolo": {
@@ -311,7 +311,7 @@
     },
     "Unioncamere / InfoCamere": {
       "2026": 61,
-      "scan_2026": 49,
+      "scan_2026": 43,
       "connector_status": "ok"
     },
     "UNRAE": {
@@ -1004,20 +1004,524 @@
       "publication_status": "published"
     },
     {
-      "id": "OBS-959B4D764C783F72D6",
-      "published_at": "2026-10-06T00:00:00Z",
-      "observer": "Agenzia delle Dogane e dei Monopoli",
+      "id": "OBS-F34795D3E38CAC3609",
+      "published_at": "2026-10-07T00:00:00Z",
+      "observer": "MIMIT",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.mimit.gov.it/it/prezzo-medio-carburanti/autostrade",
+        "domain": "mimit.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Prezzi medi dei carburanti - Autostrade",
+      "summary": "MIMIT ha pubblicato questo aggiornamento quantitativo il 07/10/2026. La pagina contiene valori e indicatori numerici (tra cui 448, 4.0, 2023, 2024); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-8644B9C3F9C87A25B4",
+      "published_at": "2026-10-07T00:00:00Z",
+      "observer": "MIMIT",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.mimit.gov.it/it/prezzo-medio-carburanti/regioni",
+        "domain": "mimit.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Prezzi medi dei carburanti - Dati per regione",
+      "summary": "MIMIT ha pubblicato questo aggiornamento quantitativo il 07/10/2026. La pagina contiene valori e indicatori numerici (tra cui 448, 4.0, 2023, 2024); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-374E0C5160C028EC6F",
+      "published_at": "2026-10-07T00:00:00Z",
+      "observer": "MIMIT",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.mimit.gov.it/it/prezzi-carburanti-media-nazionale",
+        "domain": "mimit.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Prezzi medi nazionali",
+      "summary": "MIMIT ha pubblicato questo aggiornamento quantitativo il 07/10/2026. La pagina contiene valori e indicatori numerici (tra cui 07, 10, 2026, 2.040, 2.043); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-E7FA31782CA375E426",
+      "published_at": "2026-10-07T00:00:00Z",
+      "observer": "Ministero della Giustizia · DGStat",
       "topic": "ALTRO",
       "pulse_score": 0,
       "patterns": [],
       "public_source": {
-        "url": "https://www.adm.gov.it/portale/home?p_p_id=NewsDoganeMonopoliPortlet_INSTANCE_v40yedCj6led&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_NewsDoganeMonopoliPortlet_INSTANCE_v40yedCj6led_id_categorie=5731892",
-        "domain": "adm.gov.it",
+        "url": "https://www.giustizia.it/giustizia/page/it/pubblicita_legale",
+        "domain": "giustizia.it",
         "role": "primary_statistical_source",
         "verification_method": "official_domain_backfill"
       },
-      "headline": "Preferenze cookie",
-      "summary": "Agenzia delle Dogane e dei Monopoli ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 38, 24, 2026, 1); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "headline": "Ministero della Giustizia",
+      "summary": "Ministero della Giustizia · DGStat ha pubblicato questo aggiornamento quantitativo il 07/10/2026. La pagina contiene valori e indicatori numerici (tra cui 7, 2026, 32, 69, 2009); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-B19AF39CC6F180E845",
+      "published_at": "2026-10-07T00:00:00Z",
+      "observer": "CREA · RICA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.crea.gov.it/dettaglio-evento",
+        "domain": "crea.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "dettaglio evento",
+      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 07/10/2026. La pagina contiene valori e indicatori numerici (tra cui 50, 1, 36, 2023, 10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-48CBFD4A5596BBFFED",
+      "published_at": "2026-10-07T00:00:00Z",
+      "observer": "CREA · RICA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.crea.gov.it/en/dettaglio-bando-aih",
+        "domain": "crea.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "dettaglio bando AIH",
+      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 07/10/2026. La pagina contiene valori e indicatori numerici (tra cui 50, 1, 36, 2023, 10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-EAEB7F12A8DB6DF1CB",
+      "published_at": "2026-10-07T00:00:00Z",
+      "observer": "CREA · RICA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.crea.gov.it/dettaglio-bando-aih",
+        "domain": "crea.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "dettaglio bando AIH",
+      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 07/10/2026. La pagina contiene valori e indicatori numerici (tra cui 50, 1, 36, 2023, 10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-7ABB5DC15B352F2E97",
+      "published_at": "2026-10-07T00:00:00Z",
+      "observer": "CREA · RICA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.crea.gov.it/dettaglio-contratto-di-filiera",
+        "domain": "crea.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Dettaglio Contratto di Filiera",
+      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 07/10/2026. La pagina contiene valori e indicatori numerici (tra cui 50, 1, 36, 2023, 10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-C0520933EEA3C2A9AD",
+      "published_at": "2026-10-07T00:00:00Z",
+      "observer": "CREA · RICA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.crea.gov.it/en/dettaglio-contratto-di-filiera",
+        "domain": "crea.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Dettaglio Contratto di Filiera",
+      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 07/10/2026. La pagina contiene valori e indicatori numerici (tra cui 50, 1, 36, 2023, 10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-8171D188B514E0DCBA",
+      "published_at": "2026-10-07T00:00:00Z",
+      "observer": "CREA · RICA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.crea.gov.it/en/dettaglio-smallproject",
+        "domain": "crea.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "dettaglio smallproject",
+      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 07/10/2026. La pagina contiene valori e indicatori numerici (tra cui 50, 1, 36, 2023, 10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-03B56058D90D59D62E",
+      "published_at": "2026-10-07T00:00:00Z",
+      "observer": "CREA · RICA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.crea.gov.it/dettaglio-smallproject",
+        "domain": "crea.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "dettaglio smallproject",
+      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 07/10/2026. La pagina contiene valori e indicatori numerici (tra cui 50, 1, 36, 2023, 10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-EC3C6AE84D56FAA31C",
+      "published_at": "2026-10-07T00:00:00Z",
+      "observer": "CREA · RICA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.crea.gov.it/en/dettaglio-evento",
+        "domain": "crea.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "dettaglio evento",
+      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 07/10/2026. La pagina contiene valori e indicatori numerici (tra cui 50, 1, 36, 2023, 10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-CB58F2F665673E23DA",
+      "published_at": "2026-10-07T00:00:00Z",
+      "observer": "ISPRA / SNPA",
+      "topic": "AMBIENTE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.isprambiente.gov.it/it/attivita/biodiversita",
+        "domain": "isprambiente.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Biodiversità",
+      "summary": "ISPRA / SNPA ha pubblicato questo aggiornamento quantitativo il 07/10/2026. La pagina contiene valori e indicatori numerici (tra cui 07, 10, 2026, 05); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-397BAA066BB775524B",
+      "published_at": "2026-10-07T00:00:00Z",
+      "observer": "AGCOM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.agcom.it/node/47680",
+        "domain": "agcom.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Deliberazione Co.re.com. Piemonte n. 13/26",
+      "summary": "AGCOM ha pubblicato questo aggiornamento quantitativo il 07/10/2026. La pagina contiene valori e indicatori numerici (tra cui 13, 26); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-C74620BD6566F3F937",
+      "published_at": "2026-10-07T00:00:00Z",
+      "observer": "AGCOM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.agcom.it/node/47679",
+        "domain": "agcom.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Deliberazione Co.re.com. Piemonte n. 12/26",
+      "summary": "AGCOM ha pubblicato questo aggiornamento quantitativo il 07/10/2026. La pagina contiene valori e indicatori numerici (tra cui 12, 26); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-7C8CD88A440BB99D50",
+      "published_at": "2026-10-07T00:00:00Z",
+      "observer": "AGCOM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.agcom.it/node/47678",
+        "domain": "agcom.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Deliberazione Co.re.com. Piemonte n. 11/26",
+      "summary": "AGCOM ha pubblicato questo aggiornamento quantitativo il 07/10/2026. La pagina contiene valori e indicatori numerici (tra cui 11, 26); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-858D06BE3E3313A46F",
+      "published_at": "2026-10-07T00:00:00Z",
+      "observer": "AGCOM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.agcom.it/node/47677",
+        "domain": "agcom.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Deliberazione Co.re.com. Piemonte n. 10/26",
+      "summary": "AGCOM ha pubblicato questo aggiornamento quantitativo il 07/10/2026. La pagina contiene valori e indicatori numerici (tra cui 10, 26); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-075DF9D00233795B96",
+      "published_at": "2026-10-07T00:00:00Z",
+      "observer": "AGCOM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.agcom.it/node/47676",
+        "domain": "agcom.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Deliberazione Co.re.com. Piemonte n. 9/26",
+      "summary": "AGCOM ha pubblicato questo aggiornamento quantitativo il 07/10/2026. La pagina contiene valori e indicatori numerici (tra cui 9, 26); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-A63C183641BFE3061A",
+      "published_at": "2026-10-07T00:00:00Z",
+      "observer": "AGCOM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.agcom.it/node/47674",
+        "domain": "agcom.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Deliberazione Co.re.com. Piemonte n. 7/26",
+      "summary": "AGCOM ha pubblicato questo aggiornamento quantitativo il 07/10/2026. La pagina contiene valori e indicatori numerici (tra cui 7, 26); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-83838554220642E1E3",
+      "published_at": "2026-10-07T00:00:00Z",
+      "observer": "AGCOM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.agcom.it/node/47675",
+        "domain": "agcom.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Deliberazione Co.re.com. Piemonte n. 8/26",
+      "summary": "AGCOM ha pubblicato questo aggiornamento quantitativo il 07/10/2026. La pagina contiene valori e indicatori numerici (tra cui 8, 26); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-36DD0CCA45B685EAAA",
+      "published_at": "2026-10-07T00:00:00Z",
+      "observer": "AGCOM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.agcom.it/node/47673",
+        "domain": "agcom.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Deliberazione Co.re.com. Piemonte n. 4/26",
+      "summary": "AGCOM ha pubblicato questo aggiornamento quantitativo il 07/10/2026. La pagina contiene valori e indicatori numerici (tra cui 4, 26); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-C6825577849A27CCCA",
+      "published_at": "2026-10-07T00:00:00Z",
+      "observer": "AGCOM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.agcom.it/node/47672",
+        "domain": "agcom.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Deliberazione Co.re.com. Piemonte n. 3/26",
+      "summary": "AGCOM ha pubblicato questo aggiornamento quantitativo il 07/10/2026. La pagina contiene valori e indicatori numerici (tra cui 3, 26); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-66E24291BD154DF419",
+      "published_at": "2026-10-07T00:00:00Z",
+      "observer": "AGCOM",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.agcom.it/node/47671",
+        "domain": "agcom.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Deliberazione Co.re.com. Piemonte n. 2/26",
+      "summary": "AGCOM ha pubblicato questo aggiornamento quantitativo il 07/10/2026. La pagina contiene valori e indicatori numerici (tra cui 2, 26); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-7FDB8919A09CDA5082",
+      "published_at": "2026-10-07T00:00:00Z",
+      "observer": "ISPRA / SNPA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.isprambiente.gov.it/it/news/fiume-sarno-limpegno-operativo-ispra",
+        "domain": "isprambiente.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Fiume Sarno, il supporto tecnico scientifico dell'ISPRA per la tutela ambientale",
+      "summary": "ISPRA / SNPA ha pubblicato questo aggiornamento quantitativo il 07/10/2026. La pagina contiene valori e indicatori numerici (tra cui 17, 2025, 2026, 10, 07); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-9E5BD6EE1DFD2DE253",
+      "published_at": "2026-10-07T00:00:00Z",
+      "observer": "ISPRA / SNPA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.isprambiente.gov.it/it/amministrazione-trasparente/bandi-di-gara-e-contratti/commissioni-giudicatici",
+        "domain": "isprambiente.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Commissioni giudicatici",
+      "summary": "ISPRA / SNPA ha pubblicato questo aggiornamento quantitativo il 07/10/2026. La pagina contiene valori e indicatori numerici (tra cui 36, 7, 2025, 2024, 4); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -1466,48 +1970,6 @@
       "publication_status": "published"
     },
     {
-      "id": "OBS-F34795D3E38CAC3609",
-      "published_at": "2026-10-06T00:00:00Z",
-      "observer": "MIMIT",
-      "topic": "ECONOMIA",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.mimit.gov.it/it/prezzo-medio-carburanti/autostrade",
-        "domain": "mimit.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "Prezzi medi dei carburanti - Autostrade",
-      "summary": "MIMIT ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 448, 4.0, 2023, 2024); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-8644B9C3F9C87A25B4",
-      "published_at": "2026-10-06T00:00:00Z",
-      "observer": "MIMIT",
-      "topic": "ECONOMIA",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.mimit.gov.it/it/prezzo-medio-carburanti/regioni",
-        "domain": "mimit.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "Prezzi medi dei carburanti - Dati per regione",
-      "summary": "MIMIT ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 448, 4.0, 2023, 2024); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
       "id": "OBS-EB6427E910174A4E2C",
       "published_at": "2026-10-06T00:00:00Z",
       "observer": "MIMIT",
@@ -1522,48 +1984,6 @@
       },
       "headline": "Avviso 6 ottobre 2026 - IPCEI Tecnologie Nucleari Innovative (IPCEI INT) - Manifestazioni d'interesse",
       "summary": "MIMIT ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 6, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-374E0C5160C028EC6F",
-      "published_at": "2026-10-06T00:00:00Z",
-      "observer": "MIMIT",
-      "topic": "ECONOMIA",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.mimit.gov.it/it/prezzi-carburanti-media-nazionale",
-        "domain": "mimit.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "Prezzi medi nazionali",
-      "summary": "MIMIT ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 10, 2026, 2.043, 2.048); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-E7FA31782CA375E426",
-      "published_at": "2026-10-06T00:00:00Z",
-      "observer": "Ministero della Giustizia · DGStat",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.giustizia.it/giustizia/page/it/pubblicita_legale",
-        "domain": "giustizia.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "Ministero della Giustizia",
-      "summary": "Ministero della Giustizia · DGStat ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 6, 2026, 32, 69, 2009); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -2508,7 +2928,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "WD01 - Rome Water Dialogue - Technical Session on Strengthening governance of water tenure through innovation and inclusive dialogue",
-      "summary": "FAO ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 727, 736, 10, 7, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "FAO ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 713, 722, 10, 7, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -3650,174 +4070,6 @@
       "publication_status": "published"
     },
     {
-      "id": "OBS-B19AF39CC6F180E845",
-      "published_at": "2026-10-06T00:00:00Z",
-      "observer": "CREA · RICA",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.crea.gov.it/dettaglio-evento",
-        "domain": "crea.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "dettaglio evento",
-      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 2026, 8, 12); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-48CBFD4A5596BBFFED",
-      "published_at": "2026-10-06T00:00:00Z",
-      "observer": "CREA · RICA",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.crea.gov.it/en/dettaglio-bando-aih",
-        "domain": "crea.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "dettaglio bando AIH",
-      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 2026, 8, 12); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-EAEB7F12A8DB6DF1CB",
-      "published_at": "2026-10-06T00:00:00Z",
-      "observer": "CREA · RICA",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.crea.gov.it/dettaglio-bando-aih",
-        "domain": "crea.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "dettaglio bando AIH",
-      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 2026, 8, 12); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-7ABB5DC15B352F2E97",
-      "published_at": "2026-10-06T00:00:00Z",
-      "observer": "CREA · RICA",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.crea.gov.it/dettaglio-contratto-di-filiera",
-        "domain": "crea.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "Dettaglio Contratto di Filiera",
-      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 2026, 8, 12); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-C0520933EEA3C2A9AD",
-      "published_at": "2026-10-06T00:00:00Z",
-      "observer": "CREA · RICA",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.crea.gov.it/en/dettaglio-contratto-di-filiera",
-        "domain": "crea.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "Dettaglio Contratto di Filiera",
-      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 2026, 8, 12); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-8171D188B514E0DCBA",
-      "published_at": "2026-10-06T00:00:00Z",
-      "observer": "CREA · RICA",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.crea.gov.it/en/dettaglio-smallproject",
-        "domain": "crea.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "dettaglio smallproject",
-      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 2026, 8, 12); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-03B56058D90D59D62E",
-      "published_at": "2026-10-06T00:00:00Z",
-      "observer": "CREA · RICA",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.crea.gov.it/dettaglio-smallproject",
-        "domain": "crea.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "dettaglio smallproject",
-      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 2026, 8, 12); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-EC3C6AE84D56FAA31C",
-      "published_at": "2026-10-06T00:00:00Z",
-      "observer": "CREA · RICA",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.crea.gov.it/en/dettaglio-evento",
-        "domain": "crea.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "dettaglio evento",
-      "summary": "CREA · RICA ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 06, 2026, 8, 12); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
       "id": "OBS-EB162BB4B4FBFAC2A3",
       "published_at": "2026-10-06T00:00:00Z",
       "observer": "CNA",
@@ -4238,27 +4490,6 @@
       "publication_status": "published"
     },
     {
-      "id": "OBS-D72BA6D052BB67DE37",
-      "published_at": "2026-10-06T00:00:00Z",
-      "observer": "Agenzia delle Dogane e dei Monopoli",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.adm.gov.it/portale/novita-accise",
-        "domain": "adm.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "Preferenze cookie",
-      "summary": "Agenzia delle Dogane e dei Monopoli ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 7, 2026, 17); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
       "id": "OBS-1D392218D1C87A52B9",
       "published_at": "2026-10-06T00:00:00Z",
       "observer": "ANFIA",
@@ -4525,6 +4756,69 @@
       },
       "headline": "Avanti »",
       "summary": "SINAB ha pubblicato questo aggiornamento quantitativo il 06/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-8EDE8C38CD7BCE4D11",
+      "published_at": "2026-10-06T00:00:00Z",
+      "observer": "ISPRA / SNPA",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.isprambiente.gov.it/it/attivita/Crisi-Emergenze-ambientali-e-Danno",
+        "domain": "isprambiente.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Crisi, Emergenze ambientali e Danno",
+      "summary": "ISPRA / SNPA ha pubblicato questo aggiornamento quantitativo il 06/10/2026. La pagina contiene valori e indicatori numerici (tra cui 58, 2019, 06, 10, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-959B4D764C783F72D6",
+      "published_at": "2026-10-05T00:00:00Z",
+      "observer": "Agenzia delle Dogane e dei Monopoli",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.adm.gov.it/portale/home?p_p_id=NewsDoganeMonopoliPortlet_INSTANCE_v40yedCj6led&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_NewsDoganeMonopoliPortlet_INSTANCE_v40yedCj6led_id_categorie=5731892",
+        "domain": "adm.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Preferenze cookie",
+      "summary": "Agenzia delle Dogane e dei Monopoli ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 38, 24, 2026, 1); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-D72BA6D052BB67DE37",
+      "published_at": "2026-10-05T00:00:00Z",
+      "observer": "Agenzia delle Dogane e dei Monopoli",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.adm.gov.it/portale/novita-accise",
+        "domain": "adm.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Preferenze cookie",
+      "summary": "Agenzia delle Dogane e dei Monopoli ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 649, 05, 10, 2026, 17); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -5407,27 +5701,6 @@
       },
       "headline": "Conferenza Nazionale Polare del CNR",
       "summary": "ISPRA / SNPA ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 10, 05, 132, 48); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-CB58F2F665673E23DA",
-      "published_at": "2026-10-05T00:00:00Z",
-      "observer": "ISPRA / SNPA",
-      "topic": "AMBIENTE",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.isprambiente.gov.it/it/attivita/biodiversita",
-        "domain": "isprambiente.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "Biodiversità",
-      "summary": "ISPRA / SNPA ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 05, 10, 2026, 24); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -6645,7 +6918,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "MEET | La Sardegna protagonista del dibattito sui grandi progetti della ricerca geofisica, fisica e astronomica",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 05/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 02, 2025, 6); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -7653,7 +7926,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "ETNA | Chiarimento e smentita in merito al progetto “Aerdust”",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 05/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 05, 2026, 605); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -7717,6 +7990,27 @@
       },
       "headline": "Sette progetti per il Bio-Distretto delle Lame: così il biologico diventa il motore del territorio, di Paolo M. Pinto",
       "summary": "SINAB ha pubblicato questo aggiornamento quantitativo il 05/10/2026. La pagina contiene valori e indicatori numerici (tra cui 2025, 05); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-8045F8462DA2515044",
+      "published_at": "2026-10-05T00:00:00Z",
+      "observer": "Ministero dell'Istruzione e del Merito",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.dati.gov.it/node/192",
+        "domain": "dati.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Dati | dati.gov.it",
+      "summary": "Ministero dell'Istruzione e del Merito ha pubblicato questo aggiornamento quantitativo il 05/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -10025,8 +10319,8 @@
         "role": "primary_institutional_source",
         "verification_method": "official_listing_date"
       },
-      "headline": "Attività scientifiche",
-      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 02/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "headline": "Attività Scientifiche",
+      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 02/10/2026. La pagina contiene valori e indicatori numerici (tra cui 1, 2026, 14); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -10152,7 +10446,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "News & Storie",
-      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 02/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 02/10/2026. La pagina contiene valori e indicatori numerici (tra cui 104, 2026, 6, 2025); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -13679,7 +13973,7 @@
         "role": "primary_institutional_source",
         "verification_method": "official_listing_date"
       },
-      "headline": "AIFA a Genova. Il 16 ottobre confronto sul valore dell’innovazione farmaceutica",
+      "headline": "01/10/2026 - AIFA a Genova. Il 16 ottobre confronto sul valore dell’innovazione farmaceutica",
       "summary": "AIFA · OsMed ha pubblicato questo aggiornamento quantitativo il 01/10/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
@@ -20379,7 +20673,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "Memoria Confindustria schema di decreto qualità dell’aria",
-      "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 25/09/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 2026, 5.0, 1,5 miliardi); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 25/09/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 2026, 30, 001, 39); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -20484,7 +20778,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "TERREMOTI | Tsunami della Kamčatka 2025: la complessità della rottura sismica ne ha limitato l’impatto",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 25/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 25/09/2026. La pagina contiene valori e indicatori numerici (tra cui 2025, 25); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -21723,7 +22017,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "L’obbligo assicurativo per la protezione delle imprese dai rischi catastrofali – Guida operativa",
-      "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 24/09/2026. La pagina contiene valori e indicatori numerici (tra cui 24, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 24/09/2026. La pagina contiene valori e indicatori numerici (tra cui 24, 2026, 30, 001, 39); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -25511,6 +25805,27 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-5F0C7D31749C557FAC",
+      "published_at": "2026-09-20T00:00:00Z",
+      "observer": "Aeronautica Militare",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.aeronautica.difesa.it/en/news/aeronautica-militare-volo-salvavita-da-lampedusa-a-palermo-per-un-uomo-di-58-anni-in-pericolo-di-vita/",
+        "domain": "aeronautica.difesa.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Aeronautica Militare: volo salvavita da Lampedusa a Palermo per un uomo di 58 anni in pericolo di vita - Aeronautica Militare",
+      "summary": "Aeronautica Militare ha pubblicato questo aggiornamento quantitativo il 20/09/2026. La pagina contiene valori e indicatori numerici (tra cui 58, 107, 2026, 20); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-A5A34E4BEA5D915872",
       "published_at": "2026-09-19T00:00:00Z",
       "observer": "Aeronautica Militare",
@@ -25567,6 +25882,27 @@
       },
       "headline": "Rincari delle bollette per il 75% delle piccole imprese",
       "summary": "CNA ha pubblicato questo aggiornamento quantitativo il 19/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-4C23EE7E478D4FCB44",
+      "published_at": "2026-09-19T00:00:00Z",
+      "observer": "Aeronautica Militare",
+      "topic": "SALUTE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.aeronautica.difesa.it/en/news/aeronautica-militare-trasporto-sanitario-urgente-da-bari-a-venezia-tessera/",
+        "domain": "aeronautica.difesa.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Aeronautica Militare: trasporto sanitario urgente da Bari a Venezia-Tessera - Aeronautica Militare",
+      "summary": "Aeronautica Militare ha pubblicato questo aggiornamento quantitativo il 19/09/2026. La pagina contiene valori e indicatori numerici (tra cui 106, 2026, 19, 09); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -26701,6 +27037,27 @@
       },
       "headline": "Ministro",
       "summary": "MIT ha pubblicato questo aggiornamento quantitativo il 17/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-0E797894CDB44C4564",
+      "published_at": "2026-09-17T00:00:00Z",
+      "observer": "MIT",
+      "topic": "MOBILITA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://mit.gov.it/index.php/comunicazione/news/auto-e-moto-il-bollo",
+        "domain": "mit.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Auto e moto, via il bollo",
+      "summary": "MIT ha pubblicato questo aggiornamento quantitativo il 17/09/2026. La pagina contiene valori e indicatori numerici (tra cui 24,6 milioni, 17, 2026, 24.608, 867); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -28018,6 +28375,48 @@
       "patterns": [],
       "public_source": {
         "url": "https://mit.gov.it/comunicazione/news/porti-piu-lavoro-e-prospettive-da-record-monfalcone-e-milazzo",
+        "domain": "mit.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Porti: più lavoro e prospettive da record a Monfalcone e Milazzo",
+      "summary": "MIT ha pubblicato questo aggiornamento quantitativo il 16/09/2026. La pagina contiene valori e indicatori numerici (tra cui 16, 2026, 2025, 4 milioni, 19,4%); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-DDAB31B3CC00894975",
+      "published_at": "2026-09-16T00:00:00Z",
+      "observer": "MIT",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://mit.gov.it/index.php/comunicazione/news/casa-genitori-separati-passo-decisivo-verso-il-contributo-per-laffitto",
+        "domain": "mit.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Casa, genitori separati: passo decisivo verso il contributo per l’affitto",
+      "summary": "MIT ha pubblicato questo aggiornamento quantitativo il 16/09/2026. La pagina contiene valori e indicatori numerici (tra cui 500 euro, 16, 2026, 20 milioni, 60 milioni); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-F5A9CDD3A8A379B00F",
+      "published_at": "2026-09-16T00:00:00Z",
+      "observer": "MIT",
+      "topic": "LAVORO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://mit.gov.it/index.php/comunicazione/news/porti-piu-lavoro-e-prospettive-da-record-monfalcone-e-milazzo",
         "domain": "mit.gov.it",
         "role": "primary_institutional_source",
         "verification_method": "official_listing_date"
@@ -29522,6 +29921,27 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-31B2AC4C2F681213E1",
+      "published_at": "2026-09-14T00:00:00Z",
+      "observer": "MIT",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://mit.gov.it/index.php/comunicazione/news/pnrr-dati-istat-confermano-il-cambio-di-passo",
+        "domain": "mit.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Pnrr: dati Istat confermano il cambio di passo",
+      "summary": "MIT ha pubblicato questo aggiornamento quantitativo il 14/09/2026. La pagina contiene valori e indicatori numerici (tra cui 14, 2026, 2024, 7,3%); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-89E66E9933B05D9207",
       "published_at": "2026-09-13T00:00:00Z",
       "observer": "CNA",
@@ -29572,6 +29992,27 @@
       "patterns": [],
       "public_source": {
         "url": "https://www.aeronautica.difesa.it/news/aeronautica-militare-concluso-nella-notte-un-trasporto-sanitario-urgente-da-palermo-a-milano/",
+        "domain": "aeronautica.difesa.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Aeronautica Militare: concluso nella notte un trasporto sanitario urgente da Palermo a Milano - Aeronautica Militare",
+      "summary": "Aeronautica Militare ha pubblicato questo aggiornamento quantitativo il 12/09/2026. La pagina contiene valori e indicatori numerici (tra cui 105, 2026, 5, 12, 09); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-C287EA7AF6B670EBAD",
+      "published_at": "2026-09-12T00:00:00Z",
+      "observer": "Aeronautica Militare",
+      "topic": "SALUTE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.aeronautica.difesa.it/en/news/aeronautica-militare-concluso-nella-notte-un-trasporto-sanitario-urgente-da-palermo-a-milano/",
         "domain": "aeronautica.difesa.it",
         "role": "primary_statistical_source",
         "verification_method": "official_domain_backfill"
@@ -31160,6 +31601,27 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-C8B1519C2E9397DF47",
+      "published_at": "2026-09-09T00:00:00Z",
+      "observer": "MIT",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://mit.gov.it/index.php/comunicazione/news/shipping-rixi-con-cipro-grecia-e-malta-strada-comune-per-rivedere-lets-e",
+        "domain": "mit.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Shipping, Rixi: con Cipro, Grecia e Malta strada comune per rivedere l'ETS e tutelare competitività del Mediterraneo",
+      "summary": "MIT ha pubblicato questo aggiornamento quantitativo il 09/09/2026. La pagina contiene valori e indicatori numerici (tra cui 9, 2026, 400, 5.000, 10); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-AF4F30944BA0E761E4",
       "published_at": "2026-09-08T00:00:00Z",
       "observer": "CENSIS",
@@ -31706,6 +32168,48 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-59A5F43289B216F56D",
+      "published_at": "2026-09-08T00:00:00Z",
+      "observer": "Aeronautica Militare",
+      "topic": "SALUTE",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.aeronautica.difesa.it/en/news/aeronautica-militare-trasporti-salvavita-trasporto-sanitario-urgente-da-cagliari-a-roma-per-una-bambina-di-3-anni-in-imminente-pericolo-di-vita-2/",
+        "domain": "aeronautica.difesa.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "AERONAUTICA MILITARE - TRASPORTI SALVAVITA: TRASPORTO SANITARIO URGENTE DA CAGLIARI A ROMA PER UNA BAMBINA DI 3 ANNI IN IMMINENTE PERICOLO DI VITA AERONAUTICA MILITARE - TRASPORTI SALVAVITA: TRASPORTO SANITARIO URGENTE D",
+      "summary": "Aeronautica Militare ha pubblicato questo aggiornamento quantitativo il 08/09/2026. La pagina contiene valori e indicatori numerici (tra cui 3, 104, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-7B9AC59791BFC6747F",
+      "published_at": "2026-09-08T00:00:00Z",
+      "observer": "MIT",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://mit.gov.it/index.php/comunicazione/news/caro-carburante-arrivo-altri-114-milioni",
+        "domain": "mit.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Caro carburante: in arrivo altri 11,4 milioni",
+      "summary": "MIT ha pubblicato questo aggiornamento quantitativo il 08/09/2026. La pagina contiene valori e indicatori numerici (tra cui 11,4 milioni, 8, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-E977E2E7AC52144D46",
       "published_at": "2026-09-07T00:00:00Z",
       "observer": "AgID",
@@ -32098,6 +32602,27 @@
       },
       "headline": "Biologico: valori, controlli e dati in Italia e in Ue, di Dario Dongo",
       "summary": "SINAB ha pubblicato questo aggiornamento quantitativo il 07/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-E09158005F77966761",
+      "published_at": "2026-09-07T00:00:00Z",
+      "observer": "Aeronautica Militare",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.aeronautica.difesa.it/news/sardegna-aeronautica-militare-doppio-soccorso-aereo-in-poche-ore-per-due-bambini-in-difficolta/",
+        "domain": "aeronautica.difesa.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Sardegna, Aeronautica Militare: doppio soccorso aereo in poche ore per due bambini in difficoltà Sardegna, Aeronautica Militare: doppio soccorso aereo in poche ore per due bambini in difficoltà - Aeronautica Militare",
+      "summary": "Aeronautica Militare ha pubblicato questo aggiornamento quantitativo il 07/09/2026. La pagina contiene valori e indicatori numerici (tra cui 102, 2026, 5, 07, 09); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -32749,6 +33274,27 @@
       },
       "headline": "Agricoltura biologica: da nicchia a filiera strutturata. La posizione di Confcooperative Agroalimentare e Pesca",
       "summary": "SINAB ha pubblicato questo aggiornamento quantitativo il 04/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-688DA6EECC0C5CA2E2",
+      "published_at": "2026-09-04T00:00:00Z",
+      "observer": "Aeronautica Militare",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.aeronautica.difesa.it/news/aeronautica-militare-volo-salvavita-da-catania-a-ciampino-per-una-bambina-di-6-mesi/",
+        "domain": "aeronautica.difesa.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Aeronautica Militare: volo salvavita da Catania a Ciampino per una bambina di 6 mesi Aeronautica Militare: volo salvavita da Catania a Ciampino per una bambina di 6 mesi - Aeronautica Militare",
+      "summary": "Aeronautica Militare ha pubblicato questo aggiornamento quantitativo il 04/09/2026. La pagina contiene valori e indicatori numerici (tra cui 6, 101, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -33617,6 +34163,27 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-B36C5E785A8ECC4FDA",
+      "published_at": "2026-09-03T00:00:00Z",
+      "observer": "MIT",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://mit.gov.it/index.php/comunicazione/news/nuovo-codice-della-strada-inviata-operatori-del-settore-nuova-tabella",
+        "domain": "mit.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Nuovo Codice della Strada: inviata a operatori del settore nuova tabella sanzionatoria.",
+      "summary": "MIT ha pubblicato questo aggiornamento quantitativo il 03/09/2026. La pagina contiene valori e indicatori numerici (tra cui 7%, 3, 2026, 795, 66); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-B91A18D8D18D508557",
       "published_at": "2026-09-02T00:00:00Z",
       "observer": "Fondazione GIMBE",
@@ -34156,6 +34723,27 @@
       },
       "headline": "Protezione fitosanitaria nella coltivazione delle piante ornamentali biologiche: una scheda tecnica di FIBL",
       "summary": "SINAB ha pubblicato questo aggiornamento quantitativo il 02/09/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-4AB339CCBCB8285A06",
+      "published_at": "2026-09-02T00:00:00Z",
+      "observer": "Aeronautica Militare",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.aeronautica.difesa.it/news/sardegna-aeronautica-militare-doppio-soccorso-aereo-in-poche-ore-a-favore-di-due-bambini-in-difficolta/",
+        "domain": "aeronautica.difesa.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Sardegna, Aeronautica Militare: doppio soccorso aereo in poche ore a favore di due bambini in difficoltà - Aeronautica Militare",
+      "summary": "Aeronautica Militare ha pubblicato questo aggiornamento quantitativo il 02/09/2026. La pagina contiene valori e indicatori numerici (tra cui 100, 2026, 5, 02, 09); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -37754,6 +38342,27 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-AA388ECC12EC47547B",
+      "published_at": "2026-08-16T00:00:00Z",
+      "observer": "Aeronautica Militare",
+      "topic": "MOBILITA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.aeronautica.difesa.it/news/calabria-nel-giorno-di-ferragosto-neonata-in-pericolo-di-vita-trasportata-durgenza-a-genova-dallaeronautica-militare/",
+        "domain": "aeronautica.difesa.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Calabria: nel giorno di Ferragosto neonata in pericolo di vita trasportata d’urgenza a Genova dall’Aeronautica Militare - Aeronautica Militare",
+      "summary": "Aeronautica Militare ha pubblicato questo aggiornamento quantitativo il 16/08/2026. La pagina contiene valori e indicatori numerici (tra cui 98, 2026, 5, 16, 08); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-8D6C1625CDCF1DA02F",
       "published_at": "2026-08-14T00:00:00Z",
       "observer": "Coldiretti",
@@ -38279,6 +38888,27 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-03E30C457255AF16CA",
+      "published_at": "2026-08-13T00:00:00Z",
+      "observer": "Aeronautica Militare",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.aeronautica.difesa.it/news/sicilia-elicottero-dellaeronautica-militare-soccorre-un-biker-a-terrasini-in-collaborazione-con-il-soccorso-alpino-e-speleologico-siciliano/",
+        "domain": "aeronautica.difesa.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Sicilia: elicottero dell’Aeronautica Militare soccorre un biker a Terrasini in collaborazione con il Soccorso Alpino e Speleologico Siciliano - Aeronautica Militare",
+      "summary": "Aeronautica Militare ha pubblicato questo aggiornamento quantitativo il 13/08/2026. La pagina contiene valori e indicatori numerici (tra cui 97, 2026, 5, 13, 08); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-E11EC95BE88165D2D6",
       "published_at": "2026-08-12T00:00:00Z",
       "observer": "Banca d'Italia",
@@ -38413,6 +39043,48 @@
       "patterns": [],
       "public_source": {
         "url": "https://mit.gov.it/index.php/comunicazione/news/trasporti-salvini-al-pigneto-sopralluogo-al-cantiere-del-nuovo-nodo-ferroviario",
+        "domain": "mit.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Trasporti, Salvini al Pigneto: sopralluogo al cantiere del nuovo nodo ferroviario",
+      "summary": "MIT ha pubblicato questo aggiornamento quantitativo il 11/08/2026. La pagina contiene valori e indicatori numerici (tra cui 230 milioni, 8 milioni, 11, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-D4B581293F492A1088",
+      "published_at": "2026-08-11T00:00:00Z",
+      "observer": "Aeronautica Militare",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.aeronautica.difesa.it/news/sicilia-elicottero-aeronautica-militare/",
+        "domain": "aeronautica.difesa.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Sicilia: elicottero Aeronautica Militare soccorre turista nella Riserva dello Zingaro in collaborazione con Soccorso Alpino e Speleologico Siciliano - Aeronautica Militare",
+      "summary": "Aeronautica Militare ha pubblicato questo aggiornamento quantitativo il 11/08/2026. La pagina contiene valori e indicatori numerici (tra cui 95, 2026, 5, 11, 08); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-595A898A8B9415463B",
+      "published_at": "2026-08-11T00:00:00Z",
+      "observer": "MIT",
+      "topic": "MOBILITA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://mit.gov.it/comunicazione/news/trasporti-salvini-al-pigneto-sopralluogo-al-cantiere-del-nuovo-nodo-ferroviario",
         "domain": "mit.gov.it",
         "role": "primary_institutional_source",
         "verification_method": "official_listing_date"
@@ -38650,6 +39322,27 @@
       },
       "headline": "Nuovo Codice della Strada: patente a 17 anni, obbligo di casco e contrassegno per le due ruote a propulsione, stretta per chi viaggia senza assicurazione e multe meno vessatorie e ponderate",
       "summary": "MIT ha pubblicato questo aggiornamento quantitativo il 08/08/2026. La pagina contiene valori e indicatori numerici (tra cui 17, 8, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-80D92F322FE0F12573",
+      "published_at": "2026-08-08T00:00:00Z",
+      "observer": "Aeronautica Militare",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.aeronautica.difesa.it/news/aeronautica-militare-soccorso-aereo-in-salvo-due-persone-dopo-volo-di-70-metri/",
+        "domain": "aeronautica.difesa.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Aeronautica Militare, Soccorso Aereo: in salvo due persone dopo volo di 70 metri - Aeronautica Militare",
+      "summary": "Aeronautica Militare ha pubblicato questo aggiornamento quantitativo il 08/08/2026. La pagina contiene valori e indicatori numerici (tra cui 70, 93, 2026, 5); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -39371,6 +40064,27 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-B3CE673C454A5C3AF3",
+      "published_at": "2026-08-05T00:00:00Z",
+      "observer": "MIT",
+      "topic": "LAVORO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://mit.gov.it/comunicazione/news/porti-mit-rafforza-il-gruppo-di-lavoro-per-la-riforma",
+        "domain": "mit.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Porti, MIT rafforza il gruppo di lavoro per la riforma",
+      "summary": "MIT ha pubblicato questo aggiornamento quantitativo il 05/08/2026. La pagina contiene valori e indicatori numerici (tra cui 33, 5, 2026, 05); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-E2D7A9B05AE8D394B9",
       "published_at": "2026-08-04T00:00:00Z",
       "observer": "ANAC",
@@ -39917,6 +40631,27 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-D1C6F21E570BCEFA91",
+      "published_at": "2026-08-04T00:00:00Z",
+      "observer": "MIT",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://mit.gov.it/comunicazione/news/lombardia-apre-la-variante-di-tirano-dopo-decenni-di-attesa-la-valtellina-cambia",
+        "domain": "mit.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Lombardia, apre la variante di Tirano: dopo decenni di attesa, la Valtellina cambia passo",
+      "summary": "MIT ha pubblicato questo aggiornamento quantitativo il 04/08/2026. La pagina contiene valori e indicatori numerici (tra cui 6,6, 4, 2026, 38, 254,4 milioni); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-4151323C631DDC5A6F",
       "published_at": "2026-08-03T00:00:00Z",
       "observer": "UNRAE",
@@ -40148,6 +40883,27 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-E0A3851181A1E03AAC",
+      "published_at": "2026-08-03T00:00:00Z",
+      "observer": "MIT",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://mit.gov.it/comunicazione/news/ferrovie-avac-verona-padova-completate-opere-del-i-lotto",
+        "domain": "mit.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Ferrovie: AV/Ac Verona - Padova, completate opere del I lotto",
+      "summary": "MIT ha pubblicato questo aggiornamento quantitativo il 03/08/2026. La pagina contiene valori e indicatori numerici (tra cui 3,4 miliardi, 3, 2026, 30); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-F943D6B6420BEC4FDC",
       "published_at": "2026-08-02T00:00:00Z",
       "observer": "INVALSI",
@@ -40266,7 +41022,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "EINSTEIN TELESCOPE | L’INGV in prima linea con due info point in Sardegna",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 02/08/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 02/08/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 12, 2025); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -40694,6 +41450,48 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-4D7DF6E69D1492B050",
+      "published_at": "2026-08-01T00:00:00Z",
+      "observer": "MIT",
+      "topic": "MOBILITA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://mit.gov.it/index.php/comunicazione/news/auto-69411-immatricolazioni-ad-agosto-2026",
+        "domain": "mit.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Auto: 69.411 immatricolazioni ad agosto 2026",
+      "summary": "MIT ha pubblicato questo aggiornamento quantitativo il 01/08/2026. La pagina contiene valori e indicatori numerici (tra cui 69.411, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-A7F689621B558FCD39",
+      "published_at": "2026-08-01T00:00:00Z",
+      "observer": "MIT",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://mit.gov.it/comunicazione/news/fondo-piccoli-comuni-il-mit-finanzia-altri-292-interventi-per-40-milioni",
+        "domain": "mit.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Fondo Piccoli Comuni: il MIT finanzia altri 292 interventi per 40 milioni",
+      "summary": "MIT ha pubblicato questo aggiornamento quantitativo il 01/08/2026. La pagina contiene valori e indicatori numerici (tra cui 292, 40 milioni); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-15B241ABA689B28913",
       "published_at": "2026-07-31T00:00:00Z",
       "observer": "Eurostat",
@@ -41093,6 +41891,27 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-4ACDC20838D3BE7E87",
+      "published_at": "2026-07-31T00:00:00Z",
+      "observer": "MIT",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://mit.gov.it/comunicazione/news/codice-della-strada-il-mit-prosegue-il-confronto-sul-nuovo-testo",
+        "domain": "mit.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Codice della Strada, il MIT prosegue il confronto sul nuovo testo",
+      "summary": "MIT ha pubblicato questo aggiornamento quantitativo il 31/07/2026. La pagina contiene valori e indicatori numerici (tra cui 31, 2026, 07); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-6F4E192C3662C79795",
       "published_at": "2026-07-30T00:00:00Z",
       "observer": "INGV",
@@ -41437,6 +42256,48 @@
       "patterns": [],
       "public_source": {
         "url": "https://mit.gov.it/index.php/comunicazione/news/mobilita-pubblicato-il-rapporto-trimestrale-dellosservatorio-i-2026",
+        "domain": "mit.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Mobilità: pubblicato il Rapporto trimestrale dell’Osservatorio (I - 2026)",
+      "summary": "MIT ha pubblicato questo aggiornamento quantitativo il 30/07/2026. La pagina contiene valori e indicatori numerici (tra cui 2026, 30); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-9B9076532F20EA142B",
+      "published_at": "2026-07-30T00:00:00Z",
+      "observer": "Aeronautica Militare",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.aeronautica.difesa.it/news/aeronautica-militare-volo-salvavita-da-cagliari-a-roma-per-un-bambino-di-soli-tre-mesi/",
+        "domain": "aeronautica.difesa.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Aeronautica Militare: volo salvavita da Cagliari a Roma per un bambino di soli tre mesi - Aeronautica Militare",
+      "summary": "Aeronautica Militare ha pubblicato questo aggiornamento quantitativo il 30/07/2026. La pagina contiene valori e indicatori numerici (tra cui 91, 2026, 5, 30, 07); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-44286E42F3764EFD01",
+      "published_at": "2026-07-30T00:00:00Z",
+      "observer": "MIT",
+      "topic": "MOBILITA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://mit.gov.it/comunicazione/news/mobilita-pubblicato-il-rapporto-trimestrale-dellosservatorio-i-2026",
         "domain": "mit.gov.it",
         "role": "primary_institutional_source",
         "verification_method": "official_listing_date"
@@ -41954,6 +42815,48 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-70D7D543383815B59C",
+      "published_at": "2026-07-29T00:00:00Z",
+      "observer": "Aeronautica Militare",
+      "topic": "MOBILITA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.aeronautica.difesa.it/news/puglia-un-ragazzo-in-pericolo-di-vita-e-stato-trasportato-durgenza-da-brindisi-a-milano-con-un-velivolo-dellaeronautica-militare/",
+        "domain": "aeronautica.difesa.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Puglia: un ragazzo in pericolo di vita è stato trasportato d'urgenza da Brindisi a Milano con un velivolo dell'Aeronautica Militare. - Aeronautica Militare",
+      "summary": "Aeronautica Militare ha pubblicato questo aggiornamento quantitativo il 29/07/2026. La pagina contiene valori e indicatori numerici (tra cui 89, 2026, 5, 29, 07); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-93694A10D2385D4B6F",
+      "published_at": "2026-07-29T00:00:00Z",
+      "observer": "MIT",
+      "topic": "MOBILITA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://mit.gov.it/comunicazione/news/trasporti-firmato-accordo-quadro-italia-tunisia-per-rafforzare-la-cooperazione",
+        "domain": "mit.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Trasporti, firmato accordo quadro Italia-Tunisia per rafforzare la cooperazione su Logistica e Infrastrutture",
+      "summary": "MIT ha pubblicato questo aggiornamento quantitativo il 29/07/2026. La pagina contiene valori e indicatori numerici (tra cui 29, 2026, 07); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-96F550E3A04E81E546",
       "published_at": "2026-07-28T00:00:00Z",
       "observer": "IVASS",
@@ -42388,6 +43291,27 @@
       },
       "headline": "Altri organismi e istituzioni",
       "summary": "MIT ha pubblicato questo aggiornamento quantitativo il 28/07/2026. La pagina contiene valori e indicatori numerici (tra cui 20, 10, 2025, 07, 01); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-FD0CDEE40D18D58A92",
+      "published_at": "2026-07-28T00:00:00Z",
+      "observer": "Aeronautica Militare",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.aeronautica.difesa.it/news/aeronautica-militare-volo-salvavita-da-cagliari-a-ciampino-per-un-bambino-di-4-anni-in-imminente-pericolo-di-vita/",
+        "domain": "aeronautica.difesa.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Aeronautica Militare: Volo salvavita da Cagliari a Ciampino per un bambino di 4 anni in imminente pericolo di vita. - Aeronautica Militare",
+      "summary": "Aeronautica Militare ha pubblicato questo aggiornamento quantitativo il 28/07/2026. La pagina contiene valori e indicatori numerici (tra cui 4, 87, 2026, 5); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -44519,7 +45443,7 @@
       "id": "OBS-DD41A5BCB7E810ADDC",
       "published_at": "2026-07-17T00:00:00Z",
       "observer": "Legambiente",
-      "topic": "ALTRO",
+      "topic": "LAVORO",
       "pulse_score": 0,
       "patterns": [],
       "public_source": {
@@ -44528,8 +45452,8 @@
         "role": "primary_institutional_source",
         "verification_method": "official_listing_date"
       },
-      "headline": "Chi siamo",
-      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 17/07/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "headline": "Siamo l’associazione che da più tempo in Italia si occupa di ambiente e di inquinamento , la più diffusa, la più conosciuta e sicuramente tra le più amate.",
+      "summary": "Legambiente ha pubblicato questo aggiornamento quantitativo il 17/07/2026. La pagina contiene valori e indicatori numerici (tra cui 46, 18, 472, 100.000); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -45348,7 +46272,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "Protocollo d’intesa Confindustria-GSE",
-      "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 14/07/2026. La pagina contiene valori e indicatori numerici (tra cui 14, 2026, 27, 1.000); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 14/07/2026. La pagina contiene valori e indicatori numerici (tra cui 14, 2026, 27, 30, 001); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -46784,6 +47708,27 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-D8191A38F837EDD2A2",
+      "published_at": "2026-07-06T00:00:00Z",
+      "observer": "MIT",
+      "topic": "ENERGIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://mit.gov.it/comunicazione/news/monopattini-elettrici-gia-oltre-133mila-contrassegni-rilasciati",
+        "domain": "mit.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Monopattini elettrici, già oltre 133mila contrassegni rilasciati",
+      "summary": "MIT ha pubblicato questo aggiornamento quantitativo il 06/07/2026. La pagina contiene valori e indicatori numerici (tra cui 133mila, 6, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-A3D8A7F9CE569322DE",
       "published_at": "2026-07-03T00:00:00Z",
       "observer": "AGCOM",
@@ -47322,7 +48267,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "Risposta alla consultazione sulle Linee Guida sul trattamento dei dati personali per finalità di ricerca scientifica dell’European Data Protection Board",
-      "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 02/07/2026. La pagina contiene valori e indicatori numerici (tra cui 02, 2026, 89, 2025); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 02/07/2026. La pagina contiene valori e indicatori numerici (tra cui 02, 2026, 89, 30, 001); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -48918,7 +49863,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "DDL Nucleare – Audizione Confindustria",
-      "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 01/07/2026. La pagina contiene valori e indicatori numerici (tra cui 01, 2026, 1.000); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 01/07/2026. La pagina contiene valori e indicatori numerici (tra cui 01, 2026, 30, 001, 39); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -49060,6 +50005,69 @@
       "patterns": [],
       "public_source": {
         "url": "https://mit.gov.it/comunicazione/news/auto-146423-immatricolazioni-giugno",
+        "domain": "mit.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Auto: 146.423 immatricolazioni a giugno",
+      "summary": "MIT ha pubblicato questo aggiornamento quantitativo il 01/07/2026. La pagina contiene valori e indicatori numerici (tra cui 146.423, 481.205, 1); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-93B4005376E141D02C",
+      "published_at": "2026-07-01T00:00:00Z",
+      "observer": "MIT",
+      "topic": "MOBILITA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://mit.gov.it/comunicazione/news/auto-123184-immatricolazioni-luglio-2026",
+        "domain": "mit.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Auto: 123.184 immatricolazioni a luglio 2026",
+      "summary": "MIT ha pubblicato questo aggiornamento quantitativo il 01/07/2026. La pagina contiene valori e indicatori numerici (tra cui 123.184, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-83C9395674ED25808B",
+      "published_at": "2026-07-01T00:00:00Z",
+      "observer": "MIT",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://mit.gov.it/index.php/comunicazione/news/mit-confronto-con-le-regioni-su-riforma-portuale",
+        "domain": "mit.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "MIT, Confronto con le regioni su riforma portuale",
+      "summary": "MIT ha pubblicato questo aggiornamento quantitativo il 01/07/2026. La pagina contiene valori e indicatori numerici (tra cui 1, 2026, 01, 07); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-89FE3AC0D24E23D006",
+      "published_at": "2026-07-01T00:00:00Z",
+      "observer": "MIT",
+      "topic": "MOBILITA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://mit.gov.it/index.php/comunicazione/news/auto-146423-immatricolazioni-giugno",
         "domain": "mit.gov.it",
         "role": "primary_institutional_source",
         "verification_method": "official_listing_date"
@@ -52013,6 +53021,27 @@
       "publication_status": "published"
     },
     {
+      "id": "OBS-26EC258617FD46F520",
+      "published_at": "2026-06-25T00:00:00Z",
+      "observer": "MIT",
+      "topic": "ECONOMIA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://mit.gov.it/index.php/comunicazione/news/forum-economico-italo-francia",
+        "domain": "mit.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "Forum economico Italo-Francia",
+      "summary": "MIT ha pubblicato questo aggiornamento quantitativo il 25/06/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 2027, 06, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
       "id": "OBS-36CA2DF9FD6A23D83B",
       "published_at": "2026-06-24T00:00:00Z",
       "observer": "AGCOM",
@@ -52362,7 +53391,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "DDL Riforma della portualità nazionale – Audizione Confindustria",
-      "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 24/06/2026. La pagina contiene valori e indicatori numerici (tra cui 24, 2026, 216 miliardi, 175 mila); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "Confindustria ha pubblicato questo aggiornamento quantitativo il 24/06/2026. La pagina contiene valori e indicatori numerici (tra cui 24, 2026, 30, 001, 39); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -54778,27 +55807,6 @@
       },
       "headline": "ENIT Parigi ospita la Liguria: turismo, gusto e lifestyle al centro della promozione sul mercato francese",
       "summary": "ENIT ha pubblicato questo aggiornamento quantitativo il 15/06/2026. La pagina contiene valori e indicatori numerici (tra cui 15, 2026, 50, 11); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
-      "territories": [
-        "italia"
-      ],
-      "editorial_status": "source_publication_verified",
-      "publication_status": "published"
-    },
-    {
-      "id": "OBS-8EDE8C38CD7BCE4D11",
-      "published_at": "2026-06-15T00:00:00Z",
-      "observer": "ISPRA / SNPA",
-      "topic": "ALTRO",
-      "pulse_score": 0,
-      "patterns": [],
-      "public_source": {
-        "url": "https://www.isprambiente.gov.it/it/attivita/Crisi-Emergenze-ambientali-e-Danno",
-        "domain": "isprambiente.gov.it",
-        "role": "primary_statistical_source",
-        "verification_method": "official_domain_backfill"
-      },
-      "headline": "Crisi, Emergenze ambientali e Danno",
-      "summary": "ISPRA / SNPA ha pubblicato questo aggiornamento quantitativo il 15/06/2026. La pagina contiene valori e indicatori numerici (tra cui 58, 2019, 15, 06, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -59796,7 +60804,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "CAMPI FLEGREI | Precisazioni INGV su studio preliminare e interpretazioni diffuse sui media",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 23/05/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 23, 2026, 24); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 23/05/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -61308,7 +62316,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "Workshop",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 14/05/2026. La pagina contiene valori e indicatori numerici (tra cui 10, 14, 2026, 2025, 2024); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 14/05/2026. La pagina contiene valori e indicatori numerici (tra cui 2, 10, 14, 2026, 2025); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -61681,6 +62689,27 @@
       "patterns": [],
       "public_source": {
         "url": "https://mit.gov.it/comunicazione/news/mit-prevenzione-e-resilienza-idrica-oltre-4-miliardi-gia-assegnati-per-il",
+        "domain": "mit.gov.it",
+        "role": "primary_institutional_source",
+        "verification_method": "official_listing_date"
+      },
+      "headline": "MIT, prevenzione e resilienza idrica: oltre 4 miliardi già assegnati per il settore",
+      "summary": "MIT ha pubblicato questo aggiornamento quantitativo il 12/05/2026. La pagina contiene valori e indicatori numerici (tra cui 4 miliardi, 12, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-5D9B55891F5CD48A2E",
+      "published_at": "2026-05-12T00:00:00Z",
+      "observer": "MIT",
+      "topic": "ALTRO",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://mit.gov.it/index.php/comunicazione/news/mit-prevenzione-e-resilienza-idrica-oltre-4-miliardi-gia-assegnati-per-il",
         "domain": "mit.gov.it",
         "role": "primary_institutional_source",
         "verification_method": "official_listing_date"
@@ -63807,7 +64836,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "La CoPER al Quirinale per la Giornata della ricerca italiana nel mondo",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 22/04/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 22/04/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 22, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -64899,7 +65928,7 @@
         "verification_method": "official_domain_backfill"
       },
       "headline": "Accelerating innovative forest monitoring for communities, climate and sustainable livelihoods",
-      "summary": "FAO ha pubblicato questo aggiornamento quantitativo il 10/04/2026. La pagina contiene valori e indicatori numerici (tra cui 718, 711, 10, 7, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "FAO ha pubblicato questo aggiornamento quantitativo il 10/04/2026. La pagina contiene valori e indicatori numerici (tra cui 732, 724, 10, 7, 2026); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -66868,6 +67897,27 @@
       "patterns": [],
       "public_source": {
         "url": "https://www.mit.gov.it:443/conferenza_servizio/class-474-ex-440-2-4-7-progetto-definitivo-autostrada-a1-mi-na-ampliamento-alla",
+        "domain": "mit.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "official_domain_backfill"
+      },
+      "headline": "Class 474 ex 440 2-4-7 Progetto definitivo Autostrada A1 MI-NA - Ampliamento alla terza corsia tratto: Firenze Nord – Firenze sud - N° 11 interventi esterni al nastro autostradale ricadenti nel territorio fiorentino",
+      "summary": "MIT ha pubblicato questo aggiornamento quantitativo il 01/04/2026. La pagina contiene valori e indicatori numerici (tra cui 474, 440, 2, 4, 7); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "territories": [
+        "italia"
+      ],
+      "editorial_status": "source_publication_verified",
+      "publication_status": "published"
+    },
+    {
+      "id": "OBS-AC18F659E40146C97F",
+      "published_at": "2026-04-01T00:00:00Z",
+      "observer": "MIT",
+      "topic": "MOBILITA",
+      "pulse_score": 0,
+      "patterns": [],
+      "public_source": {
+        "url": "https://mit.gov.it:443/conferenza_servizio/class-474-ex-440-2-4-7-progetto-definitivo-autostrada-a1-mi-na-ampliamento-alla",
         "domain": "mit.gov.it",
         "role": "primary_statistical_source",
         "verification_method": "official_domain_backfill"
@@ -73845,7 +74895,7 @@
         "verification_method": "official_listing_date"
       },
       "headline": "ANTARTIDE | Perforata la calotta glaciale nel Mare di Ross per studiare il clima del passato e comprendere le evoluzioni future",
-      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 22/01/2026. La pagina contiene valori e indicatori numerici (tra cui 25, 22, 2026, 228); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
+      "summary": "INGV ha pubblicato questo aggiornamento quantitativo il 22/01/2026. ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
       ],
@@ -74768,7 +75818,7 @@
         "role": "primary_statistical_source",
         "verification_method": "official_domain_backfill"
       },
-      "headline": "Lista esclusi",
+      "headline": "Lista candidati esclusi",
       "summary": "ISPRA / SNPA ha pubblicato questo aggiornamento quantitativo il 06/01/2026. La pagina contiene valori e indicatori numerici (tra cui 1, 16, 30, 2029, 2021); ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato.",
       "territories": [
         "italia"
