@@ -1259,12 +1259,6 @@ def process_source(src, now):
                 candidates.setdefault(url,title)
                 listing_dates[url]=(title,pub_date)
 
-        if src.get("adapter")=="anfia_listing":
-            anfia_rows=anfia_candidates(entrypoints,domains,year,420)
-            for title,url,pub_date in anfia_rows:
-                candidates.setdefault(url,title)
-                listing_dates[url]=(title,pub_date)
-
         if src.get("adapter")=="snam_sitemap":
             for title,url,pub_date in snam_sitemap_candidates(domains,year,420):
                 candidates.setdefault(url,title)
