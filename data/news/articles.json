@@ -1,6 +1,57 @@
 {
-  "generated_at": "2026-10-06T20:10:52.501160+00:00",
+  "generated_at": "2026-10-07T04:11:46.730286+00:00",
   "articles": [
+    {
+      "id": "PULSE-196B72DB547B784B",
+      "published_at": "2026-10-07T04:11:46.730286+00:00",
+      "last_seen_at": "2026-10-07T04:11:46.730286+00:00",
+      "topic": "ISTRUZIONE",
+      "pulse_score": 88,
+      "patterns": [
+        "ANOMALIA",
+        "DIVERGENZA_TERRITORIALE"
+      ],
+      "public_source": {
+        "url": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/edn-20261005-1",
+        "domain": "ec.europa.eu",
+        "role": "primary_statistical_source",
+        "verification_method": "curated_primary_verification",
+        "verification_score": 100
+      },
+      "discovery": {
+        "visible": false,
+        "role": "hidden_radar"
+      },
+      "period_reference": "2024",
+      "latest_source_update": "2026-10-07",
+      "headline": "Docenti sempre più anziani: in Italia il 54,3% ha almeno 50 anni",
+      "summary": "Secondo Eurostat, nel 2024 il 54,3% degli insegnanti italiani della scuola primaria e secondaria aveva almeno 50 anni, contro il 40,4% della media UE. Nella sola scuola primaria la quota italiana sale al 58,2%, il valore più alto nell'Unione europea.",
+      "statistical_claims": [
+        {
+          "raw_value": "54,3%",
+          "verified": true
+        },
+        {
+          "raw_value": "40,4%",
+          "verified": true
+        },
+        {
+          "raw_value": "58,2%",
+          "verified": true
+        }
+      ],
+      "territories": [
+        "italia"
+      ],
+      "chart_spec": {
+        "type": "auto",
+        "status": "ready_for_primary_series"
+      },
+      "map_spec": null,
+      "editorial_status": "verified",
+      "publication_status": "published",
+      "story_fingerprint": "196b72db547b784b93941edd"
+    },
     {
       "id": "PULSE-5C650D98691FB5F5",
       "story_fingerprint": "5c650d98691fb5f589823259",
