@@ -17,6 +17,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m pip install beautifulsoup4 pypdf googlenewsdecoder
+      - run: python -m pip install beautifulsoup4 pypdf 'googlenewsdecoder @ git+https://github.com/SSujitX/google-news-url-decoder.git@d38ddbdd510561859da0dae0c1176e3a2676c159'
       - name: Test Salute only
         run: python scripts/update_observer_archive.py --only "Ministero della Salute"
