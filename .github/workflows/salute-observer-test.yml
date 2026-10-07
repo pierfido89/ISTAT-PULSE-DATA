@@ -1,0 +1,41 @@
+name: Salute Observer Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ feat/news-engine ]
+    paths:
+      - 'scripts/update_observer_archive.py'
+      - 'data/observer_sources.json'
+      - '.github/workflows/salute-observer-test.yml'
+
+jobs:
+  test-salute:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install beautifulsoup4 pypdf
+      - name: Probe Ministero Salute
+        shell: bash
+        run: |
+          set +e
+          for u in \
+            "https://www.salute.gov.it/new/it/sezione/comunicati-stampa/" \
+            "https://www.salute.gov.it/new/it/altro/rss/" \
+            "https://www.salute.gov.it/portale/news/p3_2_4_1_1.jsp?lingua=italiano&menu=salastampa&p=comunicatistampa" \
+            "https://www.salute.gov.it/rss/comunicatiStampa.xml" \
+            "https://www.salute.gov.it/rss/comunicati-stampa.xml" \
+            "https://www.salute.gov.it/new/it/rss/comunicati-stampa/"
+          do
+            echo "=== $u"
+            curl -L -A "Mozilla/5.0" -sS -D /tmp/h -o /tmp/b "$u"
+            head -n 15 /tmp/h
+            echo "BYTES=$(wc -c </tmp/b 2>/dev/null)"
+            grep -oiE 'href=["'\'''][^"'\''']*(rss|feed)[^"'\''']*["'\''']' /tmp/b 2>/dev/null | head -n 20
+            head -c 300 /tmp/b 2>/dev/null | tr '\n' ' '; echo
+          done
+      - name: Test Salute only
+        run: python scripts/update_observer_archive.py --only "Ministero della Salute"
