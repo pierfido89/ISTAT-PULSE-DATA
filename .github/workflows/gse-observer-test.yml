@@ -1,0 +1,49 @@
+name: GSE Observer Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ feat/news-engine ]
+    paths:
+      - 'scripts/update_observer_archive.py'
+      - 'data/observer_sources.json'
+      - '.github/workflows/gse-observer-test.yml'
+
+jobs:
+  test-gse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install beautifulsoup4 pypdf
+      - name: Probe GSE endpoints
+        run: |
+          python - <<'PY'
+          import urllib.request,re
+          urls=[
+            "https://www.gse.it/media/comunicati",
+            "https://www.gse.it/media/focus",
+            "https://www.gse.it/dati-e-scenari/rapporti",
+            "https://www.gse.it/dati-e-scenari/statistiche",
+            "https://www.gse.it/sitemap.xml",
+            "https://www.gse.it/robots.txt",
+            "https://www.gse.it/rss",
+            "https://www.gse.it/feed"
+          ]
+          for u in urls:
+              try:
+                  req=urllib.request.Request(u,headers={"User-Agent":"Mozilla/5.0 ISTAT-PULSE-DATA"})
+                  with urllib.request.urlopen(req,timeout=25) as r:
+                      raw=r.read(1800000)
+                      txt=raw.decode("utf-8","ignore")
+                      print("URL",u,"STATUS",r.status,"FINAL",r.geturl(),"CT",r.headers.get("Content-Type"),"BYTES",len(raw),"Y2026",txt.count("2026"),flush=True)
+                      for pat in [r'href=["\']([^"\']*(?:rss|feed)[^"\']*)["\']',r'href=["\']([^"\']*2026[^"\']*)["\']']:
+                          vals=re.findall(pat,txt,re.I)
+                          for v in vals[:20]: print("MATCH",v,flush=True)
+              except Exception as e:
+                  print("URL",u,"ERROR",type(e).__name__,str(e),flush=True)
+          PY
+      - name: Test GSE only
+        run: python scripts/update_observer_archive.py --only GSE
