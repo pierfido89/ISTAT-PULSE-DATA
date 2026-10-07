@@ -1,0 +1,62 @@
+name: SINAB Observer Test
+
+on:
+  push:
+    branches: [feat/news-engine]
+    paths:
+      - 'scripts/update_observer_archive.py'
+      - 'data/observer_sources.json'
+      - '.github/workflows/sinab-observer-test.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-sinab:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/news-engine
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install beautifulsoup4 pypdf
+      - name: Probe SINAB endpoints
+        run: |
+          python - <<'PY'
+          import urllib.request, urllib.parse, json, re
+          urls=[
+            "https://sinab.it/bionovita/",
+            "https://sinab.it/feed/",
+            "https://sinab.it/wp-json/wp/v2/posts?after=2026-01-01T00:00:00&before=2026-12-31T23:59:59&per_page=100&page=1",
+            "https://sinab.it/wp-json/wp/v2/posts?per_page=5",
+            "https://sinab.it/wp-json/"
+          ]
+          for u in urls:
+              try:
+                  req=urllib.request.Request(u,headers={"User-Agent":"Mozilla/5.0","Accept":"application/json,text/html,application/xml;q=0.9,*/*;q=0.6"})
+                  with urllib.request.urlopen(req,timeout=20) as r:
+                      raw=r.read(2500000); ct=r.headers.get("Content-Type",""); final=r.geturl()
+                  print("URL",u,"OK",ct,"BYTES",len(raw),"FINAL",final,flush=True)
+                  txt=raw.decode("utf-8","ignore")
+                  if "json" in ct.lower() or txt.lstrip().startswith(("[","{")):
+                      try:
+                          data=json.loads(txt)
+                          if isinstance(data,list):
+                              print("JSON_LIST",len(data),flush=True)
+                              for x in data[:10]:
+                                  print("POST",x.get("date"),x.get("link"),(x.get("title") or {}).get("rendered","")[:160],flush=True)
+                          elif isinstance(data,dict):
+                              print("JSON_KEYS",list(data.keys())[:40],flush=True)
+                      except Exception as e:
+                          print("JSON_ERR",e,flush=True)
+                  else:
+                      print("HAS_2026",txt.count("2026"),"WPJSON",txt.lower().count("wp-json"),flush=True)
+              except Exception as e:
+                  print("URL",u,"ERROR",type(e).__name__,e,flush=True)
+          PY
+      - name: Test SINAB only
+        run: python scripts/update_observer_archive.py --only SINAB
