@@ -777,7 +777,7 @@
             ],
             "adapter": "ismea_listing",
             "max_results_per_year": 500,
-            "connector_notes": "Permanent ISMEA connector: parse official monthly News room archives /Press-Area/Comunicati-Stampa/L/IT/YY/<year>/MM/<month>, extracting explicit publication date and headline from the official listing."
+            "connector_notes": "Permanent ISMEA connector: parse official monthly News room archives /Press-Area/Comunicati-Stampa/L/IT/YY/<year>/MM/<month>, extracting explicit publication date and headline from the official listing. GitHub runners require a host-scoped HTTPS certificate-verification fallback for ismea.it because the server presents an incomplete certificate chain."
       },
     {
       "name": "ISTAT",
