@@ -749,33 +749,36 @@
       ]
     },
     {
-      "name": "ISMEA",
-      "domains": [
-        "ismea.it"
-      ],
-      "query_terms": [
-        "dati",
-        "statistiche",
-        "rapporto",
-        "osservatorio",
-        "indagine",
-        "open data"
-      ],
-      "entrypoints": [
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=1&YY=2026",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=2&YY=2026",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=3&YY=2026",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=4&YY=2026",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=5&YY=2026",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=6&YY=2026",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=7&YY=2026",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=8&YY=2026",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=9&YY=2026",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=10&YY=2026",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=11&YY=2026",
-        "https://www.ismea.it/Press-Area/Comunicati-Stampa?MM=12&YY=2026"
-      ]
-    },
+            "name": "ISMEA",
+            "domains": [
+                  "ismea.it"
+            ],
+            "query_terms": [
+                  "dati",
+                  "statistiche",
+                  "rapporto",
+                  "osservatorio",
+                  "indagine",
+                  "open data"
+            ],
+            "entrypoints": [
+                  "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/1",
+                  "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/2",
+                  "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/3",
+                  "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/4",
+                  "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/5",
+                  "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/6",
+                  "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/7",
+                  "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/8",
+                  "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/9",
+                  "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/10",
+                  "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/11",
+                  "https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/2026/MM/12"
+            ],
+            "adapter": "ismea_listing",
+            "max_results_per_year": 500,
+            "connector_notes": "Permanent ISMEA connector: parse official monthly News room archives /Press-Area/Comunicati-Stampa/L/IT/YY/<year>/MM/<month>, extracting explicit publication date and headline from the official listing."
+      },
     {
       "name": "ISTAT",
       "domains": [
