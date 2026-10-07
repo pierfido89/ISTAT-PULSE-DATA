@@ -1,6 +1,56 @@
 {
-  "generated_at": "2026-10-07T14:12:29.609638+00:00",
+  "generated_at": "2026-10-07T20:11:52.574164+00:00",
   "articles": [
+    {
+      "id": "PULSE-230AB27D5B31F550",
+      "story_fingerprint": "230ab27d5b31f550fc772ee8",
+      "published_at": "2026-10-07T20:11:52.574164+00:00",
+      "last_seen_at": "2026-10-07T20:11:52.574164+00:00",
+      "topic": "LAVORO",
+      "pulse_score": 74,
+      "public_source": {
+        "url": "https://www.unioncamere.gov.it/amministrazione-trasparente-organizzazione/titolari-di-incarichi-politici-di-amministrazione-di-direzione-o-di-governo/titolari-di-incarichi-politici-di-amministrazione-di-direzione-o-di-governo-di-cui-allart-14-co1-bis-del-dlgs-n332013",
+        "domain": "unioncamere.gov.it",
+        "role": "primary_statistical_source",
+        "verification_method": "named_or_topic_domain_search",
+        "verification_score": 63
+      },
+      "discovery": {
+        "visible": false,
+        "role": "hidden_radar"
+      },
+      "period_reference": null,
+      "latest_source_update": null,
+      "headline": "Lavoro, nuovo dato per Italia: 33",
+      "summary": "Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+      "statistical_claims": [
+        {
+          "raw_value": "33",
+          "verified": true
+        },
+        {
+          "raw_value": "2027 ",
+          "verified": false
+        },
+        {
+          "raw_value": "33",
+          "verified": true
+        },
+        {
+          "raw_value": "2027 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "chart_spec": {
+        "type": "auto",
+        "status": "requires_primary_series",
+        "reason": "candidate_contains_multiple_numeric_values"
+      },
+      "map_spec": null,
+      "editorial_status": "verified_primary_match",
+      "publication_status": "published"
+    },
     {
       "id": "PULSE-D9C1A1C7DB09F9C5",
       "story_fingerprint": "d9c1a1c7db09f9c55563f041",
