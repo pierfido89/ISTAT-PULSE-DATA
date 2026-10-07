@@ -23,7 +23,7 @@ jobs:
           items=[]; seen=set()
           for q in [
             'site:anfia.it/comunicazione/notizie-e-comunicati after:2026-01-01 before:2027-01-01',
-            'site:anfia.it/attivita/studi-e-statistiche/focus-dossier-pubblicazioni after:2026-01-01 before:2027-01-01'
+            'site:anfia.it after:2026-01-01 before:2027-01-01 ANFIA'
           ]:
               u='https://news.google.com/rss/search?'+urllib.parse.urlencode({'q':q,'hl':'it','gl':'IT','ceid':'IT:it'})
               req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0'})
