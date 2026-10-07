@@ -1444,7 +1444,7 @@ def process_source(src, now):
             candidates.setdefault(url,title)
             listing_dates[url]=(title,pub_date)
 
-        if src.get("adapter")=="salute_index":
+        if src.get("adapter") in {"salute_index","salute_google_news_rss"}:
             for title,url,pub_date in salute_search_candidates(year,max(500,source_limit)):
                 candidates.setdefault(url,title)
                 listing_dates[url]=(title,pub_date)
