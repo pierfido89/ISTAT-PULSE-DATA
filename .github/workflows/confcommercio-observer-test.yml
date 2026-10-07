@@ -1,0 +1,45 @@
+name: Confcommercio Observer Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ feat/news-engine ]
+    paths:
+      - 'scripts/update_observer_archive.py'
+      - 'data/observer_sources.json'
+      - '.github/workflows/confcommercio-observer-test.yml'
+
+jobs:
+  test-confcommercio:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install beautifulsoup4 pypdf 'googlenewsdecoder @ git+https://github.com/SSujitX/google-news-url-decoder.git@d38ddbdd510561859da0dae0c1176e3a2676c159' 'selectolax==0.4.12'
+      - name: Probe Confcommercio
+        run: |
+          python - <<'PY'
+          import urllib.request,re
+          urls=[
+            "https://www.confcommercio.it/it/archivio-notizie",
+            "https://www.confcommercio.it/sitemap.xml",
+            "https://www.confcommercio.it/robots.txt",
+            "https://www.confcommercio.it/rss",
+            "https://www.confcommercio.it/feed"
+          ]
+          for u in urls:
+              try:
+                  req=urllib.request.Request(u,headers={"User-Agent":"Mozilla/5.0"})
+                  with urllib.request.urlopen(req,timeout=20) as r:
+                      raw=r.read(1600000); txt=raw.decode("utf-8","ignore")
+                      print("URL",u,"STATUS",r.status,"FINAL",r.geturl(),"CT",r.headers.get("Content-Type"),"BYTES",len(raw),"Y2026",txt.count("2026"),flush=True)
+                      for pat in [r'href=["\']([^"\']*(?:rss|feed)[^"\']*)["\']',r'href=["\']([^"\']*2026[^"\']*)["\']']:
+                          for v in re.findall(pat,txt,re.I)[:30]:
+                              print("MATCH",v,flush=True)
+              except Exception as e:
+                  print("URL",u,"ERROR",type(e).__name__,str(e),flush=True)
+          PY
+      - name: Test Confcommercio only
+        run: python scripts/update_observer_archive.py --only Confcommercio
