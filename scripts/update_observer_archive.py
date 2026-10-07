@@ -586,6 +586,78 @@ def listing_dated_candidates(entrypoints,domains,year=2026,limit=300):
 
 
 
+def ismea_candidates(year=2026,limit=500):
+    """Parse ISMEA official monthly newsroom archives.
+    ISMEA exposes stable month/year archive URLs under /L/IT/YY/<year>/MM/<month>.
+    Each newsroom item carries an explicit dd/mm/yyyy date next to its headline.
+    """
+    out=[]; seen=set()
+    date_rx=re.compile(r"\b([0-3]?\d)/([01]?\d)/(20\d{2})\b")
+    urls=[]
+    for month in range(1,13):
+        urls.extend([
+            f"https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/{year}/MM/{month}",
+            f"https://www.ismea.it/Press-Area/Comunicati-Stampa?MM={month}&YY={year}",
+        ])
+
+    for root in urls:
+        try:
+            raw,final,ct=fetch(root,timeout=10,max_bytes=2200000)
+            if "html" not in ct.lower():
+                continue
+            soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
+        except Exception:
+            continue
+
+        for a in soup.find_all("a",href=True):
+            title=re.sub(r"\s+"," ",a.get_text(" ",strip=True)).strip()
+            if len(title)<8:
+                continue
+            href=urllib.parse.urljoin(final,a.get("href","")).split("#",1)[0]
+            if not host_allowed(canonical_host(href),["ismea.it"]):
+                continue
+
+            contexts=[]
+            node=a
+            for _ in range(7):
+                node=getattr(node,"parent",None)
+                if node is None: break
+                txt=re.sub(r"\s+"," ",node.get_text(" ",strip=True))
+                if txt:
+                    contexts.append(txt[:2200])
+            pub=None
+            for txt in contexts:
+                m=date_rx.search(txt)
+                if not m:
+                    continue
+                try:
+                    d,mo,y=map(int,m.groups())
+                    if y==year:
+                        pub=datetime(y,mo,d,tzinfo=timezone.utc)
+                        break
+                except Exception:
+                    pass
+            if not pub:
+                continue
+
+            # Exclude archive navigation and keep real newsroom detail links.
+            low=(title+" "+href).lower()
+            if any(x in low for x in ("seleziona anno","gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre")) and "comunicati-stampa" in href.lower():
+                continue
+
+            key=href
+            if key in seen:
+                continue
+            seen.add(key)
+            out.append((title,href,pub))
+            if len(out)>=limit:
+                print(f"ISMEA monthly archive candidates: {len(out)}", flush=True)
+                return out
+
+    print(f"ISMEA monthly archive candidates: {len(out)}", flush=True)
+    return out
+
+
 def cgiamestre_candidates(entrypoints,domains,year=2026,limit=420):
     """Dedicated parser for CGIA Mestre WordPress category archives.
     CGIA renders each article title in h2 with an Italian textual date nearby.
@@ -1253,6 +1325,11 @@ def process_source(src, now):
         for title,url,pub_date in wordpress_rest_candidates(src.get("api_urls",[]),domains,year,max(300,source_limit)):
             candidates.setdefault(url,title)
             listing_dates[url]=(title,pub_date)
+
+        if src.get("adapter")=="ismea_listing":
+            for title,url,pub_date in ismea_candidates(year,max(500,source_limit)):
+                candidates.setdefault(url,title)
+                listing_dates[url]=(title,pub_date)
 
         if src.get("adapter")=="cgiamestre":
             for title,url,pub_date in cgiamestre_candidates(entrypoints,domains,year,420):
