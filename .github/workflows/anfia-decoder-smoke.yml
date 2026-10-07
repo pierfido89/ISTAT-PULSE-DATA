@@ -1,0 +1,50 @@
+name: ANFIA Decoder Smoke
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ feat/news-engine ]
+    paths:
+      - '.github/workflows/anfia-decoder-smoke.yml'
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'googlenewsdecoder @ git+https://github.com/SSujitX/google-news-url-decoder.git@d38ddbdd510561859da0dae0c1176e3a2676c159' 'selectolax==0.4.12'
+      - name: Decode ANFIA feed
+        run: |
+          python - <<'PY'
+          import urllib.parse, urllib.request, xml.etree.ElementTree as ET, asyncio
+          from googlenewsdecoder import gnews_decoder_async
+          items=[]; seen=set()
+          queries=[
+            'site:anfia.it/comunicazione/notizie-e-comunicati after:2026-01-01 before:2027-01-01',
+            'site:anfia.it after:2026-01-01 before:2027-01-01 ANFIA'
+          ]
+          for q in queries:
+              u='https://news.google.com/rss/search?'+urllib.parse.urlencode({'q':q,'hl':'it','gl':'IT','ceid':'IT:it'})
+              req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0'})
+              with urllib.request.urlopen(req,timeout=20) as r:
+                  raw=r.read(2000000)
+              root=ET.fromstring(raw)
+              for item in root.findall('.//item'):
+                  title=(item.findtext('title') or '').strip()
+                  link=(item.findtext('link') or '').strip()
+                  pub=(item.findtext('pubDate') or '').strip()
+                  if not link or link in seen: continue
+                  seen.add(link); items.append((title,link,pub))
+          print('INDEXED',len(items),flush=True)
+          links=[x[1] for x in items]
+          results=asyncio.run(gnews_decoder_async(links,interval=None,timeout=20.0,concurrency=12)) if links else []
+          ok=0
+          for item,res in zip(items,results):
+              url=(res.get('decoded_url') or '') if isinstance(res,dict) and res.get('success') else ''
+              if 'anfia.it' in url:
+                  ok+=1
+                  print('OK',item[2],item[0],url,flush=True)
+          print('DECODED_OFFICIAL',ok,flush=True)
+          PY
