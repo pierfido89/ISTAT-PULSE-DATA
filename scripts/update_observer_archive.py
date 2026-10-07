@@ -588,6 +588,95 @@ def listing_dated_candidates(entrypoints,domains,year=2026,limit=300):
 
 
 
+def salute_search_candidates(year=2026,limit=500):
+    """Fallback for Ministero della Salute when Gcore browser validation blocks
+    GitHub-hosted runners. Discover only official press-release URLs through
+    search-engine indexes and extract the explicit Italian publication date from
+    the indexed result snippet. The stored URL remains salute.gov.it.
+    """
+    months={
+        "gennaio":1,"febbraio":2,"marzo":3,"aprile":4,"maggio":5,"giugno":6,
+        "luglio":7,"agosto":8,"settembre":9,"ottobre":10,"novembre":11,"dicembre":12
+    }
+    month_names=list(months)
+    date_rx=re.compile(r"\b([0-3]?\d)\s+("+"|".join(month_names)+r")\s+(20\d{2})\b",re.I)
+    out=[]; seen=set()
+
+    def parse_date(txt):
+        m=date_rx.search(txt or "")
+        if not m:return None
+        try:
+            return datetime(int(m.group(3)),months[m.group(2).lower()],int(m.group(1)),tzinfo=timezone.utc)
+        except Exception:return None
+
+    queries=[
+        f'site:salute.gov.it/new/it/comunicato-stampa/ "Data del comunicato" "{m} {year}"'
+        for m in month_names
+    ]
+
+    for q in queries:
+        # Google normal HTML exposes headline + snippet together and tends to
+        # preserve the visible "Data del comunicato" text from official pages.
+        try:
+            url="https://www.google.com/search?"+urllib.parse.urlencode({
+                "q":q,"num":50,"filter":"0","hl":"it"
+            })
+            raw,_,_=fetch(url,timeout=10,max_bytes=1800000)
+            soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
+            for h3 in soup.find_all("h3"):
+                a=h3.find_parent("a",href=True)
+                if not a: continue
+                href=a.get("href","")
+                if href.startswith("/url?"):
+                    qs=urllib.parse.parse_qs(urllib.parse.urlparse(href).query)
+                    href=(qs.get("q") or qs.get("url") or [""])[0]
+                if not href.startswith("http"): continue
+                host=canonical_host(href)
+                if not host_allowed(host,["salute.gov.it"]): continue
+                if "/new/it/comunicato-stampa/" not in href: continue
+                title=re.sub(r"\s+"," ",h3.get_text(" ",strip=True)).strip()
+                container=h3
+                for _ in range(5):
+                    parent=getattr(container,"parent",None)
+                    if parent is None: break
+                    container=parent
+                    txt=re.sub(r"\s+"," ",container.get_text(" ",strip=True))
+                    if len(txt)>80: break
+                pub=parse_date(txt)
+                if pub and pub.year==year and href not in seen:
+                    seen.add(href); out.append((title,href.split("#",1)[0],pub))
+        except Exception:
+            pass
+
+    # Bing HTML backup; snippets often include the same visible official date.
+    if len(out)<24:
+        for m in month_names:
+            q=f'site:salute.gov.it/new/it/comunicato-stampa/ "Data del comunicato" "{m} {year}"'
+            try:
+                url="https://www.bing.com/search?"+urllib.parse.urlencode({
+                    "q":q,"setlang":"it-IT","count":50
+                })
+                raw,_,_=fetch(url,timeout=10,max_bytes=1800000)
+                soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
+                for li in soup.select("li.b_algo"):
+                    a=li.find("a",href=True)
+                    if not a: continue
+                    href=a.get("href","")
+                    if not host_allowed(canonical_host(href),["salute.gov.it"]): continue
+                    if "/new/it/comunicato-stampa/" not in href: continue
+                    title=re.sub(r"\s+"," ",a.get_text(" ",strip=True)).strip()
+                    txt=re.sub(r"\s+"," ",li.get_text(" ",strip=True))
+                    pub=parse_date(txt)
+                    if pub and pub.year==year and href not in seen:
+                        seen.add(href); out.append((title,href.split("#",1)[0],pub))
+            except Exception:
+                pass
+
+    out=sorted(out,key=lambda x:x[2],reverse=True)[:limit]
+    print(f"Ministero Salute indexed press releases: {len(out)}", flush=True)
+    return out
+
+
 def ismea_candidates(year=2026,limit=500):
     """Parse ISMEA official monthly newsroom archives.
     ISMEA exposes stable month/year archive URLs under /L/IT/YY/<year>/MM/<month>.
@@ -1325,6 +1414,11 @@ def process_source(src, now):
         for title,url,pub_date in wordpress_rest_candidates(src.get("api_urls",[]),domains,year,max(300,source_limit)):
             candidates.setdefault(url,title)
             listing_dates[url]=(title,pub_date)
+
+        if src.get("adapter")=="salute_index":
+            for title,url,pub_date in salute_search_candidates(year,max(500,source_limit)):
+                candidates.setdefault(url,title)
+                listing_dates[url]=(title,pub_date)
 
         if src.get("adapter")=="ismea_listing":
             for title,url,pub_date in ismea_candidates(year,max(500,source_limit)):
