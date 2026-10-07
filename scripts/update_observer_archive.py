@@ -1869,7 +1869,75 @@ def page_info(url,domains):
                 try: date=datetime(int(m.group(3)),months[m.group(2)],int(m.group(1)),tzinfo=timezone.utc)
                 except: pass
         if not date or date.year<2025: return None
-        return {"title":re.sub(r"\s+"," ",title)[:220],"url":final,"domain":host,"date":date,"numbers":nums[:5]}
+
+        description=""
+        for attrs in ({"name":"description"},{"property":"og:description"}):
+            el=soup.find("meta",attrs=attrs)
+            if el and el.get("content"):
+                candidate=re.sub(r"\s+"," ",el.get("content","")).strip()
+                if len(candidate)>=40:
+                    description=candidate[:900]
+                    break
+        if not description:
+            container=soup.find("article") or soup.find("main") or soup.body
+            paragraphs=[]
+            if container:
+                for p in container.find_all(["p","li"],limit=24):
+                    txt=re.sub(r"\s+"," ",p.get_text(" ",strip=True)).strip()
+                    if len(txt)>=55 and not any(k in txt.lower() for k in ("cookie","privacy","javascript","newsletter")):
+                        paragraphs.append(txt)
+                    if sum(len(x) for x in paragraphs)>=900: break
+            description=" ".join(paragraphs)[:900]
+
+        key_figures=[]
+        figure_re=re.compile(r"(?<!\w)([-+]?\d{1,3}(?:[\.,]\d{1,3})?)\s*(%|milioni|miliardi|mila|euro|€)?",re.I)
+        seen_fig=set()
+        for m in figure_re.finditer(text[:35000]):
+            value=(m.group(1)+((" "+m.group(2)) if m.group(2) else "")).strip()
+            plain=m.group(1).replace(".","").replace(",",".")
+            if not m.group(2) and plain.isdigit() and 1900<=int(plain)<=2100:
+                continue
+            key=value.lower()
+            if key in seen_fig: continue
+            seen_fig.add(key)
+            start=max(0,m.start()-65); end=min(len(text),m.end()+85)
+            context=re.sub(r"\s+"," ",text[start:end]).strip()
+            key_figures.append({"value":value,"context":context[:180]})
+            if len(key_figures)>=5: break
+
+        chart_points=[]
+        month_tokens=("gen","feb","mar","apr","mag","giu","lug","ago","set","ott","nov","dic")
+        for table in soup.find_all("table",limit=8):
+            rows=[]
+            for tr in table.find_all("tr",limit=40):
+                cells=[re.sub(r"\s+"," ",x.get_text(" ",strip=True)).strip() for x in tr.find_all(["th","td"])]
+                if len(cells)<2: continue
+                label=cells[0]
+                label_low=label.lower()
+                label_ok=bool(re.fullmatch(r"20\d{2}",label)) or any(label_low.startswith(m) for m in month_tokens)
+                if not label_ok: continue
+                raw_value=cells[1].replace("\u00a0"," ").strip()
+                vm=re.search(r"[-+]?\d+(?:[\.,]\d+)?",raw_value.replace(".",""))
+                if not vm: continue
+                try:
+                    value=float(vm.group(0).replace(",","."))
+                except Exception:
+                    continue
+                rows.append({"label":label[:24],"value":value})
+            if len(rows)>=2:
+                chart_points=rows[:18]
+                break
+
+        return {
+            "title":re.sub(r"\s+"," ",title)[:220],
+            "url":final,
+            "domain":host,
+            "date":date,
+            "numbers":nums[:5],
+            "description":description,
+            "key_figures":key_figures,
+            "chart_points":chart_points
+        }
     except Exception:
         return None
 
@@ -1893,12 +1961,37 @@ def topic_of(text):
 def stable_id(entity,url):
     return "OBS-"+hashlib.sha256((entity+"|"+url).encode()).hexdigest()[:18].upper()
 
-def safe_summary(entity,title,date,numbers):
-    values=", ".join(dict.fromkeys(n.strip() for n in numbers if n.strip()))[:120]
-    base=f"{entity} ha pubblicato questo aggiornamento quantitativo il {date.strftime('%d/%m/%Y')}. "
+def publication_type(title,numbers=None,description="",chart_points=None):
+    low=(title+" "+description).lower()
+    numbers=numbers or []
+    chart_points=chart_points or []
+    if any(k in low for k in ("rapporto","report","relazione","dossier","studio","indagine","rendiconto")):
+        return "RAPPORTO"
+    if chart_points or any(k in low for k in ("serie storica","serie statistica","statistiche","dati ","dataset","bollettino","monitoraggio","osservatorio")):
+        return "DATO_SERIE_STATISTICA"
+    if numbers:
+        return "COMUNICATO_CON_DATI"
+    return "DOCUMENTO_SENZA_DATI_NUMERICI"
+
+def editorial_summary(entity,title,date,numbers,description=""):
+    clean=re.sub(r"\s+"," ",description or "").strip()
+    if clean:
+        # Keep the official meaning, but strip common page furniture and cap length.
+        return clean[:720].rstrip(" .")+"." if len(clean)>1 else clean
+    values=", ".join(dict.fromkeys(n.strip() for n in (numbers or []) if n.strip()))[:120]
     if values:
-        base+=f"La pagina contiene valori e indicatori numerici (tra cui {values}); "
-    return base+"ISTAT PULSE lo archivia nell’Osservatorio della fonte primaria senza attribuire un punteggio PULSE quando non emerge un pattern statistico verificato."
+        return f"{entity} pubblica un aggiornamento con dati quantitativi. Tra i valori presenti nella fonte compaiono {values}. La pubblicazione ufficiale è del {date.strftime('%d/%m/%Y')}."
+    return f"{entity} pubblica questo aggiornamento istituzionale il {date.strftime('%d/%m/%Y')}. ISTAT PULSE ne conserva titolo, data e riferimento alla fonte ufficiale e ne propone una sintesi interna senza attribuire valori non presenti nel documento."
+
+def editorial_payload(entity,title,date,numbers,description="",key_figures=None,chart_points=None):
+    ptype=publication_type(title,numbers,description,chart_points)
+    return {
+        "article_type":ptype,
+        "pulse_title":re.sub(r"\s+"," ",title).strip()[:220],
+        "pulse_summary":editorial_summary(entity,title,date,numbers,description),
+        "key_figures":key_figures or [],
+        "chart_points":chart_points or []
+    }
 
 def process_source(src, now):
     name=src["name"]
@@ -2077,11 +2170,18 @@ def process_source(src, now):
             final_url=(info or {}).get("url") or url
             host=(info or {}).get("domain") or canonical_host(url)
             aid=stable_id(name,final_url)
+            payload=editorial_payload(
+                name,title,listing_date,numbers,
+                (info or {}).get("description",""),
+                (info or {}).get("key_figures",[]),
+                (info or {}).get("chart_points",[])
+            )
             local_articles[aid]={
                 "id":aid,
                 "published_at":listing_date.isoformat().replace("+00:00","Z"),
                 "observer":name,
                 "topic":topic_of(title),
+                **payload,
                 "pulse_score":0,
                 "patterns":[],
                 "public_source":{
@@ -2093,7 +2193,7 @@ def process_source(src, now):
                     )
                 },
                 "headline":title,
-                "summary":safe_summary(name,title,listing_date,numbers),
+                "summary":payload["pulse_summary"],
                 "territories":["italia"],
                 "editorial_status":"source_publication_verified",
                 "publication_status":"published"
@@ -2118,11 +2218,18 @@ def process_source(src, now):
                 verified_pages += 1
 
                 aid=stable_id(name,info["url"])
+                payload=editorial_payload(
+                    name,info["title"],info["date"],info["numbers"],
+                    info.get("description",""),
+                    info.get("key_figures",[]),
+                    info.get("chart_points",[])
+                )
                 local_articles[aid]={
                     "id":aid,
                     "published_at":info["date"].isoformat().replace("+00:00","Z"),
                     "observer":name,
                     "topic":topic_of(info["title"]),
+                    **payload,
                     "pulse_score":0,
                     "patterns":[],
                     "public_source":{
@@ -2131,7 +2238,7 @@ def process_source(src, now):
                         "verification_method":"official_domain_backfill"
                     },
                     "headline":info["title"],
-                    "summary":safe_summary(name,info["title"],info["date"],info["numbers"]),
+                    "summary":payload["pulse_summary"],
                     "territories":["italia"],
                     "editorial_status":"source_publication_verified",
                     "publication_status":"published"
