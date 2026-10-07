@@ -889,7 +889,7 @@
             ],
             "adapter": "mim_google_news_rss",
             "max_results_per_year": 500,
-            "connector_notes": "Permanent MIM connector. Direct mim.gov.it newsroom, sitemap, RSS and Liferay APIs return HTTP 403 to GitHub-hosted runners. Use Google News RSS as transport for title/date discovery, decode each signed item with pinned googlenewsdecoder 0.2.1 + selectolax 0.4.12, and accept only final publisher URLs on mim.gov.it or istruzione.it. Retain dati.gov.it as a secondary official fallback for MIM datasets; Google News URLs are never stored."
+            "connector_notes": "Permanent MIM connector. Direct MIM newsroom, sitemap, RSS and Liferay APIs return HTTP 403 to GitHub-hosted runners. Use Google News RSS only as transport, decode signed items with pinned googlenewsdecoder 0.2.1 + selectolax 0.4.12, and retain only central Ministry URLs on mim.gov.it matching /web/guest/-/ or root /-/; exclude USR, provincial and local pages. Prefer an explicit date contained in the official title over Google News pubDate when available. Keep dati.gov.it as a secondary official fallback for MIM datasets; Google News URLs are never stored."
       },
     {
       "name": "Ministero dell'Università e della Ricerca",
