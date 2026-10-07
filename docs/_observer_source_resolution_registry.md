@@ -366,3 +366,80 @@ As of 2026-10-07:
   `anfia_google_news_rss`.
 
 This file is maintenance documentation, not user-facing product content.
+
+
+---
+
+# Complete 65-source inventory
+
+This section guarantees that every configured Observer source is represented in this maintenance registry, including sources that currently use the generic discovery pipeline rather than a bespoke adapter.
+
+| # | Source | Domain(s) | Persisted adapter / mechanism |
+|---:|---|---|---|
+| 1 | CENSIS | `censis.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 2 | CGIA Mestre | `cgiamestre.com` | `cgiamestre` |
+| 3 | CNA | `cna.it` | `wordpress_rest` |
+| 4 | CNR | `cnr.it` | `dated_listing` |
+| 5 | Coldiretti | `coldiretti.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 6 | Confartigianato | `confartigianato.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 7 | Confcommercio | `confcommercio.it` | `confcommercio_google_news_rss` |
+| 8 | Confindustria | `confindustria.it` | `listing_first` |
+| 9 | Fondazione GIMBE | `gimbe.org` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 10 | Legambiente | `legambiente.it` | `dated_listing` |
+| 11 | Nomisma | `nomisma.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 12 | SVIMEZ | `svimez.info`, `lnx.svimez.info` | `wordpress_rest` |
+| 13 | ACI | `aci.it` | `listing_first` |
+| 14 | AGENAS | `agenas.gov.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 15 | Aeronautica Militare | `aeronautica.difesa.it`, `meteoam.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 16 | Agenzia delle Dogane e dei Monopoli | `adm.gov.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 17 | Agenzia delle Entrate · OMI | `agenziaentrate.gov.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 18 | AgID | `agid.gov.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 19 | AGCOM | `agcom.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 20 | AIFA · OsMed | `aifa.gov.it` | `liferay_listing` |
+| 21 | ANAC | `anticorruzione.it` | `liferay_listing` |
+| 22 | ANFIA | `anfia.it` | `anfia_google_news_rss` |
+| 23 | ARERA | `arera.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 24 | ART | `autorita-trasporti.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 25 | Assoporti | `assoporti.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 26 | Banca d'Italia | `bancaditalia.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 27 | CONSOB | `consob.it` | `month_publication` |
+| 28 | Copernicus | `climate.copernicus.eu`, `copernicus.eu` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 29 | COVIP | `covip.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 30 | CREA · RICA | `crea.gov.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 31 | Dipartimento delle Finanze | `finanze.gov.it`, `mef.gov.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 32 | DIPE · OpenCUP | `programmazioneeconomica.gov.it`, `opencup.gov.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 33 | EEA | `eea.europa.eu` | `listing_first` |
+| 34 | ENAC | `enac.gov.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 35 | ENEA | `enea.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 36 | ENIT | `enit.it` | `dated_listing` |
+| 37 | Eurostat | `ec.europa.eu` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 38 | FAO | `fao.org` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 39 | GME | `mercatoelettrico.org` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 40 | GSE | `gse.it` | `gse_google_news_rss` |
+| 41 | INGV | `ingv.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 42 | INAIL | `inail.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 43 | INPS | `inps.it` | `rss_directory_plus_calendar` |
+| 44 | INVALSI | `invalsi.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 45 | ISPRA / SNPA | `isprambiente.gov.it`, `snpa.gov.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 46 | ISMEA | `ismea.it` | `ismea_listing` |
+| 47 | ISTAT | `istat.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 48 | IVASS | `ivass.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 49 | MIMIT | `mimit.gov.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 50 | Ministero dell'Interno | `interno.gov.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 51 | Ministero della Giustizia · DGStat | `giustizia.it`, `datiestatistiche.giustizia.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 52 | Ministero della Salute | `salute.gov.it` | `salute_google_news_rss` |
+| 53 | Ministero dell'Istruzione e del Merito | `mim.gov.it`, `istruzione.it` | `mim_google_news_rss` |
+| 54 | Ministero dell'Università e della Ricerca | `mur.gov.it`, `ustat.mur.gov.it` | `drupal_listing` |
+| 55 | MIT | `mit.gov.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 56 | OpenCoesione | `opencoesione.gov.it` | `opencoesione_datigov` |
+| 57 | Ragioneria Generale dello Stato · BDAP | `rgs.mef.gov.it`, `bdap-opendata.rgs.mef.gov.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 58 | SIAE · Osservatorio Spettacolo | `siae.it`, `rapporto.siae.it` | `publication_listing` |
+| 59 | SINAB | `sinab.it` | `wordpress_rest_ssl_fallback` |
+| 60 | SNAM | `snam.it` | `snam_sitemap` |
+| 61 | Terna | `terna.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 62 | Unioncamere / InfoCamere | `unioncamere.gov.it`, `infocamere.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 63 | UNRAE | `unrae.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 64 | Unioncamere · Excelsior | `excelsior.unioncamere.net` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+| 65 | Istituto Superiore di Sanità | `iss.it`, `epicentro.iss.it` | generic official discovery (listing/sitemap/crawl/feed/search + official-domain verification) |
+
+**Rule for generic sources:** the absence of a named adapter is intentional unless a source-specific failure is documented. The generic engine is still a persisted automatic connector. If it regresses or reaches zero, diagnose the source and add a dedicated resolution here instead of relying on chat memory.
