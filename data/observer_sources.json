@@ -648,25 +648,28 @@
       ]
     },
     {
-      "name": "GSE",
-      "domains": [
-        "gse.it"
-      ],
-      "query_terms": [
-        "dati",
-        "statistiche",
-        "rapporto",
-        "osservatorio",
-        "indagine",
-        "open data"
-      ],
-      "entrypoints": [
-        "https://www.gse.it/media/comunicati",
-        "https://www.gse.it/dati-e-scenari/rapporti",
-        "https://www.gse.it/dati-e-scenari/statistiche",
-        "https://www.gse.it/media/focus"
-      ]
-    },
+            "name": "GSE",
+            "domains": [
+                  "gse.it"
+            ],
+            "query_terms": [
+                  "dati",
+                  "statistiche",
+                  "rapporto",
+                  "osservatorio",
+                  "indagine",
+                  "open data"
+            ],
+            "entrypoints": [
+                  "https://www.gse.it/media/comunicati",
+                  "https://www.gse.it/dati-e-scenari/rapporti",
+                  "https://www.gse.it/dati-e-scenari/statistiche",
+                  "https://www.gse.it/media/focus"
+            ],
+            "adapter": "gse_google_news_rss",
+            "max_results_per_year": 500,
+            "connector_notes": "Permanent GSE connector. Direct gse.it newsroom/statistics/sitemap/RSS endpoints return HTTP 403 to GitHub-hosted runners. Use Google News RSS only as transport, decode each signed item with pinned googlenewsdecoder 0.2.1 + selectolax 0.4.12, and retain only official GSE newsroom paths: /media/comunicati/, /servizi-per-te/news/, /media/focus/. Exclude FAQ, appalti, normativa and unrelated documents. Google News URLs are never stored."
+      },
     {
       "name": "INGV",
       "domains": [
