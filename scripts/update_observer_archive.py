@@ -844,6 +844,127 @@ def snam_sitemap_candidates(domains,year=2026,limit=420):
     return out
 
 
+
+def opencoesione_datigov_candidates(year=2026,limit=500):
+    """Official fallback for OpenCoesione when opencoesione.gov.it geoblocks
+    GitHub-hosted US runners. Discover OpenCoesione datasets through the Italian
+    national catalog dati.gov.it and retain the original OpenCoesione URL as the
+    primary source.
+    """
+    seeds=[
+        "https://www.dati.gov.it/node/192",
+    ]
+    out=[]; seen=set(); queue=list(seeds); visited=set()
+
+    def parse_date(text):
+        patterns=[
+            r"\b([0-3]?\d)[/-]([01]?\d)[/-](20\d{2})\b",
+            r"\b(20\d{2})[-/]([01]?\d)[-/]([0-3]?\d)\b",
+        ]
+        for idx,p in enumerate(patterns):
+            m=re.search(p,text)
+            if not m: continue
+            try:
+                if idx==0:
+                    d,mo,y=map(int,m.groups())
+                else:
+                    y,mo,d=map(int,m.groups())
+                return datetime(y,mo,d,tzinfo=timezone.utc)
+            except Exception:
+                pass
+        months={
+            "gennaio":1,"febbraio":2,"marzo":3,"aprile":4,"maggio":5,"giugno":6,
+            "luglio":7,"agosto":8,"settembre":9,"ottobre":10,"novembre":11,"dicembre":12
+        }
+        low=text.lower()
+        m=re.search(r"\b([0-3]?\d)\s+("+"|".join(months)+r")\s+(20\d{2})\b",low)
+        if m:
+            try:return datetime(int(m.group(3)),months[m.group(2)],int(m.group(1)),tzinfo=timezone.utc)
+            except Exception: pass
+        return None
+
+    # First expand dati.gov.it pages that mention OpenCoesione datasets.
+    while queue and len(visited)<80 and len(out)<limit:
+        url=queue.pop(0)
+        if url in visited: continue
+        visited.add(url)
+        try:
+            raw,final,ct=fetch(url,timeout=12,max_bytes=2200000)
+            if "html" not in ct.lower(): continue
+            soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
+        except Exception:
+            continue
+
+        page_text=re.sub(r"\s+"," ",soup.get_text(" ",strip=True))
+        page_low=page_text.lower()
+
+        # Follow dataset detail pages from the catalog.
+        for a in soup.find_all("a",href=True):
+            href=urllib.parse.urljoin(final,a.get("href","")).split("#",1)[0]
+            alow=(a.get_text(" ",strip=True)+" "+href).lower()
+            if "dati.gov.it" in canonical_host(href) and (
+                "view-dataset" in href or "/dataset/" in href or "opencoesione" in alow
+            ):
+                if href not in visited and href not in queue and len(queue)<240:
+                    queue.append(href)
+
+        if "opencoesione" not in page_low:
+            continue
+
+        # Find original OpenCoesione URLs referenced by this dati.gov.it page.
+        oc_links=[]
+        for a in soup.find_all("a",href=True):
+            href=urllib.parse.urljoin(final,a["href"]).split("#",1)[0]
+            if canonical_host(href)=="opencoesione.gov.it":
+                oc_links.append(href)
+        if not oc_links:
+            # Some pages expose the source URI as plain text rather than an anchor.
+            oc_links += re.findall(r'https?://(?:www\.)?opencoesione\.gov\.it/[^\s"<>)]+',raw.decode("utf-8","ignore"))
+
+        if not oc_links:
+            continue
+
+        title=""
+        h1=soup.find("h1")
+        if h1: title=re.sub(r"\s+"," ",h1.get_text(" ",strip=True))
+        if not title and soup.title:
+            title=re.sub(r"\s+"," ",soup.title.get_text(" ",strip=True))
+        if not title:
+            title="OpenCoesione dataset"
+
+        # Prefer explicit modified/update labels from dati.gov.it.
+        date=None
+        for pat in (
+            r"(?:data\s+di\s+modifica|ultima\s+modifica|aggiornato\s+il|ultimo\s+aggiornamento)\s*[:\-]?\s*([^|•]{0,80})",
+            r"(20\d{2}[-/]\d{2}[-/]\d{2})"
+        ):
+            m=re.search(pat,page_text,re.I)
+            if m:
+                date=parse_date(m.group(1) if m.groups() else m.group(0))
+                if date: break
+        if not date:
+            # Last-resort: inspect all visible 2026 dates and use the latest one.
+            dates=[]
+            for m in re.finditer(r"\b(?:[0-3]?\d[/-][01]?\d[/-]20\d{2}|20\d{2}[-/][01]?\d[-/][0-3]?\d)\b",page_text):
+                d=parse_date(m.group(0))
+                if d: dates.append(d)
+            if dates: date=max(dates)
+
+        if not date or date.year!=year:
+            continue
+
+        for oc in oc_links:
+            oc=oc.rstrip(".,;)")
+            key=(oc,date.date().isoformat())
+            if key in seen: continue
+            seen.add(key)
+            out.append((title[:220],oc,date))
+            if len(out)>=limit: break
+
+    print(f"OpenCoesione dati.gov.it dated candidates: {len(out)} | catalog_pages={len(visited)}", flush=True)
+    return out
+
+
 def dataset_updated_candidates(entrypoints,domains,year=2026,limit=220):
     """Discover dataset detail pages and use their declared 'Ultimo aggiornamento' date."""
     links=[]; out=[]; seen=set()
@@ -1038,6 +1159,11 @@ def process_source(src, now):
 
         if src.get("adapter")=="snam_sitemap":
             for title,url,pub_date in snam_sitemap_candidates(domains,year,420):
+                candidates.setdefault(url,title)
+                listing_dates[url]=(title,pub_date)
+
+        if src.get("adapter")=="opencoesione_datigov":
+            for title,url,pub_date in opencoesione_datigov_candidates(year,max(500,source_limit)):
                 candidates.setdefault(url,title)
                 listing_dates[url]=(title,pub_date)
 
