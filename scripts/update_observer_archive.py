@@ -1061,8 +1061,8 @@ def mim_google_news_candidates(year=2026,limit=500):
     queries=[]
     for start_date,end_date in periods:
         queries.extend([
-            f"site:mim.gov.it after:{start_date} before:{end_date}",
-            f"site:istruzione.it after:{start_date} before:{end_date}",
+            f"site:mim.gov.it/web/guest/-/ after:{start_date} before:{end_date}",
+            f"site:mim.gov.it/-/ after:{start_date} before:{end_date}",
         ])
 
     seen_rss=set()
@@ -1126,8 +1126,16 @@ def mim_google_news_candidates(year=2026,limit=500):
         official=(decoded.get("decoded_url") or "").strip()
         host=canonical_host(official)
         if not (
-            host=="mim.gov.it" or host.endswith(".mim.gov.it") or
-            host=="istruzione.it" or host.endswith(".istruzione.it")
+            host=="mim.gov.it" or host.endswith(".mim.gov.it")
+        ):
+            continue
+        parsed_official=urllib.parse.urlparse(official)
+        path=(parsed_official.path or "").rstrip("/")
+        # Keep only central Ministry publications. Exclude USR/provincial/local
+        # pages such as /web/lodi/, /web/como/, /web/usr-lombardia/, etc.
+        if not (
+            path.startswith("/web/guest/-/") or
+            (path.startswith("/-/") and not path.startswith("/web/"))
         ):
             continue
         official=official.split("#",1)[0]
