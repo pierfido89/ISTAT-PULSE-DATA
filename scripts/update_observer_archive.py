@@ -1041,6 +1041,124 @@ def snam_sitemap_candidates(domains,year=2026,limit=420):
 
 
 
+def anfia_google_news_candidates(year=2026,limit=500):
+    """Permanent ANFIA connector for GitHub runners.
+    Direct ANFIA discovery currently yields candidate URLs but detail-page
+    verification fails from GitHub-hosted runners. Google News RSS is used only
+    as transport for title/date discovery; each signed item is decoded back to
+    the original ANFIA URL. Only official news/press releases and statistical
+    focus/dossier publications are retained.
+    """
+    rss_items=[]; seen_rss=set(); out=[]; seen=set()
+
+    allowed_prefixes=(
+        "/it/comunicazione/notizie-e-comunicati/",
+        "/it/attivita/studi-e-statistiche/focus-dossier-pubblicazioni/",
+    )
+
+    queries=[]
+    for month in range(1,13):
+        start_date=f"{year}-{month:02d}-01"
+        end_date=f"{year+1}-01-01" if month==12 else f"{year}-{month+1:02d}-01"
+        queries.extend([
+            f"site:anfia.it/it/comunicazione/notizie-e-comunicati/ after:{start_date} before:{end_date}",
+            f"site:anfia.it/it/attivita/studi-e-statistiche/focus-dossier-pubblicazioni/ after:{start_date} before:{end_date}",
+        ])
+
+    for q in queries:
+        url="https://news.google.com/rss/search?"+urllib.parse.urlencode({
+            "q":q,"hl":"it","gl":"IT","ceid":"IT:it"
+        })
+        try:
+            raw,_,_=fetch(url,timeout=12,max_bytes=2200000)
+            root=ET.fromstring(raw.decode("utf-8","ignore"))
+        except Exception:
+            continue
+
+        for item in root.findall(".//item"):
+            title=(item.findtext("title") or "").strip()
+            link=(item.findtext("link") or "").strip()
+            pub=(item.findtext("pubDate") or "").strip()
+            source=item.find("source")
+            source_name=(source.text or "").strip() if source is not None else ""
+            if not title or not link or not pub:
+                continue
+            if "anfia" not in (source_name+" "+title).lower() and "associazione nazionale filiera industria automobilistica" not in (source_name+" "+title).lower():
+                continue
+            try:
+                dt=parsedate_to_datetime(pub)
+                if dt.tzinfo is None: dt=dt.replace(tzinfo=timezone.utc)
+                dt=dt.astimezone(timezone.utc)
+            except Exception:
+                continue
+            if dt.year!=year:
+                continue
+            key=(title,dt.date().isoformat())
+            if key in seen_rss:
+                continue
+            seen_rss.add(key)
+            rss_items.append((title,link,dt))
+
+    sorted_items=sorted(rss_items,key=lambda x:x[2],reverse=True)
+    decoded_by_link={}
+    if gnews_decoder_async is not None and sorted_items:
+        try:
+            links=[x[1] for x in sorted_items]
+            batch=asyncio.run(
+                gnews_decoder_async(
+                    links,interval=None,timeout=20.0,concurrency=12
+                )
+            )
+            if isinstance(batch,list):
+                for link,result in zip(links,batch):
+                    if isinstance(result,dict):
+                        decoded_by_link[link]=result
+        except Exception as e:
+            print(f"ANFIA Google News decoder batch error: {type(e).__name__}: {e}",flush=True)
+    elif gnewsdecoder is not None and sorted_items:
+        try:
+            links=[x[1] for x in sorted_items]
+            batch=gnewsdecoder(links,interval=None,timeout=20.0)
+            if isinstance(batch,list):
+                for link,result in zip(links,batch):
+                    if isinstance(result,dict):
+                        decoded_by_link[link]=result
+        except Exception as e:
+            print(f"ANFIA Google News decoder sync error: {type(e).__name__}: {e}",flush=True)
+
+    misses=0
+    for title,gn_link,pub in sorted_items:
+        decoded=decoded_by_link.get(gn_link)
+        if not isinstance(decoded,dict) or not decoded.get("success"):
+            misses+=1
+            continue
+        official=(decoded.get("decoded_url") or "").strip()
+        host=canonical_host(official)
+        if not (host=="anfia.it" or host.endswith(".anfia.it")):
+            continue
+        parsed=urllib.parse.urlparse(official)
+        path=(parsed.path or "").lower()
+        if not any(path.startswith(p) for p in allowed_prefixes):
+            continue
+        official=official.split("#",1)[0]
+        if official in seen:
+            continue
+        seen.add(official)
+        clean_title=re.sub(
+            r"\s+-\s+(?:ANFIA(?:\s+-\s+Associazione Nazionale Filiera Industria Automobilistica)?|Associazione Nazionale Filiera Industria Automobilistica)\s*$",
+            "",title,flags=re.I
+        ).strip()
+        out.append((clean_title or title,official,pub))
+        if len(out)>=limit:
+            break
+
+    print(
+        f"ANFIA Google News RSS candidates: {len(out)} / indexed={len(rss_items)} / decode_misses={misses}",
+        flush=True
+    )
+    return out
+
+
 def confcommercio_google_news_candidates(year=2026,limit=500):
     """Permanent Confcommercio connector for GitHub runners.
     confcommercio.it returns HTTP 403 to GitHub-hosted runners on archive,
@@ -1819,6 +1937,11 @@ def process_source(src, now):
                 candidates.setdefault(url,title)
                 listing_dates[url]=(title,pub_date)
 
+        if src.get("adapter")=="anfia_google_news_rss":
+            for title,url,pub_date in anfia_google_news_candidates(year,max(500,source_limit)):
+                candidates.setdefault(url,title)
+                listing_dates[url]=(title,pub_date)
+
         if src.get("adapter")=="confcommercio_google_news_rss":
             for title,url,pub_date in confcommercio_google_news_candidates(year,max(500,source_limit)):
                 candidates.setdefault(url,title)
@@ -1851,7 +1974,7 @@ def process_source(src, now):
         for title,url,pub_raw in rss_directory_candidates(src.get("rss_directory",""),domains,year,200) if src.get("rss_directory") else []:
             candidates.setdefault(url,title)
 
-        dedicated_only = src.get("adapter") in {"cgiamestre","confcommercio_google_news_rss","gse_google_news_rss","salute_google_news_rss","mim_google_news_rss"}
+        dedicated_only = src.get("adapter") in {"cgiamestre","anfia_google_news_rss","confcommercio_google_news_rss","gse_google_news_rss","salute_google_news_rss","mim_google_news_rss"}
 
         # 1) Official source discovery first.
         if not dedicated_only:
