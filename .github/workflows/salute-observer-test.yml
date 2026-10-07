@@ -89,5 +89,23 @@ jobs:
               sn=res.select_one('.result__snippet')
               print('SNIP',sn.get_text(' ',strip=True) if sn else '')
           PY
+      - name: Inspect Google News RSS discovery
+        run: |
+          python - <<'PY'
+          import urllib.parse, urllib.request, xml.etree.ElementTree as ET
+          q='site:salute.gov.it/new/it/comunicato-stampa/ 2026'
+          u='https://news.google.com/rss/search?'+urllib.parse.urlencode({'q':q,'hl':'it','gl':'IT','ceid':'IT:it'})
+          req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0'})
+          with urllib.request.urlopen(req,timeout=20) as r:
+              raw=r.read(2000000)
+          print('BYTES',len(raw))
+          root=ET.fromstring(raw)
+          for item in root.findall('.//item')[:40]:
+              print('GN_ITEM')
+              print('GN_TITLE',item.findtext('title'))
+              print('GN_LINK',item.findtext('link'))
+              print('GN_PUB',item.findtext('pubDate'))
+              print('GN_DESC',item.findtext('description'))
+          PY
       - name: Test Salute only
         run: python scripts/update_observer_archive.py --only "Ministero della Salute"
