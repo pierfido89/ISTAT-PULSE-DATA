@@ -44,7 +44,7 @@ jobs:
         with:
           python-version: '3.12'
       - if: steps.slot.outputs.run == 'true'
-        run: python -m pip install beautifulsoup4 pypdf
+        run: python -m pip install beautifulsoup4 pypdf googlenewsdecoder
       - if: steps.slot.outputs.run == 'true'
         run: python scripts/update_observer_archive.py
         env:
