@@ -1000,7 +1000,10 @@
       ],
       "api_urls": [
         "https://sinab.it/wp-json/wp/v2/posts"
-      ]
+      ],
+      "adapter": "wordpress_rest_ssl_fallback",
+      "max_results_per_year": 500,
+      "connector_notes": "SINAB: discovery via WordPress REST API/feed. GitHub Actions currently needs the SSL workaround scoped only to sinab.it because the site serves an incomplete certificate chain to the runner."
     },
     {
       "name": "SNAM",
