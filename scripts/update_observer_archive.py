@@ -1040,6 +1040,106 @@ def snam_sitemap_candidates(domains,year=2026,limit=420):
 
 
 
+def gse_google_news_candidates(year=2026,limit=500):
+    """Permanent GSE connector for GitHub runners.
+    gse.it returns HTTP 403 to GitHub-hosted runners on newsroom, statistics,
+    sitemap and RSS endpoints. Google News RSS is used only as transport for
+    title/date discovery; signed URLs are decoded back to the official GSE URL.
+    Only GSE newsroom/communication paths are retained.
+    """
+    rss_items=[]; seen_rss=set(); out=[]; seen=set()
+    allowed_prefixes=(
+        "/media/comunicati/",
+        "/servizi-per-te/news/",
+        "/media/focus/",
+    )
+
+    queries=[]
+    for month in range(1,13):
+        start_date=f"{year}-{month:02d}-01"
+        end_date=f"{year+1}-01-01" if month==12 else f"{year}-{month+1:02d}-01"
+        for pathq in (
+            "site:gse.it/media/comunicati/",
+            "site:gse.it/servizi-per-te/news/",
+            "site:gse.it/media/focus/",
+        ):
+            queries.append(f"{pathq} after:{start_date} before:{end_date}")
+
+    for q in queries:
+        url="https://news.google.com/rss/search?"+urllib.parse.urlencode({
+            "q":q,"hl":"it","gl":"IT","ceid":"IT:it"
+        })
+        try:
+            raw,_,_=fetch(url,timeout=12,max_bytes=2200000)
+            root=ET.fromstring(raw.decode("utf-8","ignore"))
+        except Exception:
+            continue
+
+        for item in root.findall(".//item"):
+            title=(item.findtext("title") or "").strip()
+            link=(item.findtext("link") or "").strip()
+            pub=(item.findtext("pubDate") or "").strip()
+            if not title or not link or not pub:
+                continue
+            try:
+                dt=parsedate_to_datetime(pub)
+                if dt.tzinfo is None: dt=dt.replace(tzinfo=timezone.utc)
+                dt=dt.astimezone(timezone.utc)
+            except Exception:
+                continue
+            if dt.year!=year:
+                continue
+            key=(title,dt.date().isoformat())
+            if key in seen_rss:
+                continue
+            seen_rss.add(key)
+            rss_items.append((title,link,dt))
+
+    sorted_items=sorted(rss_items,key=lambda x:x[2],reverse=True)
+    decoded_by_link={}
+    if gnewsdecoder is not None and sorted_items:
+        try:
+            links=[x[1] for x in sorted_items]
+            batch=gnewsdecoder(links,interval=0.10,timeout=20.0)
+            if isinstance(batch,list):
+                for link,result in zip(links,batch):
+                    if isinstance(result,dict):
+                        decoded_by_link[link]=result
+            elif isinstance(batch,dict) and len(links)==1:
+                decoded_by_link[links[0]]=batch
+        except Exception as e:
+            print(f"GSE Google News decoder batch error: {type(e).__name__}: {e}",flush=True)
+
+    misses=0
+    for title,gn_link,pub in sorted_items:
+        decoded=decoded_by_link.get(gn_link)
+        if not isinstance(decoded,dict) or not decoded.get("success"):
+            misses+=1
+            continue
+        official=(decoded.get("decoded_url") or "").strip()
+        host=canonical_host(official)
+        if not (host=="gse.it" or host.endswith(".gse.it")):
+            continue
+        parsed=urllib.parse.urlparse(official)
+        path=(parsed.path or "").lower()
+        if not any(path.startswith(p) for p in allowed_prefixes):
+            continue
+        official=official.split("#",1)[0]
+        if official in seen:
+            continue
+        seen.add(official)
+        clean_title=re.sub(r"\s+-\s+GSE\s*$","",title,flags=re.I).strip()
+        out.append((clean_title or title,official,pub))
+        if len(out)>=limit:
+            break
+
+    print(
+        f"GSE Google News RSS candidates: {len(out)} / indexed={len(rss_items)} / decode_misses={misses}",
+        flush=True
+    )
+    return out
+
+
 def mim_google_news_candidates(year=2026,limit=500):
     """Permanent MIM connector for GitHub runners.
     mim.gov.it blocks GitHub-hosted runners with HTTP 403, including RSS,
@@ -1612,6 +1712,11 @@ def process_source(src, now):
 
         if src.get("adapter")=="opencoesione_datigov":
             for title,url,pub_date in opencoesione_datigov_candidates(year,max(500,source_limit)):
+                candidates.setdefault(url,title)
+                listing_dates[url]=(title,pub_date)
+
+        if src.get("adapter")=="gse_google_news_rss":
+            for title,url,pub_date in gse_google_news_candidates(year,max(500,source_limit)):
                 candidates.setdefault(url,title)
                 listing_dates[url]=(title,pub_date)
 
