@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 from email.utils import parsedate_to_datetime
-import argparse, gzip, hashlib, json, re, ssl, urllib.parse, urllib.request
+import argparse, asyncio, gzip, hashlib, json, re, ssl, urllib.parse, urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from pathlib import Path
 from bs4 import BeautifulSoup
 try:
-    from googlenewsdecoder import gnewsdecoder
+    from googlenewsdecoder import gnewsdecoder, gnews_decoder_async
 except Exception:
     gnewsdecoder = None
+    gnews_decoder_async = None
 
 ROOT=Path("data/news")
 REGISTRY=Path("data/observer_sources.json")
@@ -1096,7 +1097,14 @@ def confcommercio_google_news_candidates(year=2026,limit=500):
     if gnewsdecoder is not None and sorted_items:
         try:
             links=[x[1] for x in sorted_items]
-            batch=gnewsdecoder(links,interval=None,timeout=20.0)
+            if gnews_decoder_async is not None:
+                batch=asyncio.run(
+                    gnews_decoder_async(
+                        links, interval=None, timeout=20.0, concurrency=12
+                    )
+                )
+            else:
+                batch=gnewsdecoder(links,interval=None,timeout=20.0)
             if isinstance(batch,list):
                 for link,result in zip(links,batch):
                     if isinstance(result,dict):
