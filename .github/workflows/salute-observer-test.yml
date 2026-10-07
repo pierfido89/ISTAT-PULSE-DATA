@@ -51,5 +51,23 @@ jobs:
               except Exception as e:
                   print("ERROR",type(e).__name__,str(e),flush=True)
           PY
+      - name: Inspect Bing RSS discovery
+        run: |
+          python - <<'PY'
+          import urllib.parse, urllib.request, xml.etree.ElementTree as ET
+          q='site:salute.gov.it/new/it/comunicato-stampa/ 2026'
+          u='https://www.bing.com/search?'+urllib.parse.urlencode({'q':q,'format':'rss','setlang':'it-IT','count':50})
+          req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0'})
+          with urllib.request.urlopen(req,timeout=20) as r:
+              raw=r.read(1000000)
+          print('BYTES',len(raw))
+          root=ET.fromstring(raw)
+          for item in root.findall('.//item')[:25]:
+              print('ITEM')
+              print('TITLE',item.findtext('title'))
+              print('LINK',item.findtext('link'))
+              print('PUB',item.findtext('pubDate'))
+              print('DESC',item.findtext('description'))
+          PY
       - name: Test Salute only
         run: python scripts/update_observer_archive.py --only "Ministero della Salute"
