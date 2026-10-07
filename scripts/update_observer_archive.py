@@ -1146,7 +1146,36 @@ def mim_google_news_candidates(year=2026,limit=500):
             r"\s+-\s+(?:MIM|Ministero dell['’]Istruzione e del Merito|Ministero dell['’]Istruzione)\s*$",
             "",title,flags=re.I
         ).strip()
-        out.append((clean_title or title,official,pub))
+
+        # Google News pubDate may reflect re-indexing for old decrees/circulars.
+        # If the official title itself contains an explicit 2026 date, prefer it.
+        title_date=pub
+        months_it={
+            "gennaio":1,"febbraio":2,"marzo":3,"aprile":4,"maggio":5,"giugno":6,
+            "luglio":7,"agosto":8,"settembre":9,"ottobre":10,"novembre":11,"dicembre":12
+        }
+        m=re.search(
+            r"\b([0-3]?\d)\s+("+"|".join(months_it)+r")\s+(20\d{2})\b",
+            clean_title.lower()
+        )
+        if m:
+            try:
+                d=int(m.group(1)); mo=months_it[m.group(2)]; y=int(m.group(3))
+                if y==year:
+                    title_date=datetime(y,mo,d,tzinfo=timezone.utc)
+            except Exception:
+                pass
+        else:
+            m=re.search(r"\b([0-3]?\d)[/-]([01]?\d)[/-](20\d{2})\b",clean_title)
+            if m:
+                try:
+                    d,mo,y=map(int,m.groups())
+                    if y==year:
+                        title_date=datetime(y,mo,d,tzinfo=timezone.utc)
+                except Exception:
+                    pass
+
+        out.append((clean_title or title,official,title_date))
         if len(out)>=limit:
             break
 
