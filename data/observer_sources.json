@@ -2,6 +2,14 @@
   "version": 1,
   "min_year": 2025,
   "purpose": "Official-source publication archive for ISTAT PULSE OSSERVATORI. Includes relevant quantitative publications even when no PULSE statistical pattern is triggered.",
+  "update_policy": {
+    "mode": "automatic_and_manual",
+    "timezone": "Europe/Rome",
+    "scheduled_hours_local": ["06:00", "11:00", "16:00", "22:00"],
+    "manual_trigger": "GitHub Actions workflow_dispatch",
+    "workflow": ".github/workflows/observer-backfill-fast.yml",
+    "rule": "Every refresh must process every configured source using its persisted adapter, API, feed, sitemap, SSL exception or official fallback. Connector logic lives in this repository and must not depend on chat state."
+  },
   "sources": [
     {
       "name": "CENSIS",
@@ -921,7 +929,8 @@
         "https://mit.gov.it/comunicazione/news?page=3",
         "https://mit.gov.it/comunicazione/news?page=4",
         "https://mit.gov.it/comunicazione/news?page=5"
-      ]
+      ],
+      "connector_notes": "MIT: generic official-site discovery through news pages/sitemap/feed/search. GitHub Actions requires the SSL workaround scoped only to mit.gov.it because the site currently serves an incomplete certificate chain to the runner."
     },
     {
       "name": "OpenCoesione",
