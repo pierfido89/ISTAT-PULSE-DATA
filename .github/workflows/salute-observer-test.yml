@@ -29,6 +29,11 @@ jobs:
               "https://www.salute.gov.it/rss/comunicatiStampa.xml",
               "https://www.salute.gov.it/rss/comunicati-stampa.xml",
               "https://www.salute.gov.it/new/it/rss/comunicati-stampa/",
+              "https://www.salute.gov.it/portale/news/rss.jsp",
+              "http://www.salute.gov.it/portale/news/rss.jsp",
+              "https://www.salute.gov.it/portale/news/RSS_comunicati_stampa.xml",
+              "https://www.salute.gov.it/portale/news/RSS_comunicati.xml",
+              "https://www.salute.gov.it/portale/news/RSS_comunicatistampa.xml",
           ]
           for u in urls:
               print("===",u,flush=True)
