@@ -2053,11 +2053,22 @@ def process_source(src, now):
                 print(f"ANFIA search candidates: {search_total}", flush=True)
 
         year_found=0
+        decoded_rss_adapter = src.get("adapter") in {
+            "anfia_google_news_rss",
+            "confcommercio_google_news_rss",
+            "gse_google_news_rss",
+            "salute_google_news_rss",
+            "mim_google_news_rss",
+        }
 
         # Curated listing pages are authoritative for publication date.
         for url,(listing_title,listing_date) in listing_dates.items():
             if listing_date>now or listing_date.year!=year: continue
-            info=page_info(url,domains)
+            # RSS-decoder adapters have already resolved the transport URL to
+            # the official publisher URL. Do not reopen a source that is known
+            # to block GitHub runners; that would only reintroduce the failure
+            # the decoder is designed to bypass.
+            info=None if decoded_rss_adapter else page_info(url,domains)
             title=(info or {}).get("title") or listing_title
             numbers=(info or {}).get("numbers") or []
             final_url=(info or {}).get("url") or url
@@ -2073,7 +2084,10 @@ def process_source(src, now):
                 "public_source":{
                     "url":final_url,"domain":host,
                     "role":"primary_institutional_source",
-                    "verification_method":"official_listing_date"
+                    "verification_method":(
+                        "decoded_official_url_rss_date" if decoded_rss_adapter
+                        else "official_listing_date"
+                    )
                 },
                 "headline":title,
                 "summary":safe_summary(name,title,listing_date,numbers),
