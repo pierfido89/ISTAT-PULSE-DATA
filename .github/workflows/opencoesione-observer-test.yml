@@ -50,5 +50,32 @@ jobs:
               except Exception as e:
                   print("URL",u,"ERROR",type(e).__name__,e,flush=True)
           PY
+      - name: Probe OpenCoesione API and direct downloads
+        run: |
+          python - <<'PY'
+          import subprocess, json, re
+          urls=[
+            "https://opencoesione.gov.it/api/",
+            "https://www.opencoesione.gov.it/api/",
+            "http://opencoesione.gov.it/api/",
+            "http://www.opencoesione.gov.it/api/",
+            "https://opencoesione.gov.it/api/progetti.json",
+            "https://www.opencoesione.gov.it/api/progetti.json",
+            "http://opencoesione.gov.it/api/progetti.json",
+            "https://opencoesione.gov.it/api/aggregati.json",
+          ]
+          for u in urls:
+              cmd=["curl","-L","--max-time","20","-sS","-o","/tmp/oc.body","-w","%{http_code}|%{content_type}|%{url_effective}",
+                   "-A","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/154 Safari/537.36",
+                   "-H","Accept: application/json,text/html;q=0.9,*/*;q=0.8",
+                   u]
+              p=subprocess.run(cmd,capture_output=True,text=True)
+              meta=p.stdout.strip()
+              try: raw=open("/tmp/oc.body","rb").read(500000)
+              except: raw=b""
+              txt=raw.decode("utf-8","ignore")
+              print("CURL",u,meta,"BYTES",len(raw),flush=True)
+              print("HEAD",re.sub(r"\s+"," ",txt[:500]),flush=True)
+          PY
       - name: Test OpenCoesione only
         run: python scripts/update_observer_archive.py --only OpenCoesione
