@@ -1,0 +1,54 @@
+name: OpenCoesione Observer Test
+
+on:
+  push:
+    branches: [feat/news-engine]
+    paths:
+      - 'scripts/update_observer_archive.py'
+      - 'data/observer_sources.json'
+      - '.github/workflows/opencoesione-observer-test.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-opencoesione:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/news-engine
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install beautifulsoup4 pypdf
+      - name: Probe OpenCoesione endpoints
+        run: |
+          python - <<'PY'
+          import urllib.request,re,json
+          urls=[
+            "https://opencoesione.gov.it/it/opendata/",
+            "https://opencoesione.gov.it/sitemap.xml",
+            "https://opencoesione.gov.it/robots.txt",
+            "https://opencoesione.gov.it/it/feed/",
+            "https://opencoesione.gov.it/feed/",
+            "https://opencoesione.gov.it/wp-json/",
+          ]
+          for u in urls:
+              try:
+                  req=urllib.request.Request(u,headers={"User-Agent":"Mozilla/5.0"})
+                  with urllib.request.urlopen(req,timeout=20) as r:
+                      raw=r.read(2500000); ct=r.headers.get("Content-Type",""); final=r.geturl()
+                  txt=raw.decode("utf-8","ignore")
+                  print("URL",u,"OK",r.status,ct,"BYTES",len(raw),"FINAL",final,flush=True)
+                  print("COUNT2026",txt.count("2026"),"SITEMAP",txt.lower().count("sitemap"),"API",txt.lower().count("api"),flush=True)
+                  for p in re.findall(r'https?://[^"\'<> ]+',txt)[:30]:
+                      if "2026" in p or "opendata" in p.lower():
+                          print("LINK",p[:500],flush=True)
+              except Exception as e:
+                  print("URL",u,"ERROR",type(e).__name__,e,flush=True)
+          PY
+      - name: Test OpenCoesione only
+        run: python scripts/update_observer_archive.py --only OpenCoesione
