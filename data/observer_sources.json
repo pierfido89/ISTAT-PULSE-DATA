@@ -378,19 +378,22 @@
       ]
     },
     {
-      "name": "ANFIA",
-      "domains": [
-        "anfia.it"
-      ],
-      "query_terms": [
-        "dati",
-        "statistiche",
-        "rapporto",
-        "osservatorio",
-        "indagine",
-        "open data"
-      ]
-    },
+            "name": "ANFIA",
+            "domains": [
+                  "anfia.it"
+            ],
+            "query_terms": [
+                  "dati",
+                  "statistiche",
+                  "rapporto",
+                  "osservatorio",
+                  "indagine",
+                  "open data"
+            ],
+            "adapter": "anfia_google_news_rss",
+            "max_results_per_year": 500,
+            "connector_notes": "Permanent ANFIA connector. Direct ANFIA discovery can find URLs but GitHub-hosted runners fail detail-page verification. Use Google News RSS only as transport, decode signed items with pinned googlenewsdecoder 0.2.1 + selectolax 0.4.12, and retain only official ANFIA pages under /it/comunicazione/notizie-e-comunicati/ and /it/attivita/studi-e-statistiche/focus-dossier-pubblicazioni/. Exclude events, training, press review, service subdomains and unrelated PDFs. Google News URLs are never stored."
+      },
     {
       "name": "ARERA",
       "domains": [
