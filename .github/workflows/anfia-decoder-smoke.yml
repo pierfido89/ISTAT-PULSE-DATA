@@ -15,17 +15,16 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install 'googlenewsdecoder @ git+https://github.com/SSujitX/google-news-url-decoder.git@d38ddbdd510561859da0dae0c1176e3a2676c159' 'selectolax==0.4.12'
-      - name: Decode ANFIA feed
+      - name: Count filtered ANFIA feed
         run: |
           python - <<'PY'
           import urllib.parse, urllib.request, xml.etree.ElementTree as ET, asyncio
           from googlenewsdecoder import gnews_decoder_async
           items=[]; seen=set()
-          queries=[
+          for q in [
             'site:anfia.it/comunicazione/notizie-e-comunicati after:2026-01-01 before:2027-01-01',
-            'site:anfia.it after:2026-01-01 before:2027-01-01 ANFIA'
-          ]
-          for q in queries:
+            'site:anfia.it/attivita/studi-e-statistiche/focus-dossier-pubblicazioni after:2026-01-01 before:2027-01-01'
+          ]:
               u='https://news.google.com/rss/search?'+urllib.parse.urlencode({'q':q,'hl':'it','gl':'IT','ceid':'IT:it'})
               req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0'})
               with urllib.request.urlopen(req,timeout=20) as r:
@@ -40,11 +39,15 @@ jobs:
           print('INDEXED',len(items),flush=True)
           links=[x[1] for x in items]
           results=asyncio.run(gnews_decoder_async(links,interval=None,timeout=20.0,concurrency=12)) if links else []
+          allowed=(
+              '/it/comunicazione/notizie-e-comunicati/',
+              '/it/attivita/studi-e-statistiche/focus-dossier-pubblicazioni/',
+          )
           ok=0
           for item,res in zip(items,results):
               url=(res.get('decoded_url') or '') if isinstance(res,dict) and res.get('success') else ''
-              if 'anfia.it' in url:
+              if 'anfia.it' in url and any(p in url.lower() for p in allowed):
                   ok+=1
-                  print('OK',item[2],item[0],url,flush=True)
-          print('DECODED_OFFICIAL',ok,flush=True)
+                  print('KEEP',item[2],item[0],url,flush=True)
+          print('FILTERED_OFFICIAL',ok,flush=True)
           PY
