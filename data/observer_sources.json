@@ -866,9 +866,9 @@
             "entrypoints": [
                   "https://www.salute.gov.it/new/it/sezione/comunicati-stampa/"
             ],
-            "adapter": "salute_index",
+            "adapter": "salute_google_news_rss",
             "max_results_per_year": 500,
-            "connector_notes": "Ministero della Salute publishes an official RSS service, but Gcore browser validation blocks GitHub-hosted runners and also masks the RSS endpoints. Persisted fallback: discover only official salute.gov.it/new/it/comunicato-stampa URLs through Google/Bing indexes, extract the explicit 'Data del comunicato' from indexed snippets, and retain the official Ministry URL as the source."
+            "connector_notes": "Permanent Ministero della Salute connector. Direct salute.gov.it pages and official RSS are masked to GitHub runners by Gcore browser validation. Use Google News RSS only as transport for title/date discovery, then decode each signed Google News URL with the pinned googlenewsdecoder 0.2.1 + selectolax 0.4.12 protocol (data-n-a-sg/data-n-a-ts -> Fbv4je/garturlreq). Accept and store only decoded publisher URLs on salute.gov.it; Google News URLs are never stored as the public source."
       },
     {
       "name": "Ministero dell'Istruzione e del Merito",
