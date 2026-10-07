@@ -1878,16 +1878,18 @@ def page_info(url,domains):
                 if len(candidate)>=40:
                     description=candidate[:900]
                     break
-        if not description:
-            container=soup.find("article") or soup.find("main") or soup.body
-            paragraphs=[]
-            if container:
-                for p in container.find_all(["p","li"],limit=24):
-                    txt=re.sub(r"\s+"," ",p.get_text(" ",strip=True)).strip()
-                    if len(txt)>=55 and not any(k in txt.lower() for k in ("cookie","privacy","javascript","newsletter")):
-                        paragraphs.append(txt)
-                    if sum(len(x) for x in paragraphs)>=900: break
-            description=" ".join(paragraphs)[:900]
+        article_paragraphs=[]
+        container=soup.find("article") or soup.find("main") or soup.body
+        if container:
+            for p in container.find_all(["p","li"],limit=40):
+                txt=re.sub(r"\s+"," ",p.get_text(" ",strip=True)).strip()
+                low_txt=txt.lower()
+                if len(txt)>=55 and not any(k in low_txt for k in ("cookie","privacy","javascript","newsletter","tutti i diritti riservati")):
+                    if txt not in article_paragraphs:
+                        article_paragraphs.append(txt)
+                if sum(len(x) for x in article_paragraphs)>=2600: break
+        if not description and article_paragraphs:
+            description=" ".join(article_paragraphs)[:900]
 
         key_figures=[]
         figure_re=re.compile(r"(?<!\w)([-+]?\d{1,3}(?:[\.,]\d{1,3})?)\s*(%|milioni|miliardi|mila|euro|€)?",re.I)
@@ -1935,6 +1937,7 @@ def page_info(url,domains):
             "date":date,
             "numbers":nums[:5],
             "description":description,
+            "article_paragraphs":article_paragraphs[:8],
             "key_figures":key_figures,
             "chart_points":chart_points
         }
@@ -1983,12 +1986,28 @@ def editorial_summary(entity,title,date,numbers,description=""):
         return f"{entity} pubblica un aggiornamento con dati quantitativi. Tra i valori presenti nella fonte compaiono {values}. La pubblicazione ufficiale è del {date.strftime('%d/%m/%Y')}."
     return f"{entity} pubblica questo aggiornamento istituzionale il {date.strftime('%d/%m/%Y')}. ISTAT PULSE ne conserva titolo, data e riferimento alla fonte ufficiale e ne propone una sintesi interna senza attribuire valori non presenti nel documento."
 
-def editorial_payload(entity,title,date,numbers,description="",key_figures=None,chart_points=None):
+def editorial_payload(entity,title,date,numbers,description="",article_paragraphs=None,key_figures=None,chart_points=None):
     ptype=publication_type(title,numbers,description,chart_points)
+    clean_paragraphs=[]
+    for p in article_paragraphs or []:
+        p=re.sub(r"\s+"," ",p).strip()
+        if len(p)>=55 and p not in clean_paragraphs:
+            clean_paragraphs.append(p[:1200])
+        if len(clean_paragraphs)>=6: break
+    if clean_paragraphs:
+        body=clean_paragraphs
+    else:
+        summary=editorial_summary(entity,title,date,numbers,description)
+        body=[
+            summary,
+            f"La pubblicazione è stata diffusa da {entity} il {date.strftime('%d/%m/%Y')} ed è classificata da ISTAT PULSE come {ptype.replace('_',' ').lower()}.",
+            "ISTAT PULSE mantiene il collegamento alla fonte primaria e non aggiunge dati, cause o conclusioni che non siano verificabili nella pubblicazione ufficiale."
+        ]
     return {
         "article_type":ptype,
         "pulse_title":re.sub(r"\s+"," ",title).strip()[:220],
         "pulse_summary":editorial_summary(entity,title,date,numbers,description),
+        "pulse_article_body":body,
         "key_figures":key_figures or [],
         "chart_points":chart_points or []
     }
@@ -2173,6 +2192,7 @@ def process_source(src, now):
             payload=editorial_payload(
                 name,title,listing_date,numbers,
                 (info or {}).get("description",""),
+                (info or {}).get("article_paragraphs",[]),
                 (info or {}).get("key_figures",[]),
                 (info or {}).get("chart_points",[])
             )
@@ -2221,6 +2241,7 @@ def process_source(src, now):
                 payload=editorial_payload(
                     name,info["title"],info["date"],info["numbers"],
                     info.get("description",""),
+                    info.get("article_paragraphs",[]),
                     info.get("key_figures",[]),
                     info.get("chart_points",[])
                 )
