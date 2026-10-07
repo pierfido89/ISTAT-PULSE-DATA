@@ -595,12 +595,10 @@ def ismea_candidates(year=2026,limit=500):
     """
     out=[]; seen=set()
     date_rx=re.compile(r"\b([0-3]?\d)/([01]?\d)/(20\d{2})\b")
-    urls=[]
-    for month in range(1,13):
-        urls.extend([
-            f"https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/{year}/MM/{month}",
-            f"https://www.ismea.it/Press-Area/Comunicati-Stampa?MM={month}&YY={year}",
-        ])
+    urls=[
+        f"https://www.ismea.it/Press-Area/Comunicati-Stampa/L/IT/YY/{year}/MM/{month}"
+        for month in range(1,13)
+    ]
 
     for root in urls:
         try:
