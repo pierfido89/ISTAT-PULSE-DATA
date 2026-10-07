@@ -1096,7 +1096,7 @@ def confcommercio_google_news_candidates(year=2026,limit=500):
     if gnewsdecoder is not None and sorted_items:
         try:
             links=[x[1] for x in sorted_items]
-            batch=gnewsdecoder(links,interval=0.10,timeout=20.0)
+            batch=gnewsdecoder(links,interval=None,timeout=20.0)
             if isinstance(batch,list):
                 for link,result in zip(links,batch):
                     if isinstance(result,dict):
