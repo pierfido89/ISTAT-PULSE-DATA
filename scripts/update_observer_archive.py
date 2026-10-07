@@ -1056,14 +1056,25 @@ def anfia_google_news_candidates(year=2026,limit=500):
         "/it/attivita/studi-e-statistiche/focus-dossier-pubblicazioni/",
     )
 
-    queries=[]
-    for month in range(1,13):
-        start_date=f"{year}-{month:02d}-01"
-        end_date=f"{year+1}-01-01" if month==12 else f"{year}-{month+1:02d}-01"
-        queries.extend([
-            f"site:anfia.it/it/comunicazione/notizie-e-comunicati/ after:{start_date} before:{end_date}",
-            f"site:anfia.it/it/attivita/studi-e-statistiche/focus-dossier-pubblicazioni/ after:{start_date} before:{end_date}",
-        ])
+    queries=[
+        f'site:anfia.it after:{year}-01-01 before:{year+1}-01-01 ANFIA',
+        f'site:anfia.it after:{year}-01-01 before:{year+1}-01-01 "mercato auto"',
+        f'site:anfia.it after:{year}-01-01 before:{year+1}-01-01 "mercato vetture"',
+        f'site:anfia.it after:{year}-01-01 before:{year+1}-01-01 "mercato auto europeo"',
+        f'site:anfia.it after:{year}-01-01 before:{year+1}-01-01 "produzione automotive"',
+        f'site:anfia.it after:{year}-01-01 before:{year+1}-01-01 "produzione industria automotive"',
+        f'site:anfia.it after:{year}-01-01 before:{year+1}-01-01 "Focus Italia"',
+        f'site:anfia.it after:{year}-01-01 before:{year+1}-01-01 "Focus Autovetture"',
+        f'site:anfia.it after:{year}-01-01 before:{year+1}-01-01 "Focus UE-EFTA-UK"',
+        f'site:anfia.it after:{year}-01-01 before:{year+1}-01-01 "veicoli commerciali"',
+        f'site:anfia.it after:{year}-01-01 before:{year+1}-01-01 "veicoli industriali"',
+        f'site:anfia.it after:{year}-01-01 before:{year+1}-01-01 aftermarket',
+        f'site:anfia.it after:{year}-01-01 before:{year+1}-01-01 fatturato',
+        f'site:anfia.it after:{year}-01-01 before:{year+1}-01-01 trade',
+        f'site:anfia.it after:{year}-01-01 before:{year+1}-01-01 immatricolazioni',
+        f'site:anfia.it after:{year}-01-01 before:{year+1}-01-01 comunicati',
+        f'site:anfia.it after:{year}-01-01 before:{year+1}-01-01 notizie',
+    ]
 
     for q in queries:
         url="https://news.google.com/rss/search?"+urllib.parse.urlencode({
