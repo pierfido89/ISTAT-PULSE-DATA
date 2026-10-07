@@ -8,9 +8,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from bs4 import BeautifulSoup
 try:
-    from googlenewsdecoder import new_decoderv1
+    from googlenewsdecoder import gnewsdecoder
 except Exception:
-    new_decoderv1 = None
+    gnewsdecoder = None
 
 ROOT=Path("data/news")
 REGISTRY=Path("data/observer_sources.json")
@@ -666,9 +666,9 @@ def salute_search_candidates(year=2026,limit=500):
     # protocol (data-n-a-sg + data-n-a-ts -> Fbv4je/garturlreq).
     for title,gn_link,pub in sorted(rss_items,key=lambda x:x[2],reverse=True):
         official=None
-        if new_decoderv1 is not None:
+        if gnewsdecoder is not None:
             try:
-                decoded=new_decoderv1(gn_link, interval=0.15)
+                decoded=gnewsdecoder(gn_link, interval=0.15, timeout=15.0)
                 if isinstance(decoded,dict) and decoded.get("success"):
                     candidate=(decoded.get("decoded_url") or "").strip()
                     if host_allowed(canonical_host(candidate),["salute.gov.it"]) and "/new/it/comunicato-stampa/" in candidate:
