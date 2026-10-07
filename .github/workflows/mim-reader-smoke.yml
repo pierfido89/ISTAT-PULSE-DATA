@@ -1,0 +1,31 @@
+name: MIM Reader Smoke
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ feat/news-engine ]
+    paths:
+      - '.github/workflows/mim-reader-smoke.yml'
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Read one central MIM page through reader
+        run: |
+          python - <<'PY'
+          import urllib.request
+          u='https://r.jina.ai/https://www.mim.gov.it/web/guest/-/crans-montana-mercoledi-7-gennaio-un-minuto-di-silenzio-nelle-scuole-italiane-valditara-il-pensiero-e-rivolto-ai-giovani-che-hanno-perso-la-vita-in-ci'
+          req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0'})
+          try:
+              with urllib.request.urlopen(req,timeout=30) as r:
+                  raw=r.read(800000)
+                  print('STATUS',r.status,'CT',r.headers.get('Content-Type'),'BYTES',len(raw),flush=True)
+                  txt=raw.decode('utf-8','ignore')
+                  print(txt[:7000],flush=True)
+          except Exception as e:
+              print('ERROR',type(e).__name__,str(e),flush=True)
+          PY
