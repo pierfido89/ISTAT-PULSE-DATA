@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import argparse, gzip, hashlib, json, re, urllib.parse, urllib.request
+import argparse, gzip, hashlib, json, re, ssl, urllib.parse, urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
@@ -23,7 +23,12 @@ STAT_TERMS=("dati","statistic","rapporto","osservatorio","indagine","rilevazione
 
 def fetch(url, timeout=20, max_bytes=1200000):
     req=urllib.request.Request(url,headers={"User-Agent":UA,"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.6"})
-    with urllib.request.urlopen(req,timeout=timeout) as r:
+    host=canonical_host(url)
+    # SINAB currently serves a broken/incomplete certificate chain to GitHub
+    # runners. Keep the exception tightly scoped to sinab.it; HTTPS remains in
+    # use and certificate verification stays enabled for every other source.
+    ctx=ssl._create_unverified_context() if (host=="sinab.it" or host.endswith(".sinab.it")) else None
+    with urllib.request.urlopen(req,timeout=timeout,context=ctx) as r:
         return r.read(max_bytes),r.geturl(),r.headers.get("Content-Type","")
 
 def canonical_host(url):
