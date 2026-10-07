@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   schedule:
     # GitHub cron is UTC. Run both CET/CEST candidates and gate by Europe/Rome.
-    - cron: '0 4,5,9,10,14,15,20,21 * * *'
+    - cron: '0 22,23,4,5,9,10,14,15,20,21 * * *'
   push:
     branches: [ main, feat/news-engine ]
     paths:
@@ -31,7 +31,7 @@ jobs:
           fi
           hour="$(TZ=Europe/Rome date +%H)"
           case "$hour" in
-            06|11|16|22) echo "run=true" >> "$GITHUB_OUTPUT" ;;
+            00|06|11|16|22) echo "run=true" >> "$GITHUB_OUTPUT" ;;
             *) echo "run=false" >> "$GITHUB_OUTPUT" ;;
           esac
 
