@@ -1004,6 +1004,7 @@ def process_source(src, now):
     domains=src.get("domains",[])
     local_articles={}
     stats={"2026":0}
+    source_limit=int(src.get("max_results_per_year",MAX_RESULTS_PER_SOURCE_YEAR))
 
     for year in ARCHIVE_YEARS:
         candidates={}
@@ -1020,7 +1021,7 @@ def process_source(src, now):
             candidates.setdefault(url,title)
             listing_dates.setdefault(url,(title,pub_date))
 
-        for title,url,pub_date in wordpress_rest_candidates(src.get("api_urls",[]),domains,year,300):
+        for title,url,pub_date in wordpress_rest_candidates(src.get("api_urls",[]),domains,year,max(300,source_limit)):
             candidates.setdefault(url,title)
             listing_dates[url]=(title,pub_date)
 
@@ -1150,7 +1151,7 @@ def process_source(src, now):
                 "publication_status":"published"
             }
             year_found+=1
-            if year_found>=MAX_RESULTS_PER_SOURCE_YEAR: break
+            if year_found>=source_limit: break
 
         # Additional sitemap/feed/search candidates require detail-page verification.
         items=[(u,t) for u,t in candidates.items() if u not in listing_dates][:220]
@@ -1188,7 +1189,7 @@ def process_source(src, now):
                     "publication_status":"published"
                 }
                 year_found+=1
-                if year_found>=MAX_RESULTS_PER_SOURCE_YEAR:
+                if year_found>=source_limit:
                     break
 
         if name=="ANFIA":
