@@ -1,3 +1,4 @@
+from email.utils import parsedate_to_datetime
 #!/usr/bin/env python3
 from __future__ import annotations
 import argparse, gzip, hashlib, json, re, ssl, urllib.parse, urllib.request
@@ -589,91 +590,97 @@ def listing_dated_candidates(entrypoints,domains,year=2026,limit=300):
 
 
 def salute_search_candidates(year=2026,limit=500):
-    """Fallback for Ministero della Salute when Gcore browser validation blocks
-    GitHub-hosted runners. Discover only official press-release URLs through
-    search-engine indexes and extract the explicit Italian publication date from
-    the indexed result snippet. The stored URL remains salute.gov.it.
+    """Automatic Ministero della Salute connector.
+    Gcore browser validation blocks GitHub runners from the Ministry pages/RSS.
+    Google News RSS is therefore used only as discovery/date transport; every
+    stored article is resolved back to the official salute.gov.it press-release URL.
     """
-    months={
-        "gennaio":1,"febbraio":2,"marzo":3,"aprile":4,"maggio":5,"giugno":6,
-        "luglio":7,"agosto":8,"settembre":9,"ottobre":10,"novembre":11,"dicembre":12
-    }
-    month_names=list(months)
-    date_rx=re.compile(r"\b([0-3]?\d)\s+("+"|".join(month_names)+r")\s+(20\d{2})\b",re.I)
     out=[]; seen=set()
 
-    def parse_date(txt):
-        m=date_rx.search(txt or "")
-        if not m:return None
-        try:
-            return datetime(int(m.group(3)),months[m.group(2).lower()],int(m.group(1)),tzinfo=timezone.utc)
-        except Exception:return None
+    def official_from_title(title):
+        clean=re.sub(r"\s+-\s+(?:Salute\.gov|Ministero della Salute)\s*$","",title or "",flags=re.I).strip()
+        if not clean:
+            return None
+        queries=[
+            f'site:salute.gov.it/new/it/comunicato-stampa/ "{clean}"',
+            f'site:salute.gov.it/new/it/comunicato-stampa/ "{clean[:100]}"',
+        ]
+        for q in queries:
+            for cand_title,href in web_search(q,5):
+                if host_allowed(canonical_host(href),["salute.gov.it"]) and "/new/it/comunicato-stampa/" in href:
+                    return href.split("#",1)[0]
+        return None
 
-    queries=[
-        f'site:salute.gov.it/new/it/comunicato-stampa/ "Data del comunicato" "{m} {year}"'
-        for m in month_names
-    ]
+    # Month-scoped queries avoid Google News returning only a small sample of the year.
+    periods=[]
+    for month in range(1,13):
+        start_date=f"{year}-{month:02d}-01"
+        if month==12:
+            end_date=f"{year+1}-01-01"
+        else:
+            end_date=f"{year}-{month+1:02d}-01"
+        periods.append((start_date,end_date))
 
-    for q in queries:
-        # Google normal HTML exposes headline + snippet together and tends to
-        # preserve the visible "Data del comunicato" text from official pages.
+    rss_items=[]
+    for start_date,end_date in periods:
+        q=(
+            "site:salute.gov.it/new/it/comunicato-stampa/ "
+            f"after:{start_date} before:{end_date}"
+        )
+        url="https://news.google.com/rss/search?"+urllib.parse.urlencode({
+            "q":q,"hl":"it","gl":"IT","ceid":"IT:it"
+        })
         try:
-            url="https://www.google.com/search?"+urllib.parse.urlencode({
-                "q":q,"num":50,"filter":"0","hl":"it"
-            })
-            raw,_,_=fetch(url,timeout=10,max_bytes=1800000)
-            soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
-            for h3 in soup.find_all("h3"):
-                a=h3.find_parent("a",href=True)
-                if not a: continue
-                href=a.get("href","")
-                if href.startswith("/url?"):
-                    qs=urllib.parse.parse_qs(urllib.parse.urlparse(href).query)
-                    href=(qs.get("q") or qs.get("url") or [""])[0]
-                if not href.startswith("http"): continue
-                host=canonical_host(href)
-                if not host_allowed(host,["salute.gov.it"]): continue
-                if "/new/it/comunicato-stampa/" not in href: continue
-                title=re.sub(r"\s+"," ",h3.get_text(" ",strip=True)).strip()
-                container=h3
-                for _ in range(5):
-                    parent=getattr(container,"parent",None)
-                    if parent is None: break
-                    container=parent
-                    txt=re.sub(r"\s+"," ",container.get_text(" ",strip=True))
-                    if len(txt)>80: break
-                pub=parse_date(txt)
-                if pub and pub.year==year and href not in seen:
-                    seen.add(href); out.append((title,href.split("#",1)[0],pub))
+            raw,_,_=fetch(url,timeout=12,max_bytes=2200000)
+            root=ET.fromstring(raw.decode("utf-8","ignore"))
+        except Exception:
+            continue
+        for item in root.findall(".//item"):
+            title=(item.findtext("title") or "").strip()
+            link=(item.findtext("link") or "").strip()
+            pub=(item.findtext("pubDate") or "").strip()
+            source=item.find("source")
+            source_name=(source.text or "").strip() if source is not None else ""
+            if not title or not pub:
+                continue
+            if "salute" not in source_name.lower() and "salute.gov" not in title.lower():
+                continue
+            try:
+                dt=parsedate_to_datetime(pub)
+                if dt.tzinfo is None: dt=dt.replace(tzinfo=timezone.utc)
+                dt=dt.astimezone(timezone.utc)
+            except Exception:
+                continue
+            if dt.year!=year:
+                continue
+            key=(title,dt.date().isoformat())
+            if key not in {(t,d.date().isoformat()) for t,_,d in rss_items}:
+                rss_items.append((title,link,dt))
+
+    # Resolve the Google News transport link back to the Ministry source.
+    for title,gn_link,pub in sorted(rss_items,key=lambda x:x[2],reverse=True):
+        official=None
+        # Some Google News article links still redirect directly to the source.
+        try:
+            req=urllib.request.Request(gn_link,headers={"User-Agent":UA})
+            with urllib.request.urlopen(req,timeout=8) as r:
+                final=r.geturl()
+            if host_allowed(canonical_host(final),["salute.gov.it"]) and "/new/it/comunicato-stampa/" in final:
+                official=final.split("#",1)[0]
         except Exception:
             pass
 
-    # Bing HTML backup; snippets often include the same visible official date.
-    if len(out)<24:
-        for m in month_names:
-            q=f'site:salute.gov.it/new/it/comunicato-stampa/ "Data del comunicato" "{m} {year}"'
-            try:
-                url="https://www.bing.com/search?"+urllib.parse.urlencode({
-                    "q":q,"setlang":"it-IT","count":50
-                })
-                raw,_,_=fetch(url,timeout=10,max_bytes=1800000)
-                soup=BeautifulSoup(raw.decode("utf-8","ignore"),"html.parser")
-                for li in soup.select("li.b_algo"):
-                    a=li.find("a",href=True)
-                    if not a: continue
-                    href=a.get("href","")
-                    if not host_allowed(canonical_host(href),["salute.gov.it"]): continue
-                    if "/new/it/comunicato-stampa/" not in href: continue
-                    title=re.sub(r"\s+"," ",a.get_text(" ",strip=True)).strip()
-                    txt=re.sub(r"\s+"," ",li.get_text(" ",strip=True))
-                    pub=parse_date(txt)
-                    if pub and pub.year==year and href not in seen:
-                        seen.add(href); out.append((title,href.split("#",1)[0],pub))
-            except Exception:
-                pass
+        if not official:
+            official=official_from_title(title)
+        if not official or official in seen:
+            continue
+        seen.add(official)
+        clean_title=re.sub(r"\s+-\s+(?:Salute\.gov|Ministero della Salute)\s*$","",title,flags=re.I).strip()
+        out.append((clean_title,official,pub))
+        if len(out)>=limit:
+            break
 
-    out=sorted(out,key=lambda x:x[2],reverse=True)[:limit]
-    print(f"Ministero Salute indexed press releases: {len(out)}", flush=True)
+    print(f"Ministero Salute Google News RSS candidates: {len(out)} / indexed={len(rss_items)}", flush=True)
     return out
 
 
