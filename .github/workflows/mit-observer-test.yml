@@ -1,0 +1,59 @@
+name: MIT Observer Test
+
+on:
+  push:
+    branches: [feat/news-engine]
+    paths:
+      - 'scripts/update_observer_archive.py'
+      - 'data/observer_sources.json'
+      - '.github/workflows/mit-observer-test.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-mit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/news-engine
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install beautifulsoup4 pypdf
+      - name: Probe MIT endpoints
+        run: |
+          python - <<'PY'
+          import urllib.request,re,json
+          urls=[
+            "https://mit.gov.it/comunicazione/news",
+            "https://mit.gov.it/comunicazione/news?page=1",
+            "https://mit.gov.it/sitemap.xml",
+            "https://mit.gov.it/robots.txt",
+            "https://mit.gov.it/feed",
+            "https://mit.gov.it/rss.xml",
+            "https://mit.gov.it/jsonapi",
+            "https://mit.gov.it/jsonapi/node/news",
+          ]
+          for u in urls:
+              try:
+                  req=urllib.request.Request(u,headers={"User-Agent":"Mozilla/5.0","Accept":"application/json,text/html,application/xml;q=0.9,*/*;q=0.6"})
+                  with urllib.request.urlopen(req,timeout=20) as r:
+                      raw=r.read(2500000); ct=r.headers.get("Content-Type",""); final=r.geturl()
+                  txt=raw.decode("utf-8","ignore")
+                  print("URL",u,"OK",r.status,ct,"BYTES",len(raw),"FINAL",final,flush=True)
+                  print("COUNT2026",txt.count("2026"),"DRUPAL",txt.lower().count("drupal"),"JSONAPI",txt.lower().count("jsonapi"),flush=True)
+                  if "json" in ct.lower() or txt.lstrip().startswith(("{","[")):
+                      try:
+                          data=json.loads(txt)
+                          print("JSONTYPE",type(data).__name__,flush=True)
+                          if isinstance(data,dict): print("KEYS",list(data.keys())[:40],flush=True)
+                      except Exception as e: print("JSONERR",e,flush=True)
+              except Exception as e:
+                  print("URL",u,"ERROR",type(e).__name__,e,flush=True)
+          PY
+      - name: Test MIT only
+        run: python scripts/update_observer_archive.py --only MIT
