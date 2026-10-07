@@ -888,7 +888,10 @@
       ],
       "entrypoints": [
         "https://www.mim.gov.it/web/guest/comunicati"
-      ]
+      ],
+      "adapter": "mim_datigov",
+      "max_results_per_year": 500,
+      "connector_notes": "MIM blocks GitHub-hosted runners with HTTP 403. Use official national catalog dati.gov.it for discovery and 2026 update dates; retain MIM/istruzione.it source URLs when exposed, otherwise keep the official dati.gov.it dataset page."
     },
     {
       "name": "Ministero dell'Università e della Ricerca",
