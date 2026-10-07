@@ -1843,7 +1843,7 @@ def process_source(src, now):
         for title,url,pub_raw in rss_directory_candidates(src.get("rss_directory",""),domains,year,200) if src.get("rss_directory") else []:
             candidates.setdefault(url,title)
 
-        dedicated_only = src.get("adapter") in {"cgiamestre"}
+        dedicated_only = src.get("adapter") in {"cgiamestre","confcommercio_google_news_rss","gse_google_news_rss","salute_google_news_rss","mim_google_news_rss"}
 
         # 1) Official source discovery first.
         if not dedicated_only:
