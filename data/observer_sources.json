@@ -123,22 +123,25 @@
       ]
     },
     {
-      "name": "Confcommercio",
-      "domains": [
-        "confcommercio.it"
-      ],
-      "query_terms": [
-        "dati",
-        "statistiche",
-        "rapporto",
-        "osservatorio",
-        "indagine",
-        "open data"
-      ],
-      "entrypoints": [
-        "https://www.confcommercio.it/it/archivio-notizie"
-      ]
-    },
+            "name": "Confcommercio",
+            "domains": [
+                  "confcommercio.it"
+            ],
+            "query_terms": [
+                  "dati",
+                  "statistiche",
+                  "rapporto",
+                  "osservatorio",
+                  "indagine",
+                  "open data"
+            ],
+            "entrypoints": [
+                  "https://www.confcommercio.it/it/archivio-notizie"
+            ],
+            "adapter": "confcommercio_google_news_rss",
+            "max_results_per_year": 500,
+            "connector_notes": "Permanent Confcommercio connector. Direct confcommercio.it archive, sitemap, robots, RSS and feed endpoints return HTTP 403 to GitHub-hosted runners. Use Google News RSS only as transport for title/date discovery, decode signed items with pinned googlenewsdecoder 0.2.1 + selectolax 0.4.12, and retain only central Confcommercio articles on confcommercio.it/-/. Google News URLs are never stored."
+      },
     {
       "name": "Confindustria",
       "domains": [
