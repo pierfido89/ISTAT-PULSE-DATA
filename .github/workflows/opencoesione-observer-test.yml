@@ -77,5 +77,30 @@ jobs:
               print("CURL",u,meta,"BYTES",len(raw),flush=True)
               print("HEAD",re.sub(r"\s+"," ",txt[:500]),flush=True)
           PY
+      - name: Probe dati.gov.it OpenCoesione mirror
+        run: |
+          python - <<'PY'
+          import urllib.request,re
+          urls=[
+            "https://www.dati.gov.it/node/view-dataset/dataset?id=8bc00078-ab67-4101-88a4-08cee65861cb",
+            "https://www.dati.gov.it/node/192",
+          ]
+          for u in urls:
+              try:
+                  req=urllib.request.Request(u,headers={"User-Agent":"Mozilla/5.0"})
+                  with urllib.request.urlopen(req,timeout=20) as r:
+                      raw=r.read(1800000); ct=r.headers.get("Content-Type",""); final=r.geturl()
+                  txt=raw.decode("utf-8","ignore")
+                  print("DATIGOV",u,"OK",r.status,ct,"BYTES",len(raw),"FINAL",final,flush=True)
+                  print("OC_COUNT",txt.lower().count("opencoesione"),"DATE2026",len(re.findall(r"2026[-/]\d{2}[-/]\d{2}",txt)),flush=True)
+                  for m in re.findall(r'<form[^>]*action=["\']([^"\']*)["\'][^>]*>(.*?)</form>',txt,re.I|re.S):
+                      body=m[1]
+                      if "dataset" in body.lower() or "cerca" in body.lower():
+                          print("FORM",m[0],flush=True)
+                          for inp in re.findall(r'<input[^>]+>',body,re.I):
+                              print("INPUT",re.sub(r"\s+"," ",inp)[:500],flush=True)
+              except Exception as e:
+                  print("DATIGOV",u,"ERROR",type(e).__name__,e,flush=True)
+          PY
       - name: Test OpenCoesione only
         run: python scripts/update_observer_archive.py --only OpenCoesione
