@@ -29,7 +29,7 @@ jobs:
             "https://www.ismea.it/sitemap.xml"
           do
             echo "=== $u"
-            curl -L -A "Mozilla/5.0" -sS -D /tmp/h -o /tmp/b "$u"
+            curl -k -L -A "Mozilla/5.0" -sS -D /tmp/h -o /tmp/b "$u"
             head -n 20 /tmp/h
             echo "BYTES=$(wc -c </tmp/b)"
             head -c 500 /tmp/b | tr '\n' ' ' ; echo
