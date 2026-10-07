@@ -22,8 +22,14 @@ jobs:
           from googlenewsdecoder import gnews_decoder_async
           items=[]; seen=set()
           for q in [
-            'site:anfia.it/comunicazione/notizie-e-comunicati after:2026-01-01 before:2027-01-01',
-            'site:anfia.it after:2026-01-01 before:2027-01-01 ANFIA'
+            'site:anfia.it after:2026-01-01 before:2027-01-01 ANFIA',
+            'site:anfia.it after:2026-01-01 before:2027-01-01 "mercato auto"',
+            'site:anfia.it after:2026-01-01 before:2027-01-01 "produzione automotive"',
+            'site:anfia.it after:2026-01-01 before:2027-01-01 "Focus Italia"',
+            'site:anfia.it after:2026-01-01 before:2027-01-01 fatturato',
+            'site:anfia.it after:2026-01-01 before:2027-01-01 "veicoli commerciali"',
+            'site:anfia.it after:2026-01-01 before:2027-01-01 "mercato auto europeo"',
+            'site:anfia.it after:2026-01-01 before:2027-01-01 comunicati'
           ]:
               u='https://news.google.com/rss/search?'+urllib.parse.urlencode({'q':q,'hl':'it','gl':'IT','ceid':'IT:it'})
               req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0'})
