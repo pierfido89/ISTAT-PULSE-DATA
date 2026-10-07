@@ -941,7 +941,10 @@
         "https://opencoesione.gov.it/it/opendata/dataset/pagamenti/",
         "https://opencoesione.gov.it/it/opendata/dataset/progetti_esteso_fsc_2021-2027/",
         "https://opencoesione.gov.it/it/opendata/dataset/progetti_esteso_fesr_2021-2027/"
-      ]
+      ],
+      "adapter": "opencoesione_datigov",
+      "max_results_per_year": 500,
+      "connector_notes": "OpenCoesione blocks GitHub-hosted US runners. Use official national catalog dati.gov.it for discovery and update dates, while preserving the original opencoesione.gov.it URL as primary source."
     },
     {
       "name": "Ragioneria Generale dello Stato · BDAP",
