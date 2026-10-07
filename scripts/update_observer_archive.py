@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 from __future__ import annotations
+
+# MAINTENANCE: Before changing an existing OSSERVATORI connector, read docs/_observer_source_resolution_registry.md
+# Preserve documented adapters/fallbacks and update the registry whenever connector behavior changes.
 from email.utils import parsedate_to_datetime
 import argparse, asyncio, gzip, hashlib, json, re, ssl, urllib.parse, urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
