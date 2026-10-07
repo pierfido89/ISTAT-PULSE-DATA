@@ -1040,6 +1040,115 @@ def snam_sitemap_candidates(domains,year=2026,limit=420):
 
 
 
+def mim_google_news_candidates(year=2026,limit=500):
+    """Permanent MIM connector for GitHub runners.
+    mim.gov.it blocks GitHub-hosted runners with HTTP 403, including RSS,
+    sitemap and Liferay headless endpoints. Google News RSS is used only as
+    transport for title/date discovery; every item is decoded back to the
+    official publisher URL and only mim.gov.it / istruzione.it URLs are kept.
+    """
+    out=[]; seen=set(); rss_items=[]
+
+    periods=[]
+    for month in range(1,13):
+        start_date=f"{year}-{month:02d}-01"
+        if month==12:
+            end_date=f"{year+1}-01-01"
+        else:
+            end_date=f"{year}-{month+1:02d}-01"
+        periods.append((start_date,end_date))
+
+    queries=[]
+    for start_date,end_date in periods:
+        queries.extend([
+            f"site:mim.gov.it after:{start_date} before:{end_date}",
+            f"site:istruzione.it after:{start_date} before:{end_date}",
+        ])
+
+    seen_rss=set()
+    for q in queries:
+        url="https://news.google.com/rss/search?"+urllib.parse.urlencode({
+            "q":q,"hl":"it","gl":"IT","ceid":"IT:it"
+        })
+        try:
+            raw,_,_=fetch(url,timeout=12,max_bytes=2200000)
+            root=ET.fromstring(raw.decode("utf-8","ignore"))
+        except Exception:
+            continue
+        for item in root.findall(".//item"):
+            title=(item.findtext("title") or "").strip()
+            link=(item.findtext("link") or "").strip()
+            pub=(item.findtext("pubDate") or "").strip()
+            source=item.find("source")
+            source_name=(source.text or "").strip() if source is not None else ""
+            if not title or not link or not pub:
+                continue
+            source_low=(source_name+" "+title).lower()
+            if not any(k in source_low for k in (
+                "istruzione","mim.gov","ministero dell'istruzione","ministero dell’istruzione"
+            )):
+                continue
+            try:
+                dt=parsedate_to_datetime(pub)
+                if dt.tzinfo is None: dt=dt.replace(tzinfo=timezone.utc)
+                dt=dt.astimezone(timezone.utc)
+            except Exception:
+                continue
+            if dt.year!=year:
+                continue
+            key=(title,dt.date().isoformat())
+            if key in seen_rss:
+                continue
+            seen_rss.add(key)
+            rss_items.append((title,link,dt))
+
+    sorted_items=sorted(rss_items,key=lambda x:x[2],reverse=True)
+    decoded_by_link={}
+    if gnewsdecoder is not None and sorted_items:
+        try:
+            links=[item[1] for item in sorted_items]
+            batch=gnewsdecoder(links,interval=0.10,timeout=20.0)
+            if isinstance(batch,list):
+                for link,result in zip(links,batch):
+                    if isinstance(result,dict):
+                        decoded_by_link[link]=result
+            elif isinstance(batch,dict) and len(links)==1:
+                decoded_by_link[links[0]]=batch
+        except Exception as e:
+            print(f"MIM Google News decoder batch error: {type(e).__name__}: {e}",flush=True)
+
+    misses=0
+    for title,gn_link,pub in sorted_items:
+        decoded=decoded_by_link.get(gn_link)
+        if not isinstance(decoded,dict) or not decoded.get("success"):
+            misses+=1
+            continue
+        official=(decoded.get("decoded_url") or "").strip()
+        host=canonical_host(official)
+        if not (
+            host=="mim.gov.it" or host.endswith(".mim.gov.it") or
+            host=="istruzione.it" or host.endswith(".istruzione.it")
+        ):
+            continue
+        official=official.split("#",1)[0]
+        if official in seen:
+            continue
+        seen.add(official)
+        clean_title=re.sub(
+            r"\s+-\s+(?:MIM|Ministero dell['’]Istruzione e del Merito|Ministero dell['’]Istruzione)\s*$",
+            "",title,flags=re.I
+        ).strip()
+        out.append((clean_title or title,official,pub))
+        if len(out)>=limit:
+            break
+
+    print(
+        f"MIM Google News RSS candidates: {len(out)} / indexed={len(rss_items)} / decode_misses={misses}",
+        flush=True
+    )
+    return out
+
+
 def mim_datigov_candidates(year=2026,limit=500):
     """Official fallback for MIM through dati.gov.it when mim.gov.it blocks
     GitHub-hosted runners. Crawl the national catalog, retain dataset pages that
@@ -1469,7 +1578,11 @@ def process_source(src, now):
                 candidates.setdefault(url,title)
                 listing_dates[url]=(title,pub_date)
 
-        if src.get("adapter")=="mim_datigov":
+        if src.get("adapter") in {"mim_datigov","mim_google_news_rss"}:
+            for title,url,pub_date in mim_google_news_candidates(year,max(500,source_limit)):
+                candidates.setdefault(url,title)
+                listing_dates[url]=(title,pub_date)
+            # Keep dati.gov.it as a secondary official fallback for MIM datasets.
             for title,url,pub_date in mim_datigov_candidates(year,max(500,source_limit)):
                 candidates.setdefault(url,title)
                 listing_dates[url]=(title,pub_date)
