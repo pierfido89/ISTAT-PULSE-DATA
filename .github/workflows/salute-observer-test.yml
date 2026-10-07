@@ -31,10 +31,19 @@ jobs:
             "https://www.salute.gov.it/new/it/rss/comunicati-stampa/"
           do
             echo "=== $u"
+            rm -f /tmp/h /tmp/b
             curl -L -A "Mozilla/5.0" -sS -D /tmp/h -o /tmp/b "$u"
-            head -n 15 /tmp/h
+            head -n 15 /tmp/h 2>/dev/null
             echo "BYTES=$(wc -c </tmp/b 2>/dev/null)"
-            grep -oiE 'href=["'\'''][^"'\''']*(rss|feed)[^"'\''']*["'\''']' /tmp/b 2>/dev/null | head -n 20
+            python - <<'PY'
+import re
+from pathlib import Path
+p=Path("/tmp/b")
+if p.exists():
+    s=p.read_text(errors="ignore")
+    for m in re.findall(r'href=["\'']([^"\'']*(?:rss|feed)[^"\'']*)["\'']',s,re.I)[:20]:
+        print("RSS_HREF",m)
+PY
             head -c 300 /tmp/b 2>/dev/null | tr '\n' ' '; echo
           done
       - name: Test Salute only
