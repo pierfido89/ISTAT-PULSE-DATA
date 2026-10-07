@@ -69,5 +69,25 @@ jobs:
               print('PUB',item.findtext('pubDate'))
               print('DESC',item.findtext('description'))
           PY
+      - name: Inspect DuckDuckGo discovery
+        run: |
+          python - <<'PY'
+          import urllib.parse, urllib.request
+          from bs4 import BeautifulSoup
+          q='site:salute.gov.it/new/it/comunicato-stampa/ "Data del comunicato" 2026'
+          u='https://html.duckduckgo.com/html/?'+urllib.parse.urlencode({'q':q})
+          req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0'})
+          with urllib.request.urlopen(req,timeout=20) as r:
+              raw=r.read(1000000)
+          print('BYTES',len(raw))
+          soup=BeautifulSoup(raw.decode('utf-8','ignore'),'html.parser')
+          for res in soup.select('.result')[:25]:
+              a=res.select_one('a.result__a')
+              if not a: continue
+              print('TITLE',a.get_text(' ',strip=True))
+              print('LINK',a.get('href'))
+              sn=res.select_one('.result__snippet')
+              print('SNIP',sn.get_text(' ',strip=True) if sn else '')
+          PY
       - name: Test Salute only
         run: python scripts/update_observer_archive.py --only "Ministero della Salute"
