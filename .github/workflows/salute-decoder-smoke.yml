@@ -1,0 +1,26 @@
+name: Salute Decoder Smoke
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ feat/news-engine ]
+    paths:
+      - '.github/workflows/salute-decoder-smoke.yml'
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'googlenewsdecoder @ git+https://github.com/SSujitX/google-news-url-decoder.git@d38ddbdd510561859da0dae0c1176e3a2676c159'
+      - name: Decode one Salute item
+        run: |
+          python - <<'PY'
+          import googlenewsdecoder
+          from googlenewsdecoder import gnewsdecoder
+          print("VERSION",googlenewsdecoder.__version__)
+          url="https://news.google.com/rss/articles/CBMixAFBVV95cUxQZ0JYWG1ROHd3TUZEQnQ5NHBoZ1dIVVo0ZjJ5UVk0Y2owRXFqUFF2Q0xySU4xMXFkUk9KcllBZF9YaXlOWmNOdmprMjZFTHpVNVltTEFRdWZ2SFhFazJGem1KMGd3VVFZUHExaFpkYzVsQ3BLN280bUxId1A1aFIxalBBLU9BcUtvNG1UcWhSQVRvbXZxNnM0OWppbXVmMkdxMmZzVVhuWDFaaXVmNWVlU3FhWGhPV1Bod2d0NWlJN3JkU0VO?oc=5"
+          print(gnewsdecoder(url, interval=0.1, timeout=20.0))
+          PY
