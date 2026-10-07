@@ -24,10 +24,14 @@ STAT_TERMS=("dati","statistic","rapporto","osservatorio","indagine","rilevazione
 def fetch(url, timeout=20, max_bytes=1200000):
     req=urllib.request.Request(url,headers={"User-Agent":UA,"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.6"})
     host=canonical_host(url)
-    # SINAB currently serves a broken/incomplete certificate chain to GitHub
-    # runners. Keep the exception tightly scoped to sinab.it; HTTPS remains in
-    # use and certificate verification stays enabled for every other source.
-    ctx=ssl._create_unverified_context() if (host=="sinab.it" or host.endswith(".sinab.it")) else None
+    # SINAB and MIT currently serve broken/incomplete certificate chains to
+    # GitHub runners. Keep the exception tightly scoped to these hosts; HTTPS
+    # remains in use and certificate verification stays enabled everywhere else.
+    ssl_relaxed = (
+        host=="sinab.it" or host.endswith(".sinab.it") or
+        host=="mit.gov.it" or host.endswith(".mit.gov.it")
+    )
+    ctx=ssl._create_unverified_context() if ssl_relaxed else None
     with urllib.request.urlopen(req,timeout=timeout,context=ctx) as r:
         return r.read(max_bytes),r.geturl(),r.headers.get("Content-Type","")
 
