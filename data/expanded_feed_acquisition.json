@@ -1,0 +1,64 @@
+{
+  "generated_at": "2026-10-08T07:42:28.780358+00:00",
+  "successful_connectors": 3,
+  "failed_connectors": 2,
+  "results": [
+    {
+      "institution": "MIMIT",
+      "id": "mimit_carburanti_prezzi",
+      "url": "https://www.mimit.gov.it/images/exportCSV/prezzo_alle_8.csv",
+      "kind": "csv",
+      "frequency": "daily",
+      "http_status": 200,
+      "content_type": "text/csv",
+      "bytes": 3937624,
+      "sha256": "faf79e6d40046c11095fb1a4dc21734f38e2ff5ae8196de6e90ed0c13aa581ca",
+      "checked_at": "2026-10-08T07:42:21.101409+00:00",
+      "status": "ok",
+      "header": "Estrazione del 2026-10-07",
+      "snapshot": "data/expanded_feeds/mimit_carburanti_prezzi.csv"
+    },
+    {
+      "institution": "MIMIT",
+      "id": "mimit_carburanti_impianti",
+      "url": "https://www.mimit.gov.it/images/exportCSV/anagrafica_impianti_attivi.csv",
+      "kind": "csv",
+      "frequency": "daily",
+      "http_status": 200,
+      "content_type": "text/csv",
+      "bytes": 3574138,
+      "sha256": "6c4b67b8ea8a0f9a95f9721f8f0ce5e8783221f933d2d8468ed705065052bcfe",
+      "checked_at": "2026-10-08T07:42:26.201142+00:00",
+      "status": "ok",
+      "header": "Estrazione del 2026-10-07",
+      "snapshot": "data/expanded_feeds/mimit_carburanti_impianti.csv"
+    },
+    {
+      "institution": "INGV",
+      "id": "ingv_cpti15",
+      "url": "https://emidius.mi.ingv.it/services/italy/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=italy:CPTI15&maxFeatures=50000&outputFormat=application%2Fjson",
+      "kind": "xml_or_geojson",
+      "frequency": "source_update",
+      "http_status": 200,
+      "content_type": "text/xml",
+      "bytes": 422,
+      "sha256": "944b5f5b884130917a6591ea38921ced576f96efd2014003ced4c0c59290d305",
+      "checked_at": "2026-10-08T07:42:27.250747+00:00",
+      "status": "ok",
+      "format_detected": "xml",
+      "snapshot": "data/expanded_feeds/ingv_cpti15.dat"
+    }
+  ],
+  "failures": [
+    {
+      "institution": "Banca d'Italia",
+      "id": "banca_italia_bam",
+      "error": "RuntimeError: banca_italia_bam: ZIP contains no CSV"
+    },
+    {
+      "institution": "INAIL",
+      "id": "inail_infortuni_mensili",
+      "error": "RuntimeError: INAIL Abruzzo: non-JSON response"
+    }
+  ]
+}
