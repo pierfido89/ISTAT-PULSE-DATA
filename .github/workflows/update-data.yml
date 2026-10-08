@@ -63,6 +63,9 @@ jobs:
       - name: Publish observed measurements independently from current-year news
         run: python scripts/merge_pulse_observations.py
 
+      - name: Preserve expanded permanent connectors in source catalog
+        run: python scripts/merge_expanded_sources_catalog.py
+
       - name: Generate A misura di Comune territorial PULSE archive
         run: python scripts/generate_amc_events.py
 
