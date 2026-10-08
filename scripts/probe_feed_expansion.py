@@ -24,9 +24,9 @@ REGISTRY = ROOT / "data" / "feed_expansion_registry.json"
 STATUS = ROOT / "data" / "feed_expansion_status.json"
 
 UA = "ISTAT-PULSE-feed-probe/1.0 (+https://github.com/pierfido89/ISTAT-PULSE)"
-TIMEOUT = 25
-MAX_DISCOVERED = 12
-MAX_VERIFY = 4
+TIMEOUT = 10
+MAX_DISCOVERED = 8
+MAX_VERIFY = 3
 
 MACHINE_EXTENSIONS = (
     ".csv", ".tsv", ".json", ".geojson", ".xml", ".rdf",
@@ -230,13 +230,13 @@ def source_probe(source: dict) -> dict:
 
     # Keep probes bounded: permanent connector logic should be deterministic and
     # respectful of source infrastructure.
-    for page in pages[:10]:
+    for page in pages[:5]:
         result = discover_from_page(page, domains)
         checks.append({"kind": "discovery", **result})
         for item in result.get("links", []) + result.get("verified_links", []):
             if item.get("ok"):
                 verified_resources.append(item)
-        if len(verified_resources) >= 2:
+        if len(verified_resources) >= 1:
             break
         time.sleep(0.12)
 
@@ -271,7 +271,7 @@ def main() -> None:
         raise RuntimeError(f"Expected 39 feed candidates, found {len(sources)}")
 
     results_by_name: dict[str, dict] = {}
-    with ThreadPoolExecutor(max_workers=8) as pool:
+    with ThreadPoolExecutor(max_workers=12) as pool:
         futures = {
             pool.submit(source_probe, source): source["institution"]
             for source in sources
