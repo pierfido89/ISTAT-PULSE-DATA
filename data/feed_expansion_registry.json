@@ -93,26 +93,33 @@
       "domains": [
         "agcom.it"
       ],
-      "strategy": "official_catalog_discovery",
+      "strategy": "quarterly_xlsx_publication",
       "hints": [
-        "open data",
-        "osservatorio",
         "xlsx",
-        "csv"
+        "open data",
+        "osservatorio comunicazioni",
+        "trimestrale"
+      ],
+      "entrypoints": [
+        "https://www.agcom.it/pubblicazioni/osservatori/osservatorio-sulle-comunicazioni-n-2-2026"
       ]
     },
     {
       "institution": "ANAC",
       "domains": [
-        "anticorruzione.it"
+        "anticorruzione.it",
+        "dati.anticorruzione.it"
       ],
-      "strategy": "official_catalog_discovery",
+      "strategy": "official_open_data_portal",
       "hints": [
-        "open data",
-        "API",
-        "dataset",
+        "BDNCP",
+        "csv",
         "json",
-        "csv"
+        "contratti pubblici",
+        "mensile"
+      ],
+      "entrypoints": [
+        "https://dati.anticorruzione.it/opendata"
       ]
     },
     {
@@ -180,11 +187,18 @@
       "domains": [
         "covip.it"
       ],
-      "strategy": "official_structured_publication_discovery",
+      "strategy": "stable_open_data_catalog",
       "hints": [
-        "statistiche",
+        "json",
+        "csv",
         "xlsx",
-        "csv"
+        "rendimenti",
+        "relazione annuale",
+        "previdenza complementare"
+      ],
+      "entrypoints": [
+        "https://www.covip.it/open-data",
+        "https://www.covip.it/la-covip-e-la-sua-attivita/pubblicazioni-statistiche/relazioni-annuali"
       ]
     },
     {
@@ -218,15 +232,23 @@
       "institution": "DIPE · OpenCUP",
       "domains": [
         "opencup.gov.it",
-        "programmazioneeconomica.gov.it"
+        "programmazioneeconomica.gov.it",
+        "api.sogei.it"
       ],
-      "strategy": "official_catalog_discovery",
+      "strategy": "rest_api_credentials_required",
       "hints": [
-        "open data",
-        "csv",
-        "json",
-        "API"
-      ]
+        "REST",
+        "JSON",
+        "CUP",
+        "registrazione richiesta"
+      ],
+      "entrypoints": [
+        "https://www.opencup.gov.it/portale/web/opencup/le-api-di-opencup"
+      ],
+      "endpoints": [
+        "https://api.sogei.it/rgs/opencup/o/extServiceApi/v1/opendataes/cup/J48C14000270006"
+      ],
+      "requires_credentials": true
     },
     {
       "institution": "ENAC",
@@ -365,12 +387,17 @@
       "domains": [
         "ivass.it"
       ],
-      "strategy": "official_structured_publication_discovery",
+      "strategy": "structured_statistical_publications",
       "hints": [
-        "statistiche",
-        "bollettino",
         "xlsx",
-        "csv"
+        "bollettino statistico",
+        "comunicazioni statistiche",
+        "annuale",
+        "trimestrale"
+      ],
+      "entrypoints": [
+        "https://www.ivass.it/pubblicazioni-e-statistiche/statistiche/comunicazioni-statistiche/",
+        "https://www.ivass.it/pubblicazioni-e-statistiche/pubblicazioni/relazione-annuale/2026/index.html"
       ]
     },
     {
