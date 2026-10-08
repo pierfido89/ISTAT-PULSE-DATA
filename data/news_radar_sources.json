@@ -3,6 +3,16 @@
   "purpose": "Hidden discovery radar only. Media sources are never shown as the public statistical source.",
   "feeds": [
     {
+      "name": "ISTAT - Aggiornamenti ufficiali",
+      "url": "https://www.istat.it/feed",
+      "primary_source": true
+    },
+    {
+      "name": "ISTAT - Comunicati stampa ufficiali",
+      "url": "https://www.istat.it/documenti/comunicato-stampa/feed",
+      "primary_source": true
+    },
+    {
       "name": "Google News - statistiche Italia",
       "url": "https://news.google.com/rss/search?q=Italia%20(dati%20OR%20statistiche%20OR%20rapporto%20OR%20record)%20when%3A1d&hl=it&gl=IT&ceid=IT%3Ait"
     },
