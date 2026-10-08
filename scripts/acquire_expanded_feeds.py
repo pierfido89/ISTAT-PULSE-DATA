@@ -13,8 +13,10 @@ import zipfile
 from datetime import datetime, timezone
 from io import BytesIO
 from pathlib import Path
+from urllib.parse import urljoin
 
 import requests
+from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "data" / "expanded_feeds"
@@ -50,19 +52,25 @@ SOURCES = [
     {
         "institution": "INGV",
         "id": "ingv_cpti15",
-        "url": "https://emidius.mi.ingv.it/services/italy/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=italy:CPTI15&maxFeatures=50000&outputFormat=application%2Fjson",
-        "kind": "xml_or_geojson",
+        "url": "https://emidius.mi.ingv.it/services/italy/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=italy:CPTI15&maxFeatures=50000&outputFormat=csv",
+        "kind": "csv",
         "frequency": "source_update",
     },
 ]
 
-INAIL_ENDPOINT = "https://dati.inail.it/api/OpenData/DatiConCadenzaMensileInfortuni"
-INAIL_REGIONS = [
-    "Abruzzo","Basilicata","Calabria","Campania","Emilia Romagna",
-    "Friuli Venezia Giulia","Lazio","Liguria","Lombardia","Marche",
-    "Molise","Piemonte","Puglia","Sardegna","Sicilia","Toscana",
-    "Trentino Alto Adige","Umbria","Valle d'Aosta","Veneto",
+INAIL_PAGES = [
+    {
+        "id": "inail_infortuni_mensili",
+        "url": "https://dati.inail.it/portale/it/dataset/infortuni-sul-lavoro/dati-con-cadenza-mensile/italia.html",
+        "label": "Infortuni sul lavoro · mensile · Italia",
+    },
+    {
+        "id": "inail_malattie_mensili",
+        "url": "https://dati.inail.it/portale/it/dataset/malattie-professionali/dati-con-cadenza-mensile/italia.html",
+        "label": "Malattie professionali · mensile · Italia",
+    },
 ]
+
 
 
 def sha256(raw: bytes) -> str:
@@ -91,11 +99,18 @@ def describe(source: dict, raw: bytes, response: requests.Response) -> dict:
     }
     if source["kind"] == "zip_csv":
         with zipfile.ZipFile(BytesIO(raw)) as archive:
-            csvs = [x for x in archive.namelist() if x.lower().endswith(".csv")]
-            record["files"] = csvs
-            record["file_count"] = len(csvs)
-            if not csvs:
-                raise RuntimeError(f"{source['id']}: ZIP contains no CSV")
+            files = [
+                x for x in archive.namelist()
+                if x and not x.endswith("/")
+            ]
+            record["files"] = files[:500]
+            record["file_count"] = len(files)
+            record["extensions"] = sorted({
+                Path(x).suffix.lower() or "(none)"
+                for x in files
+            })
+            if not files:
+                raise RuntimeError(f"{source['id']}: ZIP archive is empty")
     elif source["kind"] == "csv":
         head = raw[:5000].decode("utf-8", errors="replace")
         lines = [line for line in head.splitlines() if line.strip()]
@@ -127,36 +142,61 @@ def acquire_file_source(source: dict) -> dict:
     return record
 
 
-def acquire_inail() -> dict:
-    records = []
-    for region in INAIL_REGIONS:
-        raw, response = fetch(INAIL_ENDPOINT, params={"Regione": region})
-        text = raw.decode("utf-8", errors="replace").strip()
-        try:
-            payload = json.loads(text)
-        except json.JSONDecodeError as exc:
-            raise RuntimeError(f"INAIL {region}: non-JSON response") from exc
-        records.append({
-            "region": region,
-            "payload": payload,
-        })
+def discover_latest_inail_csv(page: dict) -> dict:
+    raw, response = fetch(page["url"])
+    soup = BeautifulSoup(raw, "html.parser")
+    candidates = []
+    for tag in soup.find_all("a", href=True):
+        href = tag.get("href", "").strip()
+        text = " ".join(tag.stripped_strings).strip().lower()
+        absolute = urljoin(response.url, href)
+        low = absolute.lower()
+        if "csv" in text or ".csv" in low or (
+            "opendata_files" in low and "csv" in low
+        ):
+            candidates.append(absolute)
+    if not candidates:
+        raise RuntimeError(f"{page['id']}: no official CSV link found")
+
+    # Preserve page order: INAIL lists the current downloadable CSV resource first.
+    data_url = candidates[0]
+    data, data_response = fetch(data_url)
+    if len(data) < 1000:
+        raise RuntimeError(f"{page['id']}: CSV payload unexpectedly small")
+
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    target = OUT_DIR / "inail_infortuni_mensili.json"
-    encoded = json.dumps(records, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
-    target.write_bytes(encoded)
-    return {
+    suffix = ".zip" if zipfile.is_zipfile(BytesIO(data)) else ".csv"
+    target = OUT_DIR / f"{page['id']}{suffix}"
+    target.write_bytes(data)
+
+    record = {
         "institution": "INAIL",
-        "id": "inail_infortuni_mensili",
-        "url": INAIL_ENDPOINT,
-        "kind": "json_api",
+        "id": page["id"],
+        "label": page["label"],
+        "catalog_url": page["url"],
+        "url": data_response.url,
+        "kind": "zip_csv" if suffix == ".zip" else "csv",
         "frequency": "monthly",
-        "regions_queried": len(INAIL_REGIONS),
-        "bytes": len(encoded),
-        "sha256": sha256(encoded),
+        "http_status": data_response.status_code,
+        "content_type": data_response.headers.get("content-type", "").split(";")[0],
+        "bytes": len(data),
+        "sha256": sha256(data),
         "snapshot": str(target.relative_to(ROOT)),
         "checked_at": datetime.now(timezone.utc).isoformat(),
         "status": "ok",
     }
+    if suffix == ".zip":
+        with zipfile.ZipFile(BytesIO(data)) as archive:
+            files = [x for x in archive.namelist() if x and not x.endswith("/")]
+            record["files"] = files[:200]
+            record["file_count"] = len(files)
+            if not files:
+                raise RuntimeError(f"{page['id']}: empty ZIP")
+    return record
+
+
+def acquire_inail() -> list[dict]:
+    return [discover_latest_inail_csv(page) for page in INAIL_PAGES]
 
 
 def main() -> None:
@@ -176,13 +216,14 @@ def main() -> None:
             print(f"FAIL {source['institution']} / {source['id']}: {exc}")
 
     try:
-        result = acquire_inail()
-        results.append(result)
-        print(f"OK INAIL: {result['bytes']:,} bytes")
+        inail_results = acquire_inail()
+        results.extend(inail_results)
+        for result in inail_results:
+            print(f"OK INAIL / {result['id']}: {result['bytes']:,} bytes")
     except Exception as exc:
         failures.append({
             "institution": "INAIL",
-            "id": "inail_infortuni_mensili",
+            "id": "inail_monthly_open_data",
             "error": f"{type(exc).__name__}: {exc}",
         })
         print(f"FAIL INAIL: {exc}")
