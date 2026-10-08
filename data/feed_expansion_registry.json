@@ -45,12 +45,19 @@
       "domains": [
         "adm.gov.it"
       ],
-      "strategy": "official_catalog_discovery",
+      "strategy": "official_catalog_plus_datigov",
       "hints": [
         "open data",
-        "statistiche",
+        "xlsx",
+        "ods",
         "csv",
-        "xlsx"
+        "statistiche",
+        "dati.gov.it"
+      ],
+      "entrypoints": [
+        "https://www.adm.gov.it/portale/altri-contenuti-accessibilita-e-catalogo-dati-metadati",
+        "https://www.adm.gov.it/portale/dati-aggregati-attivita-amministrativa",
+        "https://www.adm.gov.it/portale/dati-sui-pagamenti-2026"
       ]
     },
     {
@@ -226,11 +233,19 @@
       "domains": [
         "enac.gov.it"
       ],
-      "strategy": "official_structured_publication_discovery",
+      "strategy": "tableau_export_discovery",
       "hints": [
-        "dati traffico",
+        "traffico aereo",
+        "excel",
         "xlsx",
-        "csv"
+        "tableau",
+        "passeggeri",
+        "cargo",
+        "movimenti"
+      ],
+      "entrypoints": [
+        "https://www.enac.gov.it/aeroporti/statistiche/dashboarddatiditraffico/",
+        "https://www.enac.gov.it/views/EAE-DatiTraffico-VersioneGrafica/DATITRAFFICOHOMEPAGE?:showVizHome=no"
       ]
     },
     {
@@ -437,14 +452,23 @@
       "institution": "Ministero dell'Università e della Ricerca",
       "domains": [
         "mur.gov.it",
-        "ustat.mur.gov.it"
+        "ustat.mur.gov.it",
+        "dati-ustat.mur.gov.it",
+        "dati.ustat.miur.it"
       ],
-      "strategy": "official_catalog_discovery",
+      "strategy": "known_open_data_catalog",
       "hints": [
-        "USTAT",
         "open data",
         "csv",
-        "xlsx"
+        "xlsx",
+        "dataset",
+        "università",
+        "AFAM"
+      ],
+      "entrypoints": [
+        "https://ustat.mur.gov.it/opendata/",
+        "https://dati-ustat.mur.gov.it/dataset/2025-2029-personale-universitario",
+        "https://dati-ustat.mur.gov.it/dataset/serie-storica-sul-personale-universitario"
       ]
     },
     {
