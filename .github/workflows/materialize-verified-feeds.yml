@@ -1,0 +1,64 @@
+name: Materialize Verified Feeds
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '7 6 * * *'
+  push:
+    branches: [ main ]
+    paths:
+      - 'data/feed_expansion_status.json'
+      - 'scripts/materialize_verified_feeds.py'
+      - '.github/workflows/materialize-verified-feeds.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pulse-materialize-verified-feeds
+  cancel-in-progress: true
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check requests
+
+      - name: Materialize all verified structured feeds
+        run: python scripts/materialize_verified_feeds.py
+
+      - name: Validate materialized feeds
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data=json.loads(Path("data/expanded_verified_manifest.json").read_text(encoding="utf-8"))
+          assert data["verified_sources_seen"] >= 1
+          assert data["materialized_sources"] >= 1
+          print("materialized", data["materialized_sources"])
+          print("failed", data["failed_sources"])
+          for row in data["results"]:
+              print("OK", row["institution"], row["detected_format"], row["bytes"])
+          for row in data["failures"]:
+              print("FAIL", row["institution"])
+          PY
+
+      - name: Persist last-known-good verified feeds
+        run: |
+          git config user.name "ISTAT PULSE Data Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/expanded_verified_manifest.json data/expanded_verified/
+          if git diff --cached --quiet; then
+            echo "No verified feed changes."
+          else
+            git commit -m "data: refresh verified expanded feeds"
+            git pull --rebase origin main
+            git push
+          fi
