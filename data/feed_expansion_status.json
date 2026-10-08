@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-10-08T07:36:16.325249+00:00",
+  "generated_at": "2026-10-08T07:52:17.049265+00:00",
   "policy": {
     "official_only": true,
     "no_scraped_search_results_as_data": true,
@@ -27,9 +27,9 @@
   },
   "candidate_count": 39,
   "status_counts": {
-    "official_portal_reachable": 15,
-    "structured_endpoint_verified": 8,
-    "blocked": 16
+    "official_portal_reachable": 19,
+    "structured_endpoint_verified": 7,
+    "blocked": 13
   },
   "sources": [
     {
@@ -120,67 +120,170 @@
     },
     {
       "institution": "Agenzia delle Dogane e dei Monopoli",
-      "strategy": "official_catalog_discovery",
-      "status": "official_portal_reachable",
+      "strategy": "official_catalog_plus_datigov",
+      "status": "structured_endpoint_verified",
       "domains": [
         "adm.gov.it"
       ],
-      "verified_resources": [],
+      "verified_resources": [
+        {
+          "url": "https://www.adm.gov.it/portale/documents/20182/252155431/PAGAMENTI+SECONDO+TRIMESTRE+2026.xlsx/285a06f1-5e63-f0bc-6ab9-d01f44792a62?t=1785754652476",
+          "final_url": "https://www.adm.gov.it/portale/documents/20182/252155431/PAGAMENTI+SECONDO+TRIMESTRE+2026.xlsx/285a06f1-5e63-f0bc-6ab9-d01f44792a62?t=1785754652476",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "content_length": "194241",
+          "reason": "machine_readable_data"
+        },
+        {
+          "url": "https://www.adm.gov.it/portale/documents/20182/252155431/pagamenti+primo+trimestre+2026.xlsx/9047b2a6-ab5c-eb1c-7080-f4cc8da84abb?t=1785338800678",
+          "final_url": "https://www.adm.gov.it/portale/documents/20182/252155431/pagamenti+primo+trimestre+2026.xlsx/9047b2a6-ab5c-eb1c-7080-f4cc8da84abb?t=1785338800678",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "content_length": "219085",
+          "reason": "machine_readable_data"
+        }
+      ],
       "checks": [
         {
           "kind": "discovery",
-          "url": "https://adm.gov.it",
-          "final_url": "https://www.adm.gov.it/portale/home",
+          "url": "https://www.adm.gov.it/portale/altri-contenuti-accessibilita-e-catalogo-dati-metadati",
+          "final_url": "https://www.adm.gov.it/portale/altri-contenuti-accessibilita-e-catalogo-dati-metadati",
           "ok": true,
           "http_status": 200,
           "content_type": "text/html",
           "reason": "official_page_scanned",
           "candidate_links": [
-            "https://www.adm.gov.it/portale/documents/20182/266178702/CS20260930-ADM-CPB.pdf/2edaea59-9982-3318-da07-5c50e7c43181?version=1.0&t=1790758616215&download=true"
+            "https://www.adm.gov.it/portale/altri-contenuti-accessibilita-e-catalogo-dati-metadati",
+            "https://www.adm.gov.it/portale/altri-contenuti-accessibilita-e-catalogo-dati-metadati#main-content",
+            "https://www.adm.gov.it/portale/altri-contenuti-accessibilita-e-catalogo-dati-metadati#navbar-menu",
+            "https://www.adm.gov.it/portale/altri-contenuti-accessibilita-e-catalogo-dati-metadati#wrapper",
+            "https://www.adm.gov.it/portale/c/portal/update_language?p_l_id=1919876&redirect=%2Fportale%2Faltri-contenuti-accessibilita-e-catalogo-dati-metadati&languageId=en_US"
           ],
           "verified_links": [
             {
-              "url": "https://www.adm.gov.it/portale/documents/20182/266178702/CS20260930-ADM-CPB.pdf/2edaea59-9982-3318-da07-5c50e7c43181?version=1.0&t=1790758616215&download=true",
-              "final_url": "https://www.adm.gov.it/portale/documents/20182/266178702/CS20260930-ADM-CPB.pdf/2edaea59-9982-3318-da07-5c50e7c43181?version=1.0&t=1790758616215&download=true",
+              "url": "https://www.adm.gov.it/portale/altri-contenuti-accessibilita-e-catalogo-dati-metadati",
+              "final_url": "https://www.adm.gov.it/portale/altri-contenuti-accessibilita-e-catalogo-dati-metadati",
               "ok": false,
               "http_status": 200,
-              "content_type": "application/pdf",
-              "content_length": "141946",
+              "content_type": "text/html",
+              "content_length": "16485",
+              "reason": "html_or_unknown"
+            },
+            {
+              "url": "https://www.adm.gov.it/portale/altri-contenuti-accessibilita-e-catalogo-dati-metadati#main-content",
+              "final_url": "https://www.adm.gov.it/portale/altri-contenuti-accessibilita-e-catalogo-dati-metadati#main-content",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "16485",
+              "reason": "html_or_unknown"
+            },
+            {
+              "url": "https://www.adm.gov.it/portale/altri-contenuti-accessibilita-e-catalogo-dati-metadati#navbar-menu",
+              "final_url": "https://www.adm.gov.it/portale/altri-contenuti-accessibilita-e-catalogo-dati-metadati#navbar-menu",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "16485",
               "reason": "html_or_unknown"
             }
           ]
         },
         {
           "kind": "discovery",
-          "url": "https://adm.gov.it/opendata",
-          "ok": false,
-          "reason": "HTTPError: 403 Client Error: Forbidden for url: https://adm.gov.it/opendata",
-          "candidate_links": [],
-          "verified_links": []
+          "url": "https://www.adm.gov.it/portale/dati-aggregati-attivita-amministrativa",
+          "final_url": "https://www.adm.gov.it/portale/dati-aggregati-attivita-amministrativa",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "text/html",
+          "reason": "official_page_scanned",
+          "candidate_links": [
+            "https://www.adm.gov.it/portale/c/portal/update_language?p_l_id=1912135&redirect=%2Fportale%2Fdati-aggregati-attivita-amministrativa&languageId=en_US",
+            "https://www.adm.gov.it/portale/dati-aggregati-attivita-amministrativa",
+            "https://www.adm.gov.it/portale/dati-aggregati-attivita-amministrativa#main-content",
+            "https://www.adm.gov.it/portale/dati-aggregati-attivita-amministrativa#navbar-menu",
+            "https://www.adm.gov.it/portale/dati-aggregati-attivita-amministrativa#wrapper",
+            "https://www.adm.gov.it/portale/dichiarazioni-sostitutive"
+          ],
+          "verified_links": [
+            {
+              "url": "https://www.adm.gov.it/portale/c/portal/update_language?p_l_id=1912135&redirect=%2Fportale%2Fdati-aggregati-attivita-amministrativa&languageId=en_US",
+              "final_url": "https://www.adm.gov.it/portale/en/dati-aggregati-attivita-amministrativa",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "18161",
+              "reason": "html_or_unknown"
+            },
+            {
+              "url": "https://www.adm.gov.it/portale/dati-aggregati-attivita-amministrativa",
+              "final_url": "https://www.adm.gov.it/portale/en/dati-aggregati-attivita-amministrativa",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "18161",
+              "reason": "html_or_unknown"
+            },
+            {
+              "url": "https://www.adm.gov.it/portale/dati-aggregati-attivita-amministrativa#main-content",
+              "final_url": "https://www.adm.gov.it/portale/en/dati-aggregati-attivita-amministrativa#main-content",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "18161",
+              "reason": "html_or_unknown"
+            }
+          ]
         },
         {
           "kind": "discovery",
-          "url": "https://adm.gov.it/open-data",
-          "ok": false,
-          "reason": "HTTPError: 403 Client Error: Forbidden for url: https://adm.gov.it/open-data",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://adm.gov.it/dati",
-          "ok": false,
-          "reason": "HTTPError: 403 Client Error: Forbidden for url: https://adm.gov.it/dati",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://adm.gov.it/dataset",
-          "ok": false,
-          "reason": "HTTPError: 403 Client Error: Forbidden for url: https://adm.gov.it/dataset",
-          "candidate_links": [],
-          "verified_links": []
+          "url": "https://www.adm.gov.it/portale/dati-sui-pagamenti-2026",
+          "final_url": "https://www.adm.gov.it/portale/en/dati-sui-pagamenti-2026",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "text/html",
+          "reason": "official_page_scanned",
+          "candidate_links": [
+            "https://www.adm.gov.it/portale/documents/20182/252155431/PAGAMENTI+SECONDO+TRIMESTRE+2026.xlsx/285a06f1-5e63-f0bc-6ab9-d01f44792a62?t=1785754652476",
+            "https://www.adm.gov.it/portale/documents/20182/252155431/pagamenti+primo+trimestre+2026.xlsx/9047b2a6-ab5c-eb1c-7080-f4cc8da84abb?t=1785338800678",
+            "https://www.adm.gov.it/portale/en/archivio-dati-sui-pagamenti",
+            "https://www.adm.gov.it/portale/en/c/portal/update_language?p_l_id=7522253&redirect=%2Fportale%2Fen%2Fdati-sui-pagamenti-2026&languageId=it_IT",
+            "https://www.adm.gov.it/portale/en/dati-sui-pagamenti",
+            "https://www.adm.gov.it/portale/en/dati-sui-pagamenti-2022",
+            "https://www.adm.gov.it/portale/en/dati-sui-pagamenti-2023",
+            "https://www.adm.gov.it/portale/en/dati-sui-pagamenti-2024"
+          ],
+          "verified_links": [
+            {
+              "url": "https://www.adm.gov.it/portale/documents/20182/252155431/PAGAMENTI+SECONDO+TRIMESTRE+2026.xlsx/285a06f1-5e63-f0bc-6ab9-d01f44792a62?t=1785754652476",
+              "final_url": "https://www.adm.gov.it/portale/documents/20182/252155431/PAGAMENTI+SECONDO+TRIMESTRE+2026.xlsx/285a06f1-5e63-f0bc-6ab9-d01f44792a62?t=1785754652476",
+              "ok": true,
+              "http_status": 200,
+              "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+              "content_length": "194241",
+              "reason": "machine_readable_data"
+            },
+            {
+              "url": "https://www.adm.gov.it/portale/documents/20182/252155431/pagamenti+primo+trimestre+2026.xlsx/9047b2a6-ab5c-eb1c-7080-f4cc8da84abb?t=1785338800678",
+              "final_url": "https://www.adm.gov.it/portale/documents/20182/252155431/pagamenti+primo+trimestre+2026.xlsx/9047b2a6-ab5c-eb1c-7080-f4cc8da84abb?t=1785338800678",
+              "ok": true,
+              "http_status": 200,
+              "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+              "content_length": "219085",
+              "reason": "machine_readable_data"
+            },
+            {
+              "url": "https://www.adm.gov.it/portale/en/archivio-dati-sui-pagamenti",
+              "final_url": "https://www.adm.gov.it/portale/en/archivio-dati-sui-pagamenti",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "16771",
+              "reason": "html_or_unknown"
+            }
+          ]
         }
       ]
     },
@@ -221,7 +324,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "23695",
+              "content_length": "23691",
               "reason": "html_or_unknown"
             }
           ]
@@ -263,21 +366,11 @@
     {
       "institution": "AgID",
       "strategy": "official_catalog_discovery",
-      "status": "structured_endpoint_verified",
+      "status": "official_portal_reachable",
       "domains": [
         "agid.gov.it"
       ],
-      "verified_resources": [
-        {
-          "url": "https://www.agid.gov.it/it/rss.xml",
-          "final_url": "https://www.agid.gov.it/it/rss.xml",
-          "ok": true,
-          "http_status": 200,
-          "content_type": "application/rss+xml",
-          "content_length": "92848",
-          "reason": "machine_readable"
-        }
-      ],
+      "verified_resources": [],
       "checks": [
         {
           "kind": "discovery",
@@ -296,11 +389,11 @@
             {
               "url": "https://www.agid.gov.it/it/rss.xml",
               "final_url": "https://www.agid.gov.it/it/rss.xml",
-              "ok": true,
+              "ok": false,
               "http_status": 200,
               "content_type": "application/rss+xml",
               "content_length": "92848",
-              "reason": "machine_readable"
+              "reason": "editorial_or_document_resource"
             },
             {
               "url": "https://www.agid.gov.it/it/ambiti-intervento/open-data",
@@ -321,6 +414,78 @@
               "reason": "html_or_unknown"
             }
           ]
+        },
+        {
+          "kind": "discovery",
+          "url": "https://agid.gov.it/opendata",
+          "ok": false,
+          "reason": "HTTPError: 404 Client Error: Not Found for url: https://www.agid.gov.it/opendata",
+          "candidate_links": [],
+          "verified_links": []
+        },
+        {
+          "kind": "discovery",
+          "url": "https://agid.gov.it/open-data",
+          "ok": false,
+          "reason": "HTTPError: 404 Client Error: Not Found for url: https://www.agid.gov.it/open-data",
+          "candidate_links": [],
+          "verified_links": []
+        },
+        {
+          "kind": "discovery",
+          "url": "https://agid.gov.it/dati",
+          "final_url": "https://www.agid.gov.it/it/ambiti-intervento/open-data",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "text/html",
+          "reason": "official_page_scanned",
+          "candidate_links": [
+            "https://www.agid.gov.it/it/rss.xml",
+            "https://www.agid.gov.it/it/dati/basi-dati-interesse-nazionale",
+            "https://www.agid.gov.it/it/dati/dati-territoriali",
+            "https://www.agid.gov.it/it/dati/formati-aperti",
+            "https://www.agid.gov.it/it/dati/formati-aperti/xbrl-standard-formato-elettronico-editabile",
+            "https://www.agid.gov.it/it/dati/vocabolari-controllati",
+            "https://www.agid.gov.it/it/search?search_api_fulltext=",
+            "https://www.agid.gov.it/sites/agid/files/2024-05/dt_cs_n.68_-_2013dig_-regole_tecniche_basi_dati_critiche_art_2bis_dl_179-2012_sito.pdf"
+          ],
+          "verified_links": [
+            {
+              "url": "https://www.agid.gov.it/it/rss.xml",
+              "final_url": "https://www.agid.gov.it/it/rss.xml",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "application/rss+xml",
+              "content_length": "92848",
+              "reason": "editorial_or_document_resource"
+            },
+            {
+              "url": "https://www.agid.gov.it/it/dati/basi-dati-interesse-nazionale",
+              "final_url": "https://www.agid.gov.it/it/dati/basi-dati-interesse-nazionale",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "",
+              "reason": "html_or_unknown"
+            },
+            {
+              "url": "https://www.agid.gov.it/it/dati/dati-territoriali",
+              "final_url": "https://www.agid.gov.it/it/dati/dati-territoriali",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "",
+              "reason": "html_or_unknown"
+            }
+          ]
+        },
+        {
+          "kind": "discovery",
+          "url": "https://agid.gov.it/dataset",
+          "ok": false,
+          "reason": "HTTPError: 404 Client Error: Not Found for url: https://www.agid.gov.it/dataset",
+          "candidate_links": [],
+          "verified_links": []
         }
       ]
     },
@@ -429,7 +594,7 @@
     {
       "institution": "ANFIA",
       "strategy": "official_structured_publication_discovery",
-      "status": "blocked",
+      "status": "official_portal_reachable",
       "domains": [
         "anfia.it"
       ],
@@ -438,16 +603,55 @@
         {
           "kind": "discovery",
           "url": "https://anfia.it",
-          "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='anfia.it', port=443): Max retries exceeded with url: / (Caused by NewConnectionError(\"HTTPSConnection(host='anfia.it', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))",
-          "candidate_links": [],
-          "verified_links": []
+          "final_url": "https://www.anfia.it/it/",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "text/html",
+          "reason": "official_page_scanned",
+          "candidate_links": [
+            "https://www.anfia.it/images/informativatrattamentodati_20260122.pdf",
+            "https://www.anfia.it/it/attivita/studi-e-statistiche/automobile-in-cifre/statistiche-italia/trade-automotive/export-import-dati-doganali-export-import-customs-data",
+            "https://www.anfia.it/it/attivita/studi-e-statistiche/dati-statistici/immatricolazioni/eu-efta",
+            "https://www.anfia.it/it/attivita/studi-e-statistiche/dati-statistici/immatricolazioni/italia",
+            "https://www.anfia.it/it/attivita/studi-e-statistiche/dati-statistici/miscellaneous",
+            "https://www.anfia.it/it/attivita/studi-e-statistiche/dati-statistici/miscellaneous/parco",
+            "https://www.anfia.it/it/attivita/studi-e-statistiche/dati-statistici/produzione"
+          ],
+          "verified_links": [
+            {
+              "url": "https://www.anfia.it/images/informativatrattamentodati_20260122.pdf",
+              "final_url": "https://www.anfia.it/images/informativatrattamentodati_20260122.pdf",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "application/pdf",
+              "content_length": "175289",
+              "reason": "editorial_or_document_resource"
+            },
+            {
+              "url": "https://www.anfia.it/it/attivita/studi-e-statistiche/automobile-in-cifre/statistiche-italia/trade-automotive/export-import-dati-doganali-export-import-customs-data",
+              "final_url": "https://www.anfia.it/it/attivita/studi-e-statistiche/automobile-in-cifre/statistiche-italia/trade-automotive/export-import-dati-doganali-export-import-customs-data",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "14897",
+              "reason": "html_or_unknown"
+            },
+            {
+              "url": "https://www.anfia.it/it/attivita/studi-e-statistiche/dati-statistici/immatricolazioni/eu-efta",
+              "final_url": "https://www.anfia.it/it/attivita/studi-e-statistiche/dati-statistici/immatricolazioni/eu-efta",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "17009",
+              "reason": "html_or_unknown"
+            }
+          ]
         },
         {
           "kind": "discovery",
           "url": "https://anfia.it/opendata",
           "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='anfia.it', port=443): Max retries exceeded with url: /opendata (Caused by NewConnectionError(\"HTTPSConnection(host='anfia.it', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))",
+          "reason": "HTTPError: 404 Client Error: Not Found for url: https://www.anfia.it/opendata",
           "candidate_links": [],
           "verified_links": []
         },
@@ -455,7 +659,7 @@
           "kind": "discovery",
           "url": "https://anfia.it/open-data",
           "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='anfia.it', port=443): Max retries exceeded with url: /open-data (Caused by NewConnectionError(\"HTTPSConnection(host='anfia.it', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))",
+          "reason": "HTTPError: 404 Client Error: Not Found for url: https://www.anfia.it/open-data",
           "candidate_links": [],
           "verified_links": []
         },
@@ -463,7 +667,7 @@
           "kind": "discovery",
           "url": "https://anfia.it/dati",
           "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='anfia.it', port=443): Max retries exceeded with url: /dati (Caused by NewConnectionError(\"HTTPSConnection(host='anfia.it', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))",
+          "reason": "HTTPError: 404 Client Error: Not Found for url: https://www.anfia.it/dati",
           "candidate_links": [],
           "verified_links": []
         },
@@ -471,7 +675,7 @@
           "kind": "discovery",
           "url": "https://anfia.it/dataset",
           "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='anfia.it', port=443): Max retries exceeded with url: /dataset (Caused by NewConnectionError(\"HTTPSConnection(host='anfia.it', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))",
+          "reason": "HTTPError: 404 Client Error: Not Found for url: https://www.anfia.it/dataset",
           "candidate_links": [],
           "verified_links": []
         }
@@ -610,7 +814,7 @@
           "http_status": 200,
           "content_type": "application/zip",
           "content_length": "722465",
-          "reason": "machine_readable"
+          "reason": "machine_readable_data"
         },
         {
           "url": "https://www.bancaditalia.it/footer/open-data/Open_Data_BdI.rdf",
@@ -619,7 +823,7 @@
           "http_status": 200,
           "content_type": "application/rdf+xml",
           "content_length": "12492",
-          "reason": "machine_readable"
+          "reason": "machine_readable_data"
         }
       ],
       "checks": [
@@ -631,7 +835,7 @@
           "http_status": 200,
           "content_type": "application/zip",
           "content_length": "722465",
-          "reason": "machine_readable"
+          "reason": "machine_readable_data"
         },
         {
           "kind": "discovery",
@@ -659,7 +863,7 @@
               "http_status": 200,
               "content_type": "application/rdf+xml",
               "content_length": "12492",
-              "reason": "machine_readable"
+              "reason": "machine_readable_data"
             },
             {
               "url": "https://infostat.bancaditalia.it/inquiry/home",
@@ -676,7 +880,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "14724",
+              "content_length": "14720",
               "reason": "html_or_unknown"
             }
           ]
@@ -747,7 +951,7 @@
           "kind": "discovery",
           "url": "https://covip.it",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='covip.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='covip.it', port=443) at 0x7f094dfc8ad0>, 'Connection to covip.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='covip.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='covip.it', port=443) at 0x7f639088cdd0>, 'Connection to covip.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -755,7 +959,7 @@
           "kind": "discovery",
           "url": "https://covip.it/opendata",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='covip.it', port=443): Max retries exceeded with url: /opendata (Caused by ConnectTimeoutError(<HTTPSConnection(host='covip.it', port=443) at 0x7f0944f907d0>, 'Connection to covip.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='covip.it', port=443): Max retries exceeded with url: /opendata (Caused by ConnectTimeoutError(<HTTPSConnection(host='covip.it', port=443) at 0x7f637cb27290>, 'Connection to covip.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -763,7 +967,7 @@
           "kind": "discovery",
           "url": "https://covip.it/open-data",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='covip.it', port=443): Max retries exceeded with url: /open-data (Caused by ConnectTimeoutError(<HTTPSConnection(host='covip.it', port=443) at 0x7f094efebbc0>, 'Connection to covip.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='covip.it', port=443): Max retries exceeded with url: /open-data (Caused by ConnectTimeoutError(<HTTPSConnection(host='covip.it', port=443) at 0x7f638c2d6480>, 'Connection to covip.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -771,7 +975,7 @@
           "kind": "discovery",
           "url": "https://covip.it/dati",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='covip.it', port=443): Max retries exceeded with url: /dati (Caused by ConnectTimeoutError(<HTTPSConnection(host='covip.it', port=443) at 0x7f094cd76960>, 'Connection to covip.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='covip.it', port=443): Max retries exceeded with url: /dati (Caused by ConnectTimeoutError(<HTTPSConnection(host='covip.it', port=443) at 0x7f638c057bc0>, 'Connection to covip.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -779,7 +983,7 @@
           "kind": "discovery",
           "url": "https://covip.it/dataset",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='covip.it', port=443): Max retries exceeded with url: /dataset (Caused by ConnectTimeoutError(<HTTPSConnection(host='covip.it', port=443) at 0x7f094c66e030>, 'Connection to covip.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='covip.it', port=443): Max retries exceeded with url: /dataset (Caused by ConnectTimeoutError(<HTTPSConnection(host='covip.it', port=443) at 0x7f637c4ded20>, 'Connection to covip.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         }
@@ -798,7 +1002,7 @@
           "kind": "discovery",
           "url": "https://crea.gov.it",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f094dfc9430>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f639088eea0>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -806,7 +1010,7 @@
           "kind": "discovery",
           "url": "https://crea.gov.it/opendata",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /opendata (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f0944f90fb0>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /opendata (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f637c93e450>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -814,7 +1018,7 @@
           "kind": "discovery",
           "url": "https://crea.gov.it/open-data",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /open-data (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f094cd76d50>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /open-data (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f638c31dcd0>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -822,7 +1026,7 @@
           "kind": "discovery",
           "url": "https://crea.gov.it/dati",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /dati (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f094cd754f0>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /dati (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f637c1e4dd0>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -830,7 +1034,7 @@
           "kind": "discovery",
           "url": "https://crea.gov.it/dataset",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /dataset (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f0944f900e0>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /dataset (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f6390acf560>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         }
@@ -1019,8 +1223,8 @@
     },
     {
       "institution": "ENAC",
-      "strategy": "official_structured_publication_discovery",
-      "status": "blocked",
+      "strategy": "tableau_export_discovery",
+      "status": "official_portal_reachable",
       "domains": [
         "enac.gov.it"
       ],
@@ -1028,41 +1232,57 @@
       "checks": [
         {
           "kind": "discovery",
-          "url": "https://enac.gov.it",
-          "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='enac.gov.it', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='enac.gov.it', port=443): Failed to resolve 'enac.gov.it' ([Errno -5] No address associated with hostname)\"))",
-          "candidate_links": [],
-          "verified_links": []
+          "url": "https://www.enac.gov.it/aeroporti/statistiche/dashboarddatiditraffico/",
+          "final_url": "https://www.enac.gov.it/aeroporti/statistiche/dashboarddatiditraffico/",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "text/html",
+          "reason": "official_page_scanned",
+          "candidate_links": [
+            "https://www.enac.gov.it/aeroporti/statistiche/dashboarddatiditraffico/",
+            "https://www.enac.gov.it/aeroporti/statistiche/dashboarddatiditraffico/#footer-wrapper",
+            "https://www.enac.gov.it/aeroporti/statistiche/dashboarddatiditraffico/#main-container",
+            "https://www.enac.gov.it/aeroporti/statistiche/dashboarddatiditraffico/#menu-principale",
+            "https://www.enac.gov.it/app/uploads/2025/07/2025-07-dati-traffico-guida-utente.pdf",
+            "https://www.enac.gov.it/en/aeroporti/statistiche/dashboarddatiditraffico/",
+            "https://www.enac.gov.it/open-data",
+            "https://www.enac.gov.it/open-data/"
+          ],
+          "verified_links": [
+            {
+              "url": "https://www.enac.gov.it/aeroporti/statistiche/dashboarddatiditraffico/",
+              "final_url": "https://www.enac.gov.it/aeroporti/statistiche/dashboarddatiditraffico/",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "",
+              "reason": "html_or_unknown"
+            },
+            {
+              "url": "https://www.enac.gov.it/aeroporti/statistiche/dashboarddatiditraffico/#footer-wrapper",
+              "final_url": "https://www.enac.gov.it/aeroporti/statistiche/dashboarddatiditraffico/#footer-wrapper",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "",
+              "reason": "html_or_unknown"
+            },
+            {
+              "url": "https://www.enac.gov.it/aeroporti/statistiche/dashboarddatiditraffico/#main-container",
+              "final_url": "https://www.enac.gov.it/aeroporti/statistiche/dashboarddatiditraffico/#main-container",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "",
+              "reason": "html_or_unknown"
+            }
+          ]
         },
         {
           "kind": "discovery",
-          "url": "https://enac.gov.it/opendata",
+          "url": "https://www.enac.gov.it/views/EAE-DatiTraffico-VersioneGrafica/DATITRAFFICOHOMEPAGE?:showVizHome=no",
           "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='enac.gov.it', port=443): Max retries exceeded with url: /opendata (Caused by NameResolutionError(\"HTTPSConnection(host='enac.gov.it', port=443): Failed to resolve 'enac.gov.it' ([Errno -5] No address associated with hostname)\"))",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://enac.gov.it/open-data",
-          "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='enac.gov.it', port=443): Max retries exceeded with url: /open-data (Caused by NameResolutionError(\"HTTPSConnection(host='enac.gov.it', port=443): Failed to resolve 'enac.gov.it' ([Errno -5] No address associated with hostname)\"))",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://enac.gov.it/dati",
-          "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='enac.gov.it', port=443): Max retries exceeded with url: /dati (Caused by NameResolutionError(\"HTTPSConnection(host='enac.gov.it', port=443): Failed to resolve 'enac.gov.it' ([Errno -5] No address associated with hostname)\"))",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://enac.gov.it/dataset",
-          "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='enac.gov.it', port=443): Max retries exceeded with url: /dataset (Caused by NameResolutionError(\"HTTPSConnection(host='enac.gov.it', port=443): Failed to resolve 'enac.gov.it' ([Errno -5] No address associated with hostname)\"))",
+          "reason": "ConnectionError: HTTPConnectionPool(host='www.enac.gov.it', port=80): Max retries exceeded with url: / (Caused by NewConnectionError(\"HTTPConnection(host='www.enac.gov.it', port=80): Failed to establish a new connection: [Errno 111] Connection refused\"))",
           "candidate_links": [],
           "verified_links": []
         }
@@ -1071,21 +1291,11 @@
     {
       "institution": "FAO",
       "strategy": "api_discovery",
-      "status": "structured_endpoint_verified",
+      "status": "official_portal_reachable",
       "domains": [
         "fao.org"
       ],
-      "verified_resources": [
-        {
-          "url": "https://openknowledge.fao.org/server/api/core/bitstreams/208c1e64-63fc-4b8e-9d06-c3ad68c4a0c0/content",
-          "final_url": "https://openknowledge.fao.org/server/api/core/bitstreams/208c1e64-63fc-4b8e-9d06-c3ad68c4a0c0/content",
-          "ok": true,
-          "http_status": 200,
-          "content_type": "application/pdf",
-          "content_length": "",
-          "reason": "machine_readable"
-        }
-      ],
+      "verified_resources": [],
       "checks": [
         {
           "kind": "discovery",
@@ -1102,13 +1312,45 @@
             {
               "url": "https://openknowledge.fao.org/server/api/core/bitstreams/208c1e64-63fc-4b8e-9d06-c3ad68c4a0c0/content",
               "final_url": "https://openknowledge.fao.org/server/api/core/bitstreams/208c1e64-63fc-4b8e-9d06-c3ad68c4a0c0/content",
-              "ok": true,
+              "ok": false,
               "http_status": 200,
               "content_type": "application/pdf",
               "content_length": "",
-              "reason": "machine_readable"
+              "reason": "editorial_or_document_resource"
             }
           ]
+        },
+        {
+          "kind": "discovery",
+          "url": "https://fao.org/opendata",
+          "ok": false,
+          "reason": "HTTPError: 404 Client Error: Not Found for url: https://www.fao.org/home/404",
+          "candidate_links": [],
+          "verified_links": []
+        },
+        {
+          "kind": "discovery",
+          "url": "https://fao.org/open-data",
+          "ok": false,
+          "reason": "HTTPError: 404 Client Error: Not Found for url: https://www.fao.org/home/404",
+          "candidate_links": [],
+          "verified_links": []
+        },
+        {
+          "kind": "discovery",
+          "url": "https://fao.org/dati",
+          "ok": false,
+          "reason": "HTTPError: 404 Client Error: Not Found for url: https://www.fao.org/home/404",
+          "candidate_links": [],
+          "verified_links": []
+        },
+        {
+          "kind": "discovery",
+          "url": "https://fao.org/dataset",
+          "ok": false,
+          "reason": "HTTPError: 404 Client Error: Not Found for url: https://www.fao.org/home/404",
+          "candidate_links": [],
+          "verified_links": []
         }
       ]
     },
@@ -1127,7 +1369,7 @@
           "http_status": 200,
           "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
           "content_length": "19658",
-          "reason": "machine_readable"
+          "reason": "machine_readable_data"
         },
         {
           "url": "https://www.mercatoelettrico.org/Portals/0/Documents/it-it/20180705rilevazione_capacita_transito_modello_B_20180528.XLSX",
@@ -1136,7 +1378,7 @@
           "http_status": 200,
           "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
           "content_length": "20044",
-          "reason": "machine_readable"
+          "reason": "machine_readable_data"
         }
       ],
       "checks": [
@@ -1164,7 +1406,7 @@
               "http_status": 200,
               "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
               "content_length": "19658",
-              "reason": "machine_readable"
+              "reason": "machine_readable_data"
             },
             {
               "url": "https://www.mercatoelettrico.org/Portals/0/Documents/it-it/20180705rilevazione_capacita_transito_modello_B_20180528.XLSX",
@@ -1173,7 +1415,7 @@
               "http_status": 200,
               "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
               "content_length": "20044",
-              "reason": "machine_readable"
+              "reason": "machine_readable_data"
             },
             {
               "url": "https://www.mercatoelettrico.org/Portals/0/Documents/it-IT/20251015Manuale_Utente_API.pdf",
@@ -1182,7 +1424,7 @@
               "http_status": 200,
               "content_type": "application/pdf",
               "content_length": "909177",
-              "reason": "html_or_unknown"
+              "reason": "editorial_or_document_resource"
             }
           ]
         }
@@ -1207,7 +1449,7 @@
           "http_status": 200,
           "content_type": "text/xml",
           "content_length": "",
-          "reason": "machine_readable"
+          "reason": "machine_readable_data"
         },
         {
           "url": "https://emidius.mi.ingv.it/services/italy/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=italy:CPTI15&maxFeatures=50&outputFormat=application%2Fjson",
@@ -1216,7 +1458,7 @@
           "http_status": 200,
           "content_type": "text/xml",
           "content_length": "",
-          "reason": "machine_readable"
+          "reason": "machine_readable_data"
         }
       ],
       "checks": [
@@ -1253,7 +1495,7 @@
               "http_status": 200,
               "content_type": "text/xml",
               "content_length": "",
-              "reason": "machine_readable"
+              "reason": "machine_readable_data"
             },
             {
               "url": "https://emidius.mi.ingv.it/services/italy/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=italy:CPTI15&maxFeatures=50&outputFormat=application%2Fjson",
@@ -1262,7 +1504,7 @@
               "http_status": 200,
               "content_type": "text/xml",
               "content_length": "",
-              "reason": "machine_readable"
+              "reason": "machine_readable_data"
             }
           ]
         }
@@ -1284,7 +1526,7 @@
           "http_status": 200,
           "content_type": "text/plain",
           "content_length": "104",
-          "reason": "machine_readable"
+          "reason": "machine_readable_data"
         },
         {
           "url": "https://dati.inail.it/api/OpenData/DatiMensiliMalattieProfessionaliDataProt",
@@ -1293,7 +1535,7 @@
           "http_status": 200,
           "content_type": "text/plain",
           "content_length": "104",
-          "reason": "machine_readable"
+          "reason": "machine_readable_data"
         }
       ],
       "checks": [
@@ -1305,7 +1547,7 @@
           "http_status": 200,
           "content_type": "text/plain",
           "content_length": "104",
-          "reason": "machine_readable"
+          "reason": "machine_readable_data"
         },
         {
           "kind": "endpoint",
@@ -1315,7 +1557,7 @@
           "http_status": 200,
           "content_type": "text/plain",
           "content_length": "104",
-          "reason": "machine_readable"
+          "reason": "machine_readable_data"
         },
         {
           "kind": "discovery",
@@ -1370,12 +1612,22 @@
     {
       "institution": "INPS",
       "strategy": "known_ckan_api",
-      "status": "official_portal_reachable",
+      "status": "structured_endpoint_verified",
       "domains": [
         "inps.it",
         "opendata.inps.it"
       ],
-      "verified_resources": [],
+      "verified_resources": [
+        {
+          "url": "https://opendata.inps.it/opendata/api/3/action/group_list",
+          "final_url": "https://opendata.inps.it/opendata/api/3/action/group_list",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "application/json",
+          "content_length": "272",
+          "reason": "machine_readable_data"
+        }
+      ],
       "checks": [
         {
           "kind": "endpoint",
@@ -1421,13 +1673,17 @@
             },
             {
               "url": "https://opendata.inps.it/opendata/api/3/action/group_list",
-              "ok": false,
-              "reason": "ReadTimeout: HTTPSConnectionPool(host='opendata.inps.it', port=443): Read timed out. (read timeout=10)"
+              "final_url": "https://opendata.inps.it/opendata/api/3/action/group_list",
+              "ok": true,
+              "http_status": 200,
+              "content_type": "application/json",
+              "content_length": "272",
+              "reason": "machine_readable_data"
             },
             {
               "url": "https://opendata.inps.it/opendata/api/3/action/group_show?id=%7Bid-group%7D",
               "ok": false,
-              "reason": "ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+              "reason": "HTTPError: 502 Server Error: Proxy Error for url: https://opendata.inps.it/opendata/api/3/action/group_show?id=%7Bid-group%7D"
             }
           ]
         }
@@ -1675,7 +1931,7 @@
           "http_status": 200,
           "content_type": "application/zip",
           "content_length": "1498056",
-          "reason": "machine_readable"
+          "reason": "machine_readable_data"
         },
         {
           "url": "https://www.mimit.gov.it/images/exportCSV/anagrafica_impianti_attivi.csv",
@@ -1684,7 +1940,7 @@
           "http_status": 200,
           "content_type": "text/csv",
           "content_length": "3574138",
-          "reason": "machine_readable"
+          "reason": "machine_readable_data"
         },
         {
           "url": "https://www.mimit.gov.it/images/exportCSV/prezzo_alle_8.csv",
@@ -1693,7 +1949,7 @@
           "http_status": 200,
           "content_type": "text/csv",
           "content_length": "3937624",
-          "reason": "machine_readable"
+          "reason": "machine_readable_data"
         }
       ],
       "checks": [
@@ -1723,7 +1979,7 @@
               "http_status": 200,
               "content_type": "application/zip",
               "content_length": "1498056",
-              "reason": "machine_readable"
+              "reason": "machine_readable_data"
             },
             {
               "url": "https://www.mimit.gov.it/images/exportCSV/anagrafica_impianti_attivi.csv",
@@ -1732,7 +1988,7 @@
               "http_status": 200,
               "content_type": "text/csv",
               "content_length": "3574138",
-              "reason": "machine_readable"
+              "reason": "machine_readable_data"
             },
             {
               "url": "https://www.mimit.gov.it/images/exportCSV/prezzo_alle_8.csv",
@@ -1741,7 +1997,7 @@
               "http_status": 200,
               "content_type": "text/csv",
               "content_length": "3937624",
-              "reason": "machine_readable"
+              "reason": "machine_readable_data"
             }
           ]
         }
@@ -1750,21 +2006,11 @@
     {
       "institution": "Ministero dell'Interno",
       "strategy": "official_catalog_discovery",
-      "status": "structured_endpoint_verified",
+      "status": "official_portal_reachable",
       "domains": [
         "interno.gov.it"
       ],
-      "verified_resources": [
-        {
-          "url": "https://www.interno.gov.it/it/rss/news.xml",
-          "final_url": "https://www.interno.gov.it/it/rss/news.xml",
-          "ok": true,
-          "http_status": 200,
-          "content_type": "application/rss+xml",
-          "content_length": "1841",
-          "reason": "machine_readable"
-        }
-      ],
+      "verified_resources": [],
       "checks": [
         {
           "kind": "discovery",
@@ -1788,11 +2034,11 @@
             {
               "url": "https://www.interno.gov.it/it/rss/news.xml",
               "final_url": "https://www.interno.gov.it/it/rss/news.xml",
-              "ok": true,
+              "ok": false,
               "http_status": 200,
               "content_type": "application/rss+xml",
               "content_length": "1841",
-              "reason": "machine_readable"
+              "reason": "editorial_or_document_resource"
             },
             {
               "url": "https://dait.interno.gov.it/elezioni",
@@ -1800,7 +2046,199 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13248",
+              "content_length": "13254",
+              "reason": "html_or_unknown"
+            },
+            {
+              "url": "https://www.interno.gov.it/it/amministrazione-trasparente/accessibilita-e-catalogo-dati-metadati-e-banche-dati",
+              "final_url": "https://www.interno.gov.it/it/amministrazione-trasparente/accessibilita-e-catalogo-dati-metadati-e-banche-dati",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "13050",
+              "reason": "html_or_unknown"
+            }
+          ]
+        },
+        {
+          "kind": "discovery",
+          "url": "https://interno.gov.it/opendata",
+          "final_url": "https://www.interno.gov.it/it",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "text/html",
+          "reason": "official_page_scanned",
+          "candidate_links": [
+            "https://www.interno.gov.it/it/rss/news.xml",
+            "https://dait.interno.gov.it/elezioni",
+            "https://www.interno.gov.it/it/amministrazione-trasparente/accessibilita-e-catalogo-dati-metadati-e-banche-dati",
+            "https://www.interno.gov.it/it/amministrazione-trasparente/altri-contenuti-accessibilita-e-catalogo-dati-metadati-e-banche-dati/accessibilita",
+            "https://www.interno.gov.it/it/amministrazione-trasparente/altri-contenuti-dati-ulteriori/privacy-cookie",
+            "https://www.interno.gov.it/it/amministrazione-trasparente/dati-ulteriori",
+            "https://www.interno.gov.it/it/foto-e-video/ferragosto-2026-ministro-piantedosi-visita-sale-operative-capitale",
+            "https://www.interno.gov.it/it/servizi/accesso-dati-e-altri-diritti-e-tutele"
+          ],
+          "verified_links": [
+            {
+              "url": "https://www.interno.gov.it/it/rss/news.xml",
+              "final_url": "https://www.interno.gov.it/it/rss/news.xml",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "application/rss+xml",
+              "content_length": "1841",
+              "reason": "editorial_or_document_resource"
+            },
+            {
+              "url": "https://dait.interno.gov.it/elezioni",
+              "final_url": "https://dait.interno.gov.it/elezioni",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "13254",
+              "reason": "html_or_unknown"
+            },
+            {
+              "url": "https://www.interno.gov.it/it/amministrazione-trasparente/accessibilita-e-catalogo-dati-metadati-e-banche-dati",
+              "final_url": "https://www.interno.gov.it/it/amministrazione-trasparente/accessibilita-e-catalogo-dati-metadati-e-banche-dati",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "13050",
+              "reason": "html_or_unknown"
+            }
+          ]
+        },
+        {
+          "kind": "discovery",
+          "url": "https://interno.gov.it/open-data",
+          "final_url": "https://www.interno.gov.it/it",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "text/html",
+          "reason": "official_page_scanned",
+          "candidate_links": [
+            "https://www.interno.gov.it/it/rss/news.xml",
+            "https://dait.interno.gov.it/elezioni",
+            "https://www.interno.gov.it/it/amministrazione-trasparente/accessibilita-e-catalogo-dati-metadati-e-banche-dati",
+            "https://www.interno.gov.it/it/amministrazione-trasparente/altri-contenuti-accessibilita-e-catalogo-dati-metadati-e-banche-dati/accessibilita",
+            "https://www.interno.gov.it/it/amministrazione-trasparente/altri-contenuti-dati-ulteriori/privacy-cookie",
+            "https://www.interno.gov.it/it/amministrazione-trasparente/dati-ulteriori",
+            "https://www.interno.gov.it/it/foto-e-video/ferragosto-2026-ministro-piantedosi-visita-sale-operative-capitale",
+            "https://www.interno.gov.it/it/servizi/accesso-dati-e-altri-diritti-e-tutele"
+          ],
+          "verified_links": [
+            {
+              "url": "https://www.interno.gov.it/it/rss/news.xml",
+              "final_url": "https://www.interno.gov.it/it/rss/news.xml",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "application/rss+xml",
+              "content_length": "1841",
+              "reason": "editorial_or_document_resource"
+            },
+            {
+              "url": "https://dait.interno.gov.it/elezioni",
+              "final_url": "https://dait.interno.gov.it/elezioni",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "13254",
+              "reason": "html_or_unknown"
+            },
+            {
+              "url": "https://www.interno.gov.it/it/amministrazione-trasparente/accessibilita-e-catalogo-dati-metadati-e-banche-dati",
+              "final_url": "https://www.interno.gov.it/it/amministrazione-trasparente/accessibilita-e-catalogo-dati-metadati-e-banche-dati",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "13050",
+              "reason": "html_or_unknown"
+            }
+          ]
+        },
+        {
+          "kind": "discovery",
+          "url": "https://interno.gov.it/dati",
+          "final_url": "https://www.interno.gov.it/it",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "text/html",
+          "reason": "official_page_scanned",
+          "candidate_links": [
+            "https://www.interno.gov.it/it/rss/news.xml",
+            "https://dait.interno.gov.it/elezioni",
+            "https://www.interno.gov.it/it/amministrazione-trasparente/accessibilita-e-catalogo-dati-metadati-e-banche-dati",
+            "https://www.interno.gov.it/it/amministrazione-trasparente/altri-contenuti-accessibilita-e-catalogo-dati-metadati-e-banche-dati/accessibilita",
+            "https://www.interno.gov.it/it/amministrazione-trasparente/altri-contenuti-dati-ulteriori/privacy-cookie",
+            "https://www.interno.gov.it/it/amministrazione-trasparente/dati-ulteriori",
+            "https://www.interno.gov.it/it/foto-e-video/ferragosto-2026-ministro-piantedosi-visita-sale-operative-capitale",
+            "https://www.interno.gov.it/it/servizi/accesso-dati-e-altri-diritti-e-tutele"
+          ],
+          "verified_links": [
+            {
+              "url": "https://www.interno.gov.it/it/rss/news.xml",
+              "final_url": "https://www.interno.gov.it/it/rss/news.xml",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "application/rss+xml",
+              "content_length": "1841",
+              "reason": "editorial_or_document_resource"
+            },
+            {
+              "url": "https://dait.interno.gov.it/elezioni",
+              "final_url": "https://dait.interno.gov.it/elezioni",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "13254",
+              "reason": "html_or_unknown"
+            },
+            {
+              "url": "https://www.interno.gov.it/it/amministrazione-trasparente/accessibilita-e-catalogo-dati-metadati-e-banche-dati",
+              "final_url": "https://www.interno.gov.it/it/amministrazione-trasparente/accessibilita-e-catalogo-dati-metadati-e-banche-dati",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "13050",
+              "reason": "html_or_unknown"
+            }
+          ]
+        },
+        {
+          "kind": "discovery",
+          "url": "https://interno.gov.it/dataset",
+          "final_url": "https://www.interno.gov.it/it",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "text/html",
+          "reason": "official_page_scanned",
+          "candidate_links": [
+            "https://www.interno.gov.it/it/rss/news.xml",
+            "https://dait.interno.gov.it/elezioni",
+            "https://www.interno.gov.it/it/amministrazione-trasparente/accessibilita-e-catalogo-dati-metadati-e-banche-dati",
+            "https://www.interno.gov.it/it/amministrazione-trasparente/altri-contenuti-accessibilita-e-catalogo-dati-metadati-e-banche-dati/accessibilita",
+            "https://www.interno.gov.it/it/amministrazione-trasparente/altri-contenuti-dati-ulteriori/privacy-cookie",
+            "https://www.interno.gov.it/it/amministrazione-trasparente/dati-ulteriori",
+            "https://www.interno.gov.it/it/foto-e-video/ferragosto-2026-ministro-piantedosi-visita-sale-operative-capitale",
+            "https://www.interno.gov.it/it/servizi/accesso-dati-e-altri-diritti-e-tutele"
+          ],
+          "verified_links": [
+            {
+              "url": "https://www.interno.gov.it/it/rss/news.xml",
+              "final_url": "https://www.interno.gov.it/it/rss/news.xml",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "application/rss+xml",
+              "content_length": "1841",
+              "reason": "editorial_or_document_resource"
+            },
+            {
+              "url": "https://dait.interno.gov.it/elezioni",
+              "final_url": "https://dait.interno.gov.it/elezioni",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "13254",
               "reason": "html_or_unknown"
             },
             {
@@ -1946,51 +2384,65 @@
     },
     {
       "institution": "Ministero dell'Università e della Ricerca",
-      "strategy": "official_catalog_discovery",
-      "status": "blocked",
+      "strategy": "known_open_data_catalog",
+      "status": "official_portal_reachable",
       "domains": [
         "mur.gov.it",
-        "ustat.mur.gov.it"
+        "ustat.mur.gov.it",
+        "dati-ustat.mur.gov.it",
+        "dati.ustat.miur.it"
       ],
       "verified_resources": [],
       "checks": [
         {
           "kind": "discovery",
-          "url": "https://mur.gov.it",
+          "url": "https://ustat.mur.gov.it/opendata/",
+          "final_url": "https://ustat.mur.gov.it/opendata/",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "text/html",
+          "reason": "official_page_scanned",
+          "candidate_links": [
+            "http://dati.ustat.miur.it/dataset/metadati",
+            "http://dati.ustat.miur.it/organization/miur",
+            "http://dati.ustat.miur.it/organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=AFAM&tags=Contribuzione%20e%20interventi",
+            "http://dati.ustat.miur.it/organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=AFAM&tags=Personale",
+            "http://dati.ustat.miur.it/organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=AFAM&tags=Studenti",
+            "http://dati.ustat.miur.it/organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=DSU&tags=Collegi%20universitari",
+            "http://dati.ustat.miur.it/organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=DSU&tags=Enti%20per%20il%20DSU",
+            "http://dati.ustat.miur.it/organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=Universit%C3%A0&tags=Studenti"
+          ],
+          "verified_links": [
+            {
+              "url": "http://dati.ustat.miur.it/dataset/metadati",
+              "ok": false,
+              "reason": "ConnectTimeout: HTTPConnectionPool(host='dati.ustat.miur.it', port=80): Max retries exceeded with url: /dataset/metadati (Caused by ConnectTimeoutError(<HTTPConnection(host='dati.ustat.miur.it', port=80) at 0x7f638c4b6480>, 'Connection to dati.ustat.miur.it timed out. (connect timeout=10)'))"
+            },
+            {
+              "url": "http://dati.ustat.miur.it/organization/miur",
+              "ok": false,
+              "reason": "ConnectTimeout: HTTPConnectionPool(host='dati.ustat.miur.it', port=80): Max retries exceeded with url: /organization/miur (Caused by ConnectTimeoutError(<HTTPConnection(host='dati.ustat.miur.it', port=80) at 0x7f638c4fc3b0>, 'Connection to dati.ustat.miur.it timed out. (connect timeout=10)'))"
+            },
+            {
+              "url": "http://dati.ustat.miur.it/organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=AFAM&tags=Contribuzione%20e%20interventi",
+              "ok": false,
+              "reason": "ConnectTimeout: HTTPConnectionPool(host='dati.ustat.miur.it', port=80): Max retries exceeded with url: /organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=AFAM&tags=Contribuzione%20e%20interventi (Caused by ConnectTimeoutError(<HTTPConnection(host='dati.ustat.miur.it', port=80) at 0x7f638c4fdb50>, 'Connection to dati.ustat.miur.it timed out. (connect timeout=10)'))"
+            }
+          ]
+        },
+        {
+          "kind": "discovery",
+          "url": "https://dati-ustat.mur.gov.it/dataset/2025-2029-personale-universitario",
           "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='mur.gov.it', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='mur.gov.it', port=443): Failed to resolve 'mur.gov.it' ([Errno -5] No address associated with hostname)\"))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/2025-2029-personale-universitario (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f638c31f0e0>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
         {
           "kind": "discovery",
-          "url": "https://mur.gov.it/opendata",
+          "url": "https://dati-ustat.mur.gov.it/dataset/serie-storica-sul-personale-universitario",
           "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='mur.gov.it', port=443): Max retries exceeded with url: /opendata (Caused by NameResolutionError(\"HTTPSConnection(host='mur.gov.it', port=443): Failed to resolve 'mur.gov.it' ([Errno -5] No address associated with hostname)\"))",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://mur.gov.it/open-data",
-          "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='mur.gov.it', port=443): Max retries exceeded with url: /open-data (Caused by NameResolutionError(\"HTTPSConnection(host='mur.gov.it', port=443): Failed to resolve 'mur.gov.it' ([Errno -5] No address associated with hostname)\"))",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://mur.gov.it/dati",
-          "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='mur.gov.it', port=443): Max retries exceeded with url: /dati (Caused by NameResolutionError(\"HTTPSConnection(host='mur.gov.it', port=443): Failed to resolve 'mur.gov.it' ([Errno -5] No address associated with hostname)\"))",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://mur.gov.it/dataset",
-          "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='mur.gov.it', port=443): Max retries exceeded with url: /dataset (Caused by NameResolutionError(\"HTTPSConnection(host='mur.gov.it', port=443): Failed to resolve 'mur.gov.it' ([Errno -5] No address associated with hostname)\"))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/serie-storica-sul-personale-universitario (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f638c2d6480>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         }
