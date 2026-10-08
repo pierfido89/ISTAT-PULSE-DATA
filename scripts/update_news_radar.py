@@ -277,6 +277,62 @@ def looks_editorially_irrelevant(title):
          "sarà a industria italiana summit","summit 2026")
     return any(x in low for x in bad)
 
+def journalistic_statistical_article(item, feed, now, topic, geos, nums, score, existing=None):
+    """Publish factual news with numeric evidence attributed to the reporting outlet.
+    This is NOT a primary-source-verified statistical series or PULSE pattern.
+    """
+    try:
+        published = parsedate_to_datetime(item.get("published_raw", ""))
+        if published.tzinfo is None:
+            published = published.replace(tzinfo=timezone.utc)
+        published = published.astimezone(timezone.utc)
+        if not (timedelta(0) <= now - published <= timedelta(days=3)):
+            return None
+    except (TypeError, ValueError, OverflowError):
+        return None
+    title = clean_text(item.get("title", ""))
+    description = clean_text(item.get("summary", ""))
+    # Numeric substance beyond year labels required; no generic, promotional or sports pages.
+    meaningful = [n for n in nums if not re.fullmatch(r"20\\d{2}", normalize_number_token(n))]
+    if not meaningful or score < 45 or len(title) < 24:
+        return None
+    if not any(term in (title + " " + description).lower() for term in STAT_TERMS):
+        return None
+    source_url = item.get("url", "")
+    if not source_url.startswith("https://") and not source_url.startswith("http://"):
+        return None
+    # The original RSS report is the disclosed journalistic source; Google
+    # News links remain explicitly journalistic, not official statistical data.
+    host = canonical_host(source_url)
+    # Google News RSS links are discovery links to the original publisher.
+    # Keep them clearly labeled as aggregates; do not call them verified primary sources.
+    publisher = title.rsplit(" - ", 1)[-1].strip() if host.endswith("news.google.com") and " - " in title else host
+    key = stable_id(source_url, topic, title, meaningful)
+    existing = existing or {}
+    return {
+        "id": key,
+        "story_fingerprint": story_fingerprint(source_url, topic, title, meaningful),
+        "published_at": existing.get("published_at") or published.isoformat(),
+        "last_seen_at": now.isoformat(),
+        "topic": topic,
+        "pulse_score": min(75, max(45, score)),
+        "patterns": [],
+        "public_source": {
+            "url": source_url,
+            "domain": publisher,
+            "role": "journalistic_source",
+            "verification_method": "reported_statistical_figures_not_primary_verified",
+            "verification_score": 0
+        },
+        "headline": title,
+        "summary": description[:600] or "Notizia con dati numerici riportati dalla testata indicata. I valori non sono ancora verificati sulla fonte statistica primaria.",
+        "statistical_claims": [{"raw_value": n, "verified": False} for n in meaningful[:6]],
+        "territories": geos,
+        "editorial_status": "journalistic_attributed",
+        "publication_status": "published"
+    }
+
+
 def semantic_key(title, topic, numbers):
     clean=(title or "").lower().split(" - ")[0].split(" | ")[0]
     clean=re.sub(r"[^a-z0-9à-ù ]"," ",clean)
@@ -631,7 +687,7 @@ def main():
         source=((x.get("public_source") or {}).get("url") or "")
         source_domain=((x.get("public_source") or {}).get("domain") or "").lower()
         trusted_source=any(source_domain==d or source_domain.endswith("."+d) for d in TRUSTED_PRIMARY_DOMAINS)
-        if x.get("publication_status")=="published" and (not substantive or not trusted_source):
+        if x.get("publication_status")=="published" and x.get("editorial_status")!="journalistic_attributed" and (not substantive or not trusted_source):
             continue
         fp=story_fingerprint(source,x.get("topic",""),x.get("headline",""),verified_raw)
         permanent_id="PULSE-"+fp[:16].upper()
@@ -728,7 +784,17 @@ def main():
                     curated["source_url"],curated["topic"],curated["headline"],curated["verified_numbers"])
                 by_id[article["id"]]=article
                 continue
-            if not resolved: continue
+            if not resolved:
+                if not primary_feed and not editorial_excluded:
+                    article = journalistic_statistical_article(
+                        item, feed, now, topic, geos, nums, s
+                    )
+                    if article:
+                        prior = by_id.get(article["id"])
+                        if prior:
+                            article["published_at"] = prior.get("published_at") or article["published_at"]
+                        by_id[article["id"]] = article
+                continue
             verified_nums=resolved.get("matched_numbers",[])
             if not verified_nums: continue
             pulse=min(100,50+s//2+(10 if geos else 0)+(5 if len(verified_nums)>=2 else 0))
@@ -761,7 +827,7 @@ def main():
 
     arts=sorted(by_id.values(),key=lambda x:x.get("published_at",""),reverse=True)
     # Safety gate: only verified articles may be publicly visible.
-    public=[a for a in arts if a.get("publication_status")=="published" and a.get("editorial_status") in ("verified","verified_primary_match")]
+    public=[a for a in arts if a.get("publication_status")=="published" and a.get("editorial_status") in ("verified","verified_primary_match","journalistic_attributed")]
     idx={"generated_at":now.isoformat(),"counts":{},
          "oggi":[],"ieri":[],"archivio":[]}
     bucket_seen=set()
