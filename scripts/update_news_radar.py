@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib, html, io, json, re, time, urllib.parse, urllib.request, signal
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
+from email.utils import parsedate_to_datetime
 from zoneinfo import ZoneInfo
 from pathlib import Path
 from bs4 import BeautifulSoup
@@ -668,6 +669,20 @@ def main():
         for item in items:
             if runtime_exceeded() or len(candidates) >= MAX_CANDIDATES_TOTAL:
                 break
+            primary_feed = feed.get("primary_source", False)
+            official_published_at = None
+            if primary_feed:
+                # Direct official feeds use the source's actual publication date,
+                # never the crawl time. A missing or old date is not today's news.
+                try:
+                    published = parsedate_to_datetime(item.get("published_raw", ""))
+                    if published.tzinfo is None:
+                        published = published.replace(tzinfo=timezone.utc)
+                    official_published_at = published.astimezone(timezone.utc).isoformat()
+                    if not (timedelta(0) <= now - published.astimezone(timezone.utc) <= timedelta(days=3)):
+                        continue
+                except (ValueError, TypeError, OverflowError):
+                    continue
             editorial_excluded=looks_editorially_irrelevant(item["title"])
             discovery=(item["title"]+" "+item.get("summary",""))[:7000]
             s,nums=score_candidate(discovery)
@@ -681,7 +696,16 @@ def main():
             official_links=probe.get("official_links",[])
             hints=probe.get("hint_domains",[])
             curated=curated_story_for(item["title"])
-            resolved=None if curated else resolve_primary(item["title"],combined,topic,nums,official_links,hints,cfg)
+            resolved=None if curated else (
+                verify_primary_page(
+                    item["url"], nums,
+                    title_keywords(item["title"] + " " + item.get("summary", "")),
+                    cfg.get("official_domains", [])
+                ) if primary_feed else
+                resolve_primary(item["title"],combined,topic,nums,official_links,hints,cfg)
+            )
+            if primary_feed and resolved:
+                resolved["method"] = "direct_official_rss"
             primary=curated["source_url"] if curated else (resolved.get("url") if resolved else None)
             cand={
               "radar":feed.get("name"),"discovery_url":probe.get("final_url") or item["url"],
@@ -715,7 +739,7 @@ def main():
             article={
               "id":aid,
               "story_fingerprint":story_fingerprint(primary,topic,headline,verified_nums),
-              "published_at":(existing or {}).get("published_at") or now.isoformat(),
+              "published_at":(existing or {}).get("published_at") or official_published_at or now.isoformat(),
               "last_seen_at":now.isoformat(),
               "topic":topic,"pulse_score":pulse,
               "public_source":{"url":primary,"domain":resolved.get("domain"),"role":"primary_statistical_source",
