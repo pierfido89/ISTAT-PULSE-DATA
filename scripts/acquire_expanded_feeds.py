@@ -49,21 +49,9 @@ SOURCES = [
         "kind": "csv",
         "frequency": "daily",
     },
-    {
-        "institution": "INGV",
-        "id": "ingv_cpti15",
-        "url": "https://emidius.mi.ingv.it/services/italy/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=italy:CPTI15&maxFeatures=50000&outputFormat=csv",
-        "kind": "csv",
-        "frequency": "source_update",
-    },
 ]
 
 INAIL_PAGES = [
-    {
-        "id": "inail_infortuni_mensili",
-        "url": "https://dati.inail.it/portale/it/dataset/infortuni-sul-lavoro/dati-con-cadenza-mensile/italia.html",
-        "label": "Infortuni sul lavoro · mensile · Italia",
-    },
     {
         "id": "inail_malattie_mensili",
         "url": "https://dati.inail.it/portale/it/dataset/malattie-professionali/dati-con-cadenza-mensile/italia.html",
@@ -112,7 +100,9 @@ def describe(source: dict, raw: bytes, response: requests.Response) -> dict:
             if not files:
                 raise RuntimeError(f"{source['id']}: ZIP archive is empty")
     elif source["kind"] == "csv":
-        head = raw[:5000].decode("utf-8", errors="replace")
+        head = raw[:5000].decode("utf-8", errors="replace").lstrip()
+        if head.startswith("<"):
+            raise RuntimeError(f"{source['id']}: server returned XML/HTML instead of CSV")
         lines = [line for line in head.splitlines() if line.strip()]
         if len(lines) < 2:
             raise RuntimeError(f"{source['id']}: CSV payload looks empty")
