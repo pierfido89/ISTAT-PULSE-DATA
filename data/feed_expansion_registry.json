@@ -1,0 +1,562 @@
+{
+  "version": 1,
+  "purpose": "Permanent structured-data connector expansion for ISTAT PULSE. A source is never promoted to active feed until an official structured endpoint is verified and validated.",
+  "policy": {
+    "official_only": true,
+    "no_scraped_search_results_as_data": true,
+    "allowed_formats": [
+      "json",
+      "csv",
+      "tsv",
+      "xlsx",
+      "xls",
+      "xml",
+      "rdf",
+      "sdmx",
+      "geojson",
+      "zip"
+    ],
+    "statuses": [
+      "candidate",
+      "structured_endpoint_verified",
+      "connector_ready",
+      "feed_active",
+      "blocked",
+      "editorial_only"
+    ]
+  },
+  "sources": [
+    {
+      "institution": "AGENAS",
+      "domains": [
+        "agenas.gov.it"
+      ],
+      "strategy": "official_catalog_discovery",
+      "hints": [
+        "open data",
+        "PNE",
+        "dataset",
+        "csv",
+        "xlsx"
+      ]
+    },
+    {
+      "institution": "Agenzia delle Dogane e dei Monopoli",
+      "domains": [
+        "adm.gov.it"
+      ],
+      "strategy": "official_catalog_discovery",
+      "hints": [
+        "open data",
+        "statistiche",
+        "csv",
+        "xlsx"
+      ]
+    },
+    {
+      "institution": "Agenzia delle Entrate · OMI",
+      "domains": [
+        "agenziaentrate.gov.it"
+      ],
+      "strategy": "official_catalog_discovery",
+      "hints": [
+        "OMI",
+        "quotazioni immobiliari",
+        "open data",
+        "csv",
+        "xml"
+      ]
+    },
+    {
+      "institution": "AgID",
+      "domains": [
+        "agid.gov.it"
+      ],
+      "strategy": "official_catalog_discovery",
+      "hints": [
+        "open data",
+        "dataset",
+        "DCAT",
+        "csv",
+        "json"
+      ]
+    },
+    {
+      "institution": "AGCOM",
+      "domains": [
+        "agcom.it"
+      ],
+      "strategy": "official_catalog_discovery",
+      "hints": [
+        "open data",
+        "osservatorio",
+        "xlsx",
+        "csv"
+      ]
+    },
+    {
+      "institution": "ANAC",
+      "domains": [
+        "anticorruzione.it"
+      ],
+      "strategy": "official_catalog_discovery",
+      "hints": [
+        "open data",
+        "API",
+        "dataset",
+        "json",
+        "csv"
+      ]
+    },
+    {
+      "institution": "ANFIA",
+      "domains": [
+        "anfia.it"
+      ],
+      "strategy": "official_structured_publication_discovery",
+      "hints": [
+        "statistiche",
+        "xlsx",
+        "xls",
+        "csv"
+      ]
+    },
+    {
+      "institution": "ART",
+      "domains": [
+        "autorita-trasporti.it"
+      ],
+      "strategy": "official_catalog_discovery",
+      "hints": [
+        "dati",
+        "dataset",
+        "xlsx",
+        "csv"
+      ]
+    },
+    {
+      "institution": "Banca d'Italia",
+      "domains": [
+        "bancaditalia.it"
+      ],
+      "strategy": "sdmx_or_api_discovery",
+      "hints": [
+        "base dati statistica",
+        "API",
+        "SDMX",
+        "csv"
+      ]
+    },
+    {
+      "institution": "CONSOB",
+      "domains": [
+        "consob.it"
+      ],
+      "strategy": "official_structured_publication_discovery",
+      "hints": [
+        "bollettino statistico",
+        "xlsx",
+        "xls",
+        "csv"
+      ]
+    },
+    {
+      "institution": "COVIP",
+      "domains": [
+        "covip.it"
+      ],
+      "strategy": "official_structured_publication_discovery",
+      "hints": [
+        "statistiche",
+        "xlsx",
+        "csv"
+      ]
+    },
+    {
+      "institution": "CREA · RICA",
+      "domains": [
+        "crea.gov.it"
+      ],
+      "strategy": "official_catalog_discovery",
+      "hints": [
+        "RICA",
+        "open data",
+        "dataset",
+        "csv"
+      ]
+    },
+    {
+      "institution": "Dipartimento delle Finanze",
+      "domains": [
+        "finanze.gov.it",
+        "mef.gov.it"
+      ],
+      "strategy": "official_catalog_discovery",
+      "hints": [
+        "open data",
+        "statistiche fiscali",
+        "csv",
+        "xlsx"
+      ]
+    },
+    {
+      "institution": "DIPE · OpenCUP",
+      "domains": [
+        "opencup.gov.it",
+        "programmazioneeconomica.gov.it"
+      ],
+      "strategy": "official_catalog_discovery",
+      "hints": [
+        "open data",
+        "csv",
+        "json",
+        "API"
+      ]
+    },
+    {
+      "institution": "ENAC",
+      "domains": [
+        "enac.gov.it"
+      ],
+      "strategy": "official_structured_publication_discovery",
+      "hints": [
+        "dati traffico",
+        "xlsx",
+        "csv"
+      ]
+    },
+    {
+      "institution": "FAO",
+      "domains": [
+        "fao.org"
+      ],
+      "strategy": "api_discovery",
+      "hints": [
+        "FAOSTAT",
+        "API",
+        "csv"
+      ]
+    },
+    {
+      "institution": "GME",
+      "domains": [
+        "mercatoelettrico.org"
+      ],
+      "strategy": "official_structured_publication_discovery",
+      "hints": [
+        "dati mercato",
+        "xml",
+        "csv",
+        "xlsx"
+      ]
+    },
+    {
+      "institution": "INGV",
+      "domains": [
+        "ingv.it"
+      ],
+      "strategy": "api_discovery",
+      "hints": [
+        "webservice",
+        "geojson",
+        "json",
+        "terremoti"
+      ]
+    },
+    {
+      "institution": "INAIL",
+      "domains": [
+        "dati.inail.it",
+        "inail.it"
+      ],
+      "strategy": "known_rest_api",
+      "endpoints": [
+        "https://dati.inail.it/api/OpenData/DatiConCadenzaMensileInfortuni",
+        "https://dati.inail.it/api/OpenData/DatiMensiliMalattieProfessionaliDataProt"
+      ],
+      "hints": [
+        "REST",
+        "JSON",
+        "CSV"
+      ]
+    },
+    {
+      "institution": "INPS",
+      "domains": [
+        "inps.it"
+      ],
+      "strategy": "known_open_data_api",
+      "entrypoints": [
+        "https://www.inps.it/it/it/dati-e-bilanci/open-data/api-inps.html"
+      ],
+      "hints": [
+        "API",
+        "SDMX",
+        "DCAT-AP_IT",
+        "RDF"
+      ]
+    },
+    {
+      "institution": "INVALSI",
+      "domains": [
+        "invalsi.it"
+      ],
+      "strategy": "official_catalog_discovery",
+      "hints": [
+        "open data",
+        "microdati",
+        "csv",
+        "xlsx"
+      ]
+    },
+    {
+      "institution": "ISMEA",
+      "domains": [
+        "ismea.it"
+      ],
+      "strategy": "official_catalog_discovery",
+      "hints": [
+        "dati",
+        "statistiche",
+        "open data",
+        "xlsx",
+        "csv"
+      ]
+    },
+    {
+      "institution": "IVASS",
+      "domains": [
+        "ivass.it"
+      ],
+      "strategy": "official_structured_publication_discovery",
+      "hints": [
+        "statistiche",
+        "bollettino",
+        "xlsx",
+        "csv"
+      ]
+    },
+    {
+      "institution": "MIMIT",
+      "domains": [
+        "mimit.gov.it"
+      ],
+      "strategy": "official_catalog_discovery",
+      "hints": [
+        "open data",
+        "prezzi carburanti",
+        "csv",
+        "API"
+      ]
+    },
+    {
+      "institution": "Ministero dell'Interno",
+      "domains": [
+        "interno.gov.it"
+      ],
+      "strategy": "official_catalog_discovery",
+      "hints": [
+        "open data",
+        "statistiche",
+        "csv",
+        "xlsx"
+      ]
+    },
+    {
+      "institution": "Ministero della Giustizia · DGStat",
+      "domains": [
+        "giustizia.it",
+        "datiestatistiche.giustizia.it"
+      ],
+      "strategy": "official_catalog_discovery",
+      "hints": [
+        "statistiche",
+        "open data",
+        "csv",
+        "xlsx"
+      ]
+    },
+    {
+      "institution": "Ministero della Salute",
+      "domains": [
+        "dati.salute.gov.it",
+        "salute.gov.it"
+      ],
+      "strategy": "known_open_data_catalog",
+      "entrypoints": [
+        "https://www.dati.salute.gov.it/"
+      ],
+      "hints": [
+        "CSV",
+        "JSON",
+        "XML"
+      ]
+    },
+    {
+      "institution": "Ministero dell'Istruzione e del Merito",
+      "domains": [
+        "mim.gov.it",
+        "istruzione.it",
+        "dati.istruzione.it"
+      ],
+      "strategy": "official_catalog_discovery",
+      "hints": [
+        "open data",
+        "csv",
+        "API",
+        "dataset"
+      ]
+    },
+    {
+      "institution": "Ministero dell'Università e della Ricerca",
+      "domains": [
+        "mur.gov.it",
+        "ustat.mur.gov.it"
+      ],
+      "strategy": "official_catalog_discovery",
+      "hints": [
+        "USTAT",
+        "open data",
+        "csv",
+        "xlsx"
+      ]
+    },
+    {
+      "institution": "MIT",
+      "domains": [
+        "mit.gov.it"
+      ],
+      "strategy": "official_catalog_discovery",
+      "hints": [
+        "open data",
+        "trasporti",
+        "csv",
+        "xlsx"
+      ]
+    },
+    {
+      "institution": "OpenCoesione",
+      "domains": [
+        "opencoesione.gov.it"
+      ],
+      "strategy": "known_open_data_catalog",
+      "entrypoints": [
+        "https://opencoesione.gov.it/it/opendata/"
+      ],
+      "hints": [
+        "CSV",
+        "open data"
+      ]
+    },
+    {
+      "institution": "Ragioneria Generale dello Stato · BDAP",
+      "domains": [
+        "rgs.mef.gov.it",
+        "bdap-opendata.rgs.mef.gov.it"
+      ],
+      "strategy": "official_catalog_discovery",
+      "hints": [
+        "open data",
+        "API",
+        "csv",
+        "json"
+      ]
+    },
+    {
+      "institution": "SIAE · Osservatorio Spettacolo",
+      "domains": [
+        "siae.it",
+        "rapporto.siae.it"
+      ],
+      "strategy": "official_structured_publication_discovery",
+      "hints": [
+        "dati spettacolo",
+        "xlsx",
+        "csv"
+      ]
+    },
+    {
+      "institution": "SINAB",
+      "domains": [
+        "sinab.it"
+      ],
+      "strategy": "official_structured_publication_discovery",
+      "entrypoints": [
+        "https://sinab.it/bionovita/"
+      ],
+      "hints": [
+        "biologico",
+        "xlsx",
+        "csv"
+      ]
+    },
+    {
+      "institution": "Unioncamere / InfoCamere",
+      "domains": [
+        "unioncamere.gov.it",
+        "infocamere.it"
+      ],
+      "strategy": "official_catalog_discovery",
+      "hints": [
+        "open data",
+        "imprese",
+        "csv",
+        "API"
+      ]
+    },
+    {
+      "institution": "UNRAE",
+      "domains": [
+        "unrae.it"
+      ],
+      "strategy": "official_structured_publication_discovery",
+      "hints": [
+        "immatricolazioni",
+        "xlsx",
+        "xls",
+        "csv"
+      ]
+    },
+    {
+      "institution": "Unioncamere · Excelsior",
+      "domains": [
+        "excelsior.unioncamere.net"
+      ],
+      "strategy": "official_structured_publication_discovery",
+      "hints": [
+        "bollettini",
+        "xlsx",
+        "csv",
+        "dataset"
+      ]
+    },
+    {
+      "institution": "Istituto Superiore di Sanità",
+      "domains": [
+        "iss.it",
+        "epicentro.iss.it"
+      ],
+      "strategy": "official_catalog_discovery",
+      "hints": [
+        "open data",
+        "sorveglianza",
+        "csv",
+        "xlsx"
+      ]
+    },
+    {
+      "institution": "CNR",
+      "domains": [
+        "cnr.it"
+      ],
+      "strategy": "official_catalog_discovery",
+      "hints": [
+        "open data",
+        "dataset",
+        "RDF",
+        "SPARQL",
+        "csv"
+      ]
+    }
+  ]
+}
