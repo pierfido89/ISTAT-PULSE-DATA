@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "purpose": "Permanent non-GREEN structured connector entries merged into the generated ISTAT PULSE technical source catalog.",
+  "sources": [
+    {
+      "name": "Banca d'Italia - Base Dati Statistica A2A",
+      "category": "ECONOMIA_IT",
+      "topics": [
+        "ECONOMIA",
+        "CREDITO",
+        "MONETA"
+      ],
+      "official": true,
+      "url": "https://www.bancaditalia.it/statistiche/basi-dati/bds/index.html",
+      "access_cost": "free",
+      "access_note": "Servizio A2A ufficiale della Base Dati Statistica; acquisizione automatica senza abbonamento.",
+      "integration_status": "connected",
+      "feed_status": "Connettore permanente attivo · dati acquisiti automaticamente · normalizzazione PULSE in corso",
+      "notes": "Export REST A2A ufficiale; snapshot last-known-good e SHA-256 persistiti.",
+      "level": "Dataset ufficiale",
+      "frequency": "Secondo aggiornamento della fonte",
+      "provides": [
+        {
+          "area": "Economia e finanza",
+          "series": "Banche e moneta - serie nazionali",
+          "description": "Pacchetto ufficiale acquisito automaticamente; selezione delle serie PULSE in validazione.",
+          "latest_period": "",
+          "status": "connector_ready"
+        }
+      ]
+    },
+    {
+      "name": "MIMIT - Prezzi carburanti",
+      "category": "ECONOMIA_IT",
+      "topics": [
+        "PREZZI",
+        "ENERGIA",
+        "MOBILITA"
+      ],
+      "official": true,
+      "url": "https://www.mimit.gov.it/it/open-data/elenco-dataset/carburanti-prezzi-praticati-e-anagrafica-degli-impianti",
+      "access_cost": "free",
+      "access_note": "CSV ufficiali ad accesso libero.",
+      "integration_status": "connected",
+      "feed_status": "Connettore permanente attivo · CSV quotidiani acquisiti · serie PULSE in preparazione",
+      "notes": "Acquisizione quotidiana di prezzi e anagrafica impianti con snapshot e SHA-256.",
+      "level": "Dataset ufficiale",
+      "frequency": "Giornaliera",
+      "provides": [
+        {
+          "area": "Prezzi e mobilità",
+          "series": "Prezzi praticati dei carburanti",
+          "description": "CSV nazionale ufficiale aggiornato quotidianamente.",
+          "latest_period": "",
+          "status": "connector_ready"
+        },
+        {
+          "area": "Prezzi e mobilità",
+          "series": "Anagrafica impianti carburanti attivi",
+          "description": "CSV nazionale ufficiale aggiornato quotidianamente.",
+          "latest_period": "",
+          "status": "connector_ready"
+        }
+      ]
+    },
+    {
+      "name": "INAIL - Malattie professionali mensili",
+      "category": "LAVORO_IT",
+      "topics": [
+        "LAVORO",
+        "SALUTE",
+        "SICUREZZA"
+      ],
+      "official": true,
+      "url": "https://dati.inail.it/portale/it/dataset/malattie-professionali/dati-con-cadenza-mensile/italia.html",
+      "access_cost": "free",
+      "access_note": "Open Data INAIL dal portale ufficiale.",
+      "integration_status": "connected",
+      "feed_status": "Connettore permanente attivo · CSV nazionale mensile acquisito · serie PULSE in preparazione",
+      "notes": "Il connettore scopre il file CSV corrente dalla landing page ufficiale e conserva snapshot e SHA-256.",
+      "level": "Dataset ufficiale",
+      "frequency": "Mensile",
+      "provides": [
+        {
+          "area": "Lavoro e salute",
+          "series": "Malattie professionali denunciate",
+          "description": "Open data nazionale mensile acquisito automaticamente.",
+          "latest_period": "",
+          "status": "connector_ready"
+        }
+      ]
+    }
+  ]
+}
