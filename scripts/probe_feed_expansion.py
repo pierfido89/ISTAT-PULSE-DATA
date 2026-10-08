@@ -11,6 +11,7 @@ from __future__ import annotations
 import json
 import re
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
@@ -269,10 +270,42 @@ def main() -> None:
     if len(sources) != 39:
         raise RuntimeError(f"Expected 39 feed candidates, found {len(sources)}")
 
-    results = []
-    for index, source in enumerate(sources, 1):
-        print(f"[{index:02d}/39] {source['institution']}")
-        results.append(source_probe(source))
+    results_by_name: dict[str, dict] = {}
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        futures = {
+            pool.submit(source_probe, source): source["institution"]
+            for source in sources
+        }
+        completed = 0
+        for future in as_completed(futures):
+            institution = futures[future]
+            completed += 1
+            try:
+                results_by_name[institution] = future.result()
+                print(
+                    f"[{completed:02d}/39] {institution}: "
+                    f"{results_by_name[institution]['status']}"
+                )
+            except Exception as exc:
+                results_by_name[institution] = {
+                    "institution": institution,
+                    "strategy": "",
+                    "status": "blocked",
+                    "domains": [],
+                    "verified_resources": [],
+                    "checks": [{
+                        "kind": "probe_exception",
+                        "ok": False,
+                        "reason": f"{type(exc).__name__}: {exc}",
+                    }],
+                }
+                print(f"[{completed:02d}/39] {institution}: blocked ({exc})")
+
+    # Preserve registry order so diffs remain stable and human-reviewable.
+    results = [
+        results_by_name[source["institution"]]
+        for source in sources
+    ]
 
     counts: dict[str, int] = {}
     for item in results:
