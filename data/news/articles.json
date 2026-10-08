@@ -1,11 +1,552 @@
 {
-  "generated_at": "2026-10-08T17:20:11.697738+00:00",
+  "generated_at": "2026-10-08T18:58:40.998423+00:00",
   "articles": [
+    {
+      "id": "PULSE-F7E47C80D3AC0821",
+      "story_fingerprint": "f7e47c80d3ac08216a3f86fa",
+      "published_at": "2026-10-08T15:12:00+00:00",
+      "last_seen_at": "2026-10-08T18:58:40.998423+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 50,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNa3AxLW9EMlItVnIyM0hNaFRZY3MxbUsyNDFQVHFENXBBQnhiXzh4bGFHNEplbFU5QlJfcmJFWUh4TElaMmRkNlBjWE5aSDFmWE42bUhZY0NacXh6cm96QWo0NnVjYjdnMTlEYXMyeW1uM1VndGpqSGk4b2dMZk1GUWJQYURiY09NcE9IZG9tZTkwWlpqRzhIXzd3b0ZTN2JLOUtFV2pRSW51eEtrdXEwSnNLdVJTXzJTUUxPY2VYc2xyeFhOYi1YYnpnRll3S0txbWIwMnYxd0IxSDFJa19yaERPLXNQbXF4M3fSAe8BQVVfeXFMTlNkeVU5VkJxcHFuaDlWaTktczlOS0pLUFJSbGhhNFByak1RVUl2dW8wTGJYYmFETjZIc2ZuZHJCRjJNS3BYLUczNk9pVkVfdDJUdEFETEpiZXpXMEYyNlQydjNnQUJGX0hhcHlacmxPNFQ2T05zQkRvVTlVU0U1TzNlSkVEaXpwZ3Ewa2ZvcFV2MWVYN0I0YmJLdmtFcjVuYzk4bG51Y1J2T2tOU0pfR1hld3JRNDFYU0dKUzNKaWgwNm03Z256MVAxamZnS3g5c0M4TFdjUTBpWTZPVHJocmVIcUhFUXF3UUt1cEFWTEE?oc=5",
+        "domain": "ANSA",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Terre des Hommes, in Calabria 205 minori vittime di reato, -15,6% sul 2024 - ANSA",
+      "summary": "Terre des Hommes, in Calabria 205 minori vittime di reato, -15,6% sul 2024 ANSA",
+      "statistical_claims": [
+        {
+          "raw_value": "205 ",
+          "verified": false
+        },
+        {
+          "raw_value": "-15,6%",
+          "verified": false
+        },
+        {
+          "raw_value": "2024 ",
+          "verified": false
+        },
+        {
+          "raw_value": "205 ",
+          "verified": false
+        },
+        {
+          "raw_value": "-15,6%",
+          "verified": false
+        },
+        {
+          "raw_value": "2024 ",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "calabria"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-46D06BB8D738E76C",
+      "story_fingerprint": "46d06bb8d738e76c45ef6927",
+      "published_at": "2026-10-08T15:00:21+00:00",
+      "last_seen_at": "2026-10-08T18:58:40.998423+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 50,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNZk1vOENPYldPTmRvMmNzUXhCeW5Ja1NJUkFHcXUyWjgzbXJTbXBkRjhJcm5Oblo3X05TbVRDZnJBZVpMdmMtSlVVNjFPRmY5TTQxZXgtQng3blg1dUNFV1QxUWxHYm0zVjdCMk1BdkdZNEMwZV9yUGR5eUJsLURGai13WldDR2g1NGFWUndBR2xMZHpfNnF3ejVlUjFoU2ZrbEYwOEVaZVBLYVFOeC1ZUkl5bjdCV3lFeWQ0?oc=5",
+        "domain": "l'Eco del Sud",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Pecoraro Scanio \"Da Torino sfida di startup e imprese per innovare l'Italia\" 08/10/2026 - l'Eco del Sud",
+      "summary": "Pecoraro Scanio \"Da Torino sfida di startup e imprese per innovare l'Italia\" 08/10/2026 l'Eco del Sud",
+      "statistical_claims": [
+        {
+          "raw_value": "08",
+          "verified": false
+        },
+        {
+          "raw_value": "10",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "08",
+          "verified": false
+        },
+        {
+          "raw_value": "10",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "torino"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-98E60A53C79F25DA",
+      "story_fingerprint": "98e60a53c79f25da74e51d39",
+      "published_at": "2026-10-08T14:17:39+00:00",
+      "last_seen_at": "2026-10-08T18:58:40.998423+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 50,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi0wJBVV95cUxQNUg2amJ0RVZrQTh6NjRBWER6ZUtsV0JwbG1UZHBPanFmY19uRFVLMjA0WkM5QjJ0MVc2QkFWLVFlZ0hoQ3pFV1lXbTNBUnVXcmZZSGxDNmZ4U1JnZDJDTWpsdXFQWjAwbVVBcmxVbG1iM3YzbXhNZldzVHc1cTNsVHVueWJ5LTN3aGdPRUM4RC1RVzBoUVowM19TOG9kYXVjVTAtYmNlSUxBWVdwdWlXZHZzN1pRS3UzdFVWaUN6Qk9DdE8yWkVOdVEtVnJ2TGZiNE9TeS1oMkpZNkxBZWttakZrTjIyNFlONnA1bjNkZldTRFo3dTk1cnJZay02NzdkeUp6NUhsQjBnTGhScjFyOVU4MEw3Z3BGOXdyUmRHOTY3Z1hsRXdDSHVlMUhwVFNReTV6WFFUR0RTRHJuWjVKS2VnLU5WM244bkhldExidEprSjTSAdMCQVVfeXFMUDVINmpidEVWa0E4ejY0QVhEemVLbFdCcGxtVGRwT2pxZmNfbkRVSzIwNFpDOUIydDFXNkJBVi1RZWdIaEN6RVdZV20zQVJ1V3JmWUhsQzZmeFNSZ2QyQ01qbHVxUFowMG1VQXJsVWxtYjN2M214TWZXc1R3NXEzbFR1bnlieS0zd2hnT0VDOEQtUVcwaFFaMDNfUzhvZGF1Y1UwLWJjZUlMQVlXcHVpV2R2czdaUUt1M3RVVmlDekJPQ3RPMlpFTnVRLVZydkxmYjRPU3ktaDJKWTZMQWVrbWpGa04yMjRZTjZwNW4zZGZXU0RaN3U5NXJyWWstNjc3ZHlKejVIbEIwZ0xoUnIxcjlVODBMN2dwRjl3clJkRzk2N2dYbEV3Q0h1ZTFIcFRTUXk1elhRVEdEU0Ryblo1SktlZy1OVjNuOG5IZXRMYnRKa0o0?oc=5",
+        "domain": "Corriere Fiorentino",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "In Toscana aumentano i reati sui minori: +10,2% in un anno, oltre metà delle vittime sono ragazze. Nel 2025 sono stati 564 - Corriere Fiorentino",
+      "summary": "In Toscana aumentano i reati sui minori: +10,2% in un anno, oltre metà delle vittime sono ragazze. Nel 2025 sono stati 564 Corriere Fiorentino",
+      "statistical_claims": [
+        {
+          "raw_value": "+10,2%",
+          "verified": false
+        },
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "564 ",
+          "verified": false
+        },
+        {
+          "raw_value": "+10,2%",
+          "verified": false
+        },
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "564 ",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "toscana"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-2979F37CF0B916B7",
+      "story_fingerprint": "2979f37cf0b916b7fc8228b8",
+      "published_at": "2026-10-08T13:57:10+00:00",
+      "last_seen_at": "2026-10-08T18:58:40.998423+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 50,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPOVRwVjdRby0xS3luLXdZNzlpekJqZmhOZkRTVG5UWW9WV0pBTU9JcEJXSnhSSFlqOVJOSmNiM1pSUlhfZUJRd0JVWlJxdHFKeGM5T3Z0SVEtRE5JRFp0b3BlR3VHOF9EVUx1M1B3S0c4TWszc1R4d0hteVdtN1Eta1I4bzBRTkpNemJlazR2Zlk5RWJZOEpRTVhKUXRfY3N3bzFFYWZibE96QkVOQ3RfVnNIb3NXbnMx?oc=5",
+        "domain": "imgpress",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Reati sui minori: 7.272 in Italia nel 2025, +43% in 10 anni – i dati di Terre des Hommes - imgpress",
+      "summary": "Reati sui minori: 7.272 in Italia nel 2025, +43% in 10 anni – i dati di Terre des Hommes imgpress",
+      "statistical_claims": [
+        {
+          "raw_value": "7.272 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2025",
+          "verified": false
+        },
+        {
+          "raw_value": "+43%",
+          "verified": false
+        },
+        {
+          "raw_value": "10 ",
+          "verified": false
+        },
+        {
+          "raw_value": "7.272 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2025",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-BECE0C6F763DF3F7",
+      "story_fingerprint": "bece0c6f763df3f7c60f76a8",
+      "published_at": "2026-10-08T12:18:24+00:00",
+      "last_seen_at": "2026-10-08T18:58:40.998423+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi9AJBVV95cUxPanhJdFdfMnZzZF9QVi1RakZPTGlFSUpDQ1JhS09XNk5Id2FCM25zd05mV1RfZlNpRTliMXk5SVNYR0dDYUZZdUJzMERKOVVxQWJveFVzTVhuU2VJSEY3VDRaNDVGNW5udTBPeWRpY1hOYWZIVmQ2VENyTmtaR0VjMmFPcnVtSkhCNF9kYTFVSUFUbUtBVDhmYlFVN0l4c2hzN3R1RjdzRVhiTHhycU82NGZVMi1MdHc1dEl6QUZfVlpwMm9TWXdJaTJXUTR4c1cxRDNPZVI0SEtzUi1VLVdwcW44c2dLT3drOFotZjZvRFhLbzZjM040cnllblkzbXhFUWl3QkJJVE5ydFBhVVllc0YtbmdEVlRKTEs1UVRNeE5vdmRRa05LeUFKV0FfVDV1cm0xd2tNaEFBeXdpUy1YOEdPMzd5S05iY1k3ODdtM1MzTVRMRFBla3YxWmtQVFB6aGVyYnhoQm96WkQzc0ZNeUlqOVfSAfQCQVVfeXFMT2p4SXRXXzJ2c2RfUFYtUWpGT0xpRUlKQ0NSYUtPVzZOSHdhQjNuc3dOZldUX2ZTaUU5YjF5OUlTWEdHQ2FGWXVCczBESjlVcUFib3hVc01YblNlSUhGN1Q0WjQ1RjVubnUwT3lkaWNYTmFmSFZkNlRDck5rWkdFYzJhT3J1bUpIQjRfZGExVUlBVG1LQVQ4ZmJRVTdJeHNoczd0dUY3c0VYYkx4cnFPNjRmVTItTHR3NXRJekFGX1ZacDJvU1l3SWkyV1E0eHNXMUQzT2VSNEhLc1ItVS1XcHFuOHNnS093azhaLWY2b0RYS282YzNONHJ5ZW5ZM214RVFpd0JCSVROcnRQYVVZZXNGLW5nRFZUSkxLNVFUTXhOb3ZkUWtOS3lBSldBX1Q1dXJtMXdrTWhBQXl3aVMtWDhHTzM3eUtOYmNZNzg3bTNTM01UTERQZWt2MVprUFRQemhlcmJ4aEJvelpEM3NGTXlJajlX?oc=5",
+        "domain": "Corriere del Veneto",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Il record dell'aeroporto Marco Polo di Venezia: oltre 73 mila voli in 9 mesi, picco con la Biennale. Così gli «angeli» delle torre di controllo vegliano sugli atterraggi con la nebbia - Corriere del Veneto",
+      "summary": "Il record dell'aeroporto Marco Polo di Venezia: oltre 73 mila voli in 9 mesi, picco con la Biennale. Così gli «angeli» delle torre di controllo vegliano sugli atterraggi con la nebbia Corriere del Veneto",
+      "statistical_claims": [
+        {
+          "raw_value": "73 mila",
+          "verified": false
+        },
+        {
+          "raw_value": "9 ",
+          "verified": false
+        },
+        {
+          "raw_value": "73 mila",
+          "verified": false
+        },
+        {
+          "raw_value": "9 ",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "veneto",
+        "venezia"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-DC00193403C3AB68",
+      "story_fingerprint": "dc00193403c3ab680b531f76",
+      "published_at": "2026-10-08T12:15:48+00:00",
+      "last_seen_at": "2026-10-08T18:58:40.998423+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxORlc4R1ZwWHpKT0F0UkVmcUxhTkltcmhEVXJaMlpkVnk4SHE0M1pYUW14d1o0OWhXaXBJZUduWi1IczhjcUxpRWFtRTlnTkpPS2pGbktlV29KSl9mbmpoVzlHSEExMHota3dBeEFrTHpadzdqdThRN1dOWF8tVjFFX093VzhISW1HaWZ4dkVXWWo5S2t2Y2hiYjd1V0d3UVlwOEREaWRDeGlNWlVOaUhIUzVNM21MTWRVTFN3Yl96YkRkUkdyc01hTFpxb19QTWdScmpSWmlOUFhtNWJVQXhVbVUxLW5fZk5hQlFXcngwR3JMMm9hQkMzQkhvcGV2SmfSAf8BQVVfeXFMTkZXOEdWcFh6Sk9BdFJFZnFMYU5JbXJoRFVyWjJaZFZ5OEhxNDNaWFFteHdaNDloV2lwSWVHblotSHM4Y3FMaUVhbUU5Z05KT0tqRm5LZVdvSkpfZm5qaFc5R0hBMTB6LWt3QXhBa0x6Wnc3anU4UTdXTlhfLVYxRV9Pd1c4SEltR2lmeHZFV1lqOUtrdmNoYmI3dVdHd1FZcDhERGlkQ3hpTVpVTmlISFM1TTNtTE1kVUxTd2JfemJEZFJHcnNNYUxacW9fUE1nUnJqUlppTlBYbTViVUF4VW1VMS1uX2ZOYUJRV3J4MEdyTDJvYUJDM0JIb3Bldkpn?oc=5",
+        "domain": "ANSA",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Maratona di Napoli, domenica 18 ottobre edizione da record con 8.000 iscritti - ANSA",
+      "summary": "Maratona di Napoli, domenica 18 ottobre edizione da record con 8.000 iscritti ANSA",
+      "statistical_claims": [
+        {
+          "raw_value": "18 ",
+          "verified": false
+        },
+        {
+          "raw_value": "8.000 ",
+          "verified": false
+        },
+        {
+          "raw_value": "18 ",
+          "verified": false
+        },
+        {
+          "raw_value": "8.000 ",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "napoli"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-B4E78988A8A00B0B",
+      "story_fingerprint": "b4e78988a8a00b0bdc28d34c",
+      "published_at": "2026-10-08T11:28:34+00:00",
+      "last_seen_at": "2026-10-08T18:58:40.998423+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 54,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPQ2xGQmlRNDZrTWZXSldvaE1OMGkyV0dScE5acldpWUxILTJMNWd6ZkVNLTFwRHVWcllZR2FTSDFFZnNrMERzNGgwY05wRGtZT0lNa0gwa2l3V0FFQ0R0TWZFckxJbzlLUndSVzZlaFNDNThaN1djbmR0aE56QXhtaFcwYkVVZ0p0aGw0c2s4U0hIbDNTWGZMaVc1b0kyeEdJZlczWFNZczlKM0xKc0pBUGk1eDBKSjdBSTg0RVpqei03TEU5QkE?oc=5",
+        "domain": "The Watcher Post",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Export italiano, crescita del 4,6% nel 2026: imprese e istituzioni puntano su nuovi mercati - The Watcher Post",
+      "summary": "Export italiano, crescita del 4,6% nel 2026: imprese e istituzioni puntano su nuovi mercati The Watcher Post",
+      "statistical_claims": [
+        {
+          "raw_value": "4,6%",
+          "verified": false
+        },
+        {
+          "raw_value": "2026",
+          "verified": false
+        },
+        {
+          "raw_value": "4,6%",
+          "verified": false
+        },
+        {
+          "raw_value": "2026",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-A5806822EA212686",
+      "story_fingerprint": "a5806822ea212686d2cde312",
+      "published_at": "2026-10-08T11:12:00+00:00",
+      "last_seen_at": "2026-10-08T18:58:40.998423+00:00",
+      "topic": "CASA",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOeVV5T1doOWpHZkVHRjIySEFoMW1SMDRqOHhpY2kwV3ZMdzFvQVRqMm1yN2RXQWFLSUphLUxpekp0U2JiNHZ0S0FMMTdCaWdZSmd1MnpwZjhrcFh3VG5mMXdzaklrem9wODRaUktMMkwxOGtWRXZtX0xEbHNTWHJtV0o5bWlKaTFBZXFxSl9GLTdKdDFVbHV2M3psR2YxT096RGMxQ0NfVEc5Yk4yWm1BYzByR2g?oc=5",
+        "domain": "MutuiOnline.it",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Mutui a tasso fisso da 3,29% con Crédit Agricole Italia a ottobre 2026 - MutuiOnline.it",
+      "summary": "Mutui a tasso fisso da 3,29% con Crédit Agricole Italia a ottobre 2026 MutuiOnline.it",
+      "statistical_claims": [
+        {
+          "raw_value": "3,29%",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "3,29%",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-4D269E2B821E14F1",
+      "story_fingerprint": "4d269e2b821e14f1fe447cca",
+      "published_at": "2026-10-08T10:44:00+00:00",
+      "last_seen_at": "2026-10-08T18:58:40.998423+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 50,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQbnZlakh0OGVQZTVZZUNWYVY5bFVRRmNmdVlTR2ZvSG5ESWlNYkZ1aGY4VUZCR05JOGg4QnBISjF1bDY5eEdSeWVJUDFRWHpIU3U2dllQeUpvSlhLV2hRRkp5N2lobm0wbXBERDhUakNOR0FsRUp2ektkNG90TnNXa1NrOHBNMVFnTmVxb21TcUJ0dkdpNDYxYXVzazd4LXVUTEJSaTlLQXpTZ3dTaDQ0cG1jSXNaczVuZHlLUlp0U1hFSzBiYlJ0SkdZQ0pjOU1JRW44YTYyZ2JZU081YUFTRExjRHc?oc=5",
+        "domain": "Milano Finanza",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Casa, per ridurre del 20% i consumi degli edifici italiani servono tra 800 e 1.000 miliardi di euro - Milano Finanza",
+      "summary": "Casa, per ridurre del 20% i consumi degli edifici italiani servono tra 800 e 1.000 miliardi di euro Milano Finanza",
+      "statistical_claims": [
+        {
+          "raw_value": "20%",
+          "verified": false
+        },
+        {
+          "raw_value": "800 ",
+          "verified": false
+        },
+        {
+          "raw_value": "1.000 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "20%",
+          "verified": false
+        },
+        {
+          "raw_value": "800 ",
+          "verified": false
+        },
+        {
+          "raw_value": "1.000 miliardi",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "milano"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-7459977233B393AE",
+      "story_fingerprint": "7459977233b393ae286dfa68",
+      "published_at": "2026-10-08T09:30:17+00:00",
+      "last_seen_at": "2026-10-08T18:58:40.998423+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 70,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMivwJBVV95cUxOTWhROElQY1BtcVZicDBGaU5PUjdvemZpMFV4UDhSY0Q5dUpKN1MxRnk0cHl2NG1oQzVqVVR2TExWVG9adXdhVy1mNXI1cndacVY3UXB0RWl0M1owV09nbi1qai1mdkZyaG1XeHduaWhyMWRYZ3dSN2N4ZnJCWDBKU3lnQS1NYk54LWVPUjJnaVl5RER3UHFGR05zdVpjYVhEYUtRbHpHMmtwT1YzMDB2eExUX2lNMzlFNHhJcTVQSTlITDRFSFRqeVNsXzJpaFZOakpfX0hVa29TYTNfbTBfM3pWN0pLSmpJVWE0MDY2M1JWQy1sRHgxSzBYMnJOd2pfc1hEQTZkZHVmMFlINUg0d3BNMVE1Q3lKaUF6N2pYb3RpS3dsd0g3YjNXMlRZdGx2ZHdPWnNhTHhsMkRYTUxR?oc=5",
+        "domain": "Il Giornale d'Italia",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Debito pubblico mondiale al massimo storico, report UNCTAD: Italia record di €3.207 mld, petrolio sopra $100 e inflazione al 4,2%, a rischio sostenibilità finanziaria - Il Giornale d'Italia",
+      "summary": "Debito pubblico mondiale al massimo storico, report UNCTAD: Italia record di €3.207 mld, petrolio sopra $100 e inflazione al 4,2%, a rischio sostenibilità finanziaria Il Giornale d'Italia",
+      "statistical_claims": [
+        {
+          "raw_value": "3.207 ",
+          "verified": false
+        },
+        {
+          "raw_value": "100 ",
+          "verified": false
+        },
+        {
+          "raw_value": "4,2%",
+          "verified": false
+        },
+        {
+          "raw_value": "3.207 ",
+          "verified": false
+        },
+        {
+          "raw_value": "100 ",
+          "verified": false
+        },
+        {
+          "raw_value": "4,2%",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "lazio"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-1AD418D316FEC05D",
+      "story_fingerprint": "1ad418d316fec05d2710c778",
+      "published_at": "2026-10-08T09:14:20+00:00",
+      "last_seen_at": "2026-10-08T18:58:40.998423+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 45,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQeEo3Ymh0djF6SFdITGNKWU1kdTVrMG5vNGp2dThEYnRHVGJsMnVoNHdsem1nS18yQ2NhQ3JidEJUQUVnZlhOZlJTeFVrakxrLW4xQXozYW9vS0FDRjhTQkQwSEdPTTM2enNfbG5Yb0QxS2ZaWnFiLUNhVE1mUzBESEw2aE56OExoeURmbm5aYTNlRmUxQ2pvd05VVXVtaEs5SVV2Z3h1MmhYUzFYQ3doejhobnRTa28?oc=5",
+        "domain": "MarketScreener Italia",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Italia, nel 2025 consumi famiglie stabili a 2'782 euro al mese - MarketScreener Italia",
+      "summary": "Italia, nel 2025 consumi famiglie stabili a 2'782 euro al mese MarketScreener Italia",
+      "statistical_claims": [
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2",
+          "verified": false
+        },
+        {
+          "raw_value": "782 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2",
+          "verified": false
+        },
+        {
+          "raw_value": "782 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-396DC4677945C0FF",
+      "story_fingerprint": "396dc4677945c0ffdbe2d64c",
+      "published_at": "2026-10-08T08:38:36+00:00",
+      "last_seen_at": "2026-10-08T18:58:40.998423+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 54,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPanNOc3lJNm5FQ0EyN3hoTmxQQjJxSEltNDdkRDZ0VldKR0JLNnNONE1fSXFsQWVaZzRhSGdBTmh1eDFUVkQxT3c5NW8tMVE0RXlhcTB2VUJ2SHdXNVB0cThZRC10NVVXNmZPNVVTZ05rbE1mQjZDNVk0amdiOC1wMVRqV0wyTk1qdUFRNnVCQnR1YVNMTmE2Mm1ucVBGVkxsS2ZCc1g0aXdhbXk0Vno4?oc=5",
+        "domain": "Banca d'Italia",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Indagine sulle aspettative di inflazione e crescita - 3° trimestre 2026 - Banca d'Italia",
+      "summary": "Indagine sulle aspettative di inflazione e crescita - 3° trimestre 2026 Banca d'Italia",
+      "statistical_claims": [
+        {
+          "raw_value": "3",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "3",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "lazio"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
     {
       "id": "PULSE-DDBBD6E647CA6EF9",
       "story_fingerprint": "ddbbd6e647ca6ef9e2f38473",
       "published_at": "2026-10-08T07:59:55+00:00",
-      "last_seen_at": "2026-10-08T17:20:11.697738+00:00",
+      "last_seen_at": "2026-10-08T18:58:40.998423+00:00",
       "topic": "LAVORO",
       "pulse_score": 90,
       "public_source": {
@@ -77,6 +618,151 @@
         "status": "requires_primary_geodata"
       },
       "editorial_status": "verified_primary_match",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-142B6FC3D7570877",
+      "story_fingerprint": "142b6fc3d7570877ce7162e2",
+      "published_at": "2026-10-08T07:12:23+00:00",
+      "last_seen_at": "2026-10-08T18:58:40.998423+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 70,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPdVpoZGlzemVMX3dhcmIzSm9Id0NoVGhCeGMzMDgzc29NMU1Ga0p3SmVvSWFQU21FUWd4RlB3VFV3eGZxa2VVQjJrdF91NWVwZUtUMXRiQk9WUktxNGkwMHVWXzBGRVJXU01DVThnMkNVejZDM2lvYmRLOUYxTFlGZ3dPNTY5SjlMZEhRTE1CRmlYVE1hQ1VodGRiOVUzV19EaDNKcFhlV2N3TlFKT2gyQVdGdEtsS0l4SThPbHVVeDMyampuTlRzaUYwSDJTTThNUGRCZW9jYjBjUEtiU1h3dWx1TWU4V1RR?oc=5",
+        "domain": "BolognaToday",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "presentato bologna il rapporto formedil italia 2026: nel 2025 oltre 200 mila allievi formati “è record” - BolognaToday",
+      "summary": "presentato bologna il rapporto formedil italia 2026: nel 2025 oltre 200 mila allievi formati “è record” BolognaToday",
+      "statistical_claims": [
+        {
+          "raw_value": "2026",
+          "verified": false
+        },
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "200 mila",
+          "verified": false
+        },
+        {
+          "raw_value": "2026",
+          "verified": false
+        },
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "200 mila",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "bologna"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-4DBD5172BB220CFF",
+      "story_fingerprint": "4dbd5172bb220cffe19fd56e",
+      "published_at": "2026-10-08T06:18:25+00:00",
+      "last_seen_at": "2026-10-08T18:58:40.998423+00:00",
+      "topic": "SALUTE",
+      "pulse_score": 55,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOV0hZSmxzQTRNZGNManRjS2V3dHVfckJDb0UtZDZfZkt5NVo4TlZWbnJNYXNsOVNYemlsaXBhakJLbTZjZTA5bHBmM3F4Wm45STBZRDhYQU9MMV9UOUR1eHlsNVNwaHVmNzB2elkzT0poMHNCS0FJNWs0SlZ5bkRZUkd5S0pLa3cwU0R0cDYxTE8tdWVKS3RsejBOanF6Z29xd2hyTzFDUjJreFJWaTlrMU9lVm5zZGJpZWc?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Vendemmia 2026 in calo del 7,2%: ecco perché non è un male per la salute del vino italiano - Il Sole 24 ORE",
+      "summary": "Vendemmia 2026 in calo del 7,2%: ecco perché non è un male per la salute del vino italiano Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "7,2%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "7,2%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-3E4CFFFA73D8D451",
+      "story_fingerprint": "3e4cfffa73d8d451dba549c0",
+      "published_at": "2026-10-07T22:00:00+00:00",
+      "last_seen_at": "2026-10-08T18:58:40.998423+00:00",
+      "topic": "LAVORO",
+      "pulse_score": 55,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQRVhIY1pGckVaM25iVE9pLV96WkdSTlhUbEl5VkwwazgtalljLTYtS0VtSE10Wm5GNGtYNnBkRUJ0bS1aQkdzcVp5WjVrMU0wQ3NDNzk2N1VtMV82NVMya3VSdDJTUzB5eS1qZnlxQkZ2UVByeXNBd05NTVFXOGdCRGtkWVptOVg4Uk9tUksxa2NYMVc3b1oxMVYzLWdDMzc5UEtadDF0a2NnZnJDUENHZ25fRlhnXzVuek1taVVEeFAtSDAyMFg2Z1NFR0E0UU90Qi1WRy1B?oc=5",
+        "domain": "ItaliaOggi",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "L’inflazione sale, gli stipendi no. Ecco i dati dei 730. Redditi medi a 25 mila euro (+1%) - ItaliaOggi",
+      "summary": "L’inflazione sale, gli stipendi no. Ecco i dati dei 730. Redditi medi a 25 mila euro (+1%) ItaliaOggi",
+      "statistical_claims": [
+        {
+          "raw_value": "730",
+          "verified": false
+        },
+        {
+          "raw_value": "25 mila",
+          "verified": false
+        },
+        {
+          "raw_value": "+1%",
+          "verified": false
+        },
+        {
+          "raw_value": "730",
+          "verified": false
+        },
+        {
+          "raw_value": "25 mila",
+          "verified": false
+        },
+        {
+          "raw_value": "+1%",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "lazio"
+      ],
+      "editorial_status": "journalistic_attributed",
       "publication_status": "published"
     },
     {
@@ -183,7 +869,7 @@
       "id": "PULSE-6EE4895A1185C3B3",
       "story_fingerprint": "6ee4895a1185c3b39e070e88",
       "published_at": "2026-10-07T09:00:05+00:00",
-      "last_seen_at": "2026-10-08T17:20:11.697738+00:00",
+      "last_seen_at": "2026-10-08T18:58:40.998423+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 92,
       "public_source": {

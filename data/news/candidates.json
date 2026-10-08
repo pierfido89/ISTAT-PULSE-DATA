@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-08T17:20:11.697738+00:00",
+  "generated_at": "2026-10-08T18:58:40.998423+00:00",
   "candidates": [
     {
       "radar": "ISTAT - Aggiornamenti ufficiali",
       "discovery_url": "https://www.istat.it/comunicato-stampa/spese-per-consumi-delle-famiglie-anno-2025/",
       "discovery_title": "Spese per consumi delle famiglie – Anno 2025",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 50,
       "topic": "LAVORO",
       "numbers_detected": [
@@ -68,7 +68,7 @@
       "radar": "ISTAT - Aggiornamenti ufficiali",
       "discovery_url": "https://www.istat.it/comunicato-stampa/raccolta-differenziata-dei-rifiuti-comportamenti-civici-e-politiche-per-la-sostenibilita-urbana-anni-2024-2025/",
       "discovery_title": "Raccolta differenziata: comportamenti civici e politiche sostenibilità urbana – Anni 2024-2025",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 55,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -134,16 +134,20 @@
     },
     {
       "radar": "Google News - statistiche Italia",
-      "discovery_url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPRHlwZzZJcGdZQVFSQldpVDNvVEctbThjajNNNnF4ZlhqbG5DdF9EMUVaaHBmZWVnWS15SlNTb3ZoOTVJSTlPZXN1WXc5MWJwUE1ONXN6ZTlWcWJieDZYWURndFRTTHZ4MHFXdGVadFBNVDl2c0RlYlZyU01IN2NidWFVVFM5Z1ExYjJZRGNIQ19vdGMwaHVuRlhiUTc2Z3NBVTBkbWVpdUxCWnhNLTBiZ2VjR2dKb2RCNDhnN1JnXzNQMGpIcVE?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Otto e Cinquanta - Scuola, la protesta degli studenti francesi e i dati Ocse sull'Italia (8.10.2026) - Radio Radicale",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
-      "score_discovery": 49,
-      "topic": "ISTRUZIONE",
+      "discovery_url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPOVRwVjdRby0xS3luLXdZNzlpekJqZmhOZkRTVG5UWW9WV0pBTU9JcEJXSnhSSFlqOVJOSmNiM1pSUlhfZUJRd0JVWlJxdHFKeGM5T3Z0SVEtRE5JRFp0b3BlR3VHOF9EVUx1M1B3S0c4TWszc1R4d0hteVdtN1Eta1I4bzBRTkpNemJlazR2Zlk5RWJZOEpRTVhKUXRfY3N3bzFFYWZibE96QkVOQ3RfVnNIb3NXbnMx?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Reati sui minori: 7.272 in Italia nel 2025, +43% in 10 anni – i dati di Terre des Hommes - imgpress",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
+      "score_discovery": 50,
+      "topic": "ALTRO",
       "numbers_detected": [
-        "8.10",
-        "2026",
-        "8.10",
-        "2026"
+        "7.272 ",
+        "2025",
+        "+43%",
+        "10 ",
+        "7.272 ",
+        "2025",
+        "+43%",
+        "10 "
       ],
       "official_links": [],
       "official_domain_hints": [],
@@ -155,7 +159,7 @@
       "radar": "Google News - statistiche Italia",
       "discovery_url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPdVpoZGlzemVMX3dhcmIzSm9Id0NoVGhCeGMzMDgzc29NMU1Ga0p3SmVvSWFQU21FUWd4RlB3VFV3eGZxa2VVQjJrdF91NWVwZUtUMXRiQk9WUktxNGkwMHVWXzBGRVJXU01DVThnMkNVejZDM2lvYmRLOUYxTFlGZ3dPNTY5SjlMZEhRTE1CRmlYVE1hQ1VodGRiOVUzV19EaDNKcFhlV2N3TlFKT2gyQVdGdEtsS0l4SThPbHVVeDMyampuTlRzaUYwSDJTTThNUGRCZW9jYjBjUEtiU1h3dWx1TWU4V1RR?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "presentato bologna il rapporto formedil italia 2026: nel 2025 oltre 200 mila allievi formati “è record” - BolognaToday",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 70,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -176,7 +180,7 @@
       "radar": "Google News - statistiche Italia",
       "discovery_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOQTkwVmhFdnZhSWdxa2Z4OEJYbDFQYi1nendPb2tNbVhBZjBlMUVMY1FiRUZJNUx4VWxFNFhkZk01YlVKVWp4WGVnMDZTUl84bklzSlR3dHlaN21HQUh0Z2RQcDFLTnB3UFFuVWhIQU5fRlY2NU1fdFhYTEl3Y2dWOEF3cVFMSUZjVkVlUHpwR2JveGFX?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "World Wellness Weekend 2026: Italia e Messico da record - Eroica Fenice",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 42,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -193,7 +197,7 @@
       "radar": "Google News - statistiche Italia",
       "discovery_url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE5PNzF3cFF1X3oxVVJUMFVZMjBSUV90eFYxNGNJVV8tZWZQS0NWa2hETXRmX19wODUzVUNYZnZ0VHVwcXNDNHpGRl9KT1Y?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "El Niño 2026 e inverno in Italia: gelo record o inverno mite? Cosa sappiamo davvero - CorriereNerd.it",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 42,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -208,28 +212,9 @@
     },
     {
       "radar": "Google News - statistiche Italia",
-      "discovery_url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNS3NmTWc0OTEtV2hoM1dJUkx6azJGbXd0NWRDN0NQbGhoSjN2TC1ERWFSQm5NeXNBdno3ZU1MbXBySGpMZWFjcWp6SFZHSDBkQVpBenZqWHdabFUzckNRV3NvdHQ5ekZLV2U1YXlQVVVvWGQ3R2ltcWZ3Mi1sM294d0pLdU5laWgzYzU2Y0JpaVU1S202S2duMVN2ZGVPNVJramhFc1I2V0E0UnJFYjNSajhGX3ZJamFFTHVLTlE4TFg5ekFsY3ZtRUNiUFpoR1M0ZmxNR1dLZUtOcFBUeXBjNDdSUzBnbWdVdGFDRQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Immigrazione ed economia, il 13 ottobre al CNEL la presentazione del Rapporto 2026 della Fondazione Leone Moressa - Stranieri in Italia",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
-      "score_discovery": 39,
-      "topic": "ALTRO",
-      "numbers_detected": [
-        "13 ",
-        "2026 ",
-        "13 ",
-        "2026 "
-      ],
-      "official_links": [],
-      "official_domain_hints": [],
-      "primary_resolution": null,
-      "editorial_excluded": false,
-      "status": "needs_primary_source"
-    },
-    {
-      "radar": "Google News - statistiche Italia",
       "discovery_url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQRVhIY1pGckVaM25iVE9pLV96WkdSTlhUbEl5VkwwazgtalljLTYtS0VtSE10Wm5GNGtYNnBkRUJ0bS1aQkdzcVp5WjVrMU0wQ3NDNzk2N1VtMV82NVMya3VSdDJTUzB5eS1qZnlxQkZ2UVByeXNBd05NTVFXOGdCRGtkWVptOVg4Uk9tUksxa2NYMVc3b1oxMVYzLWdDMzc5UEtadDF0a2NnZnJDUENHZ25fRlhnXzVuek1taVVEeFAtSDAyMFg2Z1NFR0E0UU90Qi1WRy1B?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "L’inflazione sale, gli stipendi no. Ecco i dati dei 730. Redditi medi a 25 mila euro (+1%) - ItaliaOggi",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 55,
       "topic": "LAVORO",
       "numbers_detected": [
@@ -248,9 +233,28 @@
     },
     {
       "radar": "Google News - statistiche Italia",
+      "discovery_url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNS3NmTWc0OTEtV2hoM1dJUkx6azJGbXd0NWRDN0NQbGhoSjN2TC1ERWFSQm5NeXNBdno3ZU1MbXBySGpMZWFjcWp6SFZHSDBkQVpBenZqWHdabFUzckNRV3NvdHQ5ekZLV2U1YXlQVVVvWGQ3R2ltcWZ3Mi1sM294d0pLdU5laWgzYzU2Y0JpaVU1S202S2duMVN2ZGVPNVJramhFc1I2V0E0UnJFYjNSajhGX3ZJamFFTHVLTlE4TFg5ekFsY3ZtRUNiUFpoR1M0ZmxNR1dLZUtOcFBUeXBjNDdSUzBnbWdVdGFDRQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Immigrazione ed economia, il 13 ottobre al CNEL la presentazione del Rapporto 2026 della Fondazione Leone Moressa - Stranieri in Italia",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
+      "score_discovery": 39,
+      "topic": "ALTRO",
+      "numbers_detected": [
+        "13 ",
+        "2026 ",
+        "13 ",
+        "2026 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - statistiche Italia",
       "discovery_url": "https://news.google.com/rss/articles/CBMivwJBVV95cUxOTWhROElQY1BtcVZicDBGaU5PUjdvemZpMFV4UDhSY0Q5dUpKN1MxRnk0cHl2NG1oQzVqVVR2TExWVG9adXdhVy1mNXI1cndacVY3UXB0RWl0M1owV09nbi1qai1mdkZyaG1XeHduaWhyMWRYZ3dSN2N4ZnJCWDBKU3lnQS1NYk54LWVPUjJnaVl5RER3UHFGR05zdVpjYVhEYUtRbHpHMmtwT1YzMDB2eExUX2lNMzlFNHhJcTVQSTlITDRFSFRqeVNsXzJpaFZOakpfX0hVa29TYTNfbTBfM3pWN0pLSmpJVWE0MDY2M1JWQy1sRHgxSzBYMnJOd2pfc1hEQTZkZHVmMFlINUg0d3BNMVE1Q3lKaUF6N2pYb3RpS3dsd0g3YjNXMlRZdGx2ZHdPWnNhTHhsMkRYTUxR?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Debito pubblico mondiale al massimo storico, report UNCTAD: Italia record di €3.207 mld, petrolio sopra $100 e inflazione al 4,2%, a rischio sostenibilità finanziaria - Il Giornale d'Italia",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 70,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -271,7 +275,7 @@
       "radar": "Google News - statistiche Italia",
       "discovery_url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQRnZHbkdubS16YTVJU282cFRuSDlVNGhpcnFWdWZCQ0Y4by02LVZsdnhDNjlZMUFwV3pMVGJGYWNjZHN6cUJBbTljMDdzVE05aEdaVEh6SlV3N3d5TlBCMDlJMlBQTFB2Y3lNNjJackw4SklCMTdWeTN1SThqdVJZaTNxal81bWE3bTczSHotdDFJakkxQjk5SF96Tjh4TkJGTzVuR2w1V1F1WHExZEZtc3BvbE4tY25DMjVoS3dLNUxzMzRfU2pn0gHMAUFVX3lxTE1iT1ZaTWRLekMwNnVBRHl0RFQ2WVdUUGpMYUVnSjZlWWtrZ0lBc3pIcTZ3TklyNVk2bFhVdTh0X1VaR3NJRUcyb1BtM09ZMER0M2YtdEZsZEswNHY0cHRveXlWV1p3U0NKY0E3a3EtZUpWRGJwbVRORjlfakluT2FwZ3lNTGxyM2g1N3VnVFM3NEhEdmVKRm1oSHNoLTY1R3ExSkp1QkVSNzdvd185NjNGV1BUdHF4Yzd2Um9na0JudF9DakE4VEk2ZFhlcw?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Le statistiche di Serie A, Serie B e Coppa Italia 2026/2027: ecco alcune curiosità - Kickest",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 39,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -290,7 +294,7 @@
       "radar": "Google News - economia lavoro",
       "discovery_url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPQ2xGQmlRNDZrTWZXSldvaE1OMGkyV0dScE5acldpWUxILTJMNWd6ZkVNLTFwRHVWcllZR2FTSDFFZnNrMERzNGgwY05wRGtZT0lNa0gwa2l3V0FFQ0R0TWZFckxJbzlLUndSVzZlaFNDNThaN1djbmR0aE56QXhtaFcwYkVVZ0p0aGw0c2s4U0hIbDNTWGZMaVc1b0kyeEdJZlczWFNZczlKM0xKc0pBUGk1eDBKSjdBSTg0RVpqei03TEU5QkE?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Export italiano, crescita del 4,6% nel 2026: imprese e istituzioni puntano su nuovi mercati - The Watcher Post",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 54,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -309,7 +313,7 @@
       "radar": "Google News - economia lavoro",
       "discovery_url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNZk1vOENPYldPTmRvMmNzUXhCeW5Ja1NJUkFHcXUyWjgzbXJTbXBkRjhJcm5Oblo3X05TbVRDZnJBZVpMdmMtSlVVNjFPRmY5TTQxZXgtQng3blg1dUNFV1QxUWxHYm0zVjdCMk1BdkdZNEMwZV9yUGR5eUJsLURGai13WldDR2g1NGFWUndBR2xMZHpfNnF3ejVlUjFoU2ZrbEYwOEVaZVBLYVFOeC1ZUkl5bjdCV3lFeWQ0?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Pecoraro Scanio \"Da Torino sfida di startup e imprese per innovare l'Italia\" 08/10/2026 - l'Eco del Sud",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 50,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -327,10 +331,29 @@
       "status": "needs_primary_source"
     },
     {
+      "radar": "Google News - economia lavoro",
+      "discovery_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOSmFnM3M2ZVVjSkdPYmtKQVlOaHVHazFzRlpuako4RE03SGUwa0IyX1FYQjNtaHozeFpHWUROQnpFaXM2bkU1X0NrSzlETTJka3pFampEQ3RxQTNrT1NCbFRuMXF1Um9yOE9qczNvMkxqZndFelFtWnluNWE0YWwxSXhuNGNvRG1IM25Tb2ZYNm5mb2pVRFlSMUt0SXpUQnFxcFZ0OUN0amxULUNVSkZMZEZXX2hnTGM?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Intesa Sanpaolo, piano da 20 mld per la crescita di piccole imprese e territori - Modena 2000",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
+      "score_discovery": 44,
+      "topic": "ECONOMIA",
+      "numbers_detected": [
+        "20 ",
+        "2000 ",
+        "20 ",
+        "2000"
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
       "radar": "Google News - salute scuola ambiente",
       "discovery_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOV0hZSmxzQTRNZGNManRjS2V3dHVfckJDb0UtZDZfZkt5NVo4TlZWbnJNYXNsOVNYemlsaXBhakJLbTZjZTA5bHBmM3F4Wm45STBZRDhYQU9MMV9UOUR1eHlsNVNwaHVmNzB2elkzT0poMHNCS0FJNWs0SlZ5bkRZUkd5S0pLa3cwU0R0cDYxTE8tdWVKS3RsejBOanF6Z29xd2hyTzFDUjJreFJWaTlrMU9lVm5zZGJpZWc?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Vendemmia 2026 in calo del 7,2%: ecco perché non è un male per la salute del vino italiano - Il Sole 24 ORE",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 55,
       "topic": "SALUTE",
       "numbers_detected": [
@@ -349,37 +372,9 @@
     },
     {
       "radar": "Google News - salute scuola ambiente",
-      "discovery_url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOLTRWdmxzMk1fNWVNb0hLdkk4dkYwSUt6SUt4bzlILUo0MElLRWt0LWM3bkpDSDV6NjNhdG9HbWRVVm5zdzFUalB3dExtbXhtSEp1ekluWWQ4T05SSkFrZWU2Y0xnczJ4Y0RYRkxLaVAwY2ZVUGFUVEpadkN0WDlRX05qZ3VNakVKdFV5WXNoRmVOajM5Skk4SW8yMTBDb1pHQy0wTjdERkk4TzdzT2lNNXZYMUhtdVk4NHhzZWUyQkEtSEU2SGRzb0cyQVA?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Rapporto Ecomafia di Legambiente: in Veneto 1.186 reati ambientali accertati nel 2025 - www.lavitadelpopolo.it",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
-      "score_discovery": 44,
-      "topic": "AMBIENTE",
-      "numbers_detected": [
-        "1.186 ",
-        "2025 ",
-        "1.186 ",
-        "2025 "
-      ],
-      "official_links": [],
-      "official_domain_hints": [],
-      "primary_resolution": {
-        "url": "https://legambienteveneto.it/rapporto-ecomafia-di-legambiente/",
-        "domain": "legambienteveneto.it",
-        "method": "curated_primary_verification",
-        "verification_score": 100,
-        "matched_numbers": [
-          "1.186",
-          "35%"
-        ]
-      },
-      "editorial_excluded": false,
-      "status": "primary_statistical_source_verified"
-    },
-    {
-      "radar": "Google News - salute scuola ambiente",
       "discovery_url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxPRWRhMUQ2MmVubWJXV1lrQm5Fc1FOcGZOZ2VRNWtIb016VE9NX1J6T25LOWRiX0YxWW9RYWJOVTZEZ25sSnB6MG4wNkxYd05MYjFiTW1sOVBUeVI1SkY4RFlUYVp5ZlVFTHJwdk9KY2hhWFJhSHV6NGdkQ3lrTFBkV01hU1BwYWgxUWJkQ21NeEJneV80ck1jeXZvTlF5c3pGeGVCMXZEVjFDX0Q0Y3U2WWw1Njl5Q2ZRSHRBMkNwbjZCWW1TUExrZ2NIVW5RYTJzOEFxV2xrUjk2SldkQWMycGdLSl9DdEY5RzdRX2puM2U1YWphLXc3Mno1eGE5OVNUYUM3S185SQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Sanità malata, la diagnosi di Gimbe: 5,8 milioni di italiani hanno già rinunciato a curarsi. Intanto le famiglie pagano 42 miliardi per il privato - La Notizia",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 39,
       "topic": "SALUTE",
       "numbers_detected": [
@@ -398,7 +393,7 @@
       "radar": "Repubblica Economia",
       "discovery_url": "https://www.repubblica.it/economia/2026/10/08/news/consumi_istat_2025_taglio_spesa_alimentari_sanita_perosne_sole-425634164/?rss",
       "discovery_title": "Nel 2025 una famiglia su 3 ha tagliato la spesa alimentare: conto più salato per le persone sole",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 37,
       "topic": "LAVORO",
       "numbers_detected": [
@@ -415,7 +410,7 @@
       "radar": "Repubblica Economia",
       "discovery_url": "https://www.repubblica.it/economia/diritti-e-consumi/pensioni/domande-e-risposte/2026/10/08/news/maturo_la_pensione_nel_2028_e_la_prendo_nel_2029_a_quali_regole_anagrafiche_saro_sottoposto-425626452/?rss",
       "discovery_title": "Maturo la pensione nel 2028 e la prendo nel 2029: a quali regole anagrafiche sarò sottoposto?",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 40,
       "topic": "LAVORO",
       "numbers_detected": [
@@ -442,7 +437,7 @@
       "radar": "Google News - ANSA dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQLUVsUHdjSE5iUEJESjl5cDR5WEpKVXRwVXVrR2RBSm9pTHNweDVLNGxOODVQY2ZxWmctdERmUzZQcnQyanpqT2NkU0RsVHdfNGF0ZEUxc29nbU1fdmJnTm9IWFRNd3Z3cVRsdzg4UHhtYU1xYldQb09JQkFtUUdoVzNScG80eC12aEF3RHlhcHREMlVFZDdHZkpOOTZiWC1zNXlwZ0VXaUNOdXMtTHRwTUJCOHNpOXZMeGdfLWZMVWgtdmFXaExFUXdrQlVjN2xmeG1lUFdBeGhaeXRWUHNkRUVfbFhhMDNxdDBGWllFUWxQMXZqNlJJVQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Samsung stima utile operativo record di 80 miliardi nel terzo trimestre - ANSA",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 37,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -459,7 +454,7 @@
       "radar": "Google News - ANSA dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxORlc4R1ZwWHpKT0F0UkVmcUxhTkltcmhEVXJaMlpkVnk4SHE0M1pYUW14d1o0OWhXaXBJZUduWi1IczhjcUxpRWFtRTlnTkpPS2pGbktlV29KSl9mbmpoVzlHSEExMHota3dBeEFrTHpadzdqdThRN1dOWF8tVjFFX093VzhISW1HaWZ4dkVXWWo5S2t2Y2hiYjd1V0d3UVlwOEREaWRDeGlNWlVOaUhIUzVNM21MTWRVTFN3Yl96YkRkUkdyc01hTFpxb19QTWdScmpSWmlOUFhtNWJVQXhVbVUxLW5fZk5hQlFXcngwR3JMMm9hQkMzQkhvcGV2SmfSAf8BQVVfeXFMTkZXOEdWcFh6Sk9BdFJFZnFMYU5JbXJoRFVyWjJaZFZ5OEhxNDNaWFFteHdaNDloV2lwSWVHblotSHM4Y3FMaUVhbUU5Z05KT0tqRm5LZVdvSkpfZm5qaFc5R0hBMTB6LWt3QXhBa0x6Wnc3anU4UTdXTlhfLVYxRV9Pd1c4SEltR2lmeHZFV1lqOUtrdmNoYmI3dVdHd1FZcDhERGlkQ3hpTVpVTmlISFM1TTNtTE1kVUxTd2JfemJEZFJHcnNNYUxacW9fUE1nUnJqUlppTlBYbTViVUF4VW1VMS1uX2ZOYUJRV3J4MEdyTDJvYUJDM0JIb3Bldkpn?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Maratona di Napoli, domenica 18 ottobre edizione da record con 8.000 iscritti - ANSA",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 49,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -476,9 +471,26 @@
     },
     {
       "radar": "Google News - ANSA dati e statistiche",
+      "discovery_url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOSjI1WWVEVTJrVTJEMmlmckc1MkJRRThCVmZMczhHOTNnODh3LTItUmFaTFlIRnlheWRlUUVOMU9FWXFLQ2plOXhLLVk1blptVWRTajBXZUhyYTJrb2dhTDhqSURIb0UxN3pMRkJ5VTIzZjMxQjhzZnBrVDRWbmVKOWdHX0R6b3J5dFAyYWtRX3JjRGVPRWNNTkRHOEViSklUSXNEYmVkT2E4YWpUNWJPN2YtYnNrTU5VbGwtVHBqbFhJWjZSU1EtbXdxYWdOQ0Q3Y1dtR2piU0xzaVNyZXhkR1JJc3hXMzQtUGdoU3A1cGzSAfYBQVVfeXFMTS1JVlRDSDJRWEVfT1NvSDNBV3ZDNTZVU0pTczloVU16MTdnOS1zLWZCUVZYZHVyWW56aDlyLUJWRURzY1JGRHRBSVFrRlZGQ3F3c2NiVThmSlcwQWlUQ0tSblpocDFyblBGY0J5NHFURWJBMHJqX2IwSnpMVFE1ZEJNMldBNGtGTTZuTWlNVzFKYUljc1NSYlBzc08zcUhFNG5nUVRxREVYOHdTTWJfTXJLb1JScFlYWDMtMHhoelQ0ajBPdlJDcHVyRWVrZVpqbFMxX2Z2UXcwTFZONWIyeVUtSUR3NXBnRV9GdHY5b0NvRU9Zd1JB?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Un flop la stima del 1960 sulla crescita record della popolazione - ANSA",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
+      "score_discovery": 42,
+      "topic": "DEMOGRAFIA",
+      "numbers_detected": [
+        "196",
+        "196"
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - ANSA dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNa3AxLW9EMlItVnIyM0hNaFRZY3MxbUsyNDFQVHFENXBBQnhiXzh4bGFHNEplbFU5QlJfcmJFWUh4TElaMmRkNlBjWE5aSDFmWE42bUhZY0NacXh6cm96QWo0NnVjYjdnMTlEYXMyeW1uM1VndGpqSGk4b2dMZk1GUWJQYURiY09NcE9IZG9tZTkwWlpqRzhIXzd3b0ZTN2JLOUtFV2pRSW51eEtrdXEwSnNLdVJTXzJTUUxPY2VYc2xyeFhOYi1YYnpnRll3S0txbWIwMnYxd0IxSDFJa19yaERPLXNQbXF4M3fSAe8BQVVfeXFMTlNkeVU5VkJxcHFuaDlWaTktczlOS0pLUFJSbGhhNFByak1RVUl2dW8wTGJYYmFETjZIc2ZuZHJCRjJNS3BYLUczNk9pVkVfdDJUdEFETEpiZXpXMEYyNlQydjNnQUJGX0hhcHlacmxPNFQ2T05zQkRvVTlVU0U1TzNlSkVEaXpwZ3Ewa2ZvcFV2MWVYN0I0YmJLdmtFcjVuYzk4bG51Y1J2T2tOU0pfR1hld3JRNDFYU0dKUzNKaWgwNm03Z256MVAxamZnS3g5c0M4TFdjUTBpWTZPVHJocmVIcUhFUXF3UUt1cEFWTEE?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Terre des Hommes, in Calabria 205 minori vittime di reato, -15,6% sul 2024 - ANSA",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 50,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -499,7 +511,7 @@
       "radar": "Google News - Adnkronos dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOYl90bkVYTGVaWjV4X2NvUTNWb2U3VndMZU9VcVgwRU5BQk56MFlqYWcyZXZJRWJLWjRDT3dTMlpkNzBObXFWd1NCNW5GOUF0dDFFR0xqUUVYeUh5c0xWM2s4MUgxYlhKejBlSUtiai1lYTl0Z3FnSmtMLXhPeHNmSzNlQVVFMUJSQndTUHZySFJPdmxJ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Rotocalco n°40 del 7 ottobre 2026 - Adnkronos",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 40,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -520,7 +532,7 @@
       "radar": "Google News - Adnkronos dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPbW9YXzhScmdkNTNGbGZKYjVVQWdJQkNpYmxHV1lKamxZaU5JY2xHOXhzU1lXbE53cUFPeUk4OFE1V0Z6T0Q5ZTR5azh4cXZvR19mc2hRZzlkX241YWI3V29sQUxIdkFibVBldnI1bV8ydGhjZGNBbjZsUnV3ZTRkZVVZSF9TUVMzRi1lNzBPN3hFMDJaM1ByR1FXVTlVWVNiQm9uY3Y4aDFnWmRDYWFwVjV0elhZZGxCUURiY05mTF9YTEQxTVgtb1ozOTNXYmM?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Data center, Ida: \"Settore che può valere fino a 37 miliardi di euro entro 2036\" - Adnkronos",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 39,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -539,7 +551,7 @@
       "radar": "Google News - Sole 24 Ore dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQZWNXdjFxbzZUdng4cXlBN3dza1NRb2V3Y21KY0RKTF8yWWRqRnFieENwMzBCeFY1dzFnbC1SYTdsMC1wSnhmd3ZUN2JhUXFiM1Q4VGRFcVBacDBTeDJBVHRVYjFOS0VNLWd6MEJEaEo5Z1pSN2U3MEV6UjRQc19kd3lTRTlsZ3YzWjA0aW9nUTNkbkNXeXd1Mlg5c3ZWRXZuUXhzZnJFbw?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Investimenti 2027, il costo invisibile delle agevolazioni - Il Sole 24 ORE",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 39,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -558,7 +570,7 @@
       "radar": "Google News - Sole 24 Ore dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNU1RBRTI0ZFVjRnFSWElFUGpCOUZ5Vk44QUduYUlFS3pMVkpORDQ0dk9xRng3VmR6a0N6ekwxYXJaUnQ4NnU3aXNhRXFUMS12V0pxRXVQY2JFT2lUZ0lwUTJGTktvMlJUVWV0YUxkV0IwS2tnTjZIczd2cEJQNnN6SVJWbTF4QXF0QTRjQ1I5cFNKQXZQNFkxY21NTjRaXzMzZllSMQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Usa: scorte all’ingrosso +0,5% ad agosto, stime +0,7% - Il Sole 24 ORE",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 35,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -579,7 +591,7 @@
       "radar": "Google News - Sole 24 Ore dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQc0NWNFZiQlhmbE5sdVp6VElfcmtfbjZ3aUpSSEV0b3NIV2xHcnBfcGpmYzlhMjQ5LXJuMDJwcmVOLXpiNXNFTG1aUmlNNmFCbmt6bVJ6QmhucG1RbnpRdmZTTnZmVDNUd01sYktxNE1LVjI4YWNmdTBiaWMxWTZ6d3dianJrOWVZZW5ELVBlUXdGOGNUUk1JOEtvRlJjSmpqZG1JS0R0RVpnR2dLeUczS3pFYjNZMUtnMmZhUjB3?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Costruzioni, in aumento le imprese in crisi: in due anni il 30,3% in più - Il Sole 24 ORE",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 39,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -596,51 +608,9 @@
     },
     {
       "radar": "Google News - Sole 24 Ore dati e statistiche",
-      "discovery_url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOSWpDWGxrVUxJNWY0TTltS09QSU1DUnV1b05oN3ZqazhFbEdNZ1VGSm9YazJrTWYycDNuNEFxTDBJXzc5WWpIQThnWGpmM2s3ZEZteko4TDBVTHJramJKS3NkN0NrQjB2d0IxblRTakVQTHptb0VXQTN2aUoyblNUZVFiNFdtZ09YV0V5Und3ZV9yMXozUXhTNDQzeE9maUR1ZlFxR1ZkMXRSYWVZWGRN?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Unipol: cda lancia aumento fino a 2,5 mld per filiali Mps, sconto del 18,75% - Il Sole 24 ORE",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
-      "score_discovery": 40,
-      "topic": "ALTRO",
-      "numbers_detected": [
-        "2,5 ",
-        "18,75%",
-        "24 ",
-        "2,5 ",
-        "18,75%",
-        "24 "
-      ],
-      "official_links": [],
-      "official_domain_hints": [],
-      "primary_resolution": null,
-      "editorial_excluded": false,
-      "status": "needs_primary_source"
-    },
-    {
-      "radar": "Google News - Sole 24 Ore dati e statistiche",
-      "discovery_url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOaXRtTHJaS05FM2d5OWFFTnZEN3Y4cng0Z3lRZUJLMWYyRmV3YXlRQ2piOXB3czM2dUYtMUtjNHBpdWlpSTlTU0N3UjJhY0NFSGhiaTRzZ29nTjl1WGVmaXJFelV2b1Q3VjNGVzY2SGVqdFVhanFkSXV6eFZuaFh6U0dqT3NGVEpFRUlwaGVGU19TcDlYR2lSWHBlM29oZ250bzh3djlWTjhXV2lrUzVXejJSRUJnYURRa1FxU29CYnhqc05UT0JibmlSdllKTVZ1?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Casa, nel patrimonio pubblico oltre 100mila abitazioni non utilizzate. Nella Ue servono altri 650mila immobili - Il Sole 24 ORE",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
-      "score_discovery": 35,
-      "topic": "CASA",
-      "numbers_detected": [
-        "100mila",
-        "650mila",
-        "24 ",
-        "100mila",
-        "650mila",
-        "24 "
-      ],
-      "official_links": [],
-      "official_domain_hints": [],
-      "primary_resolution": null,
-      "editorial_excluded": false,
-      "status": "needs_primary_source"
-    },
-    {
-      "radar": "Google News - Sole 24 Ore dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOLTIxMnJzQWY2VTF2RUJhcFNvTURPSEcxekhWVjZRSVpHVHpQUDN5eDhKX0ZuOUFjbkxnT3QxYWtZa2Zvbkk5dWdBZldXZjd3WXo2RUdSdU1KUDdYc0haVU9YTzBOTVZVc2ZRU1IwUDhfNEJ3UTVfcG03cERVT016ckJOQXJPY3paaWZnTmlUS25YV2dQTkVLY3VmLWdsZmRPQUdpRWpVLWZtRHM?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Borsa Tokyo: indice Nikkei chiude in ribasso di 0,92% a 70.035,71 punti - Il Sole 24 ORE",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 40,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -663,7 +633,7 @@
       "radar": "Google News - Repubblica dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxOWi05dndUeGt2YVU3ZXdKWmRraFpDT3NpVHVVUnhOLVRVeFZTbVFtR0p4Z3R4ZUdtOXg2bmduNjNTZ3JrSXlic3hnSmFWcWFFY09RVHpaLUdPbzFNNUk0N1dmalpzTkp1ZVJfejNDRTlxYVctNWxYdUJTRUduNTE1Vy1fZmZlUTlVd21vS0lSTDZmdlBaQ0pFdFNST3VILW5NSmNqcUZud1ZaN2JXX09tbVJjRi1adzVVREJ0UGQ1WDJOUlRtcXJteHlPTGl6NW1Ea2VPYUlVVFZwZ01uMFVvVGhsZldiUUZnVzYtdnJ5U09QUzkteHl2U0hoRGlXaGZiNm96LWV3?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Competenze digitali, l'Istat certifica solo il 27,4% tra i 65 e i 74 anni: l'ultimo miglio dei servizi previdenziali - la Repubblica",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 35,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -682,26 +652,9 @@
     },
     {
       "radar": "Google News - Corriere dati e statistiche",
-      "discovery_url": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxQcTJnNnk4WDMwUHgwdnNCZm5UaVlaUXNvOHBYVUt4V3VNLU5oQnp5SkdDMnhIaGhSMHdmdnItSnZGeEt3NHd6X1pMWVdsY3ZSVHlLR3RCTGExS2hUeURSYVFXN2hYZkdhSnVQOVpfU09sYVotSXhwdm95SnNRM08zR3RPNEllVlZCeTlEU0paRURPOXExNnJjcVBXVUdESzlndGpvX0tqaU5aVGtoMnBtVkR4UW55bVdaWWtlNmFIdmo1emVOMHNFZmpZMFVfSTdMLUt1SVI5RF8xTEpCbGVFdkdzX051Vml4NWdmeTRkcWZYNE5hVDNVWmZ0MVNlTWVSVkVZQXNVYmh2WmI5MS16TE90SGxRTkdtUlJFRVFrU0hQalo2alpYcDdyb9IBsAJBVV95cUxQNWpRLU05eGhaQzk0ZkpLajJLWmNoSlEtZ0ZkM2F2bTVDZlZESW51cHhOZ1ZNdnZCOEgyNzFrU0NhRjRkN2thZ3UwMXJkVk9yTjl0Q24xc1BVYTNMVHlnVGd1bEtFNEp1Z3llN2d3ZUsyOWJUWjVOa1htQzVIVjZjM083WFl0dnktMXVmTWp0NnhmR1VlNmZUR1A5TmZ3LVNTWmVQM3ZjUi1PN0JVLUk0NWRWV0NDRl9zLWpIX2N3elZCcWI3a191a25EMnpvRG54eC1kb0I4dmc2QzM3bmJBMGdYZm9EZnpwVHRPUjVFY0tEZVBUM3ZXc1p1VFRFYjJjdkwzcHM4YVN0OGVBNlFQQWhfYWtCdHBWRG1USnZicVJUMERoY3NyY2x2ZldUVTJ3?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Samsung, 80 miliardi di utili nel trimestre: il record assoluto per un'azienda tech, ecco come ci è riuscita - Corriere della Sera",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
-      "score_discovery": 37,
-      "topic": "ALTRO",
-      "numbers_detected": [
-        "80 miliardi",
-        "80 miliardi"
-      ],
-      "official_links": [],
-      "official_domain_hints": [],
-      "primary_resolution": null,
-      "editorial_excluded": false,
-      "status": "needs_primary_source"
-    },
-    {
-      "radar": "Google News - Corriere dati e statistiche",
-      "discovery_url": "https://news.google.com/rss/articles/CBMi7wJBVV95cUxNcEs4dG01bGo4M2dVRlNCNTVjSmxyWGZmR1NqdFh1ZnlLanlzMk14ZnRRTE00bkFsR2g1bG5OdWVYZlBZaEQ3UzBIY21UUlh6S19VS1ROYVlIWGhyT2lpbm5FX09HekNNX0hNTGMzb1ZyRDRyaWh6U2FmZ0ZKU3phU1BqMnJxdng5NkEzSkF4U2RHeDVrZ25obTdoWDY3cVgyelpmUzFlMnk1UmpZcFBJZ05jYXNOcUlnTWl4X2RjN3Y5M1JhcWpPMlBOR3dHOXR2TzFzRjByMEktLVNSMGFqZ2lmWmd6NDJ2ZU8wZGF5UW42dWhfMU52cWN4aE4tcVhWNTRIWlFCOTBEMWhKcTg5NUdxZDhMcTV1NU9oOGRrM09HRVpObnBYazZPcjlKN1Q3SlJac2VPMHY4ejhZTjl6a09NeWppb043Q0JCUGJhcm1tQV9YSXFvcjVYSHhlUEV2YmloY3VFcTk5Tnlsa3VN0gH0AkFVX3lxTE9qeEl0V18ydnNkX1BWLVFqRk9MaUVJSkNDUmFLT1c2Tkh3YUIzbnN3TmZXVF9mU2lFOWIxeTlJU1hHR0NhRll1QnMwREo5VXFBYm94VXNNWG5TZUlIRjdUNFo0NUY1bm51ME95ZGljWE5hZkhWZDZUQ3JOa1pHRWMyYU9ydW1KSEI0X2RhMVVJQVRtS0FUOGZiUVU3SXhzaHM3dHVGN3NFWGJMeHJxTzY0ZlUyLUx0dzV0SXpBRl9WWnAyb1NZd0lpMldRNHhzVzFEM09lUjRIS3NSLVUtV3BxbjhzZ0tPd2s4Wi1mNm9EWEtvNmMzTjRyeWVuWTNteEVRaXdCQklUTnJ0UGFVWWVzRi1uZ0RWVEpMSzVRVE14Tm92ZFFrTkt5QUpXQV9UNXVybTF3a01oQUF5d2lTLVg4R08zN3lLTmJjWTc4N20zUzNNVExEUGVrdjFaa1BUUHpoZXJieGhCb3paRDNzRk15SWo5Vw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_url": "https://news.google.com/rss/articles/CBMi9AJBVV95cUxPanhJdFdfMnZzZF9QVi1RakZPTGlFSUpDQ1JhS09XNk5Id2FCM25zd05mV1RfZlNpRTliMXk5SVNYR0dDYUZZdUJzMERKOVVxQWJveFVzTVhuU2VJSEY3VDRaNDVGNW5udTBPeWRpY1hOYWZIVmQ2VENyTmtaR0VjMmFPcnVtSkhCNF9kYTFVSUFUbUtBVDhmYlFVN0l4c2hzN3R1RjdzRVhiTHhycU82NGZVMi1MdHc1dEl6QUZfVlpwMm9TWXdJaTJXUTR4c1cxRDNPZVI0SEtzUi1VLVdwcW44c2dLT3drOFotZjZvRFhLbzZjM040cnllblkzbXhFUWl3QkJJVE5ydFBhVVllc0YtbmdEVlRKTEs1UVRNeE5vdmRRa05LeUFKV0FfVDV1cm0xd2tNaEFBeXdpUy1YOEdPMzd5S05iY1k3ODdtM1MzTVRMRFBla3YxWmtQVFB6aGVyYnhoQm96WkQzc0ZNeUlqOVfSAfQCQVVfeXFMT2p4SXRXXzJ2c2RfUFYtUWpGT0xpRUlKQ0NSYUtPVzZOSHdhQjNuc3dOZldUX2ZTaUU5YjF5OUlTWEdHQ2FGWXVCczBESjlVcUFib3hVc01YblNlSUhGN1Q0WjQ1RjVubnUwT3lkaWNYTmFmSFZkNlRDck5rWkdFYzJhT3J1bUpIQjRfZGExVUlBVG1LQVQ4ZmJRVTdJeHNoczd0dUY3c0VYYkx4cnFPNjRmVTItTHR3NXRJekFGX1ZacDJvU1l3SWkyV1E0eHNXMUQzT2VSNEhLc1ItVS1XcHFuOHNnS093azhaLWY2b0RYS282YzNONHJ5ZW5ZM214RVFpd0JCSVROcnRQYVVZZXNGLW5nRFZUSkxLNVFUTXhOb3ZkUWtOS3lBSldBX1Q1dXJtMXdrTWhBQXl3aVMtWDhHTzM3eUtOYmNZNzg3bTNTM01UTERQZWt2MVprUFRQemhlcmJ4aEJvelpEM3NGTXlJajlX?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Il record dell'aeroporto Marco Polo di Venezia: oltre 73 mila voli in 9 mesi, picco con la Biennale. Così gli «angeli» delle torre di controllo vegliano sugli atterraggi con la nebbia - Corriere del Veneto",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 49,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -718,9 +671,26 @@
     },
     {
       "radar": "Google News - Corriere dati e statistiche",
+      "discovery_url": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxQcTJnNnk4WDMwUHgwdnNCZm5UaVlaUXNvOHBYVUt4V3VNLU5oQnp5SkdDMnhIaGhSMHdmdnItSnZGeEt3NHd6X1pMWVdsY3ZSVHlLR3RCTGExS2hUeURSYVFXN2hYZkdhSnVQOVpfU09sYVotSXhwdm95SnNRM08zR3RPNEllVlZCeTlEU0paRURPOXExNnJjcVBXVUdESzlndGpvX0tqaU5aVGtoMnBtVkR4UW55bVdaWWtlNmFIdmo1emVOMHNFZmpZMFVfSTdMLUt1SVI5RF8xTEpCbGVFdkdzX051Vml4NWdmeTRkcWZYNE5hVDNVWmZ0MVNlTWVSVkVZQXNVYmh2WmI5MS16TE90SGxRTkdtUlJFRVFrU0hQalo2alpYcDdyb9IBsAJBVV95cUxQNWpRLU05eGhaQzk0ZkpLajJLWmNoSlEtZ0ZkM2F2bTVDZlZESW51cHhOZ1ZNdnZCOEgyNzFrU0NhRjRkN2thZ3UwMXJkVk9yTjl0Q24xc1BVYTNMVHlnVGd1bEtFNEp1Z3llN2d3ZUsyOWJUWjVOa1htQzVIVjZjM083WFl0dnktMXVmTWp0NnhmR1VlNmZUR1A5TmZ3LVNTWmVQM3ZjUi1PN0JVLUk0NWRWV0NDRl9zLWpIX2N3elZCcWI3a191a25EMnpvRG54eC1kb0I4dmc2QzM3bmJBMGdYZm9EZnpwVHRPUjVFY0tEZVBUM3ZXc1p1VFRFYjJjdkwzcHM4YVN0OGVBNlFQQWhfYWtCdHBWRG1USnZicVJUMERoY3NyY2x2ZldUVTJ3?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Samsung, 80 miliardi di utili nel trimestre: il record assoluto per un'azienda tech, ecco come ci è riuscita - Corriere della Sera",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
+      "score_discovery": 37,
+      "topic": "ALTRO",
+      "numbers_detected": [
+        "80 miliardi",
+        "80 miliardi"
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - Corriere dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQbmtKLUM0REd2NXBGVjdKS0dkSl9CTG1zUjFWaVVlTHh3YjdiX3N4UFdlQmJkODhFTjdfYlE3LVRPOWRRR3hSVGk4R29lblYzMDJucm0zX2lha3NnWFVVMkxwNmVPekJXcVpfT24wS2JxNERqdEJvTU45bVhQZjA5Z2JhdVdvaU8zZ2R0ZTFWY0R0UWV3c01WbkhMUkU0T2VGX1hfWS14VTZrb2V4UmxKcDFPRWNrdzdadWl4OVhZWkJkeG9xNEhXeFlHX1ZjSVR0a19FNDROVHNQY1BrVUM3WGw2eVJzM0ZsQVZN?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Donna di 61 anni resta in plank per 5 ore e stabilisce un nuovo record mondiale - Corriere della Sera",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 44,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -739,7 +709,7 @@
       "radar": "Google News - Corriere dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMiwgJBVV95cUxPMFIwbTFGQjB5SWJ4Rld1SHlYTFVpT2tXS2t4UVVLYVo3ZncwUlJhUlhwSm9JLWsxRUN0UHlzTXVGVlZEb19JN1prdFRXUTQweXJCWjRld2lNeUFnYk9Xb1BvVk5UdlJMSm5FRElzQzBXcDVTZEpRTnJRSlBBX2t6bW94Q2NsdFhRektlelU5Y0puM1VSc1dsQlpZYTY2SjNWbFJoRXpmX0pFMWRKa0kyckptY3pYc3oycDNyallCekxmQURLaUI3dzJfTThzU3VXdlRsZ2FtWFp4cFZlcUZDam5nc01QcXNCSzZMQndUcDVVeHV2OG85MFlxZ0MxYUpqeS1uVFI0OTJhMEVCNWF4WnZhc0ZXRkpGTmpBYlBMY2hzbzB5NGI2aXZVQ2luRHJ1TFlSUzJITTFlNVVhT2l3Ymx30gHHAkFVX3lxTE5mRHRjQW9xb0pKeTZsTjY0Mm5TdnpUUWRUdkVDanQtRzlzSU9ZdEZNQ1hwZUsxdnVGUHZGc0JDQ25HR1lpRVdTOXR1RW9VRm5XdlZSOTVRZnBFNmtzalZSazQtdzZvUUtEck1aVU9SNFg3dHJvb2JuRWpEWHVEVWZYRTZ3MWt5YWZRbVVISm10YzFNTi0ydXc2UWJKaFRpMlpoNXFIOGhfNTJZdmY3em1QQU0xaTItMEY4TDlnMDJFTmx1Y1VIWlhsRlZXbEZXT2UxVU9KQzdER3lsQzhYNUhEQWZrY2tUYTl5VVk4M09iZVBEeFM1WnBoNG9jcUxJSXNoR1haOW5EWDFEVk42eXdRUmpKaFp4ZlFJdFUtcC1IOFZXcEpEbl9UdGh4NElKVGdrTzhfYkhZUmY3S2I4a25NdjRtNlBySQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "In Puglia ottobrata da record, sfiorati i 30 gradi a Bari. Ma arrivano le piogge. «Attenzione agli eventi estremi» - Corriere Bari",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 37,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -756,7 +726,7 @@
       "radar": "Google News - Corriere dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMi0wJBVV95cUxQNUg2amJ0RVZrQTh6NjRBWER6ZUtsV0JwbG1UZHBPanFmY19uRFVLMjA0WkM5QjJ0MVc2QkFWLVFlZ0hoQ3pFV1lXbTNBUnVXcmZZSGxDNmZ4U1JnZDJDTWpsdXFQWjAwbVVBcmxVbG1iM3YzbXhNZldzVHc1cTNsVHVueWJ5LTN3aGdPRUM4RC1RVzBoUVowM19TOG9kYXVjVTAtYmNlSUxBWVdwdWlXZHZzN1pRS3UzdFVWaUN6Qk9DdE8yWkVOdVEtVnJ2TGZiNE9TeS1oMkpZNkxBZWttakZrTjIyNFlONnA1bjNkZldTRFo3dTk1cnJZay02NzdkeUp6NUhsQjBnTGhScjFyOVU4MEw3Z3BGOXdyUmRHOTY3Z1hsRXdDSHVlMUhwVFNReTV6WFFUR0RTRHJuWjVKS2VnLU5WM244bkhldExidEprSjTSAdMCQVVfeXFMUDVINmpidEVWa0E4ejY0QVhEemVLbFdCcGxtVGRwT2pxZmNfbkRVSzIwNFpDOUIydDFXNkJBVi1RZWdIaEN6RVdZV20zQVJ1V3JmWUhsQzZmeFNSZ2QyQ01qbHVxUFowMG1VQXJsVWxtYjN2M214TWZXc1R3NXEzbFR1bnlieS0zd2hnT0VDOEQtUVcwaFFaMDNfUzhvZGF1Y1UwLWJjZUlMQVlXcHVpV2R2czdaUUt1M3RVVmlDekJPQ3RPMlpFTnVRLVZydkxmYjRPU3ktaDJKWTZMQWVrbWpGa04yMjRZTjZwNW4zZGZXU0RaN3U5NXJyWWstNjc3ZHlKejVIbEIwZ0xoUnIxcjlVODBMN2dwRjl3clJkRzk2N2dYbEV3Q0h1ZTFIcFRTUXk1elhRVEdEU0Ryblo1SktlZy1OVjNuOG5IZXRMYnRKa0o0?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "In Toscana aumentano i reati sui minori: +10,2% in un anno, oltre metà delle vittime sono ragazze. Nel 2025 sono stati 564 - Corriere Fiorentino",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 50,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -777,7 +747,7 @@
       "radar": "Google News - Italia economia e famiglie",
       "discovery_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNR2RGekJ6cXVXVlRfemJ1TzVOX3FXbzY4Q3pOTmZYR1dJaVRVZ0V0UzYzcFdJbkhyMzFFd2VrTHlBRy13eENNR3BjYkplTHVNcE1neFlGcGozTE9STnJIazlxQWNwWGVUcnkwZGxFQlpXX0wwTUc4YVlpa3l0YXEzeEVfdjh2dmJHVzJnd3h5M051Vi02WFltTzlVU1E?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Banca d’Italia: inflazione e crescita nel terzo trimestre 2026 - Non solo Diritto Bancario",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 37,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -794,7 +764,7 @@
       "radar": "Google News - Italia economia e famiglie",
       "discovery_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOeVV5T1doOWpHZkVHRjIySEFoMW1SMDRqOHhpY2kwV3ZMdzFvQVRqMm1yN2RXQWFLSUphLUxpekp0U2JiNHZ0S0FMMTdCaWdZSmd1MnpwZjhrcFh3VG5mMXdzaklrem9wODRaUktMMkwxOGtWRXZtX0xEbHNTWHJtV0o5bWlKaTFBZXFxSl9GLTdKdDFVbHV2M3psR2YxT096RGMxQ0NfVEc5Yk4yWm1BYzByR2g?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Mutui a tasso fisso da 3,29% con Crédit Agricole Italia a ottobre 2026 - MutuiOnline.it",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 49,
       "topic": "CASA",
       "numbers_detected": [
@@ -813,7 +783,7 @@
       "radar": "Google News - Italia economia e famiglie",
       "discovery_url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPanNOc3lJNm5FQ0EyN3hoTmxQQjJxSEltNDdkRDZ0VldKR0JLNnNONE1fSXFsQWVaZzRhSGdBTmh1eDFUVkQxT3c5NW8tMVE0RXlhcTB2VUJ2SHdXNVB0cThZRC10NVVXNmZPNVVTZ05rbE1mQjZDNVk0amdiOC1wMVRqV0wyTk1qdUFRNnVCQnR1YVNMTmE2Mm1ucVBGVkxsS2ZCc1g0aXdhbXk0Vno4?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Indagine sulle aspettative di inflazione e crescita - 3° trimestre 2026 - Banca d'Italia",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 54,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -832,7 +802,7 @@
       "radar": "Google News - Italia economia e famiglie",
       "discovery_url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQbTVWb3V2em5Jbld5QVVKc2JYRXhBb0pBWGxxMXluS1ZCdklzRG1xTWxJcUhGRG9IaUIwczJFMEVZOUtvdFhobXBCTTRGUzVTU3NIcDZJb1VxeU1ON2hJSVpTeW5seUlJbXlwS2JJOHF6UkNTVFAyQnBCNFBKaFV2M3lyRXJjWHFNeEljSUJfTWMzY3JKeTlCUU9KLTRiRW90OWkzTkpMekNrVnlkUTJtalpGTkREVHZvWWJhaHdhRHB6bGdidVFF?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Banca d'Italia, indagine sulle imprese: inflazione attesa al 2,6% a un anno - Teleborsa",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 37,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -849,7 +819,7 @@
       "radar": "Google News - Italia economia e famiglie",
       "discovery_url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQbnZlakh0OGVQZTVZZUNWYVY5bFVRRmNmdVlTR2ZvSG5ESWlNYkZ1aGY4VUZCR05JOGg4QnBISjF1bDY5eEdSeWVJUDFRWHpIU3U2dllQeUpvSlhLV2hRRkp5N2lobm0wbXBERDhUakNOR0FsRUp2ektkNG90TnNXa1NrOHBNMVFnTmVxb21TcUJ0dkdpNDYxYXVzazd4LXVUTEJSaTlLQXpTZ3dTaDQ0cG1jSXNaczVuZHlLUlp0U1hFSzBiYlJ0SkdZQ0pjOU1JRW44YTYyZ2JZU081YUFTRExjRHc?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Casa, per ridurre del 20% i consumi degli edifici italiani servono tra 800 e 1.000 miliardi di euro - Milano Finanza",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 50,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -870,7 +840,7 @@
       "radar": "Google News - Italia economia e famiglie",
       "discovery_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQeEo3Ymh0djF6SFdITGNKWU1kdTVrMG5vNGp2dThEYnRHVGJsMnVoNHdsem1nS18yQ2NhQ3JidEJUQUVnZlhOZlJTeFVrakxrLW4xQXozYW9vS0FDRjhTQkQwSEdPTTM2enNfbG5Yb0QxS2ZaWnFiLUNhVE1mUzBESEw2aE56OExoeURmbm5aYTNlRmUxQ2pvd05VVXVtaEs5SVV2Z3h1MmhYUzFYQ3doejhobnRTa28?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Italia, nel 2025 consumi famiglie stabili a 2'782 euro al mese - MarketScreener Italia",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 45,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -889,9 +859,30 @@
     },
     {
       "radar": "Google News - Italia economia e famiglie",
+      "discovery_url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOaXRtTHJaS05FM2d5OWFFTnZEN3Y4cng0Z3lRZUJLMWYyRmV3YXlRQ2piOXB3czM2dUYtMUtjNHBpdWlpSTlTU0N3UjJhY0NFSGhiaTRzZ29nTjl1WGVmaXJFelV2b1Q3VjNGVzY2SGVqdFVhanFkSXV6eFZuaFh6U0dqT3NGVEpFRUlwaGVGU19TcDlYR2lSWHBlM29oZ250bzh3djlWTjhXV2lrUzVXejJSRUJnYURRa1FxU29CYnhqc05UT0JibmlSdllKTVZ1?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Casa, nel patrimonio pubblico oltre 100mila abitazioni non utilizzate. Nella Ue servono altri 650mila immobili - Il Sole 24 ORE",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
+      "score_discovery": 35,
+      "topic": "CASA",
+      "numbers_detected": [
+        "100mila",
+        "650mila",
+        "24 ",
+        "100mila",
+        "650mila",
+        "24 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - Italia economia e famiglie",
       "discovery_url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQQU1ZRW1fa2s3UUR0MC1MYTZ0ckVlX1daUzBtc19Qcmt2NjhOSDJUVkV1bkZJcm1BNFJPUGxpdklKcW1oZThvT2NZdlhKSWhkZHQtcG5aQ3pEMVp2VHMzTGJ3SHh2UXVSdm1RN2M0ZHljT3Fmd0Zib3c4dTdjcExJblM3TC11RUhfTDhJZUVxTHFDbk8yMU5RejdxSEphcU84dWl3R00zd2xFcW1wcGc1OUhzWVZHUkh2NEVtWndOaU5nVjZ2TGZQa0hKVUxzdlBQVGRsck5lclNxdw?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Dolce Vita Orient Express, nel 2027 nuove tratte in Italia: i prezzi partiranno da oltre 5mila euro - Fanpage",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 39,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -910,7 +901,7 @@
       "radar": "Google News - Italia economia e famiglie",
       "discovery_url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1oS0FQUGhNQmxBcVNGWmZxTEVVWjZPVXZsbC1oX21ORU9PcmhEdzZKdzUxNXQ1RkpJWDJyMWwzMHhXUlpzZUJ6WFRZdERiZGM4Qk1aTWdQSVhicEtHQnFETUFnMldXdmwyeWVTVDFWcw?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Banca d'Italia: fiducia delle imprese in lieve ripresa, investimenti stabili e inflazione attesa in calo al 2,6% - Euroborsa",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 37,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -927,7 +918,7 @@
       "radar": "Google News - Italia lavoro e imprese",
       "discovery_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1UbzBsWDNrMnJBTW56YnU3eHR6cWlaV2UyTHZkUW5DSjg1cmVWc2k4VzVFcUhFTnI1TlhzTDItMk1ySU43emxwUzA2WER5dWJCVUwwY2xEOEFTTVpLZTBsd0VhV0Y4Ym9VNWhDdkpVWlI?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "L’export italiano cresce: farmaceutica a 66,8 miliardi nel 2025. Ma le filiere restano vulnerabili. Il report del Mimit - INNLIFES",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 44,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -946,7 +937,7 @@
       "radar": "Google News - Italia lavoro e imprese",
       "discovery_url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQbkYwbzlZLUtCdVY5YjJhRFVTdGh0M05qZHkzNi1zRm5TM0x1b3N1TUowZ2s0OW9uWFAtYzZvdHFKV09acWwtbUpuZlBkOVdRQ1VsdXBZTjdZeGozMVg0QmF0UkxzS1RGMm5oS3Jta1MtZlRRMGxVSDZBTE9XYklpU1VWVnZSWEJweENSRzBDVHV3V2pEdHFRY2JyU0tITkJ6TkZRcU5fekdjb0xWdUZOQnFibWtZcV9pR1VZSTVjNXF2WERGRGpKQkN4eE9jOVA0Q05jNDlR?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Trentino Trasporti tra i migliori datori di lavoro d’Italia: è 33ª nella classifica 2027 - La Piazza Web",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 39,
       "topic": "LAVORO",
       "numbers_detected": [
@@ -975,7 +966,7 @@
       "radar": "Google News - Italia ambiente energia mobilità",
       "discovery_url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOQzlyTHFYZVRndkVQLUtTWWhPWklJc0EyVlZYQVlCYy1EaHY4ZUF6OXBIaDdBMEJRQzJVbWVkZ0pfX19lOEhFWmFVSVluTC1wZkZTaG5ubGVNV0FudzVicU9LTU5tbzlxOW56M1BDSGlFSXhkTnQ0c29ITE9PVUx6dVY1LXNRUUd3RTk2c19EdEVUS0dDSEd6TQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Mercato: a settembre 2026 ogni 100 auto nuove vendute 213 usate - ClubAlfa.it",
-      "detected_at": "2026-10-08T17:20:11.697738+00:00",
+      "detected_at": "2026-10-08T18:58:40.998423+00:00",
       "score_discovery": 40,
       "topic": "MOBILITA",
       "numbers_detected": [
