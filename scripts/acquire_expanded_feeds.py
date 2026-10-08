@@ -49,6 +49,27 @@ SOURCES = [
         "kind": "csv",
         "frequency": "daily",
     },
+    {
+        "institution": "Ministero dell'Università e della Ricerca",
+        "id": "mur_personale_genere_qualifica",
+        "url": "https://dati-ustat.mur.gov.it/dataset/1775dfd1-5408-4970-95c2-97373b7a0016/resource/85c1ab95-c8db-484b-8898-56478c521721/download/docricxgenerequalifica_serie.csv",
+        "kind": "csv",
+        "frequency": "annual",
+    },
+    {
+        "institution": "Ministero dell'Università e della Ricerca",
+        "id": "mur_personale_eta_qualifica",
+        "url": "https://dati-ustat.mur.gov.it/dataset/1775dfd1-5408-4970-95c2-97373b7a0016/resource/a9cc23fc-785a-4969-af49-5e9378be582b/download/docricxclasseetaqualifica_serie.csv",
+        "kind": "csv",
+        "frequency": "annual",
+    },
+    {
+        "institution": "ENAC",
+        "id": "enac_traffico_tableau",
+        "url": "https://www.enac.gov.it/views/EAE-DatiTraffico-VersioneGrafica/DATITRAFFICOHOMEPAGE.csv?:showVizHome=no",
+        "kind": "csv",
+        "frequency": "monthly",
+    },
 ]
 
 INAIL_PAGES = [
