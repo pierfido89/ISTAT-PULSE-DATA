@@ -137,14 +137,22 @@
     {
       "institution": "Banca d'Italia",
       "domains": [
-        "bancaditalia.it"
+        "bancaditalia.it",
+        "infostat.bancaditalia.it",
+        "a2a.bancaditalia.it"
       ],
-      "strategy": "sdmx_or_api_discovery",
+      "strategy": "known_rest_export",
       "hints": [
         "base dati statistica",
         "API",
         "SDMX",
         "csv"
+      ],
+      "entrypoints": [
+        "https://www.bancaditalia.it/statistiche/basi-dati/bds/index.html"
+      ],
+      "endpoints": [
+        "https://a2a.bancaditalia.it/infostat/dataservices/export/IT/CSV/DATA/PUBLICATION/BANKITALIA/DIFF/BAM"
       ]
     },
     {
@@ -253,14 +261,22 @@
     {
       "institution": "INGV",
       "domains": [
-        "ingv.it"
+        "ingv.it",
+        "mi.ingv.it",
+        "emidius.mi.ingv.it",
+        "metaevent.mi.ingv.it",
+        "carto.cs.ingv.it"
       ],
-      "strategy": "api_discovery",
+      "strategy": "known_webservices",
       "hints": [
         "webservice",
         "geojson",
         "json",
         "terremoti"
+      ],
+      "entrypoints": [
+        "https://emidius.mi.ingv.it/ASMI/services/",
+        "https://metaevent.mi.ingv.it/"
       ]
     },
     {
@@ -283,9 +299,10 @@
     {
       "institution": "INPS",
       "domains": [
-        "inps.it"
+        "inps.it",
+        "opendata.inps.it"
       ],
-      "strategy": "known_open_data_api",
+      "strategy": "known_ckan_api",
       "entrypoints": [
         "https://www.inps.it/it/it/dati-e-bilanci/open-data/api-inps.html"
       ],
@@ -294,6 +311,11 @@
         "SDMX",
         "DCAT-AP_IT",
         "RDF"
+      ],
+      "endpoints": [
+        "https://opendata.inps.it/opendata/api/3/action/package_list",
+        "https://opendata.inps.it/opendata/api/3/action/group_list",
+        "https://opendata.inps.it/opendata/api/3/action/tag_list"
       ]
     },
     {
@@ -341,12 +363,16 @@
       "domains": [
         "mimit.gov.it"
       ],
-      "strategy": "official_catalog_discovery",
+      "strategy": "known_csv_catalog",
       "hints": [
         "open data",
         "prezzi carburanti",
         "csv",
         "API"
+      ],
+      "entrypoints": [
+        "https://www.mimit.gov.it/it/open-data/elenco-dataset/carburanti-prezzi-praticati-e-anagrafica-degli-impianti",
+        "https://www.mimit.gov.it/it/open-data/elenco-dataset/carburanti-archivio-prezzi"
       ]
     },
     {
