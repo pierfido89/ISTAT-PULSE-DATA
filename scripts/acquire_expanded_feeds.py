@@ -70,6 +70,20 @@ SOURCES = [
         "kind": "csv",
         "frequency": "monthly",
     },
+    {
+        "institution": "AGCOM",
+        "id": "agcom_osservatorio_comunicazioni",
+        "url": "https://www.agcom.it/sites/default/files/media/allegato/2026/OPEN%20DATA%20Oss.%202-2026_start_0.xlsx",
+        "kind": "xlsx",
+        "frequency": "quarterly",
+    },
+    {
+        "institution": "IVASS",
+        "id": "ivass_relazione_annuale_tavole",
+        "url": "https://www.ivass.it/pubblicazioni-e-statistiche/pubblicazioni/relazione-annuale/2026/Relazione_annuale_2025_Appendice.xlsx?force_download=1",
+        "kind": "xlsx",
+        "frequency": "annual",
+    },
 ]
 
 INAIL_PAGES = [
@@ -128,6 +142,17 @@ def describe(source: dict, raw: bytes, response: requests.Response) -> dict:
         if len(lines) < 2:
             raise RuntimeError(f"{source['id']}: CSV payload looks empty")
         record["header"] = lines[0][:1000]
+    elif source["kind"] == "xlsx":
+        if not raw.startswith(b"PK"):
+            raise RuntimeError(f"{source['id']}: response is not an XLSX/ZIP payload")
+        with zipfile.ZipFile(BytesIO(raw)) as archive:
+            names = archive.namelist()
+            if "xl/workbook.xml" not in names:
+                raise RuntimeError(f"{source['id']}: invalid XLSX workbook")
+            worksheets = [x for x in names if x.startswith("xl/worksheets/") and x.endswith(".xml")]
+            record["worksheet_count"] = len(worksheets)
+            if not worksheets:
+                raise RuntimeError(f"{source['id']}: workbook has no worksheets")
     elif source["kind"] == "xml_or_geojson":
         text = raw[:2000].decode("utf-8", errors="replace").lstrip()
         if not (text.startswith("{") or text.startswith("[") or text.startswith("<")):
@@ -145,6 +170,7 @@ def acquire_file_source(source: dict) -> dict:
     suffix = {
         "zip_csv": ".zip",
         "csv": ".csv",
+        "xlsx": ".xlsx",
         "xml_or_geojson": ".dat",
     }[source["kind"]]
     target = OUT_DIR / f"{source['id']}{suffix}"
