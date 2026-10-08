@@ -1,0 +1,63 @@
+name: Acquire Expanded Feeds
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 5 * * *'
+  push:
+    branches: [ main ]
+    paths:
+      - 'scripts/acquire_expanded_feeds.py'
+      - '.github/workflows/acquire-expanded-feeds.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pulse-expanded-feed-acquisition
+  cancel-in-progress: true
+
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check requests
+
+      - name: Acquire verified expanded feeds
+        run: python scripts/acquire_expanded_feeds.py
+
+      - name: Validate acquisition manifest
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("data/expanded_feed_acquisition.json")
+          data=json.loads(p.read_text(encoding="utf-8"))
+          assert data["successful_connectors"] >= 1
+          print("successful", data["successful_connectors"])
+          print("failed", data["failed_connectors"])
+          for row in data["results"]:
+              print("OK", row["institution"], row["id"], row["bytes"])
+          for row in data["failures"]:
+              print("FAIL", row["institution"], row["id"], row["error"])
+          PY
+
+      - name: Persist metadata and last-known-good snapshots
+        run: |
+          git config user.name "ISTAT PULSE Data Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/expanded_feed_acquisition.json data/expanded_feeds/
+          if git diff --cached --quiet; then
+            echo "No expanded feed changes."
+          else
+            git commit -m "data: refresh expanded permanent feeds"
+            git pull --rebase origin main
+            git push
+          fi
