@@ -5273,6 +5273,100 @@
           "status": "latest_public"
         }
       ]
+    },
+    {
+      "name": "Banca d'Italia - Base Dati Statistica A2A",
+      "category": "ECONOMIA_IT",
+      "topics": [
+        "ECONOMIA",
+        "CREDITO",
+        "MONETA"
+      ],
+      "official": true,
+      "url": "https://www.bancaditalia.it/statistiche/basi-dati/bds/index.html",
+      "access_cost": "free",
+      "access_note": "Servizio A2A ufficiale della Base Dati Statistica; acquisizione automatica senza abbonamento.",
+      "integration_status": "connected",
+      "feed_status": "Connettore permanente attivo · dati acquisiti automaticamente · normalizzazione PULSE in corso",
+      "notes": "Export REST A2A ufficiale. Il pacchetto BAM viene acquisito in ZIP con 48 tavole interne; snapshot last-known-good e SHA-256 persistiti.",
+      "level": "Dataset ufficiale",
+      "frequency": "Secondo aggiornamento della fonte",
+      "checked_at": "2026-10-08T07:47:14Z",
+      "provides": [
+        {
+          "area": "Economia e finanza",
+          "series": "Banche e moneta - serie nazionali",
+          "description": "Pacchetto ufficiale acquisito automaticamente; selezione delle serie PULSE in validazione.",
+          "latest_period": "",
+          "status": "connector_ready"
+        }
+      ]
+    },
+    {
+      "name": "MIMIT - Prezzi carburanti",
+      "category": "ECONOMIA_IT",
+      "topics": [
+        "PREZZI",
+        "ENERGIA",
+        "MOBILITA"
+      ],
+      "official": true,
+      "url": "https://www.mimit.gov.it/it/open-data/elenco-dataset/carburanti-prezzi-praticati-e-anagrafica-degli-impianti",
+      "access_cost": "free",
+      "access_note": "CSV ufficiali ad accesso libero.",
+      "integration_status": "connected",
+      "feed_status": "Connettore permanente attivo · CSV quotidiani acquisiti · serie PULSE in preparazione",
+      "notes": "Acquisizione quotidiana di prezzo_alle_8.csv e anagrafica_impianti_attivi.csv con snapshot e SHA-256. Ultima estrazione verificata 07/10/2026.",
+      "level": "Dataset ufficiale",
+      "frequency": "Giornaliera",
+      "latest_period": "2026-10-07",
+      "checked_at": "2026-10-08T07:47:14Z",
+      "provides": [
+        {
+          "area": "Prezzi e mobilità",
+          "series": "Prezzi praticati dei carburanti",
+          "description": "CSV nazionale ufficiale aggiornato quotidianamente.",
+          "latest_period": "2026-10-07",
+          "status": "connector_ready"
+        },
+        {
+          "area": "Prezzi e mobilità",
+          "series": "Anagrafica impianti carburanti attivi",
+          "description": "CSV nazionale ufficiale aggiornato quotidianamente.",
+          "latest_period": "2026-10-07",
+          "status": "connector_ready"
+        }
+      ]
+    },
+    {
+      "name": "INAIL - Malattie professionali mensili",
+      "category": "LAVORO_IT",
+      "topics": [
+        "LAVORO",
+        "SALUTE",
+        "SICUREZZA"
+      ],
+      "official": true,
+      "url": "https://dati.inail.it/portale/it/dataset/malattie-professionali/dati-con-cadenza-mensile/italia.html",
+      "access_cost": "free",
+      "access_note": "Open Data INAIL con licenza dichiarata sul portale ufficiale.",
+      "integration_status": "connected",
+      "feed_status": "Connettore permanente attivo · CSV nazionale mensile acquisito · serie PULSE in preparazione",
+      "notes": "CSV nazionale mensile scoperto dal catalogo ufficiale a ogni refresh, quindi l'URL del file può cambiare senza rompere il connettore. Snapshot e SHA-256 persistiti.",
+      "level": "Dataset ufficiale",
+      "frequency": "Mensile",
+      "latest_period": "2026-07",
+      "publication_date": "2026-09-08",
+      "checked_at": "2026-10-08T07:47:14Z",
+      "provides": [
+        {
+          "area": "Lavoro e salute",
+          "series": "Malattie professionali denunciate",
+          "description": "Open data nazionale mensile acquisito automaticamente.",
+          "latest_period": "2026-07",
+          "status": "connector_ready"
+        }
+      ]
     }
   ]
 }
