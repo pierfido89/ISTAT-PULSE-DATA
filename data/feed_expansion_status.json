@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-10-08T07:52:17.049265+00:00",
+  "generated_at": "2026-10-08T07:58:56.381201+00:00",
   "policy": {
     "official_only": true,
     "no_scraped_search_results_as_data": true,
@@ -27,9 +27,9 @@
   },
   "candidate_count": 39,
   "status_counts": {
-    "official_portal_reachable": 19,
-    "structured_endpoint_verified": 7,
-    "blocked": 13
+    "official_portal_reachable": 20,
+    "structured_endpoint_verified": 8,
+    "blocked": 11
   },
   "sources": [
     {
@@ -168,7 +168,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "16485",
+              "content_length": "16491",
               "reason": "html_or_unknown"
             },
             {
@@ -177,7 +177,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "16485",
+              "content_length": "16491",
               "reason": "html_or_unknown"
             },
             {
@@ -186,7 +186,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "16485",
+              "content_length": "16491",
               "reason": "html_or_unknown"
             }
           ]
@@ -214,7 +214,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "18161",
+              "content_length": "18160",
               "reason": "html_or_unknown"
             },
             {
@@ -223,7 +223,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "18161",
+              "content_length": "18160",
               "reason": "html_or_unknown"
             },
             {
@@ -232,7 +232,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "18161",
+              "content_length": "18160",
               "reason": "html_or_unknown"
             }
           ]
@@ -280,7 +280,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "16771",
+              "content_length": "16769",
               "reason": "html_or_unknown"
             }
           ]
@@ -324,7 +324,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "23691",
+              "content_length": "23692",
               "reason": "html_or_unknown"
             }
           ]
@@ -491,101 +491,63 @@
     },
     {
       "institution": "AGCOM",
-      "strategy": "official_catalog_discovery",
-      "status": "blocked",
+      "strategy": "quarterly_xlsx_publication",
+      "status": "structured_endpoint_verified",
       "domains": [
         "agcom.it"
       ],
-      "verified_resources": [],
+      "verified_resources": [
+        {
+          "url": "https://www.agcom.it/sites/default/files/media/allegato/2026/OPEN%20DATA%20Oss.%202-2026_start_0.xlsx",
+          "final_url": "https://www.agcom.it/sites/default/files/media/allegato/2026/OPEN%20DATA%20Oss.%202-2026_start_0.xlsx",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "content_length": "478630",
+          "reason": "machine_readable_data"
+        }
+      ],
       "checks": [
         {
           "kind": "discovery",
-          "url": "https://agcom.it",
-          "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='agcom.it', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='agcom.it', port=443): Failed to resolve 'agcom.it' ([Errno -5] No address associated with hostname)\"))",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://agcom.it/opendata",
-          "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='agcom.it', port=443): Max retries exceeded with url: /opendata (Caused by NameResolutionError(\"HTTPSConnection(host='agcom.it', port=443): Failed to resolve 'agcom.it' ([Errno -5] No address associated with hostname)\"))",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://agcom.it/open-data",
-          "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='agcom.it', port=443): Max retries exceeded with url: /open-data (Caused by NameResolutionError(\"HTTPSConnection(host='agcom.it', port=443): Failed to resolve 'agcom.it' ([Errno -5] No address associated with hostname)\"))",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://agcom.it/dati",
-          "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='agcom.it', port=443): Max retries exceeded with url: /dati (Caused by NameResolutionError(\"HTTPSConnection(host='agcom.it', port=443): Failed to resolve 'agcom.it' ([Errno -5] No address associated with hostname)\"))",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://agcom.it/dataset",
-          "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='agcom.it', port=443): Max retries exceeded with url: /dataset (Caused by NameResolutionError(\"HTTPSConnection(host='agcom.it', port=443): Failed to resolve 'agcom.it' ([Errno -5] No address associated with hostname)\"))",
-          "candidate_links": [],
-          "verified_links": []
+          "url": "https://www.agcom.it/pubblicazioni/osservatori/osservatorio-sulle-comunicazioni-n-2-2026",
+          "final_url": "https://www.agcom.it/pubblicazioni/osservatori/osservatorio-sulle-comunicazioni-n-2-2026",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "text/html",
+          "reason": "official_page_scanned",
+          "candidate_links": [
+            "https://www.agcom.it/sites/default/files/media/allegato/2026/OPEN%20DATA%20Oss.%202-2026_start_0.xlsx"
+          ],
+          "verified_links": [
+            {
+              "url": "https://www.agcom.it/sites/default/files/media/allegato/2026/OPEN%20DATA%20Oss.%202-2026_start_0.xlsx",
+              "final_url": "https://www.agcom.it/sites/default/files/media/allegato/2026/OPEN%20DATA%20Oss.%202-2026_start_0.xlsx",
+              "ok": true,
+              "http_status": 200,
+              "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+              "content_length": "478630",
+              "reason": "machine_readable_data"
+            }
+          ]
         }
       ]
     },
     {
       "institution": "ANAC",
-      "strategy": "official_catalog_discovery",
+      "strategy": "official_open_data_portal",
       "status": "blocked",
       "domains": [
-        "anticorruzione.it"
+        "anticorruzione.it",
+        "dati.anticorruzione.it"
       ],
       "verified_resources": [],
       "checks": [
         {
           "kind": "discovery",
-          "url": "https://anticorruzione.it",
+          "url": "https://dati.anticorruzione.it/opendata",
           "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='anticorruzione.it', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='anticorruzione.it', port=443): Failed to resolve 'anticorruzione.it' ([Errno -5] No address associated with hostname)\"))",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://anticorruzione.it/opendata",
-          "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='anticorruzione.it', port=443): Max retries exceeded with url: /opendata (Caused by NameResolutionError(\"HTTPSConnection(host='anticorruzione.it', port=443): Failed to resolve 'anticorruzione.it' ([Errno -5] No address associated with hostname)\"))",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://anticorruzione.it/open-data",
-          "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='anticorruzione.it', port=443): Max retries exceeded with url: /open-data (Caused by NameResolutionError(\"HTTPSConnection(host='anticorruzione.it', port=443): Failed to resolve 'anticorruzione.it' ([Errno -5] No address associated with hostname)\"))",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://anticorruzione.it/dati",
-          "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='anticorruzione.it', port=443): Max retries exceeded with url: /dati (Caused by NameResolutionError(\"HTTPSConnection(host='anticorruzione.it', port=443): Failed to resolve 'anticorruzione.it' ([Errno -5] No address associated with hostname)\"))",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://anticorruzione.it/dataset",
-          "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='anticorruzione.it', port=443): Max retries exceeded with url: /dataset (Caused by NameResolutionError(\"HTTPSConnection(host='anticorruzione.it', port=443): Failed to resolve 'anticorruzione.it' ([Errno -5] No address associated with hostname)\"))",
+          "reason": "HTTPError: 403 Client Error: Forbidden for url: https://dati.anticorruzione.it/opendata",
           "candidate_links": [],
           "verified_links": []
         }
@@ -880,7 +842,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "14720",
+              "content_length": "14724",
               "reason": "html_or_unknown"
             }
           ]
@@ -940,7 +902,7 @@
     },
     {
       "institution": "COVIP",
-      "strategy": "official_structured_publication_discovery",
+      "strategy": "stable_open_data_catalog",
       "status": "blocked",
       "domains": [
         "covip.it"
@@ -949,41 +911,17 @@
       "checks": [
         {
           "kind": "discovery",
-          "url": "https://covip.it",
+          "url": "https://www.covip.it/open-data",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='covip.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='covip.it', port=443) at 0x7f639088cdd0>, 'Connection to covip.it timed out. (connect timeout=10)'))",
+          "reason": "HTTPError: 403 Client Error: Forbidden for url: https://www.covip.it/open-data",
           "candidate_links": [],
           "verified_links": []
         },
         {
           "kind": "discovery",
-          "url": "https://covip.it/opendata",
+          "url": "https://www.covip.it/la-covip-e-la-sua-attivita/pubblicazioni-statistiche/relazioni-annuali",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='covip.it', port=443): Max retries exceeded with url: /opendata (Caused by ConnectTimeoutError(<HTTPSConnection(host='covip.it', port=443) at 0x7f637cb27290>, 'Connection to covip.it timed out. (connect timeout=10)'))",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://covip.it/open-data",
-          "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='covip.it', port=443): Max retries exceeded with url: /open-data (Caused by ConnectTimeoutError(<HTTPSConnection(host='covip.it', port=443) at 0x7f638c2d6480>, 'Connection to covip.it timed out. (connect timeout=10)'))",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://covip.it/dati",
-          "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='covip.it', port=443): Max retries exceeded with url: /dati (Caused by ConnectTimeoutError(<HTTPSConnection(host='covip.it', port=443) at 0x7f638c057bc0>, 'Connection to covip.it timed out. (connect timeout=10)'))",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://covip.it/dataset",
-          "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='covip.it', port=443): Max retries exceeded with url: /dataset (Caused by ConnectTimeoutError(<HTTPSConnection(host='covip.it', port=443) at 0x7f637c4ded20>, 'Connection to covip.it timed out. (connect timeout=10)'))",
+          "reason": "HTTPError: 403 Client Error: Forbidden for url: https://www.covip.it/la-covip-e-la-sua-attivita/pubblicazioni-statistiche/relazioni-annuali",
           "candidate_links": [],
           "verified_links": []
         }
@@ -1002,7 +940,7 @@
           "kind": "discovery",
           "url": "https://crea.gov.it",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f639088eea0>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7fa6a875af60>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -1010,7 +948,7 @@
           "kind": "discovery",
           "url": "https://crea.gov.it/opendata",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /opendata (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f637c93e450>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /opendata (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7fa6a459e030>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -1018,7 +956,7 @@
           "kind": "discovery",
           "url": "https://crea.gov.it/open-data",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /open-data (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f638c31dcd0>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /open-data (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7fa694f32b10>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -1026,7 +964,7 @@
           "kind": "discovery",
           "url": "https://crea.gov.it/dati",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /dati (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f637c1e4dd0>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /dati (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7fa694f32c60>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -1034,7 +972,7 @@
           "kind": "discovery",
           "url": "https://crea.gov.it/dataset",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /dataset (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f6390acf560>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /dataset (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7fa680ea80b0>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         }
@@ -1131,93 +1069,56 @@
     },
     {
       "institution": "DIPE · OpenCUP",
-      "strategy": "official_catalog_discovery",
+      "strategy": "rest_api_credentials_required",
       "status": "official_portal_reachable",
       "domains": [
         "opencup.gov.it",
-        "programmazioneeconomica.gov.it"
+        "programmazioneeconomica.gov.it",
+        "api.sogei.it"
       ],
       "verified_resources": [],
       "checks": [
         {
+          "kind": "endpoint",
+          "url": "https://api.sogei.it/rgs/opencup/o/extServiceApi/v1/opendataes/cup/J48C14000270006",
+          "ok": false,
+          "reason": "HTTPError: 401 Client Error: Unauthorized for url: https://api.sogei.it/rgs/opencup/o/extServiceApi/v1/opendataes/cup/J48C14000270006"
+        },
+        {
           "kind": "discovery",
-          "url": "https://opencup.gov.it",
-          "final_url": "https://www.opencup.gov.it/portale/web/opencup/home",
+          "url": "https://www.opencup.gov.it/portale/web/opencup/le-api-di-opencup",
+          "final_url": "https://www.opencup.gov.it/portale/web/opencup/le-api-di-opencup",
           "ok": true,
           "http_status": 200,
           "content_type": "text/html",
           "reason": "official_page_scanned",
           "candidate_links": [
+            "https://api.sogei.it/rgs/opencup/o/extServiceApi/v1/opendataes/cup/J48C14000270006?flag_json=false",
+            "https://api.sogei.it/rgs/opencup/o/extServiceApi/v1/opendataes/cup/J48C14000270006",
+            "https://api.sogei.it/rgs/opencup/o/extServiceApi/v1/opendataes/soggettotitolare/01206740324",
             "https://www.opencup.gov.it/portale/web/opencup/accesso-agli-open-data",
+            "https://www.opencup.gov.it/portale/web/opencup/dati",
             "https://www.opencup.gov.it/portale/web/opencup/dettaglio-opendata-centro",
             "https://www.opencup.gov.it/portale/web/opencup/dettaglio-opendata-complessivo",
-            "https://www.opencup.gov.it/portale/web/opencup/dettaglio-opendata-isole",
-            "https://www.opencup.gov.it/portale/web/opencup/dettaglio-opendata-nord-est",
-            "https://www.opencup.gov.it/portale/web/opencup/dettaglio-opendata-nord-ovest",
-            "https://www.opencup.gov.it/portale/web/opencup/dettaglio-opendata-sud",
-            "https://www.opencup.gov.it/portale/web/opencup/home/-/asset_publisher/a5SG2OwzRtgy/content/pubblicato-l-aggiornamento-degli-open-data-al-1%25C2%25B0-ottobre-2026?_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_a5SG2OwzRtgy_assetEntryId=428515&_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_a5SG2OwzRtgy_redirect=https%3A%2F%2Fwww.opencup.gov.it%2Fportale%2Fweb%2Fopencup%2Fhome%3Fp_p_id%3Dcom_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_a5SG2OwzRtgy%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_a5SG2OwzRtgy_cur%3D0%26p_r_p_resetCur%3Dfalse%26_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_a5SG2OwzRtgy_assetEntryId%3D428515"
+            "https://www.opencup.gov.it/portale/web/opencup/dettaglio-opendata-isole"
           ],
           "verified_links": [
             {
-              "url": "https://www.opencup.gov.it/portale/web/opencup/accesso-agli-open-data",
-              "final_url": "https://www.opencup.gov.it/portale/web/opencup/accesso-agli-open-data",
+              "url": "https://api.sogei.it/rgs/opencup/o/extServiceApi/v1/opendataes/cup/J48C14000270006?flag_json=false",
               "ok": false,
-              "http_status": 200,
-              "content_type": "text/html",
-              "content_length": "",
-              "reason": "html_or_unknown"
+              "reason": "HTTPError: 401 Client Error: Unauthorized for url: https://api.sogei.it/rgs/opencup/o/extServiceApi/v1/opendataes/cup/J48C14000270006?flag_json=false"
             },
             {
-              "url": "https://www.opencup.gov.it/portale/web/opencup/dettaglio-opendata-centro",
-              "final_url": "https://www.opencup.gov.it/portale/web/opencup/dettaglio-opendata-centro",
+              "url": "https://api.sogei.it/rgs/opencup/o/extServiceApi/v1/opendataes/cup/J48C14000270006",
               "ok": false,
-              "http_status": 200,
-              "content_type": "text/html",
-              "content_length": "",
-              "reason": "html_or_unknown"
+              "reason": "HTTPError: 401 Client Error: Unauthorized for url: https://api.sogei.it/rgs/opencup/o/extServiceApi/v1/opendataes/cup/J48C14000270006"
             },
             {
-              "url": "https://www.opencup.gov.it/portale/web/opencup/dettaglio-opendata-complessivo",
-              "final_url": "https://www.opencup.gov.it/portale/web/opencup/dettaglio-opendata-complessivo",
+              "url": "https://api.sogei.it/rgs/opencup/o/extServiceApi/v1/opendataes/soggettotitolare/01206740324",
               "ok": false,
-              "http_status": 200,
-              "content_type": "text/html",
-              "content_length": "",
-              "reason": "html_or_unknown"
+              "reason": "HTTPError: 401 Client Error: Unauthorized for url: https://api.sogei.it/rgs/opencup/o/extServiceApi/v1/opendataes/soggettotitolare/01206740324"
             }
           ]
-        },
-        {
-          "kind": "discovery",
-          "url": "https://opencup.gov.it/opendata",
-          "ok": false,
-          "reason": "HTTPError: 404 Client Error: Not Found for url: https://www.opencup.gov.it//opendata",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://opencup.gov.it/open-data",
-          "ok": false,
-          "reason": "HTTPError: 404 Client Error: Not Found for url: https://www.opencup.gov.it//open-data",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://opencup.gov.it/dati",
-          "ok": false,
-          "reason": "HTTPError: 404 Client Error: Not Found for url: https://www.opencup.gov.it//dati",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://opencup.gov.it/dataset",
-          "ok": false,
-          "reason": "HTTPError: 404 Client Error: Not Found for url: https://www.opencup.gov.it//dataset",
-          "candidate_links": [],
-          "verified_links": []
         }
       ]
     },
@@ -1612,22 +1513,12 @@
     {
       "institution": "INPS",
       "strategy": "known_ckan_api",
-      "status": "structured_endpoint_verified",
+      "status": "official_portal_reachable",
       "domains": [
         "inps.it",
         "opendata.inps.it"
       ],
-      "verified_resources": [
-        {
-          "url": "https://opendata.inps.it/opendata/api/3/action/group_list",
-          "final_url": "https://opendata.inps.it/opendata/api/3/action/group_list",
-          "ok": true,
-          "http_status": 200,
-          "content_type": "application/json",
-          "content_length": "272",
-          "reason": "machine_readable_data"
-        }
-      ],
+      "verified_resources": [],
       "checks": [
         {
           "kind": "endpoint",
@@ -1639,7 +1530,7 @@
           "kind": "endpoint",
           "url": "https://opendata.inps.it/opendata/api/3/action/group_list",
           "ok": false,
-          "reason": "ReadTimeout: HTTPSConnectionPool(host='opendata.inps.it', port=443): Read timed out. (read timeout=10)"
+          "reason": "HTTPError: 502 Server Error: Proxy Error for url: https://opendata.inps.it/opendata/api/3/action/group_list"
         },
         {
           "kind": "endpoint",
@@ -1673,17 +1564,13 @@
             },
             {
               "url": "https://opendata.inps.it/opendata/api/3/action/group_list",
-              "final_url": "https://opendata.inps.it/opendata/api/3/action/group_list",
-              "ok": true,
-              "http_status": 200,
-              "content_type": "application/json",
-              "content_length": "272",
-              "reason": "machine_readable_data"
+              "ok": false,
+              "reason": "ReadTimeout: HTTPSConnectionPool(host='opendata.inps.it', port=443): Read timed out. (read timeout=10)"
             },
             {
               "url": "https://opendata.inps.it/opendata/api/3/action/group_show?id=%7Bid-group%7D",
               "ok": false,
-              "reason": "HTTPError: 502 Server Error: Proxy Error for url: https://opendata.inps.it/opendata/api/3/action/group_show?id=%7Bid-group%7D"
+              "reason": "ReadTimeout: HTTPSConnectionPool(host='opendata.inps.it', port=443): Read timed out. (read timeout=10)"
             }
           ]
         }
@@ -1867,52 +1754,45 @@
     },
     {
       "institution": "IVASS",
-      "strategy": "official_structured_publication_discovery",
-      "status": "blocked",
+      "strategy": "structured_statistical_publications",
+      "status": "structured_endpoint_verified",
       "domains": [
         "ivass.it"
       ],
-      "verified_resources": [],
+      "verified_resources": [
+        {
+          "url": "https://www.ivass.it/footer/open-data/Open_Data_IVASS.rdf",
+          "final_url": "https://www.ivass.it/footer/open-data/Open_Data_IVASS.rdf",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "application/rdf+xml",
+          "content_length": "4660",
+          "reason": "machine_readable_data"
+        }
+      ],
       "checks": [
         {
           "kind": "discovery",
-          "url": "https://ivass.it",
-          "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='ivass.it', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='ivass.it', port=443): Failed to resolve 'ivass.it' ([Errno -5] No address associated with hostname)\"))",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://ivass.it/opendata",
-          "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='ivass.it', port=443): Max retries exceeded with url: /opendata (Caused by NameResolutionError(\"HTTPSConnection(host='ivass.it', port=443): Failed to resolve 'ivass.it' ([Errno -5] No address associated with hostname)\"))",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://ivass.it/open-data",
-          "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='ivass.it', port=443): Max retries exceeded with url: /open-data (Caused by NameResolutionError(\"HTTPSConnection(host='ivass.it', port=443): Failed to resolve 'ivass.it' ([Errno -5] No address associated with hostname)\"))",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://ivass.it/dati",
-          "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='ivass.it', port=443): Max retries exceeded with url: /dati (Caused by NameResolutionError(\"HTTPSConnection(host='ivass.it', port=443): Failed to resolve 'ivass.it' ([Errno -5] No address associated with hostname)\"))",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://ivass.it/dataset",
-          "ok": false,
-          "reason": "ConnectionError: HTTPSConnectionPool(host='ivass.it', port=443): Max retries exceeded with url: /dataset (Caused by NameResolutionError(\"HTTPSConnection(host='ivass.it', port=443): Failed to resolve 'ivass.it' ([Errno -5] No address associated with hostname)\"))",
-          "candidate_links": [],
-          "verified_links": []
+          "url": "https://www.ivass.it/pubblicazioni-e-statistiche/statistiche/comunicazioni-statistiche/",
+          "final_url": "https://www.ivass.it/pubblicazioni-e-statistiche/statistiche/comunicazioni-statistiche/",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "text/html",
+          "reason": "official_page_scanned",
+          "candidate_links": [
+            "https://www.ivass.it/footer/open-data/Open_Data_IVASS.rdf"
+          ],
+          "verified_links": [
+            {
+              "url": "https://www.ivass.it/footer/open-data/Open_Data_IVASS.rdf",
+              "final_url": "https://www.ivass.it/footer/open-data/Open_Data_IVASS.rdf",
+              "ok": true,
+              "http_status": 200,
+              "content_type": "application/rdf+xml",
+              "content_length": "4660",
+              "reason": "machine_readable_data"
+            }
+          ]
         }
       ]
     },
@@ -2046,7 +1926,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13254",
+              "content_length": "13248",
               "reason": "html_or_unknown"
             },
             {
@@ -2094,7 +1974,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13254",
+              "content_length": "13248",
               "reason": "html_or_unknown"
             },
             {
@@ -2142,7 +2022,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13254",
+              "content_length": "13248",
               "reason": "html_or_unknown"
             },
             {
@@ -2190,7 +2070,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13254",
+              "content_length": "13248",
               "reason": "html_or_unknown"
             },
             {
@@ -2238,7 +2118,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13254",
+              "content_length": "13248",
               "reason": "html_or_unknown"
             },
             {
@@ -2416,17 +2296,17 @@
             {
               "url": "http://dati.ustat.miur.it/dataset/metadati",
               "ok": false,
-              "reason": "ConnectTimeout: HTTPConnectionPool(host='dati.ustat.miur.it', port=80): Max retries exceeded with url: /dataset/metadati (Caused by ConnectTimeoutError(<HTTPConnection(host='dati.ustat.miur.it', port=80) at 0x7f638c4b6480>, 'Connection to dati.ustat.miur.it timed out. (connect timeout=10)'))"
+              "reason": "ConnectTimeout: HTTPConnectionPool(host='dati.ustat.miur.it', port=80): Max retries exceeded with url: /dataset/metadati (Caused by ConnectTimeoutError(<HTTPConnection(host='dati.ustat.miur.it', port=80) at 0x7fa6a8732750>, 'Connection to dati.ustat.miur.it timed out. (connect timeout=10)'))"
             },
             {
               "url": "http://dati.ustat.miur.it/organization/miur",
               "ok": false,
-              "reason": "ConnectTimeout: HTTPConnectionPool(host='dati.ustat.miur.it', port=80): Max retries exceeded with url: /organization/miur (Caused by ConnectTimeoutError(<HTTPConnection(host='dati.ustat.miur.it', port=80) at 0x7f638c4fc3b0>, 'Connection to dati.ustat.miur.it timed out. (connect timeout=10)'))"
+              "reason": "ConnectTimeout: HTTPConnectionPool(host='dati.ustat.miur.it', port=80): Max retries exceeded with url: /organization/miur (Caused by ConnectTimeoutError(<HTTPConnection(host='dati.ustat.miur.it', port=80) at 0x7fa680f4ddc0>, 'Connection to dati.ustat.miur.it timed out. (connect timeout=10)'))"
             },
             {
               "url": "http://dati.ustat.miur.it/organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=AFAM&tags=Contribuzione%20e%20interventi",
               "ok": false,
-              "reason": "ConnectTimeout: HTTPConnectionPool(host='dati.ustat.miur.it', port=80): Max retries exceeded with url: /organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=AFAM&tags=Contribuzione%20e%20interventi (Caused by ConnectTimeoutError(<HTTPConnection(host='dati.ustat.miur.it', port=80) at 0x7f638c4fdb50>, 'Connection to dati.ustat.miur.it timed out. (connect timeout=10)'))"
+              "reason": "ConnectTimeout: HTTPConnectionPool(host='dati.ustat.miur.it', port=80): Max retries exceeded with url: /organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=AFAM&tags=Contribuzione%20e%20interventi (Caused by ConnectTimeoutError(<HTTPConnection(host='dati.ustat.miur.it', port=80) at 0x7fa694983440>, 'Connection to dati.ustat.miur.it timed out. (connect timeout=10)'))"
             }
           ]
         },
@@ -2434,7 +2314,7 @@
           "kind": "discovery",
           "url": "https://dati-ustat.mur.gov.it/dataset/2025-2029-personale-universitario",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/2025-2029-personale-universitario (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f638c31f0e0>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/2025-2029-personale-universitario (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7fa6a45bc4d0>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -2442,7 +2322,7 @@
           "kind": "discovery",
           "url": "https://dati-ustat.mur.gov.it/dataset/serie-storica-sul-personale-universitario",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/serie-storica-sul-personale-universitario (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f638c2d6480>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/serie-storica-sul-personale-universitario (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7fa680f1a2a0>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         }
