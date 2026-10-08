@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T20:11:52.574164+00:00",
+  "generated_at": "2026-10-08T04:11:57.151257+00:00",
   "articles": [
     {
       "id": "PULSE-230AB27D5B31F550",
@@ -624,6 +624,7 @@
     {
       "id": "PULSE-5634C8423DB12585",
       "published_at": "2026-10-05T19:40:00+00:00",
+      "last_seen_at": "2026-10-08T04:11:57.151257+00:00",
       "topic": "AMBIENTE",
       "pulse_score": 83,
       "patterns": [
@@ -641,7 +642,7 @@
         "role": "hidden_radar"
       },
       "period_reference": "2025",
-      "latest_source_update": "2026-10-05",
+      "latest_source_update": "2026-10-08",
       "headline": "Ecomafia: in Veneto 1.186 reati ambientali accertati nel 2025",
       "summary": "Il Rapporto Ecomafia 2026 di Legambiente registra in Veneto 1.186 reati ambientali accertati nel 2025. Il dato è in calo del 35% e porta la regione dal nono al tredicesimo posto nella classifica nazionale dell'illegalità ambientale.",
       "statistical_claims": [
