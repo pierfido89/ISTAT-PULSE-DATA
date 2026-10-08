@@ -142,6 +142,7 @@ def describe(source: dict, raw: bytes, response: requests.Response) -> dict:
         if len(lines) < 2:
             raise RuntimeError(f"{source['id']}: CSV payload looks empty")
         record["header"] = lines[0][:1000]
+        record["sample_lines"] = [line[:1500] for line in lines[:4]]
     elif source["kind"] == "xlsx":
         if not raw.startswith(b"PK"):
             raise RuntimeError(f"{source['id']}: response is not an XLSX/ZIP payload")
@@ -206,6 +207,9 @@ def discover_latest_inail_csv(page: dict) -> dict:
     target = OUT_DIR / f"{page['id']}{suffix}"
     target.write_bytes(data)
 
+    sample_text = data[:12000].decode("utf-8", errors="replace")
+    sample_lines = [line for line in sample_text.splitlines() if line.strip()][:4]
+
     record = {
         "institution": "INAIL",
         "id": page["id"],
@@ -221,6 +225,7 @@ def discover_latest_inail_csv(page: dict) -> dict:
         "snapshot": str(target.relative_to(ROOT)),
         "checked_at": datetime.now(timezone.utc).isoformat(),
         "status": "ok",
+        "sample_lines": [line[:1500] for line in sample_lines],
     }
     if suffix == ".zip":
         with zipfile.ZipFile(BytesIO(data)) as archive:
