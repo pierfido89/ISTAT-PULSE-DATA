@@ -19,7 +19,7 @@
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte",
       "publication_year": "2026",
-      "checked_at": "2026-10-07T10:50:42.388988+00:00",
+      "checked_at": "2026-10-08T08:19:27.320112+00:00",
       "provides": [
         {
           "area": "Mobilità sostenibile",
@@ -67,7 +67,7 @@
       "notes": "ARERA RQSII integrata con dati pubblici 2017-2021 da workbook dettagliati e con risultati ufficiali 2022-2023 dalle Relazioni annuali ARERA. Per il 2022: MC1 96,3%, MC2 95,3%; per il 2023: MC1 96,5%, MC2 95,9%. Il mancato rispetto medio degli standard specifici è 3,5% in entrambi gli anni. La delibera 277/2025/R/idr certifica i risultati finali del biennio 2022-2023. 3 notizie/segnali GREEN emessi; il 2023 resta sempre dichiarato come periodo statistico.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte",
-      "checked_at": "2026-10-07T10:50:54.641362+00:00",
+      "checked_at": "2026-10-08T08:19:36.646230+00:00",
       "provides": [
         {
           "area": "Risorse idriche e suolo",
@@ -109,7 +109,7 @@
       "level": "Secondo dataset ufficiale",
       "frequency": "Mensile",
       "latest_period": "2026-09",
-      "checked_at": "2026-10-07T10:56:25.676819+00:00",
+      "checked_at": "2026-10-08T08:22:27.231146+00:00",
       "provides": [
         {
           "area": "Crisi climatica e decarbonizzazione",
@@ -145,7 +145,7 @@
       "frequency": "Annuale",
       "latest_period": "2024",
       "publication_date": "2026-04-15",
-      "checked_at": "2026-10-07T10:56:32.726114+00:00",
+      "checked_at": "2026-10-08T08:22:34.687956+00:00",
       "provides": [
         {
           "area": "Crisi climatica e decarbonizzazione",
@@ -172,7 +172,7 @@
       "notes": "RAEE 2026: 20/20 schede regionali acquisite; 3 segnali PULSE da serie TEE 2015-2025.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte",
-      "checked_at": "2026-10-07T10:56:43.124269+00:00",
+      "checked_at": "2026-10-08T08:22:46.437667+00:00",
       "provides": [
         {
           "area": "Transizione energetica",
@@ -332,7 +332,7 @@
       "notes": "3/3 dataset Eurostat collegati; 3 segnali PULSE emessi.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte",
-      "checked_at": "2026-10-07T10:56:45.575636+00:00",
+      "checked_at": "2026-10-08T08:22:48.943603+00:00",
       "provides": [
         {
           "area": "Multi-pilastro GREEN",
@@ -375,7 +375,7 @@
       "frequency": "Annuale",
       "latest_period": "2024",
       "publication_period": "2026-09",
-      "checked_at": "2026-10-07T10:56:46.326650+00:00",
+      "checked_at": "2026-10-08T08:22:49.635093+00:00",
       "provides": [
         {
           "area": "Transizione energetica",
@@ -417,7 +417,7 @@
       "level": "Secondo dataset ufficiale",
       "frequency": "Annuale",
       "latest_period": "2024",
-      "checked_at": "2026-10-07T10:57:00.344327+00:00",
+      "checked_at": "2026-10-08T08:23:01.050051+00:00",
       "provides": [
         {
           "area": "Economia circolare",
@@ -593,7 +593,7 @@
       "frequency": "Annuale",
       "latest_period": "2024",
       "publication_date": "2025-10-24",
-      "checked_at": "2026-10-07T10:57:02.073715+00:00",
+      "checked_at": "2026-10-08T08:23:02.823964+00:00",
       "provides": [
         {
           "area": "Risorse idriche e suolo",
@@ -761,7 +761,7 @@
       "level": "Comune / Provincia / Regione / Italia",
       "frequency": "Periodico / secondo aggiornamento IFFI-IdroGEO",
       "latest_period": "Inventario corrente",
-      "checked_at": "2026-10-07T10:57:03.553357+00:00",
+      "checked_at": "2026-10-08T08:23:04.512445+00:00",
       "provides": [
         {
           "area": "Risorse idriche e suolo",
@@ -790,7 +790,7 @@
       "frequency": "Annuale",
       "latest_period": "2025",
       "publication_date": "2026-06-30",
-      "checked_at": "2026-10-07T10:57:03.554215+00:00",
+      "checked_at": "2026-10-08T08:23:04.513048+00:00",
       "provides": [
         {
           "area": "Tutela della biodiversità",
@@ -825,7 +825,7 @@
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte",
       "latest_period": "2024",
-      "checked_at": "2026-10-07T10:57:06.593981+00:00",
+      "checked_at": "2026-10-08T08:23:07.981157+00:00",
       "provides": [
         {
           "area": "Crisi climatica e decarbonizzazione",
@@ -860,7 +860,7 @@
       "level": "Italia / Regione / Distretto idrografico",
       "frequency": "Annuale (stime disponibili anche mensilmente)",
       "latest_period": "2025",
-      "checked_at": "2026-10-07T10:57:08.577573+00:00",
+      "checked_at": "2026-10-08T08:23:10.070042+00:00",
       "provides": [
         {
           "area": "Risorse idriche e suolo",
@@ -902,7 +902,7 @@
       "level": "Stazione / Comune / Provincia / Regione / Italia",
       "frequency": "Annuale; dati quasi-real-time aggiornati giornalmente",
       "latest_period": "2025 (valutazione SNPA); 2022 (CSV strutturati)",
-      "checked_at": "2026-10-07T10:57:13.347041+00:00",
+      "checked_at": "2026-10-08T08:23:15.009354+00:00",
       "provides": [
         {
           "area": "Crisi climatica e decarbonizzazione",
@@ -961,7 +961,7 @@
       "frequency": "Annuale",
       "latest_period": "2024",
       "publication_date": "2026-09-09",
-      "checked_at": "2026-10-07T10:57:16.688108+00:00",
+      "checked_at": "2026-10-08T08:23:18.966890+00:00",
       "provides": [
         {
           "area": "Multi-pilastro GREEN",
@@ -4304,7 +4304,7 @@
       "notes": "Dataset Istat SDGs 2004-2026 acquisito: 71 serie nazionali GREEN semanticamente classificate; 36 segnali PULSE.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte",
-      "checked_at": "2026-10-07T10:57:22.347453+00:00",
+      "checked_at": "2026-10-08T08:23:24.250358+00:00",
       "provides": [
         {
           "area": "Multi-pilastro GREEN",
@@ -4982,7 +4982,7 @@
       "level": "Comune / Provincia / Regione / Italia",
       "frequency": "Archivio / snapshot; aggiornamento non corrente",
       "latest_period": "2018-01-01",
-      "checked_at": "2026-10-07T10:57:27.913948+00:00",
+      "checked_at": "2026-10-08T08:23:30.541728+00:00",
       "provides": [
         {
           "area": "Risorse idriche e suolo",
@@ -5024,7 +5024,7 @@
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte",
       "publication_date": "2026-03-20",
-      "checked_at": "2026-10-07T10:57:33.482161+00:00",
+      "checked_at": "2026-10-08T08:23:33.955467+00:00",
       "provides": [
         {
           "area": "Risorse idriche e suolo",
@@ -5235,7 +5235,7 @@
       "frequency": "Annuale",
       "latest_period": "2025",
       "publication_period": "2026-09",
-      "checked_at": "2026-10-07T10:57:37.205439+00:00",
+      "checked_at": "2026-10-08T08:23:37.737378+00:00",
       "provides": [
         {
           "area": "Transizione energetica",
@@ -5288,10 +5288,9 @@
       "access_note": "Servizio A2A ufficiale della Base Dati Statistica; acquisizione automatica senza abbonamento.",
       "integration_status": "connected",
       "feed_status": "Connettore permanente attivo · dati acquisiti automaticamente · normalizzazione PULSE in corso",
-      "notes": "Export REST A2A ufficiale. Il pacchetto BAM viene acquisito in ZIP con 48 tavole interne; snapshot last-known-good e SHA-256 persistiti.",
+      "notes": "Export REST A2A ufficiale; snapshot last-known-good e SHA-256 persistiti.",
       "level": "Dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte",
-      "checked_at": "2026-10-08T07:47:14Z",
       "provides": [
         {
           "area": "Economia e finanza",
@@ -5316,24 +5315,22 @@
       "access_note": "CSV ufficiali ad accesso libero.",
       "integration_status": "connected",
       "feed_status": "Connettore permanente attivo · CSV quotidiani acquisiti · serie PULSE in preparazione",
-      "notes": "Acquisizione quotidiana di prezzo_alle_8.csv e anagrafica_impianti_attivi.csv con snapshot e SHA-256. Ultima estrazione verificata 07/10/2026.",
+      "notes": "Acquisizione quotidiana di prezzi e anagrafica impianti con snapshot e SHA-256.",
       "level": "Dataset ufficiale",
       "frequency": "Giornaliera",
-      "latest_period": "2026-10-07",
-      "checked_at": "2026-10-08T07:47:14Z",
       "provides": [
         {
           "area": "Prezzi e mobilità",
           "series": "Prezzi praticati dei carburanti",
           "description": "CSV nazionale ufficiale aggiornato quotidianamente.",
-          "latest_period": "2026-10-07",
+          "latest_period": "",
           "status": "connector_ready"
         },
         {
           "area": "Prezzi e mobilità",
           "series": "Anagrafica impianti carburanti attivi",
           "description": "CSV nazionale ufficiale aggiornato quotidianamente.",
-          "latest_period": "2026-10-07",
+          "latest_period": "",
           "status": "connector_ready"
         }
       ]
@@ -5349,24 +5346,22 @@
       "official": true,
       "url": "https://dati.inail.it/portale/it/dataset/malattie-professionali/dati-con-cadenza-mensile/italia.html",
       "access_cost": "free",
-      "access_note": "Open Data INAIL con licenza dichiarata sul portale ufficiale.",
+      "access_note": "Open Data INAIL dal portale ufficiale.",
       "integration_status": "connected",
       "feed_status": "Connettore permanente attivo · CSV nazionale mensile acquisito · serie PULSE in preparazione",
-      "notes": "CSV nazionale mensile scoperto dal catalogo ufficiale a ogni refresh, quindi l'URL del file può cambiare senza rompere il connettore. Snapshot e SHA-256 persistiti.",
+      "notes": "Il connettore scopre il file CSV corrente dalla landing page ufficiale e conserva snapshot e SHA-256.",
       "level": "Dataset ufficiale",
       "frequency": "Mensile",
-      "latest_period": "2026-07",
-      "publication_date": "2026-09-08",
-      "checked_at": "2026-10-08T07:47:14Z",
       "provides": [
         {
           "area": "Lavoro e salute",
           "series": "Malattie professionali denunciate",
           "description": "Open data nazionale mensile acquisito automaticamente.",
-          "latest_period": "2026-07",
+          "latest_period": "",
           "status": "connector_ready"
         }
       ]
     }
-  ]
+  ],
+  "expanded_connector_count": 3
 }
