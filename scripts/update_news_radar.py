@@ -304,9 +304,9 @@ def journalistic_statistical_article(item, feed, now, topic, geos, nums, score, 
     # The original RSS report is the disclosed journalistic source; Google
     # News links remain explicitly journalistic, not official statistical data.
     host = canonical_host(source_url)
-    if host.endswith("news.google.com"):
-        # News redirect URLs cannot serve as original source evidence.
-        return None
+    # Google News RSS links are discovery links to the original publisher.
+    # Keep them clearly labeled as aggregates; do not call them verified primary sources.
+    publisher = title.rsplit(" - ", 1)[-1].strip() if host.endswith("news.google.com") and " - " in title else host
     key = stable_id(source_url, topic, title, meaningful)
     existing = existing or {}
     return {
@@ -319,7 +319,7 @@ def journalistic_statistical_article(item, feed, now, topic, geos, nums, score, 
         "patterns": [],
         "public_source": {
             "url": source_url,
-            "domain": host,
+            "domain": publisher,
             "role": "journalistic_source",
             "verification_method": "reported_statistical_figures_not_primary_verified",
             "verification_score": 0
