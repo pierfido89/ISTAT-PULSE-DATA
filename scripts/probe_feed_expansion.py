@@ -45,6 +45,11 @@ MACHINE_CT = (
     "application/zip",
     "application/octet-stream",
 )
+REJECT_CT = (
+    "application/rss+xml",
+    "application/atom+xml",
+    "application/pdf",
+)
 DISCOVERY_WORDS = (
     "open data", "opendata", "dataset", "api", "sdmx", "csv", "xlsx",
     "xls", "json", "xml", "rdf", "download", "scarica", "dati",
@@ -103,7 +108,8 @@ def verify_resource(url: str, domains: list[str]) -> dict:
             }
         content_type = response.headers.get("content-type", "").split(";")[0].strip().lower()
         disposition = response.headers.get("content-disposition", "")
-        machine = (
+        rejected = any(content_type.startswith(ct) for ct in REJECT_CT)
+        machine = (not rejected) and (
             any(content_type.startswith(ct) for ct in MACHINE_CT)
             or looks_machine_url(final_url)
             or any(ext in disposition.lower() for ext in MACHINE_EXTENSIONS)
@@ -115,7 +121,9 @@ def verify_resource(url: str, domains: list[str]) -> dict:
             "http_status": response.status_code,
             "content_type": content_type,
             "content_length": response.headers.get("content-length", ""),
-            "reason": "machine_readable" if machine else "html_or_unknown",
+            "reason": "machine_readable_data" if machine else (
+                "editorial_or_document_resource" if rejected else "html_or_unknown"
+            ),
         }
     except Exception as exc:
         return {
