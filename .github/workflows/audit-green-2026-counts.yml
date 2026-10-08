@@ -1,0 +1,48 @@
+name: Audit GREEN 2026 article coverage
+on:
+  push:
+    branches:
+      - audit/green-2026-counts
+permissions:
+  contents: read
+jobs:
+  count:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Count 2026 publications with Android GREEN rules
+        run: |
+          python - <<'PY'
+          import json, collections
+          from pathlib import Path
+          raw=json.loads(Path("data/news/observer_articles.json").read_text(encoding="utf-8"))
+          articles=raw["articles"] if isinstance(raw,dict) else raw
+          categories=[
+            ("Clima/decarbonizzazione", ["clima","climatic","emission","decarbon","co2","carbon","meteo","temperatur","riscaldamento globale","livello del mare","tempeste","turbolenz"]),
+            ("Energia",["energia","energetic","elettric","gas naturale","rinnovabil","fotovolta","eolic","teleriscald","fer x","fonti energetiche","efficienza energetica"]),
+            ("Economia circolare",["rifiut","riciclo","economia circolare","materie prime","raccolta differenziata","riuso","riutilizzo","recupero di materia"]),
+            ("Acqua e suolo",["acqua","idrico","water","suolo","idroge","dissesto","siccità","siccita","alluv","frana","consumo di suolo","fiume","depuraz","riutilizzo"]),
+            ("Biodiversità",["biodivers","specie","habitat","ecosistem","foreste","fauna","flora","impollinator","ripristino della natura","aree protette","caretta"]),
+            ("Mobilità sostenibile",["mobilit","automobil","veicol","trasport","immatricol","emissioni auto","parco circolante","autovettur","carburant","infrastrutture di ricarica"]),
+          ]
+          def klass(x):
+            name=(x.get("pulse_title") or x.get("headline") or "").lower()
+            title=str(x.get("headline") or "").lower()
+            full=" ".join(str(x.get(y) or "") for y in ("topic","headline","summary","pulse_summary")).lower()
+            for t in (name,title,full):
+              for category, terms in categories:
+                if any(term in t for term in terms): return category
+            if str(x.get("topic") or "").upper()=="ENERGIA": return "Energia"
+            return None
+          years=collections.Counter(str(a.get("published_at") or "")[:4] for a in articles)
+          current=[a for a in articles if str(a.get("published_at") or "").startswith("2026")]
+          group=collections.Counter(klass(a) or "NON CLASSIFICATE" for a in current)
+          print("TOTAL_ARTICLES",len(articles))
+          print("ARTICLES_BY_YEAR",dict(sorted(years.items())))
+          print("ARTICLES_2026",len(current))
+          print("GREEN_2026",len(current)-group["NON CLASSIFICATE"])
+          print("GREEN_BY_AREA",dict(group))
+          print("GREEN_SOURCE_COUNT",len(set(a.get("observer") for a in current if klass(a))))
+          print("PUB_2026_FIELDS",list(current[0]) if current else [])
+          print("GREEN_SAMPLE",[(a.get("observer"),a.get("published_at"),(a.get("pulse_title") or a.get("headline") or "")[:70]) for a in current if klass(a)][:8])
+          PY
