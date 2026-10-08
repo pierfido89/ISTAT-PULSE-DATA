@@ -1,8 +1,76 @@
 {
-  "generated_at": "2026-10-08T07:42:28.780358+00:00",
-  "successful_connectors": 3,
-  "failed_connectors": 2,
+  "generated_at": "2026-10-08T07:44:42.526301+00:00",
+  "successful_connectors": 4,
+  "failed_connectors": 1,
   "results": [
+    {
+      "institution": "Banca d'Italia",
+      "id": "banca_italia_bam",
+      "url": "https://a2a.bancaditalia.it/infostat/dataservices/export/IT/CSV/DATA/PUBLICATION/BANKITALIA/DIFF/BAM",
+      "kind": "zip_csv",
+      "frequency": "monthly_or_source_update",
+      "http_status": 200,
+      "content_type": "application/zip",
+      "bytes": 722465,
+      "sha256": "ee65442896a1fc4d6739255aff5cdd66b0332c592adec1422030cea749b34e4f",
+      "checked_at": "2026-10-08T07:44:32.493856+00:00",
+      "status": "ok",
+      "files": [
+        "ATEC2025_IT.zip",
+        "CARB0100_IT.zip",
+        "MIR0600_IT.zip",
+        "BSIB0100_IT.zip",
+        "MIR0500_IT.zip",
+        "MID0100_IT.zip",
+        "MIR0400_IT.zip",
+        "BSIB0200_IT.zip",
+        "MIR0200_IT.zip",
+        "CARB0300_IT.zip",
+        "SPBI0200_IT.zip",
+        "MIR0800_IT.zip",
+        "BSIB1000_IT.zip",
+        "MIR0100_IT.zip",
+        "BMON0100_IT.zip",
+        "BSIB0400_IT.zip",
+        "TITD0200_IT.zip",
+        "TUFF0100_IT.zip",
+        "BSID0200_IT.zip",
+        "BSIB1110_IT.zip",
+        "AGGM0400_IT.zip",
+        "ATECO200_IT.zip",
+        "BSIO0100_IT.zip",
+        "TITD0100_IT.zip",
+        "CARB0200_IT.zip",
+        "BSIB0300_IT.zip",
+        "BSIB1100_IT.zip",
+        "OPM0100_IT.zip",
+        "BSID0100_IT.zip",
+        "TITP0100_IT.zip",
+        "ATECO100_IT.zip",
+        "AGGM0500_IT.zip",
+        "SPBI0100_IT.zip",
+        "AGGM0300_IT.zip",
+        "BSIB0900_IT.zip",
+        "MIR0700_IT.zip",
+        "BSIB0800_IT.zip",
+        "BSIO0200_IT.zip",
+        "AGGM0200_IT.zip",
+        "AGGM0100_IT.zip",
+        "ROB0100_IT.zip",
+        "MIR0300_IT.zip",
+        "BSIB0600_IT.zip",
+        "CE00100_IT.zip",
+        "BSIB0700_IT.zip",
+        "BSIB0500_IT.zip",
+        "MIR0900_IT.zip",
+        "BSIB1010_IT.zip"
+      ],
+      "file_count": 48,
+      "extensions": [
+        ".zip"
+      ],
+      "snapshot": "data/expanded_feeds/banca_italia_bam.zip"
+    },
     {
       "institution": "MIMIT",
       "id": "mimit_carburanti_prezzi",
@@ -13,7 +81,7 @@
       "content_type": "text/csv",
       "bytes": 3937624,
       "sha256": "faf79e6d40046c11095fb1a4dc21734f38e2ff5ae8196de6e90ed0c13aa581ca",
-      "checked_at": "2026-10-08T07:42:21.101409+00:00",
+      "checked_at": "2026-10-08T07:44:37.552989+00:00",
       "status": "ok",
       "header": "Estrazione del 2026-10-07",
       "snapshot": "data/expanded_feeds/mimit_carburanti_prezzi.csv"
@@ -28,7 +96,7 @@
       "content_type": "text/csv",
       "bytes": 3574138,
       "sha256": "6c4b67b8ea8a0f9a95f9721f8f0ce5e8783221f933d2d8468ed705065052bcfe",
-      "checked_at": "2026-10-08T07:42:26.201142+00:00",
+      "checked_at": "2026-10-08T07:44:40.650323+00:00",
       "status": "ok",
       "header": "Estrazione del 2026-10-07",
       "snapshot": "data/expanded_feeds/mimit_carburanti_impianti.csv"
@@ -36,29 +104,24 @@
     {
       "institution": "INGV",
       "id": "ingv_cpti15",
-      "url": "https://emidius.mi.ingv.it/services/italy/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=italy:CPTI15&maxFeatures=50000&outputFormat=application%2Fjson",
-      "kind": "xml_or_geojson",
+      "url": "https://emidius.mi.ingv.it/services/italy/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=italy:CPTI15&maxFeatures=50000&outputFormat=csv",
+      "kind": "csv",
       "frequency": "source_update",
       "http_status": 200,
       "content_type": "text/xml",
       "bytes": 422,
       "sha256": "944b5f5b884130917a6591ea38921ced576f96efd2014003ced4c0c59290d305",
-      "checked_at": "2026-10-08T07:42:27.250747+00:00",
+      "checked_at": "2026-10-08T07:44:41.814869+00:00",
       "status": "ok",
-      "format_detected": "xml",
-      "snapshot": "data/expanded_feeds/ingv_cpti15.dat"
+      "header": "<?xml version=\"1.0\" ?>",
+      "snapshot": "data/expanded_feeds/ingv_cpti15.csv"
     }
   ],
   "failures": [
     {
-      "institution": "Banca d'Italia",
-      "id": "banca_italia_bam",
-      "error": "RuntimeError: banca_italia_bam: ZIP contains no CSV"
-    },
-    {
       "institution": "INAIL",
-      "id": "inail_infortuni_mensili",
-      "error": "RuntimeError: INAIL Abruzzo: non-JSON response"
+      "id": "inail_monthly_open_data",
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://dati.inail.it/portale/it/dataset/infortuni-sul-lavoro/dati-con-cadenza-mensile/italia.html"
     }
   ]
 }
