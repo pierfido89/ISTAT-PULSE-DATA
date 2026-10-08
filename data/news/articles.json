@@ -1,6 +1,57 @@
 {
-  "generated_at": "2026-10-08T18:58:40.998423+00:00",
+  "generated_at": "2026-10-08T19:19:54.497551+00:00",
   "articles": [
+    {
+      "id": "PULSE-196B72DB547B784B",
+      "published_at": "2026-10-08T19:19:54.497551+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
+      "topic": "ISTRUZIONE",
+      "pulse_score": 88,
+      "patterns": [
+        "ANOMALIA",
+        "DIVERGENZA_TERRITORIALE"
+      ],
+      "public_source": {
+        "url": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/edn-20261005-1",
+        "domain": "ec.europa.eu",
+        "role": "primary_statistical_source",
+        "verification_method": "curated_primary_verification",
+        "verification_score": 100
+      },
+      "discovery": {
+        "visible": false,
+        "role": "hidden_radar"
+      },
+      "period_reference": "2024",
+      "latest_source_update": "2026-10-08",
+      "headline": "Docenti sempre più anziani: in Italia il 54,3% ha almeno 50 anni",
+      "summary": "Secondo Eurostat, nel 2024 il 54,3% degli insegnanti italiani della scuola primaria e secondaria aveva almeno 50 anni, contro il 40,4% della media UE. Nella sola scuola primaria la quota italiana sale al 58,2%, il valore più alto nell'Unione europea.",
+      "statistical_claims": [
+        {
+          "raw_value": "54,3%",
+          "verified": true
+        },
+        {
+          "raw_value": "40,4%",
+          "verified": true
+        },
+        {
+          "raw_value": "58,2%",
+          "verified": true
+        }
+      ],
+      "territories": [
+        "italia"
+      ],
+      "chart_spec": {
+        "type": "auto",
+        "status": "ready_for_primary_series"
+      },
+      "map_spec": null,
+      "editorial_status": "verified",
+      "publication_status": "published",
+      "story_fingerprint": "196b72db547b784b93941edd"
+    },
     {
       "id": "PULSE-F7E47C80D3AC0821",
       "story_fingerprint": "f7e47c80d3ac08216a3f86fa",
@@ -54,7 +105,7 @@
       "id": "PULSE-46D06BB8D738E76C",
       "story_fingerprint": "46d06bb8d738e76c45ef6927",
       "published_at": "2026-10-08T15:00:21+00:00",
-      "last_seen_at": "2026-10-08T18:58:40.998423+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 50,
       "patterns": [],
@@ -152,7 +203,7 @@
       "id": "PULSE-2979F37CF0B916B7",
       "story_fingerprint": "2979f37cf0b916b7fc8228b8",
       "published_at": "2026-10-08T13:57:10+00:00",
-      "last_seen_at": "2026-10-08T18:58:40.998423+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
       "topic": "ALTRO",
       "pulse_score": 50,
       "patterns": [],
@@ -199,7 +250,7 @@
       "id": "PULSE-BECE0C6F763DF3F7",
       "story_fingerprint": "bece0c6f763df3f7c60f76a8",
       "published_at": "2026-10-08T12:18:24+00:00",
-      "last_seen_at": "2026-10-08T18:58:40.998423+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
       "topic": "ALTRO",
       "pulse_score": 49,
       "patterns": [],
@@ -241,7 +292,7 @@
       "id": "PULSE-DC00193403C3AB68",
       "story_fingerprint": "dc00193403c3ab680b531f76",
       "published_at": "2026-10-08T12:15:48+00:00",
-      "last_seen_at": "2026-10-08T18:58:40.998423+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
       "topic": "ALTRO",
       "pulse_score": 49,
       "patterns": [],
@@ -321,7 +372,7 @@
       "id": "PULSE-A5806822EA212686",
       "story_fingerprint": "a5806822ea212686d2cde312",
       "published_at": "2026-10-08T11:12:00+00:00",
-      "last_seen_at": "2026-10-08T18:58:40.998423+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
       "topic": "CASA",
       "pulse_score": 49,
       "patterns": [],
@@ -546,7 +597,7 @@
       "id": "PULSE-DDBBD6E647CA6EF9",
       "story_fingerprint": "ddbbd6e647ca6ef9e2f38473",
       "published_at": "2026-10-08T07:59:55+00:00",
-      "last_seen_at": "2026-10-08T18:58:40.998423+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
       "topic": "LAVORO",
       "pulse_score": 90,
       "public_source": {
@@ -624,7 +675,7 @@
       "id": "PULSE-142B6FC3D7570877",
       "story_fingerprint": "142b6fc3d7570877ce7162e2",
       "published_at": "2026-10-08T07:12:23+00:00",
-      "last_seen_at": "2026-10-08T18:58:40.998423+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
       "topic": "ALTRO",
       "pulse_score": 70,
       "patterns": [],
@@ -670,10 +721,49 @@
       "publication_status": "published"
     },
     {
+      "id": "PULSE-D3F4DC725ECBD0D5",
+      "story_fingerprint": "d3f4dc725ecbd0d57cb39523",
+      "published_at": "2026-10-08T06:50:10+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
+      "topic": "ISTRUZIONE",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPRHlwZzZJcGdZQVFSQldpVDNvVEctbThjajNNNnF4ZlhqbG5DdF9EMUVaaHBmZWVnWS15SlNTb3ZoOTVJSTlPZXN1WXc5MWJwUE1ONXN6ZTlWcWJieDZYWURndFRTTHZ4MHFXdGVadFBNVDl2c0RlYlZyU01IN2NidWFVVFM5Z1ExYjJZRGNIQ19vdGMwaHVuRlhiUTc2Z3NBVTBkbWVpdUxCWnhNLTBiZ2VjR2dKb2RCNDhnN1JnXzNQMGpIcVE?oc=5",
+        "domain": "Radio Radicale",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Otto e Cinquanta - Scuola, la protesta degli studenti francesi e i dati Ocse sull'Italia (8.10.2026) - Radio Radicale",
+      "summary": "Otto e Cinquanta - Scuola, la protesta degli studenti francesi e i dati Ocse sull'Italia (8.10.2026) Radio Radicale",
+      "statistical_claims": [
+        {
+          "raw_value": "8.10",
+          "verified": false
+        },
+        {
+          "raw_value": "2026",
+          "verified": false
+        },
+        {
+          "raw_value": "8.10",
+          "verified": false
+        },
+        {
+          "raw_value": "2026",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
       "id": "PULSE-4DBD5172BB220CFF",
       "story_fingerprint": "4dbd5172bb220cffe19fd56e",
       "published_at": "2026-10-08T06:18:25+00:00",
-      "last_seen_at": "2026-10-08T18:58:40.998423+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
       "topic": "SALUTE",
       "pulse_score": 55,
       "patterns": [],
@@ -816,6 +906,230 @@
       "publication_status": "published"
     },
     {
+      "id": "PULSE-BC9555C3BCE88DB9",
+      "story_fingerprint": "bc9555c3bce88db98be0f9fc",
+      "published_at": "2026-10-07T13:07:40+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 70,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPX0FlbzFDYnJ0NDRxOXVSa0IyQ0J3eXk0SVh2U2VidlBtWjVKQTFXaWEwellKaFl6eGNNcEJJME1BNlQyYU1pWFM4bmszeG9uV2JIbFNncElJSnF6d2dKM1FLd3FoTDF0NVphZ2pZMjNhR2lvZW8tcFVGMEhVWVFkVlo2OWN2bzE3UGI0TmR2dzJOUmRwNTdxOWRrNHc3dXQyZlAtTWJVRGhBdw?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Aeroporti Toscana, record a settembre 2026: 1,1 milioni di passeggeri tra Pisa e Firenze - Il Sole 24 ORE",
+      "summary": "Aeroporti Toscana, record a settembre 2026: 1,1 milioni di passeggeri tra Pisa e Firenze Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "2026",
+          "verified": false
+        },
+        {
+          "raw_value": "1,1 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2026",
+          "verified": false
+        },
+        {
+          "raw_value": "1,1 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "firenze",
+        "toscana"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-F07B327B5B483D26",
+      "story_fingerprint": "f07b327b5b483d268c67ce13",
+      "published_at": "2026-10-07T11:29:51+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 59,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi0AJBVV95cUxNR2ZmNk8zMFIwc0NtLUxKa24xaXJyc213a3dYUDBkYWFEdUNMNTljeEFTaWUxa3BRQ3VOUE9ldjM0NXZNejZiNWNGX1dNZFZfNHBURkZ2WFJ6ZGFQVW94RmROb3JBWm1Vb2hFQkRfM0xUZEJwNktWTFdHYzRxYTlXdXJVYmhXVFZidUtCbGhra2hLZkJhUW9GOUlleUVobGtSZ3AyampkcUJWTGMtVHQ0RjNmeW50OTJVazFyTGFfYVo2VlFLWmsyWDFUWDIyYXJGZkk5eWwtZ0dNbXVaUFFsZXNNZ2pUS1lyd1RNUDJSQUc4Ti1sVVNuUHVpaGdmRHN5M2xUSFVRZkpTc2MxMmJsWXZmY1AybkptdkJqWFc5eUp6UEt6UllNelRHQjlUYWd6OWNhOW9vNUNJR0dXNWFyXzN4MHBfRk9kdDFMMEpaYUbSAdACQVVfeXFMTUdmZjZPMzBSMHNDbS1MSmtuMWlycnNtd2t3WFAwZGFhRHVDTDU5Y3hBU2llMWtwUUN1TlBPZXYzNDV2TXo2YjVjRl9XTWRWXzRwVEZGdlhSemRhUFVveEZkTm9yQVptVW9oRUJEXzNMVGRCcDZLVkxXR2M0cWE5V3VyVWJoV1RWYnVLQmxoa2toS2ZCYVFvRjlJZXlFaGxrUmdwMmpqZHFCVkxjLVR0NEYzZnludDkyVWsxckxhX2FaNlZRS1prMlgxVFgyMmFyRmZJOXlsLWdHTW11WlBRbGVzTWdqVEtZcndUTVAyUkFHOE4tbFVTblB1aWhnZkRzeTNsVEhVUWZKU3NjMTJibFl2ZmNQMm5KbXZCalhXOXlKelBLelJZTXpUR0I5VGFnejljYTlvbzVDSUdHVzVhcl8zeDBwX0ZPZHQxTDBKWmFG?oc=5",
+        "domain": "Corriere Bari",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "È la Capitanata ma sembra la Louisiana: oltre 300 ettari coltivati a cotone, nel 2026 produzione record. Gli accordi con i big della moda - Corriere Bari",
+      "summary": "È la Capitanata ma sembra la Louisiana: oltre 300 ettari coltivati a cotone, nel 2026 produzione record. Gli accordi con i big della moda Corriere Bari",
+      "statistical_claims": [
+        {
+          "raw_value": "300 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "300 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "bari"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-0DFF7DF6BCC01521",
+      "story_fingerprint": "0dff7df6bcc01521fd029a11",
+      "published_at": "2026-10-07T10:31:59+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
+      "topic": "AMBIENTE",
+      "pulse_score": 70,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxONVMxN0hOWjlIc3RCQk5QZjVUampUS3BVeUU3OEFvZWF1RHdURnBBcnpoVzI3MzZPTVpYOXFuSVFWZllETzY3UzBsLUhieWZ5VnBtb2lVWFZLTHF4NFlpdUg2NkV0Y3BJbS1kZUhjT0FVa1NjR3V2UEoyMER3ZnBoOTVJb0ZlWFQ5enV5VHpycVQ4U096eUVkTThXUjZjZmU5MHJZSVEzMW5lWUljbTc4?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Titoli di Stato, la grande sete dei Governi europei: nel 2026 emissioni record a 1.440 miliardi - Il Sole 24 ORE",
+      "summary": "Titoli di Stato, la grande sete dei Governi europei: nel 2026 emissioni record a 1.440 miliardi Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "1.440 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "1.440 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-5D4D75DB184647D9",
+      "story_fingerprint": "5d4d75db184647d9c889d5f7",
+      "published_at": "2026-10-07T09:37:46+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
+      "topic": "SALUTE",
+      "pulse_score": 50,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOMzNreUdHMGVZTjJ0a3pJR2doYk1UQVpwSllKMVhXUERNTUVxZmN6SUtrT1VCUEpxWF9UdzUzX1cxLVFaVjZ0ZmtCQTZlUUx1Y1JvclBSSnRnb0IyZzFMMWppR3hHZkFGLW1yUnBnbFN2Mks0MUxRUkp3NkVCckc3SFFmNGhyQ0JsUEpGOHBHRW1KTUVkYVhBa25xSQ?oc=5",
+        "domain": "Sky TG24",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Gimbe: 18,8 miliardi di tagli invisibili alla Sanità tra 2023 e 2026 - Sky TG24",
+      "summary": "Gimbe: 18,8 miliardi di tagli invisibili alla Sanità tra 2023 e 2026 Sky TG24",
+      "statistical_claims": [
+        {
+          "raw_value": "18,8 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "2023 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "18,8 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "2023 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-636A87BF28177692",
+      "story_fingerprint": "636a87bf28177692d4659b43",
+      "published_at": "2026-10-07T09:23:00+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 69,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNYkRxRTRZMU12M0thTWFfa3Zpdko3QzlObXUwY1AyU0xQb1lfNkhvUzNUdEJWUXU4OVRFSW1HV3Z2cUhuX1lNbGJZazJmaWllNXY0amhJREhDNDdvV1ZBVHZSTDlMakFxclI3dVl2ZjdnY1RDNVNob1g2VmhPT09tbkxEckxTTURxQTl3TkllT0xqaFQ5Q3NSQ3IxVFZDc0t4QW00ODVQY2xIQ1RQeUlmQlFkcXRsNHUydm1BNTlVNkFTY0QxZ1JZUkhnZHNuUFVMM2wwaDNGNEI?oc=5",
+        "domain": "Adnkronos",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Tajani: \"Nel 2025 record export a 643 miliardi nonostante guerre, dazi e crisi energia\" - Adnkronos",
+      "summary": "Tajani: \"Nel 2025 record export a 643 miliardi nonostante guerre, dazi e crisi energia\" Adnkronos",
+      "statistical_claims": [
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "643 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "643 miliardi",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
       "id": "PULSE-D9C1A1C7DB09F9C5",
       "story_fingerprint": "d9c1a1c7db09f9c55563f041",
       "published_at": "2026-10-07T09:12:26.931962+00:00",
@@ -869,7 +1183,7 @@
       "id": "PULSE-6EE4895A1185C3B3",
       "story_fingerprint": "6ee4895a1185c3b39e070e88",
       "published_at": "2026-10-07T09:00:05+00:00",
-      "last_seen_at": "2026-10-08T18:58:40.998423+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 92,
       "public_source": {
@@ -955,6 +1269,133 @@
         "status": "requires_primary_geodata"
       },
       "editorial_status": "verified_primary_match",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-09D362B830CABD01",
+      "story_fingerprint": "09d362b830cabd01e9e75c73",
+      "published_at": "2026-10-07T08:52:00+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 65,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNWTFvVEpraC1rd1lhdmVXdENpd08xVGViamFNNm1KNzdVZ2otRnQwUUZxS1Fmcm5KWVBoQng5eTNUT0hPOUtrNFI2YzlSbjhTLVNhcGxRekdpV3IyaVU0WDRSLU9DWDdJUl9tVGp0TmJyb2xCZm9HeUd0d182UDlaU0wzbzlfeGRzNE5PNG9mUVNUYkpaSGoya1V4RXFKZmxSU3lDQlhhV0NfX1d0UzBIWGhzcjRSZ2VRWHZQS2x2Z3VYRkxOdXFJbklMRHVYYW43WXNDMmpfZFp4cGhKcmtxZThNZzV1Y2FtZkFnYkczWQ?oc=5",
+        "domain": "la Repubblica",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Banca Generali, settembre record con raccolta netta di 554 milioni, 6,3 miliardi da inizio anno (+42,3%) - la Repubblica",
+      "summary": "Banca Generali, settembre record con raccolta netta di 554 milioni, 6,3 miliardi da inizio anno (+42,3%) la Repubblica",
+      "statistical_claims": [
+        {
+          "raw_value": "554 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "6,3 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "+42,3%",
+          "verified": false
+        },
+        {
+          "raw_value": "554 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "6,3 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "+42,3%",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-C296BEF33FDB87B1",
+      "story_fingerprint": "c296bef33fdb87b1416a7588",
+      "published_at": "2026-10-07T07:21:11+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 59,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1oRldNdWs5eHhPdW91bWlTeTl4eFZKRV9RT21XVVNiaXhkVXFPT2hsQmxlS0Z5dlpwM09zY2dGNkNYX2RhT2w2UDRNdWNIQ2xwMWtfSXc3cWhzc1dPcVg5UkdGMjY5Zw?oc=5",
+        "domain": "RankiaPro",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "M&A in Italia, record di operazioni nel 2026 ma il valore scende del 26%: il report BCG - RankiaPro",
+      "summary": "M&A in Italia, record di operazioni nel 2026 ma il valore scende del 26%: il report BCG RankiaPro",
+      "statistical_claims": [
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "26%",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "26%",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-3B70E07B2204D857",
+      "story_fingerprint": "3b70e07b2204d8578d43f5ac",
+      "published_at": "2026-10-07T06:20:38+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
+      "topic": "LAVORO",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQODNiLU1DY1Zmb0k5aGlRZnhRM3pmWi1YQXNqTWtqUEI2bE8tOEZuNWxUN1pSbG9FeUNzQjRVbC1hblZYcDZ2WGUwTDM4SU16aG9aQ1RZdHY1WEdRU2J3UnhwbTR1TjJFZmlGblR2V2xJVG52WE1iV0NqSUZ6ZXozeUVQWEZGZFJXZE5OOXpmc25WWWI2bktFRnRqa2xHeC1VWUJxeXJ2cFMwQ3ltWVRsVkh3Sm0zQ21zZ1I0eW54dnEwYVFYc2c?oc=5",
+        "domain": "Orizzonte Scuola Notizie",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Popolazione in età lavorativa, l'Italia al 58,4% supera di poco la media UE del 58,3%. I dati Eurostat - Orizzonte Scuola Notizie",
+      "summary": "Popolazione in età lavorativa, l'Italia al 58,4% supera di poco la media UE del 58,3%. I dati Eurostat Orizzonte Scuola Notizie",
+      "statistical_claims": [
+        {
+          "raw_value": "58,4%",
+          "verified": false
+        },
+        {
+          "raw_value": "58,3%",
+          "verified": false
+        },
+        {
+          "raw_value": "58,4%",
+          "verified": false
+        },
+        {
+          "raw_value": "58,3%",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "lazio"
+      ],
+      "editorial_status": "journalistic_attributed",
       "publication_status": "published"
     },
     {
@@ -1076,6 +1517,414 @@
         "ANOMALIA",
         "DIVERGENZA"
       ]
+    },
+    {
+      "id": "PULSE-079C250EF9F07A55",
+      "story_fingerprint": "079c250ef9f07a55adcf7985",
+      "published_at": "2026-10-06T16:06:36+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 54,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1scm1KRllDSUN1QzBodGJWZWllcGQ1dHpjT0dfUzJ0cVJkMWJ4YWhYN0xLWVBJcV85TEJvU1BRa3JhZy1vbFlJTkRNYmNUUVJnS0ZUM3g0UUJtOElsNDdXMDFSMzhrSV9GVGh4NTRqVk1jT2ZK?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Borsa: regge la tregua sui bond con Wall Street da record, Milano chiude a +0,87% - Il Sole 24 ORE",
+      "summary": "Borsa: regge la tregua sui bond con Wall Street da record, Milano chiude a +0,87% Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "+0,87%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "+0,87%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "milano"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-98A7A27D734DA859",
+      "story_fingerprint": "98a7a27d734da859e5133a63",
+      "published_at": "2026-10-06T14:43:42+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
+      "topic": "ENERGIA",
+      "pulse_score": 54,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNUGcyazhNcGtOQjZ3ZXprdnl2clNtWldtVTNWVS15ZFMwcm9NNlhMdnZvbVVPaE5RWndONUtPenh0aTJ3Mk5LT1lfNkE0WTV1SC1hSG4zN1RJQU5hbVpmRjhPRUdKTFcwYnd5SE1ZaHBEU3JnYm1ySTVsVHR0dkU1YXVld3pOeEZTbTlZMWt2TVJqTVlqeGlCQl9UWDE0dzNPUDFSVjlCZHhqQkRFYkVNMFJ6Zk1qd3hOalE3S0M0SHAtX1MtNzhoNmIxWnBYdTNhcDJpZ0tieG1nUU5UNmNFX9IB5gFBVV95cUxNbjVWR0NMYndBcWVpd2RxSDZlNFNXTUdDNU85cmNMWnRYUndaZVp5UER3akY2V2VwbXk1Y3NHbkZueEF3dG1QelNLVkx4c1E3am1pazVRcE5wQmR0QkVmYzVHeXNqaXBCSlN3VVZiNXpNV2p3Q3JyWGdRMFNLX0VHYU8yeHpvaWl1dTBtSHlfMnY5VFJxT0JOVUFBdHNkYVhlZ05nSWw0UmhMa3NqTmdDZkZPY20xUmhqcFhURFg5VVNnSGxtakR0b1Z2WjQ5NnAwTEVza0dTRzZqV2NCdDVCelFCbDV5UQ?oc=5",
+        "domain": "la Repubblica",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Auto elettriche, vendite record nel 2026: boom di quelle sotto i 25 mila euro. Ecco perché - la Repubblica",
+      "summary": "Auto elettriche, vendite record nel 2026: boom di quelle sotto i 25 mila euro. Ecco perché la Repubblica",
+      "statistical_claims": [
+        {
+          "raw_value": "2026",
+          "verified": false
+        },
+        {
+          "raw_value": "25 mila",
+          "verified": false
+        },
+        {
+          "raw_value": "2026",
+          "verified": false
+        },
+        {
+          "raw_value": "25 mila",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-36E688C69C866355",
+      "story_fingerprint": "36e688c69c86635527bc36be",
+      "published_at": "2026-10-06T14:14:34+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNMnA4eUdwcDJud3B3XzB2QjU3WVFQc3hzWVlkeXFqbHF4ZlBheFRWajFuVm1ORXRneDRhSjU0TEo4eHpTdFgwcVlXbUhaSlJpYVJ2Z3Y0b3h1Y2FxbmNicm4tNlVtRnVaTkNsX3dBY2hiS3hRUDZCclcyWGxkZFBaLXFpUnRrZzhJNVVYWU01SENDN0FQbUt6T242Skhya0QtOWJPUEtBUmNXWWRn?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Wall Street: opens higher, S&P (+0.46%) on course for a new record - Il Sole 24 ORE",
+      "summary": "Wall Street: opens higher, S&P (+0.46%) on course for a new record Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "+0.46%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "+0.46%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-F1253C24640484A4",
+      "story_fingerprint": "f1253c24640484a44a776d74",
+      "published_at": "2026-10-06T14:01:47+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1Nam5mUTUzYWJNRElIeElHMkhyVGlYVVhZMDhzaVBVOTBWUTVzRUItUGhkLUR1ekQ1c0RRWUVfbzB0NEJPRWI5WUVpaHJ3T1pqMjVDUERuc3RLWl8wOTZTMVBjZXRaYWVGcGNnYzRRbWt2N0dk?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Wall Street: apre in rialzo, S&P (+0,46%) punta a nuovo record (RCO) - Il Sole 24 ORE",
+      "summary": "Wall Street: apre in rialzo, S&P (+0,46%) punta a nuovo record (RCO) Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "+0,46%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "+0,46%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-091557B9183656D9",
+      "story_fingerprint": "091557b9183656d972cd2632",
+      "published_at": "2026-10-06T13:24:21+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 75,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiswJBVV95cUxPNlVnMDdGLWM1Z1BFX1JkMXZSeFpSa2ZpcWx2c1A0SFNydF82YWd3R1I2dHJZWjc4TXF1eFZOWFFfMlhZMjR0VTE3YWJqV2Z6ZEw1eVY0dFhPNzlPVnhxQXJ1elRoaWtkZS12NFJxOVFudTdEZDlmcUowdDVuc2pnYUlod01uU0dkSVctNEJYc093dFlHaWp2R0EyZ0dEOUFYUUthQUdMcjN1MmtNSjlYN3V4aWhiTXVaSE9JdEtJNlFwZ1N6bzlBRTdELUxfSFJPdG5TWWFsZUFJQ0dydWNnMF8tVTVDWTlTUjZET0xRQjZXVF84VTh6LV9LTElUOXF4ZjZrZVBZQ3lEdm9ESFE3ZkMyY0o0UXhyeDMwblJtcWhPam5IVmd4Y1ZmXzVBR3B5YkFr0gGzAkFVX3lxTE82VWcwN0YtYzVnUEVfUmQxdlJ4WlJrZmlxbHZzUDRIU3J0XzZhZ3dHUjZ0cllaNzhNcXV4Vk5YUV8yWFkyNHRVMTdhYmpXZnpkTDV5VjR0WE83OU9WeHFBcnV6VGhpa2RlLXY0UnE5UW51N0RkOWZxSjB0NW5zamdhSWh3TW5TR2RJVy00QlhzT3d0WUdpanZHQTJnR0Q5QVhRS2FBR0xyM3Uya01KOVg3dXhpaGJNdVpIT0l0S0k2UXBnU3pvOUFFN0QtTF9IUk90blNZYWxlQUlDR3J1Y2cwXy1VNUNZOVNSNkRPTFFCNldUXzhVOHotX0tMSVQ5cXhmNmtlUFlDeUR2b0RIUTdmQzJjSjRReHJ4MzBuUm1xaE9qbkhWZ3hjVmZfNUFHcHliQWs?oc=5",
+        "domain": "Corriere della Sera",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Salone Nautico Genova 2026, chiude l'edizione dei record: oltre 138 mila visitatori, in aumento dell'11,2% - Corriere della Sera",
+      "summary": "Salone Nautico Genova 2026, chiude l'edizione dei record: oltre 138 mila visitatori, in aumento dell'11,2% Corriere della Sera",
+      "statistical_claims": [
+        {
+          "raw_value": "2026",
+          "verified": false
+        },
+        {
+          "raw_value": "138 mila",
+          "verified": false
+        },
+        {
+          "raw_value": "11,2%",
+          "verified": false
+        },
+        {
+          "raw_value": "2026",
+          "verified": false
+        },
+        {
+          "raw_value": "138 mila",
+          "verified": false
+        },
+        {
+          "raw_value": "11,2%",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "genova"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-6F84EB20BAC86AF0",
+      "story_fingerprint": "6f84eb20bac86af0fda00bd6",
+      "published_at": "2026-10-06T12:03:18+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 59,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOYVZTcDk5WVFGQkhwNGVubnZ3cnN4QTU2VzhDclhDems1NkZpbVM2QVE0TTNjTWFhOXZheDdsaUkyM2Z0OFlHVVp2SGZvd0x3ZHgtOEpoSXVMeWgwOUZDM1BZSmxmb0FYLUFHeElCSU1ydlB4WnR6TTdvb280LVIxamk3ZGxuWWVuNmtxbm5ZWlBkekZXZHpTbEhJTkxYVVcyTmNwdlR0NXFScXlyRi1WdFRpX0RjOC16eFVWVXQtWkhZUmQ3U2VNbG9TTWY2RUdj0gHWAUFVX3lxTE9kcm5vSFQ3LTdvN0F5ajdyMm1kTGdVN1JhMHN1c2dZVTVKbTM0QTQ1ckJGMzZmdkZhamppcW8ydG9VSWg2X2ZIU0JVaUZlbk02OXF2RVJVNko5UEtVdnd3cm54WFBkNWYxZkVrMTUtMWJkTE1KLWJpVUdmWndCMW4yNlBZajZ5S24yS0tyRjJGTDJhTDBfajFwZWlZbkZsak9QNUNmbGpUQURvQ1cwQ0JKQzhIcDAzeTJ4emN3SXQzZXBOVjBFTmVQWnJNcUJFanVVcEVyRVE?oc=5",
+        "domain": "la Repubblica",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Salone Nautico, visitatori record. L’edizione 2026 chiude a quota 138mila - la Repubblica",
+      "summary": "Salone Nautico, visitatori record. L’edizione 2026 chiude a quota 138mila la Repubblica",
+      "statistical_claims": [
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "138mila",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "138mila",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-B784E785F3384342",
+      "story_fingerprint": "b784e785f338434275d639ab",
+      "published_at": "2026-10-06T06:22:00+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 54,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPVDdPY1lfa21uUk1STXp3VjFaNFhiaWdETDRUWmxWS0lxWllCT0Vyb1J5anJnTW8tYzVFSFhGUmwzUG1kaWFlOU1rNVpyeHRMSFRwN09hZlRLRF9GLWFpUkVET3ZKVGc0RUdzRGFkSExuYlZOZFFMNE45ek44dW9zZzJyZEZ3TGlPNDlseW51MkN6NWh2UFhZR3VwblNTcW5xU0pGTzhFWVRkVzFqUG1FSDc2UTFMXzYwOFMwRDd1a2NleUhhRXJ5RTlVZ2I?oc=5",
+        "domain": "la Repubblica",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Toscana Aeroporti, settembre record con oltre 1 milione di passeggeri (+7,9%) - la Repubblica",
+      "summary": "Toscana Aeroporti, settembre record con oltre 1 milione di passeggeri (+7,9%) la Repubblica",
+      "statistical_claims": [
+        {
+          "raw_value": "1 ",
+          "verified": false
+        },
+        {
+          "raw_value": "+7,9%",
+          "verified": false
+        },
+        {
+          "raw_value": "1 ",
+          "verified": false
+        },
+        {
+          "raw_value": "+7,9%",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "toscana"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-F02F74896EC53CED",
+      "story_fingerprint": "f02f74896ec53cedd1f43886",
+      "published_at": "2026-10-06T05:35:11+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 54,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNNTFOOFJUcU1CZ3BVT3ktdVdFMkR1RjBsUnBSNklPSnhvZ2cta1BHNTVkclpSck5uR0ZSa1pLSERIclh2dzA3TGZBaDJUMEhhNG5lVW45WUpTYl9icUVyR1lSLTI4OHlYSmw4Sld4RTlIWjhMQU5jc2J3WGV6bFRwTzVlZEJCeWpPNlRON0VMYkpVTUh1cElxRG5MZUhJRHJWOW9vNlJB?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Borse, regge la tregua sui rendimenti con Wall Street da record. Milano +0,9% - Il Sole 24 ORE",
+      "summary": "Borse, regge la tregua sui rendimenti con Wall Street da record. Milano +0,9% Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "+0,9%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "+0,9%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "milano"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-7557DF869E096BEA",
+      "story_fingerprint": "7557df869e096bea49413d4c",
+      "published_at": "2026-10-06T04:58:06+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
+      "topic": "ISTRUZIONE",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPUkU5dEhLZUs1WXhtaC1ab0dRMW1VQ3FoUTN6cDB1bkJqV0Q1VldDNmlzOFpRM2ZiYWx5bmF6dGlsemgzdnZrYk9yUjVkdF9iUlZkbnY5ZlZWZklkRjJsWDFidjZlUkFjMERyQkZaNldLcFRXV2JxNXJrazhYYWY5VnB2bGp3UQ?oc=5",
+        "domain": "La Nazione",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Cresce il peso degli stranieri: i dati. A scuola la media è ferma al 14%. Rimandano in patria 55 milioni di euro - La Nazione",
+      "summary": "Cresce il peso degli stranieri: i dati. A scuola la media è ferma al 14%. Rimandano in patria 55 milioni di euro La Nazione",
+      "statistical_claims": [
+        {
+          "raw_value": "14%",
+          "verified": false
+        },
+        {
+          "raw_value": "55 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "14%",
+          "verified": false
+        },
+        {
+          "raw_value": "55 milioni",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-CC55A91EEC15087E",
+      "story_fingerprint": "cc55a91eec15087e9b7103b9",
+      "published_at": "2026-10-06T04:33:22+00:00",
+      "last_seen_at": "2026-10-08T19:19:54.497551+00:00",
+      "topic": "AMBIENTE",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMilwJBVV95cUxPMkhXOTJ0U3hxVWVadXpMektla3dGSDE1TnQtMk04SmxCeWV5elFTSXRwNWtuWWJKR185RC1iQ1pJV0VmNHdfTzgyZjN5Q3lieHRHMDJseF85WmZCWlR5YlFMbHl3OHNYTTY0QWlfazhGZnpGQTRGaVNmUzF4MG1KUlpJXzg2QzFHLWdxa0g0Q3liR3daaUxMazJTTmtiQ2JBUHVvLXlFMVA4dXI2Q05fMzV6NEhXejU5bURncVlaRkpXNlhrYXdMbXhUM25OelNRMGVhNTVCdWltRlpOQjBzYWZOWnNYWXpmZ3VXNHRsX3l4Mzc3NU9pejE1d2dUTktPSXMzX0tDYzJBMkZCb3pqZUFwTml6Umc?oc=5",
+        "domain": "Sardiniapost.it",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Rapporto Ecomafia, la Sardegna sesta in Italia per illegalità ambientale: 8.307 casi nel 2025 tra bracconaggio, gestione illecita di rifiuti, abusi edilizi - Sardiniapost.it",
+      "summary": "Rapporto Ecomafia, la Sardegna sesta in Italia per illegalità ambientale: 8.307 casi nel 2025 tra bracconaggio, gestione illecita di rifiuti, abusi edilizi Sardiniapost.it",
+      "statistical_claims": [
+        {
+          "raw_value": "8.307 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "8.307 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "sardegna"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
     },
     {
       "id": "PULSE-F61649487B13ED63",
