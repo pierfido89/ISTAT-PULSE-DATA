@@ -2,6 +2,12 @@ name: Probe Feed Expansion
 
 on:
   workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - 'data/feed_expansion_registry.json'
+      - 'scripts/probe_feed_expansion.py'
+      - '.github/workflows/probe-feed-expansion.yml'
   schedule:
     - cron: '41 4 * * 1,4'
 
