@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-08T07:47:14.404353+00:00",
-  "successful_connectors": 4,
-  "failed_connectors": 0,
+  "generated_at": "2026-10-08T07:51:15.024289+00:00",
+  "successful_connectors": 5,
+  "failed_connectors": 2,
   "results": [
     {
       "institution": "Banca d'Italia",
@@ -13,7 +13,7 @@
       "content_type": "application/zip",
       "bytes": 722465,
       "sha256": "ee65442896a1fc4d6739255aff5cdd66b0332c592adec1422030cea749b34e4f",
-      "checked_at": "2026-10-08T07:46:46.683710+00:00",
+      "checked_at": "2026-10-08T07:49:03.775575+00:00",
       "status": "ok",
       "files": [
         "ATEC2025_IT.zip",
@@ -81,7 +81,7 @@
       "content_type": "text/csv",
       "bytes": 3937624,
       "sha256": "faf79e6d40046c11095fb1a4dc21734f38e2ff5ae8196de6e90ed0c13aa581ca",
-      "checked_at": "2026-10-08T07:46:58.177407+00:00",
+      "checked_at": "2026-10-08T07:49:16.439564+00:00",
       "status": "ok",
       "header": "Estrazione del 2026-10-07",
       "snapshot": "data/expanded_feeds/mimit_carburanti_prezzi.csv"
@@ -96,10 +96,25 @@
       "content_type": "text/csv",
       "bytes": 3574138,
       "sha256": "6c4b67b8ea8a0f9a95f9721f8f0ce5e8783221f933d2d8468ed705065052bcfe",
-      "checked_at": "2026-10-08T07:47:02.848217+00:00",
+      "checked_at": "2026-10-08T07:49:21.564271+00:00",
       "status": "ok",
       "header": "Estrazione del 2026-10-07",
       "snapshot": "data/expanded_feeds/mimit_carburanti_impianti.csv"
+    },
+    {
+      "institution": "ENAC",
+      "id": "enac_traffico_tableau",
+      "url": "https://www.enac.gov.it/views/EAE-DatiTraffico-VersioneGrafica/DATITRAFFICOHOMEPAGE.csv?:showVizHome=no",
+      "kind": "csv",
+      "frequency": "monthly",
+      "http_status": 200,
+      "content_type": "text/csv",
+      "bytes": 81,
+      "sha256": "4e52bb012c14eb4c728f8cc27ea0087c7ec445d53e3ba0ebad44d3aec52df57f",
+      "checked_at": "2026-10-08T07:50:56.687196+00:00",
+      "status": "ok",
+      "header": "cc_cargo;cc_false;cc_true;cf_selezione cargo -DS;1",
+      "snapshot": "data/expanded_feeds/enac_traffico_tableau.csv"
     },
     {
       "institution": "INAIL",
@@ -114,9 +129,20 @@
       "bytes": 7611222,
       "sha256": "291c46db2c0f241553aab1cd1b3d5ba6d263691671ad2e29ca5654e1064f417e",
       "snapshot": "data/expanded_feeds/inail_malattie_mensili.csv",
-      "checked_at": "2026-10-08T07:47:14.404121+00:00",
+      "checked_at": "2026-10-08T07:51:15.024031+00:00",
       "status": "ok"
     }
   ],
-  "failures": []
+  "failures": [
+    {
+      "institution": "Ministero dell'Università e della Ricerca",
+      "id": "mur_personale_genere_qualifica",
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/1775dfd1-5408-4970-95c2-97373b7a0016/resource/85c1ab95-c8db-484b-8898-56478c521721/download/docricxgenerequalifica_serie.csv (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7fd0a32a94c0>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=45)'))"
+    },
+    {
+      "institution": "Ministero dell'Università e della Ricerca",
+      "id": "mur_personale_eta_qualifica",
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/1775dfd1-5408-4970-95c2-97373b7a0016/resource/a9cc23fc-785a-4969-af49-5e9378be582b/download/docricxclasseetaqualifica_serie.csv (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7fd0a32aa510>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=45)'))"
+    }
+  ]
 }
