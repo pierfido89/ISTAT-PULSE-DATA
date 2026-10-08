@@ -1,6 +1,84 @@
 {
-  "generated_at": "2026-10-08T14:14:07.945067+00:00",
+  "generated_at": "2026-10-08T17:20:11.697738+00:00",
   "articles": [
+    {
+      "id": "PULSE-DDBBD6E647CA6EF9",
+      "story_fingerprint": "ddbbd6e647ca6ef9e2f38473",
+      "published_at": "2026-10-08T07:59:55+00:00",
+      "last_seen_at": "2026-10-08T17:20:11.697738+00:00",
+      "topic": "LAVORO",
+      "pulse_score": 90,
+      "public_source": {
+        "url": "https://www.istat.it/comunicato-stampa/spese-per-consumi-delle-famiglie-anno-2025/",
+        "domain": "istat.it",
+        "role": "primary_statistical_source",
+        "verification_method": "direct_official_rss",
+        "verification_score": 95
+      },
+      "discovery": {
+        "visible": false,
+        "role": "hidden_radar"
+      },
+      "period_reference": null,
+      "latest_source_update": null,
+      "headline": "Lavoro, nuovo dato per Calabria: 2025 ",
+      "summary": "Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+      "statistical_claims": [
+        {
+          "raw_value": "2025 ",
+          "verified": true
+        },
+        {
+          "raw_value": "2025 ",
+          "verified": true
+        },
+        {
+          "raw_value": "2.782 ",
+          "verified": true
+        },
+        {
+          "raw_value": "2024 ",
+          "verified": true
+        },
+        {
+          "raw_value": "2.755 ",
+          "verified": true
+        }
+      ],
+      "territories": [
+        "calabria",
+        "emilia-romagna",
+        "lazio",
+        "marche",
+        "puglia",
+        "roma",
+        "sardegna",
+        "trentino-alto adige",
+        "umbria"
+      ],
+      "chart_spec": {
+        "type": "auto",
+        "status": "requires_primary_series",
+        "reason": "candidate_contains_multiple_numeric_values"
+      },
+      "map_spec": {
+        "level": "auto",
+        "territories": [
+          "calabria",
+          "emilia-romagna",
+          "lazio",
+          "marche",
+          "puglia",
+          "roma",
+          "sardegna",
+          "trentino-alto adige",
+          "umbria"
+        ],
+        "status": "requires_primary_geodata"
+      },
+      "editorial_status": "verified_primary_match",
+      "publication_status": "published"
+    },
     {
       "id": "PULSE-230AB27D5B31F550",
       "story_fingerprint": "230ab27d5b31f550fc772ee8",
@@ -98,6 +176,98 @@
         "reason": "candidate_contains_multiple_numeric_values"
       },
       "map_spec": null,
+      "editorial_status": "verified_primary_match",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-6EE4895A1185C3B3",
+      "story_fingerprint": "6ee4895a1185c3b39e070e88",
+      "published_at": "2026-10-07T09:00:05+00:00",
+      "last_seen_at": "2026-10-08T17:20:11.697738+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 92,
+      "public_source": {
+        "url": "https://www.istat.it/comunicato-stampa/raccolta-differenziata-dei-rifiuti-comportamenti-civici-e-politiche-per-la-sostenibilita-urbana-anni-2024-2025/",
+        "domain": "istat.it",
+        "role": "primary_statistical_source",
+        "verification_method": "direct_official_rss",
+        "verification_score": 95
+      },
+      "discovery": {
+        "visible": false,
+        "role": "hidden_radar"
+      },
+      "period_reference": null,
+      "latest_source_update": null,
+      "headline": "Economia, nuovo dato per Basilicata: 2024",
+      "summary": "Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+      "statistical_claims": [
+        {
+          "raw_value": "2024",
+          "verified": true
+        },
+        {
+          "raw_value": "2025 ",
+          "verified": true
+        },
+        {
+          "raw_value": "2024 ",
+          "verified": true
+        },
+        {
+          "raw_value": "507,7 ",
+          "verified": true
+        },
+        {
+          "raw_value": "+11,5 ",
+          "verified": true
+        },
+        {
+          "raw_value": "2023",
+          "verified": true
+        },
+        {
+          "raw_value": "67,7%",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "basilicata",
+        "calabria",
+        "campania",
+        "emilia-romagna",
+        "lazio",
+        "liguria",
+        "marche",
+        "molise",
+        "puglia",
+        "roma",
+        "sicilia",
+        "veneto"
+      ],
+      "chart_spec": {
+        "type": "auto",
+        "status": "requires_primary_series",
+        "reason": "candidate_contains_multiple_numeric_values"
+      },
+      "map_spec": {
+        "level": "auto",
+        "territories": [
+          "basilicata",
+          "calabria",
+          "campania",
+          "emilia-romagna",
+          "lazio",
+          "liguria",
+          "marche",
+          "molise",
+          "puglia",
+          "roma",
+          "sicilia",
+          "veneto"
+        ],
+        "status": "requires_primary_geodata"
+      },
       "editorial_status": "verified_primary_match",
       "publication_status": "published"
     },
@@ -624,7 +794,7 @@
     {
       "id": "PULSE-5634C8423DB12585",
       "published_at": "2026-10-05T19:40:00+00:00",
-      "last_seen_at": "2026-10-08T14:14:07.945067+00:00",
+      "last_seen_at": "2026-10-08T17:20:11.697738+00:00",
       "topic": "AMBIENTE",
       "pulse_score": 83,
       "patterns": [
