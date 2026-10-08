@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-08T07:44:42.526301+00:00",
+  "generated_at": "2026-10-08T07:47:14.404353+00:00",
   "successful_connectors": 4,
-  "failed_connectors": 1,
+  "failed_connectors": 0,
   "results": [
     {
       "institution": "Banca d'Italia",
@@ -13,7 +13,7 @@
       "content_type": "application/zip",
       "bytes": 722465,
       "sha256": "ee65442896a1fc4d6739255aff5cdd66b0332c592adec1422030cea749b34e4f",
-      "checked_at": "2026-10-08T07:44:32.493856+00:00",
+      "checked_at": "2026-10-08T07:46:46.683710+00:00",
       "status": "ok",
       "files": [
         "ATEC2025_IT.zip",
@@ -81,7 +81,7 @@
       "content_type": "text/csv",
       "bytes": 3937624,
       "sha256": "faf79e6d40046c11095fb1a4dc21734f38e2ff5ae8196de6e90ed0c13aa581ca",
-      "checked_at": "2026-10-08T07:44:37.552989+00:00",
+      "checked_at": "2026-10-08T07:46:58.177407+00:00",
       "status": "ok",
       "header": "Estrazione del 2026-10-07",
       "snapshot": "data/expanded_feeds/mimit_carburanti_prezzi.csv"
@@ -96,32 +96,27 @@
       "content_type": "text/csv",
       "bytes": 3574138,
       "sha256": "6c4b67b8ea8a0f9a95f9721f8f0ce5e8783221f933d2d8468ed705065052bcfe",
-      "checked_at": "2026-10-08T07:44:40.650323+00:00",
+      "checked_at": "2026-10-08T07:47:02.848217+00:00",
       "status": "ok",
       "header": "Estrazione del 2026-10-07",
       "snapshot": "data/expanded_feeds/mimit_carburanti_impianti.csv"
     },
     {
-      "institution": "INGV",
-      "id": "ingv_cpti15",
-      "url": "https://emidius.mi.ingv.it/services/italy/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=italy:CPTI15&maxFeatures=50000&outputFormat=csv",
+      "institution": "INAIL",
+      "id": "inail_malattie_mensili",
+      "label": "Malattie professionali · mensile · Italia",
+      "catalog_url": "https://dati.inail.it/portale/it/dataset/malattie-professionali/dati-con-cadenza-mensile/italia.html",
+      "url": "https://dati.inail.it/opendata/downloads/datimensilimalattieprofessionali/csv/DatiMensiliMalattieProfessionaliDataProtItalia.csv",
       "kind": "csv",
-      "frequency": "source_update",
+      "frequency": "monthly",
       "http_status": 200,
-      "content_type": "text/xml",
-      "bytes": 422,
-      "sha256": "944b5f5b884130917a6591ea38921ced576f96efd2014003ced4c0c59290d305",
-      "checked_at": "2026-10-08T07:44:41.814869+00:00",
-      "status": "ok",
-      "header": "<?xml version=\"1.0\" ?>",
-      "snapshot": "data/expanded_feeds/ingv_cpti15.csv"
+      "content_type": "application/csv",
+      "bytes": 7611222,
+      "sha256": "291c46db2c0f241553aab1cd1b3d5ba6d263691671ad2e29ca5654e1064f417e",
+      "snapshot": "data/expanded_feeds/inail_malattie_mensili.csv",
+      "checked_at": "2026-10-08T07:47:14.404121+00:00",
+      "status": "ok"
     }
   ],
-  "failures": [
-    {
-      "institution": "INAIL",
-      "id": "inail_monthly_open_data",
-      "error": "HTTPError: 404 Client Error: Not Found for url: https://dati.inail.it/portale/it/dataset/infortuni-sul-lavoro/dati-con-cadenza-mensile/italia.html"
-    }
-  ]
+  "failures": []
 }
