@@ -84,6 +84,13 @@ SOURCES = [
         "kind": "xlsx",
         "frequency": "annual",
     },
+    {
+        "institution": "INPS",
+        "id": "inps_open_data_catalog",
+        "url": "https://opendata.inps.it/opendata/api/3/action/package_list",
+        "kind": "json",
+        "frequency": "source_update",
+    },
 ]
 
 INAIL_PAGES = [
@@ -154,6 +161,17 @@ def describe(source: dict, raw: bytes, response: requests.Response) -> dict:
             record["worksheet_count"] = len(worksheets)
             if not worksheets:
                 raise RuntimeError(f"{source['id']}: workbook has no worksheets")
+    elif source["kind"] == "json":
+        payload = json.loads(raw.decode("utf-8"))
+        if not isinstance(payload, (dict, list)):
+            raise RuntimeError(f"{source['id']}: unexpected JSON payload")
+        if isinstance(payload, dict):
+            record["json_keys"] = list(payload.keys())[:25]
+            result = payload.get("result")
+            if isinstance(result, list):
+                record["result_count"] = len(result)
+            elif isinstance(result, dict):
+                record["result_keys"] = list(result.keys())[:25]
     elif source["kind"] == "xml_or_geojson":
         text = raw[:2000].decode("utf-8", errors="replace").lstrip()
         if not (text.startswith("{") or text.startswith("[") or text.startswith("<")):
@@ -172,6 +190,7 @@ def acquire_file_source(source: dict) -> dict:
         "zip_csv": ".zip",
         "csv": ".csv",
         "xlsx": ".xlsx",
+        "json": ".json",
         "xml_or_geojson": ".dat",
     }[source["kind"]]
     target = OUT_DIR / f"{source['id']}{suffix}"
