@@ -250,7 +250,22 @@ def verify_primary_page(url, numbers, keywords, allowed_domains):
     if not dom: return None
     try:
         raw,final,ct=fetch(url,timeout=12,max_bytes=6000000)
+        # For binary workbooks, use *verified table cells* as search context.
+        # Never treat arbitrary binary bytes as searchable statistical text.
+        preextracted = None
+        if final.lower().split("?")[0].endswith((".xlsx", ".xls", ".csv", ".tsv", ".json")):
+            try:
+                preextracted = extract_evidence_bytes(raw, final, ct)
+            except Exception:
+                preextracted = None
         text=extract_document_text(raw,ct,final)
+        if preextracted and preextracted.get("evidence"):
+            verified_context = " ".join(
+                e["indicator"] + " " +
+                " ".join(obs["raw"] + " " + obs["period"] for obs in e["observations"])
+                for e in preextracted["evidence"]
+            )
+            text = (text + " " + verified_context).strip()
         if not text: return None
         low=text.lower()
         matched_numbers=[]
@@ -267,7 +282,7 @@ def verify_primary_page(url, numbers, keywords, allowed_domains):
         # Reuse the already fetched original document; no redundant HTTP request.
         # Fail closed when an unreadable PDF, workbook or malformed table is encountered.
         try:
-            verified_series = extract_evidence_bytes(raw, final, ct)["evidence"]
+            verified_series = (preextracted or extract_evidence_bytes(raw, final, ct))["evidence"]
         except Exception as exc:
             print(f"[EVIDENCE] skipped {final}: {type(exc).__name__}", flush=True)
             verified_series = []
