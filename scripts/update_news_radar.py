@@ -12,6 +12,15 @@ try:
 except ModuleNotFoundError:
     from pulse_evidence import extract_bytes as extract_evidence_bytes
 
+try:
+    from scripts.pulse_evidence_adapters import (
+        discover_attachments, parse_sdmx_json, parse_sdmx_xml, load_revision_metadata
+    )
+except ModuleNotFoundError:
+    from pulse_evidence_adapters import (
+        discover_attachments, parse_sdmx_json, parse_sdmx_xml, load_revision_metadata
+    )
+
 ROOT=Path("data/news")
 CFG=Path("data/news_radar_sources.json")
 ARTICLES=ROOT/"articles.json"
@@ -286,6 +295,23 @@ def verify_primary_page(url, numbers, keywords, allowed_domains):
         # Fail closed when an unreadable PDF, workbook or malformed table is encountered.
         try:
             verified_series = (preextracted or extract_evidence_bytes(raw, final, ct))["evidence"]
+            # After the primary page passes domain/number/keyword verification,
+            # inspect a strictly bounded set of same-host downloadable tables.
+            if "html" in ct.lower():
+                for attachment in discover_attachments(raw, final, max_links=3):
+                    try:
+                        a_raw, a_url, a_ct = fetch(attachment, timeout=8, max_bytes=4000000)
+                        a_path = urllib.parse.urlsplit(a_url).path.lower()
+                        if a_path.endswith(".json") and ("sdmx" in a_url.lower()):
+                            candidate = parse_sdmx_json(a_raw, a_url)
+                        elif a_path.endswith(".xml") and ("sdmx" in a_url.lower()):
+                            candidate = parse_sdmx_xml(a_raw, a_url)
+                        else:
+                            candidate = extract_evidence_bytes(a_raw, a_url, a_ct)
+                        verified_series.extend(candidate.get("evidence", [])[:4])
+                    except Exception as exc:
+                        print(f"[ATTACHMENT] skipped {attachment}: {type(exc).__name__}", flush=True)
+            verified_series = verified_series[:12]
         except Exception as exc:
             print(f"[EVIDENCE] skipped {final}: {type(exc).__name__}", flush=True)
             verified_series = []
