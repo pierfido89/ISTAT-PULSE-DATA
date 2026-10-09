@@ -7,6 +7,7 @@ from email.utils import parsedate_to_datetime
 from zoneinfo import ZoneInfo
 from pathlib import Path
 from bs4 import BeautifulSoup
+from pulse_evidence import extract_bytes as extract_evidence_bytes
 
 ROOT=Path("data/news")
 CFG=Path("data/news_radar_sources.json")
@@ -249,7 +250,22 @@ def verify_primary_page(url, numbers, keywords, allowed_domains):
     if not dom: return None
     try:
         raw,final,ct=fetch(url,timeout=12,max_bytes=6000000)
+        # For binary workbooks, use *verified table cells* as search context.
+        # Never treat arbitrary binary bytes as searchable statistical text.
+        preextracted = None
+        if final.lower().split("?")[0].endswith((".xlsx", ".xls", ".csv", ".tsv", ".json")):
+            try:
+                preextracted = extract_evidence_bytes(raw, final, ct)
+            except Exception:
+                preextracted = None
         text=extract_document_text(raw,ct,final)
+        if preextracted and preextracted.get("evidence"):
+            verified_context = " ".join(
+                e["indicator"] + " " +
+                " ".join(obs["raw"] + " " + obs["period"] for obs in e["observations"])
+                for e in preextracted["evidence"]
+            )
+            text = (text + " " + verified_context).strip()
         if not text: return None
         low=text.lower()
         matched_numbers=[]
@@ -263,7 +279,13 @@ def verify_primary_page(url, numbers, keywords, allowed_domains):
         matched_keywords=[k for k in keywords if k in low]
         score=(40 if matched_non_year_numbers else 0)+min(40,len(matched_keywords)*8)+(15 if dom else 0)
         if not matched_non_year_numbers or score<55: return None
-        verified_series = extract_verified_year_comparisons(raw, ct, final)
+        # Reuse the already fetched original document; no redundant HTTP request.
+        # Fail closed when an unreadable PDF, workbook or malformed table is encountered.
+        try:
+            verified_series = (preextracted or extract_evidence_bytes(raw, final, ct))["evidence"]
+        except Exception as exc:
+            print(f"[EVIDENCE] skipped {final}: {type(exc).__name__}", flush=True)
+            verified_series = []
         return {"url":final,"domain":dom,"matched_numbers":matched_numbers[:6],"matched_non_year_numbers":matched_non_year_numbers[:6],
                 "matched_keywords":matched_keywords[:8],"verification_score":min(100,score),
                 "text_excerpt":text[:900], "verified_series":verified_series}
