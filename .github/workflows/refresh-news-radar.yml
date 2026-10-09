@@ -50,6 +50,22 @@ jobs:
       - if: steps.slot.outputs.run == 'true'
         run: python -m pip install beautifulsoup4 pypdf
 
+      - name: Validate source table comparison extraction
+        if: steps.slot.outputs.run == 'true'
+        run: |
+          python - <<'PY'
+          from scripts.update_news_radar import extract_verified_year_comparisons
+          html = b'<table><caption>Quota %</caption><tr><th>Indicatore</th><th>2024</th><th>2025</th></tr><tr><th>Occupazione femminile</th><td>48,5</td><td>50,1</td></tr></table>'
+          result = extract_verified_year_comparisons(html, 'text/html', 'https://istat.it/prova')
+          assert len(result) == 1, result
+          assert result[0]['observations'][0]['value'] == 48.5
+          assert result[0]['observations'][1]['value'] == 50.1
+          no_unit = html.replace(b'Quota %', b'Rapporto')
+          assert extract_verified_year_comparisons(no_unit, 'text/html', 'https://istat.it/prova') == []
+          assert extract_verified_year_comparisons(html, 'application/pdf', 'https://istat.it/prova.pdf') == []
+          print('Verified statistical comparisons: 3 tests passed')
+          PY
+
       - if: steps.slot.outputs.run == 'true'
         run: python scripts/update_news_radar.py
 
