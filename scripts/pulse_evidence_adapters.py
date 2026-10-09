@@ -70,7 +70,7 @@ def compare_observations(observations, *, source_url, dataset, indicator,
                 {"period": str(before[0]), "value": before[1]},
                 {"period": str(after[0]), "value": after[1]}],
             "delta": round(delta, 6), "comparison_unit": delta_unit,
-            "review_status": "automated_structural_check"}
+            "review_status": "automated_structural_check", "verified": True}
 
 
 def parse_sdmx_csv(content, source_url):
