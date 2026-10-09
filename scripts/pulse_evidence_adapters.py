@@ -9,7 +9,7 @@ import re
 from urllib.parse import urljoin, urlparse
 from bs4 import BeautifulSoup
 
-ALLOWED_EXT = (".pdf", ".xlsx", ".xls", ".csv", ".tsv", ".json")
+ALLOWED_EXT = (".pdf", ".xlsx", ".xls", ".csv", ".tsv", ".json", ".xml")
 YEAR = re.compile(r"(?:19|20)\d{2}$")
 REVISIONS = ("break in series", "series break", "methodological break", "rottura di serie",
              "cambio metodologia", "non comparabile", "not comparable")
