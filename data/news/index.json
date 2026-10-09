@@ -1,14 +1,17 @@
 {
-  "generated_at": "2026-10-09T07:56:36.944450+00:00",
+  "generated_at": "2026-10-09T09:13:23.192673+00:00",
   "counts": {
-    "oggi": 2,
+    "oggi": 5,
     "ieri": 17,
     "archivio": 34,
     "withheld": 0,
     "candidates": 57
   },
   "oggi": [
+    "PULSE-6432FBBFD9EE664D",
+    "PULSE-C545089630B8EEA5",
     "PULSE-81DFEFB42997622E",
+    "PULSE-3594B7F247349439",
     "PULSE-A175126390C93F31"
   ],
   "ieri": [
