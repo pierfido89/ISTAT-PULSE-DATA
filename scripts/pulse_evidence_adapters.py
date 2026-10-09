@@ -139,6 +139,59 @@ def _revision_text(metadata):
     return " ".join(str(metadata.get(k, "")) for k in keys)
 
 
+def _parse_indexed_sdmx_json(doc, source_url, revision_metadata):
+    """Decode common SDMX-JSON dataSets[].series using explicit structure metadata."""
+    structure = doc.get("structure") or {}
+    dimensions = structure.get("dimensions") or {}
+    series_dims = dimensions.get("series") or []
+    observation_dims = dimensions.get("observation") or []
+    if len(observation_dims) != 1 or observation_dims[0].get("id") not in ("TIME_PERIOD", "TIME"):
+        return {"status": "requires_dimension_resolution", "evidence": []}
+    years = observation_dims[0].get("values") or []
+    datasets = doc.get("dataSets") or []
+    groups = []
+    for dataset in datasets[:5]:
+        for key, series in list((dataset.get("series") or {}).items())[:1000]:
+            positions = key.split(":")
+            if len(positions) != len(series_dims):
+                continue
+            fields = {}
+            for dim, pos in zip(series_dims, positions):
+                values = dim.get("values") or []
+                try:
+                    fields[dim["id"]] = str(values[int(pos)]["id"])
+                except (KeyError, IndexError, ValueError, TypeError):
+                    fields = {}
+                    break
+            if not fields:
+                continue
+            obs = []
+            for obs_key, raw in list((series.get("observations") or {}).items())[:10000]:
+                try:
+                    year = str(years[int(obs_key)]["id"])
+                    value = raw[0]
+                except (ValueError, IndexError, KeyError, TypeError):
+                    continue
+                obs.append({"period": year, "value": value})
+            groups.append((fields, obs))
+    evidence = []
+    for fields, observations in groups:
+        # No default units or geography: missing mandatory dimensions => reject.
+        result = compare_observations(
+            observations, source_url=source_url,
+            dataset=fields.get("DATAFLOW") or doc.get("dataflow") or "",
+            indicator=fields.get("INDICATOR") or fields.get("MEASURE") or "",
+            unit=fields.get("UNIT_MEASURE") or fields.get("UNIT") or "",
+            territory=fields.get("REF_AREA") or fields.get("GEO") or "",
+            method_id=fields.get("METHODOLOGY") or fields.get("METHODOLOGY_ID") or "",
+            revision_notes=_revision_text(revision_metadata))
+        if result["status"] == "verified":
+            result["extraction_method"] = "sdmx_json_indexed_resolved_dimensions"
+            evidence.append(result)
+    return {"status": "verified" if evidence else "no_comparable_series",
+            "evidence": evidence[:30]}
+
+
 def parse_sdmx_json(content, source_url, revision_metadata=None):
     """SDMX-JSON 2.0 flat observations only; reject unknown/multidimensional encodings.
 
@@ -151,7 +204,7 @@ def parse_sdmx_json(content, source_url, revision_metadata=None):
     # SDMX-JSON 2.0 messages commonly use dataSets/structure; never infer
     # dimensions from indexed observation identifiers.
     if "dataSets" in doc or "structure" in doc:
-        return {"status": "requires_dimension_resolution", "evidence": []}
+        return _parse_indexed_sdmx_json(doc, source_url, revision_metadata)
     if doc.get("format") != "pulse_sdmx_flat_v1":
         return {"status": "unsupported_schema", "evidence": []}
     rows = doc.get("observations", [])
