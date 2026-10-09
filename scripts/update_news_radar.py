@@ -7,7 +7,10 @@ from email.utils import parsedate_to_datetime
 from zoneinfo import ZoneInfo
 from pathlib import Path
 from bs4 import BeautifulSoup
-from pulse_evidence import extract_bytes as extract_evidence_bytes
+try:
+    from scripts.pulse_evidence import extract_bytes as extract_evidence_bytes
+except ModuleNotFoundError:
+    from pulse_evidence import extract_bytes as extract_evidence_bytes
 
 ROOT=Path("data/news")
 CFG=Path("data/news_radar_sources.json")
