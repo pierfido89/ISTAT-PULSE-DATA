@@ -311,6 +311,28 @@ def verify_primary_page(url, numbers, keywords, allowed_domains):
                         verified_series.extend(candidate.get("evidence", [])[:4])
                     except Exception as exc:
                         print(f"[ATTACHMENT] skipped {attachment}: {type(exc).__name__}", flush=True)
+            # Conservative companion metadata gate: if the same official page
+            # links a machine-readable revision bulletin that announces a
+            # series break, withhold every comparison on that page.
+            if "html" in ct.lower() and verified_series:
+                for tag in BeautifulSoup(raw, "html.parser").select("a[href]")[:150]:
+                    link = urllib.parse.urljoin(final, tag.get("href", ""))
+                    label = (tag.get_text(" ", strip=True) + " " + link).lower()
+                    if not link.lower().split("?")[0].endswith(".json"):
+                        continue
+                    if not any(word in label for word in ("revision", "metodolog", "series-break", "serie-storica")):
+                        continue
+                    if urllib.parse.urlsplit(link).hostname != urllib.parse.urlsplit(final).hostname:
+                        continue
+                    try:
+                        metadata_raw, _, _ = fetch(link, timeout=7, max_bytes=200000)
+                        metadata = load_revision_metadata(metadata_raw)
+                        if metadata["status"] == "methodological_break":
+                            verified_series = []
+                            print(f"[REVISION] comparison withheld for {final}", flush=True)
+                            break
+                    except Exception:
+                        continue
             verified_series = verified_series[:12]
         except Exception as exc:
             print(f"[EVIDENCE] skipped {final}: {type(exc).__name__}", flush=True)
