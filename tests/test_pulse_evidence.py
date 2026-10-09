@@ -44,7 +44,7 @@ class EvidenceTests(unittest.TestCase):
         f = io.BytesIO()
         c = canvas.Canvas(f)
         c.drawString(40, 760, "Quota percentuale (%)")
-        c.drawString(40, 720, "Indicatore")
+        c.drawString(40, 720, "Indicatore (%)")
         c.drawString(230, 720, "2024")
         c.drawString(330, 720, "2025")
         c.drawString(40, 680, "Occupazione")
@@ -55,9 +55,9 @@ class EvidenceTests(unittest.TestCase):
         for y in (665, 705, 740):
             c.line(30, y, 400, y)
         c.save()
-        # Missing % metadata in the extracted table is correctly withheld.
         result = extract_bytes(f.getvalue(), URL, filename="tavola.pdf")
-        self.assertEqual(result["status"], "no_comparable_series")
+        self.assertEqual(result["status"], "verified")
+        self.assertEqual(result["evidence"][0]["delta"], 1.0)
 
     def test_reject_missing_unit(self):
         rows = [["Indicatore", "2024", "2025"], ["Occupati", "60", "62"]]
