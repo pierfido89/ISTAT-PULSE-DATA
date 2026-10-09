@@ -70,6 +70,24 @@ class Phase2Tests(unittest.TestCase):
             {"dataset":"D","indicator":"I","unit":"euro","territory":"IT","method_id":"M","period":"2025","value":20}]}
         self.assertEqual(parse_sdmx_json(json.dumps(fixture).encode(), URL)["evidence"][0]["delta"], 10)
 
+    def test_indexed_sdmx_json_explicit_dimensions(self):
+        from scripts.pulse_evidence_adapters import parse_sdmx_json
+        import json
+        labels = ["DATAFLOW", "INDICATOR", "UNIT_MEASURE", "REF_AREA", "METHODOLOGY"]
+        structure = {"dimensions": {"series": [
+            {"id": name, "values": [{"id": value}]} for name, value in zip(
+                labels, ["FLOW", "EMP", "persons", "IT", "M1"])
+        ], "observation": [{"id": "TIME_PERIOD", "values": [
+            {"id": "2024"}, {"id": "2025"}]}]}}
+        packet = {"structure": structure, "dataSets": [{"series": {
+            "0:0:0:0:0": {"observations": {"0": [100], "1": [108]}}
+        }}]}
+        result = parse_sdmx_json(json.dumps(packet).encode(), URL)
+        self.assertEqual(result["evidence"][0]["delta"], 8)
+        structure["dimensions"]["series"][2]["values"] = []
+        self.assertEqual(parse_sdmx_json(json.dumps(packet).encode(), URL)["status"],
+                         "no_comparable_series")
+
     def test_separate_revision_metadata(self):
         from scripts.pulse_evidence_adapters import load_revision_metadata
         self.assertEqual(load_revision_metadata(b'{"notes":"methodological break 2025"}')["status"], "methodological_break")
