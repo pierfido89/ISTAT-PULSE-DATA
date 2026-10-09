@@ -55,5 +55,24 @@ class Phase2Tests(unittest.TestCase):
                 "flow,employment,persons,IT,2025,140\n")
         self.assertEqual(parse_sdmx_csv(text.encode(), URL)["status"], "no_comparable_series")
 
+    def test_sdmx_xml_explicit_series(self):
+        from scripts.pulse_evidence_adapters import parse_sdmx_xml
+        xml = b'<DataSet><Series><SeriesKey><Value id="DATAFLOW" value="FLOW"/><Value id="INDICATOR" value="EMP"/><Value id="UNIT_MEASURE" value="PERSONS"/><Value id="REF_AREA" value="IT"/><Value id="METHODOLOGY" value="M1"/></SeriesKey><Obs><ObsDimension value="2024"/><ObsValue value="100"/></Obs><Obs><ObsDimension value="2025"/><ObsValue value="120"/></Obs></Series></DataSet>'
+        result = parse_sdmx_xml(xml, URL)
+        self.assertEqual(result["evidence"][0]["delta"], 20)
+
+    def test_sdmx_json_no_dimension_guessing(self):
+        from scripts.pulse_evidence_adapters import parse_sdmx_json
+        import json
+        self.assertEqual(parse_sdmx_json(json.dumps({"dataSets": [], "structure": {}}).encode(), URL)["status"], "requires_dimension_resolution")
+        fixture = {"format":"pulse_sdmx_flat_v1","observations":[
+            {"dataset":"D","indicator":"I","unit":"euro","territory":"IT","method_id":"M","period":"2024","value":10},
+            {"dataset":"D","indicator":"I","unit":"euro","territory":"IT","method_id":"M","period":"2025","value":20}]}
+        self.assertEqual(parse_sdmx_json(json.dumps(fixture).encode(), URL)["evidence"][0]["delta"], 10)
+
+    def test_separate_revision_metadata(self):
+        from scripts.pulse_evidence_adapters import load_revision_metadata
+        self.assertEqual(load_revision_metadata(b'{"notes":"methodological break 2025"}')["status"], "methodological_break")
+
 if __name__ == "__main__":
     unittest.main()

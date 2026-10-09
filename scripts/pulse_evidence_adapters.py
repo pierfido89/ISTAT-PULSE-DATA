@@ -128,3 +128,117 @@ def acquire_publication_attachments(page_url, max_links=10):
             reports.append({"url": link, "status": "extraction_failed",
                             "error": type(exc).__name__})
     return {"page_url": final, "attachments": reports, "status": "processed"}
+
+
+def _revision_text(metadata):
+    """Collect only explicit revision metadata, never guess methodological continuity."""
+    if not isinstance(metadata, dict):
+        return ""
+    keys = ("revision", "revisions", "methodology", "methodological_notes",
+            "break_in_series", "notes", "comment", "OBS_STATUS")
+    return " ".join(str(metadata.get(k, "")) for k in keys)
+
+
+def parse_sdmx_json(content, source_url, revision_metadata=None):
+    """SDMX-JSON 2.0 flat observations only; reject unknown/multidimensional encodings.
+
+    Full SDMX-JSON time-series decoding requires dimension index resolution and
+    should not be guessed from observation indices.
+    """
+    doc = json.loads(content)
+    if not isinstance(doc, dict):
+        return {"status": "unsupported_schema", "evidence": []}
+    # SDMX-JSON 2.0 messages commonly use dataSets/structure; never infer
+    # dimensions from indexed observation identifiers.
+    if "dataSets" in doc or "structure" in doc:
+        return {"status": "requires_dimension_resolution", "evidence": []}
+    if doc.get("format") != "pulse_sdmx_flat_v1":
+        return {"status": "unsupported_schema", "evidence": []}
+    rows = doc.get("observations", [])
+    if not isinstance(rows, list):
+        return {"status": "unsupported_schema", "evidence": []}
+    groups = {}
+    for item in rows[:10000]:
+        if not isinstance(item, dict):
+            continue
+        dims = tuple(sorted((key, str(item.get(key, ""))) for key in
+            ("dataset", "indicator", "unit", "territory", "method_id")))
+        groups.setdefault(dims, []).append(item)
+    evidence = []
+    for dims, observations in groups.items():
+        d = dict(dims)
+        result = compare_observations(
+            observations, source_url=source_url, dataset=d["dataset"],
+            indicator=d["indicator"], unit=d["unit"],
+            territory=d["territory"], method_id=d["method_id"],
+            revision_notes=_revision_text(revision_metadata) +
+                " " + " ".join(_revision_text(o) for o in observations))
+        if result["status"] == "verified":
+            result["extraction_method"] = "sdmx_flat_json_explicit_dimensions"
+            evidence.append(result)
+    return {"status": "verified" if evidence else "no_comparable_series",
+            "evidence": evidence[:30]}
+
+
+def parse_sdmx_xml(content, source_url, revision_metadata=None):
+    """SDMX-ML generic observation: conservative explicit attribute adapter."""
+    import xml.etree.ElementTree as ET
+    root = ET.fromstring(content)
+    groups = {}
+    for series in root.iter():
+        if series.tag.rsplit("}", 1)[-1] != "Series":
+            continue
+        dimensions = {}
+        for node in series.iter():
+            if node.tag.rsplit("}", 1)[-1] != "Value":
+                continue
+            key, value = node.get("id"), node.get("value")
+            if key and value and key not in dimensions:
+                dimensions[key] = value
+        observations = []
+        for obs in series.iter():
+            if obs.tag.rsplit("}", 1)[-1] != "Obs":
+                continue
+            period, value = None, None
+            for child in obs.iter():
+                local = child.tag.rsplit("}", 1)[-1]
+                if local == "ObsDimension":
+                    period = child.get("value")
+                elif local == "ObsValue":
+                    value = child.get("value")
+            if period is not None and value is not None:
+                observations.append({"period": period, "value": value})
+        if not observations:
+            continue
+        key = tuple(sorted(dimensions.items()))
+        groups.setdefault(key, []).extend(observations)
+    evidence = []
+    for key, observations in groups.items():
+        dims = dict(key)
+        result = compare_observations(
+            observations, source_url=source_url,
+            dataset=dims.get("DATAFLOW", ""),
+            indicator=dims.get("INDICATOR", ""),
+            unit=dims.get("UNIT_MEASURE", ""),
+            territory=dims.get("REF_AREA", ""),
+            method_id=dims.get("METHODOLOGY", ""),
+            revision_notes=_revision_text(revision_metadata))
+        if result["status"] == "verified":
+            result["extraction_method"] = "sdmx_xml_explicit_series_dimensions"
+            evidence.append(result)
+    return {"status": "verified" if evidence else "no_comparable_series",
+            "evidence": evidence[:30]}
+
+
+def load_revision_metadata(content, filename=""):
+    """Read a separate companion JSON methodological bulletin; unknown => no assertion."""
+    try:
+        data = json.loads(content)
+    except (ValueError, UnicodeDecodeError, TypeError):
+        return {"status": "unreadable_revision_metadata", "notes": ""}
+    if not isinstance(data, dict):
+        return {"status": "unsupported_revision_metadata", "notes": ""}
+    notes = _revision_text(data)
+    if any(flag in notes.lower() for flag in REVISIONS):
+        return {"status": "methodological_break", "notes": notes}
+    return {"status": "metadata_read", "notes": notes}
