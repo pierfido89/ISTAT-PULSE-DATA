@@ -204,8 +204,8 @@ def extract_verified_year_comparisons(raw, content_type, url):
         return []
     soup = BeautifulSoup(raw, "html.parser")
     evidence = []
-    year_re = re.compile(r"^(?:19|20)\\d{2}$")
-    number_re = re.compile(r"^([+-]?\\d{1,3}(?:[.,]\\d{1,2})?)\\s*%?$")
+    year_re = re.compile(r"^(?:19|20)\d{2}$")
+    number_re = re.compile(r"^([+-]?\d{1,3}(?:[.,]\d{1,2})?)\s*%?$")
     for table in soup.find_all("table", limit=30):
         rows = table.find_all("tr", limit=150)
         if len(rows) < 2: continue
@@ -214,7 +214,8 @@ def extract_verified_year_comparisons(raw, content_type, url):
         if len(years) < 2: continue
         years = sorted(years, key=lambda pair: pair[1])[-2:]
         if years[1][1] - years[0][1] > 5: continue
-        table_heading = clean_text((table.find("caption") or table).get_text(" ", strip=True)[:200])
+        caption = table.find("caption")
+        table_heading = clean_text(caption.get_text(" ", strip=True)) if caption else ""
         for row in rows[1:]:
             cells = [clean_text(c.get_text(" ", strip=True)) for c in row.find_all(["th", "td"], recursive=False)]
             if len(cells) <= max(i for i, _ in years): continue
