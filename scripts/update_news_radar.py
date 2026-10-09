@@ -194,6 +194,55 @@ def numeric_variants(token):
     if re.fullmatch(r"\d{1,3},\d{3}",core): vars.add(core.replace(",",""))
     return [v for v in vars if v]
 
+def extract_verified_year_comparisons(raw, content_type, url):
+    """Only compare percentages in a single primary-source HTML table row.
+
+    Each observation is tied to the *same row label* and an explicit year
+    column. Never infer years from prose or compare unrelated quantities.
+    """
+    if "html" not in (content_type or "").lower() and not url.lower().split("?")[0].endswith((".html", ".htm")):
+        return []
+    soup = BeautifulSoup(raw, "html.parser")
+    evidence = []
+    year_re = re.compile(r"^(?:19|20)\d{2}$")
+    number_re = re.compile(r"^([+-]?\d{1,3}(?:[.,]\d{1,2})?)\s*%?$")
+    for table in soup.find_all("table", limit=30):
+        rows = table.find_all("tr", limit=150)
+        if len(rows) < 2: continue
+        headers = [clean_text(c.get_text(" ", strip=True)) for c in rows[0].find_all(["th", "td"], recursive=False)]
+        years = [(i, int(h)) for i, h in enumerate(headers) if year_re.fullmatch(h)]
+        if len(years) < 2: continue
+        years = sorted(years, key=lambda pair: pair[1])[-2:]
+        if years[1][1] - years[0][1] > 5: continue
+        caption = table.find("caption")
+        table_heading = clean_text(caption.get_text(" ", strip=True)) if caption else ""
+        for row in rows[1:]:
+            cells = [clean_text(c.get_text(" ", strip=True)) for c in row.find_all(["th", "td"], recursive=False)]
+            if len(cells) <= max(i for i, _ in years): continue
+            indicator = cells[0].strip()
+            if not 5 <= len(indicator) <= 120 or year_re.fullmatch(indicator): continue
+            # Unit must be explicit in the row or its table caption.
+            if not ("%" in indicator or "percent" in indicator.lower() or "%" in table_heading[:160] or "percent" in table_heading[:160].lower()):
+                continue
+            values = []
+            for col, year in years:
+                m = number_re.fullmatch(cells[col])
+                if m is None: break
+                token = m.group(1)
+                # Italian thousands separators cannot be confused with decimals.
+                value = float(token.replace(",", "."))
+                if not 0 <= value <= 100: break
+                values.append({"period": str(year), "value": value, "raw": cells[col]})
+            if len(values) != 2: continue
+            evidence.append({
+                "indicator": indicator, "unit": "%", "observations": values,
+                "source_url": url, "extraction_method": "same_row_explicit_year_html_table",
+                "verified": True, "comparison_unit": "punti percentuali"
+            })
+            if len(evidence) >= 4: return evidence
+    return evidence
+
+
 def verify_primary_page(url, numbers, keywords, allowed_domains):
     host=canonical_host(url)
     dom=official_domain(host,allowed_domains)
@@ -214,9 +263,10 @@ def verify_primary_page(url, numbers, keywords, allowed_domains):
         matched_keywords=[k for k in keywords if k in low]
         score=(40 if matched_non_year_numbers else 0)+min(40,len(matched_keywords)*8)+(15 if dom else 0)
         if not matched_non_year_numbers or score<55: return None
+        verified_series = extract_verified_year_comparisons(raw, ct, final)
         return {"url":final,"domain":dom,"matched_numbers":matched_numbers[:6],"matched_non_year_numbers":matched_non_year_numbers[:6],
                 "matched_keywords":matched_keywords[:8],"verification_score":min(100,score),
-                "text_excerpt":text[:900]}
+                "text_excerpt":text[:900], "verified_series":verified_series}
     except Exception:
         return None
 
@@ -815,6 +865,7 @@ def main():
               "headline":headline,
               "summary":"Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
               "statistical_claims":[{"raw_value":n,"verified":n in verified_nums} for n in nums],
+              "verified_series": resolved.get("verified_series", []),
               "territories":geos,
               "chart_spec":chart,"map_spec":map_spec,
               "editorial_status":"verified_primary_match",
