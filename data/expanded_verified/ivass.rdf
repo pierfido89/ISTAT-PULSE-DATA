@@ -1,0 +1,1359 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+  <rdf:RDF xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:locn="http://www.w3.org/ns/locn#" xmlns:hydra="http://www.w3.org/ns/hydra/core#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcat="http://www.w3.org/ns/dcat#" xmlns:dct="http://purl.org/dc/terms/" xmlns:dcatapit="http://dati.gov.it/onto/dcatapit#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#" xmlns:adms="http://www.w3.org/ns/adms#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gsp="http://www.opengis.net/ont/geosparql#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+
+<dcatapit:Catalog rdf:about="https://www.ivass.it/">
+  <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Catalog"/>
+  <dct:title>IVASS - Istituto per la Vigilanza sulle Assicurazioni</dct:title>
+  <dct:publisher>
+    <dcatapit:Agent rdf:about="IVsAPIC">
+      <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+      <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+      <dct:identifier>IVsAPIC</dct:identifier>
+      <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+    </dcatapit:Agent>
+  </dct:publisher>
+  <dct:description>Catalogo degli open data su imprese e intermediari assicurativi</dct:description>
+  <dct:language>it</dct:language>
+  <foaf:homepage rdf:resource="https://www.ivass.it/#"/>
+  <dcat:themeTaxonomy>
+    <skos:ConceptScheme rdf:about="http://publications.europa.eu/resource/authority/data-theme">
+      <dct:title>Data Theme Vocabulary</dct:title>
+    </skos:ConceptScheme>
+  </dcat:themeTaxonomy>
+  <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-16</dct:modified>
+  <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-10-14</dct:issued>
+  <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+  <dcat:dataset rdf:resource="https://ruipubblico.ivass.it/rui-pubblica/ng//#/home#2"/>
+  <dcat:dataset rdf:resource="https://ruipubblico.ivass.it/rui-pubblica/ng//#/home#3"/>
+  <dcat:dataset rdf:resource="https://ruipubblico.ivass.it/rui-pubblica/ng//#/home#4"/>
+  <dcat:dataset rdf:resource="https://ruipubblico.ivass.it/rui-pubblica/ng//#/home#5"/>
+  <dcat:dataset rdf:resource="https://ruipubblico.ivass.it/rui-pubblica/ng//#/home#6"/>
+  <dcat:dataset rdf:resource="https://ruipubblico.ivass.it/rui-pubblica/ng//#/home#7"/>
+  <dcat:dataset rdf:resource="https://ruipubblico.ivass.it/rui-pubblica/ng//#/home#9"/>
+  <dcat:dataset rdf:resource="https://ruipubblico.ivass.it/rui-pubblica/ng//#/home#10"/>
+  <dcat:dataset rdf:resource="https://ruipubblico.ivass.it/rui-pubblica/ng//#/home#11"/>
+  <dcat:dataset rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download#12"/>
+  <dcat:dataset rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download#13"/>
+  <dcat:dataset rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download#14"/>
+  <dcat:dataset rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download#15"/>
+  <dcat:dataset rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download#16"/>
+  <dcat:dataset rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download#17"/>
+  <dcat:dataset rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download#18"/>
+  <dcat:dataset rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download#19"/>
+  <dcat:dataset rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download#20"/>
+  <dcat:dataset rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download#21"/>
+  </dcatapit:Catalog>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/data-theme/GOVE">
+    <skos:prefLabel>Governo e settore pubblico</skos:prefLabel>
+  </skos:Concept>
+  <dcatapit:Dataset rdf:about="https://ruipubblico.ivass.it/rui-pubblica/ng//#/home#2">
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    <dct:accessRights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
+    <dct:license/>
+    <dct:title>Agenti di vendita prodotti non standardizzati</dct:title>
+    <dcat:landingPage rdf:resource="https://ruipubblico.ivass.it/rui-pubblica/ng//"/>
+    <dct:description>Fornisce l'elenco degli intermediari iscritti nel RUI abilitati alla  vendita dei prodotti non standardizzati per conto degli intermediari iscritti nella sezione D.</dct:description>
+    <dct:identifier>IVsAPIC:agenti-di-vendita-prodotti-non-standardizzati</dct:identifier>
+    <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/DAILY"/>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dct:rightsHolder>
+      <dcatapit:Agent rdf:about="IVsAPIC">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:rightsHolder>
+    <dct:publisher>
+      <dcatapit:Agent rdf:nodeID="Nd117aa7f2e7b47fb9481d4a8aca59c7d">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:publisher>
+    <dct:subject>
+      <skos:Concept rdf:about="http://eurovoc.europa.eu/">
+        <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#subTheme"/>
+        <skos:prefLabel xml:lang="it"/>
+      </skos:Concept>
+    </dct:subject>
+    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ITA"/>
+    <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-16</dct:modified>
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-06-03</dct:issued>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dcat:keyword>Registro RUI</dcat:keyword>
+    <dcat:keyword>intermediario</dcat:keyword>
+    <dcat:keyword>banca</dcat:keyword>
+    <dcat:distribution rdf:resource="https://www.ivass.it//agenti-di-vendita-prodotti-non-standardizzati/zip2"/>
+  </dcatapit:Dataset>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/data-theme/GOVE">
+    <skos:prefLabel>Governo e settore pubblico</skos:prefLabel>
+  </skos:Concept>
+  <dcatapit:Dataset rdf:about="https://ruipubblico.ivass.it/rui-pubblica/ng//#/home#3">
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    <dct:accessRights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
+    <dct:license/>
+    <dct:title>Cariche societarie intermediari</dct:title>
+    <dcat:landingPage rdf:resource="https://ruipubblico.ivass.it/rui-pubblica/ng//"/>
+    <dct:description>Fornisce l'elenco delle cariche societarie rivestite dagli intermediari nelle società iscritte nel RUI.</dct:description>
+    <dct:identifier>IVsAPIC:cariche-societarie-intermediari</dct:identifier>
+    <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/DAILY"/>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dct:rightsHolder>
+      <dcatapit:Agent rdf:about="IVsAPIC">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:rightsHolder>
+    <dct:publisher>
+      <dcatapit:Agent rdf:nodeID="Nd117aa7f2e7b47fb9481d4a8aca59c7d">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:publisher>
+    <dct:subject>
+      <skos:Concept rdf:about="http://eurovoc.europa.eu/">
+        <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#subTheme"/>
+        <skos:prefLabel xml:lang="it"/>
+      </skos:Concept>
+    </dct:subject>
+    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ITA"/>
+    <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-16</dct:modified>
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-06-03</dct:issued>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dcat:keyword>Registro RUI</dcat:keyword>
+    <dcat:keyword>carica</dcat:keyword>
+    <dcat:keyword>societaria</dcat:keyword>
+    <dcat:distribution rdf:resource="https://www.ivass.it//cariche-societarie-intermediari/zip3"/>
+  </dcatapit:Dataset>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/data-theme/GOVE">
+    <skos:prefLabel>Governo e settore pubblico</skos:prefLabel>
+  </skos:Concept>
+  <dcatapit:Dataset rdf:about="https://ruipubblico.ivass.it/rui-pubblica/ng//#/home#4">
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    <dct:accessRights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
+    <dct:license/>
+    <dct:title>Collaboratori accessori</dct:title>
+    <dcat:landingPage rdf:resource="https://ruipubblico.ivass.it/rui-pubblica/ng//"/>
+    <dct:description>Fornisce l'elenco degli iscritti nella sezione E del RUI operativi a titolo accessorio</dct:description>
+    <dct:identifier>IVsAPIC:collaboratori-accessori</dct:identifier>
+    <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/DAILY"/>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dct:rightsHolder>
+      <dcatapit:Agent rdf:about="IVsAPIC">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:rightsHolder>
+    <dct:publisher>
+      <dcatapit:Agent rdf:nodeID="Nd117aa7f2e7b47fb9481d4a8aca59c7d">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:publisher>
+    <dct:subject>
+      <skos:Concept rdf:about="http://eurovoc.europa.eu/">
+        <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#subTheme"/>
+        <skos:prefLabel xml:lang="it"/>
+      </skos:Concept>
+    </dct:subject>
+    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ITA"/>
+    <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-16</dct:modified>
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-06-03</dct:issued>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dcat:keyword>Registro RUI</dcat:keyword>
+    <dcat:keyword>collaboratore</dcat:keyword>
+    <dcat:keyword>accessorio</dcat:keyword>
+    <dcat:distribution rdf:resource="https://www.ivass.it//collaboratori-accessori/zip4"/>
+  </dcatapit:Dataset>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/data-theme/GOVE">
+    <skos:prefLabel>Governo e settore pubblico</skos:prefLabel>
+  </skos:Concept>
+  <dcatapit:Dataset rdf:about="https://ruipubblico.ivass.it/rui-pubblica/ng//#/home#5">
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    <dct:accessRights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
+    <dct:license/>
+    <dct:title>Collaboratori non accessori</dct:title>
+    <dcat:landingPage rdf:resource="https://ruipubblico.ivass.it/rui-pubblica/ng//"/>
+    <dct:description>Fornisce l'elenco degli iscritti nella sezione E del RUI operativi a titolo pieno</dct:description>
+    <dct:identifier>IVsAPIC:collaboratori-non-accessori</dct:identifier>
+    <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/DAILY"/>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dct:rightsHolder>
+      <dcatapit:Agent rdf:about="IVsAPIC">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:rightsHolder>
+    <dct:publisher>
+      <dcatapit:Agent rdf:nodeID="Nd117aa7f2e7b47fb9481d4a8aca59c7d">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:publisher>
+    <dct:subject>
+      <skos:Concept rdf:about="http://eurovoc.europa.eu/">
+        <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#subTheme"/>
+        <skos:prefLabel xml:lang="it"/>
+      </skos:Concept>
+    </dct:subject>
+    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ITA"/>
+    <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-16</dct:modified>
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-06-03</dct:issued>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dcat:keyword>Registro RUI</dcat:keyword>
+    <dcat:keyword>collaboratore</dcat:keyword>
+    <dcat:keyword>non accessorio</dcat:keyword>
+    <dcat:distribution rdf:resource="https://www.ivass.it//collaboratori-non-accessori/zip5"/>
+  </dcatapit:Dataset>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/data-theme/GOVE">
+    <skos:prefLabel>Governo e settore pubblico</skos:prefLabel>
+  </skos:Concept>
+  <dcatapit:Dataset rdf:about="https://ruipubblico.ivass.it/rui-pubblica/ng//#/home#6">
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    <dct:accessRights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
+    <dct:license/>
+    <dct:title>Intermediari</dct:title>
+    <dcat:landingPage rdf:resource="https://ruipubblico.ivass.it/rui-pubblica/ng//"/>
+    <dct:description>Fornisce l'elenco degli iscritti nel RUI</dct:description>
+    <dct:identifier>IVsAPIC:intermediari</dct:identifier>
+    <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/DAILY"/>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dct:rightsHolder>
+      <dcatapit:Agent rdf:about="IVsAPIC">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:rightsHolder>
+    <dct:publisher>
+      <dcatapit:Agent rdf:nodeID="Nd117aa7f2e7b47fb9481d4a8aca59c7d">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:publisher>
+    <dct:subject>
+      <skos:Concept rdf:about="http://eurovoc.europa.eu/">
+        <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#subTheme"/>
+        <skos:prefLabel xml:lang="it"/>
+      </skos:Concept>
+    </dct:subject>
+    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ITA"/>
+    <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-16</dct:modified>
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-06-03</dct:issued>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dcat:keyword>Registro RUI</dcat:keyword>
+    <dcat:keyword>intermediario</dcat:keyword>
+    <dcat:keyword>assicurazione</dcat:keyword>
+    <dcat:distribution rdf:resource="https://www.ivass.it//intermediari/zip6"/>
+  </dcatapit:Dataset>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/data-theme/GOVE">
+    <skos:prefLabel>Governo e settore pubblico</skos:prefLabel>
+  </skos:Concept>
+  <dcatapit:Dataset rdf:about="https://ruipubblico.ivass.it/rui-pubblica/ng//#/home#7">
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    <dct:accessRights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
+    <dct:license/>
+    <dct:title>Mandati</dct:title>
+    <dcat:landingPage rdf:resource="https://ruipubblico.ivass.it/rui-pubblica/ng//"/>
+    <dct:description>Fornisce l'elenco degli accordi distributivi tra intermediari e imprese di assicurazione.</dct:description>
+    <dct:identifier>IVsAPIC:mandati</dct:identifier>
+    <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/DAILY"/>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dct:rightsHolder>
+      <dcatapit:Agent rdf:about="IVsAPIC">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:rightsHolder>
+    <dct:publisher>
+      <dcatapit:Agent rdf:nodeID="Nd117aa7f2e7b47fb9481d4a8aca59c7d">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:publisher>
+    <dct:subject>
+      <skos:Concept rdf:about="http://eurovoc.europa.eu/">
+        <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#subTheme"/>
+        <skos:prefLabel xml:lang="it"/>
+      </skos:Concept>
+    </dct:subject>
+    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ITA"/>
+    <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-16</dct:modified>
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-06-03</dct:issued>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dcat:keyword>Registro RUI</dcat:keyword>
+    <dcat:keyword>mandato incarico accordo</dcat:keyword>
+    <dcat:keyword>impresa assicurativa</dcat:keyword>
+    <dcat:distribution rdf:resource="https://www.ivass.it//mandati/zip7"/>
+  </dcatapit:Dataset>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/data-theme/GOVE">
+    <skos:prefLabel>Governo e settore pubblico</skos:prefLabel>
+  </skos:Concept>
+  <dcatapit:Dataset rdf:about="https://ruipubblico.ivass.it/rui-pubblica/ng//#/home#9">
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    <dct:accessRights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
+    <dct:license/>
+    <dct:title>Responsabili distribuzione sezione d</dct:title>
+    <dcat:landingPage rdf:resource="https://ruipubblico.ivass.it/rui-pubblica/ng//"/>
+    <dct:description>Fornisce l'elenco dei responsabili della distribuzione degli intermediari iscritti nella sezione D del RUI</dct:description>
+    <dct:identifier>IVsAPIC:responsabili-distribuzione-sezione-d</dct:identifier>
+    <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/DAILY"/>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dct:rightsHolder>
+      <dcatapit:Agent rdf:about="IVsAPIC">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:rightsHolder>
+    <dct:publisher>
+      <dcatapit:Agent rdf:nodeID="Nd117aa7f2e7b47fb9481d4a8aca59c7d">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:publisher>
+    <dct:subject>
+      <skos:Concept rdf:about="http://eurovoc.europa.eu/">
+        <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#subTheme"/>
+        <skos:prefLabel xml:lang="it"/>
+      </skos:Concept>
+    </dct:subject>
+    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ITA"/>
+    <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-16</dct:modified>
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-06-03</dct:issued>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dcat:keyword>Registro RUI</dcat:keyword>
+    <dcat:keyword>responsabile</dcat:keyword>
+    <dcat:keyword>banca</dcat:keyword>
+    <dcat:distribution rdf:resource="https://www.ivass.it//responsabili-distribuzione-sezione-d/zip9"/>
+  </dcatapit:Dataset>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/data-theme/GOVE">
+    <skos:prefLabel>Governo e settore pubblico</skos:prefLabel>
+  </skos:Concept>
+  <dcatapit:Dataset rdf:about="https://ruipubblico.ivass.it/rui-pubblica/ng//#/home#10">
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    <dct:accessRights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
+    <dct:license/>
+    <dct:title>Sedi intermediari</dct:title>
+    <dcat:landingPage rdf:resource="https://ruipubblico.ivass.it/rui-pubblica/ng//"/>
+    <dct:description>Fornisce l'elenco degli indirizzi delle sedi legali ed operative degli iscritti nelle sezioni A, B, D, E, F e UE registrati nell'Elenco Annesso.</dct:description>
+    <dct:identifier>IVsAPIC:sedi-intermediari</dct:identifier>
+    <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/DAILY"/>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dct:rightsHolder>
+      <dcatapit:Agent rdf:about="IVsAPIC">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:rightsHolder>
+    <dct:publisher>
+      <dcatapit:Agent rdf:nodeID="Nd117aa7f2e7b47fb9481d4a8aca59c7d">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:publisher>
+    <dct:subject>
+      <skos:Concept rdf:about="http://eurovoc.europa.eu/">
+        <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#subTheme"/>
+        <skos:prefLabel xml:lang="it"/>
+      </skos:Concept>
+    </dct:subject>
+    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ITA"/>
+    <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-16</dct:modified>
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-06-03</dct:issued>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dcat:keyword>Registro RUI</dcat:keyword>
+    <dcat:keyword>sede</dcat:keyword>
+    <dcat:keyword>intermediario</dcat:keyword>
+    <dcat:distribution rdf:resource="https://www.ivass.it//sedi-intermediari/zip10"/>
+  </dcatapit:Dataset>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/data-theme/GOVE">
+    <skos:prefLabel>Governo e settore pubblico</skos:prefLabel>
+  </skos:Concept>
+  <dcatapit:Dataset rdf:about="https://ruipubblico.ivass.it/rui-pubblica/ng//#/home#11">
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    <dct:accessRights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
+    <dct:license/>
+    <dct:title>Siti internet intermediari</dct:title>
+    <dcat:landingPage rdf:resource="https://ruipubblico.ivass.it/rui-pubblica/ng//"/>
+    <dct:description>Fornisce l'elenco degli indirizzi internet degli intermediari iscritti al RUI e UE registrati nell'Elenco Annesso.</dct:description>
+    <dct:identifier>IVsAPIC:siti-internet-intermediari</dct:identifier>
+    <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/DAILY"/>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dct:rightsHolder>
+      <dcatapit:Agent rdf:about="IVsAPIC">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:rightsHolder>
+    <dct:publisher>
+      <dcatapit:Agent rdf:nodeID="Nd117aa7f2e7b47fb9481d4a8aca59c7d">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:publisher>
+    <dct:subject>
+      <skos:Concept rdf:about="http://eurovoc.europa.eu/">
+        <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#subTheme"/>
+        <skos:prefLabel xml:lang="it"/>
+      </skos:Concept>
+    </dct:subject>
+    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ITA"/>
+    <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-16</dct:modified>
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-06-03</dct:issued>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dcat:keyword>Registro RUI</dcat:keyword>
+    <dcat:keyword>sito</dcat:keyword>
+    <dcat:keyword>url</dcat:keyword>
+    <dcat:distribution rdf:resource="https://www.ivass.it//siti-internet-intermediari/zip11"/>
+  </dcatapit:Dataset>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/data-theme/GOVE">
+    <skos:prefLabel>Governo e settore pubblico</skos:prefLabel>
+  </skos:Concept>
+  <dcatapit:Dataset rdf:about="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download#12">
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    <dct:accessRights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
+    <dct:license/>
+    <dct:title>Lista Estere Ramo 15 - Cauzione</dct:title>
+    <dcat:landingPage rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download/"/>
+    <dct:description>Elenco delle imprese assicurative estere autorizzate all’esercizio del ramo cauzione con le modalità di verifica telematica delle polizze</dct:description>
+    <dct:identifier>IVsAPIC:lista-estere-ramo-15---cauzione</dct:identifier>
+    <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/DAILY"/>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dct:rightsHolder>
+      <dcatapit:Agent rdf:about="IVsAPIC">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:rightsHolder>
+    <dct:publisher>
+      <dcatapit:Agent rdf:nodeID="Nd117aa7f2e7b47fb9481d4a8aca59c7d">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:publisher>
+    <dct:subject>
+      <skos:Concept rdf:about="http://eurovoc.europa.eu/">
+        <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#subTheme"/>
+        <skos:prefLabel xml:lang="it"/>
+      </skos:Concept>
+    </dct:subject>
+    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ITA"/>
+    <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-16</dct:modified>
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-03-16</dct:issued>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dcat:keyword>imprese estere</dcat:keyword>
+    <dcat:keyword>ramo cauzione</dcat:keyword>
+    <dcat:keyword>verifica polizze</dcat:keyword>
+    <dcat:distribution rdf:resource="https://www.ivass.it//lista-estere-ramo-15---cauzione/zip12"/>
+    <dcat:distribution rdf:resource="https://www.ivass.it//lista-estere-ramo-15---cauzione/zip22"/>
+  </dcatapit:Dataset>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/data-theme/GOVE">
+    <skos:prefLabel>Governo e settore pubblico</skos:prefLabel>
+  </skos:Concept>
+  <dcatapit:Dataset rdf:about="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download#13">
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    <dct:accessRights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
+    <dct:license/>
+    <dct:title>Lista Vigilate Ramo 15 - Cauzione</dct:title>
+    <dcat:landingPage rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download/"/>
+    <dct:description>Elenco delle imprese assicurative vigilate autorizzate all’esercizio del ramo cauzione con le modalità di verifica telematica delle polizze</dct:description>
+    <dct:identifier>IVsAPIC:lista-vigilate-ramo-15---cauzione</dct:identifier>
+    <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/DAILY"/>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dct:rightsHolder>
+      <dcatapit:Agent rdf:about="IVsAPIC">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:rightsHolder>
+    <dct:publisher>
+      <dcatapit:Agent rdf:nodeID="Nd117aa7f2e7b47fb9481d4a8aca59c7d">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:publisher>
+    <dct:subject>
+      <skos:Concept rdf:about="http://eurovoc.europa.eu/">
+        <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#subTheme"/>
+        <skos:prefLabel xml:lang="it"/>
+      </skos:Concept>
+    </dct:subject>
+    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ITA"/>
+    <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-16</dct:modified>
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-03-16</dct:issued>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dcat:keyword>imprese vigilate</dcat:keyword>
+    <dcat:keyword>ramo cauzione</dcat:keyword>
+    <dcat:keyword>verifica polizze</dcat:keyword>
+    <dcat:distribution rdf:resource="https://www.ivass.it//lista-vigilate-ramo-15---cauzione/zip13"/>
+    <dcat:distribution rdf:resource="https://www.ivass.it//lista-vigilate-ramo-15---cauzione/zip23"/>
+  </dcatapit:Dataset>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/data-theme/GOVE">
+    <skos:prefLabel>Governo e settore pubblico</skos:prefLabel>
+  </skos:Concept>
+  <dcatapit:Dataset rdf:about="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download#14">
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    <dct:accessRights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
+    <dct:license/>
+    <dct:title>Lista operazioni societarie</dct:title>
+    <dcat:landingPage rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download/"/>
+    <dct:description>Elenco degli eventi modificativi (fusioni, incorporazioni, trasferimento di portafoglio) tra imprese</dct:description>
+    <dct:identifier>IVsAPIC:lista-operazioni-societarie</dct:identifier>
+    <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/DAILY"/>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dct:rightsHolder>
+      <dcatapit:Agent rdf:about="IVsAPIC">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:rightsHolder>
+    <dct:publisher>
+      <dcatapit:Agent rdf:nodeID="Nd117aa7f2e7b47fb9481d4a8aca59c7d">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:publisher>
+    <dct:subject>
+      <skos:Concept rdf:about="http://eurovoc.europa.eu/">
+        <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#subTheme"/>
+        <skos:prefLabel xml:lang="it"/>
+      </skos:Concept>
+    </dct:subject>
+    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ITA"/>
+    <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-16</dct:modified>
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-03-16</dct:issued>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dcat:keyword>operazioni societarie</dcat:keyword>
+    <dcat:keyword>fusioni</dcat:keyword>
+    <dcat:keyword>incorporazioni</dcat:keyword>
+    <dcat:distribution rdf:resource="https://www.ivass.it//lista-operazioni-societarie/zip14"/>
+    <dcat:distribution rdf:resource="https://www.ivass.it//lista-operazioni-societarie/zip24"/>
+  </dcatapit:Dataset>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/data-theme/GOVE">
+    <skos:prefLabel>Governo e settore pubblico</skos:prefLabel>
+  </skos:Concept>
+  <dcatapit:Dataset rdf:about="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download#15">
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    <dct:accessRights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
+    <dct:license/>
+    <dct:title>Lista gruppi assicurativi vigilati</dct:title>
+    <dcat:landingPage rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download/"/>
+    <dct:description>Elenco dei gruppi assicurativi iscritti nel registro delle imprese e dei gruppi assicurativi</dct:description>
+    <dct:identifier>IVsAPIC:lista-gruppi-assicurativi-vigilati</dct:identifier>
+    <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/DAILY"/>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dct:rightsHolder>
+      <dcatapit:Agent rdf:about="IVsAPIC">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:rightsHolder>
+    <dct:publisher>
+      <dcatapit:Agent rdf:nodeID="Nd117aa7f2e7b47fb9481d4a8aca59c7d">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:publisher>
+    <dct:subject>
+      <skos:Concept rdf:about="http://eurovoc.europa.eu/">
+        <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#subTheme"/>
+        <skos:prefLabel xml:lang="it"/>
+      </skos:Concept>
+    </dct:subject>
+    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ITA"/>
+    <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-16</dct:modified>
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-03-16</dct:issued>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dcat:keyword>gruppi assicurativi</dcat:keyword>
+    <dcat:keyword>registro imprese</dcat:keyword>
+    <dcat:keyword>albo assicurativo</dcat:keyword>
+    <dcat:distribution rdf:resource="https://www.ivass.it//lista-gruppi-assicurativi-vigilati/zip15"/>
+    <dcat:distribution rdf:resource="https://www.ivass.it//lista-gruppi-assicurativi-vigilati/zip25"/>
+  </dcatapit:Dataset>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/data-theme/GOVE">
+    <skos:prefLabel>Governo e settore pubblico</skos:prefLabel>
+  </skos:Concept>
+  <dcatapit:Dataset rdf:about="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download#16">
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    <dct:accessRights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
+    <dct:license/>
+    <dct:title>Lista imprese assicurative vigilate</dct:title>
+    <dcat:landingPage rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download/"/>
+    <dct:description>Elenco delle imprese iscritte a uno degli albi/elenchi del registro delle imprese e gruppi assicurativi</dct:description>
+    <dct:identifier>IVsAPIC:lista-imprese-assicurative-vigilate</dct:identifier>
+    <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/DAILY"/>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dct:rightsHolder>
+      <dcatapit:Agent rdf:about="IVsAPIC">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:rightsHolder>
+    <dct:publisher>
+      <dcatapit:Agent rdf:nodeID="Nd117aa7f2e7b47fb9481d4a8aca59c7d">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:publisher>
+    <dct:subject>
+      <skos:Concept rdf:about="http://eurovoc.europa.eu/">
+        <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#subTheme"/>
+        <skos:prefLabel xml:lang="it"/>
+      </skos:Concept>
+    </dct:subject>
+    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ITA"/>
+    <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-16</dct:modified>
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-03-16</dct:issued>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dcat:keyword>imprese vigilate</dcat:keyword>
+    <dcat:keyword>albi registro assicurativo</dcat:keyword>
+    <dcat:keyword>imprese assicurative</dcat:keyword>
+    <dcat:distribution rdf:resource="https://www.ivass.it//lista-imprese-assicurative-vigilate/zip16"/>
+    <dcat:distribution rdf:resource="https://www.ivass.it//lista-imprese-assicurative-vigilate/zip26"/>
+  </dcatapit:Dataset>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/data-theme/GOVE">
+    <skos:prefLabel>Governo e settore pubblico</skos:prefLabel>
+  </skos:Concept>
+  <dcatapit:Dataset rdf:about="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download#17">
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    <dct:accessRights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
+    <dct:license/>
+    <dct:title>Lista imprese assicurative estere Ramo 10 - R.C. Autoveicoli Terrestri</dct:title>
+    <dcat:landingPage rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download/"/>
+    <dct:description>Il dataset contiene l'elenco delle imprese estere che operano nel ramo 10, relativo alla Responsabilità Civile per gli Autoveicoli Terrestri.</dct:description>
+    <dct:identifier>IVsAPIC:lista-imprese-assicurative-estere-ramo-10---rc-autoveicoli-terrestri</dct:identifier>
+    <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/DAILY"/>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dct:rightsHolder>
+      <dcatapit:Agent rdf:about="IVsAPIC">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:rightsHolder>
+    <dct:publisher>
+      <dcatapit:Agent rdf:nodeID="Nd117aa7f2e7b47fb9481d4a8aca59c7d">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:publisher>
+    <dct:subject>
+      <skos:Concept rdf:about="http://eurovoc.europa.eu/">
+        <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#subTheme"/>
+        <skos:prefLabel xml:lang="it"/>
+      </skos:Concept>
+    </dct:subject>
+    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ITA"/>
+    <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-16</dct:modified>
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-03-16</dct:issued>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dcat:keyword>imprese estere</dcat:keyword>
+    <dcat:keyword>responsabilità civile</dcat:keyword>
+    <dcat:keyword>autoveicoli terrestri</dcat:keyword>
+    <dcat:distribution rdf:resource="https://www.ivass.it//lista-imprese-assicurative-estere-ramo-10---rc-autoveicoli-terrestri/zip17"/>
+    <dcat:distribution rdf:resource="https://www.ivass.it//lista-imprese-assicurative-estere-ramo-10---rc-autoveicoli-terrestri/zip27"/>
+  </dcatapit:Dataset>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/data-theme/GOVE">
+    <skos:prefLabel>Governo e settore pubblico</skos:prefLabel>
+  </skos:Concept>
+  <dcatapit:Dataset rdf:about="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download#18">
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    <dct:accessRights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
+    <dct:license/>
+    <dct:title>Lista imprese assicurative estere Ramo 12 - R.C. Veicoli Marittimi, Lacustri e Fluviali</dct:title>
+    <dcat:landingPage rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download/"/>
+    <dct:description>Il dataset elenca le imprese estere che operano nel ramo 12, specifico per la Responsabilità Civile dei veicoli marittimi, lacustri e fluviali.</dct:description>
+    <dct:identifier>IVsAPIC:lista-imprese-assicurative-estere-ramo-12---rc-veicoli-marittimi-lacustri-e-fluviali</dct:identifier>
+    <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/DAILY"/>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dct:rightsHolder>
+      <dcatapit:Agent rdf:about="IVsAPIC">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:rightsHolder>
+    <dct:publisher>
+      <dcatapit:Agent rdf:nodeID="Nd117aa7f2e7b47fb9481d4a8aca59c7d">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:publisher>
+    <dct:subject>
+      <skos:Concept rdf:about="http://eurovoc.europa.eu/">
+        <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#subTheme"/>
+        <skos:prefLabel xml:lang="it"/>
+      </skos:Concept>
+    </dct:subject>
+    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ITA"/>
+    <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-16</dct:modified>
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-03-16</dct:issued>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dcat:keyword>imprese estere</dcat:keyword>
+    <dcat:keyword>responsabilità civile</dcat:keyword>
+    <dcat:keyword>veicoli marittimi</dcat:keyword>
+    <dcat:distribution rdf:resource="https://www.ivass.it//lista-imprese-assicurative-estere-ramo-12---rc-veicoli-marittimi-lacustri-e-fluviali/zip18"/>
+    <dcat:distribution rdf:resource="https://www.ivass.it//lista-imprese-assicurative-estere-ramo-12---rc-veicoli-marittimi-lacustri-e-fluviali/zip28"/>
+  </dcatapit:Dataset>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/data-theme/GOVE">
+    <skos:prefLabel>Governo e settore pubblico</skos:prefLabel>
+  </skos:Concept>
+  <dcatapit:Dataset rdf:about="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download#19">
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    <dct:accessRights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
+    <dct:license/>
+    <dct:title>Lista imprese assicurative vigilate Ramo 10 - R.C. Autoveicoli Terrestri</dct:title>
+    <dcat:landingPage rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download/"/>
+    <dct:description>Il dataset raccoglie l'elenco delle imprese vigilate che operano nel ramo 10 per la Responsabilità Civile degli Autoveicoli Terrestri.</dct:description>
+    <dct:identifier>IVsAPIC:lista-imprese-assicurative-vigilate-ramo-10---rc-autoveicoli-terrestri</dct:identifier>
+    <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/DAILY"/>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dct:rightsHolder>
+      <dcatapit:Agent rdf:about="IVsAPIC">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:rightsHolder>
+    <dct:publisher>
+      <dcatapit:Agent rdf:nodeID="Nd117aa7f2e7b47fb9481d4a8aca59c7d">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:publisher>
+    <dct:subject>
+      <skos:Concept rdf:about="http://eurovoc.europa.eu/">
+        <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#subTheme"/>
+        <skos:prefLabel xml:lang="it"/>
+      </skos:Concept>
+    </dct:subject>
+    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ITA"/>
+    <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-16</dct:modified>
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-03-16</dct:issued>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dcat:keyword>imprese vigilate</dcat:keyword>
+    <dcat:keyword>responsabilità civile</dcat:keyword>
+    <dcat:keyword>autoveicoli terrestri</dcat:keyword>
+    <dcat:distribution rdf:resource="https://www.ivass.it//lista-imprese-assicurative-vigilate-ramo-10---rc-autoveicoli-terrestri/zip19"/>
+    <dcat:distribution rdf:resource="https://www.ivass.it//lista-imprese-assicurative-vigilate-ramo-10---rc-autoveicoli-terrestri/zip29"/>
+  </dcatapit:Dataset>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/data-theme/GOVE">
+    <skos:prefLabel>Governo e settore pubblico</skos:prefLabel>
+  </skos:Concept>
+  <dcatapit:Dataset rdf:about="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download#20">
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    <dct:accessRights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
+    <dct:license/>
+    <dct:title>Lista imprese assicurative Ramo 12 - R.C. Veicoli Marittimi, Lacustri e Fluviali</dct:title>
+    <dcat:landingPage rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download/"/>
+    <dct:description>Il dataset contiene l'elenco delle imprese vigilate nel ramo 12, relativo alla Responsabilità Civile per veicoli marittimi, lacustri e fluviali.</dct:description>
+    <dct:identifier>IVsAPIC:lista-imprese-assicurative-ramo-12---rc-veicoli-marittimi-lacustri-e-fluviali</dct:identifier>
+    <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/DAILY"/>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dct:rightsHolder>
+      <dcatapit:Agent rdf:about="IVsAPIC">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:rightsHolder>
+    <dct:publisher>
+      <dcatapit:Agent rdf:nodeID="Nd117aa7f2e7b47fb9481d4a8aca59c7d">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:publisher>
+    <dct:subject>
+      <skos:Concept rdf:about="http://eurovoc.europa.eu/">
+        <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#subTheme"/>
+        <skos:prefLabel xml:lang="it"/>
+      </skos:Concept>
+    </dct:subject>
+    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ITA"/>
+    <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-16</dct:modified>
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-03-16</dct:issued>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dcat:keyword>imprese vigilate</dcat:keyword>
+    <dcat:keyword>responsabilità civile</dcat:keyword>
+    <dcat:keyword>veicoli marittimi</dcat:keyword>
+	<dcat:distribution rdf:resource="https://www.ivass.it//lista-imprese-assicurative-ramo-12---rc-veicoli-marittimi-lacustri-e-fluviali/zip20"/>
+	<dcat:distribution rdf:resource="https://www.ivass.it//lista-imprese-assicurative-ramo-12---rc-veicoli-marittimi-lacustri-e-fluviali/zip30"/>
+  </dcatapit:Dataset>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/data-theme/GOVE">
+    <skos:prefLabel>Governo e settore pubblico</skos:prefLabel>
+  </skos:Concept>
+  <dcatapit:Dataset rdf:about="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download#21">
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    <dct:accessRights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
+    <dct:license/>
+    <dct:title>Lista referenti reclami imprese assicurative estere</dct:title>
+    <dcat:landingPage rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/ng/#/area-download/"/>
+    <dct:description>Il dataset contiene i recapiti delle imprese estere per l'inoltro di reclami</dct:description>
+    <dct:identifier>IVsAPIC:lista-referenti-reclami-imprese-assicurative-estere</dct:identifier>
+    <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/DAILY"/>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dct:rightsHolder>
+      <dcatapit:Agent rdf:about="IVsAPIC">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:rightsHolder>
+    <dct:publisher>
+      <dcatapit:Agent rdf:nodeID="Nd117aa7f2e7b47fb9481d4a8aca59c7d">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <dct:identifier>IVsAPIC</dct:identifier>
+        <foaf:name>IVASS - Istituto per la Vigilanza sulle Assicurazioni</foaf:name>
+      </dcatapit:Agent>
+    </dct:publisher>
+    <dct:subject>
+      <skos:Concept rdf:about="http://eurovoc.europa.eu/">
+        <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#subTheme"/>
+        <skos:prefLabel xml:lang="it"/>
+      </skos:Concept>
+    </dct:subject>
+    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ITA"/>
+    <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-16</dct:modified>
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-03-16</dct:issued>
+    <dcat:contactPoint rdf:resource="https://www.ivass.it"/>
+    <dcat:keyword>imprese estere</dcat:keyword>
+    <dcat:keyword>recapiti reclami</dcat:keyword>
+    <dcat:keyword>assicurazioni</dcat:keyword>
+    <dcat:distribution rdf:resource="https://www.ivass.it//lista-referenti-reclami-imprese-assicurative-estere/zip21"/>
+    <dcat:distribution rdf:resource="https://www.ivass.it//lista-referenti-reclami-imprese-assicurative-estere/zip31"/>
+  </dcatapit:Dataset>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//agenti-di-vendita-prodotti-non-standardizzati/zip2">
+    <dcat:accessURL rdf:resource="https://ruipubblico.ivass.it/inquiry-public-manager/inquiry-public/esporta-registro"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="https://creativecommons.org/licenses/by/4.0/">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato CSV interno ad un file ZIP</dct:description>
+    <dct:title>ELENCO-AG-VEN-PROD-NONST-ISCR-S</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//cariche-societarie-intermediari/zip3">
+    <dcat:accessURL rdf:resource="https://ruipubblico.ivass.it/inquiry-public-manager/inquiry-public/esporta-registro"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="https://creativecommons.org/licenses/by/4.0/">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato CSV interno ad un file ZIP</dct:description>
+    <dct:title>ELENCO-CARICHE</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//collaboratori-accessori/zip4">
+    <dcat:accessURL rdf:resource="https://ruipubblico.ivass.it/inquiry-public-manager/inquiry-public/esporta-registro"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="https://creativecommons.org/licenses/by/4.0/">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato CSV interno ad un file ZIP</dct:description>
+    <dct:title>ELENCO-COLLABACCESSORI</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//collaboratori-non-accessori/zip5">
+    <dcat:accessURL rdf:resource="https://ruipubblico.ivass.it/inquiry-public-manager/inquiry-public/esporta-registro"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="https://creativecommons.org/licenses/by/4.0/">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato CSV interno ad un file ZIP</dct:description>
+    <dct:title>ELENCO-COLLABORATORI</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//intermediari/zip6">
+    <dcat:accessURL rdf:resource="https://ruipubblico.ivass.it/inquiry-public-manager/inquiry-public/esporta-registro"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="https://creativecommons.org/licenses/by/4.0/">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato CSV interno ad un file ZIP</dct:description>
+    <dct:title>ELENCO-INTERMEDIARI</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//mandati/zip7">
+    <dcat:accessURL rdf:resource="https://ruipubblico.ivass.it/inquiry-public-manager/inquiry-public/esporta-registro"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="https://creativecommons.org/licenses/by/4.0/">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato CSV interno ad un file ZIP</dct:description>
+    <dct:title>ELENCO-MANDATI</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//responsabili-distribuzione-sezione-d/zip9">
+    <dcat:accessURL rdf:resource="https://ruipubblico.ivass.it/inquiry-public-manager/inquiry-public/esporta-registro"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="https://creativecommons.org/licenses/by/4.0/">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato CSV interno ad un file ZIP</dct:description>
+    <dct:title>ELENCO-RESP-DISTRIB-SEZ-D</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//sedi-intermediari/zip10">
+    <dcat:accessURL rdf:resource="https://ruipubblico.ivass.it/inquiry-public-manager/inquiry-public/esporta-registro"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="https://creativecommons.org/licenses/by/4.0/">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato CSV interno ad un file ZIP</dct:description>
+    <dct:title>ELENCO-SEDI</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//siti-internet-intermediari/zip11">
+    <dcat:accessURL rdf:resource="https://ruipubblico.ivass.it/inquiry-public-manager/inquiry-public/esporta-registro"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="https://creativecommons.org/licenses/by/4.0/">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato CSV interno ad un file ZIP</dct:description>
+    <dct:title>ELENCO-SITO-INTERNET</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//lista-estere-ramo-15---cauzione/zip12">
+    <dcat:accessURL rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/getAreaDownloadExport.do?referenceDate=&amp;product=VFLUSSO%5FEST%5FRAMO15&amp;language=IT&amp;exportType=CSV&amp;username=OBLIXANONYMOUS&amp;isCompressed=S"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato CSV interno ad un file ZIP</dct:description>
+    <dct:title>Registro-Imprese-Lista-Estere-Ramo-15---Cauzione</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//lista-estere-ramo-15---cauzione/zip22">
+    <dcat:accessURL rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/getAreaDownloadExport.do?referenceDate=&amp;product=VFLUSSO%5FEST%5FRAMO15&amp;language=IT&amp;exportType=XML&amp;username=OBLIXANONYMOUS&amp;isCompressed=S"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="https://creativecommons.org/licenses/by/4.0/">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato XML  interno ad un file ZIP</dct:description>
+    <dct:title>Registro-Imprese-Lista-Estere-Ramo-15---Cauzione</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//lista-vigilate-ramo-15---cauzione/zip13">
+    <dcat:accessURL rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/getAreaDownloadExport.do?referenceDate=&amp;product=VFLUSSO%5FVIG%5FRAMO15&amp;language=IT&amp;exportType=CSV&amp;username=OBLIXANONYMOUS&amp;isCompressed=S"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato CSV interno ad un file ZIP</dct:description>
+    <dct:title>Registro-Imprese-Lista-Vigilate-Ramo-15---Cauzione</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//lista-vigilate-ramo-15---cauzione/zip23">
+    <dcat:accessURL rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/getAreaDownloadExport.do?referenceDate=&amp;product=VFLUSSO%5FVIG%5FRAMO15&amp;language=IT&amp;exportType=XML&amp;username=OBLIXANONYMOUS&amp;isCompressed=S"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="https://creativecommons.org/licenses/by/4.0/">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato XML  interno ad un file ZIP</dct:description>
+    <dct:title>Registro-Imprese-Lista-Vigilate-Ramo-15---Cauzione</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//lista-operazioni-societarie/zip14">
+    <dcat:accessURL rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/getAreaDownloadExport.do?referenceDate=&amp;product=VFLUSSO%5FEVENTI%5FIVASS&amp;language=IT&amp;exportType=CSV&amp;username=OBLIXANONYMOUS&amp;isCompressed=S"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato CSV interno ad un file ZIP</dct:description>
+    <dct:title>Registro-Imprese-Lista-eventi</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//lista-operazioni-societarie/zip24">
+    <dcat:accessURL rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/getAreaDownloadExport.do?referenceDate=&amp;product=VFLUSSO%5FEVENTI%5FIVASS&amp;language=IT&amp;exportType=XML&amp;username=OBLIXANONYMOUS&amp;isCompressed=S"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="https://creativecommons.org/licenses/by/4.0/">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato XML  interno ad un file ZIP</dct:description>
+    <dct:title>Registro-Imprese-Lista-eventi</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//lista-gruppi-assicurativi-vigilati/zip15">
+    <dcat:accessURL rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/getAreaDownloadExport.do?referenceDate=&amp;product=VFLUSSO%5FGRUPPI%5FASSICURATIVI&amp;language=IT&amp;exportType=CSV&amp;username=OBLIXANONYMOUS&amp;isCompressed=S"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="https://creativecommons.org/licenses/by/4.0/">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato CSV interno ad un file ZIP</dct:description>
+    <dct:title>Registro-Imprese-Lista-gruppi-assicurativi</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//lista-gruppi-assicurativi-vigilati/zip25">
+    <dcat:accessURL rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/getAreaDownloadExport.do?referenceDate=&amp;product=VFLUSSO%5FGRUPPI%5FASSICURATIVI&amp;language=IT&amp;exportType=XML&amp;username=OBLIXANONYMOUS&amp;isCompressed=S"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="https://creativecommons.org/licenses/by/4.0/">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato XML  interno ad un file ZIP</dct:description>
+    <dct:title>Registro-Imprese-Lista-gruppi-assicurativi</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//lista-imprese-assicurative-vigilate/zip16">
+    <dcat:accessURL rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/getAreaDownloadExport.do?referenceDate=&amp;product=VFLUSSO%5FIMPRESE&amp;language=IT&amp;exportType=CSV&amp;username=OBLIXANONYMOUS&amp;isCompressed=S"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="https://creativecommons.org/licenses/by/4.0/">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato CSV interno ad un file ZIP</dct:description>
+    <dct:title>Registro-Imprese-Lista-imprese</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//lista-imprese-assicurative-vigilate/zip26">
+    <dcat:accessURL rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/getAreaDownloadExport.do?referenceDate=&amp;product=VFLUSSO%5FIMPRESE&amp;language=IT&amp;exportType=XML&amp;username=OBLIXANONYMOUS&amp;isCompressed=S"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="https://creativecommons.org/licenses/by/4.0/">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato XML  interno ad un file ZIP</dct:description>
+    <dct:title>Registro-Imprese-Lista-imprese</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//lista-imprese-assicurative-estere-ramo-10---rc-autoveicoli-terrestri/zip17">
+    <dcat:accessURL rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/getAreaDownloadExport.do?referenceDate=&amp;product=VFLUSSO%5FRCA%5FEST%5FRAMO10&amp;language=IT&amp;exportType=CSV&amp;username=OBLIXANONYMOUS&amp;isCompressed=S"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="https://creativecommons.org/licenses/by/4.0/">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato CSV interno ad un file ZIP</dct:description>
+    <dct:title>Registro-Imprese-Lista-Estere-Ramo-10---RC-Autoveicoli-Terrestri</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//lista-imprese-assicurative-estere-ramo-10---rc-autoveicoli-terrestri/zip27">
+    <dcat:accessURL rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/getAreaDownloadExport.do?referenceDate=&amp;product=VFLUSSO%5FRCA%5FEST%5FRAMO10&amp;language=IT&amp;exportType=XML&amp;username=OBLIXANONYMOUS&amp;isCompressed=S"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="https://creativecommons.org/licenses/by/4.0/">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato XML  interno ad un file ZIP</dct:description>
+    <dct:title>Registro-Imprese-Lista-Estere-Ramo-10---RC-Autoveicoli-Terrestri</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//lista-imprese-assicurative-estere-ramo-12---rc-veicoli-marittimi-lacustri-e-fluviali/zip18">
+    <dcat:accessURL rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/getAreaDownloadExport.do?referenceDate=&amp;product=VFLUSSO%5FRCA%5FEST%5FRAMO12&amp;language=IT&amp;exportType=CSV&amp;username=OBLIXANONYMOUS&amp;isCompressed=S"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="https://creativecommons.org/licenses/by/4.0/">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato CSV interno ad un file ZIP</dct:description>
+    <dct:title>Registro-Imprese-Lista-Estere-Ramo-12---RC-Veicoli-Marittimi-Lacustri-e-Fluviali</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//lista-imprese-assicurative-estere-ramo-12---rc-veicoli-marittimi-lacustri-e-fluviali/zip28">
+    <dcat:accessURL rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/getAreaDownloadExport.do?referenceDate=&amp;product=VFLUSSO%5FRCA%5FEST%5FRAMO12&amp;language=IT&amp;exportType=XML&amp;username=OBLIXANONYMOUS&amp;isCompressed=S"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="https://creativecommons.org/licenses/by/4.0/">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato XML  interno ad un file ZIP</dct:description>
+    <dct:title>Registro-Imprese-Lista-Estere-Ramo-12---RC-Veicoli-Marittimi-Lacustri-e-Fluviali</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//lista-imprese-assicurative-vigilate-ramo-10---rc-autoveicoli-terrestri/zip19">
+    <dcat:accessURL rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/getAreaDownloadExport.do?referenceDate=&amp;product=VFLUSSO%5FRCA%5FVIG%5FRAMO10&amp;language=IT&amp;exportType=CSV&amp;username=OBLIXANONYMOUS&amp;isCompressed=S"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="https://creativecommons.org/licenses/by/4.0/">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato CSV interno ad un file ZIP</dct:description>
+    <dct:title>Registro-Imprese-Lista-Vigilate-Ramo-10---RC-Autoveicoli-Terrestri</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//lista-imprese-assicurative-vigilate-ramo-10---rc-autoveicoli-terrestri/zip29">
+    <dcat:accessURL rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/getAreaDownloadExport.do?referenceDate=&amp;product=VFLUSSO%5FRCA%5FVIG%5FRAMO10&amp;language=IT&amp;exportType=XML&amp;username=OBLIXANONYMOUS&amp;isCompressed=S"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="https://creativecommons.org/licenses/by/4.0/">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato XML  interno ad un file ZIP</dct:description>
+    <dct:title>Registro-Imprese-Lista-Vigilate-Ramo-10---RC-Autoveicoli-Terrestri</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//lista-imprese-assicurative-ramo-12---rc-veicoli-marittimi-lacustri-e-fluviali/zip20">
+    <dcat:accessURL rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/getAreaDownloadExport.do?referenceDate=&amp;product=VFLUSSO%5FRCA%5FVIG%5FRAMO12&amp;language=IT&amp;exportType=CSV&amp;username=OBLIXANONYMOUS&amp;isCompressed=S"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="https://creativecommons.org/licenses/by/4.0/">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato CSV interno ad un file ZIP</dct:description>
+    <dct:title>Registro-Imprese-Lista-Vigilate-Ramo-12---RC-Veicoli-Marittimi-Lacustri-e-Fluviali</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//lista-imprese-assicurative-ramo-12---rc-veicoli-marittimi-lacustri-e-fluviali/zip30">
+    <dcat:accessURL rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/getAreaDownloadExport.do?referenceDate=&amp;product=VFLUSSO%5FRCA%5FVIG%5FRAMO12&amp;language=IT&amp;exportType=XML&amp;username=OBLIXANONYMOUS&amp;isCompressed=S"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="https://creativecommons.org/licenses/by/4.0/">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato XML  interno ad un file ZIP</dct:description>
+    <dct:title>Registro-Imprese-Lista-Vigilate-Ramo-12---RC-Veicoli-Marittimi-Lacustri-e-Fluviali</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//lista-referenti-reclami-imprese-assicurative-estere/zip21">
+    <dcat:accessURL rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/getAreaDownloadExport.do?referenceDate=&amp;product=VFLUSSO%5FRECLAMI%5FESTERE&amp;language=IT&amp;exportType=CSV&amp;username=OBLIXANONYMOUS&amp;isCompressed=S"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="https://creativecommons.org/licenses/by/4.0/">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato CSV interno ad un file ZIP</dct:description>
+    <dct:title>Registro-imprese-Lista-Reclami</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+  <dcatapit:Distribution rdf:about="https://www.ivass.it//lista-referenti-reclami-imprese-assicurative-estere/zip31">
+    <dcat:accessURL rdf:resource="https://infostat-ivass.bancaditalia.it/RIGAInquiry-public/getAreaDownloadExport.do?referenceDate=&amp;product=VFLUSSO%5FRECLAMI%5FESTERE&amp;language=IT&amp;exportType=XML&amp;username=OBLIXANONYMOUS&amp;isCompressed=S"/>
+    <dct:license>
+      <dcatapit:LicenseDocument rdf:about="">
+        <rdf:type rdf:resource="dct:LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <foaf:name>Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)</foaf:name>
+      </dcatapit:LicenseDocument>
+    </dct:license>
+    <dct:format rdf:resource="ZIP"/>
+    <dct:rights rdf:resource="http://publications.europa.eu/resource/authority/access-right/PUBLIC"/>
+    <dct:description>File in formato XML  interno ad un file ZIP</dct:description>
+    <dct:title>Registro-imprese-Lista-Reclami</dct:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </dcatapit:Distribution>
+<dcatapit:Organization rdf:about="https://www.ivass.it">
+  <rdf:type rdf:resource="vcard:Organization"/>
+  <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+  <rdf:type rdf:resource="http://www.w3.org/2006/vcard/ns#Kind"/>
+  <rdf:type rdf:resource="http://www.w3.org/2006/vcard/ns#Organization"/>
+  <rdf:type rdf:resource="vcard:Kind"/>
+  <vcard:fn>IVASS - Istituto per la Vigilanza sulle Assicurazioni</vcard:fn>
+  <vcard:hasEmail rdf:resource="ivass@pec.ivass.it"/>
+  <vcard:hasTelephone/>
+  <vcard:hasURL rdf:resource="https://www.ivass.it"/>
+</dcatapit:Organization>
+</rdf:RDF>
