@@ -145,7 +145,7 @@ def _parse_indexed_sdmx_json(doc, source_url, revision_metadata):
     dimensions = structure.get("dimensions") or {}
     series_dims = dimensions.get("series") or []
     observation_dims = dimensions.get("observation") or []
-    if len(observation_dims) != 1 or observation_dims[0].get("id") not in ("TIME_PERIOD", "TIME"):
+    if not series_dims or len(observation_dims) != 1 or observation_dims[0].get("id") not in ("TIME_PERIOD", "TIME"):
         return {"status": "requires_dimension_resolution", "evidence": []}
     years = observation_dims[0].get("values") or []
     datasets = doc.get("dataSets") or []
