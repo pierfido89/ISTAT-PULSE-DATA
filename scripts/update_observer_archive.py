@@ -2311,6 +2311,13 @@ def main():
             print(f"{name}: 2026={stats.get('2026',0)}", flush=True)
 
     arts=sorted(by_id.values(),key=lambda a:a.get("published_at",""),reverse=True)
+    # Enrich the entire preserved archive, including items missed by this scan.
+    # Classification is metadata only; it does not change source verification.
+    try:
+        from scripts.pulse_taxonomy import enrich_articles
+    except ModuleNotFoundError:
+        from pulse_taxonomy import enrich_articles
+    enrich_articles(arts)
 
     # Final coverage must describe the persistent archive, not only what one
     # network scan managed to rediscover today. A temporary source failure must
