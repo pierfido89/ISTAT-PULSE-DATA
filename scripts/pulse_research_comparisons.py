@@ -21,7 +21,7 @@ except ModuleNotFoundError:
 _SHA = re.compile(r"[0-9a-f]{64}", re.I)
 _HTTPS = re.compile(r"https://[^ ]+")
 _PERIOD = re.compile(r"20[0-9]{2}(?:-Q[1-4])?")
-_RATE_UNITS = {"%", "per_1000", "per_100000", "index_100"}
+_RATE_UNITS = {"%", "per_1000", "per_100000", "index_100", "kg_per_person"}
 
 
 def _sha(value: object) -> bool:
