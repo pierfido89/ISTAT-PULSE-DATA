@@ -23,12 +23,14 @@ try:
     from scripts.pulse_editorial_inference import inference_issues
     from scripts.pulse_editorial_numeric_guard import inspect_numbers, present, yoy_present
     from scripts.pulse_editorial_brief import editorial_brief, source_scope
+    from scripts.pulse_editorial_style import style_warnings
 except ModuleNotFoundError:
     from pulse_taxonomy import classify, load_taxonomy
     from pulse_editorial_evidence import METHODS
     from pulse_editorial_inference import inference_issues
     from pulse_editorial_numeric_guard import inspect_numbers, present, yoy_present
     from pulse_editorial_brief import editorial_brief, source_scope
+    from pulse_editorial_style import style_warnings
 
 API_URL = "http://127.0.0.1:11434/api/generate"
 TAGS_URL = "http://127.0.0.1:11434/api/tags"
@@ -391,7 +393,9 @@ def audit(candidate: dict, proposal: dict, taxonomy: dict | None = None,
         "generator": {"engine": "ollama_local", "model": model,
                       "prompt_version": "1.3", "zero_paid_api_calls": True},
         "quality": {"status": "review_required" if not issues else "rejected",
-                    "issues": issues, "automated_checks": "numeric_period_cohort_inference_and_structural",
+                    "issues": list(dict.fromkeys(issues)),
+                    "editorial_warnings": style_warnings(fields["headline"], fields["lead"], fields["body"], fact),
+                    "automated_checks": "numeric_period_cohort_inference_and_structural",
                     "requires_human_fact_check": True},
         "publication_status": "draft_only",
         "editorial_status": "ai_draft_not_published",
@@ -402,29 +406,46 @@ def audit(candidate: dict, proposal: dict, taxonomy: dict | None = None,
 
 def generate_reviewed(candidate: dict, ollama: LocalOllama, taxonomy: dict,
                       max_retries: int = 1) -> dict:
-    """At most one local regeneration, then retain the fail-closed decision."""
-    history: list[list[str]] = []
-    final: dict | None = None
-    for attempt in range(max_retries + 1):
-        try:
-            proposal = ollama.generate(
-                candidate, feedback=history[-1] if attempt else None)
-            final = audit(candidate, proposal, taxonomy, ollama.model)
-        except (ValueError, json.JSONDecodeError, RuntimeError) as exc:
-            if final is None:
-                final = audit(candidate, {}, taxonomy, ollama.model)
-            final["quality"]["issues"].append("model_error:" + type(exc).__name__)
-            final["quality"]["status"] = "rejected"
-            history.append(list(final["quality"]["issues"]))
-            break
-        history.append(list(final["quality"]["issues"]))
-        if final["quality"]["status"] != "rejected":
-            break
-    assert final is not None
-    final["quality"]["attempt_history"] = history
-    final["generator"]["attempts"] = len(history)
-    return final
+    """Optionally rewrite errors or boilerplate, NEVER downgrade a valid draft.
 
+    Keep the best safe draft. A second attempt with hallucinations is NOT
+    allowed to replace a previously verified candidate for human review.
+    """
+    history: list[list[str]] = []
+    best: dict | None = None
+    best_attempt = 0
+
+    def quality_rank(draft: dict) -> tuple[int, int, int]:
+        q = draft["quality"]
+        return (1 if q["status"] != "rejected" else 0,
+                -len(q["issues"]),
+                -len(q.get("editorial_warnings") or []))
+
+    for attempt in range(max_retries + 1):
+        previous_flags = history[-1] if history else []
+        try:
+            proposal = ollama.generate(candidate,
+                feedback=previous_flags if attempt else None)
+            draft = audit(candidate, proposal, taxonomy, ollama.model)
+        except (ValueError, json.JSONDecodeError, RuntimeError) as exc:
+            draft = audit(candidate, {}, taxonomy, ollama.model)
+            draft["quality"]["issues"].append("model_error:" + type(exc).__name__)
+            draft["quality"]["status"] = "rejected"
+        q = draft["quality"]
+        flags = list(q["issues"]) + list(q.get("editorial_warnings") or [])
+        history.append(flags)
+        if best is None or quality_rank(draft) > quality_rank(best):
+            best = draft
+            best_attempt = attempt + 1
+        if q["status"] != "rejected" and not q.get("editorial_warnings"):
+            break
+        if any(str(i).startswith("model_error:") for i in q["issues"]):
+            break
+    assert best is not None
+    best["quality"]["attempt_history"] = history
+    best["generator"]["attempts"] = len(history)
+    best["generator"]["selected_attempt"] = best_attempt
+    return best
 
 def _read_input(path: Path) -> list[dict]:
     if not path.is_file() or path.stat().st_size > MAX_INPUT_BYTES:
