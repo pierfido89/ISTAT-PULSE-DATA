@@ -227,7 +227,8 @@ def enrich(article, *, official_text=None):
         article.setdefault("source_methodology", source_metadata_from_text(""))
     searchable = " ".join([str(article.get("headline") or ""),
                            str(article.get("summary") or "")] +
-                          [str(s.get("indicator") or "") for s in article.get("verified_series") or []]).casefold()
+                          [str(s.get("indicator") or "") for s in article.get("verified_series") or []] +
+                          [str(s.get("indicator") or "") for s in article.get("document_findings") or []]).casefold()
     article["glossary_entries"] = [
         {"term": term, "definition": description}
         for term, description in GLOSSARY.items()
