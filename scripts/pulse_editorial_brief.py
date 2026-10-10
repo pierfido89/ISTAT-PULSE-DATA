@@ -74,7 +74,7 @@ def editorial_brief(fact: dict) -> dict:
         pct = _italian_number(abs(change), decimals=1)
         # No inferred prior absolute values: this is a narrative grounding
         # sentence, not an additional statistical claim.
-        qualifier = ("dell'" if pct[0] in "18" else "del ")
+        qualifier = "dello " if pct.startswith("0,") else ("dell'" if pct[0] in "18" else "del ")
         signed = f"{movement} {qualifier}{pct}%"
         value = _italian_number(fact["value"])
         unit = " notti" if scope["indicator"] == "presenze" else ""
