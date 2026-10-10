@@ -28,4 +28,25 @@ def style_warnings(headline: str, lead: str, body: str, fact: dict) -> list[str]
                   r"non permett[eoa] di (?:affermare|stabilire) "
                   r"(?:l'esistenza di )?una tendenza di lungo termine)\b", t)):
         warnings.append("generic_caution_instead_of_context")
+    # The user-facing headline should signal the change, not merely label
+    # a statistical table. This is a warning, not a statistical rejection.
+    if fact.get("change_pct") not in (None, 0):
+        if not re.search(
+            r"\b(?:calo|calat[oaie]|flession[ei]|riduzion[ei]|diminuzion[ei]|"
+            r"decrement[ioa]|crescit[ae]|increment[ioa]|aument[ioa]|"
+            r"salit[ae]|sces[oa]|scend\w*)\b|[+-]\s*\d+(?:[,.]\d+)?\s*%",
+            headline.casefold()
+        ):
+            warnings.append("headline_only_labels_indicator")
+
+    body_norm = " ".join(body.casefold().split())
+    if re.search(
+        r"\b(?:i dati mostrano un|hanno registrato un|si registra un|"
+        r"variazione tendenziale (?:negativa|positiva)|"
+        r"confermando una tendenza)\b", body_norm):
+        warnings.append("body_restates_change_instead_of_explaining")
+    if re.search(r"\b(?:locali alberghieri|"
+                 r"valore osservato (?:e|nel)|"
+                 r"periodo (?:di riferimento|considerato))\b", body_norm):
+        warnings.append("generic_or_imprecise_wording")
     return warnings
