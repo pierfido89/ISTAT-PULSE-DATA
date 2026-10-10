@@ -1,0 +1,33 @@
+name: Validate PULSE taxonomy
+on:
+  pull_request:
+    paths:
+      - 'data/pulse_taxonomy_v1.json'
+      - 'scripts/pulse_taxonomy.py'
+      - 'tests/test_pulse_taxonomy.py'
+      - 'scripts/update_news_radar.py'
+      - 'scripts/update_observer_archive.py'
+      - '.github/workflows/validate-pulse-taxonomy.yml'
+  push:
+    branches:
+      - feat/pulse-taxonomy-v1
+      - feat/observer-taxonomy-v1
+    paths:
+      - 'data/pulse_taxonomy_v1.json'
+      - 'scripts/pulse_taxonomy.py'
+      - 'tests/test_pulse_taxonomy.py'
+      - '.github/workflows/validate-pulse-taxonomy.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run deterministic taxonomy tests
+        run: python -m unittest discover -s tests -p 'test_pulse_taxonomy.py' -v
+      - name: Compile classification pipeline without external sources
+        run: python -m py_compile scripts/pulse_taxonomy.py
