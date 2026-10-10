@@ -1,0 +1,288 @@
+{
+  "taxonomy_version": "1.0",
+  "last_revised": "2026-10-10",
+  "unclassified_code": "NON_CLASSIFICATO",
+  "max_secondary_categories": 2,
+  "macroareas": [
+    {
+      "id": "POP",
+      "label": "Popolazione e famiglie",
+      "subcategories": [
+        {
+          "code": "POP-01",
+          "label": "Popolazione e dinamiche demografiche"
+        },
+        {
+          "code": "POP-02",
+          "label": "Natalità e fecondità"
+        },
+        {
+          "code": "POP-03",
+          "label": "Mortalità e longevità"
+        },
+        {
+          "code": "POP-04",
+          "label": "Migrazioni e cittadinanza"
+        },
+        {
+          "code": "POP-05",
+          "label": "Famiglie, nuclei e convivenze"
+        },
+        {
+          "code": "POP-06",
+          "label": "Redditi, patrimoni e risparmio familiare"
+        },
+        {
+          "code": "POP-07",
+          "label": "Consumi e spese delle famiglie"
+        },
+        {
+          "code": "POP-08",
+          "label": "Povertà economica e disuguaglianze"
+        }
+      ]
+    },
+    {
+      "id": "SOC",
+      "label": "Società e qualità della vita",
+      "subcategories": [
+        {
+          "code": "SOC-01",
+          "label": "Salute e sanità"
+        },
+        {
+          "code": "SOC-02",
+          "label": "Welfare e assistenza sociale"
+        },
+        {
+          "code": "SOC-03",
+          "label": "Cultura, comunicazione e media"
+        },
+        {
+          "code": "SOC-04",
+          "label": "Turismo, viaggi e tempo libero"
+        },
+        {
+          "code": "SOC-05",
+          "label": "Giustizia, criminalità e sicurezza"
+        },
+        {
+          "code": "SOC-06",
+          "label": "Inclusione, pari opportunità e diritti"
+        },
+        {
+          "code": "SOC-07",
+          "label": "Partecipazione sociale e opinioni"
+        },
+        {
+          "code": "SOC-08",
+          "label": "Benessere, sport e stili di vita"
+        }
+      ]
+    },
+    {
+      "id": "LAV",
+      "label": "Istruzione e lavoro",
+      "subcategories": [
+        {
+          "code": "LAV-01",
+          "label": "Prima infanzia e servizi educativi"
+        },
+        {
+          "code": "LAV-02",
+          "label": "Scuola e istruzione"
+        },
+        {
+          "code": "LAV-03",
+          "label": "Università e istruzione superiore"
+        },
+        {
+          "code": "LAV-04",
+          "label": "Formazione professionale e competenze"
+        },
+        {
+          "code": "LAV-05",
+          "label": "Occupazione e disoccupazione"
+        },
+        {
+          "code": "LAV-06",
+          "label": "Retribuzioni e costo del lavoro"
+        },
+        {
+          "code": "LAV-07",
+          "label": "Contratti, condizioni e sicurezza del lavoro"
+        },
+        {
+          "code": "LAV-08",
+          "label": "Giovani, NEET e transizione scuola-lavoro"
+        }
+      ]
+    },
+    {
+      "id": "ECO",
+      "label": "Economia e imprese",
+      "subcategories": [
+        {
+          "code": "ECO-01",
+          "label": "PIL, conti nazionali e crescita"
+        },
+        {
+          "code": "ECO-02",
+          "label": "Inflazione, prezzi e potere d'acquisto"
+        },
+        {
+          "code": "ECO-03",
+          "label": "Imprese e imprenditorialità"
+        },
+        {
+          "code": "ECO-04",
+          "label": "Industria e manifattura"
+        },
+        {
+          "code": "ECO-05",
+          "label": "Costruzioni ed edilizia produttiva"
+        },
+        {
+          "code": "ECO-06",
+          "label": "Commercio e servizi"
+        },
+        {
+          "code": "ECO-07",
+          "label": "Agricoltura e sistema agroalimentare"
+        },
+        {
+          "code": "ECO-08",
+          "label": "Commercio estero e internazionalizzazione"
+        },
+        {
+          "code": "ECO-09",
+          "label": "Finanza, credito e mercati"
+        },
+        {
+          "code": "ECO-10",
+          "label": "Innovazione e competitività delle imprese"
+        }
+      ]
+    },
+    {
+      "id": "IST",
+      "label": "Istituzioni e sviluppo",
+      "subcategories": [
+        {
+          "code": "IST-01",
+          "label": "Pubblica amministrazione e servizi pubblici"
+        },
+        {
+          "code": "IST-02",
+          "label": "Finanza pubblica, bilanci e fiscalità"
+        },
+        {
+          "code": "IST-03",
+          "label": "Investimenti pubblici e PNRR"
+        },
+        {
+          "code": "IST-04",
+          "label": "Previdenza e sistema pensionistico"
+        },
+        {
+          "code": "IST-05",
+          "label": "Ricerca scientifica e innovazione pubblica"
+        },
+        {
+          "code": "IST-06",
+          "label": "Digitalizzazione e amministrazione digitale"
+        },
+        {
+          "code": "IST-07",
+          "label": "Infrastrutture e reti pubbliche"
+        },
+        {
+          "code": "IST-08",
+          "label": "Istituzioni, governance e settore non profit"
+        }
+      ]
+    },
+    {
+      "id": "GRN",
+      "label": "Ambiente ed energia",
+      "subcategories": [
+        {
+          "code": "GRN-01",
+          "label": "Clima e decarbonizzazione"
+        },
+        {
+          "code": "GRN-02",
+          "label": "Energia"
+        },
+        {
+          "code": "GRN-03",
+          "label": "Economia circolare"
+        },
+        {
+          "code": "GRN-04",
+          "label": "Biodiversità"
+        },
+        {
+          "code": "GRN-05",
+          "label": "Acqua e suolo"
+        },
+        {
+          "code": "GRN-06",
+          "label": "Mobilità sostenibile"
+        }
+      ]
+    },
+    {
+      "id": "TER",
+      "label": "Territorio e abitare",
+      "subcategories": [
+        {
+          "code": "TER-01",
+          "label": "Geografia, cartografia e organizzazione territoriale"
+        },
+        {
+          "code": "TER-02",
+          "label": "Città, urbanizzazione e metropoli"
+        },
+        {
+          "code": "TER-03",
+          "label": "Abitazioni e patrimonio residenziale"
+        },
+        {
+          "code": "TER-04",
+          "label": "Mercato immobiliare, affitti e accesso alla casa"
+        },
+        {
+          "code": "TER-05",
+          "label": "Trasporti e mobilità"
+        },
+        {
+          "code": "TER-06",
+          "label": "Accessibilità ai servizi territoriali"
+        },
+        {
+          "code": "TER-07",
+          "label": "Aree interne, periferie e piccoli comuni"
+        },
+        {
+          "code": "TER-08",
+          "label": "Divari territoriali e coesione"
+        },
+        {
+          "code": "TER-09",
+          "label": "Pianificazione e trasformazioni urbane"
+        }
+      ]
+    }
+  ],
+  "rules": [
+    "one_primary_category",
+    "max_two_secondary_categories",
+    "classify_by_statistical_phenomenon_not_publisher",
+    "territory_independent_from_theme",
+    "censimento_focus_and_pulse_pattern_are_independent_metadata",
+    "no_forced_classification_if_insufficient_evidence",
+    "track_method_status_reason_and_taxonomy_version",
+    "classification_confidence_is_not_pulse_score"
+  ]
+}
