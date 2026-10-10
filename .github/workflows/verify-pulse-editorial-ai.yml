@@ -9,6 +9,8 @@ on:
       - 'scripts/pulse_research_engine.py'
       - 'scripts/pulse_research_reading.py'
       - 'scripts/pulse_research_import.py'
+      - 'scripts/pulse_research_labor.py'
+      - 'scripts/pulse_research_labor_sample.py'
       - 'scripts/pulse_research_comparisons.py'
       - 'scripts/pulse_editorial_intelligence.py'
       - 'scripts/pulse_editorial_inference.py'
@@ -23,6 +25,7 @@ on:
       - 'tests/test_pulse_editorial_derived.py'
       - 'tests/test_pulse_research_engine.py'
       - 'tests/test_pulse_research_complete.py'
+      - 'tests/test_pulse_research_labor.py'
       - 'tests/test_pulse_editorial_intelligence.py'
       - 'tests/test_pulse_editorial_real_pilot.py'
       - 'tests/test_pulse_editorial_v13.py'
@@ -39,6 +42,8 @@ on:
       - 'scripts/pulse_research_engine.py'
       - 'scripts/pulse_research_reading.py'
       - 'scripts/pulse_research_import.py'
+      - 'scripts/pulse_research_labor.py'
+      - 'scripts/pulse_research_labor_sample.py'
       - 'scripts/pulse_research_comparisons.py'
       - 'scripts/pulse_editorial_intelligence.py'
       - 'scripts/pulse_editorial_inference.py'
@@ -51,6 +56,7 @@ on:
       - 'tests/test_pulse_editorial_derived.py'
       - 'tests/test_pulse_research_engine.py'
       - 'tests/test_pulse_research_complete.py'
+      - 'tests/test_pulse_research_labor.py'
       - 'tests/test_pulse_editorial_intelligence.py'
       - 'tests/test_pulse_editorial_real_pilot.py'
       - 'tests/test_pulse_editorial_v13.py'
@@ -69,7 +75,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Check syntax (no external AI)
-        run: python -m py_compile scripts/pulse_editorial_ai.py scripts/pulse_editorial_sample.py scripts/pulse_editorial_inference.py scripts/pulse_editorial_numeric_guard.py scripts/pulse_editorial_brief.py scripts/pulse_editorial_style.py scripts/pulse_editorial_pairs.py scripts/pulse_editorial_derived.py scripts/pulse_editorial_review.py scripts/pulse_research_engine.py scripts/pulse_research_reading.py scripts/pulse_research_comparisons.py scripts/pulse_research_import.py scripts/pulse_editorial_intelligence.py
+        run: python -m py_compile scripts/pulse_editorial_ai.py scripts/pulse_editorial_sample.py scripts/pulse_editorial_inference.py scripts/pulse_editorial_numeric_guard.py scripts/pulse_editorial_brief.py scripts/pulse_editorial_style.py scripts/pulse_editorial_pairs.py scripts/pulse_editorial_derived.py scripts/pulse_editorial_review.py scripts/pulse_research_engine.py scripts/pulse_research_reading.py scripts/pulse_research_comparisons.py scripts/pulse_research_import.py scripts/pulse_research_labor.py scripts/pulse_research_labor_sample.py scripts/pulse_editorial_intelligence.py
       - name: Run local draft-contract and inference regression tests (mock Ollama)
         run: |
           python -m unittest discover -s tests -p 'test_pulse_editorial*.py' -v
@@ -99,5 +105,9 @@ jobs:
         run: python scripts/pulse_research_engine.py --input /tmp/pulse-tourism-workbench.json --inspect
       - name: Assemble strictly verified first editorial angle offline
         run: python scripts/pulse_editorial_intelligence.py --input /tmp/pulse-tourism-workbench.json --output /tmp/pulse-intelligence-3.0.json
+      - name: Verify second real ISTAT domain — monthly labor PDF
+        run: |
+          python scripts/pulse_research_labor_sample.py --output /tmp/pulse-labor-workbench.json
+          python scripts/pulse_research_engine.py --input /tmp/pulse-labor-workbench.json --inspect
       - name: Confirm no app feed files were modified
         run: git diff --exit-code -- data/news/articles.json data/news/index.json
