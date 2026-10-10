@@ -307,6 +307,46 @@ promossa ad articolo approfondito.
     py scripts/pulse_editorial_ai.py --input workbench/turismo_q2_2026.json --output workbench/bozze_q2_2026_v14.json --limit 3
 
 
+## Quarto test reale v1.4: diagnosi e regressioni
+
+Il file effettivo generato dal Surface, `bozze_q2_2026_v14.json`,
+ha prodotto 3 bozze tutte respinte, con due tentativi per bozza.
+I valori di input ISTAT, i segmenti e la categoria SOC-04 sono rimasti
+coerenti, ma il risultato NON è idoneo alla pubblicazione.
+
+**Diagnosi precisa:**
+
+- Arrivi residenti (-4,3%) e non residenti (-0,9%):
+  titolo e lead numericamente e direzionalmente corretti ma il corpo
+  erroneamente dice «periodo di due mesi». Un trimestre è tre mesi.
+  La versione v1.4 non intercettava questa affermazione falsa.
+- Il vecchio lessico del controllo non riconosceva `calano`:
+  il codice `unqualified_yoy_direction` era un falso allarme.
+  Il controllo stilistico non riconosceva `calano` / `aumentano`
+  come verbi validi dei titoli, segnando erroneamente
+  `headline_only_labels_indicator`.
+- Presenze residenti (+1,7%): Qwen ha aggiunto un totale
+  **31.738.000 notti nel 2025** assente dall'evidenza allegata.
+  Il rifiuto `unsourced_numbers:31.738.000` era corretto.
+  Non è consentito ricostruire un totale precedente da una
+  percentuale pubblicata arrotondata.
+
+**Correzioni dopo la diagnosi:** ampliato il riconoscimento dei
+verbi coniugati (`calano` / `aumentano`), con protezione contro
+segni invertiti; blocco di `periodo di due mesi` in un Q2,
+oltre a `bimestre` e `quadrimestre`. Aggiunti test di
+regressione esattamente basati sui tre testi dell'utente,
+per dimostrare che i **falsi allarmi scompaiono ma i veri
+errori restano bloccanti**.
+
+Non chiedere di rigenerare subito le stesse tre righe per
+ottenere artificialmente uno stato "review_required". La
+loro natura rimane `single_finding_statistical_brief` e il
+problema sostanziale non è stato risolto da più prompt:
+per articoli giornalistici serviranno raggruppamenti
+coerenti di evidenze statistiche indipendenti, non un
+testo inventato per riempire il paragrafo.
+
 ## Rapporto con la Bibbia tecnica
 
 Il documento ufficiale e vivo
