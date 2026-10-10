@@ -5,7 +5,7 @@ values are preserved in assertions, no cloud model is called.
 """
 import unittest
 from scripts.pulse_editorial_ai import audit, candidates
-from tests.test_pulse_editorial_ai import primary, finding, PROPOSAL
+from test_pulse_editorial_ai import primary, finding, PROPOSAL
 
 
 def audit_fact(value, change, indicator, residence, draft):
