@@ -8,7 +8,6 @@ Standard-library only; Ollama must already be installed and running locally.
 from __future__ import annotations
 
 import argparse
-import copy
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -83,11 +82,10 @@ def _allowed_numbers(fact: dict) -> set[str]:
     for v in values:
         norm = _decimal(v)
         out.add(norm)
-        out.add(norm.lstrip("-"))
     # Period markers are allowed only when explicitly included in the source.
     out.update(re.findall(r"20\d{2}", fact.get("period", "")))
     if "Q" in fact.get("period", ""):
-        out.update(["1", "2", "3", "4"])
+        out.add(fact["period"][-1])
     return out
 
 
