@@ -134,3 +134,77 @@ def extract_istat_labor_pdf(raw: bytes, url: str = SOURCE_URL) -> list[dict]:
             if rows:
                 return rows
     return []
+
+
+def labor_research_signals(articles: list[dict]) -> list[dict]:
+    """A sourced, noncausal comparison of employment categories by sex.
+
+    Labor levels are NEVER combined as rates or treated as a
+    population total, and reported YoY rates keep their own denominators.
+    """
+    outputs = []
+    for article in articles:
+        if not isinstance(article, dict):
+            continue
+        source_url = (article.get("public_source") or {}).get("url")
+        source_sha = article.get("source_sha256")
+        if not source_url or not source_sha:
+            continue
+        groups = {}
+        for row in article.get("document_findings") or []:
+            if not isinstance(row, dict) or not (
+                row.get("verified") is True
+                and row.get("extraction_method")
+                == "explicit_labor_monthly_table1_absolute_thousands_and_yoy"
+                and row.get("source_url") == source_url
+                and row.get("source_sha256") == source_sha
+                and row.get("unit") == "persone"
+                and row.get("unit_multiplier") == 1000
+                and row.get("source_table_unit") == "migliaia_di_persone"
+                and row.get("location")
+                and row.get("indicator") in EXPECTED_INDICATORS
+                and row.get("reference_comparison") == "same_month_previous_year"
+                and re.fullmatch(r"20\d\d-(?:0[1-9]|1[0-2])",
+                                 str(row.get("reference_period") or ""))
+            ):
+                continue
+            group = row.get("segment")
+            if not isinstance(group, dict) or group.get("territory") != "Italia" \
+                    or group.get("sex") not in GROUP.values():
+                continue
+            try:
+                observed = int(row["observed_total"])
+                original = int(row["source_count_thousands"])
+                rate = float(row["reported_yoy_change_pct"])
+            except (ValueError, TypeError, KeyError):
+                continue
+            if observed <= 0 or observed != original * 1000 \
+                    or not -100 <= rate <= 100:
+                continue
+            key = (row["reference_period"], group["sex"])
+            groups.setdefault(key, {}).setdefault(row["indicator"], []).append(row)
+        for (period, group), rows in groups.items():
+            if not all(len(rows.get(kind, [])) == 1
+                       for kind in ("Occupati", "Disoccupati", "Inattivi 15-64 anni")):
+                continue
+            selected = [rows[k][0] for k in ("Occupati", "Disoccupati",
+                                              "Inattivi 15-64 anni")]
+            if len({r["location"] for r in selected}) != 3:
+                continue
+            if len({r["source_sha256"] for r in selected}) != 1:
+                continue
+            outputs.append({
+                "id": f"LABOR-{period}-{group}",
+                "story_type": "labor_categories_yoy_evidence",
+                "period": period,
+                "population_group": group,
+                "indicator_evidence": selected,
+                "comparison": "different_category_yoy_changes_not_one_common_rate",
+                "source_url": source_url,
+                "source_sha256": source_sha,
+                "source_locations": [r["location"] for r in selected],
+                "publication_status": "research_only",
+                "human_review_required": True,
+                "not_official_pulse_pattern": True,
+            })
+    return outputs
