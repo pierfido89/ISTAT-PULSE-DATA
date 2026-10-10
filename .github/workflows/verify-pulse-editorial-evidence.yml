@@ -44,6 +44,8 @@ jobs:
               with pdfplumber.open(io.BytesIO(raw)) as doc:
                   page=doc.pages[2]
                   print("PDF text first 320:", repr((page.extract_text() or "")[:320]))
+                  for textline in (page.extract_text() or "").splitlines()[8:43]:
+                      print("PAGE3:", repr(textline[:230]))
                   for k,table in enumerate(page.extract_tables()[:5],1):
                       print("TABLE",k,"rows",len(table))
                       for row in table[:13]:
