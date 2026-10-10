@@ -34,10 +34,12 @@ class StubWriter:
 
 
 class QwenFreeProseSafetyTests(unittest.TestCase):
-    def test_original_passes_structure_and_numeric_precheck(self):
+    def test_copy_of_original_is_not_editorial_rewrite(self):
         draft = fixture()["drafts"][0]
         report = assess_model_copy(valid_sample(draft), draft)
-        self.assertEqual(report["status"], "needs_human_semantic_review")
+        self.assertEqual(report["status"], "rejected")
+        self.assertIn("insufficient_editorial_transformation", report["failures"])
+        self.assertEqual(report["substantially_rewritten_paragraphs"], 0)
         self.assertTrue(report["never_auto_publish_free_prose"])
 
     def test_invented_numeric_literal_is_rejected(self):
@@ -101,8 +103,9 @@ class QwenFreeProseSafetyTests(unittest.TestCase):
                          "not_publishable_model_text")
         self.assertEqual(row["approved_headline_unchanged"], top["headline"])
         self.assertEqual(row["approved_paragraphs_unchanged"], top["paragraphs"])
-        self.assertEqual(row["model_copy_assessment"]["status"],
-                         "needs_human_semantic_review")
+        self.assertEqual(row["model_copy_assessment"]["status"], "rejected")
+        self.assertIn("insufficient_editorial_transformation",
+                      row["model_copy_assessment"]["failures"])
         self.assertFalse(lab["published"])
         self.assertTrue(lab["cannot_promote_without_human_check"])
 
@@ -112,6 +115,57 @@ class QwenFreeProseSafetyTests(unittest.TestCase):
         lab = make_rewrite_lab(source, writer, limit=1)
         self.assertEqual(lab["rewrite_results"][0]
                          ["model_copy_assessment"]["status"], "rejected")
+
+
+    def test_surface_real_tourism_output_regression(self):
+        draft = fixture()["drafts"][0]
+        proposal = valid_sample(draft)
+        proposal["headline"] = (
+            "Arrivi in calo, presenze in aumento: il turismo alberghiero "
+            "nel secondo trimestre 2026"
+        )
+        # This is the user's observed Qwen failure: it changed ONLY the
+        # headline and parroted four paragraphs. The previous gate let it through.
+        assessment = assess_model_copy(proposal, draft)
+        self.assertEqual(assessment["status"], "rejected")
+        self.assertIn("headline_omits_resident_client_scope",
+                      assessment["failures"])
+        self.assertIn("insufficient_editorial_transformation",
+                      assessment["failures"])
+
+    def test_grammatical_sui_arrivi_is_rejected(self):
+        draft = fixture()["drafts"][0]
+        proposal = valid_sample(draft)
+        proposal["paragraphs"][2] += " Il testo parla sui arrivi registrati."
+        assessment = assess_model_copy(proposal, draft)
+        self.assertIn("known_italian_grammar_failure_sui_arrivi",
+                      assessment["failures"])
+
+    def test_genuinely_rewritten_passes_only_to_human_review(self):
+        draft = fixture()["drafts"][0]
+        proposal = valid_sample(draft)
+        proposal["paragraphs"][1] = (
+            "Arrivi e presenze non sono la stessa misura. "
+            "I primi contano gli ingressi nelle strutture, mentre "
+            "le seconde indicano quante notti vengono trascorse "
+            "complessivamente dai clienti."
+        )
+        proposal["paragraphs"][2] = (
+            "Il confronto fra i due indicatori fa emergere una differenza: "
+            "le notti complessive aumentano nonostante diminuiscano "
+            "gli ingressi. Si tratta dello stesso gruppo di clienti "
+            "e dello stesso trimestre, e non di due fenomeni distinti."
+        )
+        proposal["paragraphs"][3] = (
+            "Questo andamento da solo non chiarisce le motivazioni "
+            "dei soggiorni o le scelte delle persone. Una spiegazione "
+            "richiederebbe ulteriori dati su strutture e viaggiatori."
+        )
+        assessment = assess_model_copy(proposal, draft)
+        self.assertEqual(assessment["status"],
+                         "needs_human_semantic_review")
+        self.assertGreaterEqual(assessment["substantially_rewritten_paragraphs"], 2)
+        self.assertTrue(assessment["semantic_truth_not_automatically_certified"])
 
     def test_offline_cli_requires_existing_ollama(self):
         with tempfile.TemporaryDirectory() as directory:
