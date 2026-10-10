@@ -264,3 +264,50 @@ def extract_source_pdf(raw: bytes, url: str, domain: str):
             if results:
                 return results
     return []
+
+
+
+def demography_research_signals(articles: list[dict]) -> list[dict]:
+    """Source-confirmed provisional demographic balance, not exact counts."""
+    out = []
+    expected = {x[0] for x in DEMOGRAPHY_COLUMNS}
+    for a in articles:
+        if not isinstance(a, dict):
+            continue
+        url = (a.get("public_source") or {}).get("url")
+        sha = a.get("source_sha256")
+        if not url or not sha:
+            continue
+        rows = {}
+        for f in a.get("document_findings") or []:
+            if not isinstance(f, dict) or not (
+                f.get("verified") is True
+                and f.get("extraction_method") == "official_demography_population_balance_2025"
+                and f.get("source_url") == url and f.get("source_sha256") == sha
+                and f.get("unit") == "migliaia_di_persone"
+                and f.get("rounded_at_thousands") is True
+                and f.get("provisional") is True
+                and f.get("reference_period") == "2025"
+                and f.get("location")
+                and f.get("indicator_code") in expected
+                and f.get("segment") == {"territory":"Italia", "population":"residenti"}
+            ):
+                continue
+            rows.setdefault(f["indicator_code"], []).append(f)
+        if set(rows) != expected or any(len(v) != 1 for v in rows.values()):
+            continue
+        ordered = [rows[key][0] for key, _ in DEMOGRAPHY_COLUMNS]
+        if len({r["location"] for r in ordered}) != len(expected):
+            continue
+        out.append({
+            "id": "POPULATION-2025-PROVISIONAL-BALANCE",
+            "story_type": "provisional_population_balance_rounded_thousands",
+            "period": "2025",
+            "evidence": ordered,
+            "source_url": url, "source_sha256": sha,
+            "source_locations": [r["location"] for r in ordered],
+            "precision_caveat": "Source figures rounded to thousands; provisional",
+            "not_exact_individual_counts": True,
+            "publication_status": "research_only",
+        })
+    return out
