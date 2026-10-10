@@ -22,3 +22,22 @@ jobs:
         run: python -m py_compile scripts/pulse_editorial_evidence.py scripts/pulse_deep_tables.py scripts/pulse_evidence.py scripts/update_news_radar.py
       - name: Run offline evidence and extraction checks
         run: python -m unittest discover -s tests -p 'test_pulse_editorial_quality.py' -v
+      - name: Sample official ISTAT tourism PDF (non-blocking integration check)
+        continue-on-error: true
+        timeout-minutes: 3
+        run: |
+          python -m pip install --disable-pip-version-check pdfplumber
+          python - <<'PY'
+          from urllib.request import Request, urlopen
+          from scripts.pulse_deep_tables import extract_pdf_mixed_findings
+          url="https://www.istat.it/wp-content/uploads/2026/09/Statistica-Flash_II_Trimestre_2026.pdf"
+          with urlopen(Request(url,headers={"User-Agent":"Mozilla/5.0"}),timeout=18) as response:
+              raw=response.read(8_000_001)
+          assert len(raw) <= 8_000_000
+          facts=extract_pdf_mixed_findings(raw,url)
+          print("ISTAT tourism PDF findings:", len(facts))
+          for fact in facts[:8]:
+              print(fact["indicator"], fact["segment"],
+                    fact["observed_total"], fact["reported_yoy_change_pct"])
+          assert len(facts) >= 2, "No two independent published findings could be reconstructed"
+          PY
