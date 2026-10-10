@@ -59,7 +59,7 @@ class PairEvidenceTests(unittest.TestCase):
         self.assertIn("4,3%", story["lead"])
         self.assertIn("1,7%", story["lead"])
         self.assertIn("secondo trimestre 2025", story["lead"])
-        self.assertIn("arrivi contano", story["body"].lower())
+        self.assertIn("arrivi misurano", story["body"].lower())
 
     def test_cohort_and_direction_are_consistent_in_assembled_article(self):
         p = pair()
