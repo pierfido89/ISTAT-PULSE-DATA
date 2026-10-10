@@ -2,7 +2,7 @@
 
 **Data:** 10 ottobre 2026  
 **Ramo sperimentale:** `feat/pulse-editorial-ai-1.0` — [PR #13](https://github.com/pierfido89/ISTAT-PULSE-DATA/pull/13)  
-**Stato:** software della fase editoriale implementato e verificato **per il perimetro dei sei PDF ISTAT del Research Engine 3.3**. **La resa stilistica reale del modello locale Qwen3 4B deve ancora essere provata sul Surface Pro 8**. Nessuna pubblicazione automatica, APK o API a pagamento.
+**Stato (aggiornamento sul campo 10 ottobre 2026):** sei PDF ISTAT verificati; **Qwen3 4B eseguito realmente sul Surface Pro 8 in due prove successive**. La prima proposta copiava i paragrafi, la seconda li ha riscritti ma con difetti di italiano, interpretazioni non giustificate e una chiave JSON `lead` aggiuntiva. **Qualità giornalistica NON ancora approvata**. Entrambi gli errori sono stati registrati come test di regressione; nuove correzioni del controllo in fase di convalida. Nessuna pubblicazione automatica, APK o API a pagamento.
 
 ## Architettura editoriale
 
@@ -33,13 +33,16 @@ Il modello organizza l'articolo e ne sceglie l'impostazione, mentre le affermazi
 
 Il modello può davvero proporre una riscrittura dei quattro paragrafi. Il sistema controlla:
 
-- JSON e quattro paragrafi senza campi aggiuntivi;
+- JSON con **schema Ollama esplicito** per imporre soltanto `headline` e quattro `paragraphs`, senza campi aggiuntivi (il verificatore indipendente resta obbligatorio);
 - numeri introdotti o numeri fondamentali della fonte omessi;
 - esempi di rivendicazioni causalistiche, primati o previsioni non documentati;
 - URL estranei alla fonte;
 - paragrafi duplicati o fortemente ridondanti;
 - lunghezza ragionevole;
-- regressioni grammaticali note, compreso l'errore `I arrivi`.
+- regressioni grammaticali note, compresi `I arrivi`, `sui arrivi`, `i clienti si verificano` e l'uso improprio di `stanzialità`;
+- imitazioni quasi letterali del testo originale e omissioni nel titolo della categoria di clientela;
+- affermazioni non autorizzate su cambiamenti delle abitudini/comportamenti dei clienti ricavate impropriamente dal rapporto arrivi-presenze;
+- **diagnosi cumulativa**: un campo aggiuntivo `lead` non interrompe l'analisi degli altri difetti (il candidato resta rifiutato).
 
 **Vincolo essenziale:** un controllo di cifre e strutture **non dimostra che ogni frase nuova sia vera**. Anche se la proposta supera questi filtri, il suo stato rimane `needs_human_semantic_review`; non sostituisce l'articolo approvato, non è pubblicabile e non altera la fonte. L'utente potrà inviare le proposte per la revisione insieme ai riferimenti ISTAT.
 
@@ -72,10 +75,11 @@ Il laboratorio di prosa libera applica invece `assess_model_copy()`, che esamina
 
 ## Risultati di test
 
-- **149 test editoriali e di controllo, 49 test del Research Engine, 198 test automatici totali superati.**
+- **155 test editoriali e di controllo, 49 test del Research Engine, 204 test automatici totali superati** dopo le correzioni originate dalle prove reali.
 - CI collegata a sei documenti ufficiali ISTAT (91 pagine e 70 osservazioni validate nella fase precedente).
 - Esito operativo della pipeline: **16 idee editoriali**, **6 articoli controllati di quattro paragrafi**, 6 stati `review_required`, **0 pubblicazioni**.
-- Il laboratorio Qwen dispone di test di simulazione di errore, ma **non è stato ancora eseguito il modello reale sul Surface dell'utente**. La qualità stilistica di Qwen non si può dichiarare accettata prima di analizzare quelle uscite.
+- **Qwen3 4B locale è stato realmente eseguito due volte sul Surface** sui primi due articoli. Prima prova: nel caso turismo, nessuna riscrittura dei quattro paragrafi, solo modifica del titolo. Seconda prova: prosa parzialmente nuova, ma campi JSON non ammessi, lessico improprio e indebita inferenza sul comportamento dei clienti. **Entrambe le proposte sono state respinte a seguito di revisione.**
+- Le anomalie delle prove reali hanno generato test automatici di regressione e correzioni alla generazione. Il nuovo JSON Schema Ollama e il controllo semantico euristico devono essere **riprovati sul modello reale**: il superamento dei test di simulazione non è una convalida della qualità del modello.
 
 ## Istruzioni operative — Surface Pro 8, una procedura alla volta
 
@@ -105,8 +109,18 @@ Il JSON della riscrittura contiene separati testo approvato e proposta Qwen. Le 
 ## Criterio di chiusura della fase 2
 
 **Implementazione software e controlli per i sei ambiti: COMPLETATI e verificati in CI.**  
-**Qualità linguistica reale Qwen3 4B su hardware dell'utente: DA CONVALIDARE.**
+**Qwen3 4B è stato eseguito sul Surface e ha mostrato errori reali: VALIDAZIONE EDITORIALE NON SUPERATA.** Le correzioni implementate richiedono una terza prova sul modello locale prima di poter rivalutare la qualità.
 
 Il punto 2 non deve essere presentato come “AI eccellente validata sul campo” finché mancano la prova con Ollama locale e la valutazione di riscritture reali. Un modello da 4B può fornire spunti di stile utili, ma non va trasformato nell'arbitro della verità statistica.
 
 Il successivo **PULSE Fact Checker** potrà ampliare questa architettura ad altre tipologie di frasi, senza rimuovere il divieto di pubblicazione non verificata.
+
+## Registro delle prove reali — 10 ottobre 2026
+
+**Prova 1 (Qwen3 4B, turismo):** 4 paragrafi pressoché identici al testo di partenza. Il precedente controllo li considerava pronti solo per revisione; il nuovo controllo li respinge per `insufficient_editorial_transformation`. Titolo nuovo ma privo dell'esplicito riferimento ai clienti residenti.
+
+**Prova 2 (Qwen3 4B, turismo):** riscrittura più autonoma, ma aggiunge `lead` alle due chiavi richieste e contiene «i clienti residenti si verifichino» e «stanzialità». Inoltre la frase sull'«evoluzione del comportamento dei clienti residenti» è un'inferenza non documentata. Il rifiuto automatico dovuto al campo aggiuntivo era corretto; è stato migliorato affinché restituisca contemporaneamente anche le motivazioni stilistiche/semantiche.
+
+**Patch di revisione:** JSON Schema inviato a Ollama; istruzioni di prosa naturale e fedeltà statistica; controlli indipendenti su anomalie emerse; regressioni dedicate. È proibita la promozione automatica del testo libero, anche quando tutti i controlli automatici passano.
+
+**Limite del metodo:** non esiste ancora un correttore capace di certificare integralmente la grammatica e la veridicità semantica di una prosa libera. Queste regole intercettano esempi riconoscibili ma non tutti gli errori possibili. Serve revisione umana con la fonte originale.
