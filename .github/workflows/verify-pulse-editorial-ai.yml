@@ -69,7 +69,9 @@ jobs:
       - name: Check syntax (no external AI)
         run: python -m py_compile scripts/pulse_editorial_ai.py scripts/pulse_editorial_sample.py scripts/pulse_editorial_inference.py scripts/pulse_editorial_numeric_guard.py scripts/pulse_editorial_brief.py scripts/pulse_editorial_style.py scripts/pulse_editorial_pairs.py scripts/pulse_editorial_derived.py scripts/pulse_editorial_review.py scripts/pulse_research_engine.py scripts/pulse_research_reading.py scripts/pulse_research_comparisons.py scripts/pulse_editorial_intelligence.py
       - name: Run local draft-contract and inference regression tests (mock Ollama)
-        run: python -m unittest discover -s tests -p 'test_pulse_editorial*.py' -v
+        run: |
+          python -m unittest discover -s tests -p 'test_pulse_editorial*.py' -v
+          python -m unittest discover -s tests -p 'test_pulse_research*.py' -v
       - name: Confirm production artifacts unchanged
         run: |
           git diff --exit-code -- data/news/articles.json data/news/index.json data/news/observer_articles.json
