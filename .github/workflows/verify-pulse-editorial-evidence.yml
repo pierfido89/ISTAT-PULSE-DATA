@@ -35,6 +35,12 @@ jobs:
               raw=response.read(8_000_001)
           assert len(raw) <= 8_000_000
           facts=extract_pdf_mixed_findings(raw,url)
+          from scripts.pulse_editorial_evidence import source_metadata_from_text
+          import io, pdfplumber
+          with pdfplumber.open(io.BytesIO(raw)) as source:
+              source_intro=" ".join((p.extract_text() or "") for p in source.pages[:3])
+          release=source_metadata_from_text(source_intro)
+          print("ISTAT tourism PDF metadata:", release)
           print("ISTAT tourism PDF findings:", len(facts))
           for fact in facts[:8]:
               print(fact["indicator"], fact["segment"],
