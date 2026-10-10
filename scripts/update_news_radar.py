@@ -8,6 +8,10 @@ from zoneinfo import ZoneInfo
 from pathlib import Path
 from bs4 import BeautifulSoup
 try:
+    from scripts.pulse_editorial_evidence import enrich_all, source_metadata_from_text
+except ModuleNotFoundError:
+    from pulse_editorial_evidence import enrich_all, source_metadata_from_text
+try:
     from scripts.pulse_evidence import extract_bytes as extract_evidence_bytes
 except ModuleNotFoundError:
     from pulse_evidence import extract_bytes as extract_evidence_bytes
@@ -294,7 +298,9 @@ def verify_primary_page(url, numbers, keywords, allowed_domains):
         # Reuse the already fetched original document; no redundant HTTP request.
         # Fail closed when an unreadable PDF, workbook or malformed table is encountered.
         try:
-            verified_series = (preextracted or extract_evidence_bytes(raw, final, ct))["evidence"]
+            extracted_package = preextracted or extract_evidence_bytes(raw, final, ct)
+            verified_series = extracted_package.get("evidence", [])
+            document_findings = extracted_package.get("findings", [])[:40]
             # After the primary page passes domain/number/keyword verification,
             # inspect a strictly bounded set of same-host downloadable tables.
             if "html" in ct.lower():
@@ -309,6 +315,7 @@ def verify_primary_page(url, numbers, keywords, allowed_domains):
                         else:
                             candidate = extract_evidence_bytes(a_raw, a_url, a_ct)
                         verified_series.extend(candidate.get("evidence", [])[:4])
+                        document_findings.extend(candidate.get("findings", [])[:12])
                     except Exception as exc:
                         print(f"[ATTACHMENT] skipped {attachment}: {type(exc).__name__}", flush=True)
             # Conservative companion metadata gate: if the same official page
@@ -329,17 +336,22 @@ def verify_primary_page(url, numbers, keywords, allowed_domains):
                         metadata = load_revision_metadata(metadata_raw)
                         if metadata["status"] == "methodological_break":
                             verified_series = []
+                            document_findings = []
                             print(f"[REVISION] comparison withheld for {final}", flush=True)
                             break
                     except Exception:
                         continue
             verified_series = verified_series[:12]
+            document_findings = document_findings[:40]
         except Exception as exc:
             print(f"[EVIDENCE] skipped {final}: {type(exc).__name__}", flush=True)
             verified_series = []
+            document_findings = []
         return {"url":final,"domain":dom,"matched_numbers":matched_numbers[:6],"matched_non_year_numbers":matched_non_year_numbers[:6],
                 "matched_keywords":matched_keywords[:8],"verification_score":min(100,score),
-                "text_excerpt":text[:900], "verified_series":verified_series}
+                "text_excerpt":text[:900], "verified_series":verified_series,
+                "document_findings":document_findings,
+                "source_methodology":source_metadata_from_text(text)}
     except Exception:
         return None
 
@@ -939,6 +951,8 @@ def main():
               "summary":"Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
               "statistical_claims":[{"raw_value":n,"verified":n in verified_nums} for n in nums],
               "verified_series": resolved.get("verified_series", []),
+              "document_findings": resolved.get("document_findings", []),
+              "source_methodology": resolved.get("source_methodology"),
               "territories":geos,
               "chart_spec":chart,"map_spec":map_spec,
               "editorial_status":"verified_primary_match",
@@ -950,6 +964,10 @@ def main():
         print("[RADAR] runtime budget reached; publishing partial verified results", flush=True)
 
     arts=sorted(by_id.values(),key=lambda x:x.get("published_at",""),reverse=True)
+    # Evidence quality is enforced BEFORE public index selection.
+    # A press headline, matching isolated numbers or a curated pattern label
+    # never establish a statistical record, anomaly or acceleration.
+    enrich_all(arts)
     # Preserve any validated classification; annotate new/legacy articles conservatively.
     try:
         from scripts.pulse_taxonomy import enrich_articles
