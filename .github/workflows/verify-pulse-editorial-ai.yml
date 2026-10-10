@@ -4,6 +4,8 @@ on:
     paths:
       - 'scripts/pulse_editorial_ai.py'
       - 'scripts/pulse_editorial_pairs.py'
+      - 'scripts/pulse_editorial_derived.py'
+      - 'scripts/pulse_editorial_review.py'
       - 'scripts/pulse_editorial_inference.py'
       - 'scripts/pulse_editorial_numeric_guard.py'
       - 'scripts/pulse_editorial_style.py'
@@ -13,6 +15,7 @@ on:
       - 'scripts/pulse_taxonomy.py'
       - 'tests/test_pulse_editorial_ai.py'
       - 'tests/test_pulse_editorial_pairs.py'
+      - 'tests/test_pulse_editorial_derived.py'
       - 'tests/test_pulse_editorial_real_pilot.py'
       - 'tests/test_pulse_editorial_v13.py'
       - 'tests/test_pulse_editorial_v14.py'
@@ -23,6 +26,8 @@ on:
     paths:
       - 'scripts/pulse_editorial_ai.py'
       - 'scripts/pulse_editorial_pairs.py'
+      - 'scripts/pulse_editorial_derived.py'
+      - 'scripts/pulse_editorial_review.py'
       - 'scripts/pulse_editorial_inference.py'
       - 'scripts/pulse_editorial_numeric_guard.py'
       - 'scripts/pulse_editorial_style.py'
@@ -30,6 +35,7 @@ on:
       - 'scripts/pulse_editorial_sample.py'
       - 'tests/test_pulse_editorial_ai.py'
       - 'tests/test_pulse_editorial_pairs.py'
+      - 'tests/test_pulse_editorial_derived.py'
       - 'tests/test_pulse_editorial_real_pilot.py'
       - 'tests/test_pulse_editorial_v13.py'
       - 'tests/test_pulse_editorial_v14.py'
@@ -47,7 +53,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Check syntax (no external AI)
-        run: python -m py_compile scripts/pulse_editorial_ai.py scripts/pulse_editorial_sample.py scripts/pulse_editorial_inference.py scripts/pulse_editorial_numeric_guard.py scripts/pulse_editorial_brief.py scripts/pulse_editorial_style.py scripts/pulse_editorial_pairs.py
+        run: python -m py_compile scripts/pulse_editorial_ai.py scripts/pulse_editorial_sample.py scripts/pulse_editorial_inference.py scripts/pulse_editorial_numeric_guard.py scripts/pulse_editorial_brief.py scripts/pulse_editorial_style.py scripts/pulse_editorial_pairs.py scripts/pulse_editorial_derived.py scripts/pulse_editorial_review.py
       - name: Run local draft-contract and inference regression tests (mock Ollama)
         run: python -m unittest discover -s tests -p 'test_pulse_editorial*.py' -v
       - name: Confirm production artifacts unchanged
