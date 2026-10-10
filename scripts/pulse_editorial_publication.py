@@ -21,6 +21,7 @@ from urllib import request, error
 try:
     from scripts.pulse_editorial_ai import API_URL, MODEL_DEFAULT, LocalOllama, _read_input
     from scripts.pulse_editorial_pairs import FORBIDDEN_OUTPUTS
+    from scripts.pulse_editorial_derived import derive_average_stay
     from scripts.pulse_research_engine import research_report
     from scripts.pulse_editorial_storyboards import (
         editorial_cards, _article, number_it, changed
@@ -28,6 +29,7 @@ try:
 except ModuleNotFoundError:
     from pulse_editorial_ai import API_URL, MODEL_DEFAULT, LocalOllama, _read_input
     from pulse_editorial_pairs import FORBIDDEN_OUTPUTS
+    from pulse_editorial_derived import derive_average_stay
     from pulse_research_engine import research_report
     from pulse_editorial_storyboards import editorial_cards, _article, number_it, changed
 
@@ -42,13 +44,20 @@ def _factual_details(card: dict, evidence: dict) -> str:
     typ = card["story_type"]
     if typ == "paired_indicators":
         first, second = evidence["evidence"]
-        return (
-            "Gli indicatori si riferiscono allo stesso periodo, "
-            "alla medesima tipologia ricettiva e alla stessa categoria "
-            "di clientela. Il rapporto tra notti e arrivi, ove riportato "
-            "nel dossier, è un'elaborazione statistica e non una cifra "
-            "pubblicata come totale aggiuntivo da ISTAT."
+        metric = derive_average_stay(first, second)
+        definition = (
+            "Gli arrivi contano gli ingressi registrati nelle strutture; "
+            "le presenze contano invece le notti trascorse. "
         )
+        if metric:
+            return (
+                definition
+                + "Dividendo le presenze per gli arrivi si ottengono circa "
+                + metric["value_nights_per_arrival"]
+                + " notti per arrivo: è un'elaborazione PULSE sui "
+                  "dati ISTAT, non un nuovo dato dichiarato dalla fonte."
+            )
+        return definition + "Sono indicatori distinti e non intercambiabili."
     if typ == "labor_categories_yoy_evidence":
         rows = {x["indicator"]: x for x in evidence["indicator_evidence"]}
         inactive = rows["Inattivi 15-64 anni"]
@@ -153,30 +162,52 @@ def _caution(card: dict, evidence: dict) -> str:
 
 def _editorial_explainer(card: dict, evidence: dict, voice: str) -> str:
     typ = card["story_type"]
+    if typ == "paired_indicators":
+        arrivals, nights = evidence["evidence"]
+        if arrivals["change_pct"] < 0 < nights["change_pct"]:
+            return (
+                "La notizia sta nel contrasto: gli ingressi registrati "
+                "negli alberghi diminuiscono, ma le notti complessive "
+                "aumentano. Di conseguenza, nel medesimo gruppo di "
+                "clienti la media di notti per arrivo cresce rispetto "
+                "allo stesso trimestre dell'anno precedente."
+            )
+        if arrivals["change_pct"] > 0 > nights["change_pct"]:
+            return (
+                "La notizia sta nel contrasto: gli ingressi registrati "
+                "negli alberghi aumentano, ma le notti complessive "
+                "diminuiscono. Ne consegue una riduzione della media "
+                "di notti per arrivo nel gruppo osservato."
+            )
+        return (
+            "Gli arrivi e le presenze non raccontano esattamente "
+            "lo stesso aspetto dei flussi turistici. Confrontare "
+            "le rispettive variazioni aiuta a capire come cambia "
+            "il rapporto tra ingressi registrati e notti trascorse."
+        )
     subject = {
-        "paired_indicators": "arrivi e presenze",
-        "labor_categories_yoy_evidence": "occupazione e disoccupazione",
-        "different_price_baskets_yoy_rates": "indici dei prezzi",
-        "provisional_population_balance_rounded_thousands": "bilancio demografico",
-        "historical_annual_comparison": "serie storica dell'istruzione",
-        "territorial_rate_comparison": "differenze territoriali",
+        "labor_categories_yoy_evidence": "sull'occupazione e sulla disoccupazione",
+        "different_price_baskets_yoy_rates": "sugli indici dei prezzi",
+        "provisional_population_balance_rounded_thousands": "sul bilancio demografico",
+        "historical_annual_comparison": "sulla serie storica dell'istruzione",
+        "territorial_rate_comparison": "sulle differenze territoriali",
     }[typ]
     if voice == "analisi":
         return (
-            f"Per interpretare correttamente i risultati sui {subject}, "
+            f"Per interpretare correttamente i risultati {subject}, "
             "conviene distinguere ciò che è misurato dalla spiegazione "
             "del fenomeno. La fonte documenta i valori; non autorizza "
             "a dedurre automaticamente intenzioni o cause."
         )
     if voice == "divulgazione":
         return (
-            f"Che cosa ci dicono questi numeri sui {subject}? "
+            f"Che cosa ci dicono questi numeri {subject}? "
             "Offrono una fotografia documentata, non una spiegazione "
             "completa di tutti i fattori in gioco. I confronti sono "
             "utili soltanto quando le misure restano omogenee."
         )
     return (
-        f"I risultati sui {subject} devono essere letti nel loro "
+        f"I risultati {subject} devono essere letti nel loro "
         "periodo e nel loro ambito di riferimento. "
         "Le osservazioni riportate provengono dalla pubblicazione "
         "statistica e non costituiscono previsioni."
@@ -269,9 +300,9 @@ def quality_report(draft: dict) -> dict:
         issues.append("length_outside_95_270_words")
     if any(len(t) > 680 for t in texts):
         issues.append("paragraph_too_long")
-    if "I arrivi diminuiscono" in draft["body"] and "I arrivi" in draft["body"]:
-        # Old model failure detection still useful as regression guard.
-        pass
+    if re.search(r"\b(?:i arrivi|sui arrivi|sui indici|sui occupazione)\b",
+                 draft["body"], flags=re.I):
+        issues.append("known_italian_grammar_failure")
     # Warning-level stylistic heuristics are not a linguistic model.
     repeated_starts = [
         _normalize_sentence(t).split(" ")[:3] for t in texts if t
