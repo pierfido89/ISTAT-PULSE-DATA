@@ -17,7 +17,7 @@ class TaxonomyTest(unittest.TestCase):
         self.assertEqual(classify("Cresce l'occupazione femminile", taxonomy=self.tax)["primary_category"], "LAV-05")
 
     def test_ambiguity_stays_pending(self):
-        result=classify("Lavoro e inflazione: rapporto", taxonomy=self.tax)
+        result=classify("Occupazione e inflazione: rapporto", taxonomy=self.tax)
         self.assertEqual(result["primary_category"], UNCLASSIFIED)
         self.assertEqual(result["classification_status"], "review_needed")
 
