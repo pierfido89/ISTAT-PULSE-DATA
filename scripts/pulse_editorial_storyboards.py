@@ -70,10 +70,10 @@ def _article(card: dict, data: dict, angle: str = "main") -> dict:
     evidence = []
     headline = lead = body = ""
     if typ == "paired_indicators":
-        evidence = card["evidence"]
-        headline = card["headline_grounded"]
-        lead = card["lead_grounded"]
-        body = card["body_grounded"]
+        evidence = data["evidence"]
+        headline = data["headline_grounded"]
+        lead = data["lead_grounded"]
+        body = data["body_grounded"]
         method = ("Gli arrivi sono registrazioni d'ingresso; le presenze "
                   "sono notti, perciò le due grandezze non sono intercambiabili.")
     elif typ == "labor_categories_yoy_evidence":
