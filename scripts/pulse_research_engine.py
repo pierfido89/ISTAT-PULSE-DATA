@@ -21,6 +21,7 @@ try:
     from scripts.pulse_research_reading import match_passages, research_narrative_leads
     from scripts.pulse_research_labor import labor_research_signals
     from scripts.pulse_research_prices import price_research_signals
+    from scripts.pulse_research_new_domains import demography_research_signals
 except ModuleNotFoundError:
     from pulse_editorial_ai import _read_input, candidates
     from pulse_editorial_pairs import paired_candidates, grounded_story, FORBIDDEN_OUTPUTS
@@ -28,6 +29,7 @@ except ModuleNotFoundError:
     from pulse_research_reading import match_passages, research_narrative_leads
     from pulse_research_labor import labor_research_signals
     from pulse_research_prices import price_research_signals
+    from pulse_research_new_domains import demography_research_signals
 
 MAX_RESEARCH_PAIRS = 10
 
@@ -114,6 +116,7 @@ def research_report(articles: list[dict], limit: int = MAX_RESEARCH_PAIRS) -> di
     territory = territorial_signals(articles)
     labor = labor_research_signals(articles)
     prices = price_research_signals(articles)
+    demography = demography_research_signals(articles)
     readings = {}
     publication_coverage = []
     for article in articles:
@@ -239,6 +242,14 @@ def research_report(articles: list[dict], limit: int = MAX_RESEARCH_PAIRS) -> di
         "source_locations": r["source_locations"],
         "research_only": True,
     } for r in prices)
+    research_stories.extend({
+        "id": r["id"],
+        "story_type": "provisional_population_balance_rounded_thousands",
+        "editorial_priority_points": 40,
+        "source_url": r["source_url"],
+        "source_locations": r["source_locations"],
+        "research_only": True,
+    } for r in demography)
     research_stories.sort(key=lambda r: (
         -r["editorial_priority_points"], r["story_type"], r["id"]
     ))
@@ -255,6 +266,7 @@ def research_report(articles: list[dict], limit: int = MAX_RESEARCH_PAIRS) -> di
         "territorial_signals": territory,
         "labor_signals": labor,
         "price_signals": prices,
+        "demography_signals": demography,
         "research_stories": research_stories,
         "publication_coverage": publication_coverage,
         "narrative_leads_unverified": narrative_leads,
@@ -270,6 +282,7 @@ def research_report(articles: list[dict], limit: int = MAX_RESEARCH_PAIRS) -> di
             "research_stories_count": len(research_stories),
             "labor_evidenced_signals": len(labor),
             "prices_evidenced_signals": len(prices),
+            "demography_evidenced_signals": len(demography),
             "narrative_leads_need_independent_verification": len(narrative_leads),
         },
         "checks": {
@@ -306,6 +319,7 @@ def main(argv=None) -> int:
             "historical_signals": len(report["historical_signals"]),
             "labor_signals": len(report["labor_signals"]),
             "price_signals": len(report["price_signals"]),
+            "demography_signals": len(report["demography_signals"]),
             "territorial_signals": len(report["territorial_signals"]),
             "narrative_leads_unverified": len(report["narrative_leads_unverified"]),
             "pdf_coverage": report["publication_coverage"],
