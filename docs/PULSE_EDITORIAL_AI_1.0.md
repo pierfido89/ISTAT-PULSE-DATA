@@ -126,6 +126,65 @@ restano `review_required` anche quando non vengono rilevati errori.
 La prossima prova con Qwen3 reale va eseguita sul Surface aggiornando il
 repository; i test in GitHub Actions NON avviano un modello Qwen.
 
+## Diagnosi delle prime tre bozze locali: correzione v1.2
+
+Il file `bozze_q2_2026.json` generato realmente sul Surface ha prodotto
+3 bozze respinte. Non era solo un problema del modello: il controllo v1.1
+aveva falsi rifiuti su tre casi legittimi, ma ometteva altri errori reali.
+
+**Errori rilevati e rimedi verificabili:**
+
+- `4,3%` / `0,9%` dopo «calo del» sono magnitudini corrette per
+  variazioni ufficiali negative. Corretto il parser dei numeri italiani
+  e aggiunta una verifica INDIPENDENTE della direzione: «aumento del
+  4,3%» continua a essere respinto per una variazione ufficiale -4,3%.
+- Il riferimento al 2025, quando l'evidenza ufficiale indica una
+  variazione tendenziale del Q2 2026, è ammesso. Non vengono però
+  fabbricati valori assoluti 2025.
+- Un articolo che scrive «arrivi, non presenze» non viene più respinto
+  come se avesse riportato un secondo indicatore, mentre una vera
+  affermazione su «arrivi in calo e presenze in crescita» senza due
+  evidenze separate continua a essere bloccata.
+- **Quadrimestre** al posto di **trimestre** produce ora un rifiuto
+  esplicito, indipendentemente dal fatto che i numeri siano corretti.
+- **Bed & breakfast** non può essere sostituito agli «esercizi
+  alberghieri» della fonte; il nome della struttura viene controllato.
+- Il totale Q2 2026 **15.184.700** è errato rispetto al dato ufficiale
+  **15.184.702**: anche il minimo arrotondamento dei totali resta
+  respinto.
+- La categoria `POP-01` risultava dal termine «residenti» nel
+  testo generato. Il segmento ufficiale alberghiero con indicatori
+  `Arrivi` / `Presenze` è ora associato alla sottocategoria
+  turistica `SOC-04`, con classificazione comunque provvisoria.
+- Corretto il prompt per scrivere «clienti residenti negli esercizi
+  alberghieri», evitando «alberghi residenti», strutture per soli
+  non residenti e formulazioni ripetitive.
+
+**Tentativo correttivo locale:** con l'impostazione predefinita,
+una bozza respinta può essere riscritta una sola volta da Qwen3, usando
+come feedback esclusivamente i codici degli errori del controllo.
+`quality.attempt_history` conserva le criticità delle generazioni,
+`generator.attempts` indica quanti tentativi sono stati effettuati.
+Il secondo tentativo NON aggira le regole: se resta scorretto viene
+respinto. Il comportamento si disattiva con `--max-retries 0`.
+Un tentativo in più può richiedere minuti sul Surface ma non comporta
+addebiti per API o servizi cloud.
+
+**Aggiornamento della copia Windows già presente:**
+
+    cd C:\Users\fiori\ISTAT-PULSE-AI-TEST
+    git pull origin feat/pulse-editorial-ai-1.0
+    py -m unittest discover -s tests -p "test_pulse_editorial*.py" -v
+    py scripts/pulse_editorial_ai.py --input workbench/turismo_q2_2026.json --output workbench/bozze_q2_2026_v12.json --limit 3
+
+Al termine allegare il nuovo file `bozze_q2_2026_v12.json`.
+Il precedente file rimane intatto per confrontare risultati.
+**Nessuna bozza è pubblicabile automaticamente**; `review_required`
+significa solo che non sono emersi errori nei controlli implementati,
+NON che sia stato dimostrato il rigore semantico completo. La qualità
+linguistica e statistica del nuovo prompt su Qwen3 reale va ancora
+verificata con il test sul Surface.
+
 ## Rapporto con la Bibbia tecnica
 
 Il documento ufficiale e vivo
