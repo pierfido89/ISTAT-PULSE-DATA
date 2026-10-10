@@ -89,6 +89,43 @@ I test GitHub Actions sostituiscono la risposta di Ollama con un mock,
 per evitare chiamate AI e costi. Non dimostrano che Qwen sia già
 installato sul PC dell'utente, né che la sua qualità sia soddisfacente.
 
+## Correzione dopo il primo test Qwen3 (10 ottobre 2026)
+
+Il primo testo generato sul Surface, sul turismo Q2 2026, aveva un titolo
+adeguato ma deduceva, senza prove, un «maggiore utilizzo del servizio da
+parte di soggetti residenti o di gruppi più stabili» dai soli aggregati.
+Aveva inoltre descritto i dati come «disponibili per ISTAT PULSE»,
+formulazione che può confondere il prototipo con la fonte primaria.
+
+**Modifica applicata:** prompt interno v1.1, con divieto esplicito di
+inferenze su popolazioni, gruppi, durata media, comportamenti, cause e
+titolarità delle rilevazioni non documentate. Il modulo
+`scripts/pulse_editorial_inference.py` esegue un secondo controllo
+deterministico, contestuale ai dati forniti al modello:
+
+- Reiezione delle affermazioni su residenti/non residenti se non coerenti
+  con il segmento statistico della singola evidenza.
+- Reiezione delle ipotesi su «gruppi più stabili» o altre categorie
+  demografiche non presenti nella fonte strutturata.
+- Reiezione della «permanenza media» se non esiste un confronto omogeneo
+  verificato di arrivi e presenze.
+- Divieto di trasformare gli arrivi in numero di persone/turisti unici.
+- Nessuna possibilità di introdurre un indicatore secondario non incluso
+  nello specifico candidato editoriale.
+- Divieto di attribuire a ISTAT PULSE il ruolo della fonte che rileva
+  o produce le statistiche.
+
+I test di regressione riproducono l'errore realmente osservato, verificano
+che venga respinto e che i riferimenti ai residenti **restino ammessi**
+quando le tabelle li documentano esplicitamente.
+
+**Limite dichiarato:** è un controllo lessicale mirato, NON una verifica
+semantica infallibile. Frasi nuove, sinonimi imprevisti, correlazioni
+spurie e sfumature linguistiche possono sfuggire al filtro: le bozze
+restano `review_required` anche quando non vengono rilevati errori.
+La prossima prova con Qwen3 reale va eseguita sul Surface aggiornando il
+repository; i test in GitHub Actions NON avviano un modello Qwen.
+
 ## Rapporto con la Bibbia tecnica
 
 Il documento ufficiale e vivo
