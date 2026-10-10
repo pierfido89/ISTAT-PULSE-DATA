@@ -247,6 +247,66 @@ Caricare `bozze_q2_2026_v13.json` nella conversazione per una
 automatici con prova reale di miglioramento linguistico. Nessuna
 integrazione nell'APK, nessuna pubblicazione autonoma e costo API 0 €.
 
+## Terzo test reale sul Surface: v1.3 e aggiornamento v1.4
+
+Il JSON originale \`bozze_q2_2026_v13.json\` fornito dall'utente contiene
+**3 bozze, tutte \`review_required\` e senza errori segnalati**. Le
+evidenze primarie per i tre indicatori sono state conservate correttamente:
+
+- Residenti, arrivi alberghieri Q2 2026: 12.464.038; -4,3% YoY.
+- Residenti, presenze alberghiere Q2 2026: 32.162.873; +1,7% YoY.
+- Non residenti, arrivi alberghieri Q2 2026: 15.184.702; -0,9% YoY.
+
+**Esito editoriale umano: 0/3 pronti alla pubblicazione come articoli.**
+Il primo testo ripeteva soltanto il calo degli arrivi, il secondo
+scriveva «confermando una tendenza positiva» senza una serie storica
+sufficiente, il terzo affermava «senza variazioni significative» per
+la composizione delle strutture senza informazioni o test statistici.
+Queste ultime due sono inferenze da bloccare, non semplici difetti
+stilistici. Il numero 3/3 superato dal Quality Gate v1.3 NON
+significava tre articoli scientificamente ed editorialmente validi.
+
+**Correzioni v1.4:**
+
+1. Controllo deterministico che blocca l'attribuzione di **trend
+   pluriennali** non dimostrati, distinguendola correttamente
+   dall'espressione tecnica «variazione tendenziale».
+2. Blocco delle affermazioni sulla **significatività statistica**,
+   positiva o negativa, senza prova specifica, e delle conclusioni
+   non fondate sull'assenza di cambiamenti nella composizione delle
+   strutture o categorie di clienti.
+3. Avvisi separati per titoli che riportano solo un'etichetta
+   dell'indicatore e testi che ripetono la variazione senza aggiungere
+   informazioni. Gli avvisi non sono una certificazione stilistica.
+4. In \`pulse_editorial_brief.py\` aggiunta una definizione
+   controllata dell'indicatore (arrivi o presenze) affinché il
+   modello possa spiegare un concetto corretto, anziché espandere
+   il paragrafo con inferenze generiche.
+5. I documenti generati da **una sola evidenza indipendente**
+   ricevono \`editorial_format=single_finding_statistical_brief\`
+   e \`full_article_evidence_status=requires_multiple_independent_findings\`.
+   Restano bozze e non entrano automaticamente nell'app.
+6. Test di regressione specifici riproducono le tre uscite effettive
+   della v1.3; il modello vero dovrà essere rieseguito sul Surface
+   per valutare la qualità linguistica v1.4.
+
+**Decisione progettuale:** invece di inseguire solo punteggi
+«3 su 3», la successiva capacità di maggior valore sarà riunire
+in un'unica storia **due o più indicatori indipendenti e
+comparabili** dallo stesso PDF (per esempio arrivi e presenze
+per lo stesso territorio, categoria e trimestre) e controllare
+numericamente tutte le affermazioni. Una singola variazione
+resterà una scheda/flash statistica, non verrà falsamente
+promossa ad articolo approfondito.
+
+**Riprova Surface, senza costi API e senza APK:**
+
+    cd C:\Users\fiori\ISTAT-PULSE-AI-TEST
+    git pull origin feat/pulse-editorial-ai-1.0
+    py -m unittest discover -s tests -p "test_pulse_editorial*.py" -v
+    py scripts/pulse_editorial_ai.py --input workbench/turismo_q2_2026.json --output workbench/bozze_q2_2026_v14.json --limit 3
+
+
 ## Rapporto con la Bibbia tecnica
 
 Il documento ufficiale e vivo
