@@ -79,8 +79,15 @@ def inference_issues(text: str, fact: dict) -> list[str]:
     # even when no unsourced numeric token is present.
     period = str(fact.get("period") or "")
     if re.fullmatch(r"20\d\d-Q[1-4]", period):
-        if re.search(r"\bquadrimestr\w*|\bsemestr\w*", normalized):
+        if re.search(r"\bquadrimestr\w*|\bsemestr\w*|\bbimestr\w*", normalized):
             issues.append("wrong_period_duration")
+        # A quarter is THREE months: catches real v1.4 Qwen sentences
+        # like "si riferisce al periodo di due mesi" despite a correct
+        # "secondo trimestre" in the introduction.
+        if re.search(r"\b(?:periodo|trimestre|intervallo|arco)\s+"
+                     r"(?:di|della\s+durata\s+di|pari\s+a)\s+"
+                     r"(?:due|2|quattro|4|sei|6)\s+mes[ie]\b", normalized):
+            issues.append("wrong_quarter_month_count")
         # A 2026-Q2 observation is never "first quarter" or Q3.
         q = int(period[-1])
         ordinals = {"primo": 1, "secondo": 2, "terzo": 3, "quarto": 4,
