@@ -1,6 +1,6 @@
 import unittest
 from scripts.pulse_editorial_evidence import enrich, source_metadata_from_text
-from scripts.pulse_deep_tables import extract_mixed_table_rows
+from scripts.pulse_deep_tables import extract_mixed_table_rows, extract_mixed_text_lines
 from scripts.pulse_evidence import matrix_evidence
 
 SOURCE = "https://www.istat.it/dati/serie.csv"
@@ -101,6 +101,24 @@ class QualityGateTests(unittest.TestCase):
         entry["verified_series"]=evidence
         enrich(entry)
         self.assertEqual(entry["patterns"], ["RECORD"])
+
+    def test_pdf_text_layout_with_trailing_group_labels(self):
+        page = """PROSPETTO 1. FLUSSI TURISTICI.
+        Aprile-giugno 2026 (a). Valori assoluti e variazioni percentuali 2025/26.
+        Totale II trimestre
+        Esercizi alberghieri
+        Arrivi 3.505.275 4.181.273 4.777.490 12.464.038 -2,0 -3,1 -6,9 -4,3
+        Residenti
+        Presenze 7.715.679 9.341.095 15.106.099 32.162.873 -4,1 5,6 2,5 1,7
+        Arrivi 7.733.239 9.416.466 10.499.035 27.648.740 0,1 -0,3 -6,1 -2,5
+        Totale
+        Presenze 19.802.014 24.522.478 33.287.454 77.611.946 -0,9 6,2 1,8 2,4"""
+        findings=extract_mixed_text_lines(page, url=SOURCE, page_number=3,
+                                         source_sha256="f"*64)
+        self.assertEqual(len(findings),4)
+        self.assertEqual(findings[0]["segment"]["residence"],"residenti")
+        self.assertEqual(findings[3]["segment"]["residence"],"totale")
+        self.assertEqual(findings[3]["reported_yoy_change_pct"],2.4)
 
     def test_mixed_table_requires_explicit_caption_and_segment(self):
         self.assertEqual(extract_mixed_table_rows(
