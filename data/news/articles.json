@@ -1,11 +1,181 @@
 {
-  "generated_at": "2026-10-09T20:10:16.422782+00:00",
+  "generated_at": "2026-10-10T04:11:12.805878+00:00",
   "articles": [
+    {
+      "id": "PULSE-76FDCC1F062A3A1B",
+      "story_fingerprint": "76fdcc1f062a3a1b3cf3f81e",
+      "published_at": "2026-10-10T04:11:12.805878+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 86,
+      "public_source": {
+        "url": "https://www.istat.it/it/files//2023/11/REPORTCensimprese.pdf",
+        "domain": "istat.it",
+        "role": "primary_statistical_source",
+        "verification_method": "named_or_topic_domain_search",
+        "verification_score": 79
+      },
+      "discovery": {
+        "visible": false,
+        "role": "hidden_radar"
+      },
+      "period_reference": null,
+      "latest_source_update": null,
+      "headline": "Economia, nuovo dato per Emilia-Romagna: 700mila",
+      "summary": "Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+      "statistical_claims": [
+        {
+          "raw_value": "700mila",
+          "verified": true
+        },
+        {
+          "raw_value": "700mila",
+          "verified": true
+        }
+      ],
+      "verified_series": [],
+      "territories": [
+        "emilia-romagna",
+        "lombardia",
+        "roma",
+        "toscana"
+      ],
+      "chart_spec": {
+        "type": "auto",
+        "status": "requires_primary_series",
+        "reason": "candidate_contains_multiple_numeric_values"
+      },
+      "map_spec": {
+        "level": "auto",
+        "territories": [
+          "emilia-romagna",
+          "lombardia",
+          "roma",
+          "toscana"
+        ],
+        "status": "requires_primary_geodata"
+      },
+      "editorial_status": "verified_primary_match",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-F6A0C16B1B412DDD",
+      "story_fingerprint": "f6a0c16b1b412dddf8e4ebe8",
+      "published_at": "2026-10-09T21:44:20+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 47,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMitAJBVV95cUxPVTVnU1Judy1nMjN4Qjktb0xXZlAxQVZ4M2RwbTVVMDhRZFVOVmQtMGdBejZWdXRwbk9za3E0dTFEcFNFXzd6MnRmZC1xSmpKOC1QVXpkeXBHSEpMd0FMRTZuc0lHZ1pnQXI4c19zTlNmLWFUdnVXVVgtM3E0cklQSVhKUEdnM3BpTTU2OXdoX2NIYjlBNkI3SnE5QTdVeFJHSHQxai1QQ1NVYzNGVnBwOFB3RGdFdHNVa29saTlqNUZRN3RYR2NURzZ5dHF1NV90Mk8weFBuQ3NuZjFOamdtdUw3S1JQU1BCRXM0b1l5QWNZOUZXT0U3dXNBY3d6SDhOV2xTZnNVeEo5ekZteERBR1dZVDNoSlhRZm5weG5TM29KejA4YmFpOW5LWWRnbzVTR2pBRNIBtAJBVV95cUxPVTVnU1Judy1nMjN4Qjktb0xXZlAxQVZ4M2RwbTVVMDhRZFVOVmQtMGdBejZWdXRwbk9za3E0dTFEcFNFXzd6MnRmZC1xSmpKOC1QVXpkeXBHSEpMd0FMRTZuc0lHZ1pnQXI4c19zTlNmLWFUdnVXVVgtM3E0cklQSVhKUEdnM3BpTTU2OXdoX2NIYjlBNkI3SnE5QTdVeFJHSHQxai1QQ1NVYzNGVnBwOFB3RGdFdHNVa29saTlqNUZRN3RYR2NURzZ5dHF1NV90Mk8weFBuQ3NuZjFOamdtdUw3S1JQU1BCRXM0b1l5QWNZOUZXT0U3dXNBY3d6SDhOV2xTZnNVeEo5ekZteERBR1dZVDNoSlhRZm5weG5TM29KejA4YmFpOW5LWWRnbzVTR2pBRA?oc=5",
+        "domain": "Corriere Roma",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Lotta globale alla 'ndrangheta: record di arresti e sequestri nel 2025 grazie al progetto internazionale I-Can - Corriere Roma",
+      "summary": "Lotta globale alla 'ndrangheta: record di arresti e sequestri nel 2025 grazie al progetto internazionale I-Can Corriere Roma",
+      "statistical_claims": [
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "roma"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-A906182DEEF86950",
+      "story_fingerprint": "a906182deef86950a8d9e139",
+      "published_at": "2026-10-09T20:54:03+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQLWtJYTZXSEg3M2VER3Q2X1htZDJQdG9uVVhtWDktenVmYXJaS1dzLVlKdDlDcndUX2J0X292alU3dUdDRXNpeThnSUwxLW9fb2g5WTFfNjQ1WGFraWFvNnlYdkh2UHdRbnhQUXR0LTZlSVdudGszNU1FNjJtZllUZ3ZJckpmdm90YzhoS0xKRERnX29jckkwNlp2MEprV2RrLUQ3dmtWRU1SR1pRWmJCV010bDhzZVB5aUJlYw?oc=5",
+        "domain": "Made in Pompei",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Rapporto Crea sull’export agroalimentare italiano: nel 2025 superati i 72 miliardi - Made in Pompei",
+      "summary": "Rapporto Crea sull’export agroalimentare italiano: nel 2025 superati i 72 miliardi Made in Pompei",
+      "statistical_claims": [
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "72 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "72 miliardi",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-432037A7AA2FBA88",
+      "story_fingerprint": "432037a7aa2fba88035c0cf3",
+      "published_at": "2026-10-09T19:12:34+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQbWZUS0Zkekw2TVlpTTZtWlVXQWNxeVFQcUR0TjFtd2FWSU9leVdfTGtUZDdaT1hzOHNGR2dNTVplNzM1blJZUS04MzlJYnE0ODFSZXhSSFlTV3NubEFoRHBWSEJLQklBNjBMWVJzeU96T3ZlRDI3ZTl0dFNzbmgyOFl4TENRMVBaaFhzbTl2bkVSU1BycEIyWU9SZ3V5eEVEQWJKdlprMVBBUlUtT1M5MWtPc9IBswFBVV95cUxQbWZUS0Zkekw2TVlpTTZtWlVXQWNxeVFQcUR0TjFtd2FWSU9leVdfTGtUZDdaT1hzOHNGR2dNTVplNzM1blJZUS04MzlJYnE0ODFSZXhSSFlTV3NubEFoRHBWSEJLQklBNjBMWVJzeU96T3ZlRDI3ZTl0dFNzbmgyOFl4TENRMVBaaFhzbTl2bkVSU1BycEIyWU9SZ3V5eEVEQWJKdlprMVBBUlUtT1M5MWtPcw?oc=5",
+        "domain": "la Repubblica",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "L’ultramaratona “100 km delle Alpi” fa il record di partecipanti: in 250 da Torino a Saint-Vincent - la Repubblica",
+      "summary": "L’ultramaratona “100 km delle Alpi” fa il record di partecipanti: in 250 da Torino a Saint-Vincent la Repubblica",
+      "statistical_claims": [
+        {
+          "raw_value": "100 ",
+          "verified": false
+        },
+        {
+          "raw_value": "250 ",
+          "verified": false
+        },
+        {
+          "raw_value": "100 ",
+          "verified": false
+        },
+        {
+          "raw_value": "250 ",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "torino"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
     {
       "id": "PULSE-44C989BE2F08B47C",
       "story_fingerprint": "44c989be2f08b47cf29a577f",
       "published_at": "2026-10-09T17:18:32+00:00",
-      "last_seen_at": "2026-10-09T20:10:16.422782+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
       "topic": "SALUTE",
       "pulse_score": 50,
       "patterns": [],
@@ -52,7 +222,7 @@
       "id": "PULSE-3A71543CD8672C57",
       "story_fingerprint": "3a71543cd8672c57064a1b23",
       "published_at": "2026-10-09T11:15:28+00:00",
-      "last_seen_at": "2026-10-09T20:10:16.422782+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 50,
       "patterns": [],
@@ -99,7 +269,7 @@
       "id": "PULSE-7DD7B8E2BE256506",
       "story_fingerprint": "7dd7b8e2be256506049325cd",
       "published_at": "2026-10-09T11:10:37+00:00",
-      "last_seen_at": "2026-10-09T20:10:16.422782+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
       "topic": "LAVORO",
       "pulse_score": 47,
       "patterns": [],
@@ -171,7 +341,7 @@
       "id": "PULSE-A40035E2B3CFE6B6",
       "story_fingerprint": "a40035e2b3cfe6b66eca5dc2",
       "published_at": "2026-10-09T09:08:00+00:00",
-      "last_seen_at": "2026-10-09T20:10:16.422782+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 64,
       "patterns": [],
@@ -210,7 +380,7 @@
       "id": "PULSE-6432FBBFD9EE664D",
       "story_fingerprint": "6432fbbfd9ee664d1c3a665d",
       "published_at": "2026-10-09T08:58:49+00:00",
-      "last_seen_at": "2026-10-09T20:10:16.422782+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
       "topic": "MOBILITA",
       "pulse_score": 84,
       "public_source": {
@@ -269,7 +439,7 @@
       "id": "PULSE-EFA336A7BA0A40C4",
       "story_fingerprint": "efa336a7ba0a40c461333836",
       "published_at": "2026-10-09T08:46:00+00:00",
-      "last_seen_at": "2026-10-09T20:10:16.422782+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 45,
       "patterns": [],
@@ -316,7 +486,7 @@
       "id": "PULSE-C545089630B8EEA5",
       "story_fingerprint": "c545089630b8eea51e9bdc3b",
       "published_at": "2026-10-09T08:00:00+00:00",
-      "last_seen_at": "2026-10-09T20:10:16.422782+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
       "topic": "LAVORO",
       "pulse_score": 84,
       "public_source": {
@@ -371,7 +541,7 @@
       "id": "PULSE-81DFEFB42997622E",
       "story_fingerprint": "81dfefb42997622e95b6a87f",
       "published_at": "2026-10-09T07:42:00+00:00",
-      "last_seen_at": "2026-10-09T14:13:48.241051+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
       "topic": "ALTRO",
       "pulse_score": 49,
       "patterns": [],
@@ -682,7 +852,7 @@
       "id": "PULSE-BECE0C6F763DF3F7",
       "story_fingerprint": "bece0c6f763df3f7c60f76a8",
       "published_at": "2026-10-08T12:18:24+00:00",
-      "last_seen_at": "2026-10-09T14:13:48.241051+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
       "topic": "ALTRO",
       "pulse_score": 49,
       "patterns": [],
@@ -724,7 +894,7 @@
       "id": "PULSE-DC00193403C3AB68",
       "story_fingerprint": "dc00193403c3ab680b531f76",
       "published_at": "2026-10-08T12:15:48+00:00",
-      "last_seen_at": "2026-10-09T20:10:16.422782+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
       "topic": "ALTRO",
       "pulse_score": 49,
       "patterns": [],
@@ -765,7 +935,7 @@
       "id": "PULSE-B4E78988A8A00B0B",
       "story_fingerprint": "b4e78988a8a00b0bdc28d34c",
       "published_at": "2026-10-08T11:28:34+00:00",
-      "last_seen_at": "2026-10-09T07:39:50.612528+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 54,
       "patterns": [],
@@ -804,7 +974,7 @@
       "id": "PULSE-A5806822EA212686",
       "story_fingerprint": "a5806822ea212686d2cde312",
       "published_at": "2026-10-08T11:12:00+00:00",
-      "last_seen_at": "2026-10-09T09:13:23.192673+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
       "topic": "CASA",
       "pulse_score": 49,
       "patterns": [],
@@ -1029,7 +1199,7 @@
       "id": "PULSE-DDBBD6E647CA6EF9",
       "story_fingerprint": "ddbbd6e647ca6ef9e2f38473",
       "published_at": "2026-10-08T07:59:55+00:00",
-      "last_seen_at": "2026-10-09T20:10:16.422782+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
       "topic": "LAVORO",
       "pulse_score": 90,
       "public_source": {
@@ -1108,7 +1278,7 @@
       "id": "PULSE-142B6FC3D7570877",
       "story_fingerprint": "142b6fc3d7570877ce7162e2",
       "published_at": "2026-10-08T07:12:23+00:00",
-      "last_seen_at": "2026-10-09T20:10:16.422782+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
       "topic": "ALTRO",
       "pulse_score": 70,
       "patterns": [],
@@ -1157,7 +1327,7 @@
       "id": "PULSE-D3F4DC725ECBD0D5",
       "story_fingerprint": "d3f4dc725ecbd0d57cb39523",
       "published_at": "2026-10-08T06:50:10+00:00",
-      "last_seen_at": "2026-10-09T20:10:16.422782+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
       "topic": "ISTRUZIONE",
       "pulse_score": 49,
       "patterns": [],
@@ -1196,7 +1366,7 @@
       "id": "PULSE-4DBD5172BB220CFF",
       "story_fingerprint": "4dbd5172bb220cffe19fd56e",
       "published_at": "2026-10-08T06:18:25+00:00",
-      "last_seen_at": "2026-10-09T20:10:16.422782+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
       "topic": "SALUTE",
       "pulse_score": 55,
       "patterns": [],
@@ -1342,7 +1512,7 @@
       "id": "PULSE-BC9555C3BCE88DB9",
       "story_fingerprint": "bc9555c3bce88db98be0f9fc",
       "published_at": "2026-10-07T13:07:40+00:00",
-      "last_seen_at": "2026-10-09T20:10:16.422782+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
       "topic": "ALTRO",
       "pulse_score": 70,
       "patterns": [],
@@ -1392,7 +1562,7 @@
       "id": "PULSE-F07B327B5B483D26",
       "story_fingerprint": "f07b327b5b483d268c67ce13",
       "published_at": "2026-10-07T11:29:51+00:00",
-      "last_seen_at": "2026-10-09T14:13:48.241051+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
       "topic": "ALTRO",
       "pulse_score": 59,
       "patterns": [],
@@ -1433,7 +1603,7 @@
       "id": "PULSE-0DFF7DF6BCC01521",
       "story_fingerprint": "0dff7df6bcc01521fd029a11",
       "published_at": "2026-10-07T10:31:59+00:00",
-      "last_seen_at": "2026-10-09T20:10:16.422782+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
       "topic": "AMBIENTE",
       "pulse_score": 70,
       "patterns": [],
@@ -1480,7 +1650,7 @@
       "id": "PULSE-5D4D75DB184647D9",
       "story_fingerprint": "5d4d75db184647d9c889d5f7",
       "published_at": "2026-10-07T09:37:46+00:00",
-      "last_seen_at": "2026-10-09T20:10:16.422782+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
       "topic": "SALUTE",
       "pulse_score": 50,
       "patterns": [],
@@ -1527,7 +1697,7 @@
       "id": "PULSE-636A87BF28177692",
       "story_fingerprint": "636a87bf28177692d4659b43",
       "published_at": "2026-10-07T09:23:00+00:00",
-      "last_seen_at": "2026-10-09T20:10:16.422782+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 69,
       "patterns": [],
@@ -1616,7 +1786,7 @@
       "id": "PULSE-6EE4895A1185C3B3",
       "story_fingerprint": "6ee4895a1185c3b39e070e88",
       "published_at": "2026-10-07T09:00:05+00:00",
-      "last_seen_at": "2026-10-09T20:10:16.422782+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 92,
       "public_source": {
@@ -1800,10 +1970,57 @@
       "publication_status": "published"
     },
     {
+      "id": "PULSE-4DE475DF30E9292A",
+      "story_fingerprint": "4de475df30e9292a092b5880",
+      "published_at": "2026-10-07T08:47:54+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 65,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPd3NNRl9TQlVDZ25nS1VobXZsMlFCWGFqaHdib09GMjZMdUdDTzZfOVdIUGZzLXpqWWFsc1Y0dEY5NGpYY1dvLTc2bUQtd2ZsdjBteTd1QkdFWWtRNC1XR3pmM1RGU3R6M05XZHdtWHQtVzlKdE1IYUU2RkxTOFF2T2lmOTYwV3d0enpGa0Y2Vk4ydG1mT0pqT29xNEdpMjZpaC0xZFp3?oc=5",
+        "domain": "Borsa Corriere",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Banca Generali, settembre record con raccolta netta di 554 milioni, 6,3 miliardi da inizio anno (+42,3%) - Borsa Corriere",
+      "summary": "Banca Generali, settembre record con raccolta netta di 554 milioni, 6,3 miliardi da inizio anno (+42,3%) Borsa Corriere",
+      "statistical_claims": [
+        {
+          "raw_value": "554 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "6,3 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "+42,3%",
+          "verified": false
+        },
+        {
+          "raw_value": "554 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "6,3 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "+42,3%",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
       "id": "PULSE-C296BEF33FDB87B1",
       "story_fingerprint": "c296bef33fdb87b1416a7588",
       "published_at": "2026-10-07T07:21:11+00:00",
-      "last_seen_at": "2026-10-09T20:10:16.422782+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
       "topic": "ALTRO",
       "pulse_score": 59,
       "patterns": [],
@@ -1842,7 +2059,7 @@
       "id": "PULSE-3B70E07B2204D857",
       "story_fingerprint": "3b70e07b2204d8578d43f5ac",
       "published_at": "2026-10-07T06:20:38+00:00",
-      "last_seen_at": "2026-10-09T20:10:16.422782+00:00",
+      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
       "topic": "LAVORO",
       "pulse_score": 49,
       "patterns": [],
