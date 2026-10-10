@@ -1,0 +1,632 @@
+{
+  "version": "1.0",
+  "published": "2026-10-10",
+  "status": "approved_specification",
+  "scope": [
+    "NOTIZIE",
+    "TERRITORI",
+    "GREEN",
+    "PUBBLICAZIONI",
+    "ALTRO"
+  ],
+  "unclassified_code": "NON_CLASSIFICATO",
+  "description": "Tassonomia tematica unica ISTAT PULSE. Le regole automatiche senza evidenza completa rimangono provvisorie.",
+  "rules": {
+    "main_categories": 1,
+    "max_secondary_categories": 2,
+    "never_duplicate_articles": true,
+    "geography_separate": true,
+    "census_as_document_type": true,
+    "focus_as_cross_topic_collection": true,
+    "pulse_pattern_separate": true,
+    "green_positive_requires_verified_improvement": true,
+    "provisional_when_rules_only": true,
+    "ai_not_required_for_base_pipeline": true
+  },
+  "groups": [
+    {
+      "code": "POP",
+      "label": "Popolazione e famiglie",
+      "categories": [
+        {
+          "code": "POP-01",
+          "label": "Popolazione e dinamiche demografiche",
+          "keywords": [
+            "popolazione residente",
+            "demografia",
+            "demografico",
+            "residenti",
+            "crescita demografica"
+          ]
+        },
+        {
+          "code": "POP-02",
+          "label": "Natalità e fecondità",
+          "keywords": [
+            "natalità",
+            "nascite",
+            "fecondità",
+            "nati vivi"
+          ]
+        },
+        {
+          "code": "POP-03",
+          "label": "Mortalità e longevità",
+          "keywords": [
+            "mortalità",
+            "decessi",
+            "longevità",
+            "speranza di vita"
+          ]
+        },
+        {
+          "code": "POP-04",
+          "label": "Migrazioni e cittadinanza",
+          "keywords": [
+            "migrazioni",
+            "immigrazione",
+            "emigrazione",
+            "cittadinanza",
+            "stranieri residenti"
+          ]
+        },
+        {
+          "code": "POP-05",
+          "label": "Famiglie, nuclei e convivenze",
+          "keywords": [
+            "famiglie",
+            "nuclei familiari",
+            "convivenze",
+            "matrimoni"
+          ]
+        },
+        {
+          "code": "POP-06",
+          "label": "Redditi, patrimoni e risparmio familiare",
+          "keywords": [
+            "reddito familiare",
+            "redditi familiari",
+            "risparmio delle famiglie",
+            "patrimonio familiare"
+          ]
+        },
+        {
+          "code": "POP-07",
+          "label": "Consumi e spese delle famiglie",
+          "keywords": [
+            "spesa delle famiglie",
+            "consumi delle famiglie",
+            "spesa familiare"
+          ]
+        },
+        {
+          "code": "POP-08",
+          "label": "Povertà economica e disuguaglianze",
+          "keywords": [
+            "povertà assoluta",
+            "povertà relativa",
+            "disuguaglianze economiche",
+            "rischio povertà"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SOC",
+      "label": "Società e qualità della vita",
+      "categories": [
+        {
+          "code": "SOC-01",
+          "label": "Salute e sanità",
+          "keywords": [
+            "sanità",
+            "ospedali",
+            "salute",
+            "assistenza sanitaria"
+          ]
+        },
+        {
+          "code": "SOC-02",
+          "label": "Welfare e assistenza sociale",
+          "keywords": [
+            "assistenza sociale",
+            "welfare",
+            "servizi sociali"
+          ]
+        },
+        {
+          "code": "SOC-03",
+          "label": "Cultura, comunicazione e media",
+          "keywords": [
+            "cultura",
+            "lettura",
+            "editoria",
+            "comunicazione",
+            "musei"
+          ]
+        },
+        {
+          "code": "SOC-04",
+          "label": "Turismo, viaggi e tempo libero",
+          "keywords": [
+            "turismo",
+            "presenze turistiche",
+            "viaggi",
+            "pernottamenti"
+          ]
+        },
+        {
+          "code": "SOC-05",
+          "label": "Giustizia, criminalità e sicurezza",
+          "keywords": [
+            "criminalità",
+            "sicurezza",
+            "giustizia",
+            "reati",
+            "delitti"
+          ]
+        },
+        {
+          "code": "SOC-06",
+          "label": "Inclusione, pari opportunità e diritti",
+          "keywords": [
+            "inclusione",
+            "discriminazione",
+            "pari opportunità",
+            "violenza sulle donne"
+          ]
+        },
+        {
+          "code": "SOC-07",
+          "label": "Partecipazione sociale e opinioni",
+          "keywords": [
+            "partecipazione civica",
+            "opinione pubblica",
+            "fiducia istituzionale"
+          ]
+        },
+        {
+          "code": "SOC-08",
+          "label": "Benessere, sport e stili di vita",
+          "keywords": [
+            "benessere",
+            "attività sportiva",
+            "sport",
+            "stili di vita"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LAV",
+      "label": "Istruzione e lavoro",
+      "categories": [
+        {
+          "code": "LAV-01",
+          "label": "Prima infanzia e servizi educativi",
+          "keywords": [
+            "nidi d'infanzia",
+            "asili nido",
+            "servizi educativi"
+          ]
+        },
+        {
+          "code": "LAV-02",
+          "label": "Scuola e istruzione",
+          "keywords": [
+            "scuola",
+            "istruzione scolastica",
+            "studenti",
+            "dispersione scolastica"
+          ]
+        },
+        {
+          "code": "LAV-03",
+          "label": "Università e istruzione superiore",
+          "keywords": [
+            "università",
+            "laureati",
+            "atenei",
+            "istruzione superiore"
+          ]
+        },
+        {
+          "code": "LAV-04",
+          "label": "Formazione professionale e competenze",
+          "keywords": [
+            "formazione professionale",
+            "competenze",
+            "formazione continua"
+          ]
+        },
+        {
+          "code": "LAV-05",
+          "label": "Occupazione e disoccupazione",
+          "keywords": [
+            "occupazione",
+            "occupati",
+            "disoccupazione",
+            "tasso di disoccupazione",
+            "mercato del lavoro"
+          ]
+        },
+        {
+          "code": "LAV-06",
+          "label": "Retribuzioni e costo del lavoro",
+          "keywords": [
+            "retribuzioni",
+            "salari",
+            "stipendi",
+            "costo del lavoro"
+          ]
+        },
+        {
+          "code": "LAV-07",
+          "label": "Contratti, condizioni e sicurezza del lavoro",
+          "keywords": [
+            "contratti di lavoro",
+            "infortuni sul lavoro",
+            "sicurezza sul lavoro",
+            "precarietà"
+          ]
+        },
+        {
+          "code": "LAV-08",
+          "label": "Giovani, NEET e transizione scuola-lavoro",
+          "keywords": [
+            "neet",
+            "transizione scuola lavoro",
+            "giovani disoccupati"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECO",
+      "label": "Economia e imprese",
+      "categories": [
+        {
+          "code": "ECO-01",
+          "label": "PIL, conti nazionali e crescita",
+          "keywords": [
+            "pil",
+            "prodotto interno lordo",
+            "conti nazionali",
+            "crescita economica"
+          ]
+        },
+        {
+          "code": "ECO-02",
+          "label": "Inflazione, prezzi e potere d'acquisto",
+          "keywords": [
+            "inflazione",
+            "prezzi al consumo",
+            "potere d'acquisto",
+            "indice dei prezzi"
+          ]
+        },
+        {
+          "code": "ECO-03",
+          "label": "Imprese e imprenditorialità",
+          "keywords": [
+            "imprese",
+            "imprenditorialità",
+            "natalità imprese"
+          ]
+        },
+        {
+          "code": "ECO-04",
+          "label": "Industria e manifattura",
+          "keywords": [
+            "manifattura",
+            "produzione industriale",
+            "industria"
+          ]
+        },
+        {
+          "code": "ECO-05",
+          "label": "Costruzioni ed edilizia produttiva",
+          "keywords": [
+            "costruzioni",
+            "edilizia",
+            "permessi di costruire"
+          ]
+        },
+        {
+          "code": "ECO-06",
+          "label": "Commercio e servizi",
+          "keywords": [
+            "commercio al dettaglio",
+            "servizi",
+            "fatturato commercio"
+          ]
+        },
+        {
+          "code": "ECO-07",
+          "label": "Agricoltura e sistema agroalimentare",
+          "keywords": [
+            "agricoltura",
+            "agroalimentare",
+            "aziende agricole"
+          ]
+        },
+        {
+          "code": "ECO-08",
+          "label": "Commercio estero e internazionalizzazione",
+          "keywords": [
+            "commercio estero",
+            "esportazioni",
+            "importazioni",
+            "export"
+          ]
+        },
+        {
+          "code": "ECO-09",
+          "label": "Finanza, credito e mercati",
+          "keywords": [
+            "credito",
+            "prestiti bancari",
+            "banche",
+            "mercati finanziari"
+          ]
+        },
+        {
+          "code": "ECO-10",
+          "label": "Innovazione e competitività delle imprese",
+          "keywords": [
+            "competitività",
+            "innovazione delle imprese",
+            "produttività imprese"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "IST",
+      "label": "Istituzioni e sviluppo",
+      "categories": [
+        {
+          "code": "IST-01",
+          "label": "Pubblica amministrazione e servizi pubblici",
+          "keywords": [
+            "pubblica amministrazione",
+            "servizi pubblici",
+            "dipendenti pubblici"
+          ]
+        },
+        {
+          "code": "IST-02",
+          "label": "Finanza pubblica, bilanci e fiscalità",
+          "keywords": [
+            "finanza pubblica",
+            "deficit",
+            "debito pubblico",
+            "fiscalità",
+            "entrate tributarie"
+          ]
+        },
+        {
+          "code": "IST-03",
+          "label": "Investimenti pubblici e PNRR",
+          "keywords": [
+            "pnrr",
+            "investimenti pubblici",
+            "spesa pubblica investimenti"
+          ]
+        },
+        {
+          "code": "IST-04",
+          "label": "Previdenza e sistema pensionistico",
+          "keywords": [
+            "previdenza",
+            "sistema pensionistico",
+            "pensioni"
+          ]
+        },
+        {
+          "code": "IST-05",
+          "label": "Ricerca scientifica e innovazione pubblica",
+          "keywords": [
+            "ricerca scientifica",
+            "ricerca pubblica",
+            "spesa in ricerca"
+          ]
+        },
+        {
+          "code": "IST-06",
+          "label": "Digitalizzazione e amministrazione digitale",
+          "keywords": [
+            "amministrazione digitale",
+            "digitalizzazione della pa",
+            "servizi digitali pubblici"
+          ]
+        },
+        {
+          "code": "IST-07",
+          "label": "Infrastrutture e reti pubbliche",
+          "keywords": [
+            "infrastrutture pubbliche",
+            "reti pubbliche"
+          ]
+        },
+        {
+          "code": "IST-08",
+          "label": "Istituzioni, governance e settore non profit",
+          "keywords": [
+            "istituzioni",
+            "governance",
+            "non profit",
+            "terzo settore"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GRN",
+      "label": "Ambiente ed energia",
+      "categories": [
+        {
+          "code": "GRN-01",
+          "label": "Clima e decarbonizzazione",
+          "keywords": [
+            "decarbonizzazione",
+            "emissioni",
+            "co2",
+            "clima",
+            "gas serra"
+          ]
+        },
+        {
+          "code": "GRN-02",
+          "label": "Energia",
+          "keywords": [
+            "energia rinnovabile",
+            "energia elettrica",
+            "consumi energetici",
+            "fotovoltaico",
+            "eolico"
+          ]
+        },
+        {
+          "code": "GRN-03",
+          "label": "Economia circolare",
+          "keywords": [
+            "economia circolare",
+            "riciclo",
+            "rifiuti",
+            "raccolta differenziata"
+          ]
+        },
+        {
+          "code": "GRN-04",
+          "label": "Biodiversità",
+          "keywords": [
+            "biodiversità",
+            "specie protette",
+            "ecosistemi",
+            "aree protette"
+          ]
+        },
+        {
+          "code": "GRN-05",
+          "label": "Acqua e suolo",
+          "keywords": [
+            "risorse idriche",
+            "acqua",
+            "suolo",
+            "siccità",
+            "frane"
+          ]
+        },
+        {
+          "code": "GRN-06",
+          "label": "Mobilità sostenibile",
+          "keywords": [
+            "mobilità sostenibile",
+            "veicoli elettrici",
+            "trasporto sostenibile"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TER",
+      "label": "Territorio e abitare",
+      "categories": [
+        {
+          "code": "TER-01",
+          "label": "Geografia, cartografia e organizzazione territoriale",
+          "keywords": [
+            "cartografia",
+            "geografia",
+            "confini amministrativi"
+          ]
+        },
+        {
+          "code": "TER-02",
+          "label": "Città, urbanizzazione e metropoli",
+          "keywords": [
+            "urbanizzazione",
+            "città metropolitane",
+            "metropoli"
+          ]
+        },
+        {
+          "code": "TER-03",
+          "label": "Abitazioni e patrimonio residenziale",
+          "keywords": [
+            "patrimonio abitativo",
+            "abitazioni",
+            "case occupate"
+          ]
+        },
+        {
+          "code": "TER-04",
+          "label": "Mercato immobiliare, affitti e accesso alla casa",
+          "keywords": [
+            "mercato immobiliare",
+            "affitti",
+            "prezzi delle case",
+            "accesso alla casa"
+          ]
+        },
+        {
+          "code": "TER-05",
+          "label": "Trasporti e mobilità",
+          "keywords": [
+            "mobilità",
+            "trasporto pubblico",
+            "pendolarismo",
+            "traffico"
+          ]
+        },
+        {
+          "code": "TER-06",
+          "label": "Accessibilità ai servizi territoriali",
+          "keywords": [
+            "accessibilità ai servizi",
+            "servizi territoriali",
+            "distanza dai servizi"
+          ]
+        },
+        {
+          "code": "TER-07",
+          "label": "Aree interne, periferie e piccoli comuni",
+          "keywords": [
+            "aree interne",
+            "piccoli comuni",
+            "periferie"
+          ]
+        },
+        {
+          "code": "TER-08",
+          "label": "Divari territoriali e coesione",
+          "keywords": [
+            "divari territoriali",
+            "coesione territoriale",
+            "nord sud"
+          ]
+        },
+        {
+          "code": "TER-09",
+          "label": "Pianificazione e trasformazioni urbane",
+          "keywords": [
+            "pianificazione urbana",
+            "rigenerazione urbana",
+            "trasformazioni urbane"
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata_contract": {
+    "taxonomy_version": "1.0",
+    "primary_category": "POP-01 oppure NON_CLASSIFICATO",
+    "secondary_categories": "Fino a due codici",
+    "territories": "Codici geografici indipendenti dal tema",
+    "classification_method": "rules|ai|manual",
+    "classification_status": "provisional|review_needed|validated",
+    "classification_reason": "Motivazione verificabile",
+    "pulse_score": "INDIPENDENTE dalla classificazione"
+  }
+}
