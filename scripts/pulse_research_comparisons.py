@@ -100,10 +100,17 @@ def historical_signals(articles: list[dict]) -> list[dict]:
                 "first_value": str(begin),
                 "last_value": str(end),
                 "absolute_change": str(delta),
-                "percent_change_from_first": (
-                    str((delta / begin * 100).quantize(Decimal("0.01")))
-                    if begin != 0 else None
+                "absolute_change_unit": (
+                    "percentage_points" if series["unit"] == "%"
+                    else series["unit"]
                 ),
+                "percent_change_from_first": (
+                    # A difference between rates must never be presented
+                    # as a percentage instead of percentage points.
+                    str((delta / begin * 100).quantize(Decimal("0.01")))
+                    if begin != 0 and series["unit"] != "%" else None
+                ),
+                "relative_change_not_reported_for_rates": series["unit"] == "%",
                 "comparison_direction": direction,
                 "monotone_at_least_four_years": monotone,
                 "source_url": url,
