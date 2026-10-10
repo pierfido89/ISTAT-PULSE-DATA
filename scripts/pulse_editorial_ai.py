@@ -21,10 +21,12 @@ try:
     from scripts.pulse_taxonomy import classify, load_taxonomy
     from scripts.pulse_editorial_evidence import METHODS
     from scripts.pulse_editorial_inference import inference_issues
+    from scripts.pulse_editorial_numeric_guard import inspect_numbers, present, yoy_present
 except ModuleNotFoundError:
     from pulse_taxonomy import classify, load_taxonomy
     from pulse_editorial_evidence import METHODS
     from pulse_editorial_inference import inference_issues
+    from pulse_editorial_numeric_guard import inspect_numbers, present, yoy_present
 
 API_URL = "http://127.0.0.1:11434/api/generate"
 TAGS_URL = "http://127.0.0.1:11434/api/tags"
@@ -92,12 +94,7 @@ def _allowed_numbers(fact: dict) -> set[str]:
 
 
 def _numbers_are_sourced(text: str, fact: dict) -> tuple[bool, list[str]]:
-    allowed = _allowed_numbers(fact)
-    unsupported = []
-    for token in NUMBER.findall(text):
-        normalized = _numeric_token(token)
-        if normalized not in allowed:
-            unsupported.append(token)
+    unsupported, _ = inspect_numbers(text, fact)
     return not unsupported, unsupported
 
 
@@ -327,14 +324,13 @@ def audit(candidate: dict, proposal: dict, taxonomy: dict | None = None,
     if UNSUPPORTED.search(joined):
         issues.append("unsupported_interpretation_or_record_claim")
     issues.extend(inference_issues(joined, fact))
-    okay, unexpected = _numbers_are_sourced(joined, fact)
-    if not okay:
+    unexpected, numeric_semantics = inspect_numbers(joined, fact)
+    if unexpected:
         issues.append("unsourced_numbers:" + ",".join(unexpected[:8]))
-    allowed = _allowed_numbers(fact)
-    numbers_in_text = {_numeric_token(n) for n in NUMBER.findall(joined)}
-    if _decimal(fact["value"]) not in numbers_in_text:
+    issues.extend(numeric_semantics)
+    if not present(joined, fact["value"]):
         issues.append("main_value_missing")
-    if fact.get("change_pct") is not None and _decimal(fact["change_pct"]) not in numbers_in_text:
+    if fact.get("change_pct") is not None and not yoy_present(joined, fact["change_pct"]):
         issues.append("published_yoy_missing")
 
     taxonomy = taxonomy or load_taxonomy()
