@@ -1,0 +1,24 @@
+name: Quality gate: statistical evidence
+on:
+  pull_request:
+    paths:
+      - 'scripts/pulse_editorial_evidence.py'
+      - 'scripts/pulse_deep_tables.py'
+      - 'scripts/pulse_evidence.py'
+      - 'scripts/update_news_radar.py'
+      - 'tests/test_pulse_editorial_quality.py'
+      - '.github/workflows/verify-pulse-editorial-evidence.yml'
+permissions:
+  contents: read
+jobs:
+  editorial-evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check syntax
+        run: python -m py_compile scripts/pulse_editorial_evidence.py scripts/pulse_deep_tables.py scripts/pulse_evidence.py scripts/update_news_radar.py
+      - name: Run offline evidence and extraction checks
+        run: python -m unittest discover -s tests -p 'test_pulse_editorial_quality.py' -v
