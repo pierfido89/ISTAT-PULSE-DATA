@@ -379,6 +379,8 @@ def paired_audit(pair: dict, proposal: dict) -> dict:
             "validated_generated_context": included,
             "generated_context_included": included,
             "statistical_core_remains_available": True,
+            "safe_core_status": "review_required",
+            "model_context_status": ("accepted" if included else "rejected" if issues else "omitted_as_redundant"),
         },
         "publication_status": "draft_only",
         "editorial_status": "ai_draft_not_published",
