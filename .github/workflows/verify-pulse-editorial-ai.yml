@@ -14,6 +14,7 @@ on:
       - 'tests/test_pulse_editorial_real_pilot.py'
       - 'tests/test_pulse_editorial_v13.py'
       - 'tests/test_pulse_editorial_v14.py'
+      - 'tests/test_pulse_editorial_v14_real_output.py'
       - '.github/workflows/verify-pulse-editorial-ai.yml'
   push:
     branches: [feat/pulse-editorial-ai-1.0]
@@ -28,6 +29,7 @@ on:
       - 'tests/test_pulse_editorial_real_pilot.py'
       - 'tests/test_pulse_editorial_v13.py'
       - 'tests/test_pulse_editorial_v14.py'
+      - 'tests/test_pulse_editorial_v14_real_output.py'
       - '.github/workflows/verify-pulse-editorial-ai.yml'
 permissions:
   contents: read
