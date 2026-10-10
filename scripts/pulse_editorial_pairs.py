@@ -27,6 +27,7 @@ try:
     from scripts.pulse_editorial_brief import source_scope, _period, _italian_number
     from scripts.pulse_editorial_inference import inference_issues
     from scripts.pulse_editorial_numeric_guard import NUMBER
+    from scripts.pulse_editorial_derived import derive_average_stay
 except ModuleNotFoundError:
     from pulse_editorial_ai import (
         candidates, LocalOllama, API_URL, MODEL_DEFAULT, MAX_INPUT_BYTES,
@@ -35,6 +36,7 @@ except ModuleNotFoundError:
     from pulse_editorial_brief import source_scope, _period, _italian_number
     from pulse_editorial_inference import inference_issues
     from pulse_editorial_numeric_guard import NUMBER
+    from pulse_editorial_derived import derive_average_stay
 
 
 MAX_PAIRED_DRAFTS = 10
@@ -147,12 +149,39 @@ def grounded_story(pair: dict) -> dict:
         f"le presenze sono state {nights_num} notti "
         f"({_change_phrase(nights['change_pct'])}) rispetto al {previous}."
     )
+    metric = derive_average_stay(arrivals, nights)
     base_body = (
-        "Gli arrivi contano le registrazioni dei clienti che iniziano un soggiorno; "
-        "le presenze misurano le notti trascorse. "
-        "Il confronto è con lo stesso trimestre dell'anno precedente."
+        "Gli arrivi misurano le registrazioni di ingresso, mentre "
+        "le presenze contano le notti trascorse dai clienti. "
     )
-    return {"headline": title, "lead": lead, "body": base_body}
+    if metric:
+        base_body += (
+            "Dai due totali si ottiene una permanenza media di circa "
+            + metric["value_nights_per_arrival"]
+            + " notti per arrivo (elaborazione PULSE su dati ISTAT). "
+        )
+        if metric["comparison_direction_rounded_yoy"] == "increased":
+            base_body += (
+                "Le variazioni tendenziali riportate indicano che questo "
+                "rapporto è aumentato rispetto allo stesso trimestre "
+                "dell'anno precedente, senza stabilirne le cause."
+            )
+        elif metric["comparison_direction_rounded_yoy"] == "decreased":
+            base_body += (
+                "Le variazioni tendenziali riportate indicano che questo "
+                "rapporto è diminuito rispetto allo stesso trimestre "
+                "dell'anno precedente, senza stabilirne le cause."
+            )
+        else:
+            base_body += (
+                "Le variazioni percentuali pubblicate non consentono "
+                "di determinare con certezza la direzione annuale "
+                "del rapporto."
+            )
+    else:
+        base_body += "Il confronto è con lo stesso trimestre dell'anno precedente."
+    return {"headline": title, "lead": lead, "body": base_body,
+            "calculated_metric": metric}
 
 
 PAIR_SYSTEM = """Sei un redattore statistico di ISTAT PULSE, prototipo indipendente.
@@ -255,6 +284,37 @@ def _direction_claim_issues(context: str, pair: dict) -> list[str]:
     return list(dict.fromkeys(problems))
 
 
+def _editorial_context_warnings(context: str) -> list[str]:
+    """Conservative checks separate from statistical accuracy.
+
+    A restatement of the already evidence-locked headline adds no
+    journalistic value; suppress it without rejecting the verified core.
+    """
+    warnings: list[str] = []
+    simple = " ".join(context.casefold().split())
+    if re.search(r"\b(?:i arrivi|le arrivi|i presenze)\b", simple):
+        warnings.append("ungrammatical_indicator_article")
+    # The paired headline already says which direction each indicator
+    # took. Rewriting that same observation cannot add a second finding.
+    repeats_contrast = (
+        ("arrivi" in simple and "presenze" in simple)
+        and re.search(
+            r"\b(?:direzion[ie] oppost[ae]|andament[io] oppost[io]|"
+            r"indicatori procedono|indicatori si muovono|"
+            r"arrivi (?:calano|diminuiscono|scendono)|"
+            r"presenze (?:aumentano|crescono|salgono)|"
+            r"(?:calano|diminuiscono) gli arrivi|"
+            r"(?:aumentano|crescono) le presenze)\b",
+            simple,
+        )
+    )
+    # The AI has no access to independent, second-order findings, so
+    # a contrast-only sentence is deemed redundant, not published.
+    if repeats_contrast:
+        warnings.append("repeats_headline_without_new_evidence")
+    return warnings
+
+
 def paired_audit(pair: dict, proposal: dict) -> dict:
     """Evidence-locked headline/lead; fail-closed on generative context."""
     grounded = grounded_story(pair)
@@ -282,7 +342,11 @@ def paired_audit(pair: dict, proposal: dict) -> dict:
     issues.extend(inference_issues(context, synthetic_scope))
     issues.extend(_direction_claim_issues(context, pair))
     issues = list(dict.fromkeys(issues))
-    body = grounded["body"] + (" " + context if context and not issues else "")
+    editorial_warnings = _editorial_context_warnings(context)
+    if "ungrammatical_indicator_article" in editorial_warnings:
+        issues.append("ungrammatical_indicator_article")
+    included = bool(context) and not issues and not editorial_warnings
+    body = grounded["body"] + (" " + context if included else "")
     return {
         "id": pair["id"],
         "source_article_id": pair["source_article_id"],
@@ -292,6 +356,10 @@ def paired_audit(pair: dict, proposal: dict) -> dict:
         "model_proposed_context": context,
         "evidence": pair["evidence"],
         "evidence_count": 2,
+        "calculated_metrics": (
+            [grounded["calculated_metric"]]
+            if grounded["calculated_metric"] else []
+        ),
         "comparison_basis": pair["paired_proof"],
         "editorial_format": "paired_indicator_draft",
         "insight_type": "opposite_directions" if
@@ -300,14 +368,17 @@ def paired_audit(pair: dict, proposal: dict) -> dict:
         "patterns": [],
         "pulse_score": None,
         "generator": {"engine": "ollama_local", "model": MODEL_DEFAULT,
-                      "prompt_version": "2.0-paired", "attempts": 1,
+                      "prompt_version": "2.1-paired", "attempts": 1,
                       "zero_paid_api_calls": True},
         "quality": {
             "status": "rejected" if issues else "review_required",
             "issues": issues,
+            "editorial_warnings": editorial_warnings,
             "requires_human_fact_check": True,
-            "validated_sections": ["headline", "lead", "evidence"],
-            "validated_generated_context": not bool(issues),
+            "validated_sections": ["headline", "lead", "evidence", "derived_metric"],
+            "validated_generated_context": included,
+            "generated_context_included": included,
+            "statistical_core_remains_available": True,
         },
         "publication_status": "draft_only",
         "editorial_status": "ai_draft_not_published",
