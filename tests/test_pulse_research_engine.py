@@ -41,7 +41,7 @@ class ResearchEngineTests(unittest.TestCase):
         self.assertFalse(out["coverage"]["historical_series_supplied"])
         self.assertFalse(out["coverage"]["territorial_dimensions_supplied"])
         self.assertEqual(out["coverage"]["historical_comparison_stories"],
-                         "not_implemented")
+                         "no_comparable_data")
         self.assertIn("not_entire_pdf_prose", out["coverage"]["scope"])
         self.assertEqual(out["coverage"]["missing_evidence_policy"],
                          "withhold_inference")
