@@ -23,10 +23,12 @@ def build_workbench(*, official_url: str = OFFICIAL_URL) -> dict:
         from scripts.pulse_evidence import fetch_bounded
         from scripts.pulse_deep_tables import extract_pdf_mixed_findings
         from scripts.pulse_editorial_evidence import source_metadata_from_text, enrich
+        from scripts.pulse_research_reading import read_pdf_publication
     except ModuleNotFoundError:
         from pulse_evidence import fetch_bounded
         from pulse_deep_tables import extract_pdf_mixed_findings
         from pulse_editorial_evidence import source_metadata_from_text, enrich
+        from pulse_research_reading import read_pdf_publication
     raw, content_type, final_url = fetch_bounded(official_url, timeout=25)
     if not final_url.startswith("https://www.istat.it/"):
         raise ValueError("Unexpected redirect away from official ISTAT host")
@@ -42,6 +44,7 @@ def build_workbench(*, official_url: str = OFFICIAL_URL) -> dict:
             text = " ".join((p.extract_text() or "") for p in pdf.pages[:4])
     except ImportError as exc:
         raise RuntimeError("Missing free library: python -m pip install pdfplumber") from exc
+    reading = read_pdf_publication(raw, final_url)
     article = {
         "id": "SAMPLE-ISTAT-TOURISM-2026-Q2",
         "headline": "Flussi turistici, II trimestre 2026: evidenze statistiche",
@@ -52,6 +55,7 @@ def build_workbench(*, official_url: str = OFFICIAL_URL) -> dict:
         },
         "period_reference": "2026-Q2",
         "document_findings": findings,
+        "document_reading": reading,
         "verified_series": [],
         "patterns": [],
         "source_methodology": source_metadata_from_text(text),
