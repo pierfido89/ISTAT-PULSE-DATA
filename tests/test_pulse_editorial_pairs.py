@@ -138,6 +138,22 @@ class PairAuditTests(unittest.TestCase):
         self.assertEqual(draft["quality"]["status"], "rejected")
         self.assertIn("wrong_direction_arrivi", draft["quality"]["issues"])
 
+    def test_reversed_verb_order_is_verified_in_both_directions(self):
+        correct = paired_audit(pair(), {"context": (
+            "Tra i clienti residenti calano gli arrivi, mentre "
+            "aumentano le presenze alberghiere nello stesso trimestre."
+        )})
+        self.assertNotIn("wrong_direction_arrivi",
+                         correct["quality"]["issues"])
+        self.assertNotIn("wrong_direction_presenze",
+                         correct["quality"]["issues"])
+        wrong = paired_audit(pair(), {"context": (
+            "Tra i clienti residenti aumentano gli arrivi, "
+            "mentre diminuiscono le presenze alberghiere nello stesso periodo."
+        )})
+        self.assertIn("wrong_direction_arrivi", wrong["quality"]["issues"])
+        self.assertIn("wrong_direction_presenze", wrong["quality"]["issues"])
+
     def test_fake_previous_absolute_not_appended(self):
         p = pair()
         context = ("Gli arrivi e le presenze cambiano, mentre nel periodo "
