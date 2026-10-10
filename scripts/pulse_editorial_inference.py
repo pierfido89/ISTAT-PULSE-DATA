@@ -27,11 +27,21 @@ def inference_issues(text: str, fact: dict) -> list[str]:
        re.search(r"\b(?:visitator[ie]|turist[ie])\s+(?:unici|distinti)\b", normalized):
         issues.append("arrivals_confused_with_unique_visitors")
 
-    # A one-indicator candidate may not add other indicators from the PDF.
-    if (re.search(r"\barrivi\b", normalized) and
-            not re.search(r"\barrivi\b", indicator)) or \
-       (re.search(r"\bpresenze\b", normalized) and
-            not re.search(r"\bpresenze\b", indicator)):
+    # A one-indicator story cannot make a second factual claim.
+    # Explicit distinctions ("arrivi, non presenze") are explanatory,
+    # not claims about the second indicator.
+    def asserts_extra_indic(name):
+        if not re.search(r"\b" + name + r"\b", normalized):
+            return False
+        for match in re.finditer(r"\b" + name + r"\b", normalized):
+            prefix = normalized[max(0, match.start()-40):match.start()]
+            if re.search(r"\bnon\s+(?:(?:alle|le|dei|delle|di|sulle|sui|agli|i)\s+)?$", prefix):
+                continue
+            return True
+        return False
+
+    if (asserts_extra_indic("arrivi") and "arrivi" not in indicator) or \
+       (asserts_extra_indic("presenze") and "presenze" not in indicator):
         issues.append("secondary_indicator_without_evidence")
 
     nonresident = bool(re.search(r"\bnon[\s-]?residenti\b", segment))
@@ -64,5 +74,37 @@ def inference_issues(text: str, fact: dict) -> list[str]:
     if re.search(r"\b(?:maggiore|aumentato|crescente)\s+utilizzo\s+del\s+servizio\b|"
                  r"\bgruppi?\s+(?:più\s+)?stabil[ie]\b", normalized):
         issues.append("unsupported_behavioral_explanation")
+
+    # Quarter ≠ four-month or six-month period: reject an incorrect label
+    # even when no unsourced numeric token is present.
+    period = str(fact.get("period") or "")
+    if re.fullmatch(r"20\d\d-Q[1-4]", period):
+        if re.search(r"\bquadrimestr\w*|\bsemestr\w*", normalized):
+            issues.append("wrong_period_duration")
+        # A 2026-Q2 observation is never "first quarter" or Q3.
+        q = int(period[-1])
+        ordinals = {"primo": 1, "secondo": 2, "terzo": 3, "quarto": 4,
+                    "i": 1, "ii": 2, "iii": 3, "iv": 4}
+        for match in re.finditer(r"\b(primo|secondo|terzo|quarto|i|ii|iii|iv)\s+trimestre\b",
+                                  normalized):
+            if ordinals[match.group(1)] != q:
+                issues.append("wrong_quarter_number")
+                break
+
+    # Terms identifying a DIFFERENT kind of tourist accommodation
+    # cannot be inferred from a row labelled 'esercizi alberghieri'.
+    if "alberghier" in segment and re.search(
+            r"\b(?:bed\s*(?:&|and|e)\s*breakfast|b\s*&\s*b|"
+            r"campegg[iio]|agriturism[iio]|ostell[iio]|case\s+vacanz[ae])\b",
+            normalized):
+        issues.append("unsourced_accommodation_type")
+
+    # 'Residenti' modifies the tourists/customers, not the properties.
+    if re.search(r"\b(?:esercizi|strutture|alberghi)\s+"
+                 r"(?:alberghier[ie]\s+)?(?:non\s+)?residenti\b", normalized):
+        issues.append("misassigned_residence_to_facilities")
+    if re.search(r"\b(?:esercizi|strutture)\s+(?:alberghier[ie]\s+)?"
+                 r"dedicat[ie]\s+ai\s+non\s+residenti\b", normalized):
+        issues.append("unsupported_accommodation_exclusivity")
 
     return list(dict.fromkeys(issues))
