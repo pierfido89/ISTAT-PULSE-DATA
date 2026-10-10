@@ -107,4 +107,34 @@ def inference_issues(text: str, fact: dict) -> list[str]:
                  r"dedicat[ie]\s+ai\s+non\s+residenti\b", normalized):
         issues.append("unsupported_accommodation_exclusivity")
 
+    # A single YoY change measures a change, not a sustained trend.
+    # Keep the legitimate technical adjective "tendenziale" untouched.
+    if not fact.get("multiperiod_trend_verified", False) and re.search(
+        r"\b(?:tendenz[ae]\s+(?:positiv[ae]|negativ[ae]|"
+        r"(?:in\s+)?(?:crescit[ae]|calo|aumento|diminuzione|flessione))|"
+        r"trend\s+(?:positiv[oa]|negativ[oa]|in\s+(?:crescit[ae]|calo))|"
+        r"tendenza\s+(?:confermata|stabile|duratura))\b", normalized):
+        issues.append("unverified_multiperiod_trend")
+
+    # Statistical significance is NOT proven by any plain reported change;
+    # even a statement that no significant changes occurred requires testing.
+    if not fact.get("statistical_significance_verified", False) and re.search(
+        r"\b(?:variazioni?|differenz[ae]|increment[io]|decrement[io]|"
+        r"riduzion[ei]|aument[io]|cal[io])\s+"
+        r"(?:statisticamente\s+)?significativ[ioaep]*\b|"
+        r"\bstatisticamente\s+significativ[ioaep]*\b|"
+        r"\bsenza\s+variazioni?\s+significativ[ioaep]*\b",
+        normalized
+    ):
+        issues.append("unverified_statistical_significance")
+
+    # Do not infer stability of types/structure/customer composition
+    # from an arrivals or presences aggregate.
+    if re.search(
+        r"\b(?:senza|nessuna|assenza\s+di)\s+"
+        r"(?:variazioni?|cambiament[io]|modific[hae]+)\b"
+        r"[^.]{0,65}\b(?:struttur[ae]|categor[iea]|ospitalit[aà]|"
+        r"tipolog[iea]|composizion[ei])\b", normalized):
+        issues.append("unverified_structure_stability")
+
     return list(dict.fromkeys(issues))
