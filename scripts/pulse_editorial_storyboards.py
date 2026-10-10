@@ -189,8 +189,11 @@ def _article(card: dict, data: dict, angle: str = "main") -> dict:
             " kg per abitante" if data["unit"] == "kg_per_person"
             else " " + data["unit"]
         )
-        gap_unit = ("punti percentuali" if data["gap_unit"] ==
-                    "percentage_points" else data["gap_unit"])
+        gap_unit = (
+            "punti percentuali" if data["gap_unit"] == "percentage_points"
+            else "kg per abitante" if data["gap_unit"] == "kg_per_person"
+            else data["gap_unit"]
+        )
         headline = (
             f"{data['indicator'].capitalize()}: confronto "
             f"{high['name']}–{low['name']}"
@@ -264,6 +267,25 @@ def editorial_cards(report: dict) -> list[dict]:
             "headline_preview": _article(c, source)["headline"],
             "_source": source, "_research_card": c,
         })
+    # Readability-first choice within the same verified domain:
+    # national labor totals before sex subgroups; normalized collection
+    # percentage before per-capita kg (both remain fully traceable).
+    def preference(c: dict):
+        source = c["_source"]
+        labor_national = (
+            c["domain"] == "labor_categories_yoy_evidence"
+            and source.get("population_group") == "totale"
+        )
+        waste_share = (
+            c["domain"] == "territorial_rate_comparison"
+            and source.get("indicator") == "raccolta differenziata rifiuti urbani"
+        )
+        return (
+            -c["priority_points"],
+            0 if labor_national or waste_share else 1,
+            c["domain"], c["story_id"],
+        )
+    cards.sort(key=preference)
     return cards
 
 
