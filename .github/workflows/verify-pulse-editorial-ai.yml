@@ -1,0 +1,165 @@
+name: "PULSE Editorial AI 1.0 — offline quality tests"
+on:
+  pull_request:
+    paths:
+      - 'scripts/pulse_editorial_ai.py'
+      - 'scripts/pulse_editorial_pairs.py'
+      - 'scripts/pulse_editorial_derived.py'
+      - 'scripts/pulse_editorial_review.py'
+      - 'scripts/pulse_research_engine.py'
+      - 'scripts/pulse_research_reading.py'
+      - 'scripts/pulse_research_import.py'
+      - 'scripts/pulse_research_labor.py'
+      - 'scripts/pulse_research_labor_sample.py'
+      - 'scripts/pulse_research_prices.py'
+      - 'scripts/pulse_research_prices_sample.py'
+      - 'scripts/pulse_research_new_domains.py'
+      - 'scripts/pulse_research_new_domains_sample.py'
+      - 'scripts/pulse_research_acceptance.py'
+      - 'scripts/pulse_research_comparisons.py'
+      - 'scripts/pulse_editorial_intelligence.py'
+      - 'scripts/pulse_editorial_storyboards.py'
+      - 'scripts/pulse_editorial_publication.py'
+      - 'scripts/pulse_editorial_local_writer.py'
+      - 'scripts/pulse_editorial_inference.py'
+      - 'scripts/pulse_editorial_numeric_guard.py'
+      - 'scripts/pulse_editorial_style.py'
+      - 'scripts/pulse_editorial_brief.py'
+      - 'scripts/pulse_editorial_sample.py'
+      - 'scripts/pulse_editorial_evidence.py'
+      - 'scripts/pulse_taxonomy.py'
+      - 'tests/test_pulse_editorial_ai.py'
+      - 'tests/test_pulse_editorial_pairs.py'
+      - 'tests/test_pulse_editorial_derived.py'
+      - 'tests/test_pulse_research_engine.py'
+      - 'tests/test_pulse_research_complete.py'
+      - 'tests/test_pulse_research_labor.py'
+      - 'tests/test_pulse_research_prices.py'
+      - 'tests/test_pulse_research_new_domains.py'
+      - 'tests/test_pulse_editorial_intelligence.py'
+      - 'tests/test_pulse_editorial_storyboards.py'
+      - 'tests/test_pulse_editorial_publication.py'
+      - 'tests/test_pulse_editorial_local_writer.py'
+      - 'tests/test_pulse_editorial_real_pilot.py'
+      - 'tests/test_pulse_editorial_v13.py'
+      - 'tests/test_pulse_editorial_v14.py'
+      - 'tests/test_pulse_editorial_v14_real_output.py'
+      - '.github/workflows/verify-pulse-editorial-ai.yml'
+  push:
+    branches: [feat/pulse-editorial-ai-1.0]
+    paths:
+      - 'scripts/pulse_editorial_ai.py'
+      - 'scripts/pulse_editorial_pairs.py'
+      - 'scripts/pulse_editorial_derived.py'
+      - 'scripts/pulse_editorial_review.py'
+      - 'scripts/pulse_research_engine.py'
+      - 'scripts/pulse_research_reading.py'
+      - 'scripts/pulse_research_import.py'
+      - 'scripts/pulse_research_labor.py'
+      - 'scripts/pulse_research_labor_sample.py'
+      - 'scripts/pulse_research_prices.py'
+      - 'scripts/pulse_research_prices_sample.py'
+      - 'scripts/pulse_research_new_domains.py'
+      - 'scripts/pulse_research_new_domains_sample.py'
+      - 'scripts/pulse_research_acceptance.py'
+      - 'scripts/pulse_research_comparisons.py'
+      - 'scripts/pulse_editorial_intelligence.py'
+      - 'scripts/pulse_editorial_storyboards.py'
+      - 'scripts/pulse_editorial_publication.py'
+      - 'scripts/pulse_editorial_local_writer.py'
+      - 'scripts/pulse_editorial_inference.py'
+      - 'scripts/pulse_editorial_numeric_guard.py'
+      - 'scripts/pulse_editorial_style.py'
+      - 'scripts/pulse_editorial_brief.py'
+      - 'scripts/pulse_editorial_sample.py'
+      - 'tests/test_pulse_editorial_ai.py'
+      - 'tests/test_pulse_editorial_pairs.py'
+      - 'tests/test_pulse_editorial_derived.py'
+      - 'tests/test_pulse_research_engine.py'
+      - 'tests/test_pulse_research_complete.py'
+      - 'tests/test_pulse_research_labor.py'
+      - 'tests/test_pulse_research_prices.py'
+      - 'tests/test_pulse_research_new_domains.py'
+      - 'tests/test_pulse_editorial_intelligence.py'
+      - 'tests/test_pulse_editorial_storyboards.py'
+      - 'tests/test_pulse_editorial_publication.py'
+      - 'tests/test_pulse_editorial_local_writer.py'
+      - 'tests/test_pulse_editorial_real_pilot.py'
+      - 'tests/test_pulse_editorial_v13.py'
+      - 'tests/test_pulse_editorial_v14.py'
+      - 'tests/test_pulse_editorial_v14_real_output.py'
+      - '.github/workflows/verify-pulse-editorial-ai.yml'
+permissions:
+  contents: read
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check syntax (no external AI)
+        run: python -m py_compile scripts/pulse_editorial_ai.py scripts/pulse_editorial_sample.py scripts/pulse_editorial_inference.py scripts/pulse_editorial_numeric_guard.py scripts/pulse_editorial_brief.py scripts/pulse_editorial_style.py scripts/pulse_editorial_pairs.py scripts/pulse_editorial_derived.py scripts/pulse_editorial_review.py scripts/pulse_research_engine.py scripts/pulse_research_reading.py scripts/pulse_research_comparisons.py scripts/pulse_research_import.py scripts/pulse_research_labor.py scripts/pulse_research_labor_sample.py scripts/pulse_research_prices.py scripts/pulse_research_prices_sample.py scripts/pulse_research_new_domains.py scripts/pulse_research_new_domains_sample.py scripts/pulse_research_acceptance.py scripts/pulse_editorial_intelligence.py scripts/pulse_editorial_storyboards.py scripts/pulse_editorial_publication.py scripts/pulse_editorial_local_writer.py
+      - name: Run local draft-contract and inference regression tests (mock Ollama)
+        run: |
+          python -m unittest discover -s tests -p 'test_pulse_editorial*.py' -v
+          python -m unittest discover -s tests -p 'test_pulse_research*.py' -v
+      - name: Confirm production artifacts unchanged
+        run: |
+          git diff --exit-code -- data/news/articles.json data/news/index.json data/news/observer_articles.json
+
+  official-istat-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    # External ISTAT availability can vary; never call remote AI.
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install free PDF parser
+        run: python -m pip install --disable-pip-version-check pdfplumber
+      - name: Prepare pilot workbench from official ISTAT PDF (not an AI call)
+        run: python scripts/pulse_editorial_sample.py --output /tmp/pulse-tourism-workbench.json
+      - name: Inspect evidence candidates offline
+        run: python scripts/pulse_editorial_ai.py --input /tmp/pulse-tourism-workbench.json --inspect
+      - name: Inspect paired indicator candidates without Ollama
+        run: python scripts/pulse_editorial_pairs.py --input /tmp/pulse-tourism-workbench.json --inspect --limit 4
+      - name: Research all evidenced source findings without Qwen
+        run: python scripts/pulse_research_engine.py --input /tmp/pulse-tourism-workbench.json --inspect
+      - name: Assemble strictly verified first editorial angle offline
+        run: python scripts/pulse_editorial_intelligence.py --input /tmp/pulse-tourism-workbench.json --output /tmp/pulse-intelligence-3.0.json
+      - name: Verify second real ISTAT domain — monthly labor PDF
+        run: |
+          python scripts/pulse_research_labor_sample.py --output /tmp/pulse-labor-workbench.json
+          python scripts/pulse_research_engine.py --input /tmp/pulse-labor-workbench.json --inspect
+      - name: Verify third real ISTAT domain — final CPI PDF
+        run: |
+          python scripts/pulse_research_prices_sample.py --output /tmp/pulse-cpi-workbench.json
+          python scripts/pulse_research_engine.py --input /tmp/pulse-cpi-workbench.json --inspect
+      - name: Verify ISTAT population, education and environment source PDFs
+        run: |
+          python scripts/pulse_research_new_domains_sample.py --domain popolazione --output /tmp/pulse-demography.json
+          python scripts/pulse_research_engine.py --input /tmp/pulse-demography.json --inspect
+          python scripts/pulse_research_new_domains_sample.py --domain istruzione --output /tmp/pulse-education.json
+          python scripts/pulse_research_engine.py --input /tmp/pulse-education.json --inspect
+          python scripts/pulse_research_new_domains_sample.py --domain ambiente --output /tmp/pulse-environment.json
+          python scripts/pulse_research_engine.py --input /tmp/pulse-environment.json --inspect
+      - name: Assert six real documents, numeric baselines, real history and territory
+        run: |
+          python scripts/pulse_research_acceptance.py             /tmp/pulse-tourism-workbench.json             /tmp/pulse-labor-workbench.json             /tmp/pulse-cpi-workbench.json             /tmp/pulse-demography.json             /tmp/pulse-education.json             /tmp/pulse-environment.json
+      - name: Verify united six-source research dossier
+        run: |
+          python scripts/pulse_research_engine.py             --input /tmp/pulse-tourism-workbench.json             --additional-input /tmp/pulse-labor-workbench.json               /tmp/pulse-cpi-workbench.json /tmp/pulse-demography.json               /tmp/pulse-education.json /tmp/pulse-environment.json             --output /tmp/pulse-six-domains-research.json --limit 10
+      - name: Editorial Intelligence first milestone — six verified source-locked drafts
+        run: |
+          python scripts/pulse_editorial_storyboards.py             --input /tmp/pulse-tourism-workbench.json             --additional-input /tmp/pulse-labor-workbench.json               /tmp/pulse-cpi-workbench.json /tmp/pulse-demography.json               /tmp/pulse-education.json /tmp/pulse-environment.json             --output /tmp/pulse-editorial-six-drafts.json --limit 6
+          python -c 'import json; d=json.load(open("/tmp/pulse-editorial-six-drafts.json")); assert len(d["drafts"])==6; assert len(set(x["domain"] for x in d["drafts"]))==6; assert all(x["quality"]["status"]=="review_required" for x in d["drafts"]); print("Six independent editorial stories checked")'
+      - name: Editorial Intelligence long-form phase — six real sourced articles
+        run: |
+          python scripts/pulse_editorial_publication.py             --input /tmp/pulse-tourism-workbench.json             --additional-input /tmp/pulse-labor-workbench.json               /tmp/pulse-cpi-workbench.json /tmp/pulse-demography.json               /tmp/pulse-education.json /tmp/pulse-environment.json             --output /tmp/pulse-six-editorial-articles.json --limit 6
+          python -c 'import json; d=json.load(open("/tmp/pulse-six-editorial-articles.json")); assert len(d["drafts"])==6; assert len(set(x["domain"] for x in d["drafts"]))==6; assert all(x["quality"]["status"]=="review_required" for x in d["drafts"]); print("Six full fact-checked drafts pending human review")'
+      - name: Confirm no app feed files were modified
+        run: git diff --exit-code -- data/news/articles.json data/news/index.json
