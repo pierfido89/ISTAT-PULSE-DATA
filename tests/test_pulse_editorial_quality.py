@@ -1,6 +1,7 @@
 import unittest
 from scripts.pulse_editorial_evidence import enrich, source_metadata_from_text
 from scripts.pulse_deep_tables import extract_mixed_table_rows
+from scripts.pulse_evidence import matrix_evidence
 
 SOURCE = "https://www.istat.it/dati/serie.csv"
 def series(values, label="Arrivi"):
@@ -87,6 +88,19 @@ class QualityGateTests(unittest.TestCase):
         self.assertEqual(findings[1]["reported_yoy_change_pct"],2.4)
         self.assertNotIn("previous_value",findings[0])
         self.assertTrue(all(f["editorial_status"]=="candidate_not_published" for f in findings))
+
+    def test_structured_five_year_histories_not_truncated(self):
+        evidence=matrix_evidence(
+            [["Indicatore", "2021", "2022", "2023", "2024", "2025"],
+             ["Quota di presenze %", "20", "22", "25", "29", "35"]],
+            SOURCE, "f"*64, "table:annual", "Quota (%)"
+        )
+        self.assertEqual(len(evidence),1)
+        self.assertEqual(len(evidence[0]["observations"]),5)
+        entry=article(["RECORD"])
+        entry["verified_series"]=evidence
+        enrich(entry)
+        self.assertEqual(entry["patterns"], ["RECORD"])
 
     def test_mixed_table_requires_explicit_caption_and_segment(self):
         self.assertEqual(extract_mixed_table_rows(
