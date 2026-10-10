@@ -275,6 +275,7 @@ def verify_primary_page(url, numbers, keywords, allowed_domains):
             except Exception:
                 preextracted = None
         text=extract_document_text(raw,ct,final)
+        source_methodology=source_metadata_from_text(text)
         if preextracted and preextracted.get("evidence"):
             verified_context = " ".join(
                 e["indicator"] + " " +
@@ -316,6 +317,25 @@ def verify_primary_page(url, numbers, keywords, allowed_domains):
                             candidate = extract_evidence_bytes(a_raw, a_url, a_ct)
                         verified_series.extend(candidate.get("evidence", [])[:4])
                         document_findings.extend(candidate.get("findings", [])[:12])
+                        # Official annexes may declare provisional data and next
+                        # release dates that are absent from the landing page.
+                        if a_path.endswith(".pdf"):
+                            annex_metadata=source_metadata_from_text(
+                                extract_document_text(a_raw,a_ct,a_url))
+                            for key in ("data_status", "next_release_date", "next_release_source"):
+                                before=source_methodology.get(key)
+                                after=annex_metadata.get(key)
+                                if key == "data_status":
+                                    if after and after != "not_declared":
+                                        if before not in (None, "not_declared", after):
+                                            source_methodology[key]="not_declared"
+                                        else:
+                                            source_methodology[key]=after
+                                elif after:
+                                    if not before or before == after:
+                                        source_methodology[key]=after
+                                    else:
+                                        source_methodology[key]=None
                     except Exception as exc:
                         print(f"[ATTACHMENT] skipped {attachment}: {type(exc).__name__}", flush=True)
             # Conservative companion metadata gate: if the same official page
@@ -351,7 +371,7 @@ def verify_primary_page(url, numbers, keywords, allowed_domains):
                 "matched_keywords":matched_keywords[:8],"verification_score":min(100,score),
                 "text_excerpt":text[:900], "verified_series":verified_series,
                 "document_findings":document_findings,
-                "source_methodology":source_metadata_from_text(text)}
+                "source_methodology":source_methodology}
     except Exception:
         return None
 
