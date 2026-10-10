@@ -32,8 +32,8 @@ def style_warnings(headline: str, lead: str, body: str, fact: dict) -> list[str]
     # a statistical table. This is a warning, not a statistical rejection.
     if fact.get("change_pct") not in (None, 0):
         if not re.search(
-            r"\b(?:calo|calat[oaie]|flession[ei]|riduzion[ei]|diminuzion[ei]|"
-            r"decrement[ioa]|crescit[ae]|increment[ioa]|aument[ioa]|"
+            r"\b(?:calo|cal\w*|flession[ei]|riduzion[ei]|diminuzion[ei]|"
+            r"decrement[ioa]|crescit[ae]|increment[ioa]|aument\w*|"
             r"salit[ae]|sces[oa]|scend\w*)\b|[+-]\s*\d+(?:[,.]\d+)?\s*%",
             headline.casefold()
         ):
