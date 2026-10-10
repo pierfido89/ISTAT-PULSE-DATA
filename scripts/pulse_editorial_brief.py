@@ -62,6 +62,13 @@ def editorial_brief(fact: dict) -> dict:
     }
     if scope:
         out["exact_statistical_subject"] = scope["subject_phrase"]
+        out["indicator_glossary"] = (
+            "Gli arrivi contano le registrazioni di clienti che iniziano "
+            "un soggiorno negli esercizi ricettivi."
+            if scope["indicator"] == "arrivi" else
+            "Le presenze contano le notti trascorse dai clienti "
+            "negli esercizi ricettivi."
+        )
         out["population_scope"] = scope["population"]
         out["accommodation_scope"] = scope["official_accommodation"]
     if period:
