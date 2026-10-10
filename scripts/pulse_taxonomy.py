@@ -23,7 +23,9 @@ def _hits(text: str, phrase: str) -> bool:
     hint = _norm(phrase)
     if not hint:
         return False
-    return re.search(r"(?<![a-z0-9])" + re.escape(hint), text) is not None
+    exact = hint in {"pil", "co2", "neet", "pnrr", "spid"}
+    suffix = r"(?![a-z0-9])" if exact else ""
+    return re.search(r"(?<![a-z0-9])" + re.escape(hint) + suffix, text) is not None
 
 
 def load_taxonomy(path: Path = TAXONOMY_PATH) -> dict:
