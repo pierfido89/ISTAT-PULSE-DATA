@@ -1,4 +1,4 @@
-name: Quality gate: statistical evidence
+name: "Quality gate: statistical evidence"
 on:
   pull_request:
     paths:
