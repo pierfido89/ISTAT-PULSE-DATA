@@ -234,9 +234,21 @@ def _direction_claim_issues(context: str, pair: dict) -> list[str]:
             tail = re.split(r"[.;:,]|\b(?:arrivi|presenze|mentre|invece|ma)\b",
                             context[match.end():match.end()+110], maxsplit=1)[0]
             target = verbs.search(tail)
-            if not target:
+            word = target.group().casefold() if target else ""
+            if not word:
+                before = re.split(
+                    r"[.;:,]|\b(?:arrivi|presenze|mentre|invece|ma)\b",
+                    context[max(0, match.start()-70):match.start()],
+                )[-1]
+                prior = list(verbs.finditer(before))
+                if prior and re.fullmatch(
+                    r"\s+(?:gli|le|i|dei|delle|degli)?\s*",
+                    before[prior[-1].end():],
+                    flags=re.I,
+                ):
+                    word = prior[-1].group().casefold()
+            if not word:
                 continue
-            word = target.group().casefold()
             negative = word.startswith(("cal", "dimin", "fless", "riduz", "scend", "sces"))
             if (change < 0 and not negative) or (change > 0 and negative):
                 problems.append("wrong_direction_" + metric)
