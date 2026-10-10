@@ -2318,6 +2318,13 @@ def main():
     except ModuleNotFoundError:
         from pulse_taxonomy import enrich_articles
     enrich_articles(arts)
+    # Apply the same editorial audit and controlled mini-glossary used by
+    # NOTIZIE. Missing source documents remain not_declared (never inferred).
+    try:
+        from scripts.pulse_editorial_evidence import enrich_all
+    except ModuleNotFoundError:
+        from pulse_editorial_evidence import enrich_all
+    enrich_all(arts)
 
     # Final coverage must describe the persistent archive, not only what one
     # network scan managed to rediscover today. A temporary source failure must

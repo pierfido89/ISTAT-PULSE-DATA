@@ -1,0 +1,20 @@
+name: Verify observer editorial quality
+on:
+  pull_request:
+    paths:
+      - 'scripts/update_observer_archive.py'
+      - 'scripts/pulse_editorial_evidence.py'
+      - 'tests/test_observer_editorial_quality.py'
+      - '.github/workflows/verify-observer-editorial-quality.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m py_compile scripts/update_observer_archive.py scripts/pulse_editorial_evidence.py
+      - run: python -m unittest discover -s tests -p 'test_observer_editorial_quality.py' -v
