@@ -1,0 +1,60 @@
+name: "Quality gate: statistical evidence"
+on:
+  pull_request:
+    paths:
+      - 'scripts/pulse_editorial_evidence.py'
+      - 'scripts/pulse_deep_tables.py'
+      - 'scripts/pulse_evidence.py'
+      - 'scripts/update_news_radar.py'
+      - 'tests/test_pulse_editorial_quality.py'
+      - '.github/workflows/verify-pulse-editorial-evidence.yml'
+permissions:
+  contents: read
+jobs:
+  editorial-evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check syntax
+        run: python -m py_compile scripts/pulse_editorial_evidence.py scripts/pulse_deep_tables.py scripts/pulse_evidence.py scripts/update_news_radar.py
+      - name: Run offline evidence and extraction checks
+        run: python -m unittest discover -s tests -p 'test_pulse_editorial_quality.py' -v
+      - name: Sample official ISTAT tourism PDF (non-blocking integration check)
+        continue-on-error: true
+        timeout-minutes: 3
+        run: |
+          python -m pip install --disable-pip-version-check pdfplumber
+          python - <<'PY'
+          from urllib.request import Request, urlopen
+          from scripts.pulse_deep_tables import extract_pdf_mixed_findings
+          url="https://www.istat.it/wp-content/uploads/2026/09/Statistica-Flash_II_Trimestre_2026.pdf"
+          with urlopen(Request(url,headers={"User-Agent":"Mozilla/5.0"}),timeout=18) as response:
+              raw=response.read(8_000_001)
+          assert len(raw) <= 8_000_000
+          facts=extract_pdf_mixed_findings(raw,url)
+          from scripts.pulse_editorial_evidence import source_metadata_from_text
+          import io, pdfplumber
+          with pdfplumber.open(io.BytesIO(raw)) as source:
+              source_intro=" ".join((p.extract_text() or "") for p in source.pages[:3])
+          release=source_metadata_from_text(source_intro)
+          print("ISTAT tourism PDF metadata:", release)
+          print("ISTAT tourism PDF findings:", len(facts))
+          for fact in facts[:8]:
+              print(fact["indicator"], fact["segment"],
+                    fact["observed_total"], fact["reported_yoy_change_pct"])
+          if len(facts)<2:
+              import io, pdfplumber
+              with pdfplumber.open(io.BytesIO(raw)) as doc:
+                  page=doc.pages[2]
+                  print("PDF text first 320:", repr((page.extract_text() or "")[:320]))
+                  for textline in (page.extract_text() or "").splitlines()[8:43]:
+                      print("PAGE3:", repr(textline[:230]))
+                  for k,table in enumerate(page.extract_tables()[:5],1):
+                      print("TABLE",k,"rows",len(table))
+                      for row in table[:13]:
+                          print("ROW",len(row),repr(row[:12])[:700])
+          assert len(facts) >= 2, "No two independent published findings could be reconstructed"
+          PY

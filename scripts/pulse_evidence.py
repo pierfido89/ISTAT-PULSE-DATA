@@ -70,13 +70,21 @@ def matrix_evidence(rows, source_url, source_hash, location, unit_hint=""):
         if len(years) < 2:
             continue
         years.sort(key=lambda entry: entry[1])
-        left, right = years[-2:]
-        if not 0 < right[1] - left[1] <= 5:
+        last_two = years[-2:]
+        if not 0 < last_two[1][1] - last_two[0][1] <= 5:
             continue
+        # Preserve entire contiguous histories when explicitly present in the
+        # SAME labelled table row. Never create intermediate observations.
+        contiguous = [years[-1]]
+        for column in reversed(years[:-1]):
+            if contiguous[-1][1] - column[1] != 1:
+                break
+            contiguous.append(column)
+        selected = list(reversed(contiguous[:12])) if len(contiguous) >= 3 else last_two
         units = (" ".join(headers) + " " + unit_hint).lower()
         unit_from_heading = bool(re.search(r"%|percentual|percent\b", units))
         for row_index, row in enumerate(rows[header_idx + 1:], start=header_idx + 2):
-            if len(row) <= max(left[0], right[0]) or not row:
+            if len(row) <= max(col for col, _ in selected) or not row:
                 continue
             indicator = str(row[0] or "").strip()
             if not 4 <= len(indicator) <= 125:
@@ -84,17 +92,20 @@ def matrix_evidence(rows, source_url, source_hash, location, unit_hint=""):
             # Row's metadata must specify unit or the table must specify percentage.
             if not (unit_from_heading or "%" in indicator or "percent" in indicator.lower()):
                 continue
-            v0, v1 = normalized_percent(row[left[0]]), normalized_percent(row[right[0]])
-            if v0 is None or v1 is None:
+            observations = []
+            for column, year in selected:
+                value = normalized_percent(row[column])
+                if value is None:
+                    observations = []
+                    break
+                observations.append({"period": str(year), "value": value, "raw": str(row[column])})
+            if len(observations) != len(selected):
                 continue
             results.append({
                 "indicator": indicator,
                 "unit": "%",
-                "observations": [
-                    {"period": str(left[1]), "value": v0, "raw": str(row[left[0]])},
-                    {"period": str(right[1]), "value": v1, "raw": str(row[right[0]])}
-                ],
-                "delta": round(v1 - v0, 3),
+                "observations": observations,
+                "delta": round(observations[-1]["value"] - observations[-2]["value"], 3),
                 "comparison_unit": "punti percentuali",
                 "source_url": source_url,
                 "source_sha256": source_hash,
@@ -172,8 +183,18 @@ def extract_bytes(data, url, content_type="", filename=""):
     source_hash = hashlib.sha256(data).hexdigest()
     name = (filename or urlparse(url).path).lower().split("?")[0]
     ct = content_type.lower()
+    mixed_findings = []
     if name.endswith(".pdf") or "application/pdf" in ct:
         tables = pdf_tables(data)
+        try:
+            from scripts.pulse_deep_tables import extract_pdf_mixed_findings
+        except ModuleNotFoundError:
+            from pulse_deep_tables import extract_pdf_mixed_findings
+        try:
+            mixed_findings = extract_pdf_mixed_findings(data, url, source_hash)
+        except Exception:
+            # Never confuse a PDF parsing failure with positive evidence.
+            mixed_findings = []
     elif name.endswith(".xlsx") or "spreadsheetml" in ct:
         tables = xlsx_tables(data)
     elif name.endswith(".xls") or "ms-excel" in ct:
@@ -195,6 +216,8 @@ def extract_bytes(data, url, content_type="", filename=""):
         "source_url": url,
         "source_sha256": source_hash,
         "evidence": evidence[:20],
+        "findings": mixed_findings[:40],
+        "findings_status": "explicit_document_facts" if mixed_findings else "none",
         "status": "verified" if evidence else "no_comparable_series"
     }
 
