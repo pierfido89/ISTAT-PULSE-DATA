@@ -80,7 +80,7 @@ class FullEditorialTests(unittest.TestCase):
         })
         self.assertEqual(result["model_selection"]["status"],
                          "verified_local_editorial_plan_accepted")
-        self.assertIn("Che cosa ci dicono", result["drafts"][0]["body"])
+        self.assertIn("La notizia sta nel contrasto", result["drafts"][0]["body"])
         self.assertEqual(result["drafts"][0]["quality"]["status"],
                          "review_required")
 
