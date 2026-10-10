@@ -17,9 +17,13 @@ from pathlib import Path
 try:
     from scripts.pulse_editorial_ai import _read_input, candidates
     from scripts.pulse_editorial_pairs import paired_candidates, grounded_story, FORBIDDEN_OUTPUTS
+    from scripts.pulse_research_comparisons import historical_signals, territorial_signals
+    from scripts.pulse_research_reading import match_passages
 except ModuleNotFoundError:
     from pulse_editorial_ai import _read_input, candidates
     from pulse_editorial_pairs import paired_candidates, grounded_story, FORBIDDEN_OUTPUTS
+    from pulse_research_comparisons import historical_signals, territorial_signals
+    from pulse_research_reading import match_passages
 
 MAX_RESEARCH_PAIRS = 10
 
@@ -102,6 +106,39 @@ def research_report(articles: list[dict], limit: int = MAX_RESEARCH_PAIRS) -> di
         for item in candidates(article, limit=20):
             pool[item["candidate_id"]] = item
     pairs = paired_candidates(articles, limit=MAX_RESEARCH_PAIRS)
+    history = historical_signals(articles)
+    territory = territorial_signals(articles)
+    readings = {}
+    publication_coverage = []
+    for article in articles:
+        reading = article.get("document_reading")
+        source_url = (article.get("public_source") or {}).get("url")
+        evidence_hashes = {
+            str(f.get("source_sha256"))
+            for f in (article.get("document_findings") or [])
+            if isinstance(f, dict) and f.get("verified") is True
+        }
+        authentic = (
+            isinstance(reading, dict)
+            and reading.get("source_url") == source_url
+            and reading.get("source_sha256") in evidence_hashes
+            and len(str(reading.get("source_sha256") or "")) == 64
+        )
+        if authentic:
+            readings[(source_url, reading["source_sha256"])] = reading
+        publication_coverage.append({
+            "article_id": article.get("id"),
+            "source_url": source_url,
+            "full_text_layer_attached": authentic,
+            "pdf_pages_total": reading.get("pdf_pages_total") if authentic else None,
+            "pdf_pages_scanned": reading.get("pdf_pages_scanned") if authentic else None,
+            "text_pages_scanned": reading.get("text_pages_scanned") if authentic else None,
+            "passages_count": reading.get("passages_count") if authentic else 0,
+            "complete_text_layer": reading.get("complete_text_layer") if authentic else False,
+            "coverage_warnings": reading.get("coverage_warnings", []) if authentic else [
+                "no_matching_full_pdf_text_layer"
+            ],
+        })
     records = []
     for pair in pairs:
         story = grounded_story(pair)
@@ -118,6 +155,12 @@ def research_report(articles: list[dict], limit: int = MAX_RESEARCH_PAIRS) -> di
             "lead_grounded": story["lead"],
             "body_grounded": story["body"],
             "evidence": pair["evidence"],
+            "narrative_context": match_passages(
+                readings.get((pair["evidence"][0]["source_url"],
+                              pair["evidence"][0]["source_sha256"]), {}),
+                ["arrivi", "presenze"], max_results=5
+            ),
+            "context_is_not_numeric_proof": True,
             "angles": options,
             "ranking": _ranking(pair, options),
             "candidate_status": "requires_human_editorial_review",
@@ -130,10 +173,41 @@ def research_report(articles: list[dict], limit: int = MAX_RESEARCH_PAIRS) -> di
     ))
     has_history = any(article.get("verified_series") for article in articles)
     has_territory = any(
-        isinstance(f, dict) and
-        (f.get("territory") or (f.get("segment") or {}).get("territory"))
-        for article in articles for f in (article.get("document_findings") or [])
+        isinstance(f, dict) and (
+            f.get("territory")
+            or (isinstance(f.get("segment"), dict)
+                and f["segment"].get("territory"))
+        )
+        for article in articles
+        for f in (article.get("document_findings") or [])
     )
+    research_stories = [
+        {
+            "id": r["pair_id"], "story_type": "paired_indicators",
+            "editorial_priority_points": r["ranking"]["priority_points"],
+            "source_url": r["source_url"],
+            "source_locations": r["source_locations"],
+            "research_only": True,
+        } for r in records
+    ]
+    research_stories.extend({
+        "id": r["id"], "story_type": "historical_annual_comparison",
+        "editorial_priority_points": 35,
+        "source_url": r["source_url"],
+        "source_locations": [r["source_location"]],
+        "research_only": True,
+    } for r in history)
+    research_stories.extend({
+        "id": r["id"], "story_type": "territorial_rate_comparison",
+        "editorial_priority_points": 40,
+        "source_url": r["source_url"],
+        "source_locations": [
+            r["low"]["source_location"], r["high"]["source_location"]],
+        "research_only": True,
+    } for r in territory)
+    research_stories.sort(key=lambda r: (
+        -r["editorial_priority_points"], r["story_type"], r["id"]
+    ))
     return {
         "schema_version": "pulse-research-engine-3.0",
         "created_at": datetime.now(timezone.utc).isoformat(),
@@ -143,13 +217,19 @@ def research_report(articles: list[dict], limit: int = MAX_RESEARCH_PAIRS) -> di
         "verified_single_findings_count": len(pool),
         "verified_paired_candidate_count": len(pairs),
         "research_candidates": records[:limit],
+        "historical_signals": history,
+        "territorial_signals": territory,
+        "research_stories": research_stories,
+        "publication_coverage": publication_coverage,
         "coverage": {
-            "scope": "structured_verified_findings_in_workbench_not_entire_pdf_prose",
+            "scope": "whole_pdf_text_layer_context_and_verified_structured_findings" if any(x["full_text_layer_attached"] for x in publication_coverage) else "structured_verified_findings_in_workbench_not_entire_pdf_prose",
             "historical_series_supplied": bool(has_history),
             "territorial_dimensions_supplied": bool(has_territory),
-            "historical_comparison_stories": "not_implemented",
-            "territorial_comparison_stories": "not_implemented",
+            "historical_comparison_stories": "verified_records_available" if history else "no_comparable_data",
+            "territorial_comparison_stories": "verified_records_available" if territory else "no_comparable_data",
             "missing_evidence_policy": "withhold_inference",
+            "narrative_paragraphs_are_context_not_statistical_proof": True,
+            "research_stories_count": len(research_stories),
         },
         "checks": {
             "no_ai_or_network_required": True,
@@ -182,6 +262,9 @@ def main(argv=None) -> int:
             "findings_extracted": report["extracted_findings_count"],
             "findings_verified": report["verified_single_findings_count"],
             "matched_pairs": report["verified_paired_candidate_count"],
+            "historical_signals": len(report["historical_signals"]),
+            "territorial_signals": len(report["territorial_signals"]),
+            "pdf_coverage": report["publication_coverage"],
             "top_candidates": [
                 {"segment": c["segment"], "tier": c["ranking"]["queue_tier"],
                  "angles": [a["id"] for a in c["angles"]]}
@@ -198,6 +281,8 @@ def main(argv=None) -> int:
             "file": str(args.output),
             "verified_pairs": report["verified_paired_candidate_count"],
             "editorial_candidates": len(report["research_candidates"]),
+            "historical_signals": len(report["historical_signals"]),
+            "territorial_signals": len(report["territorial_signals"]),
         }, ensure_ascii=False))
     return 0
 
