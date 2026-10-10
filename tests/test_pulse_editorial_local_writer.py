@@ -1,5 +1,6 @@
 """Qwen3:4b-instruct genuinely writes a quarantine candidate; never auto-promote."""
 import copy
+import io
 import json
 from pathlib import Path
 import tempfile
@@ -7,7 +8,7 @@ import unittest
 from unittest.mock import patch
 
 from scripts.pulse_editorial_local_writer import (
-    assess_model_copy, LocalRewriteCandidate, make_rewrite_lab, main,
+    ARTICLE_SCHEMA, assess_model_copy, LocalRewriteCandidate, make_rewrite_lab, main,
 )
 from scripts.pulse_editorial_publication import write_editorial_issue
 from test_pulse_editorial_storyboards import six_articles
@@ -166,6 +167,61 @@ class QwenFreeProseSafetyTests(unittest.TestCase):
                          "needs_human_semantic_review")
         self.assertGreaterEqual(assessment["substantially_rewritten_paragraphs"], 2)
         self.assertTrue(assessment["semantic_truth_not_automatically_certified"])
+
+    def test_surface_v2_extra_lead_does_not_hide_italian_and_semantic_errors(self):
+        draft = fixture()["drafts"][0]
+        proposal = {
+            "headline": draft["headline"],
+            "lead": draft["lead"],  # real Surface Qwen extra output
+            "paragraphs": [
+                draft["paragraphs"][0]["text"] + " Questo contrasto tra "
+                "ingressi e notti evidenzia un'evoluzione del comportamento "
+                "dei clienti residenti nei confronti delle strutture.",
+                draft["paragraphs"][1]["text"],
+                "L'andamento mostra che, sebbene i clienti residenti si "
+                "verifichino in numero inferiore, la durata media delle "
+                "loro stanzialità aumenta rispetto al trimestre precedente.",
+                draft["paragraphs"][3]["text"],
+            ],
+        }
+        assessment = assess_model_copy(proposal, draft)
+        self.assertEqual(assessment["status"], "rejected")
+        self.assertIn("invalid_json_structure_or_extra_fields",
+                      assessment["failures"])
+        self.assertIn("unsupported_inference_about_customer_behavior",
+                      assessment["failures"])
+        self.assertIn("unnatural_italian:clients_do_not_occur",
+                      assessment["failures"])
+        self.assertIn("unnatural_italian:misused_stanzialita",
+                      assessment["failures"])
+        self.assertIn("headline_unchanged_from_source",
+                      assessment["style_warnings"])
+
+    def test_json_schema_has_exactly_two_output_keys(self):
+        self.assertFalse(ARTICLE_SCHEMA["additionalProperties"])
+        self.assertEqual(set(ARTICLE_SCHEMA["required"]), {"headline", "paragraphs"})
+        self.assertEqual(ARTICLE_SCHEMA["properties"]["paragraphs"]["minItems"], 4)
+        self.assertEqual(ARTICLE_SCHEMA["properties"]["paragraphs"]["maxItems"], 4)
+
+    def test_local_ollama_request_uses_strict_json_schema(self):
+        draft = fixture()["drafts"][0]
+        expected = {
+            "headline": draft["headline"],
+            "paragraphs": [p["text"] for p in draft["paragraphs"]],
+        }
+        seen = []
+        def fake_urlopen(req, timeout):
+            request_body = json.loads(req.data.decode("utf-8"))
+            seen.append(request_body)
+            return io.BytesIO(json.dumps({
+                "response": json.dumps(expected, ensure_ascii=False)
+            }).encode("utf-8"))
+        with patch("scripts.pulse_editorial_local_writer.request.urlopen",
+                   side_effect=fake_urlopen):
+            response = LocalRewriteCandidate("qwen3:4b-instruct").rewrite(draft)
+        self.assertEqual(response, expected)
+        self.assertEqual(seen[0]["format"], ARTICLE_SCHEMA)
+        self.assertFalse(seen[0]["stream"])
 
     def test_offline_cli_requires_existing_ollama(self):
         with tempfile.TemporaryDirectory() as directory:
