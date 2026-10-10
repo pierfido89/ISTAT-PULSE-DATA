@@ -296,6 +296,8 @@ def research_report(articles: list[dict], limit: int = MAX_RESEARCH_PAIRS) -> di
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description="PULSE 3.0 research of verified workbench evidence")
     parser.add_argument("--input", type=Path, required=True)
+    parser.add_argument("--additional-input", type=Path, nargs="*", default=[],
+                        help="Merge other isolated ISTAT workbenches into one research report")
     parser.add_argument("--output", type=Path)
     parser.add_argument("--limit", type=int, default=3)
     parser.add_argument("--inspect", action="store_true")
@@ -306,10 +308,18 @@ def main(argv=None) -> int:
         parser.error("Output required unless inspecting")
     if args.output and (
         args.output.name.lower() in FORBIDDEN_OUTPUTS or
-        args.output.resolve() == args.input.resolve()
+        args.output.resolve() in {
+            x.resolve() for x in [args.input] + args.additional_input
+        }
     ):
         parser.error("Refusing to overwrite input or production")
-    report = research_report(_read_input(args.input), limit=args.limit)
+    paths = [args.input] + args.additional_input
+    if len(paths) != len({p.resolve() for p in paths}):
+        parser.error("Duplicate workbench input")
+    articles = []
+    for path in paths:
+        articles.extend(_read_input(path))
+    report = research_report(articles, limit=args.limit)
     if args.inspect:
         print(json.dumps({
             "source_documents": report["source_document_count"],
