@@ -4,7 +4,9 @@ Official data: ISTAT II trimestre 2026; original actual draft
 values are preserved in assertions, no cloud model is called.
 """
 import unittest
-from scripts.pulse_editorial_ai import audit, candidates
+from unittest.mock import patch
+from scripts.pulse_editorial_ai import audit, candidates, generate_reviewed, LocalOllama
+from scripts.pulse_taxonomy import load_taxonomy
 from test_pulse_editorial_ai import primary, finding, PROPOSAL
 
 
@@ -96,6 +98,43 @@ class RealPilotRegression(unittest.TestCase):
                         "registrano un calo del 2,4%, fino a 77.611.946 notti.")
         result = audit_fact(77611946, 2.4, "Presenze", "totale", text)
         self.assertIn("wrong_yoy_direction", result["quality"]["issues"])
+
+    def test_one_local_rewrite_can_fix_a_rejected_fabricated_facility(self):
+        candidate = candidates(primary(finding()))[0]
+        bad = dict(PROPOSAL)
+        bad["body"] += " Nei B&B i numeri confermano il confronto."
+        with patch.object(LocalOllama, "generate",
+                          side_effect=[bad, PROPOSAL]) as gen:
+            repaired = generate_reviewed(candidate, LocalOllama(),
+                                         load_taxonomy(), max_retries=1)
+        self.assertEqual(gen.call_count, 2)
+        self.assertEqual(repaired["generator"]["attempts"], 2)
+        self.assertIn("unsourced_accommodation_type",
+                      repaired["quality"]["attempt_history"][0])
+        self.assertEqual(repaired["quality"]["status"], "review_required")
+        self.assertEqual(repaired["publication_status"], "draft_only")
+
+    def test_failed_second_attempt_remains_rejected(self):
+        candidate = candidates(primary(finding()))[0]
+        bad = dict(PROPOSAL)
+        bad["body"] += " Negli agriturismi si verificano le stesse variazioni."
+        with patch.object(LocalOllama, "generate",
+                          side_effect=[bad, bad]):
+            repaired = generate_reviewed(candidate, LocalOllama(),
+                                         load_taxonomy(), max_retries=1)
+        self.assertEqual(repaired["quality"]["status"], "rejected")
+        self.assertEqual(repaired["generator"]["attempts"], 2)
+
+    def test_disabling_retry_makes_one_local_call(self):
+        candidate = candidates(primary(finding()))[0]
+        bad = dict(PROPOSAL)
+        bad["body"] += " Negli agriturismi si verificano le stesse variazioni."
+        with patch.object(LocalOllama, "generate",
+                          return_value=bad) as gen:
+            draft = generate_reviewed(candidate, LocalOllama(),
+                                      load_taxonomy(), max_retries=0)
+        self.assertEqual(gen.call_count, 1)
+        self.assertEqual(draft["quality"]["status"], "rejected")
 
 if __name__ == "__main__":
     unittest.main()
