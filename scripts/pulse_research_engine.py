@@ -19,11 +19,13 @@ try:
     from scripts.pulse_editorial_pairs import paired_candidates, grounded_story, FORBIDDEN_OUTPUTS
     from scripts.pulse_research_comparisons import historical_signals, territorial_signals
     from scripts.pulse_research_reading import match_passages, research_narrative_leads
+    from scripts.pulse_research_labor import labor_research_signals
 except ModuleNotFoundError:
     from pulse_editorial_ai import _read_input, candidates
     from pulse_editorial_pairs import paired_candidates, grounded_story, FORBIDDEN_OUTPUTS
     from pulse_research_comparisons import historical_signals, territorial_signals
     from pulse_research_reading import match_passages, research_narrative_leads
+    from pulse_research_labor import labor_research_signals
 
 MAX_RESEARCH_PAIRS = 10
 
@@ -108,6 +110,7 @@ def research_report(articles: list[dict], limit: int = MAX_RESEARCH_PAIRS) -> di
     pairs = paired_candidates(articles, limit=MAX_RESEARCH_PAIRS)
     history = historical_signals(articles)
     territory = territorial_signals(articles)
+    labor = labor_research_signals(articles)
     readings = {}
     publication_coverage = []
     for article in articles:
@@ -219,6 +222,13 @@ def research_report(articles: list[dict], limit: int = MAX_RESEARCH_PAIRS) -> di
             r["low"]["source_location"], r["high"]["source_location"]],
         "research_only": True,
     } for r in territory)
+    research_stories.extend({
+        "id": r["id"], "story_type": "labor_categories_yoy_evidence",
+        "editorial_priority_points": 50,
+        "source_url": r["source_url"],
+        "source_locations": r["source_locations"],
+        "research_only": True,
+    } for r in labor)
     research_stories.sort(key=lambda r: (
         -r["editorial_priority_points"], r["story_type"], r["id"]
     ))
@@ -233,6 +243,7 @@ def research_report(articles: list[dict], limit: int = MAX_RESEARCH_PAIRS) -> di
         "research_candidates": records[:limit],
         "historical_signals": history,
         "territorial_signals": territory,
+        "labor_signals": labor,
         "research_stories": research_stories,
         "publication_coverage": publication_coverage,
         "narrative_leads_unverified": narrative_leads,
@@ -246,6 +257,7 @@ def research_report(articles: list[dict], limit: int = MAX_RESEARCH_PAIRS) -> di
             "missing_evidence_policy": "withhold_inference",
             "narrative_paragraphs_are_context_not_statistical_proof": True,
             "research_stories_count": len(research_stories),
+            "labor_evidenced_signals": len(labor),
             "narrative_leads_need_independent_verification": len(narrative_leads),
         },
         "checks": {
@@ -280,6 +292,7 @@ def main(argv=None) -> int:
             "findings_verified": report["verified_single_findings_count"],
             "matched_pairs": report["verified_paired_candidate_count"],
             "historical_signals": len(report["historical_signals"]),
+            "labor_signals": len(report["labor_signals"]),
             "territorial_signals": len(report["territorial_signals"]),
             "narrative_leads_unverified": len(report["narrative_leads_unverified"]),
             "pdf_coverage": report["publication_coverage"],
