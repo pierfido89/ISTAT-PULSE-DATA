@@ -172,8 +172,18 @@ def extract_bytes(data, url, content_type="", filename=""):
     source_hash = hashlib.sha256(data).hexdigest()
     name = (filename or urlparse(url).path).lower().split("?")[0]
     ct = content_type.lower()
+    mixed_findings = []
     if name.endswith(".pdf") or "application/pdf" in ct:
         tables = pdf_tables(data)
+        try:
+            from scripts.pulse_deep_tables import extract_pdf_mixed_findings
+        except ModuleNotFoundError:
+            from pulse_deep_tables import extract_pdf_mixed_findings
+        try:
+            mixed_findings = extract_pdf_mixed_findings(data, url, source_hash)
+        except Exception:
+            # Never confuse a PDF parsing failure with positive evidence.
+            mixed_findings = []
     elif name.endswith(".xlsx") or "spreadsheetml" in ct:
         tables = xlsx_tables(data)
     elif name.endswith(".xls") or "ms-excel" in ct:
@@ -195,6 +205,8 @@ def extract_bytes(data, url, content_type="", filename=""):
         "source_url": url,
         "source_sha256": source_hash,
         "evidence": evidence[:20],
+        "findings": mixed_findings[:40],
+        "findings_status": "explicit_document_facts" if mixed_findings else "none",
         "status": "verified" if evidence else "no_comparable_series"
     }
 
