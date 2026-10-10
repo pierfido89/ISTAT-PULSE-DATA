@@ -290,10 +290,21 @@ class LocalOllama:
         except (error.URLError, TimeoutError, ValueError, OSError):
             return False
 
-    def generate(self, candidate: dict) -> dict:
+    def generate(self, candidate: dict, feedback: list[str] | None = None) -> dict:
+        prompt = _prompt(candidate)
+        if feedback:
+            # Only internal validator codes are passed back, not arbitrary
+            # user instructions or untrusted source text.
+            codes = [str(code)[:110] for code in feedback][:12]
+            prompt += (
+                "\nLa prima bozza NON ha superato il controllo. "
+                "Scrivine una NUOVA, senza spiegazioni aggiuntive, "
+                "correggendo questi errori: " + json.dumps(codes, ensure_ascii=False)
+                + ". Non arrotondare numeri e non inventare categorie o periodi."
+            )
         payload = {
             "model": self.model, "system": SYSTEM,
-            "prompt": _prompt(candidate), "stream": False, "format": "json",
+            "prompt": prompt, "stream": False, "format": "json",
             "options": {"temperature": 0.1, "num_ctx": 4096, "num_predict": 520},
             "keep_alive": "5m",
         }
@@ -378,6 +389,33 @@ def audit(candidate: dict, proposal: dict, taxonomy: dict | None = None,
     return draft
 
 
+
+def generate_reviewed(candidate: dict, ollama: LocalOllama, taxonomy: dict,
+                      max_retries: int = 1) -> dict:
+    """At most one local regeneration, then retain the fail-closed decision."""
+    history: list[list[str]] = []
+    final: dict | None = None
+    for attempt in range(max_retries + 1):
+        try:
+            proposal = ollama.generate(
+                candidate, feedback=history[-1] if attempt else None)
+            final = audit(candidate, proposal, taxonomy, ollama.model)
+        except (ValueError, json.JSONDecodeError, RuntimeError) as exc:
+            if final is None:
+                final = audit(candidate, {}, taxonomy, ollama.model)
+            final["quality"]["issues"].append("model_error:" + type(exc).__name__)
+            final["quality"]["status"] = "rejected"
+            history.append(list(final["quality"]["issues"]))
+            break
+        history.append(list(final["quality"]["issues"]))
+        if final["quality"]["status"] != "rejected":
+            break
+    assert final is not None
+    final["quality"]["attempt_history"] = history
+    final["generator"]["attempts"] = len(history)
+    return final
+
+
 def _read_input(path: Path) -> list[dict]:
     if not path.is_file() or path.stat().st_size > MAX_INPUT_BYTES:
         raise ValueError("Input missing or too large (maximum 35 MB).")
@@ -399,6 +437,8 @@ def main(argv=None) -> int:
     p.add_argument("--model", default=MODEL_DEFAULT, help="Installed Ollama model name")
     p.add_argument("--inspect", action="store_true", help="Count evidenced candidates without AI")
     p.add_argument("--check-model", action="store_true", help="Check local Ollama model only")
+    p.add_argument("--max-retries", type=int, choices=(0, 1), default=1,
+                   help="Maximum local rewrite attempts per rejected draft (0 or 1)")
     args = p.parse_args(argv)
     if args.check_model:
         online = LocalOllama(args.model).check()
@@ -441,12 +481,7 @@ def main(argv=None) -> int:
     taxonomy = load_taxonomy()
     drafts = []
     for candidate in pool[:args.limit]:
-        try:
-            generated = ollama.generate(candidate)
-            drafts.append(audit(candidate, generated, taxonomy, args.model))
-        except (ValueError, json.JSONDecodeError, RuntimeError) as exc:
-            drafts.append(audit(candidate, {}, taxonomy, args.model))
-            drafts[-1]["quality"]["issues"].append("model_error:" + type(exc).__name__)
+        drafts.append(generate_reviewed(candidate, ollama, taxonomy, args.max_retries))
     report = {"schema_version": "pulse-editorial-ai-1.0",
               "created_at": datetime.now(timezone.utc).isoformat(),
               "mode": "local_drafts_only", "model": args.model,
