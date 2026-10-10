@@ -1,6 +1,110 @@
 {
-  "generated_at": "2026-10-10T04:11:12.805878+00:00",
+  "generated_at": "2026-10-10T09:10:21.488581+00:00",
   "articles": [
+    {
+      "id": "PULSE-887AF8B207E62CFA",
+      "story_fingerprint": "887af8b207e62cfa25621896",
+      "published_at": "2026-10-10T09:10:21.488581+00:00",
+      "last_seen_at": "2026-10-10T09:10:21.488581+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 86,
+      "public_source": {
+        "url": "https://www.istat.it/it/files//2023/11/report_multinazionali2021.pdf",
+        "domain": "istat.it",
+        "role": "primary_statistical_source",
+        "verification_method": "named_or_topic_domain_search",
+        "verification_score": 87
+      },
+      "discovery": {
+        "visible": false,
+        "role": "hidden_radar"
+      },
+      "period_reference": null,
+      "latest_source_update": null,
+      "headline": "Economia, nuovo dato per Emilia-Romagna: 700mila",
+      "summary": "Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+      "statistical_claims": [
+        {
+          "raw_value": "700mila",
+          "verified": true
+        },
+        {
+          "raw_value": "700mila",
+          "verified": true
+        }
+      ],
+      "verified_series": [],
+      "territories": [
+        "emilia-romagna",
+        "lombardia",
+        "roma",
+        "toscana"
+      ],
+      "chart_spec": {
+        "type": "auto",
+        "status": "requires_primary_series",
+        "reason": "candidate_contains_multiple_numeric_values"
+      },
+      "map_spec": {
+        "level": "auto",
+        "territories": [
+          "emilia-romagna",
+          "lombardia",
+          "roma",
+          "toscana"
+        ],
+        "status": "requires_primary_geodata"
+      },
+      "editorial_status": "verified_primary_match",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-A0C624C405E02564",
+      "story_fingerprint": "a0c624c405e025641ab11d0e",
+      "published_at": "2026-10-10T04:41:00+00:00",
+      "last_seen_at": "2026-10-10T09:10:21.488581+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 45,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPcWZaWmF2ZVBDZlo4clJraTBtZnUtd0ZJYzRGS19KTXRMMFFrbkc4a3N6VVVNNkQzVHQ0NnI0TkNHczEtenRzek16aER0cF9SV0I0Sm82T2Y0cWs1UEwxeFpCcC01UU0xMlVhalVWR2Q3OXZiMTNsQV9UTDloSm9uRFpZMmRlNWd6UWhMdV9PY1lHOGZ3bWdMam40eGJWbm5NY0g4d0JnU0VPS2FpdTVyYmM0eXNlY0JyQ2phalhSeF81TFBuVDBpTzJTcFh6TXhvRlMw?oc=5",
+        "domain": "FIRSTonline",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Imprese, Unioncamere: in Italia sono quasi 700mila quelle guidate da stranieri, +16mila nel primo semestre 2026 - FIRSTonline",
+      "summary": "Imprese, Unioncamere: in Italia sono quasi 700mila quelle guidate da stranieri, +16mila nel primo semestre 2026 FIRSTonline",
+      "statistical_claims": [
+        {
+          "raw_value": "700mila",
+          "verified": false
+        },
+        {
+          "raw_value": "+16mila",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "700mila",
+          "verified": false
+        },
+        {
+          "raw_value": "+16mila",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
     {
       "id": "PULSE-76FDCC1F062A3A1B",
       "story_fingerprint": "76fdcc1f062a3a1b3cf3f81e",
@@ -62,7 +166,7 @@
       "id": "PULSE-F6A0C16B1B412DDD",
       "story_fingerprint": "f6a0c16b1b412dddf8e4ebe8",
       "published_at": "2026-10-09T21:44:20+00:00",
-      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
+      "last_seen_at": "2026-10-10T09:10:21.488581+00:00",
       "topic": "ALTRO",
       "pulse_score": 47,
       "patterns": [],
@@ -95,7 +199,7 @@
       "id": "PULSE-A906182DEEF86950",
       "story_fingerprint": "a906182deef86950a8d9e139",
       "published_at": "2026-10-09T20:54:03+00:00",
-      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
+      "last_seen_at": "2026-10-10T09:10:21.488581+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 49,
       "patterns": [],
@@ -134,7 +238,7 @@
       "id": "PULSE-432037A7AA2FBA88",
       "story_fingerprint": "432037a7aa2fba88035c0cf3",
       "published_at": "2026-10-09T19:12:34+00:00",
-      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
+      "last_seen_at": "2026-10-10T09:10:21.488581+00:00",
       "topic": "ALTRO",
       "pulse_score": 49,
       "patterns": [],
@@ -175,7 +279,7 @@
       "id": "PULSE-44C989BE2F08B47C",
       "story_fingerprint": "44c989be2f08b47cf29a577f",
       "published_at": "2026-10-09T17:18:32+00:00",
-      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
+      "last_seen_at": "2026-10-10T09:10:21.488581+00:00",
       "topic": "SALUTE",
       "pulse_score": 50,
       "patterns": [],
@@ -222,7 +326,7 @@
       "id": "PULSE-3A71543CD8672C57",
       "story_fingerprint": "3a71543cd8672c57064a1b23",
       "published_at": "2026-10-09T11:15:28+00:00",
-      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
+      "last_seen_at": "2026-10-10T09:10:21.488581+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 50,
       "patterns": [],
@@ -299,6 +403,39 @@
       "publication_status": "published"
     },
     {
+      "id": "PULSE-8AB852D536E993C2",
+      "story_fingerprint": "8ab852d536e993c26fa9f46e",
+      "published_at": "2026-10-09T11:00:00+00:00",
+      "last_seen_at": "2026-10-10T09:10:21.488581+00:00",
+      "topic": "LAVORO",
+      "pulse_score": 47,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQVmduako2VGpkRnptRDR5THR4Y2tXYXRjTXE1bDU5YVVaTlRMXzFMN25rS0oxUGFJamFyZXdXX2RqYU1MbXFyc0lOOWVwNmVsWE01MzZBaUUwcmFKOGtaWmlkYUV6dUxJUUdia2pDdFJod3dUR3hiaGhVaVo5bl9XenpHelptQVBQWUxUbUZzb1lNdjZ0RzdqbWJVdlV3MkRsYkx1XzFxeUMtWS1SSmdKREZDZGFmaGtOT3l3QThxbHhLT3QxRnlxWThlYXJRZmNUNGpLbkdXR1NlMGJuTHpzRkhfVkx5d2JzX3YyRjBlWdIB9AFBVV95cUxObkVWTDVvdUQxSkhRVnZkS0pwdmgtQV9aWmRjRE9aTHJYS2VnTVd4c2ZnbzhVdFRfbWxSMnZQdXVWSE1zTjZaUnViTGtUVVdlUkQ3em1ZM2dSNG9WSHJmX1FZbWNIdnJnTGFvWENuZlNsdUs5LU1oUFJuTzlYMVFmTnQxbUs4VEVINWt5SmVjT1BsY0NBcXB6ck5iOERwZ1Y3WVo3d0ZIdWxIdm1yWFhIcEQyZVQ4V25uYWlhci1sVk9XSE9IWWotM0tfQVBjWkZxZV8xSDhmNjNhd1haRDdLelFPNGtDOHd5aUdBaWFYUnBYeWpo?oc=5",
+        "domain": "ANSA",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Settembre da record per hotel nord Sardegna, occupazione camere all'85% - ANSA",
+      "summary": "Settembre da record per hotel nord Sardegna, occupazione camere all'85% ANSA",
+      "statistical_claims": [
+        {
+          "raw_value": "85%",
+          "verified": false
+        },
+        {
+          "raw_value": "85%",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "sardegna"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
       "id": "PULSE-98228A3E851FCA4D",
       "story_fingerprint": "98228a3e851fca4d9244c71d",
       "published_at": "2026-10-09T09:08:00+00:00",
@@ -341,7 +478,7 @@
       "id": "PULSE-A40035E2B3CFE6B6",
       "story_fingerprint": "a40035e2b3cfe6b66eca5dc2",
       "published_at": "2026-10-09T09:08:00+00:00",
-      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
+      "last_seen_at": "2026-10-10T09:10:21.488581+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 64,
       "patterns": [],
@@ -380,7 +517,7 @@
       "id": "PULSE-6432FBBFD9EE664D",
       "story_fingerprint": "6432fbbfd9ee664d1c3a665d",
       "published_at": "2026-10-09T08:58:49+00:00",
-      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
+      "last_seen_at": "2026-10-10T09:10:21.488581+00:00",
       "topic": "MOBILITA",
       "pulse_score": 84,
       "public_source": {
@@ -439,7 +576,7 @@
       "id": "PULSE-EFA336A7BA0A40C4",
       "story_fingerprint": "efa336a7ba0a40c461333836",
       "published_at": "2026-10-09T08:46:00+00:00",
-      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
+      "last_seen_at": "2026-10-10T09:10:21.488581+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 45,
       "patterns": [],
@@ -486,7 +623,7 @@
       "id": "PULSE-C545089630B8EEA5",
       "story_fingerprint": "c545089630b8eea51e9bdc3b",
       "published_at": "2026-10-09T08:00:00+00:00",
-      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
+      "last_seen_at": "2026-10-10T09:10:21.488581+00:00",
       "topic": "LAVORO",
       "pulse_score": 84,
       "public_source": {
@@ -541,7 +678,7 @@
       "id": "PULSE-81DFEFB42997622E",
       "story_fingerprint": "81dfefb42997622e95b6a87f",
       "published_at": "2026-10-09T07:42:00+00:00",
-      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
+      "last_seen_at": "2026-10-10T09:10:21.488581+00:00",
       "topic": "ALTRO",
       "pulse_score": 49,
       "patterns": [],
@@ -894,7 +1031,7 @@
       "id": "PULSE-DC00193403C3AB68",
       "story_fingerprint": "dc00193403c3ab680b531f76",
       "published_at": "2026-10-08T12:15:48+00:00",
-      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
+      "last_seen_at": "2026-10-10T09:10:21.488581+00:00",
       "topic": "ALTRO",
       "pulse_score": 49,
       "patterns": [],
@@ -1199,7 +1336,7 @@
       "id": "PULSE-DDBBD6E647CA6EF9",
       "story_fingerprint": "ddbbd6e647ca6ef9e2f38473",
       "published_at": "2026-10-08T07:59:55+00:00",
-      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
+      "last_seen_at": "2026-10-10T09:10:21.488581+00:00",
       "topic": "LAVORO",
       "pulse_score": 90,
       "public_source": {
@@ -1278,7 +1415,7 @@
       "id": "PULSE-142B6FC3D7570877",
       "story_fingerprint": "142b6fc3d7570877ce7162e2",
       "published_at": "2026-10-08T07:12:23+00:00",
-      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
+      "last_seen_at": "2026-10-10T09:10:21.488581+00:00",
       "topic": "ALTRO",
       "pulse_score": 70,
       "patterns": [],
@@ -1327,7 +1464,7 @@
       "id": "PULSE-D3F4DC725ECBD0D5",
       "story_fingerprint": "d3f4dc725ecbd0d57cb39523",
       "published_at": "2026-10-08T06:50:10+00:00",
-      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
+      "last_seen_at": "2026-10-10T09:10:21.488581+00:00",
       "topic": "ISTRUZIONE",
       "pulse_score": 49,
       "patterns": [],
@@ -1366,7 +1503,7 @@
       "id": "PULSE-4DBD5172BB220CFF",
       "story_fingerprint": "4dbd5172bb220cffe19fd56e",
       "published_at": "2026-10-08T06:18:25+00:00",
-      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
+      "last_seen_at": "2026-10-10T09:10:21.488581+00:00",
       "topic": "SALUTE",
       "pulse_score": 55,
       "patterns": [],
@@ -1512,7 +1649,7 @@
       "id": "PULSE-BC9555C3BCE88DB9",
       "story_fingerprint": "bc9555c3bce88db98be0f9fc",
       "published_at": "2026-10-07T13:07:40+00:00",
-      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
+      "last_seen_at": "2026-10-10T09:10:21.488581+00:00",
       "topic": "ALTRO",
       "pulse_score": 70,
       "patterns": [],
@@ -1603,7 +1740,7 @@
       "id": "PULSE-0DFF7DF6BCC01521",
       "story_fingerprint": "0dff7df6bcc01521fd029a11",
       "published_at": "2026-10-07T10:31:59+00:00",
-      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
+      "last_seen_at": "2026-10-10T09:10:21.488581+00:00",
       "topic": "AMBIENTE",
       "pulse_score": 70,
       "patterns": [],
@@ -1650,7 +1787,7 @@
       "id": "PULSE-5D4D75DB184647D9",
       "story_fingerprint": "5d4d75db184647d9c889d5f7",
       "published_at": "2026-10-07T09:37:46+00:00",
-      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
+      "last_seen_at": "2026-10-10T09:10:21.488581+00:00",
       "topic": "SALUTE",
       "pulse_score": 50,
       "patterns": [],
@@ -1697,7 +1834,7 @@
       "id": "PULSE-636A87BF28177692",
       "story_fingerprint": "636a87bf28177692d4659b43",
       "published_at": "2026-10-07T09:23:00+00:00",
-      "last_seen_at": "2026-10-10T04:11:12.805878+00:00",
+      "last_seen_at": "2026-10-10T09:10:21.488581+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 69,
       "patterns": [],
