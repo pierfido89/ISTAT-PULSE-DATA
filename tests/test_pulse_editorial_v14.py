@@ -5,6 +5,7 @@ All readings are deterministic: no Ollama connection or paid APIs.
 import unittest
 from scripts.pulse_editorial_ai import audit
 from scripts.pulse_editorial_style import style_warnings
+from scripts.pulse_editorial_brief import editorial_brief
 from test_pulse_editorial_v13 import row_candidate
 
 
@@ -89,6 +90,14 @@ class V14RealPilotTests(unittest.TestCase):
         self.assertIn("unverified_statistical_significance",
                       audit(c, proposal)["quality"]["issues"])
 
+    def test_brief_includes_official_indicator_glossary(self):
+        arrivals = row_candidate(12464038, -4.3, "Arrivi", "residenti")
+        nights = row_candidate(32162873, 1.7, "Presenze", "residenti")
+        self.assertIn("iniziano un soggiorno",
+                      editorial_brief(arrivals["evidence"])["indicator_glossary"])
+        self.assertIn("notti trascorse",
+                      editorial_brief(nights["evidence"])["indicator_glossary"])
+
     def test_both_single_measure_and_full_article_remain_not_published(self):
         c = row_candidate(12464038, -4.3, "Arrivi", "residenti")
         proposal = {
@@ -103,6 +112,9 @@ class V14RealPilotTests(unittest.TestCase):
         }
         d = audit(c, proposal)
         self.assertEqual(d["publication_status"], "draft_only")
+        self.assertEqual(d["editorial_format"], "single_finding_statistical_brief")
+        self.assertEqual(d["full_article_evidence_status"],
+                         "requires_multiple_independent_findings")
         self.assertTrue(d["quality"]["requires_human_fact_check"])
 
 
