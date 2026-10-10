@@ -121,13 +121,80 @@ Per eseguire i test offline, senza Qwen:
 py -m unittest discover -s tests -p "test_pulse_editorial*.py" -v
 ```
 
+## Secondo passo: verifica reale della prima bozza e motore 2.1
+
+Il primo output reale su Surface (modello locale Qwen3:4b-instruct),
+`bozza_coppia_turismo_q2_2026.json`, contiene una notizia
+statisticamente ancorata a **due indicatori coerenti**, ma il contesto
+aggiuntivo della AI era:
+
+> I arrivi diminuiscono mentre le presenze aumentano, indicando
+> un movimento in direzioni opposte tra i due indicatori.
+
+La frase contiene **errore grammaticale** e non aggiunge informazione
+al titolo. Il primo gate v2.0 lasciava passare il testo con
+`review_required`, nonostante non fosse pronto da pubblicare.
+
+### Correzione metodologica e tecnica v2.1
+
+- Prima verifica indipendente della definizione ISTAT di **permanenza
+  media**, cioè il rapporto presenze/arrivi, pubblicata nella voce
+  metodologica Noi Italia ISTAT:
+  https://noi-italia.istat.it/pagina.php?L=0&categoria=8&dove=ITALIA
+- Una funzione deterministica in
+  `scripts/pulse_editorial_derived.py` calcola questo rapporto
+  SOLO se entrambi i totali sono positivi/validi, le unità sono
+  `arrivi` e `notti`, le posizioni sorgente sono distinte e
+  coincidono periodo, popolazione, struttura, URL e SHA-256.
+- Esempio dei clienti residenti negli esercizi alberghieri:
+  **32.162.873 / 12.464.038 = circa 2,58 notti per arrivo**
+  nel secondo trimestre 2026. Si tratta di un'elaborazione
+  indipendente PULSE su dati ISTAT, NON di un numero estratto
+  come dato già pubblicato nella specifica tabella.
+- Le variazioni ufficiali (+1,7% presenze, -4,3% arrivi) sono
+  espresse con una cifra decimale. Una verifica degli intervalli
+  impliciti nell'arrotondamento a 0,1 punti percentuali dimostra
+  che il **rapporto è aumentato** rispetto al trimestre
+  corrispondente del 2025. Non si ricostruiscono totali del
+  2025, non si dichiara una variazione percentuale esatta e
+  non si suggeriscono spiegazioni comportamentali o causali.
+- Il gate editoriale intercetta `I arrivi` e altre forme
+  grammaticali errate, oltre alle frasi che ripetono soltanto
+  il contrasto già riportato nel titolo. Il contesto non
+  idoneo è conservato come `model_proposed_context` ma
+  viene ESCLUSO dall'articolo.
+- Le nuove indicazioni `quality.safe_core_status`,
+  `quality.model_context_status`,
+  `quality.generated_context_included` e
+  `quality.editorial_warnings` distinguono correttamente
+  nucleo statistico, qualità testuale e pubblicabilità.
+  **Tutto rimane `draft_only`**; anche il nucleo sicuro
+  deve essere approvato da un revisore umano.
+
+### Rivalutare il file GIA GENERATO, senza nuova AI
+
+Il nuovo comando
+`scripts/pulse_editorial_review.py` usa il workbench ufficiale
+originale come fonte di verità, confronta valori, riferimenti
+documentali e hash della bozza, e **non chiama Ollama né Internet**.
+La copia della bozza originale resta intatta.
+
+```powershell
+cd C:\Users\fiori\ISTAT-PULSE-AI-TEST
+git pull origin feat/pulse-editorial-ai-1.0
+py scripts/pulse_editorial_review.py --input workbench/turismo_q2_2026.json --previous workbench/bozza_coppia_turismo_q2_2026.json --output workbench/bozza_coppia_turismo_q2_2026_revisionata.json
+```
+
+L'output separa il contesto respinto dal nucleo sicuro con
+permanenza media calcolata e metodo verificabile.
+La qualità del testo finale resta oggetto di revisione umana:
+la formula non sostituisce una valutazione editoriale.
+
 ## Sviluppi successivi, non ancora implementati
 
-1. Verifica editoriale delle coppie reali generate dal Surface.
-2. Valutazione di eventuale statistica derivata della durata media:
-   servirebbe un rapporto controllato con denominatori omogenei,
-   dimensioni identiche, intervalli e arrotondamenti gestiti,
-   più revisione metodologica. **Non calcolata né affermata ora.**
+1. Verifica editoriale di tutte le coppie reali, non di un solo testo.
+2. Estendere la derivazione già verificata su permanenza media a
+   ulteriori segmenti, con verifiche documentali e metodologiche.
 3. Raggruppamenti di tre o più indicatori, solo per fonti e domini
    con dimensionalità provata.
 4. Comparazione della qualità tra mini-notizia deterministica,
