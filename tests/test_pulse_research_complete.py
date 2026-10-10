@@ -15,10 +15,11 @@ import unittest
 from unittest.mock import patch
 
 from scripts.pulse_research_reading import (
-    _extract_lines, match_passages, read_pdf_publication,
+    _extract_lines, match_passages, read_pdf_publication, research_narrative_leads,
 )
 from scripts.pulse_research_comparisons import historical_signals, territorial_signals
 from scripts.pulse_research_engine import research_report
+from scripts.pulse_research_import import import_publication, main as import_main
 from test_pulse_editorial_pairs import pair_fixture
 from test_pulse_editorial_ai import SOURCE
 
@@ -218,6 +219,57 @@ class NarrativeTests(unittest.TestCase):
         blocked = research_report([doc])
         self.assertEqual(blocked["research_candidates"][0]["narrative_context"], [])
         self.assertFalse(blocked["publication_coverage"][0]["full_text_layer_attached"])
+
+    def test_unverified_narrative_leads_across_subjects(self):
+        report = self._fake_pdf([
+            "L'occupazione aumenta nel territorio nazionale, secondo la descrizione "
+            "qualitativa della pubblicazione, da verificare nelle tabelle.",
+            "Le emissioni diminuiscono e il consumo di energia varia rispetto "
+            "al periodo precedente, secondo un testo puramente fittizio.",
+        ])
+        leads = research_narrative_leads(report)
+        self.assertGreaterEqual(len(leads), 2)
+        self.assertIn("lavoro", [r["theme"] for r in leads])
+        self.assertIn("ambiente", [r["theme"] for r in leads])
+        self.assertTrue(all(
+            r["proof_status"] ==
+            "narrative_lead_unverified_needs_structured_source_witness"
+            for r in leads
+        ))
+
+    def test_offline_generic_pdf_import_without_verified_numbers(self):
+        with tempfile.TemporaryDirectory() as folder:
+            pdf = Path(folder) / "fonte.pdf"
+            pdf.write_bytes(b"%PDF-1.7\\nsynthetic\\n")
+            data = self._fake_pdf([
+                "Il lavoro e l'occupazione aumentano, stando alla descrizione "
+                "preliminare di una fonte simulata che necessita di verifica.",
+            ])
+            # Bind fake reading to actual local-file hash.
+            data["source_sha256"] = hashlib.sha256(pdf.read_bytes()).hexdigest()
+            with patch("scripts.pulse_research_import.read_pdf_publication",
+                       return_value=data):
+                imported = import_publication(pdf, SOURCE, "Titolo ufficiale")
+            self.assertEqual(imported["articles"][0]["document_findings"], [])
+            self.assertEqual(imported["articles"][0]["verified_series"], [])
+            self.assertEqual(imported["articles"][0]["source_sha256"],
+                             data["source_sha256"])
+            research = research_report(imported["articles"])
+            self.assertEqual(research["verified_paired_candidate_count"], 0)
+            self.assertEqual(research["verified_single_findings_count"], 0)
+            self.assertTrue(research["publication_coverage"][0]["full_text_layer_attached"])
+            self.assertTrue(research["narrative_leads_unverified"])
+            self.assertEqual(research["research_candidates"], [])
+
+    def test_offline_import_refuses_insecure_source_url(self):
+        with tempfile.TemporaryDirectory() as folder:
+            pdf = Path(folder) / "test.pdf"
+            pdf.write_bytes(b"%PDF-1.7\\ntest\\n")
+            with self.assertRaises(ValueError):
+                import_publication(pdf, "http://untrusted.example/anything.pdf")
+            with self.assertRaises(SystemExit):
+                import_main(["--pdf", str(pdf), "--source-url", SOURCE,
+                             "--output", str(Path(folder) / "articles.json")])
 
     def test_nested_workbench_report_contains_coverage(self):
         report = research_report([pair_fixture()])
