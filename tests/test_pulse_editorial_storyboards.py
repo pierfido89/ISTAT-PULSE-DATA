@@ -41,7 +41,7 @@ class SixDomainEditorialTests(unittest.TestCase):
         result = create_editorial_stories(data)
         self.assertEqual(result["schema_version"], "pulse-editorial-storyboards-3.4")
         self.assertEqual(result["source_documents"], 6)
-        self.assertEqual(result["verified_research_options"], 16)
+        self.assertEqual(result["verified_research_options"], 14)  # one tourism pair in synthetic fixture
         self.assertEqual(len(result["drafts"]), 6)
         self.assertEqual(len({d["domain"] for d in result["drafts"]}), 6)
         self.assertEqual(len({d["source_url"] for d in result["drafts"]}), 6)
