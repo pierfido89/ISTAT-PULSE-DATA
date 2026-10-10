@@ -231,7 +231,7 @@ def _direction_claim_issues(context: str, pair: dict) -> list[str]:
     )
     for metric, change in changes.items():
         for match in re.finditer(r"\b" + metric + r"\b", context, re.I):
-            tail = re.split(r"[.;:]|\b(?:arrivi|presenze)\b",
+            tail = re.split(r"[.;:,]|\b(?:arrivi|presenze|mentre|invece|ma)\b",
                             context[match.end():match.end()+110], maxsplit=1)[0]
             target = verbs.search(tail)
             if not target:
