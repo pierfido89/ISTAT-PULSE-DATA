@@ -1,0 +1,35 @@
+name: "PULSE Editorial AI 1.0 — offline quality tests"
+on:
+  pull_request:
+    paths:
+      - 'scripts/pulse_editorial_ai.py'
+      - 'scripts/pulse_editorial_sample.py'
+      - 'scripts/pulse_editorial_evidence.py'
+      - 'scripts/pulse_taxonomy.py'
+      - 'tests/test_pulse_editorial_ai.py'
+      - '.github/workflows/verify-pulse-editorial-ai.yml'
+  push:
+    branches: [feat/pulse-editorial-ai-1.0]
+    paths:
+      - 'scripts/pulse_editorial_ai.py'
+      - 'scripts/pulse_editorial_sample.py'
+      - 'tests/test_pulse_editorial_ai.py'
+      - '.github/workflows/verify-pulse-editorial-ai.yml'
+permissions:
+  contents: read
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check syntax (no external AI)
+        run: python -m py_compile scripts/pulse_editorial_ai.py scripts/pulse_editorial_sample.py
+      - name: Run 15 local draft-contract tests (mock Ollama)
+        run: python -m unittest discover -s tests -p 'test_pulse_editorial_ai.py' -v
+      - name: Confirm production artifacts unchanged
+        run: |
+          git diff --exit-code -- data/news/articles.json data/news/index.json data/news/observer_articles.json
