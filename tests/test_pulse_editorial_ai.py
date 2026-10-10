@@ -154,5 +154,83 @@ class CandidateTests(unittest.TestCase):
             with self.assertRaises(SystemExit):
                 main(["--input",str(source),"--output",str(Path(d)/"articles.json")])
 
+    def test_real_qwen_pilot_rejects_unsourced_residents_and_stable_groups(self):
+        # Reproduces the specific unproved explanation observed in the
+        # first local Qwen3 editorial pilot. No invented number is needed
+        # for a statement to be misleading.
+        candidate = candidates(primary(finding()))[0]
+        p = dict(PROPOSAL)
+        p["body"] += (
+            " Il rilevato incremento delle presenze suggerisce un maggiore "
+            "utilizzo del servizio da parte di soggetti residenti o "
+            "di gruppi più stabili."
+        )
+        draft = audit(candidate, p)
+        self.assertEqual(draft["quality"]["status"], "rejected")
+        self.assertIn("unsourced_population_residents", draft["quality"]["issues"])
+        self.assertIn("unsourced_visitor_group", draft["quality"]["issues"])
+        self.assertIn("unsupported_behavioral_explanation", draft["quality"]["issues"])
+
+    def test_correctly_scoped_residents_are_allowed(self):
+        data = finding()
+        data["segment"]["residence"] = "residenti"
+        candidate = candidates(primary(data))[0]
+        p = dict(PROPOSAL)
+        p["lead"] = p["lead"].replace("negli alberghi", "dei residenti negli alberghi")
+        p["body"] = p["body"].replace(
+            "delle presenze negli esercizi alberghieri",
+            "delle presenze dei residenti negli esercizi alberghieri")
+        self.assertNotIn("unsourced_population_residents",
+                         audit(candidate, p)["quality"]["issues"])
+
+    def test_nonresident_fact_cannot_support_resident_claim(self):
+        data = finding()
+        data["segment"]["residence"] = "non residenti"
+        candidate = candidates(primary(data))[0]
+        p = dict(PROPOSAL)
+        p["lead"] += " Le presenze dei residenti crescono."
+        self.assertIn("unsourced_population_residents",
+                      audit(candidate, p)["quality"]["issues"])
+
+    def test_second_indicator_not_given_to_model_is_rejected(self):
+        candidate = candidates(primary(finding()))[0]
+        p = dict(PROPOSAL)
+        p["headline"] = "Arrivi in calo e presenze in crescita nel trimestre turistico"
+        self.assertIn("secondary_indicator_without_evidence",
+                      audit(candidate, p)["quality"]["issues"])
+
+    def test_false_unique_visitors_equivalence_is_rejected(self):
+        candidate = candidates(primary(finding()))[0]
+        p = dict(PROPOSAL)
+        p["body"] += " Il numero dei turisti aumenta."
+        self.assertIn("arrivals_confused_with_unique_visitors",
+                      audit(candidate, p)["quality"]["issues"])
+
+    def test_length_of_stay_needs_explicit_pair(self):
+        candidate = candidates(primary(finding()))[0]
+        p = dict(PROPOSAL)
+        p["body"] += " Anche la permanenza media aumenta."
+        self.assertIn("unsupported_average_stay",
+                      audit(candidate, p)["quality"]["issues"])
+
+    def test_false_istat_pulse_primary_attribution_is_rejected(self):
+        candidate = candidates(primary(finding()))[0]
+        p = dict(PROPOSAL)
+        p["body"] += " Sono dati disponibili per l'ISTAT PULSE."
+        self.assertIn("misattributed_primary_source",
+                      audit(candidate, p)["quality"]["issues"])
+
+    def test_unqualified_pulse_attribution_rejected(self):
+        candidate = candidates(primary(finding()))[0]
+        p = dict(PROPOSAL)
+        p["body"] += " Secondo ISTAT PULSE, il confronto è significativo."
+        self.assertIn("misattributed_primary_source",
+                      audit(candidate, p)["quality"]["issues"])
+
+    def test_existing_valid_proposal_remains_reviewable(self):
+        candidate = candidates(primary(finding()))[0]
+        self.assertEqual(audit(candidate, PROPOSAL)["quality"]["status"],
+                         "review_required")
+
 if __name__ == "__main__":
     unittest.main()
