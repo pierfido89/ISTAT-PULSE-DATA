@@ -10,6 +10,8 @@ on:
     branches: [ main ]
     paths:
       - 'scripts/update_news_radar.py'
+      - 'scripts/pulse_taxonomy.py'
+      - 'data/taxonomy/pulse_taxonomy_v1.json'
       - 'scripts/pulse_evidence.py'
       - 'data/news_radar_sources.json'
       - '.github/workflows/refresh-news-radar.yml'
