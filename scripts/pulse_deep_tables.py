@@ -90,6 +90,69 @@ def extract_mixed_table_rows(rows, *, caption, url, location, source_sha256):
             deduped.append(item)
     return deduped
 
+def extract_mixed_text_lines(text, *, url, page_number, source_sha256):
+    """Fallback when the native PDF table grid splits labels from number cells.
+
+    ISTAT's actual PDF includes labels on separate intervening lines. This
+    parser still requires explicit caption, source, row and segment evidence.
+    """
+    lines = [re.sub(r"\\s+", " ", line).strip() for line in (text or "").splitlines()]
+    lower = " ".join(lines).casefold()
+    if not ("prospetto " in lower and
+            ("valori assoluti" in lower or "valore assoluto" in lower) and
+            ("variazioni percentuali" in lower or "variazioni %" in lower) and
+            PERIOD.search(lower) and "ii trimestre" in lower and "2026" in lower):
+        return []
+    out, section, residence = [], "", ""
+    residence_labels = {"residenti", "non residenti", "totale"}
+    for index, line in enumerate(lines):
+        low = line.casefold()
+        if low in ("esercizi alberghieri", "esercizi extra-alberghieri",
+                   "totale esercizi ricettivi"):
+            section, residence = line, ""
+            continue
+        if low in residence_labels:
+            residence = low
+            continue
+        bits = line.split()
+        if not section or len(bits) != 9 or bits[0].casefold() not in ("arrivi", "presenze"):
+            continue
+        # Exactly four observed totals followed by four reported YoY changes.
+        totals = [_value(v) for v in bits[1:5]]
+        changes = [_pct(v) for v in bits[5:9]]
+        if any(v is None for v in totals+changes):
+            continue
+        # The PDF sometimes places the residence label AFTER the Arrivi
+        # line. Its immediately following dedicated row labels the pair.
+        group = residence
+        if bits[0].casefold() == "arrivi" and index+1 < len(lines):
+            next_line = lines[index+1].casefold()
+            if next_line in residence_labels:
+                group = next_line
+                residence = next_line
+        if not group:
+            # Fail closed: never infer demographics from row position alone.
+            continue
+        out.append({
+            "indicator": bits[0],
+            "unit": "arrivi" if bits[0].casefold() == "arrivi" else "notti",
+            "segment": {"structure": section, "residence": group},
+            "reference_period": "2026-Q2",
+            "observed_total": totals[3],
+            "reported_yoy_change_pct": changes[3],
+            "comparison_label": "variazione tendenziale pubblicata dalla fonte",
+            "source_url": url,
+            "source_sha256": source_sha256,
+            "location": f"page:{page_number}:text:line:{index+1}",
+            "extraction_method": "explicit_absolute_total_and_yoy_table",
+            "verified": True,
+            "editorial_status": "candidate_not_published",
+        })
+        if len(out) >= 40:
+            break
+    return out
+
+
 def extract_pdf_mixed_findings(data, url, source_sha256="", max_pages=12):
     import pdfplumber
     digest = source_sha256 or hashlib.sha256(data).hexdigest()
@@ -97,6 +160,11 @@ def extract_pdf_mixed_findings(data, url, source_sha256="", max_pages=12):
     with pdfplumber.open(io.BytesIO(data)) as doc:
         for page_number, page in enumerate(doc.pages[:max_pages], 1):
             text = page.extract_text() or ""
+            output.extend(extract_mixed_text_lines(
+                text, url=url, page_number=page_number, source_sha256=digest
+            ))
+            if len(output) >= 40:
+                return output[:40]
             for table_number, table in enumerate(page.extract_tables()[:10], 1):
                 # Include the page caption; use strict row structure to avoid
                 # treating prose or chart axis labels as table observations.
