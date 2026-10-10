@@ -18,12 +18,12 @@ try:
     from scripts.pulse_editorial_ai import _read_input, candidates
     from scripts.pulse_editorial_pairs import paired_candidates, grounded_story, FORBIDDEN_OUTPUTS
     from scripts.pulse_research_comparisons import historical_signals, territorial_signals
-    from scripts.pulse_research_reading import match_passages
+    from scripts.pulse_research_reading import match_passages, research_narrative_leads
 except ModuleNotFoundError:
     from pulse_editorial_ai import _read_input, candidates
     from pulse_editorial_pairs import paired_candidates, grounded_story, FORBIDDEN_OUTPUTS
     from pulse_research_comparisons import historical_signals, territorial_signals
-    from pulse_research_reading import match_passages
+    from pulse_research_reading import match_passages, research_narrative_leads
 
 MAX_RESEARCH_PAIRS = 10
 
@@ -121,7 +121,10 @@ def research_report(articles: list[dict], limit: int = MAX_RESEARCH_PAIRS) -> di
         authentic = (
             isinstance(reading, dict)
             and reading.get("source_url") == source_url
-            and reading.get("source_sha256") in evidence_hashes
+            and (
+                reading.get("source_sha256") in evidence_hashes
+                or reading.get("source_sha256") == article.get("source_sha256")
+            )
             and len(str(reading.get("source_sha256") or "")) == 64
         )
         if authentic:
@@ -170,6 +173,17 @@ def research_report(articles: list[dict], limit: int = MAX_RESEARCH_PAIRS) -> di
         records.append(record)
     records.sort(key=lambda r: (
         -r["ranking"]["priority_points"], r["pair_id"]
+    ))
+    narrative_leads = []
+    for reading in readings.values():
+        narrative_leads.extend(
+            research_narrative_leads(reading, max_results=20)
+        )
+    # Narrative leads are NOT statistically verified article candidates.
+    # They belong to a separate editor's research queue, never in the
+    # verified-angle list consumed by Editorial Intelligence.
+    narrative_leads.sort(key=lambda r: (
+        -r["editorial_heuristic_points"], r["source_url"], r["source_location"]
     ))
     has_history = any(article.get("verified_series") for article in articles)
     has_territory = any(
@@ -221,6 +235,8 @@ def research_report(articles: list[dict], limit: int = MAX_RESEARCH_PAIRS) -> di
         "territorial_signals": territory,
         "research_stories": research_stories,
         "publication_coverage": publication_coverage,
+        "narrative_leads_unverified": narrative_leads,
+        "narrative_lead_count": len(narrative_leads),
         "coverage": {
             "scope": "whole_pdf_text_layer_context_and_verified_structured_findings" if any(x["full_text_layer_attached"] for x in publication_coverage) else "structured_verified_findings_in_workbench_not_entire_pdf_prose",
             "historical_series_supplied": bool(has_history),
@@ -230,6 +246,7 @@ def research_report(articles: list[dict], limit: int = MAX_RESEARCH_PAIRS) -> di
             "missing_evidence_policy": "withhold_inference",
             "narrative_paragraphs_are_context_not_statistical_proof": True,
             "research_stories_count": len(research_stories),
+            "narrative_leads_need_independent_verification": len(narrative_leads),
         },
         "checks": {
             "no_ai_or_network_required": True,
@@ -264,7 +281,9 @@ def main(argv=None) -> int:
             "matched_pairs": report["verified_paired_candidate_count"],
             "historical_signals": len(report["historical_signals"]),
             "territorial_signals": len(report["territorial_signals"]),
+            "narrative_leads_unverified": len(report["narrative_leads_unverified"]),
             "pdf_coverage": report["publication_coverage"],
+            "narrative_leads_unverified": len(report["narrative_leads_unverified"]),
             "top_candidates": [
                 {"segment": c["segment"], "tier": c["ranking"]["queue_tier"],
                  "angles": [a["id"] for a in c["angles"]]}
