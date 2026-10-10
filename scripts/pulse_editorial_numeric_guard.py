@@ -11,7 +11,7 @@ import re
 
 NUMBER = re.compile(r"(?<![\w])[-+]?\d+(?:[.,]\d+)*(?:%)?")
 DIRECTIONS = re.compile(
-    r"\b(calo|calat[oaie]|diminuzion[ei]|diminuisc\w*|riduzion[ei]|"
+    r"\b(calo|cal\w*|diminuzion[ei]|diminuisc\w*|riduzion[ei]|"
     r"flession[ei]|sces[oaie]|scend\w*|contrazion[ei]|"
     r"aument[oaie]|aument\w*|increment[oaie]|increment\w*|"
     r"crescit[ae]|cresc\w*|salit[ae]|rialz[oaie])\b", re.I
