@@ -85,7 +85,10 @@ def verify_six(input_files: list[Path]) -> dict:
                      h["population_scope"] == "residenti 25-64 anni")
     if not (italy_edu["periods"] == [2022, 2023, 2024]
             and italy_edu["first_value"] == "20.3"
-            and italy_edu["last_value"] == "22.3"):
+            and italy_edu["last_value"] == "22.3"
+            and italy_edu["absolute_change"] == "2.0"
+            and italy_edu["absolute_change_unit"] == "percentage_points"
+            and italy_edu["percent_change_from_first"] is None):
         raise ValueError("Official historical education comparison not verified")
     waste = next(t for t in report["territorial_signals"]
                  if t["indicator"] == "raccolta differenziata rifiuti urbani")
