@@ -97,6 +97,10 @@ def historical_signals(articles: list[dict]) -> list[dict]:
                 "territory": series["territory"],
                 "population_scope": series["population_scope"],
                 "periods": [int(y) for y, _ in rows],
+                "observations": [
+                    {"period": int(year), "value": str(value)}
+                    for year, value in rows
+                ],
                 "first_value": str(begin),
                 "last_value": str(end),
                 "absolute_change": str(delta),
