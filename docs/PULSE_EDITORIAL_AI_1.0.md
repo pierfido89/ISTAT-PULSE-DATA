@@ -185,6 +185,68 @@ NON che sia stato dimostrato il rigore semantico completo. La qualità
 linguistica e statistica del nuovo prompt su Qwen3 reale va ancora
 verificata con il test sul Surface.
 
+## Secondo test reale sul Surface: v1.2 -> proposta v1.3
+
+Il test del 10 ottobre 2026 ha generato **3 bozze, 1 da revisionare,
+2 respinte**. Dal JSON utente `bozze_q2_2026_v12.json` risultano:
+
+- **Residenti, arrivi:** 12.464.038 (-4,3%), segno e quantità corretti,
+  ma Qwen ripeteva i numeri, usava "un'abbassamento" (errore
+  grammaticale) e aggiungeva un elenco di gruppi e strutture escluse.
+- **Residenti, presenze:** 32.162.873 (+1,7%): il gate statistico
+  non segnalava errori ma il testo era burocratico, ridondante e
+  stilisticamente modesto. `review_required` NON è un'approvazione
+  editoriale.
+- **Non residenti, arrivi:** 15.184.702 (-0,9%): numeri corretti, ma
+  titolo e lead attribuivano erroneamente i dati ai "residenti".
+  Il Quality Gate li aveva giustamente respinti.
+
+**Radice del problema:** il prompt v1.2 elencava numerosi esempi
+negativi (gruppi, categorie e alloggi da non menzionare). Il modello
+finiva per citarli nei testi anche quando la tabella non ne parlava.
+
+### Modifiche v1.3
+
+1. `scripts/pulse_editorial_brief.py`: prepara da evidenze
+   strutturate una scheda POSITIVA con soggetto canonico, popolazione,
+   struttura ricettiva, periodo corrente/comparativo, totale e variazione
+   nello stesso verso del dato. Esempio concreto: "arrivi dei clienti
+   non residenti negli esercizi alberghieri".
+2. Prompt riscritto: usare soltanto la scheda, non fare elenchi di
+   esclusioni o frasi sui "dati senza arrotondamenti"; limitare i testi
+   a una micro-notizia compatibile con **una sola serie**. Non attribuire
+   a un solo indicatore una conclusione su altri dati.
+3. Controllo titolo/lead: l'indicatore e la popolazione devono essere
+   coerenti con la tabella, non soltanto nella sezione `body`.
+4. Errore grammaticale concreto `un'abbassamento` esplicitamente
+   respinto.
+5. `scripts/pulse_editorial_style.py`: riporta separatamente
+   `quality.editorial_warnings` per burocratese, ridondanza di totali
+   e percentuali espresse in forme grammaticalmente poco naturali.
+   Questi rilievi stilistici NON certificano la qualità, ma indicano
+   gli aspetti da rileggere.
+6. Una sola riscrittura locale, eventualmente anche per gli avvisi
+   stilistici. Se il tentativo successivo peggiora o introduce errori,
+   il generatore conserva la bozza più sicura. Sono registrati
+   `generator.attempts`, `generator.selected_attempt` e
+   `quality.attempt_history`.
+7. Test di regressione riproducono gli errori del primo e secondo
+   test reale. La CI usa finte risposte Ollama, non il modello vero.
+
+### Riprova su Windows senza reinstallare
+
+Da PowerShell:
+
+    cd C:\Users\fiori\ISTAT-PULSE-AI-TEST
+    git pull origin feat/pulse-editorial-ai-1.0
+    py -m unittest discover -s tests -p "test_pulse_editorial*.py" -v
+    py scripts/pulse_editorial_ai.py --input workbench/turismo_q2_2026.json --output workbench/bozze_q2_2026_v13.json --limit 3
+
+Caricare `bozze_q2_2026_v13.json` nella conversazione per una
+**verifica editoriale umana**. Non confondere miglioramento dei test
+automatici con prova reale di miglioramento linguistico. Nessuna
+integrazione nell'APK, nessuna pubblicazione autonoma e costo API 0 €.
+
 ## Rapporto con la Bibbia tecnica
 
 Il documento ufficiale e vivo
