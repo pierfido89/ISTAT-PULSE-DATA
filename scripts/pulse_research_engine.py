@@ -258,8 +258,22 @@ def research_report(articles: list[dict], limit: int = MAX_RESEARCH_PAIRS) -> di
         "created_at": datetime.now(timezone.utc).isoformat(),
         "mode": "offline_research_only",
         "source_document_count": len(articles),
+        "verified_observations_by_contract": {
+            "tourism_verifiable_table_rows": len(pool),
+            "labor_category_rows": sum(
+                len(x["indicator_evidence"]) for x in labor
+            ),
+            "price_index_rows": sum(len(x["evidence"]) for x in prices),
+            "demography_rounded_rows": sum(len(x["evidence"]) for x in demography),
+            "education_annual_values": sum(len(x["periods"]) for x in history),
+            "environment_territorial_rate_rows": sum(
+                x["number_of_verified_territories"] for x in territory
+            ),
+        },
         "extracted_findings_count": extracted_count,
         "verified_single_findings_count": len(pool),
+        "verified_single_findings_definition":
+            "candidate-compatible official totals/YoY only; not all domains",
         "verified_paired_candidate_count": len(pairs),
         "research_candidates": records[:limit],
         "historical_signals": history,
@@ -325,6 +339,8 @@ def main(argv=None) -> int:
             "source_documents": report["source_document_count"],
             "findings_extracted": report["extracted_findings_count"],
             "findings_verified": report["verified_single_findings_count"],
+            "verified_observations_by_contract":
+                report["verified_observations_by_contract"],
             "matched_pairs": report["verified_paired_candidate_count"],
             "historical_signals": len(report["historical_signals"]),
             "labor_signals": len(report["labor_signals"]),
