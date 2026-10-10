@@ -8,6 +8,10 @@ from zoneinfo import ZoneInfo
 from pathlib import Path
 from bs4 import BeautifulSoup
 try:
+    from scripts.pulse_taxonomy import enrich_article as enrich_topic, load_topics
+except ModuleNotFoundError:
+    from pulse_taxonomy import enrich_article as enrich_topic, load_topics
+try:
     from scripts.pulse_evidence import extract_bytes as extract_evidence_bytes
 except ModuleNotFoundError:
     from pulse_evidence import extract_bytes as extract_evidence_bytes
@@ -950,6 +954,10 @@ def main():
         print("[RADAR] runtime budget reached; publishing partial verified results", flush=True)
 
     arts=sorted(by_id.values(),key=lambda x:x.get("published_at",""),reverse=True)
+    # Taxonomy is separate from editorial verification and PULSE Score.
+    # A rules-only attribution is provisional; weak/tied evidence stays unclassified.
+    taxonomy_topics = load_topics()
+    arts = [enrich_topic(article, taxonomy_topics) for article in arts]
     # Safety gate: only verified articles may be publicly visible.
     public=[a for a in arts if a.get("publication_status")=="published" and a.get("editorial_status") in ("verified","verified_primary_match","journalistic_attributed")]
     idx={"generated_at":now.isoformat(),"counts":{},
