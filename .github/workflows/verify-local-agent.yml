@@ -1,0 +1,29 @@
+name: PULSE Local Agent — offline safety checks
+on:
+  push:
+    branches:
+      - feat/pulse-editorial-ai-1.0
+    paths:
+      - 'automation/**'
+      - 'tests/test_pulse_local_agent.py'
+      - '.github/workflows/verify-local-agent.yml'
+  pull_request:
+    paths:
+      - 'automation/**'
+      - 'tests/test_pulse_local_agent.py'
+      - '.github/workflows/verify-local-agent.yml'
+permissions:
+  contents: read
+jobs:
+  local-agent-security:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate syntax
+        run: python -m py_compile automation/pulse_local_agent.py tests/test_pulse_local_agent.py
+      - name: Verify strict allowlist without Ollama or network
+        run: python -m unittest discover -s tests -p 'test_pulse_local_agent.py' -v
