@@ -13,33 +13,33 @@ può compromettere il dispositivo. Sul Surface personale, in questa fase,
 ## Architettura fase 1
 
 1. ChatGPT può preparare su GitHub esclusivamente un **file JSON di richiesta**
-   nel branch sperimentale: \`automation/editorial_job.json\`.
-2. \`automation/pulse_local_agent.py\`, copiato **localmente e senza aggiornamento
+   nel branch sperimentale: `automation/editorial_job.json`.
+2. `automation/pulse_local_agent.py`, copiato **localmente e senza aggiornamento
    automatico**, scarica il JSON tramite HTTPS pubblico.
 3. Il JSON è convalidato contro uno schema chiuso. Non esistono campi per
    shell, PowerShell, script, URL arbitrari, directory o codice eseguibile.
 4. L'agente può chiamare solo il writer locale
-   \`scripts/pulse_editorial_local_writer.py\` con il workbench fisso
-   \`workbench/edizione_editoriale_3_5.json\`, start 0-5 e limit massimo 2.
-5. Le proposte rimangono in \`workbench/local-automation-outbox/\` con revisione
+   `scripts/pulse_editorial_local_writer.py` con il workbench fisso
+   `workbench/edizione_editoriale_3_5.json`, start 0-5 e limit massimo 2.
+5. Le proposte rimangono in `workbench/local-automation-outbox/` con revisione
    umana sempre obbligatoria. Il report non equivale a fact checking semantico.
-6. Il file JSON iniziale è disabilitato. Si verifica prima \`--dry-run\`.
+6. Il file JSON iniziale è disabilitato. Si verifica prima `--dry-run`.
    **Nessun job viene eseguito finché non abilitiamo esplicitamente il pilota.**
 
-Il worker **non** fa \`git pull\`, non aggiorna il proprio codice, non installa
+Il worker **non** fa `git pull`, non aggiorna il proprio codice, non installa
 software, non riceve comandi shell, non accetta PR come sorgente del job, non
 richiede accesso amministratore, non esegue un server e non carica risultati in
 Internet. L'esecuzione richiede PC acceso e Ollama già disponibile su
-\`127.0.0.1:11434\`.
+`127.0.0.1:11434`.
 
 ## Primo test PowerShell (nessun modello e nessuna modifica)
 
 Dopo aver aggiornato **manualmente e verificato** il branch sperimentale:
-\`\`\`powershell
+```powershell
 py automation/pulse_local_agent.py --dry-run
-\`\`\`
-Si deve ricevere \`ready: true\`, \`enabled: false\`, domini \`lavoro\` e
-\`prezzi\`, \`ollama_invoked: false\`.
+```
+Si deve ricevere `ready: true`, `enabled: false`, domini `lavoro` e
+`prezzi`, `ollama_invoked: false`.
 
 ## Fase 2, NON ancora configurata
 
