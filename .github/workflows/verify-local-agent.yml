@@ -27,3 +27,20 @@ jobs:
         run: python -m py_compile automation/pulse_local_agent.py tests/test_pulse_local_agent.py
       - name: Verify strict allowlist without Ollama or network
         run: python -m unittest discover -s tests -p 'test_pulse_local_agent.py' -v
+      - name: Validate PowerShell syntax without executing installation
+        shell: pwsh
+        run: |
+          $files = @(
+            'automation/setup_surface.ps1',
+            'automation/run_scheduled.ps1',
+            'automation/upload_results.ps1'
+          )
+          foreach ($file in $files) {
+            $tokens = $null
+            $parseErrors = $null
+            [System.Management.Automation.Language.Parser]::ParseFile((Resolve-Path $file), [ref]$tokens, [ref]$parseErrors) | Out-Null
+            if ($parseErrors.Count -gt 0) {
+              $parseErrors | ForEach-Object { Write-Error $_.Message }
+              exit 1
+            }
+          }
