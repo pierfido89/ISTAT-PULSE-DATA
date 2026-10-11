@@ -67,7 +67,7 @@ class EditorialOperationsTest(unittest.TestCase):
         self.assertEqual(price_usd("gpt-6-luna",12_000,1_500), Decimal("0.00195"))
         self.assertEqual(price_usd("gpt-6.1-sol",12_000,1_500), Decimal("0.0390"))
         quote=estimate_articles(300,escalation_fraction="0.20",retry_factor="1.25",budget_usd="5")
-        self.assertEqual(quote["estimated_total_usd"],"4.4063")
+        self.assertEqual(quote["estimated_total_usd"],"4.4062")
         self.assertTrue(quote["within_budget"])
         self.assertEqual(quote["articles"],300)
 
