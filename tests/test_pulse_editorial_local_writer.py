@@ -218,9 +218,12 @@ class QwenFreeProseSafetyTests(unittest.TestCase):
             }).encode("utf-8"))
         with patch("scripts.pulse_editorial_local_writer.request.urlopen",
                    side_effect=fake_urlopen):
-            response = LocalRewriteCandidate("qwen3:4b-instruct").rewrite(draft)
+            response = LocalRewriteCandidate("qwen3.5:9b").rewrite(draft)
         self.assertEqual(response, expected)
         self.assertEqual(seen[0]["format"], ARTICLE_SCHEMA)
+        self.assertEqual(seen[0]["model"], "qwen3.5:9b")
+        self.assertIs(seen[0]["think"], False)
+        self.assertNotIn("think", seen[0]["options"])
         self.assertFalse(seen[0]["stream"])
 
     def test_offline_cli_requires_existing_ollama(self):
