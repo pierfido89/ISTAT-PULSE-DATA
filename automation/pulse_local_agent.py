@@ -190,6 +190,13 @@ def main() -> int:
         if not job["enabled"]:
             print("Job disabilitato: nessuna esecuzione.")
             return 0
+        completed = OUTBOX / (job["job_id"] + ".report.json")
+        if completed.is_file():
+            print("Job gia registrato: non viene eseguito di nuovo.")
+            return 0
+        orphan = OUTBOX / (job["job_id"] + ".json")
+        if orphan.exists():
+            raise ValueError("Bozza senza report: revisione manuale necessaria")
         report = run_one(job)
         print(json.dumps(report, ensure_ascii=False, indent=2))
         return 0 if report["status"] == "needs_human_review" else 2
