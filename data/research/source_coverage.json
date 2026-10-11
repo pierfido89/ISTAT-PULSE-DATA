@@ -1,0 +1,346 @@
+{
+  "schema_version": "pulse-research-coverage-v1",
+  "generated_at": "2026-10-11T18:03:19.525192+00:00",
+  "scope": "official_source_catalogue_plus_separately_verified_primary_pdfs",
+  "catalogue_official_sources": 27,
+  "catalogue_status_distribution": {
+    "archive": 2,
+    "connected": 5,
+    "error": 1,
+    "feed": 19
+  },
+  "verified_primary_pdf_count": 6,
+  "verified_story_count": 16,
+  "verified_fact_count": 34,
+  "sources": [
+    {
+      "source_name": "ACI - Open data mobilità e parco veicoli",
+      "source_url": "https://aci.gov.it/attivita-e-progetti/studi-e-ricerche/open-data/",
+      "host": "aci.gov.it",
+      "catalogue_status": "feed",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    },
+    {
+      "source_name": "ARERA - Statistiche del servizio idrico",
+      "source_url": "https://www.arera.it/dati-e-statistiche/dettaglio/rqsii",
+      "host": "www.arera.it",
+      "catalogue_status": "feed",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    },
+    {
+      "source_name": "Banca d'Italia - Base Dati Statistica A2A",
+      "source_url": "https://www.bancaditalia.it/statistiche/basi-dati/bds/index.html",
+      "host": "www.bancaditalia.it",
+      "catalogue_status": "connected",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    },
+    {
+      "source_name": "Copernicus - Climate Data Store",
+      "source_url": "https://cds.climate.copernicus.eu/",
+      "host": "cds.climate.copernicus.eu",
+      "catalogue_status": "feed",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    },
+    {
+      "source_name": "EEA - Dati ambientali europei",
+      "source_url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/3b7fe76c-524a-439a-bfd2-a6e4046302a2?activeAccordion=1096150",
+      "host": "www.eea.europa.eu",
+      "catalogue_status": "feed",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    },
+    {
+      "source_name": "ENEA - Rapporto annuale efficienza energetica",
+      "source_url": "https://www.efficienzaenergetica.enea.it/vi-segnaliamo/rapporto-annuale-sullefficienza-energetica-2026-schede-regionali.html",
+      "host": "www.efficienzaenergetica.enea.it",
+      "catalogue_status": "feed",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    },
+    {
+      "source_name": "Eurostat - Statistiche ambientali ed energia",
+      "source_url": "https://ec.europa.eu/eurostat/web/environment",
+      "host": "ec.europa.eu",
+      "catalogue_status": "feed",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    },
+    {
+      "source_name": "GSE - Statistiche delle rinnovabili",
+      "source_url": "https://www.gse.it/dati-e-scenari/statistiche",
+      "host": "www.gse.it",
+      "catalogue_status": "feed",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    },
+    {
+      "source_name": "INAIL - Malattie professionali mensili",
+      "source_url": "https://dati.inail.it/portale/it/dataset/malattie-professionali/dati-con-cadenza-mensile/italia.html",
+      "host": "dati.inail.it",
+      "catalogue_status": "connected",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    },
+    {
+      "source_name": "ISPRA - Catasto nazionale rifiuti",
+      "source_url": "https://www.catasto-rifiuti.isprambiente.it/index.php?advice=si&pg=downloadComune",
+      "host": "www.catasto-rifiuti.isprambiente.it",
+      "catalogue_status": "feed",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    },
+    {
+      "source_name": "ISPRA - Consumo di suolo e indicatori territoriali",
+      "source_url": "https://www.isprambiente.gov.it/it/attivita/suolo-e-territorio/suolo/il-consumo-di-suolo/i-dati-sul-consumo-di-suolo",
+      "host": "www.isprambiente.gov.it",
+      "catalogue_status": "feed",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    },
+    {
+      "source_name": "ISPRA - IdroGEO",
+      "source_url": "https://idrogeo.isprambiente.it/",
+      "host": "idrogeo.isprambiente.it",
+      "catalogue_status": "connected",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    },
+    {
+      "source_name": "ISPRA - Indicatori ambientali e biodiversità",
+      "source_url": "https://indicatoriambientali.isprambiente.it/it/temi/biodiversita-stato-e-minacce",
+      "host": "indicatoriambientali.isprambiente.it",
+      "catalogue_status": "feed",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    },
+    {
+      "source_name": "ISPRA - Inventario nazionale delle emissioni",
+      "source_url": "https://emissioni.sina.isprambiente.it/serie-storiche-emissioni-di-gas-serra-sintesi/",
+      "host": "emissioni.sina.isprambiente.it",
+      "catalogue_status": "feed",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    },
+    {
+      "source_name": "ISPRA - Risorse idriche",
+      "source_url": "https://www.isprambiente.gov.it/pre_meteo/idro/BIGBANG_ISPRA.html",
+      "host": "www.isprambiente.gov.it",
+      "catalogue_status": "feed",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    },
+    {
+      "source_name": "ISPRA/SNPA - Qualità dell'aria",
+      "source_url": "https://www.isprambiente.gov.it/it/banche-dati/banche-dati-folder/aria/qualita-dellaria",
+      "host": "www.isprambiente.gov.it",
+      "catalogue_status": "feed",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    },
+    {
+      "source_name": "ISTAT - A misura di Comune",
+      "source_url": "https://www.istat.it/statistica-sperimentale/aggiornamento-degli-indicatori-del-sistema-informativo-a-misura-di-comune/",
+      "host": "www.istat.it",
+      "catalogue_status": "feed",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    },
+    {
+      "source_name": "ISTAT - Ambiente urbano",
+      "source_url": "https://www.istat.it/comunicato-stampa/ambiente-urbano-anno-2024/",
+      "host": "www.istat.it",
+      "catalogue_status": "error",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    },
+    {
+      "source_name": "ISTAT - BES dei territori",
+      "source_url": "https://www.istat.it/comunicato-territoriale/il-benessere-equo-e-sostenibile-dei-territori-report-regionali-anno-2025/",
+      "host": "www.istat.it",
+      "catalogue_status": "archive",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    },
+    {
+      "source_name": "ISTAT - DEMO - Bilancio demografico mensile",
+      "source_url": "https://demo.istat.it/app/?i=D7B",
+      "host": "demo.istat.it",
+      "catalogue_status": "feed",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    },
+    {
+      "source_name": "ISTAT - Indicatori SDGs",
+      "source_url": "https://www.istat.it/statistiche-per-temi/focus/benessere-e-sostenibilita/obiettivi-di-sviluppo-sostenibile/gli-indicatori-istat/",
+      "host": "www.istat.it",
+      "catalogue_status": "feed",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    },
+    {
+      "source_name": "ISTAT - IstatData SDMX",
+      "source_url": "https://esploradati.istat.it/SDMXWS/",
+      "host": "esploradati.istat.it",
+      "catalogue_status": "feed",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    },
+    {
+      "source_name": "ISTAT - Mappa dei rischi dei comuni italiani",
+      "source_url": "https://www.istat.it/wp-content/themes/EGPbs5-child/inc/mappa-rischi/?lang=it",
+      "host": "www.istat.it",
+      "catalogue_status": "connected",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    },
+    {
+      "source_name": "ISTAT - Noi Italia",
+      "source_url": "https://noi-italia.istat.it/home.php",
+      "host": "noi-italia.istat.it",
+      "catalogue_status": "archive",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    },
+    {
+      "source_name": "ISTAT - Statistiche sull'acqua",
+      "source_url": "https://www.istat.it/comunicato-stampa/le-statistiche-sullacqua-anni-2023-2025/",
+      "host": "www.istat.it",
+      "catalogue_status": "feed",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    },
+    {
+      "source_name": "MIMIT - Prezzi carburanti",
+      "source_url": "https://www.mimit.gov.it/it/open-data/elenco-dataset/carburanti-prezzi-praticati-e-anagrafica-degli-impianti",
+      "host": "www.mimit.gov.it",
+      "catalogue_status": "connected",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    },
+    {
+      "source_name": "Terna - Portale Dati del sistema elettrico",
+      "source_url": "https://www.terna.it/it/sistema-elettrico/statistiche/pubblicazioni-statistiche/r/nguarda",
+      "host": "www.terna.it",
+      "catalogue_status": "feed",
+      "research_intake": "candidate_only_unverified",
+      "numeric_research_verified": false,
+      "editorial_publication_allowed": false,
+      "reason": "Catalogue may supply discovery, but not a PDF-specific audited numeric extractor"
+    }
+  ],
+  "verified_primary_documents": [
+    {
+      "source_url": "https://www.istat.it/wp-content/uploads/2025/12/Report-Livelli-di-istruzione-e-ritorni-occupazionali-Anno-2024.pdf",
+      "source_sha256": "20dcaf190dcaae5703ba82745d3180973e334c138b8815725775de8c79c322de",
+      "domain": "education",
+      "story_count": 4,
+      "fact_count": 4,
+      "numeric_validation": "source_specific_acceptance_passed"
+    },
+    {
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/03/Report_Indicatori-demografici_Anno-2025.pdf",
+      "source_sha256": "9bdc59739e0e93def0c594925309e0f4c551f478e1865703d5fcaeb8354b01e5",
+      "domain": "demography",
+      "story_count": 1,
+      "fact_count": 8,
+      "numeric_validation": "source_specific_acceptance_passed"
+    },
+    {
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
+      "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
+      "domain": "prices",
+      "story_count": 1,
+      "fact_count": 3,
+      "numeric_validation": "source_specific_acceptance_passed"
+    },
+    {
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/09/Statistica-Flash_II_Trimestre_2026.pdf",
+      "source_sha256": "73ab640cd3619eb59b0058d00abc9ab5daee65bd27b56dc585d0eff4e54dd038",
+      "domain": "tourism",
+      "story_count": 3,
+      "fact_count": 6,
+      "numeric_validation": "source_specific_acceptance_passed"
+    },
+    {
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/10/CS_Occupati-e-disoccupati_AGOSTO_2026.pdf",
+      "source_sha256": "62011dc3fc185d0ed1349ab5a785bc990bb01221746d91a324156a1e1a1e2ff8",
+      "domain": "labor",
+      "story_count": 3,
+      "fact_count": 9,
+      "numeric_validation": "source_specific_acceptance_passed"
+    },
+    {
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/10/Report_Raccolta-differenziata_Anni-2024-2025.pdf",
+      "source_sha256": "1b58abf5a582f3ff6f146bb7f95a8c3a7ad65671783db9faaf07554f7b1447bd",
+      "domain": "environment",
+      "story_count": 4,
+      "fact_count": 4,
+      "numeric_validation": "source_specific_acceptance_passed"
+    }
+  ],
+  "research_intake_rules": {
+    "catalogue_feed_is_not_numeric_research_verification": true,
+    "new_official_pdfs_enter_as_read_only": true,
+    "structured_values_require_source_specific_audited_adapter": true,
+    "unverified_text_never_enters_fact_checker_as_numerical_evidence": true,
+    "human_publication_approval_required": true
+  },
+  "auto_publish": false,
+  "public_approved_article_count": 0
+}
