@@ -19,7 +19,7 @@
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte",
       "publication_year": "2026",
-      "checked_at": "2026-10-10T10:35:41.087409+00:00",
+      "checked_at": "2026-10-11T10:38:30.385415+00:00",
       "provides": [
         {
           "area": "Mobilità sostenibile",
@@ -67,7 +67,7 @@
       "notes": "ARERA RQSII integrata con dati pubblici 2017-2021 da workbook dettagliati e con risultati ufficiali 2022-2023 dalle Relazioni annuali ARERA. Per il 2022: MC1 96,3%, MC2 95,3%; per il 2023: MC1 96,5%, MC2 95,9%. Il mancato rispetto medio degli standard specifici è 3,5% in entrambi gli anni. La delibera 277/2025/R/idr certifica i risultati finali del biennio 2022-2023. 3 notizie/segnali GREEN emessi; il 2023 resta sempre dichiarato come periodo statistico.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte",
-      "checked_at": "2026-10-10T10:35:52.789151+00:00",
+      "checked_at": "2026-10-11T10:38:43.743508+00:00",
       "provides": [
         {
           "area": "Risorse idriche e suolo",
@@ -109,7 +109,7 @@
       "level": "Secondo dataset ufficiale",
       "frequency": "Mensile",
       "latest_period": "2026-09",
-      "checked_at": "2026-10-10T10:38:05.869880+00:00",
+      "checked_at": "2026-10-11T10:40:44.301517+00:00",
       "provides": [
         {
           "area": "Crisi climatica e decarbonizzazione",
@@ -138,23 +138,12 @@
       "green_pillar": "Crisi climatica e decarbonizzazione",
       "access_cost": "free",
       "access_note": "Accesso ai dati selezionati senza abbonamento a pagamento; rispettare licenza e condizioni della fonte.",
-      "integration_status": "feed",
-      "feed_status": "Attiva in GREEN · dati acquisiti e segnali PULSE disponibili",
-      "notes": "EEA collegata al dataset statistico ufficiale sulle emissioni nette domestiche di gas serra incl. LULUCF. Serie Italia 1990-2024 (35 osservazioni). Aggiornamento annuale; ultimo anno disponibile 2024. Dataset finale pubblicato il 15/04/2026, licenza CC BY 4.0.",
+      "integration_status": "error",
+      "feed_status": "Connettore presente · ultimo aggiornamento fallito",
+      "notes": "Errore di collegamento nell'ultimo refresh: HTTP Error 500:",
       "level": "Secondo dataset ufficiale",
-      "frequency": "Annuale",
-      "latest_period": "2024",
-      "publication_date": "2026-04-15",
-      "checked_at": "2026-10-10T10:38:11.910986+00:00",
-      "provides": [
-        {
-          "area": "Crisi climatica e decarbonizzazione",
-          "series": "Emissioni nette domestiche di gas serra (incl. LULUCF)",
-          "description": "Serie GREEN ufficiale monitorata automaticamente.",
-          "latest_period": "2024",
-          "status": "latest_public"
-        }
-      ]
+      "frequency": "Secondo aggiornamento della fonte",
+      "checked_at": "2026-10-11T10:40:52.446003+00:00"
     },
     {
       "name": "ENEA - Rapporto annuale efficienza energetica",
@@ -172,7 +161,7 @@
       "notes": "RAEE 2026: 20/20 schede regionali acquisite; 3 segnali PULSE da serie TEE 2015-2025.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte",
-      "checked_at": "2026-10-10T10:38:22.610811+00:00",
+      "checked_at": "2026-10-11T10:41:04.229075+00:00",
       "provides": [
         {
           "area": "Transizione energetica",
@@ -332,7 +321,7 @@
       "notes": "3/3 dataset Eurostat collegati; 3 segnali PULSE emessi.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte",
-      "checked_at": "2026-10-10T10:38:25.351305+00:00",
+      "checked_at": "2026-10-11T10:41:07.178843+00:00",
       "provides": [
         {
           "area": "Multi-pilastro GREEN",
@@ -375,7 +364,7 @@
       "frequency": "Annuale",
       "latest_period": "2024",
       "publication_period": "2026-09",
-      "checked_at": "2026-10-10T10:38:26.039774+00:00",
+      "checked_at": "2026-10-11T10:41:07.951937+00:00",
       "provides": [
         {
           "area": "Transizione energetica",
@@ -417,7 +406,7 @@
       "level": "Secondo dataset ufficiale",
       "frequency": "Annuale",
       "latest_period": "2024",
-      "checked_at": "2026-10-10T10:38:35.737722+00:00",
+      "checked_at": "2026-10-11T10:41:18.502562+00:00",
       "provides": [
         {
           "area": "Economia circolare",
@@ -593,7 +582,7 @@
       "frequency": "Annuale",
       "latest_period": "2024",
       "publication_date": "2025-10-24",
-      "checked_at": "2026-10-10T10:38:37.716577+00:00",
+      "checked_at": "2026-10-11T10:41:20.744324+00:00",
       "provides": [
         {
           "area": "Risorse idriche e suolo",
@@ -761,7 +750,7 @@
       "level": "Comune / Provincia / Regione / Italia",
       "frequency": "Periodico / secondo aggiornamento IFFI-IdroGEO",
       "latest_period": "Inventario corrente",
-      "checked_at": "2026-10-10T10:38:39.229909+00:00",
+      "checked_at": "2026-10-11T10:41:22.439067+00:00",
       "provides": [
         {
           "area": "Risorse idriche e suolo",
@@ -790,7 +779,7 @@
       "frequency": "Annuale",
       "latest_period": "2025",
       "publication_date": "2026-06-30",
-      "checked_at": "2026-10-10T10:38:39.230723+00:00",
+      "checked_at": "2026-10-11T10:41:22.440010+00:00",
       "provides": [
         {
           "area": "Tutela della biodiversità",
@@ -825,7 +814,7 @@
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte",
       "latest_period": "2024",
-      "checked_at": "2026-10-10T10:38:42.482848+00:00",
+      "checked_at": "2026-10-11T10:41:26.320794+00:00",
       "provides": [
         {
           "area": "Crisi climatica e decarbonizzazione",
@@ -860,7 +849,7 @@
       "level": "Italia / Regione / Distretto idrografico",
       "frequency": "Annuale (stime disponibili anche mensilmente)",
       "latest_period": "2025",
-      "checked_at": "2026-10-10T10:38:44.731772+00:00",
+      "checked_at": "2026-10-11T10:41:29.131945+00:00",
       "provides": [
         {
           "area": "Risorse idriche e suolo",
@@ -902,7 +891,7 @@
       "level": "Stazione / Comune / Provincia / Regione / Italia",
       "frequency": "Annuale; dati quasi-real-time aggiornati giornalmente",
       "latest_period": "2025 (valutazione SNPA); 2022 (CSV strutturati)",
-      "checked_at": "2026-10-10T10:38:50.003590+00:00",
+      "checked_at": "2026-10-11T10:41:35.671856+00:00",
       "provides": [
         {
           "area": "Crisi climatica e decarbonizzazione",
@@ -961,7 +950,7 @@
       "frequency": "Annuale",
       "latest_period": "2024",
       "publication_date": "2026-09-09",
-      "checked_at": "2026-10-10T10:39:03.151596+00:00",
+      "checked_at": "2026-10-11T10:41:39.347037+00:00",
       "provides": [
         {
           "area": "Multi-pilastro GREEN",
@@ -4304,7 +4293,7 @@
       "notes": "Dataset Istat SDGs 2004-2026 acquisito: 71 serie nazionali GREEN semanticamente classificate; 36 segnali PULSE.",
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte",
-      "checked_at": "2026-10-10T10:39:08.723740+00:00",
+      "checked_at": "2026-10-11T10:41:46.971979+00:00",
       "provides": [
         {
           "area": "Multi-pilastro GREEN",
@@ -4982,7 +4971,7 @@
       "level": "Comune / Provincia / Regione / Italia",
       "frequency": "Archivio / snapshot; aggiornamento non corrente",
       "latest_period": "2018-01-01",
-      "checked_at": "2026-10-10T10:39:41.698694+00:00",
+      "checked_at": "2026-10-11T10:42:23.642520+00:00",
       "provides": [
         {
           "area": "Risorse idriche e suolo",
@@ -5024,7 +5013,7 @@
       "level": "Secondo dataset ufficiale",
       "frequency": "Secondo aggiornamento della fonte",
       "publication_date": "2026-03-20",
-      "checked_at": "2026-10-10T10:39:45.639968+00:00",
+      "checked_at": "2026-10-11T10:42:30.102635+00:00",
       "provides": [
         {
           "area": "Risorse idriche e suolo",
@@ -5235,7 +5224,7 @@
       "frequency": "Annuale",
       "latest_period": "2025",
       "publication_period": "2026-09",
-      "checked_at": "2026-10-10T10:39:49.813829+00:00",
+      "checked_at": "2026-10-11T10:42:33.877727+00:00",
       "provides": [
         {
           "area": "Transizione energetica",
