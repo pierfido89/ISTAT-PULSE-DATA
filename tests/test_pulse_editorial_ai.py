@@ -2,6 +2,7 @@
 
 The Ollama replies are STUBBED; test runs cost zero AI tokens and no network.
 """
+import io
 import json
 from pathlib import Path
 import tempfile
@@ -45,6 +46,24 @@ PROPOSAL = {
 }
 
 class CandidateTests(unittest.TestCase):
+
+    def test_default_local_model_is_qwen35_9b_and_disables_thinking(self):
+        self.assertEqual(MODEL_DEFAULT, "qwen3.5:9b")
+        checked = candidates(primary(finding()))[0]
+        captured = []
+        def fake_urlopen(req, timeout):
+            captured.append(json.loads(req.data.decode("utf-8")))
+            return io.BytesIO(json.dumps({
+                "response": json.dumps(PROPOSAL, ensure_ascii=False)
+            }).encode("utf-8"))
+        with patch("scripts.pulse_editorial_ai.request.urlopen",
+                   side_effect=fake_urlopen):
+            produced = LocalOllama().generate(checked)
+        self.assertEqual(produced, PROPOSAL)
+        self.assertEqual(captured[0]["model"], MODEL_DEFAULT)
+        self.assertIs(captured[0]["think"], False)
+        self.assertNotIn("think", captured[0]["options"])
+
     def test_approved_primary_document_has_candidate(self):
         found = candidates(primary(finding()))
         self.assertEqual(len(found), 1)
