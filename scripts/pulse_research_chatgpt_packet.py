@@ -34,7 +34,11 @@ ALLOWED_FIELDS = {
     "absolute_change", "absolute_change_unit", "low", "high", "gap", "gap_unit",
     "price_index_code", "index_level", "indicator_evidence", "evidence", "territory",
     "name", "observations", "rounded_at_thousands", "comparison_basis",
-    "sex", "age", "group", "from_value", "to_value", "ratio",
+    "sex", "age", "group", "from_value", "to_value", "ratio", "observed_index", "reported_monthly_change_pct",
+    "reported_monthly_change_thousands", "reference_period", "reference_comparison",
+    "source_count_thousands", "reported_yoy_change_thousands", "source_table_unit",
+    "unit_multiplier", "age_scope", "sex_scope", "rounded_at_thousands", "provisional",
+    "basket", "code", "territory_level", "denominator", "comparison",
 }
 
 
