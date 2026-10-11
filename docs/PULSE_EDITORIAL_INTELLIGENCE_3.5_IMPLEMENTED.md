@@ -150,3 +150,16 @@ L'utente ha disinstallato `qwen3:4b-instruct` dal proprio Surface Pro 8 (RAM 16 
 **Esito del controllore precedente:** `status: rejected`, solo `core_lead_numeric_claims_omitted:2025`. Correttamente mancava l'anno esplicito del periodo di confronto rispetto al II trimestre 2025. L'articolo conteneva però altri quattro problemi: «gli arrivi indicano il numero di persone» senza chiarire che si contano ingressi/check-in e non persone uniche; «2,58 notti per ospite» invece di «per arrivo»; «notti offerte» al posto delle presenze effettive; «i clienti residenti hanno prolungato la propria permanenza» confonde una media aggregata con azioni di singoli clienti.
 
 **Migliorie del controllore:** estesi i pattern di controllo per le attribuzioni individuali e introdotti tre indicatori di errore specifici per definizioni ISTAT dei flussi alberghieri e media per arrivo. Aggiunto un test di regressione con **i paragrafi esatti prodotti nella V2**, per pretendere che il controllore segnali le **cinque** criticità anziché solo quella sull'anno, più un test positivo su formulazioni aggregate corrette. Rafforzato il prompt per mantenere entrambi gli anni di confronto, distinguere notti effettive da capacità offerta e evitare spiegazioni generiche. Queste regole non possono sostituire il controllo editoriale umano né garantiscono qualità linguistica universale. **Prossimo passo: validare test automatici e provare V3 in un nuovo file JSON senza sovrascrivere V1/V2.**
+
+
+## Terza prova Qwen3.5 9B — 11 ottobre 2026
+
+**Risultato reale nel laboratorio locale:** `workbench/riscritture_qwen35_9b_v3.json`, turismo alberghiero dei clienti residenti, II trimestre 2026. Il JSON contiene titolo e quattro paragrafi effettivamente riscritti; `needs_human_semantic_review`, `failures: []`, `total_words: 176`, nessun warning di stile macchina. Dati quantitativi e confronto con il 2025 preservati; definizioni di arrivi, presenze e permanenza media per arrivo correttamente distinte; nessuna nuova interpretazione individuale o causa inventata. **Revisione umana: 7,5/10** (superiore a V1 6,5 e V2 6, ma senza raggiungere 8); stile ancora didascalico e ripetitivo, titolo prolisso, chiusura standardizzata sulle proiezioni. L'esito dei controlli automatici non rappresenta una certificazione editoriale.
+
+**Prossima scelta metodologica:** sospendere le micro-correzioni sul solo articolo turismo e provare nuove categorie ISTAT (lavoro, prezzi, ecc.) per misurare la capacità del modello di generalizzare. È stato aggiunto il parametro opzionale `--start` (indice da zero) a `scripts/pulse_editorial_local_writer.py`, per selezionare due articoli successivi senza ripetere inutilmente turismo e consumare RAM/tempo sul Surface. Esempio, dopo `git pull`:
+
+```powershell
+py scripts/pulse_editorial_local_writer.py --input workbench/edizione_editoriale_3_5.json --output workbench/riscritture_qwen35_9b_altri_ambiti_v1.json --start 1 --limit 2
+```
+
+Il sistema continua a conservare gli output in quarantena, senza modificare l'APK, alterare la fonte o pubblicare automaticamente.
