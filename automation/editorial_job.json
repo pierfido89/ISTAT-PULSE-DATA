@@ -4,5 +4,5 @@
   "task": "rewrite_verified_editorial_drafts",
   "start": 1,
   "limit": 2,
-  "enabled": false
+  "enabled": true
 }
