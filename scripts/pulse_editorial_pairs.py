@@ -227,6 +227,7 @@ class PairOllama(LocalOllama):
                        + json.dumps(prompt, ensure_ascii=False, sort_keys=True)),
             "stream": False,
             "format": "json",
+            "think": False,
             "options": {"temperature": 0.1, "num_ctx": 4096, "num_predict": 180},
             "keep_alive": "5m",
         }
