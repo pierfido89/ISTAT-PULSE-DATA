@@ -99,7 +99,8 @@ def prepare(draft_bytes: bytes, approval: dict, previous: dict) -> dict:
     if not isinstance(selection, list) or not selection:
         raise ValueError("Nessun articolo esplicitamente autorizzato")
     drafts = {item["id"]: item for item in draft["articles"]}
-    result = dict(previous)
+    # Never mutate the input feed: promotion must be a pure, auditable proposal.
+    result = {**previous, "articles": [dict(item) for item in previous.get("articles", [])]}
     validate_approved_feed(result)
     known = {a["id"] for a in result["articles"]}
     for spec in selection:
