@@ -272,6 +272,74 @@ class QwenFreeProseSafetyTests(unittest.TestCase):
         )
         self.assertTrue(report["human_review_required"])
 
+    def test_surface_qwen35_9b_second_full_article_flags_all_errors(self):
+        """Second live Surface result: rejection must identify semantic failures."""
+        draft = fixture()["drafts"][0]
+        proposal = {
+            "headline": (
+                "Turismo alberghiero: calo degli arrivi, crescita delle "
+                "presenze per i clienti residenti nel secondo trimestre 2026"
+            ),
+            "paragraphs": [
+                "Nel secondo trimestre del 2026 gli esercizi alberghieri "
+                "hanno registrato un decremento degli ingressi dei clienti "
+                "residenti pari al 4,3%, attestandosi a 12.464.038 unità, "
+                "mentre le notti trascorse sono aumentate dell'1,7% fino "
+                "a raggiungere le 32.162.873.",
+                "È importante distinguere tra i due concetti: gli arrivi "
+                "indicano il numero di persone che entrano nelle strutture, "
+                "mentre le presenze misurano l'ammontare delle notti dormite. "
+                "Il rapporto tra queste due grandezze fornisce una media "
+                "di circa 2,58 notti per ospite.",
+                "L'analisi rivela un fenomeno inverso: nonostante la "
+                "riduzione del flusso di nuovi ospiti, il totale delle notti "
+                "offerte è salito. Questo implica che, in media, i clienti "
+                "residenti hanno prolungato la propria permanenza rispetto "
+                "al periodo corrispondente dell'anno precedente.",
+                "Va tenuto presente che le cifre riportate descrivono "
+                "solo l'andamento osservato e non consentono di risalire "
+                "alle ragioni del cambiamento né di formulare previsioni future.",
+            ],
+        }
+        report = assess_model_copy(proposal, draft)
+        self.assertEqual(report["status"], "rejected")
+        failures = report["failures"]
+        self.assertIn("core_lead_numeric_claims_omitted:2025", failures)
+        self.assertIn("arrivals_wrongly_defined_as_unique_people", failures)
+        self.assertIn("mean_stay_wrong_denominator_unique_guest", failures)
+        self.assertIn("actual_overnights_mislabeled_as_offered_nights", failures)
+        self.assertIn(
+            "aggregate_average_presented_as_individual_behavior",
+            failures,
+        )
+        self.assertTrue(report["human_review_required"])
+        self.assertFalse(report.get("publishable", False))
+
+    def test_correct_aggregate_formulations_are_not_erroneously_rejected(self):
+        draft = fixture()["drafts"][0]
+        proposal = valid_sample(draft)
+        proposal["paragraphs"][1] = (
+            "Gli arrivi rappresentano gli ingressi registrati negli alberghi, "
+            "non il numero di persone distinte. Le presenze indicano "
+            "le notti effettivamente trascorse nelle strutture e il loro "
+            "rapporto con gli arrivi descrive una media per arrivo."
+        )
+        proposal["paragraphs"][2] = (
+            "Nei dati dei clienti residenti il numero degli ingressi "
+            "diminuisce, mentre quello delle notti effettive cresce. "
+            "Il rapporto aggregato si modifica, senza consentire "
+            "attribuzioni di scelte o intenzioni ai singoli clienti."
+        )
+        report = assess_model_copy(proposal, draft)
+        for code in (
+            "arrivals_wrongly_defined_as_unique_people",
+            "mean_stay_wrong_denominator_unique_guest",
+            "actual_overnights_mislabeled_as_offered_nights",
+            "aggregate_average_presented_as_individual_behavior",
+        ):
+            self.assertNotIn(code, report["failures"])
+        self.assertTrue(report["human_review_required"])
+
     def test_json_schema_has_exactly_two_output_keys(self):
         self.assertFalse(ARTICLE_SCHEMA["additionalProperties"])
         self.assertEqual(set(ARTICLE_SCHEMA["required"]), {"headline", "paragraphs"})
