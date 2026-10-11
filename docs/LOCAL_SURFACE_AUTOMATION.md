@@ -1,13 +1,36 @@
 # ISTAT PULSE — Surface: collegamento editoriale controllato (11 ottobre 2026)
 
-## Stato reale
+## Stato verificato — 11 ottobre 2026
 
-Preparati e salvati su GitHub, **NON ancora installati sul Surface**:
-- agente Python in allowlist: automation/pulse_local_agent.py
-- richiesta remota disabilitata: automation/editorial_job.json
-- esecuzione ricorrente: automation/run_scheduled.ps1
-- uploader privato: automation/upload_results.ps1
-- configurazione iniziale guidata: automation/setup_surface.ps1
+**Installazione completata sul Surface.** L'utente ha configurato il task Windows,
+ogni 30 minuti con sessione aperta, e l'uploader verso il repository privato.
+L'avvio in modalità batteria è stato esplicitamente abilitato sul Surface.
+Il primo job `lavoro-prezzi-pilot-001` è stato completato l'11 ottobre 2026:
+Qwen3.5 9B ha generato 2 articoli quarantinati e il Surface ha caricato
+`runs/lavoro-prezzi-pilot-001/result.json` e `report.json` su
+`pierfido89/ISTAT-PULSE-EDITORIAL-RESULTS` (privato).
+Nessuno dei due testi è stato pubblicato.
+
+**Collegamento ChatGPT via GitHub:** è stata creata una prima revisione nei
+file privati `reviews/lavoro-prezzi-pilot-001/chatgpt_review.json` e
+`chatgpt_review.md`, con confronto diretto con i PDF ISTAT.
+È stata riattivata un'attività ChatGPT di controllo **orario** sui nuovi job:
+deve limitarsi a creare review in quarantena, senza pubblicare o unire branch.
+Vedi [CHATGPT_EDITORIAL_REVIEW_BRIDGE.md](CHATGPT_EDITORIAL_REVIEW_BRIDGE.md).
+
+**Limite:** il Surface non importa ancora automaticamente i suggerimenti
+ChatGPT nei prompt Qwen e non esegue revisioni ricorsive.
+Le verifiche ChatGPT programmate dipendono da disponibilità dell'attività,
+permessi GitHub e limiti del piano. Non è una connessione API diretta.
+Il job JSON corrente è ancora `enabled:true`, ma un job_id già elaborato
+non viene rieseguito: un nuovo job richiede autorizzazione esplicita.
+
+Componenti:
+- agente Python in allowlist: `automation/pulse_local_agent.py`
+- richiesta remota: `automation/editorial_job.json`
+- esecuzione ricorrente: `automation/run_scheduled.ps1`
+- uploader privato: `automation/upload_results.ps1`
+- configurazione iniziale guidata: `automation/setup_surface.ps1`
 - test di regressione e CI che controllano anche la sintassi PowerShell
 
 **Repository Android ISTAT-PULSE: INALTERATO.** Branch dati sperimentale e PR #13
@@ -86,11 +109,15 @@ arbitrarie e non sostituisce la revisione umana.
 
 ## Limitazione fondamentale
 
-**Il task non fa lavorare ChatGPT in background.** Permette al Surface di
-eseguire job espliciti e caricare i risultati privati. ChatGPT può quindi
-leggerli nei turni successivi oppure con un'automazione separatamente
-richiesta e disponibile; non esiste un ciclo autonomo di ChatGPT che
-modifica il codice e prende decisioni continue senza nuovi trigger.
+**Il task Windows non fa lavorare ChatGPT in background.** Permette al Surface di
+eseguire job espliciti e caricare i risultati privati. Una **separata attività
+ChatGPT programmata**, attualmente abilitata, controlla i nuovi risultati
+circa ogni ora e può creare revisioni usando il connettore GitHub.
+Non è un servizio permanente o una API; non aggiorna il codice locale, non
+esegue Qwen, non pubblica, non modifica il repository Android, non approva
+autonomamente articoli. L'esito delle prossime esecuzioni periodiche dovrà
+essere verificato dal repository privato prima di dichiarare l'automazione
+editoriale completamente collaudata.
 
 ## Sicurezza e proprietà dei dati
 
