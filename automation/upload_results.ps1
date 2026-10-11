@@ -47,7 +47,7 @@ try {
             if ($Existing.encoding -ne "base64" -or !$Existing.content) { throw "File remoto non verificabile" }
             $OldBytes = [Convert]::FromBase64String(($Existing.content -replace "\s", ""))
             if ((Get-Sha256 $OldBytes) -cne (Get-Sha256 $Bytes)) {
-                throw "Conflitto su $RemotePath: nessuna sovrascrittura"
+                throw "Conflitto su ${RemotePath}: nessuna sovrascrittura"
             }
             return
         }
