@@ -1,6 +1,6 @@
-# PULSE Editorial Intelligence 3.5 — Sistema editoriale multi-ambito e laboratorio Qwen3 4B
+# PULSE Editorial Intelligence 3.5 — Sistema editoriale e laboratorio Qwen locale (Qwen3.5 9B)
 
-**Data:** 10 ottobre 2026  
+**Data:** 11 ottobre 2026  
 **Ramo sperimentale:** `feat/pulse-editorial-ai-1.0` — [PR #13](https://github.com/pierfido89/ISTAT-PULSE-DATA/pull/13)  
 **Stato (aggiornamento sul campo 10 ottobre 2026):** sei PDF ISTAT verificati; **Qwen3 4B eseguito realmente sul Surface Pro 8 in due prove successive**. La prima proposta copiava i paragrafi, la seconda li ha riscritti ma con difetti di italiano, interpretazioni non giustificate e una chiave JSON `lead` aggiuntiva. **Qualità giornalistica NON ancora approvata**. Entrambi gli errori sono stati registrati come test di regressione; nuove correzioni del controllo in fase di convalida. Nessuna pubblicazione automatica, APK o API a pagamento.
 
@@ -23,12 +23,12 @@ Il Research Engine, validato su sei pubblicazioni, alimenta sedici possibili pis
 
 I testi di questa modalità sono **composizioni controllate**, non prosa scritta liberamente da un modello linguistico: garantiscono la tracciabilità a costo computazionale quasi nullo.
 
-**B. Qwen3 4B come regista editoriale**  
+**B. Qwen3.5 9B come regista editoriale**  
 Nello stesso modulo, con `--use-local-ai`, il modello già presente su Ollama sceglie solo campi chiusi: `story_id`, `voice` (notizia, analisi, divulgazione), `focus` (fenomeno, confronto, metodo), `order` (comparazione, spiegazione). Se propone un ID inesistente, campi aggiuntivi o una struttura non valida, il piano viene scartato e subentra quello verificato.
 
 Il modello organizza l'articolo e ne sceglie l'impostazione, mentre le affermazioni fattuali continuano a essere ricostruite indipendentemente.
 
-**C. Qwen3 4B scrive in italiano libero, ma in quarantena**  
+**C. Qwen3.5 9B scrive in italiano libero, ma in quarantena**  
 `scripts/pulse_editorial_local_writer.py`
 
 Il modello può davvero proporre una riscrittura dei quattro paragrafi. Il sistema controlla:
@@ -75,7 +75,7 @@ Il laboratorio di prosa libera applica invece `assess_model_copy()`, che esamina
 
 ## Risultati di test
 
-- **155 test editoriali e di controllo, 49 test del Research Engine, 204 test automatici totali superati** dopo le correzioni originate dalle prove reali.
+- Test prima della migrazione: **155 editoriali, 49 Research Engine = 204 test superati**. Dopo la migrazione al modello 9B, nuove verifiche automatiche garantiscono che il payload invii `think: false` al livello corretto dell'API Ollama; controllare l'esito CI del commit più recente.
 - CI collegata a sei documenti ufficiali ISTAT (91 pagine e 70 osservazioni validate nella fase precedente).
 - Esito operativo della pipeline: **16 idee editoriali**, **6 articoli controllati di quattro paragrafi**, 6 stati `review_required`, **0 pubblicazioni**.
 - **Qwen3 4B locale è stato realmente eseguito due volte sul Surface** sui primi due articoli. Prima prova: nel caso turismo, nessuna riscrittura dei quattro paragrafi, solo modifica del titolo. Seconda prova: prosa parzialmente nuova, ma campi JSON non ammessi, lessico improprio e indebita inferenza sul comportamento dei clienti. **Entrambe le proposte sono state respinte a seguito di revisione.**
@@ -109,7 +109,7 @@ Il JSON della riscrittura contiene separati testo approvato e proposta Qwen. Le 
 ## Criterio di chiusura della fase 2
 
 **Implementazione software e controlli per i sei ambiti: COMPLETATI e verificati in CI.**  
-**Qwen3 4B è stato eseguito sul Surface e ha mostrato errori reali: VALIDAZIONE EDITORIALE NON SUPERATA.** Le correzioni implementate richiedono una terza prova sul modello locale prima di poter rivalutare la qualità.
+**Qwen3 4B ha mostrato errori reali nella scrittura ed è stato disinstallato. Qwen3.5 9B è ora il modello locale di riferimento.** Ha superato una prova preliminare di due frasi con ragionamento disattivato, ma deve ancora sostenere la valutazione degli articoli completi. La Fase 2 non è ancora validata sul piano della qualità giornalistica.
 
 Il punto 2 non deve essere presentato come “AI eccellente validata sul campo” finché mancano la prova con Ollama locale e la valutazione di riscritture reali. Un modello da 4B può fornire spunti di stile utili, ma non va trasformato nell'arbitro della verità statistica.
 
@@ -124,3 +124,11 @@ Il successivo **PULSE Fact Checker** potrà ampliare questa architettura ad altr
 **Patch di revisione:** JSON Schema inviato a Ollama; istruzioni di prosa naturale e fedeltà statistica; controlli indipendenti su anomalie emerse; regressioni dedicate. È proibita la promozione automatica del testo libero, anche quando tutti i controlli automatici passano.
 
 **Limite del metodo:** non esiste ancora un correttore capace di certificare integralmente la grammatica e la veridicità semantica di una prosa libera. Queste regole intercettano esempi riconoscibili ma non tutti gli errori possibili. Serve revisione umana con la fonte originale.
+
+## Migrazione a Qwen3.5 9B — 11 ottobre 2026
+
+L'utente ha disinstallato `qwen3:4b-instruct` dal proprio Surface Pro 8 (RAM 16 GB) e ha installato `qwen3.5:9b` tramite Ollama. Alla prima richiesta la modalità predefinita con ragionamento ha generato un lunghissimo testo intermedio anziché una risposta breve. La successiva prova locale con `ollama run qwen3.5:9b --think=false` ha prodotto in italiano due frasi corrette sul rapporto tra arrivi, presenze e permanenza media per arrivo, senza cifre inventate: **esito preliminare promettente, non sostitutivo della valutazione editoriale**.
+
+**Modifiche sul solo branch sperimentale dei dati:** `MODEL_DEFAULT` ora è `qwen3.5:9b` nel client `scripts/pulse_editorial_ai.py`, ripreso dai moduli `pulse_editorial_local_writer.py`, `pulse_editorial_publication.py` e `pulse_editorial_pairs.py`. Ogni richiesta Ollama locale in questi moduli usa `"think": false` **come campo principale della richiesta**, non dentro `options`, per evitare il consumo di token nel ragionamento interno. Rimangono JSON Schema per le riscritture, 4 paragrafi, divieto di inserire fatti non supportati e revisione umana obbligatoria. La fase attuale opera esclusivamente sui JSON dei workbench, non modifica la produzione Android e non pubblica articoli.
+
+**Prossimo test necessario:** ripetere la scrittura di **due articoli** dal workbench ISTAT sul Surface con Qwen3.5 9B, salvarla in un file con nome nuovo (senza sovrascrivere v1 e v2) e verificare campi, metriche, italiano, cautele e impatto prestazionale. Senza questo test reale, non assegnare un voto editoriale definitivo al modello.
