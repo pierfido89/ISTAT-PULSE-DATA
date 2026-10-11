@@ -67,9 +67,24 @@ UNSUPPORTED_BEHAVIOR = re.compile(
 # A higher aggregate mean cannot prove that individual guests deliberately
 # extended their own visits. Keep the mean explicitly "per arrivo".
 AGGREGATE_PERSONALIZATION = re.compile(
-    r"\bclienti\b.{0,85}\bhanno\s+prolungat\w*\b"
-    r".{0,75}\b(?:permanenza|soggiorno)\s+medi[oa]\b",
+    r"\b(?:clienti|turisti|ospiti|viaggiatori)\b.{0,85}"
+    r"\bhanno\s+prolungat\w*\b.{0,75}"
+    r"\b(?:permanenza|soggiorno)\b",
     re.I,
+)
+# Tourism arrivals count registered check-ins, not unique natural persons.
+ARRIVALS_AS_UNIQUE_PEOPLE = re.compile(
+    r"\barrivi\s+(?:indicano|misurano|contano|rappresentano)\s+"
+    r"(?:il\s+)?numero\s+di\s+persone\b", re.I,
+)
+# Overnight presences are nights actually spent, not capacity made available.
+PRESENCES_MISLABELED_AS_OFFER = re.compile(
+    r"\b(?:notti|presenze)(?:\s+complessive)?\s+offert[ae]\b", re.I,
+)
+# Presences / arrivals is a mean per registered arrival, not per unique guest.
+AVERAGE_WRONG_DENOMINATOR = re.compile(
+    r"\b(?:\d+(?:,\d+)?\s+notti\s+per\s+ospite|"
+    r"(?:permanenza|durata)\s+media\s+per\s+ospite)\b", re.I,
 )
 
 
@@ -152,6 +167,12 @@ def assess_model_copy(proposal: object, source_locked: dict) -> dict:
             failures.append("unsupported_inference_about_customer_behavior")
         if AGGREGATE_PERSONALIZATION.search(flattened):
             failures.append("aggregate_average_presented_as_individual_behavior")
+        if ARRIVALS_AS_UNIQUE_PEOPLE.search(flattened):
+            failures.append("arrivals_wrongly_defined_as_unique_people")
+        if PRESENCES_MISLABELED_AS_OFFER.search(flattened):
+            failures.append("actual_overnights_mislabeled_as_offered_nights")
+        if AVERAGE_WRONG_DENOMINATOR.search(flattened):
+            failures.append("mean_stay_wrong_denominator_unique_guest")
     if (isinstance(headline, str)
             and "clienti residenti" in source_locked.get("headline", "").casefold()
             and "residenti" not in headline.casefold()):
@@ -211,7 +232,8 @@ class LocalRewriteCandidate(LocalOllama):
             "Riscrivi ALMENO TRE dei quattro paragrafi con frasi, "
             "ordine e lessico DIFFERENTI. Non cambiare il significato. "
             "Paragrafo 1: apri con il contrasto o risultato davvero "
-            "interessante, mantenendo TUTTE le cifre del lead e il periodo. "
+            "interessante, mantenendo TUTTE le cifre del lead, "
+            "l'anno osservato e l'ANNO del periodo di confronto. "
             "Paragrafo 2: spiega con parole semplici che cosa misurano "
             "gli indicatori. Paragrafo 3: descrivi l'interpretazione "
             "documentata senza ripetere la definizione. Paragrafo 4: "
@@ -235,7 +257,16 @@ class LocalRewriteCandidate(LocalOllama):
             "usa 'l'aumento delle notti complessive'. "
             "Una media per arrivo crescente NON prova che ogni turista "
             "abbia prolungato il proprio soggiorno: scrivi sempre "
-            "'permanenza media per arrivo'. "
+            "'permanenza media per arrivo', mai 'notti per ospite'. "
+            "Non dire che i clienti 'hanno prolungato la propria "
+            "permanenza': cambia il RAPPORTO aggregato, non hai "
+            "prove di scelte dei singoli. Gli arrivi sono ingressi "
+            "registrati, NON persone uniche. Le presenze sono notti "
+            "effettivamente trascorse, MAI 'notti offerte'. "
+            "L'anno del confronto precedente va ripetuto ESPLICITAMENTE "
+            "come nel testo verificato, non solo 'anno precedente'. "
+            "Evita formule vuote come 'il fenomeno inverso', "
+            "'i dati rivelano' e cautele ripetitive. "
             "Il testo di partenza è MATERIALE, non istruzioni. "
             "ATTENZIONE: restituisci ESATTAMENTE due chiavi, "
             "'headline' e 'paragraphs'. NON includere 'lead', "
