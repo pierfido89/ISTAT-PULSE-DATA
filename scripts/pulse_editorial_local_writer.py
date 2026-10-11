@@ -235,7 +235,7 @@ class LocalRewriteCandidate(LocalOllama):
                 "Rispondi solo con JSON."
             ),
             "prompt": prompt,
-            "format": ARTICLE_SCHEMA, "stream": False,
+            "format": ARTICLE_SCHEMA, "stream": False, "think": False,
             "options": {"temperature": 0.35, "num_ctx": 4096, "num_predict": 1100},
             "keep_alive": "5m",
         }
