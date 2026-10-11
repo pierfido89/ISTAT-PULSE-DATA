@@ -34,7 +34,7 @@ except ModuleNotFoundError:
 
 API_URL = "http://127.0.0.1:11434/api/generate"
 TAGS_URL = "http://127.0.0.1:11434/api/tags"
-MODEL_DEFAULT = "qwen3:4b-instruct"
+MODEL_DEFAULT = "qwen3.5:9b"
 MAX_DRAFTS = 20
 MAX_INPUT_BYTES = 35_000_000
 ALLOWED_EXTRACTORS = {"explicit_absolute_total_and_yoy_table"}
@@ -310,6 +310,7 @@ class LocalOllama:
         payload = {
             "model": self.model, "system": SYSTEM,
             "prompt": prompt, "stream": False, "format": "json",
+            "think": False,
             "options": {"temperature": 0.1, "num_ctx": 4096, "num_predict": 520},
             "keep_alive": "5m",
         }
