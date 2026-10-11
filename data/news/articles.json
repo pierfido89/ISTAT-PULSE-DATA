@@ -1,6 +1,45 @@
 {
-  "generated_at": "2026-10-11T09:11:15.704643+00:00",
+  "generated_at": "2026-10-11T14:10:36.739069+00:00",
   "articles": [
+    {
+      "id": "PULSE-10B7F5874C4BF858",
+      "story_fingerprint": "10b7f5874c4bf85823790daf",
+      "published_at": "2026-10-11T13:59:45+00:00",
+      "last_seen_at": "2026-10-11T14:10:36.739069+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 59,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxObjFaZGE4NW84M19JNllOQVpKVXJGMks5eGctZk4wX0lrSXZWWDdFX0k4dnR0Vnk3b2w0c3hGSHFPUjV4dXRBclBkUWRidU92VUlVcmY3NEpRN29GZHdPNXJNSG5sZ0JHVFJfN1BuYU5FbXQwOGc3ZnBSdXpNQ2lEZmtISGF4OXJNN1djdmdFZktHVGl5V1BlQnBvNHlVV0w0?oc=5",
+        "domain": "inITALY",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Turismo da record in Italia: spesa di 185 miliardi nel 2025 - inITALY",
+      "summary": "Turismo da record in Italia: spesa di 185 miliardi nel 2025 inITALY",
+      "statistical_claims": [
+        {
+          "raw_value": "185 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "185 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
     {
       "id": "PULSE-D338B59F93614799",
       "story_fingerprint": "d338b59f936147997584e3c3",
@@ -125,7 +164,7 @@
       "id": "PULSE-099885479FBBE247",
       "story_fingerprint": "099885479fbbe2475aeca2d4",
       "published_at": "2026-10-11T03:00:00+00:00",
-      "last_seen_at": "2026-10-11T09:11:15.704643+00:00",
+      "last_seen_at": "2026-10-11T14:10:36.739069+00:00",
       "topic": "LAVORO",
       "pulse_score": 50,
       "patterns": [],
@@ -170,7 +209,7 @@
       "id": "PULSE-01865C03BDC6C04F",
       "story_fingerprint": "01865c03bdc6c04fc4d8cf5f",
       "published_at": "2026-10-10T22:30:16+00:00",
-      "last_seen_at": "2026-10-11T09:11:15.704643+00:00",
+      "last_seen_at": "2026-10-11T14:10:36.739069+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 54,
       "patterns": [],
@@ -198,6 +237,45 @@
         },
         {
           "raw_value": "1%",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-97213A821655C826",
+      "story_fingerprint": "97213a821655c8267418da56",
+      "published_at": "2026-10-10T11:20:42+00:00",
+      "last_seen_at": "2026-10-11T14:10:36.739069+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 59,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQbDQ0am9UWGs5REtxa0RRQW8xTGZxWkFxMTI2MVRQNmx5XzBpeW5KYnd3QzJuVjE2MlJFQlYwXzVmcldwV3dKcGxZN2V6TDFKbXgwcW15TGp3STJTZWRzdkVoa2ZzNlNid0lYcDlSSzJsaWZYdmowX0Z0Qm9lMlNjMGN1R2dhWllmcUtOUGM4eXBlZFNCOGNHS2NFSExmMVY0Skt4WmxRTkl6ZWgzVEptLVp0OFU3aUNTVVBRdDFaLTE?oc=5",
+        "domain": "Italia a Tavola",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Turismo, nel 2025 presenze da record. Nella ristorazione spesi 13,6 miliardi - Italia a Tavola",
+      "summary": "Turismo, nel 2025 presenze da record. Nella ristorazione spesi 13,6 miliardi Italia a Tavola",
+      "statistical_claims": [
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "13,6 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "13,6 miliardi",
           "verified": false
         }
       ],
@@ -370,7 +448,7 @@
       "id": "PULSE-F6A0C16B1B412DDD",
       "story_fingerprint": "f6a0c16b1b412dddf8e4ebe8",
       "published_at": "2026-10-09T21:44:20+00:00",
-      "last_seen_at": "2026-10-11T09:11:15.704643+00:00",
+      "last_seen_at": "2026-10-11T14:10:36.739069+00:00",
       "topic": "ALTRO",
       "pulse_score": 47,
       "patterns": [],
@@ -403,7 +481,7 @@
       "id": "PULSE-A906182DEEF86950",
       "story_fingerprint": "a906182deef86950a8d9e139",
       "published_at": "2026-10-09T20:54:03+00:00",
-      "last_seen_at": "2026-10-11T09:11:15.704643+00:00",
+      "last_seen_at": "2026-10-11T14:10:36.739069+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 49,
       "patterns": [],
@@ -489,7 +567,7 @@
       "id": "PULSE-432037A7AA2FBA88",
       "story_fingerprint": "432037a7aa2fba88035c0cf3",
       "published_at": "2026-10-09T19:12:34+00:00",
-      "last_seen_at": "2026-10-11T09:11:15.704643+00:00",
+      "last_seen_at": "2026-10-11T14:10:36.739069+00:00",
       "topic": "ALTRO",
       "pulse_score": 49,
       "patterns": [],
@@ -624,7 +702,7 @@
       "id": "PULSE-7DD7B8E2BE256506",
       "story_fingerprint": "7dd7b8e2be256506049325cd",
       "published_at": "2026-10-09T11:10:37+00:00",
-      "last_seen_at": "2026-10-11T09:11:15.704643+00:00",
+      "last_seen_at": "2026-10-11T14:10:36.739069+00:00",
       "topic": "LAVORO",
       "pulse_score": 47,
       "patterns": [],
@@ -690,7 +768,7 @@
       "id": "PULSE-98228A3E851FCA4D",
       "story_fingerprint": "98228a3e851fca4d9244c71d",
       "published_at": "2026-10-09T09:08:00+00:00",
-      "last_seen_at": "2026-10-11T09:11:15.704643+00:00",
+      "last_seen_at": "2026-10-11T14:10:36.739069+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 64,
       "patterns": [],
@@ -768,7 +846,7 @@
       "id": "PULSE-6432FBBFD9EE664D",
       "story_fingerprint": "6432fbbfd9ee664d1c3a665d",
       "published_at": "2026-10-09T08:58:49+00:00",
-      "last_seen_at": "2026-10-11T09:11:15.704643+00:00",
+      "last_seen_at": "2026-10-11T14:10:36.739069+00:00",
       "topic": "MOBILITA",
       "pulse_score": 84,
       "public_source": {
@@ -874,7 +952,7 @@
       "id": "PULSE-C545089630B8EEA5",
       "story_fingerprint": "c545089630b8eea51e9bdc3b",
       "published_at": "2026-10-09T08:00:00+00:00",
-      "last_seen_at": "2026-10-11T09:11:15.704643+00:00",
+      "last_seen_at": "2026-10-11T14:10:36.739069+00:00",
       "topic": "LAVORO",
       "pulse_score": 84,
       "public_source": {
@@ -968,7 +1046,7 @@
       "id": "PULSE-3594B7F247349439",
       "story_fingerprint": "3594b7f24734943976b338b7",
       "published_at": "2026-10-09T07:42:00+00:00",
-      "last_seen_at": "2026-10-09T09:13:23.192673+00:00",
+      "last_seen_at": "2026-10-11T14:10:36.739069+00:00",
       "topic": "ALTRO",
       "pulse_score": 49,
       "patterns": [],
