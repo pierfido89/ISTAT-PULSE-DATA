@@ -52,10 +52,10 @@ ARTICLE_SCHEMA = {
 UNNATURAL_ITALIAN = {
     "clients_do_not_occur": re.compile(
         r"\bclienti\b.{0,40}\bsi\s+verific\w+\b", re.I),
-    "misused_stanzialita": re.compile(r"\\bstanzialit[àa]\\b", re.I),
-    "dai_ospiti_instead_of_dagli_ospiti": re.compile(r"\\bdai\\s+ospiti\\b", re.I),
+    "misused_stanzialita": re.compile(r"\bstanzialit[àa]\b", re.I),
+    "dai_ospiti_instead_of_dagli_ospiti": re.compile(r"\bdai\s+ospiti\b", re.I),
     "unnatural_increased_total_nights": re.compile(
-        r"\\btotale\\s+delle\\s+notti\\s+aumentat[oaie]\\b", re.I),
+        r"\btotale\s+delle\s+notti\s+aumentat[oaie]\b", re.I),
 }
 # No inference about changes in people's behavior follows directly from
 # two tourism indicators, even when their ratio changes.
