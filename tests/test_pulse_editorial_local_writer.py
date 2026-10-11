@@ -197,6 +197,81 @@ class QwenFreeProseSafetyTests(unittest.TestCase):
         self.assertIn("headline_unchanged_from_source",
                       assessment["style_warnings"])
 
+    def test_surface_qwen35_9b_article_is_rejected_for_real_grammar_errors(self):
+        """Actual first Qwen3.5 9B article passed old rules despite errors."""
+        draft = fixture()["drafts"][0]
+        proposal = {
+            "headline": draft["headline"],
+            "paragraphs": [
+                "Nel secondo trimestre 2026, gli esercizi alberghieri hanno "
+                "registrato un calo del 4,3% negli arrivi dei clienti "
+                "residenti, pari a 12.464.038 unità, mentre le presenze "
+                "sono salite dell'1,7% fino a raggiungere le 32.162.873 "
+                "notti rispetto al secondo trimestre 2025.",
+                "Gli arrivi indicano il numero di ingressi nelle strutture "
+                "ricettive, mentre le presenze misurano l'insieme delle notti "
+                "trascorse dai ospiti. Il rapporto tra queste due grandezze "
+                "fornisce una permanenza media per arrivo di circa 2,58 notti.",
+                "Il dato emerge dal confronto diretto: nonostante la "
+                "diminuzione degli ingressi registrati negli alberghi, il "
+                "totale delle notti aumentato segnala che i clienti residenti "
+                "hanno prolungato la propria permanenza media rispetto al "
+                "periodo analogo dell'anno precedente.",
+                "È opportuno considerare che le variazioni riportate "
+                "descrivono l'andamento osservato dei numeri senza poterne "
+                "dedurre automaticamente le cause sottostanti, e che tali "
+                "valori non costituiscono previsioni future.",
+            ],
+        }
+        report = assess_model_copy(proposal, draft)
+        self.assertEqual(report["status"], "rejected")
+        self.assertIn(
+            "unnatural_italian:dai_ospiti_instead_of_dagli_ospiti",
+            report["failures"],
+        )
+        self.assertIn(
+            "unnatural_italian:unnatural_increased_total_nights",
+            report["failures"],
+        )
+        self.assertIn(
+            "aggregate_average_presented_as_individual_behavior",
+            report["failures"],
+        )
+        self.assertEqual(report["substantially_rewritten_paragraphs"], 4)
+        self.assertIn("headline_unchanged_from_source", report["style_warnings"])
+        self.assertTrue(report["human_review_required"])
+
+    def test_aggregate_average_can_be_described_without_attributing_choices(self):
+        draft = fixture()["drafts"][0]
+        proposal = valid_sample(draft)
+        proposal["paragraphs"][1] = (
+            "Gli arrivi sono gli ingressi nelle strutture alberghiere, "
+            "mentre le presenze corrispondono alle notti trascorse "
+            "complessivamente. Il rapporto fra i due dati permette "
+            "di descrivere una permanenza media per arrivo."
+        )
+        proposal["paragraphs"][2] = (
+            "I due valori si muovono in direzioni opposte nello stesso "
+            "trimestre e per la stessa clientela residente. Ne risulta "
+            "una permanenza media per arrivo in aumento rispetto al "
+            "periodo precedente, senza indicare scelte individuali."
+        )
+        proposal["paragraphs"][3] = (
+            "Queste variazioni descrivono il rapporto matematico "
+            "fra ingressi e notti osservate e non dimostrano quali "
+            "fattori abbiano determinato il risultato statistico."
+        )
+        report = assess_model_copy(proposal, draft)
+        self.assertNotIn(
+            "aggregate_average_presented_as_individual_behavior",
+            report["failures"],
+        )
+        self.assertNotIn(
+            "unnatural_italian:dai_ospiti_instead_of_dagli_ospiti",
+            report["failures"],
+        )
+        self.assertTrue(report["human_review_required"])
+
     def test_json_schema_has_exactly_two_output_keys(self):
         self.assertFalse(ARTICLE_SCHEMA["additionalProperties"])
         self.assertEqual(set(ARTICLE_SCHEMA["required"]), {"headline", "paragraphs"})
