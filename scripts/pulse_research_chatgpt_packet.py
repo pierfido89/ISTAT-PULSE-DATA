@@ -12,9 +12,14 @@ import json
 from pathlib import Path
 import re
 
-from scripts.pulse_editorial_ai import _read_input
-from scripts.pulse_research_acceptance import verify_six
-from scripts.pulse_research_engine import research_report
+try:
+    from scripts.pulse_editorial_ai import _read_input
+    from scripts.pulse_research_acceptance import verify_six
+    from scripts.pulse_research_engine import research_report
+except ModuleNotFoundError:
+    from pulse_editorial_ai import _read_input
+    from pulse_research_acceptance import verify_six
+    from pulse_research_engine import research_report
 
 SCHEMA = "pulse-research-to-chatgpt-v1"
 SHA = re.compile(r"[0-9a-f]{64}\Z")
