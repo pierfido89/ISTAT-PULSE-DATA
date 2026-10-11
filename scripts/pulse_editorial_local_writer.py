@@ -303,12 +303,14 @@ class LocalRewriteCandidate(LocalOllama):
 
 
 def make_rewrite_lab(source: dict, writer: LocalRewriteCandidate,
-                     limit: int = 2) -> dict:
+                     limit: int = 2, start: int = 0) -> dict:
     drafts = source.get("drafts")
-    if not isinstance(drafts, list) or not drafts or not 1 <= limit <= 6:
-        raise ValueError("Grounded editorial issue missing")
+    if (not isinstance(drafts, list) or not drafts or not 1 <= limit <= 6
+            or not isinstance(start, int) or not 0 <= start < len(drafts)
+            or start + limit > len(drafts)):
+        raise ValueError("Grounded editorial issue missing or invalid article range")
     records = []
-    for draft in drafts[:limit]:
+    for draft in drafts[start:start + limit]:
         if draft.get("publication_status") != "draft_only" or \
                 draft.get("quality", {}).get("status") != "review_required":
             raise ValueError("Original is not a source-checked draft")
@@ -334,6 +336,7 @@ def make_rewrite_lab(source: dict, writer: LocalRewriteCandidate,
     return {
         "schema_version": "pulse-editorial-free-prose-lab-3.5",
         "model": MODEL_DEFAULT,
+        "starting_article_index": start,
         "number_of_model_calls": len(records),
         "published": False,
         "cannot_promote_without_human_check": True,
@@ -348,6 +351,8 @@ def main(argv=None):
     p.add_argument("--input", required=True, type=Path)
     p.add_argument("--output", required=True, type=Path)
     p.add_argument("--limit", default=2, type=int)
+    p.add_argument("--start", default=0, type=int,
+                   help="Zero-based index of the first article; skip prior trials")
     args = p.parse_args(argv)
     if (args.output.name.lower() in FORBIDDEN_OUTPUTS
             or args.output.resolve() == args.input.resolve()):
@@ -358,7 +363,7 @@ def main(argv=None):
         return 2
     try:
         source = json.loads(args.input.read_text(encoding="utf-8"))
-        result = make_rewrite_lab(source, writer, args.limit)
+        result = make_rewrite_lab(source, writer, args.limit, start=args.start)
     except (OSError, ValueError, TypeError, json.JSONDecodeError) as exc:
         print("PULSE Qwen prose lab: " + str(exc), file=sys.stderr)
         return 2
