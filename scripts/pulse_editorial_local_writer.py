@@ -92,8 +92,62 @@ def _number_form(num: str) -> str:
     return num.replace(".", "").replace(",", ".").replace("+", "").strip()
 
 
+# A percentage's sign may be verbal: "diminuzione del 3,0%" means -3,0%.
+# Compare source and draft using the same polarity inference. Never simply
+# discard a minus sign, which would allow real directional errors through.
+CHANGE_VERBS = re.compile(
+    r"\b(?:diminuzion\w*|riduzion\w*|calo|calat\w*|sces\w*|"
+    r"flession\w*|contrazion\w*|decrement\w*|"
+    r"aument\w*|increment\w*|crescit\w*|salit\w*|rialz\w*)\b",
+    re.I,
+)
+NEGATIVE_CHANGE = re.compile(
+    r"^(?:diminuzion|riduzion|calo|calat|sces|flession|contrazion|decrement)",
+    re.I,
+)
+MONTHLY_PERIOD = re.compile(r"(?<!\d)(20\d{2})-(0[1-9]|1[0-2])(?!\d)")
+ITALIAN_MONTHS = (
+    "", "gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno",
+    "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre",
+)
+
+
 def _number_inventory(text: str) -> Counter:
-    return Counter(_number_form(n) for n in ITALIAN_NUMBER.findall(text))
+    result = Counter()
+    for match in ITALIAN_NUMBER.finditer(text):
+        token = match.group()
+        # YYYY-MM is a temporal label, not two unrelated numeric claims.
+        # The month is checked separately, including its Italian name.
+        start = match.start()
+        if (len(token) == 2 and start >= 5
+                and MONTHLY_PERIOD.fullmatch(text[start - 5:match.end()])):
+            continue
+        normalized = _number_form(token)
+        if token.endswith("%") and not token.startswith(("-", "+")):
+            # Interpret the closest directional word in the same clause.
+            clause = re.split(r"[.;:!?\n]", text[max(0, start - 85):start])[-1]
+            verbs = list(CHANGE_VERBS.finditer(clause))
+            if verbs and NEGATIVE_CHANGE.match(verbs[-1].group()):
+                normalized = "-" + normalized
+        result[normalized] += 1
+    return result
+
+
+def _month_claims_preserved(source_text: str, proposed_text: str) -> list[str]:
+    failures = []
+    for match in MONTHLY_PERIOD.finditer(source_text):
+        year, month = match.groups()
+        spelled = ITALIAN_MONTHS[int(month)]
+        represented = (
+            match.group() in proposed_text
+            or re.search(rf"\b{spelled}\s+{year}\b", proposed_text, re.I)
+            or re.search(rf"\b{month}/{year}\b", proposed_text)
+        )
+        if not represented and (
+            "reference_month_omitted_or_changed:" + match.group()
+        ) not in failures:
+            failures.append("reference_month_omitted_or_changed:" + match.group())
+    return failures
 
 
 def _words(value: str) -> set[str]:
@@ -130,6 +184,13 @@ def assess_model_copy(proposal: object, source_locked: dict) -> dict:
         str(source_locked.get("body") or ""),
         str(source_locked.get("source_url") or ""),
     ])
+    failures.extend(_month_claims_preserved(
+        "\n".join([
+            str(source_locked.get("headline") or ""),
+            str(source_locked.get("lead") or ""),
+        ]),
+        flattened,
+    ))
     source_numbers = _number_inventory(accepted_text)
     added = sorted(set(_number_inventory(flattened)) - set(source_numbers))
     if added:
@@ -162,6 +223,16 @@ def assess_model_copy(proposal: object, source_locked: dict) -> dict:
     for defect, pattern in UNNATURAL_ITALIAN.items():
         if pattern.search(flattened):
             failures.append("unnatural_italian:" + defect)
+    if source_locked.get("domain") == "labor_categories_yoy_evidence":
+        # In the verified source, the 15-64 age band qualifies inactivity,
+        # not necessarily every occupational count in the same article.
+        if re.search(
+            r"\boccupati\b[^.!?\n]{0,110}\bdisoccupati\b"
+            r"[^.!?\n]{0,80}\binattivi\b"
+            r"[^.!?\n]{0,35}\btra\s+i\s+15\s+e\s+i\s+64\s+anni\b",
+            flattened, re.I,
+        ):
+            failures.append("labor_age_scope_overgeneralized")
     if source_locked.get("domain") == "paired_indicators":
         if UNSUPPORTED_BEHAVIOR.search(flattened):
             failures.append("unsupported_inference_about_customer_behavior")
