@@ -1,0 +1,36 @@
+name: PULSE ChatGPT editorial publication gate — offline tests
+
+on:
+  push:
+    branches: [feat/pulse-editorial-ai-1.0]
+    paths:
+      - 'data/editorial/**'
+      - 'scripts/pulse_editorial_publication_gate.py'
+      - 'tests/test_pulse_editorial_publication_gate.py'
+      - '.github/workflows/verify-approved-editorial.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  review-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test human approval and rejection cases (no external AI)
+        run: python -m unittest discover -s tests -p 'test_pulse_editorial_publication_gate.py' -v
+      - name: Validate initial public feed without publishing anything
+        run: |
+          python - <<'PY'
+          import json
+          from scripts.pulse_editorial_publication_gate import validate_approved_feed
+          d = json.load(open('data/editorial/approved_articles.json', encoding='utf-8'))
+          validate_approved_feed(d)
+          assert not d['articles'], "No editorial content is approved in this pilot"
+          print('EMPTY approved channel; private ChatGPT drafts remain private.')
+          PY
