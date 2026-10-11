@@ -96,22 +96,30 @@ def make_packet(paths: list[Path]) -> dict:
                                     if isinstance(x, dict) and x.get("source_location")]
             if not source_locations:
                 raise ValueError(f"Missing source table locator: {domain}/{number}")
-            structural = compact(signal)
             story_id = f"{domain.upper()}-{number:02d}-{raw_hash[:10]}"
-            fact_id = f"E-{story_id}-01"
+            # Per-indicator evidence is essential: otherwise the model could
+            # attach the 3.3% NIC value to the FOI indicator without detection.
+            rows = evidence if evidence else [signal]
+            facts = []
+            for k, row in enumerate(rows, 1):
+                row_locations = ([row.get("source_location") or row.get("location")]
+                                 if isinstance(row, dict) and
+                                 (row.get("source_location") or row.get("location"))
+                                 else source_locations)
+                facts.append({
+                    "evidence_id": f"E-{story_id}-{k:02d}",
+                    "source_url": source,
+                    "source_sha256": raw_hash,
+                    "source_locations": list(dict.fromkeys(str(x)[:200] for x in row_locations)),
+                    "verified_structured_data": compact(row),
+                })
             stories.append({
                 "story_id": story_id,
                 "domain": domain,
                 "source_url": source,
                 "source_sha256": raw_hash,
-                "source_locations": list(dict.fromkeys(str(s)[:200] for s in source_locations)),
-                "facts": [{
-                    "evidence_id": fact_id,
-                    "source_url": source,
-                    "source_sha256": raw_hash,
-                    "source_locations": source_locations,
-                    "verified_structured_data": structural,
-                }],
+                "source_locations": list(dict.fromkeys(str(x)[:200] for x in source_locations)),
+                "facts": facts,
                 "status": "research_verified_not_an_article",
                 "human_fact_review_required": True,
             })
