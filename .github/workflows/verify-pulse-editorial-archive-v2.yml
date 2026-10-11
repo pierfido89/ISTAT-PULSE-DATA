@@ -1,0 +1,38 @@
+name: PULSE paginated archive V2 — offline contract only
+
+on:
+  push:
+    branches: [feat/pulse-editorial-ai-1.0]
+    paths:
+      - 'scripts/pulse_editorial_archive_v2.py'
+      - 'tests/test_pulse_editorial_archive_v2.py'
+      - '.github/workflows/verify-pulse-editorial-archive-v2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-no-auto-publication:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate 1001 articles, pagination, rejected drafts, deduplication
+        run: python -m unittest discover -s tests -p 'test_pulse_editorial_archive_v2.py' -v
+      - name: Build empty v2 archive from CURRENT empty approved feed
+        run: |
+          python scripts/pulse_editorial_archive_v2.py \
+            --approved-input data/editorial/approved_articles.json \
+            --output-dir /tmp/pulse-v2
+          python - <<'PY'
+          import json
+          x=json.load(open('/tmp/pulse-v2/index.json'))
+          assert x['article_count']==0
+          assert x['page_count']==0
+          assert x['auto_publish_enabled'] is False
+          print('PASS: no auto-published articles, no APK')
+          PY
