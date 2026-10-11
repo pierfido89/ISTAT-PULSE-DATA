@@ -369,6 +369,31 @@ class QwenFreeProseSafetyTests(unittest.TestCase):
         self.assertNotIn("think", seen[0]["options"])
         self.assertFalse(seen[0]["stream"])
 
+    def test_selected_article_range_skips_previous_topics(self):
+        source = fixture()
+        selected = source["drafts"][1:3]
+        writer = StubWriter(valid_sample(selected[0]))
+        report = make_rewrite_lab(source, writer, limit=2, start=1)
+        self.assertEqual(report["starting_article_index"], 1)
+        self.assertEqual(report["number_of_model_calls"], 2)
+        self.assertEqual(writer.calls, 2)
+        self.assertEqual(
+            [r["source_story_id"] for r in report["rewrite_results"]],
+            [a["id"] for a in selected],
+        )
+        self.assertNotIn(source["drafts"][0]["id"],
+                         [r["source_story_id"] for r in report["rewrite_results"]])
+        self.assertFalse(report["published"])
+
+    def test_selected_article_range_never_wraps_or_exceeds_articles(self):
+        source = fixture()
+        writer = StubWriter(valid_sample(source["drafts"][0]))
+        for start, limit in ((-1, 1), (6, 1), (5, 2), (0, 7), (0, 0)):
+            with self.subTest(start=start, limit=limit):
+                with self.assertRaises(ValueError):
+                    make_rewrite_lab(source, writer, limit=limit, start=start)
+        self.assertEqual(writer.calls, 0)
+
     def test_offline_cli_requires_existing_ollama(self):
         with tempfile.TemporaryDirectory() as directory:
             p = Path(directory) / "draft.json"
