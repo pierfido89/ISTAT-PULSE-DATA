@@ -83,9 +83,18 @@ def table_rows(page_text: str, source_sha256: str, *, page_no=4) -> list[dict]:
     for lineno in range(start+1,stop):
         line=lines[lineno]
         if line.startswith("Indice generale al netto degli energetici e alimentari freschi"):
-            # Official PDF splits long label across two lines.
-            if lineno+1 < stop and "(Componente di fondo)" in lines[lineno+1]:
-                line=line+" "+lines[lineno+1]
+            # ISTAT PDF: the long "Componente di fondo" label AND the
+            # numeric columns may occupy three independent extracted lines.
+            # Reconstruct only if the joined row matches the EXACT official
+            # label + weight + five numeric columns; never guess a value.
+            for width in (2, 3, 4):
+                if lineno+width > stop:
+                    break
+                candidate=" ".join(lines[lineno:lineno+width])
+                m=PATTERN.fullmatch(candidate)
+                if m and m.group("label") in LABELS:
+                    line=candidate
+                    break
         match=PATTERN.fullmatch(line)
         if not match:
             continue
