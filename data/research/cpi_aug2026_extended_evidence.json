@@ -1,0 +1,261 @@
+{
+  "schema_version": "pulse-cpi-extended-evidence-v1",
+  "story_id": "PRICES-01-d3647dade0",
+  "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
+  "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
+  "source_document": "ISTAT, Prezzi al consumo agosto 2026, dati definitivi",
+  "source_published_at": "2026-09-16",
+  "source_pdf_pages": 22,
+  "source_table": "Prospetto 3, page 4",
+  "numeric_fact_count": 10,
+  "facts": [
+    {
+      "evidence_id": "E-PRICES-01-d3647dade0-04",
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
+      "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
+      "source_locations": [
+        "page:4:text:line:43"
+      ],
+      "verified_structured_data": {
+        "indicator": "Indice generale NIC",
+        "indicator_code": "NIC_GENERAL",
+        "territory": "Italia",
+        "reference_period": "2026-08",
+        "previous_comparison_period": "2026-07",
+        "unit": "percent",
+        "reported_yoy_change_pct": 3.3,
+        "previous_month_yoy_change_pct": 2.9,
+        "reported_monthly_change_pct": 0.5,
+        "previous_month_reported_monthly_change_pct": 0.1,
+        "inflation_acquired_pct": 2.9,
+        "official_source_table": "Prospetto 3",
+        "source_pdf_page": 4,
+        "comparison_definition": "annual_rate_in_august_and_annual_rate_in_july"
+      },
+      "verification": "strict_original_prospetto3_row_verified_against_pinned_pdf"
+    },
+    {
+      "evidence_id": "E-PRICES-01-d3647dade0-05",
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
+      "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
+      "source_locations": [
+        "page:4:text:line:28"
+      ],
+      "verified_structured_data": {
+        "indicator": "Beni energetici",
+        "indicator_code": "ENERGY_TOTAL",
+        "territory": "Italia",
+        "reference_period": "2026-08",
+        "previous_comparison_period": "2026-07",
+        "unit": "percent",
+        "reported_yoy_change_pct": 17.1,
+        "previous_month_yoy_change_pct": 11.6,
+        "reported_monthly_change_pct": 2.9,
+        "previous_month_reported_monthly_change_pct": -1.9,
+        "inflation_acquired_pct": 9.6,
+        "official_source_table": "Prospetto 3",
+        "source_pdf_page": 4,
+        "comparison_definition": "annual_rate_in_august_and_annual_rate_in_july"
+      },
+      "verification": "strict_original_prospetto3_row_verified_against_pinned_pdf"
+    },
+    {
+      "evidence_id": "E-PRICES-01-d3647dade0-06",
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
+      "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
+      "source_locations": [
+        "page:4:text:line:29"
+      ],
+      "verified_structured_data": {
+        "indicator": "Energetici regolamentati",
+        "indicator_code": "ENERGY_REGULATED",
+        "territory": "Italia",
+        "reference_period": "2026-08",
+        "previous_comparison_period": "2026-07",
+        "unit": "percent",
+        "reported_yoy_change_pct": 18.6,
+        "previous_month_yoy_change_pct": 14.8,
+        "reported_monthly_change_pct": 3.0,
+        "previous_month_reported_monthly_change_pct": -0.3,
+        "inflation_acquired_pct": 10.1,
+        "official_source_table": "Prospetto 3",
+        "source_pdf_page": 4,
+        "comparison_definition": "annual_rate_in_august_and_annual_rate_in_july"
+      },
+      "verification": "strict_original_prospetto3_row_verified_against_pinned_pdf"
+    },
+    {
+      "evidence_id": "E-PRICES-01-d3647dade0-07",
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
+      "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
+      "source_locations": [
+        "page:4:text:line:30"
+      ],
+      "verified_structured_data": {
+        "indicator": "Energetici non regolamentati",
+        "indicator_code": "ENERGY_UNREGULATED",
+        "territory": "Italia",
+        "reference_period": "2026-08",
+        "previous_comparison_period": "2026-07",
+        "unit": "percent",
+        "reported_yoy_change_pct": 17.0,
+        "previous_month_yoy_change_pct": 11.4,
+        "reported_monthly_change_pct": 2.9,
+        "previous_month_reported_monthly_change_pct": -2.1,
+        "inflation_acquired_pct": 9.5,
+        "official_source_table": "Prospetto 3",
+        "source_pdf_page": 4,
+        "comparison_definition": "annual_rate_in_august_and_annual_rate_in_july"
+      },
+      "verification": "strict_original_prospetto3_row_verified_against_pinned_pdf"
+    },
+    {
+      "evidence_id": "E-PRICES-01-d3647dade0-08",
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
+      "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
+      "source_locations": [
+        "page:4:text:line:36"
+      ],
+      "verified_structured_data": {
+        "indicator": "Beni",
+        "indicator_code": "GOODS",
+        "territory": "Italia",
+        "reference_period": "2026-08",
+        "previous_comparison_period": "2026-07",
+        "unit": "percent",
+        "reported_yoy_change_pct": 4.1,
+        "previous_month_yoy_change_pct": 3.2,
+        "reported_monthly_change_pct": 0.7,
+        "previous_month_reported_monthly_change_pct": -0.2,
+        "inflation_acquired_pct": 2.9,
+        "official_source_table": "Prospetto 3",
+        "source_pdf_page": 4,
+        "comparison_definition": "annual_rate_in_august_and_annual_rate_in_july"
+      },
+      "verification": "strict_original_prospetto3_row_verified_against_pinned_pdf"
+    },
+    {
+      "evidence_id": "E-PRICES-01-d3647dade0-09",
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
+      "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
+      "source_locations": [
+        "page:4:text:line:42"
+      ],
+      "verified_structured_data": {
+        "indicator": "Servizi",
+        "indicator_code": "SERVICES",
+        "territory": "Italia",
+        "reference_period": "2026-08",
+        "previous_comparison_period": "2026-07",
+        "unit": "percent",
+        "reported_yoy_change_pct": 2.4,
+        "previous_month_yoy_change_pct": 2.7,
+        "reported_monthly_change_pct": 0.2,
+        "previous_month_reported_monthly_change_pct": 0.5,
+        "inflation_acquired_pct": 2.9,
+        "official_source_table": "Prospetto 3",
+        "source_pdf_page": 4,
+        "comparison_definition": "annual_rate_in_august_and_annual_rate_in_july"
+      },
+      "verification": "strict_original_prospetto3_row_verified_against_pinned_pdf"
+    },
+    {
+      "evidence_id": "E-PRICES-01-d3647dade0-10",
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
+      "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
+      "source_locations": [
+        "page:4:text:line:44"
+      ],
+      "verified_structured_data": {
+        "indicator": "Inflazione di fondo (senza energia e alimentari freschi)",
+        "indicator_code": "CORE",
+        "territory": "Italia",
+        "reference_period": "2026-08",
+        "previous_comparison_period": "2026-07",
+        "unit": "percent",
+        "reported_yoy_change_pct": 1.5,
+        "previous_month_yoy_change_pct": 1.6,
+        "reported_monthly_change_pct": 0.2,
+        "previous_month_reported_monthly_change_pct": 0.3,
+        "inflation_acquired_pct": 1.9,
+        "official_source_table": "Prospetto 3",
+        "source_pdf_page": 4,
+        "comparison_definition": "annual_rate_in_august_and_annual_rate_in_july"
+      },
+      "verification": "strict_original_prospetto3_row_verified_against_pinned_pdf"
+    },
+    {
+      "evidence_id": "E-PRICES-01-d3647dade0-11",
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
+      "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
+      "source_locations": [
+        "page:4:text:line:50"
+      ],
+      "verified_structured_data": {
+        "indicator": "Indice al netto dei soli energetici",
+        "indicator_code": "EX_ENERGY",
+        "territory": "Italia",
+        "reference_period": "2026-08",
+        "previous_comparison_period": "2026-07",
+        "unit": "percent",
+        "reported_yoy_change_pct": 1.7,
+        "previous_month_yoy_change_pct": 1.8,
+        "reported_monthly_change_pct": 0.2,
+        "previous_month_reported_monthly_change_pct": 0.3,
+        "inflation_acquired_pct": 2.1,
+        "official_source_table": "Prospetto 3",
+        "source_pdf_page": 4,
+        "comparison_definition": "annual_rate_in_august_and_annual_rate_in_july"
+      },
+      "verification": "strict_original_prospetto3_row_verified_against_pinned_pdf"
+    },
+    {
+      "evidence_id": "E-PRICES-01-d3647dade0-12",
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
+      "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
+      "source_locations": [
+        "page:4:text:line:51"
+      ],
+      "verified_structured_data": {
+        "indicator": "Beni alimentari, cura della casa e della persona",
+        "indicator_code": "BASKET",
+        "territory": "Italia",
+        "reference_period": "2026-08",
+        "previous_comparison_period": "2026-07",
+        "unit": "percent",
+        "reported_yoy_change_pct": 0.9,
+        "previous_month_yoy_change_pct": 1.0,
+        "reported_monthly_change_pct": 0.1,
+        "previous_month_reported_monthly_change_pct": 0.2,
+        "inflation_acquired_pct": 1.4,
+        "official_source_table": "Prospetto 3",
+        "source_pdf_page": 4,
+        "comparison_definition": "annual_rate_in_august_and_annual_rate_in_july"
+      },
+      "verification": "strict_original_prospetto3_row_verified_against_pinned_pdf"
+    },
+    {
+      "evidence_id": "E-PRICES-01-d3647dade0-13",
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
+      "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
+      "source_locations": [
+        "page:4:text:line:36",
+        "page:4:text:line:42"
+      ],
+      "verified_structured_data": {
+        "indicator": "Differenziale inflazione servizi meno beni",
+        "indicator_code": "SERVICES_MINUS_GOODS",
+        "territory": "Italia",
+        "reference_period": "2026-08",
+        "previous_comparison_period": "2026-07",
+        "unit": "percentage_points",
+        "difference_current_pp": -1.7,
+        "difference_previous_pp": -0.5,
+        "derivation": "SERVICES_yoy_minus_GOODS_yoy"
+      },
+      "verification": "deterministic_difference_of_two_verified_official_rates"
+    }
+  ],
+  "publication_allowed": false,
+  "requires_independent_article_review": true
+}

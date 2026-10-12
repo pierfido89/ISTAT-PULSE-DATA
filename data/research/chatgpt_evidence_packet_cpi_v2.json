@@ -1,0 +1,1314 @@
+{
+  "schema_version": "pulse-research-to-chatgpt-v1",
+  "purpose": "source_locked_evidence_for_chatgpt_not_for_app",
+  "packet_id": "SIX-OFFICIAL-PDFS-20261011",
+  "validated_official_pdf_count": 6,
+  "validated_observation_count": 70,
+  "validated_source_pages": 91,
+  "stories": [
+    {
+      "story_id": "TOURISM-01-73ab640cd3",
+      "domain": "tourism",
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/09/Statistica-Flash_II_Trimestre_2026.pdf",
+      "source_sha256": "73ab640cd3619eb59b0058d00abc9ab5daee65bd27b56dc585d0eff4e54dd038",
+      "source_locations": [
+        "page:3:text:line:14",
+        "page:3:text:line:16"
+      ],
+      "facts": [
+        {
+          "evidence_id": "E-TOURISM-01-73ab640cd3-01",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/09/Statistica-Flash_II_Trimestre_2026.pdf",
+          "source_sha256": "73ab640cd3619eb59b0058d00abc9ab5daee65bd27b56dc585d0eff4e54dd038",
+          "source_locations": [
+            "page:3:text:line:14"
+          ],
+          "verified_structured_data": {
+            "indicator": "Arrivi",
+            "unit": "arrivi",
+            "segment": "Esercizi alberghieri · residenti",
+            "period": "2026-Q2",
+            "value": 12464038.0,
+            "change_pct": -4.3
+          }
+        },
+        {
+          "evidence_id": "E-TOURISM-01-73ab640cd3-02",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/09/Statistica-Flash_II_Trimestre_2026.pdf",
+          "source_sha256": "73ab640cd3619eb59b0058d00abc9ab5daee65bd27b56dc585d0eff4e54dd038",
+          "source_locations": [
+            "page:3:text:line:16"
+          ],
+          "verified_structured_data": {
+            "indicator": "Presenze",
+            "unit": "notti",
+            "segment": "Esercizi alberghieri · residenti",
+            "period": "2026-Q2",
+            "value": 32162873.0,
+            "change_pct": 1.7
+          }
+        }
+      ],
+      "status": "research_verified_not_an_article",
+      "human_fact_review_required": true
+    },
+    {
+      "story_id": "TOURISM-02-73ab640cd3",
+      "domain": "tourism",
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/09/Statistica-Flash_II_Trimestre_2026.pdf",
+      "source_sha256": "73ab640cd3619eb59b0058d00abc9ab5daee65bd27b56dc585d0eff4e54dd038",
+      "source_locations": [
+        "page:3:text:line:17",
+        "page:3:text:line:19"
+      ],
+      "facts": [
+        {
+          "evidence_id": "E-TOURISM-02-73ab640cd3-01",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/09/Statistica-Flash_II_Trimestre_2026.pdf",
+          "source_sha256": "73ab640cd3619eb59b0058d00abc9ab5daee65bd27b56dc585d0eff4e54dd038",
+          "source_locations": [
+            "page:3:text:line:17"
+          ],
+          "verified_structured_data": {
+            "indicator": "Arrivi",
+            "unit": "arrivi",
+            "segment": "Esercizi alberghieri · non residenti",
+            "period": "2026-Q2",
+            "value": 15184702.0,
+            "change_pct": -0.9
+          }
+        },
+        {
+          "evidence_id": "E-TOURISM-02-73ab640cd3-02",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/09/Statistica-Flash_II_Trimestre_2026.pdf",
+          "source_sha256": "73ab640cd3619eb59b0058d00abc9ab5daee65bd27b56dc585d0eff4e54dd038",
+          "source_locations": [
+            "page:3:text:line:19"
+          ],
+          "verified_structured_data": {
+            "indicator": "Presenze",
+            "unit": "notti",
+            "segment": "Esercizi alberghieri · non residenti",
+            "period": "2026-Q2",
+            "value": 45449073.0,
+            "change_pct": 2.9
+          }
+        }
+      ],
+      "status": "research_verified_not_an_article",
+      "human_fact_review_required": true
+    },
+    {
+      "story_id": "TOURISM-03-73ab640cd3",
+      "domain": "tourism",
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/09/Statistica-Flash_II_Trimestre_2026.pdf",
+      "source_sha256": "73ab640cd3619eb59b0058d00abc9ab5daee65bd27b56dc585d0eff4e54dd038",
+      "source_locations": [
+        "page:3:text:line:20",
+        "page:3:text:line:22"
+      ],
+      "facts": [
+        {
+          "evidence_id": "E-TOURISM-03-73ab640cd3-01",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/09/Statistica-Flash_II_Trimestre_2026.pdf",
+          "source_sha256": "73ab640cd3619eb59b0058d00abc9ab5daee65bd27b56dc585d0eff4e54dd038",
+          "source_locations": [
+            "page:3:text:line:20"
+          ],
+          "verified_structured_data": {
+            "indicator": "Arrivi",
+            "unit": "arrivi",
+            "segment": "Esercizi alberghieri · totale",
+            "period": "2026-Q2",
+            "value": 27648740.0,
+            "change_pct": -2.5
+          }
+        },
+        {
+          "evidence_id": "E-TOURISM-03-73ab640cd3-02",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/09/Statistica-Flash_II_Trimestre_2026.pdf",
+          "source_sha256": "73ab640cd3619eb59b0058d00abc9ab5daee65bd27b56dc585d0eff4e54dd038",
+          "source_locations": [
+            "page:3:text:line:22"
+          ],
+          "verified_structured_data": {
+            "indicator": "Presenze",
+            "unit": "notti",
+            "segment": "Esercizi alberghieri · totale",
+            "period": "2026-Q2",
+            "value": 77611946.0,
+            "change_pct": 2.4
+          }
+        }
+      ],
+      "status": "research_verified_not_an_article",
+      "human_fact_review_required": true
+    },
+    {
+      "story_id": "LABOR-01-62011dc3fc",
+      "domain": "labor",
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/10/CS_Occupati-e-disoccupati_AGOSTO_2026.pdf",
+      "source_sha256": "62011dc3fc185d0ed1349ab5a785bc990bb01221746d91a324156a1e1a1e2ff8",
+      "source_locations": [
+        "page:3:text:line:11",
+        "page:3:text:line:12",
+        "page:3:text:line:13"
+      ],
+      "facts": [
+        {
+          "evidence_id": "E-LABOR-01-62011dc3fc-01",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/10/CS_Occupati-e-disoccupati_AGOSTO_2026.pdf",
+          "source_sha256": "62011dc3fc185d0ed1349ab5a785bc990bb01221746d91a324156a1e1a1e2ff8",
+          "source_locations": [
+            "page:3:text:line:11"
+          ],
+          "verified_structured_data": {
+            "indicator": "Occupati",
+            "unit": "persone",
+            "source_table_unit": "migliaia_di_persone",
+            "unit_multiplier": 1000,
+            "observed_total": 13977000,
+            "reported_yoy_change_pct": 1.1,
+            "reported_monthly_change_thousands": -4,
+            "reported_yoy_change_thousands": 157,
+            "source_count_thousands": 13977,
+            "segment": {
+              "territory": "Italia",
+              "sex": "maschi"
+            },
+            "reference_period": "2026-08",
+            "reference_comparison": "same_month_previous_year"
+          }
+        },
+        {
+          "evidence_id": "E-LABOR-01-62011dc3fc-02",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/10/CS_Occupati-e-disoccupati_AGOSTO_2026.pdf",
+          "source_sha256": "62011dc3fc185d0ed1349ab5a785bc990bb01221746d91a324156a1e1a1e2ff8",
+          "source_locations": [
+            "page:3:text:line:12"
+          ],
+          "verified_structured_data": {
+            "indicator": "Disoccupati",
+            "unit": "persone",
+            "source_table_unit": "migliaia_di_persone",
+            "unit_multiplier": 1000,
+            "observed_total": 838000,
+            "reported_yoy_change_pct": 9.3,
+            "reported_monthly_change_thousands": 41,
+            "reported_yoy_change_thousands": 71,
+            "source_count_thousands": 838,
+            "segment": {
+              "territory": "Italia",
+              "sex": "maschi"
+            },
+            "reference_period": "2026-08",
+            "reference_comparison": "same_month_previous_year"
+          }
+        },
+        {
+          "evidence_id": "E-LABOR-01-62011dc3fc-03",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/10/CS_Occupati-e-disoccupati_AGOSTO_2026.pdf",
+          "source_sha256": "62011dc3fc185d0ed1349ab5a785bc990bb01221746d91a324156a1e1a1e2ff8",
+          "source_locations": [
+            "page:3:text:line:13"
+          ],
+          "verified_structured_data": {
+            "indicator": "Inattivi 15-64 anni",
+            "unit": "persone",
+            "source_table_unit": "migliaia_di_persone",
+            "unit_multiplier": 1000,
+            "observed_total": 4457000,
+            "reported_yoy_change_pct": -3.7,
+            "reported_monthly_change_thousands": -18,
+            "reported_yoy_change_thousands": -170,
+            "source_count_thousands": 4457,
+            "segment": {
+              "territory": "Italia",
+              "sex": "maschi"
+            },
+            "reference_period": "2026-08",
+            "reference_comparison": "same_month_previous_year"
+          }
+        }
+      ],
+      "status": "research_verified_not_an_article",
+      "human_fact_review_required": true
+    },
+    {
+      "story_id": "LABOR-02-62011dc3fc",
+      "domain": "labor",
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/10/CS_Occupati-e-disoccupati_AGOSTO_2026.pdf",
+      "source_sha256": "62011dc3fc185d0ed1349ab5a785bc990bb01221746d91a324156a1e1a1e2ff8",
+      "source_locations": [
+        "page:3:text:line:15",
+        "page:3:text:line:16",
+        "page:3:text:line:17"
+      ],
+      "facts": [
+        {
+          "evidence_id": "E-LABOR-02-62011dc3fc-01",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/10/CS_Occupati-e-disoccupati_AGOSTO_2026.pdf",
+          "source_sha256": "62011dc3fc185d0ed1349ab5a785bc990bb01221746d91a324156a1e1a1e2ff8",
+          "source_locations": [
+            "page:3:text:line:15"
+          ],
+          "verified_structured_data": {
+            "indicator": "Occupati",
+            "unit": "persone",
+            "source_table_unit": "migliaia_di_persone",
+            "unit_multiplier": 1000,
+            "observed_total": 10375000,
+            "reported_yoy_change_pct": 1.3,
+            "reported_monthly_change_thousands": -1,
+            "reported_yoy_change_thousands": 134,
+            "source_count_thousands": 10375,
+            "segment": {
+              "territory": "Italia",
+              "sex": "femmine"
+            },
+            "reference_period": "2026-08",
+            "reference_comparison": "same_month_previous_year"
+          }
+        },
+        {
+          "evidence_id": "E-LABOR-02-62011dc3fc-02",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/10/CS_Occupati-e-disoccupati_AGOSTO_2026.pdf",
+          "source_sha256": "62011dc3fc185d0ed1349ab5a785bc990bb01221746d91a324156a1e1a1e2ff8",
+          "source_locations": [
+            "page:3:text:line:16"
+          ],
+          "verified_structured_data": {
+            "indicator": "Disoccupati",
+            "unit": "persone",
+            "source_table_unit": "migliaia_di_persone",
+            "unit_multiplier": 1000,
+            "observed_total": 753000,
+            "reported_yoy_change_pct": 8.2,
+            "reported_monthly_change_thousands": 7,
+            "reported_yoy_change_thousands": 57,
+            "source_count_thousands": 753,
+            "segment": {
+              "territory": "Italia",
+              "sex": "femmine"
+            },
+            "reference_period": "2026-08",
+            "reference_comparison": "same_month_previous_year"
+          }
+        },
+        {
+          "evidence_id": "E-LABOR-02-62011dc3fc-03",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/10/CS_Occupati-e-disoccupati_AGOSTO_2026.pdf",
+          "source_sha256": "62011dc3fc185d0ed1349ab5a785bc990bb01221746d91a324156a1e1a1e2ff8",
+          "source_locations": [
+            "page:3:text:line:17"
+          ],
+          "verified_structured_data": {
+            "indicator": "Inattivi 15-64 anni",
+            "unit": "persone",
+            "source_table_unit": "migliaia_di_persone",
+            "unit_multiplier": 1000,
+            "observed_total": 7667000,
+            "reported_yoy_change_pct": -2.7,
+            "reported_monthly_change_thousands": -3,
+            "reported_yoy_change_thousands": -211,
+            "source_count_thousands": 7667,
+            "segment": {
+              "territory": "Italia",
+              "sex": "femmine"
+            },
+            "reference_period": "2026-08",
+            "reference_comparison": "same_month_previous_year"
+          }
+        }
+      ],
+      "status": "research_verified_not_an_article",
+      "human_fact_review_required": true
+    },
+    {
+      "story_id": "LABOR-03-62011dc3fc",
+      "domain": "labor",
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/10/CS_Occupati-e-disoccupati_AGOSTO_2026.pdf",
+      "source_sha256": "62011dc3fc185d0ed1349ab5a785bc990bb01221746d91a324156a1e1a1e2ff8",
+      "source_locations": [
+        "page:3:text:line:19",
+        "page:3:text:line:20",
+        "page:3:text:line:21"
+      ],
+      "facts": [
+        {
+          "evidence_id": "E-LABOR-03-62011dc3fc-01",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/10/CS_Occupati-e-disoccupati_AGOSTO_2026.pdf",
+          "source_sha256": "62011dc3fc185d0ed1349ab5a785bc990bb01221746d91a324156a1e1a1e2ff8",
+          "source_locations": [
+            "page:3:text:line:19"
+          ],
+          "verified_structured_data": {
+            "indicator": "Occupati",
+            "unit": "persone",
+            "source_table_unit": "migliaia_di_persone",
+            "unit_multiplier": 1000,
+            "observed_total": 24352000,
+            "reported_yoy_change_pct": 1.2,
+            "reported_monthly_change_thousands": -5,
+            "reported_yoy_change_thousands": 291,
+            "source_count_thousands": 24352,
+            "segment": {
+              "territory": "Italia",
+              "sex": "totale"
+            },
+            "reference_period": "2026-08",
+            "reference_comparison": "same_month_previous_year"
+          }
+        },
+        {
+          "evidence_id": "E-LABOR-03-62011dc3fc-02",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/10/CS_Occupati-e-disoccupati_AGOSTO_2026.pdf",
+          "source_sha256": "62011dc3fc185d0ed1349ab5a785bc990bb01221746d91a324156a1e1a1e2ff8",
+          "source_locations": [
+            "page:3:text:line:20"
+          ],
+          "verified_structured_data": {
+            "indicator": "Disoccupati",
+            "unit": "persone",
+            "source_table_unit": "migliaia_di_persone",
+            "unit_multiplier": 1000,
+            "observed_total": 1591000,
+            "reported_yoy_change_pct": 8.8,
+            "reported_monthly_change_thousands": 48,
+            "reported_yoy_change_thousands": 129,
+            "source_count_thousands": 1591,
+            "segment": {
+              "territory": "Italia",
+              "sex": "totale"
+            },
+            "reference_period": "2026-08",
+            "reference_comparison": "same_month_previous_year"
+          }
+        },
+        {
+          "evidence_id": "E-LABOR-03-62011dc3fc-03",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/10/CS_Occupati-e-disoccupati_AGOSTO_2026.pdf",
+          "source_sha256": "62011dc3fc185d0ed1349ab5a785bc990bb01221746d91a324156a1e1a1e2ff8",
+          "source_locations": [
+            "page:3:text:line:21"
+          ],
+          "verified_structured_data": {
+            "indicator": "Inattivi 15-64 anni",
+            "unit": "persone",
+            "source_table_unit": "migliaia_di_persone",
+            "unit_multiplier": 1000,
+            "observed_total": 12124000,
+            "reported_yoy_change_pct": -3.0,
+            "reported_monthly_change_thousands": -21,
+            "reported_yoy_change_thousands": -381,
+            "source_count_thousands": 12124,
+            "segment": {
+              "territory": "Italia",
+              "sex": "totale"
+            },
+            "reference_period": "2026-08",
+            "reference_comparison": "same_month_previous_year"
+          }
+        }
+      ],
+      "status": "research_verified_not_an_article",
+      "human_fact_review_required": true
+    },
+    {
+      "story_id": "PRICES-01-d3647dade0",
+      "domain": "prices",
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
+      "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
+      "source_locations": [
+        "page:2:text:line:11",
+        "page:2:text:line:12",
+        "page:2:text:line:13"
+      ],
+      "facts": [
+        {
+          "evidence_id": "E-PRICES-01-d3647dade0-01",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
+          "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
+          "source_locations": [
+            "page:2:text:line:11"
+          ],
+          "verified_structured_data": {
+            "indicator": "Indice prezzi NIC",
+            "price_index_code": "NIC",
+            "unit": "indice_base_2025_100",
+            "observed_index": 103.9,
+            "reported_monthly_change_pct": 0.5,
+            "reported_yoy_change_pct": 3.3,
+            "segment": {
+              "territory": "Italia",
+              "basket": "NIC"
+            },
+            "reference_period": "2026-08",
+            "reference_comparison": "same_month_previous_year"
+          }
+        },
+        {
+          "evidence_id": "E-PRICES-01-d3647dade0-02",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
+          "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
+          "source_locations": [
+            "page:2:text:line:12"
+          ],
+          "verified_structured_data": {
+            "indicator": "Indice prezzi IPCA",
+            "price_index_code": "IPCA",
+            "unit": "indice_base_2025_100",
+            "observed_index": 102.7,
+            "reported_monthly_change_pct": 0.1,
+            "reported_yoy_change_pct": 3.2,
+            "segment": {
+              "territory": "Italia",
+              "basket": "IPCA"
+            },
+            "reference_period": "2026-08",
+            "reference_comparison": "same_month_previous_year"
+          }
+        },
+        {
+          "evidence_id": "E-PRICES-01-d3647dade0-03",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
+          "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
+          "source_locations": [
+            "page:2:text:line:13"
+          ],
+          "verified_structured_data": {
+            "indicator": "Indice prezzi FOI",
+            "price_index_code": "FOI",
+            "unit": "indice_base_2025_100",
+            "observed_index": 103.7,
+            "reported_monthly_change_pct": 0.6,
+            "reported_yoy_change_pct": 3.4,
+            "segment": {
+              "territory": "Italia",
+              "basket": "FOI"
+            },
+            "reference_period": "2026-08",
+            "reference_comparison": "same_month_previous_year"
+          }
+        },
+        {
+          "evidence_id": "E-PRICES-01-d3647dade0-04",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
+          "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
+          "source_locations": [
+            "page:4:text:line:43"
+          ],
+          "verified_structured_data": {
+            "indicator": "Indice generale NIC",
+            "indicator_code": "NIC_GENERAL",
+            "territory": "Italia",
+            "reference_period": "2026-08",
+            "previous_comparison_period": "2026-07",
+            "unit": "percent",
+            "reported_yoy_change_pct": 3.3,
+            "previous_month_yoy_change_pct": 2.9,
+            "reported_monthly_change_pct": 0.5,
+            "previous_month_reported_monthly_change_pct": 0.1,
+            "inflation_acquired_pct": 2.9,
+            "official_source_table": "Prospetto 3",
+            "source_pdf_page": 4,
+            "comparison_definition": "annual_rate_in_august_and_annual_rate_in_july"
+          },
+          "verification": "strict_original_prospetto3_row_verified_against_pinned_pdf"
+        },
+        {
+          "evidence_id": "E-PRICES-01-d3647dade0-05",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
+          "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
+          "source_locations": [
+            "page:4:text:line:28"
+          ],
+          "verified_structured_data": {
+            "indicator": "Beni energetici",
+            "indicator_code": "ENERGY_TOTAL",
+            "territory": "Italia",
+            "reference_period": "2026-08",
+            "previous_comparison_period": "2026-07",
+            "unit": "percent",
+            "reported_yoy_change_pct": 17.1,
+            "previous_month_yoy_change_pct": 11.6,
+            "reported_monthly_change_pct": 2.9,
+            "previous_month_reported_monthly_change_pct": -1.9,
+            "inflation_acquired_pct": 9.6,
+            "official_source_table": "Prospetto 3",
+            "source_pdf_page": 4,
+            "comparison_definition": "annual_rate_in_august_and_annual_rate_in_july"
+          },
+          "verification": "strict_original_prospetto3_row_verified_against_pinned_pdf"
+        },
+        {
+          "evidence_id": "E-PRICES-01-d3647dade0-06",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
+          "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
+          "source_locations": [
+            "page:4:text:line:29"
+          ],
+          "verified_structured_data": {
+            "indicator": "Energetici regolamentati",
+            "indicator_code": "ENERGY_REGULATED",
+            "territory": "Italia",
+            "reference_period": "2026-08",
+            "previous_comparison_period": "2026-07",
+            "unit": "percent",
+            "reported_yoy_change_pct": 18.6,
+            "previous_month_yoy_change_pct": 14.8,
+            "reported_monthly_change_pct": 3.0,
+            "previous_month_reported_monthly_change_pct": -0.3,
+            "inflation_acquired_pct": 10.1,
+            "official_source_table": "Prospetto 3",
+            "source_pdf_page": 4,
+            "comparison_definition": "annual_rate_in_august_and_annual_rate_in_july"
+          },
+          "verification": "strict_original_prospetto3_row_verified_against_pinned_pdf"
+        },
+        {
+          "evidence_id": "E-PRICES-01-d3647dade0-07",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
+          "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
+          "source_locations": [
+            "page:4:text:line:30"
+          ],
+          "verified_structured_data": {
+            "indicator": "Energetici non regolamentati",
+            "indicator_code": "ENERGY_UNREGULATED",
+            "territory": "Italia",
+            "reference_period": "2026-08",
+            "previous_comparison_period": "2026-07",
+            "unit": "percent",
+            "reported_yoy_change_pct": 17.0,
+            "previous_month_yoy_change_pct": 11.4,
+            "reported_monthly_change_pct": 2.9,
+            "previous_month_reported_monthly_change_pct": -2.1,
+            "inflation_acquired_pct": 9.5,
+            "official_source_table": "Prospetto 3",
+            "source_pdf_page": 4,
+            "comparison_definition": "annual_rate_in_august_and_annual_rate_in_july"
+          },
+          "verification": "strict_original_prospetto3_row_verified_against_pinned_pdf"
+        },
+        {
+          "evidence_id": "E-PRICES-01-d3647dade0-08",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
+          "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
+          "source_locations": [
+            "page:4:text:line:36"
+          ],
+          "verified_structured_data": {
+            "indicator": "Beni",
+            "indicator_code": "GOODS",
+            "territory": "Italia",
+            "reference_period": "2026-08",
+            "previous_comparison_period": "2026-07",
+            "unit": "percent",
+            "reported_yoy_change_pct": 4.1,
+            "previous_month_yoy_change_pct": 3.2,
+            "reported_monthly_change_pct": 0.7,
+            "previous_month_reported_monthly_change_pct": -0.2,
+            "inflation_acquired_pct": 2.9,
+            "official_source_table": "Prospetto 3",
+            "source_pdf_page": 4,
+            "comparison_definition": "annual_rate_in_august_and_annual_rate_in_july"
+          },
+          "verification": "strict_original_prospetto3_row_verified_against_pinned_pdf"
+        },
+        {
+          "evidence_id": "E-PRICES-01-d3647dade0-09",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
+          "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
+          "source_locations": [
+            "page:4:text:line:42"
+          ],
+          "verified_structured_data": {
+            "indicator": "Servizi",
+            "indicator_code": "SERVICES",
+            "territory": "Italia",
+            "reference_period": "2026-08",
+            "previous_comparison_period": "2026-07",
+            "unit": "percent",
+            "reported_yoy_change_pct": 2.4,
+            "previous_month_yoy_change_pct": 2.7,
+            "reported_monthly_change_pct": 0.2,
+            "previous_month_reported_monthly_change_pct": 0.5,
+            "inflation_acquired_pct": 2.9,
+            "official_source_table": "Prospetto 3",
+            "source_pdf_page": 4,
+            "comparison_definition": "annual_rate_in_august_and_annual_rate_in_july"
+          },
+          "verification": "strict_original_prospetto3_row_verified_against_pinned_pdf"
+        },
+        {
+          "evidence_id": "E-PRICES-01-d3647dade0-10",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
+          "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
+          "source_locations": [
+            "page:4:text:line:44"
+          ],
+          "verified_structured_data": {
+            "indicator": "Inflazione di fondo (senza energia e alimentari freschi)",
+            "indicator_code": "CORE",
+            "territory": "Italia",
+            "reference_period": "2026-08",
+            "previous_comparison_period": "2026-07",
+            "unit": "percent",
+            "reported_yoy_change_pct": 1.5,
+            "previous_month_yoy_change_pct": 1.6,
+            "reported_monthly_change_pct": 0.2,
+            "previous_month_reported_monthly_change_pct": 0.3,
+            "inflation_acquired_pct": 1.9,
+            "official_source_table": "Prospetto 3",
+            "source_pdf_page": 4,
+            "comparison_definition": "annual_rate_in_august_and_annual_rate_in_july"
+          },
+          "verification": "strict_original_prospetto3_row_verified_against_pinned_pdf"
+        },
+        {
+          "evidence_id": "E-PRICES-01-d3647dade0-11",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
+          "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
+          "source_locations": [
+            "page:4:text:line:50"
+          ],
+          "verified_structured_data": {
+            "indicator": "Indice al netto dei soli energetici",
+            "indicator_code": "EX_ENERGY",
+            "territory": "Italia",
+            "reference_period": "2026-08",
+            "previous_comparison_period": "2026-07",
+            "unit": "percent",
+            "reported_yoy_change_pct": 1.7,
+            "previous_month_yoy_change_pct": 1.8,
+            "reported_monthly_change_pct": 0.2,
+            "previous_month_reported_monthly_change_pct": 0.3,
+            "inflation_acquired_pct": 2.1,
+            "official_source_table": "Prospetto 3",
+            "source_pdf_page": 4,
+            "comparison_definition": "annual_rate_in_august_and_annual_rate_in_july"
+          },
+          "verification": "strict_original_prospetto3_row_verified_against_pinned_pdf"
+        },
+        {
+          "evidence_id": "E-PRICES-01-d3647dade0-12",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
+          "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
+          "source_locations": [
+            "page:4:text:line:51"
+          ],
+          "verified_structured_data": {
+            "indicator": "Beni alimentari, cura della casa e della persona",
+            "indicator_code": "BASKET",
+            "territory": "Italia",
+            "reference_period": "2026-08",
+            "previous_comparison_period": "2026-07",
+            "unit": "percent",
+            "reported_yoy_change_pct": 0.9,
+            "previous_month_yoy_change_pct": 1.0,
+            "reported_monthly_change_pct": 0.1,
+            "previous_month_reported_monthly_change_pct": 0.2,
+            "inflation_acquired_pct": 1.4,
+            "official_source_table": "Prospetto 3",
+            "source_pdf_page": 4,
+            "comparison_definition": "annual_rate_in_august_and_annual_rate_in_july"
+          },
+          "verification": "strict_original_prospetto3_row_verified_against_pinned_pdf"
+        },
+        {
+          "evidence_id": "E-PRICES-01-d3647dade0-13",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
+          "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
+          "source_locations": [
+            "page:4:text:line:36",
+            "page:4:text:line:42"
+          ],
+          "verified_structured_data": {
+            "indicator": "Differenziale inflazione servizi meno beni",
+            "indicator_code": "SERVICES_MINUS_GOODS",
+            "territory": "Italia",
+            "reference_period": "2026-08",
+            "previous_comparison_period": "2026-07",
+            "unit": "percentage_points",
+            "difference_current_pp": -1.7,
+            "difference_previous_pp": -0.5,
+            "derivation": "SERVICES_yoy_minus_GOODS_yoy"
+          },
+          "verification": "deterministic_difference_of_two_verified_official_rates"
+        }
+      ],
+      "status": "research_verified_not_an_article",
+      "human_fact_review_required": true
+    },
+    {
+      "story_id": "DEMOGRAPHY-01-9bdc59739e",
+      "domain": "demography",
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/03/Report_Indicatori-demografici_Anno-2025.pdf",
+      "source_sha256": "9bdc59739e0e93def0c594925309e0f4c551f478e1865703d5fcaeb8354b01e5",
+      "source_locations": [
+        "page:2:text:line:39:col:population_jan1",
+        "page:2:text:line:39:col:births",
+        "page:2:text:line:39:col:deaths",
+        "page:2:text:line:39:col:immigration_abroad",
+        "page:2:text:line:39:col:emigration_abroad",
+        "page:2:text:line:39:col:migration_from_other_municipality",
+        "page:2:text:line:39:col:migration_to_other_municipality",
+        "page:2:text:line:39:col:population_dec31"
+      ],
+      "facts": [
+        {
+          "evidence_id": "E-DEMOGRAPHY-01-9bdc59739e-01",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/03/Report_Indicatori-demografici_Anno-2025.pdf",
+          "source_sha256": "9bdc59739e0e93def0c594925309e0f4c551f478e1865703d5fcaeb8354b01e5",
+          "source_locations": [
+            "page:2:text:line:39:col:population_jan1"
+          ],
+          "verified_structured_data": {
+            "indicator": "popolazione inizio anno",
+            "indicator_code": "population_jan1",
+            "period": "2025",
+            "reference_period": "2025",
+            "unit": "migliaia_di_persone",
+            "value": 58943,
+            "rounded_at_thousands": true,
+            "provisional": true,
+            "segment": {
+              "territory": "Italia",
+              "population": "residenti"
+            }
+          }
+        },
+        {
+          "evidence_id": "E-DEMOGRAPHY-01-9bdc59739e-02",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/03/Report_Indicatori-demografici_Anno-2025.pdf",
+          "source_sha256": "9bdc59739e0e93def0c594925309e0f4c551f478e1865703d5fcaeb8354b01e5",
+          "source_locations": [
+            "page:2:text:line:39:col:births"
+          ],
+          "verified_structured_data": {
+            "indicator": "nascite",
+            "indicator_code": "births",
+            "period": "2025",
+            "reference_period": "2025",
+            "unit": "migliaia_di_persone",
+            "value": 355,
+            "rounded_at_thousands": true,
+            "provisional": true,
+            "segment": {
+              "territory": "Italia",
+              "population": "residenti"
+            }
+          }
+        },
+        {
+          "evidence_id": "E-DEMOGRAPHY-01-9bdc59739e-03",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/03/Report_Indicatori-demografici_Anno-2025.pdf",
+          "source_sha256": "9bdc59739e0e93def0c594925309e0f4c551f478e1865703d5fcaeb8354b01e5",
+          "source_locations": [
+            "page:2:text:line:39:col:deaths"
+          ],
+          "verified_structured_data": {
+            "indicator": "decessi",
+            "indicator_code": "deaths",
+            "period": "2025",
+            "reference_period": "2025",
+            "unit": "migliaia_di_persone",
+            "value": 652,
+            "rounded_at_thousands": true,
+            "provisional": true,
+            "segment": {
+              "territory": "Italia",
+              "population": "residenti"
+            }
+          }
+        },
+        {
+          "evidence_id": "E-DEMOGRAPHY-01-9bdc59739e-04",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/03/Report_Indicatori-demografici_Anno-2025.pdf",
+          "source_sha256": "9bdc59739e0e93def0c594925309e0f4c551f478e1865703d5fcaeb8354b01e5",
+          "source_locations": [
+            "page:2:text:line:39:col:immigration_abroad"
+          ],
+          "verified_structured_data": {
+            "indicator": "immigrazioni dall'estero",
+            "indicator_code": "immigration_abroad",
+            "period": "2025",
+            "reference_period": "2025",
+            "unit": "migliaia_di_persone",
+            "value": 440,
+            "rounded_at_thousands": true,
+            "provisional": true,
+            "segment": {
+              "territory": "Italia",
+              "population": "residenti"
+            }
+          }
+        },
+        {
+          "evidence_id": "E-DEMOGRAPHY-01-9bdc59739e-05",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/03/Report_Indicatori-demografici_Anno-2025.pdf",
+          "source_sha256": "9bdc59739e0e93def0c594925309e0f4c551f478e1865703d5fcaeb8354b01e5",
+          "source_locations": [
+            "page:2:text:line:39:col:emigration_abroad"
+          ],
+          "verified_structured_data": {
+            "indicator": "emigrazioni per l'estero",
+            "indicator_code": "emigration_abroad",
+            "period": "2025",
+            "reference_period": "2025",
+            "unit": "migliaia_di_persone",
+            "value": 144,
+            "rounded_at_thousands": true,
+            "provisional": true,
+            "segment": {
+              "territory": "Italia",
+              "population": "residenti"
+            }
+          }
+        },
+        {
+          "evidence_id": "E-DEMOGRAPHY-01-9bdc59739e-06",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/03/Report_Indicatori-demografici_Anno-2025.pdf",
+          "source_sha256": "9bdc59739e0e93def0c594925309e0f4c551f478e1865703d5fcaeb8354b01e5",
+          "source_locations": [
+            "page:2:text:line:39:col:migration_from_other_municipality"
+          ],
+          "verified_structured_data": {
+            "indicator": "trasferimenti da altri Comuni",
+            "indicator_code": "migration_from_other_municipality",
+            "period": "2025",
+            "reference_period": "2025",
+            "unit": "migliaia_di_persone",
+            "value": 1455,
+            "rounded_at_thousands": true,
+            "provisional": true,
+            "segment": {
+              "territory": "Italia",
+              "population": "residenti"
+            }
+          }
+        },
+        {
+          "evidence_id": "E-DEMOGRAPHY-01-9bdc59739e-07",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/03/Report_Indicatori-demografici_Anno-2025.pdf",
+          "source_sha256": "9bdc59739e0e93def0c594925309e0f4c551f478e1865703d5fcaeb8354b01e5",
+          "source_locations": [
+            "page:2:text:line:39:col:migration_to_other_municipality"
+          ],
+          "verified_structured_data": {
+            "indicator": "trasferimenti verso altri Comuni",
+            "indicator_code": "migration_to_other_municipality",
+            "period": "2025",
+            "reference_period": "2025",
+            "unit": "migliaia_di_persone",
+            "value": 1455,
+            "rounded_at_thousands": true,
+            "provisional": true,
+            "segment": {
+              "territory": "Italia",
+              "population": "residenti"
+            }
+          }
+        },
+        {
+          "evidence_id": "E-DEMOGRAPHY-01-9bdc59739e-08",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/03/Report_Indicatori-demografici_Anno-2025.pdf",
+          "source_sha256": "9bdc59739e0e93def0c594925309e0f4c551f478e1865703d5fcaeb8354b01e5",
+          "source_locations": [
+            "page:2:text:line:39:col:population_dec31"
+          ],
+          "verified_structured_data": {
+            "indicator": "popolazione fine anno",
+            "indicator_code": "population_dec31",
+            "period": "2025",
+            "reference_period": "2025",
+            "unit": "migliaia_di_persone",
+            "value": 58943,
+            "rounded_at_thousands": true,
+            "provisional": true,
+            "segment": {
+              "territory": "Italia",
+              "population": "residenti"
+            }
+          }
+        }
+      ],
+      "status": "research_verified_not_an_article",
+      "human_fact_review_required": true
+    },
+    {
+      "story_id": "EDUCATION-01-20dcaf190d",
+      "domain": "education",
+      "source_url": "https://www.istat.it/wp-content/uploads/2025/12/Report-Livelli-di-istruzione-e-ritorni-occupazionali-Anno-2024.pdf",
+      "source_sha256": "20dcaf190dcaae5703ba82745d3180973e334c138b8815725775de8c79c322de",
+      "source_locations": [
+        "page:2:text:line:41:block:Italia"
+      ],
+      "facts": [
+        {
+          "evidence_id": "E-EDUCATION-01-20dcaf190d-01",
+          "source_url": "https://www.istat.it/wp-content/uploads/2025/12/Report-Livelli-di-istruzione-e-ritorni-occupazionali-Anno-2024.pdf",
+          "source_sha256": "20dcaf190dcaae5703ba82745d3180973e334c138b8815725775de8c79c322de",
+          "source_locations": [
+            "page:2:text:line:41:block:Italia"
+          ],
+          "verified_structured_data": {
+            "indicator": "Quota di 25-64enni con un titolo terziario",
+            "unit": "%",
+            "territory": "Italia",
+            "population_scope": "residenti 25-64 anni",
+            "periods": [
+              2022,
+              2023,
+              2024
+            ],
+            "observations": [
+              {
+                "period": 2022,
+                "value": "20.3"
+              },
+              {
+                "period": 2023,
+                "value": "21.6"
+              },
+              {
+                "period": 2024,
+                "value": "22.3"
+              }
+            ],
+            "first_value": "20.3",
+            "last_value": "22.3",
+            "absolute_change": "2.0",
+            "absolute_change_unit": "percentage_points"
+          }
+        }
+      ],
+      "status": "research_verified_not_an_article",
+      "human_fact_review_required": true
+    },
+    {
+      "story_id": "EDUCATION-02-20dcaf190d",
+      "domain": "education",
+      "source_url": "https://www.istat.it/wp-content/uploads/2025/12/Report-Livelli-di-istruzione-e-ritorni-occupazionali-Anno-2024.pdf",
+      "source_sha256": "20dcaf190dcaae5703ba82745d3180973e334c138b8815725775de8c79c322de",
+      "source_locations": [
+        "page:2:text:line:41:block:Ue27"
+      ],
+      "facts": [
+        {
+          "evidence_id": "E-EDUCATION-02-20dcaf190d-01",
+          "source_url": "https://www.istat.it/wp-content/uploads/2025/12/Report-Livelli-di-istruzione-e-ritorni-occupazionali-Anno-2024.pdf",
+          "source_sha256": "20dcaf190dcaae5703ba82745d3180973e334c138b8815725775de8c79c322de",
+          "source_locations": [
+            "page:2:text:line:41:block:Ue27"
+          ],
+          "verified_structured_data": {
+            "indicator": "Quota di 25-64enni con un titolo terziario",
+            "unit": "%",
+            "territory": "Ue27",
+            "population_scope": "residenti 25-64 anni",
+            "periods": [
+              2022,
+              2023,
+              2024
+            ],
+            "observations": [
+              {
+                "period": 2022,
+                "value": "34.2"
+              },
+              {
+                "period": 2023,
+                "value": "35.1"
+              },
+              {
+                "period": 2024,
+                "value": "36.1"
+              }
+            ],
+            "first_value": "34.2",
+            "last_value": "36.1",
+            "absolute_change": "1.9",
+            "absolute_change_unit": "percentage_points"
+          }
+        }
+      ],
+      "status": "research_verified_not_an_article",
+      "human_fact_review_required": true
+    },
+    {
+      "story_id": "EDUCATION-03-20dcaf190d",
+      "domain": "education",
+      "source_url": "https://www.istat.it/wp-content/uploads/2025/12/Report-Livelli-di-istruzione-e-ritorni-occupazionali-Anno-2024.pdf",
+      "source_sha256": "20dcaf190dcaae5703ba82745d3180973e334c138b8815725775de8c79c322de",
+      "source_locations": [
+        "page:2:text:line:42:block:Italia"
+      ],
+      "facts": [
+        {
+          "evidence_id": "E-EDUCATION-03-20dcaf190d-01",
+          "source_url": "https://www.istat.it/wp-content/uploads/2025/12/Report-Livelli-di-istruzione-e-ritorni-occupazionali-Anno-2024.pdf",
+          "source_sha256": "20dcaf190dcaae5703ba82745d3180973e334c138b8815725775de8c79c322de",
+          "source_locations": [
+            "page:2:text:line:42:block:Italia"
+          ],
+          "verified_structured_data": {
+            "indicator": "Quota di 25-34enni con un titolo terziario",
+            "unit": "%",
+            "territory": "Italia",
+            "population_scope": "residenti 25-34 anni",
+            "periods": [
+              2022,
+              2023,
+              2024
+            ],
+            "observations": [
+              {
+                "period": 2022,
+                "value": "29.2"
+              },
+              {
+                "period": 2023,
+                "value": "30.6"
+              },
+              {
+                "period": 2024,
+                "value": "31.6"
+              }
+            ],
+            "first_value": "29.2",
+            "last_value": "31.6",
+            "absolute_change": "2.4",
+            "absolute_change_unit": "percentage_points"
+          }
+        }
+      ],
+      "status": "research_verified_not_an_article",
+      "human_fact_review_required": true
+    },
+    {
+      "story_id": "EDUCATION-04-20dcaf190d",
+      "domain": "education",
+      "source_url": "https://www.istat.it/wp-content/uploads/2025/12/Report-Livelli-di-istruzione-e-ritorni-occupazionali-Anno-2024.pdf",
+      "source_sha256": "20dcaf190dcaae5703ba82745d3180973e334c138b8815725775de8c79c322de",
+      "source_locations": [
+        "page:2:text:line:42:block:Ue27"
+      ],
+      "facts": [
+        {
+          "evidence_id": "E-EDUCATION-04-20dcaf190d-01",
+          "source_url": "https://www.istat.it/wp-content/uploads/2025/12/Report-Livelli-di-istruzione-e-ritorni-occupazionali-Anno-2024.pdf",
+          "source_sha256": "20dcaf190dcaae5703ba82745d3180973e334c138b8815725775de8c79c322de",
+          "source_locations": [
+            "page:2:text:line:42:block:Ue27"
+          ],
+          "verified_structured_data": {
+            "indicator": "Quota di 25-34enni con un titolo terziario",
+            "unit": "%",
+            "territory": "Ue27",
+            "population_scope": "residenti 25-34 anni",
+            "periods": [
+              2022,
+              2023,
+              2024
+            ],
+            "observations": [
+              {
+                "period": 2022,
+                "value": "42.0"
+              },
+              {
+                "period": 2023,
+                "value": "43.1"
+              },
+              {
+                "period": 2024,
+                "value": "44.1"
+              }
+            ],
+            "first_value": "42.0",
+            "last_value": "44.1",
+            "absolute_change": "2.1",
+            "absolute_change_unit": "percentage_points"
+          }
+        }
+      ],
+      "status": "research_verified_not_an_article",
+      "human_fact_review_required": true
+    },
+    {
+      "story_id": "ENVIRONMENT-01-1b58abf5a5",
+      "domain": "environment",
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/10/Report_Raccolta-differenziata_Anni-2024-2025.pdf",
+      "source_sha256": "1b58abf5a582f3ff6f146bb7f95a8c3a7ad65671783db9faaf07554f7b1447bd",
+      "source_locations": [
+        "page:2:text:line:49:col:1",
+        "page:2:text:line:47:col:1"
+      ],
+      "facts": [
+        {
+          "evidence_id": "E-ENVIRONMENT-01-1b58abf5a5-01",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/10/Report_Raccolta-differenziata_Anni-2024-2025.pdf",
+          "source_sha256": "1b58abf5a582f3ff6f146bb7f95a8c3a7ad65671783db9faaf07554f7b1447bd",
+          "source_locations": [
+            "page:2:text:line:49:col:1",
+            "page:2:text:line:47:col:1"
+          ],
+          "verified_structured_data": {
+            "indicator": "rifiuti urbani pro capite",
+            "unit": "kg_per_person",
+            "population_scope": "residenti",
+            "period": "2024",
+            "low": {
+              "name": "Sud",
+              "code": "ITF",
+              "value": "451.7"
+            },
+            "high": {
+              "name": "Nord-est",
+              "code": "ITH",
+              "value": "577.1"
+            },
+            "gap": "125.4",
+            "gap_unit": "kg_per_person"
+          }
+        }
+      ],
+      "status": "research_verified_not_an_article",
+      "human_fact_review_required": true
+    },
+    {
+      "story_id": "ENVIRONMENT-02-1b58abf5a5",
+      "domain": "environment",
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/10/Report_Raccolta-differenziata_Anni-2024-2025.pdf",
+      "source_sha256": "1b58abf5a582f3ff6f146bb7f95a8c3a7ad65671783db9faaf07554f7b1447bd",
+      "source_locations": [
+        "page:2:text:line:49:col:2",
+        "page:2:text:line:47:col:2"
+      ],
+      "facts": [
+        {
+          "evidence_id": "E-ENVIRONMENT-02-1b58abf5a5-01",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/10/Report_Raccolta-differenziata_Anni-2024-2025.pdf",
+          "source_sha256": "1b58abf5a582f3ff6f146bb7f95a8c3a7ad65671783db9faaf07554f7b1447bd",
+          "source_locations": [
+            "page:2:text:line:49:col:2",
+            "page:2:text:line:47:col:2"
+          ],
+          "verified_structured_data": {
+            "indicator": "raccolta differenziata rifiuti urbani",
+            "unit": "%",
+            "population_scope": "rifiuti urbani prodotti",
+            "period": "2024",
+            "low": {
+              "name": "Sud",
+              "code": "ITF",
+              "value": "59.9"
+            },
+            "high": {
+              "name": "Nord-est",
+              "code": "ITH",
+              "value": "77.8"
+            },
+            "gap": "17.9",
+            "gap_unit": "percentage_points"
+          }
+        }
+      ],
+      "status": "research_verified_not_an_article",
+      "human_fact_review_required": true
+    },
+    {
+      "story_id": "ENVIRONMENT-03-1b58abf5a5",
+      "domain": "environment",
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/10/Report_Raccolta-differenziata_Anni-2024-2025.pdf",
+      "source_sha256": "1b58abf5a582f3ff6f146bb7f95a8c3a7ad65671783db9faaf07554f7b1447bd",
+      "source_locations": [
+        "page:2:text:line:49:col:3",
+        "page:2:text:line:47:col:3"
+      ],
+      "facts": [
+        {
+          "evidence_id": "E-ENVIRONMENT-03-1b58abf5a5-01",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/10/Report_Raccolta-differenziata_Anni-2024-2025.pdf",
+          "source_sha256": "1b58abf5a582f3ff6f146bb7f95a8c3a7ad65671783db9faaf07554f7b1447bd",
+          "source_locations": [
+            "page:2:text:line:49:col:3",
+            "page:2:text:line:47:col:3"
+          ],
+          "verified_structured_data": {
+            "indicator": "popolazione in Comuni almeno 65% differenziata",
+            "unit": "%",
+            "population_scope": "residenti",
+            "period": "2024",
+            "low": {
+              "name": "Sud",
+              "code": "ITF",
+              "value": "47.7"
+            },
+            "high": {
+              "name": "Nord-est",
+              "code": "ITH",
+              "value": "89.3"
+            },
+            "gap": "41.6",
+            "gap_unit": "percentage_points"
+          }
+        }
+      ],
+      "status": "research_verified_not_an_article",
+      "human_fact_review_required": true
+    },
+    {
+      "story_id": "ENVIRONMENT-04-1b58abf5a5",
+      "domain": "environment",
+      "source_url": "https://www.istat.it/wp-content/uploads/2026/10/Report_Raccolta-differenziata_Anni-2024-2025.pdf",
+      "source_sha256": "1b58abf5a582f3ff6f146bb7f95a8c3a7ad65671783db9faaf07554f7b1447bd",
+      "source_locations": [
+        "page:2:text:line:48:col:4",
+        "page:2:text:line:47:col:4"
+      ],
+      "facts": [
+        {
+          "evidence_id": "E-ENVIRONMENT-04-1b58abf5a5-01",
+          "source_url": "https://www.istat.it/wp-content/uploads/2026/10/Report_Raccolta-differenziata_Anni-2024-2025.pdf",
+          "source_sha256": "1b58abf5a582f3ff6f146bb7f95a8c3a7ad65671783db9faaf07554f7b1447bd",
+          "source_locations": [
+            "page:2:text:line:48:col:4",
+            "page:2:text:line:47:col:4"
+          ],
+          "verified_structured_data": {
+            "indicator": "famiglie soddisfatte porta a porta",
+            "unit": "%",
+            "population_scope": "famiglie",
+            "period": "2025",
+            "low": {
+              "name": "Centro",
+              "code": "ITI",
+              "value": "68.4"
+            },
+            "high": {
+              "name": "Nord-est",
+              "code": "ITH",
+              "value": "74.3"
+            },
+            "gap": "5.9",
+            "gap_unit": "percentage_points"
+          }
+        }
+      ],
+      "status": "research_verified_not_an_article",
+      "human_fact_review_required": true
+    }
+  ],
+  "publication_allowed": false,
+  "human_review_required": true,
+  "limitations": [
+    "Six explicitly supported and historically dated source PDFs only.",
+    "A story's verified structured data is not permission to infer causality or add new numbers.",
+    "This is not a live universal collector of all ISTAT releases."
+  ],
+  "source_packet_extension": "cpi-prospetto3-verified-v1",
+  "source_packet_extension_hash": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024"
+}
