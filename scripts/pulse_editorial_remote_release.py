@@ -278,14 +278,24 @@ def main(argv=None):
     p.add_argument("--source-export", type=Path, required=True)
     p.add_argument("--target-checkout", type=Path, required=True)
     p.add_argument("--github-pr-json", type=Path, required=True)
-    p.add_argument("--github-reviews-json", type=Path, required=True)
+    p.add_argument("--github-reviews-json", type=Path)
     p.add_argument("--actor", required=True)
-    p.add_argument("--allowed-operators", required=True)
-    p.add_argument("--allowed-reviewers", required=True)
+    p.add_argument("--allowed-operators")
+    p.add_argument("--allowed-reviewers")
+    p.add_argument("--approval-mode", choices=["independent_review", "single_owner_manual"],
+                   default="independent_review")
+    p.add_argument("--confirm-owner", action="store_true")
     args = p.parse_args(argv)
-    authorization = verified_github_review(
-        json_file(args.github_pr_json), json_file(args.github_reviews_json),
-        args.actor, args.allowed_operators.split(","), args.allowed_reviewers.split(","))
+    if args.approval_mode == "single_owner_manual":
+        authorization = verified_single_owner(
+            json_file(args.github_pr_json), args.actor,
+            confirmed=args.confirm_owner)
+    else:
+        if not args.github_reviews_json or not args.allowed_reviewers or not args.allowed_operators:
+            p.error("Independent review metadata required")
+        authorization = verified_github_review(
+            json_file(args.github_pr_json), json_file(args.github_reviews_json),
+            args.actor, args.allowed_operators.split(","), args.allowed_reviewers.split(","))
     result = stage_release(args.source_export, args.target_checkout, authorization)
     print(json.dumps(result, ensure_ascii=False))
     return 0
