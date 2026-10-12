@@ -254,7 +254,7 @@ def register(path, article, actor, reason, expected_generation=None):
     return _append(path, expected_generation, modify)
 
 
-def rectify(path, article, actor, reason, expected_generation=None):
+def rectify(path, article, actor, reason, expected_generation=None, *, invalidate_previous=False):
     content = _approved_article(article)
     actor, reason = human_label(actor, "operatore"), reason_text(reason)
     def modify(state):
@@ -270,10 +270,10 @@ def rectify(path, article, actor, reason, expected_generation=None):
         rev = _new_revision(content, ver, state["generation"] + 1, "rectify", at, reason)
         rec["revisions"].append(rev)
         rec["current_version"] = ver
-        # A revision superseded by a documented correction must not silently
-        # resurface via rollback. A genuinely safe target can be re-approved
-        # as a NEW editorial version through the normal approval flow.
-        rec["unsafe_versions"].append(before)
+        # Flag a factual/statistical error explicitly. Mere wording revisions
+        # do not automatically mean every preceding revision was unsafe.
+        if invalidate_previous:
+            rec["unsafe_versions"].append(before)
         return {"operation": "rectify", "article_id": key, "revision": ver,
                 "previous_version": before, "actor": actor, "reason": reason,
                 "timestamp_utc": at, "content_sha256": rev["content_sha256"]}
@@ -458,6 +458,9 @@ def main(argv=None):
             s.add_argument("--actor", required=True)
             s.add_argument("--reason", required=True)
             s.add_argument("--expected-generation", type=int)
+        if cmd == "rectify":
+            s.add_argument("--invalidate-previous", action="store_true",
+                           help="Mark old revision unsafe for future rollback")
         if cmd in ("withdraw", "rollback"):
             s.add_argument("--id", required=True)
         if cmd == "withdraw":
@@ -475,8 +478,13 @@ def main(argv=None):
         result = verify(read_store(args.ledger))
     elif args.cmd in ("register", "rectify"):
         obj = json.loads(args.article.read_text(encoding="utf-8"))
-        op = register if args.cmd == "register" else rectify
-        result = op(args.ledger, obj, args.actor, args.reason, args.expected_generation)
+        if args.cmd == "rectify":
+            result = rectify(args.ledger, obj, args.actor, args.reason,
+                             args.expected_generation,
+                             invalidate_previous=args.invalidate_previous)
+        else:
+            result = register(args.ledger, obj, args.actor, args.reason,
+                              args.expected_generation)
     elif args.cmd == "withdraw":
         result = withdraw(args.ledger, args.id, args.actor, args.reason,
                           confirmed=args.confirm_withdraw,
