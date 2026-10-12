@@ -1,6 +1,191 @@
 {
-  "generated_at": "2026-10-12T04:13:35.226515+00:00",
+  "generated_at": "2026-10-12T09:14:51.141655+00:00",
   "articles": [
+    {
+      "id": "PULSE-FCACB4D8D1068654",
+      "story_fingerprint": "fcacb4d8d1068654ed3f506c",
+      "published_at": "2026-10-12T08:36:16+00:00",
+      "last_seen_at": "2026-10-12T09:14:51.141655+00:00",
+      "topic": "AMBIENTE",
+      "pulse_score": 45,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOWjFWX3hUWkgwcC1rZk9wcndmUXc3bnpUd3llUWRnaDdJRzJ2RFJBMnVMSmxodFFybmhLUFN5Qm1qYnlxaFFyZmpQdjlpQ3RCaHVfMVNGZXdfVWpPSXFkOVpVRE9fYmc3OXphY2p1cHJEbGRHYnRUMGZFY205R05ReklBR0ZoNlUtV09tLWNubWNTRWxVYkY4Si1n?oc=5",
+        "domain": "Askanews",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Ambiente, in Italia nel 2025 quasi 3,7 mln di alberi piantati (+17%) - Askanews",
+      "summary": "Ambiente, in Italia nel 2025 quasi 3,7 mln di alberi piantati (+17%) Askanews",
+      "statistical_claims": [
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "3,7 ",
+          "verified": false
+        },
+        {
+          "raw_value": "+17%",
+          "verified": false
+        },
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "3,7 ",
+          "verified": false
+        },
+        {
+          "raw_value": "+17%",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-F3491533A527D0B8",
+      "story_fingerprint": "f3491533a527d0b8f55089b5",
+      "published_at": "2026-10-12T07:48:00+00:00",
+      "last_seen_at": "2026-10-12T09:14:51.141655+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 55,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOQVZDOTFFY25nVmN3MGpxUG5SdGJnUkFzN0tTdTVFMmEtWnA5N1pRQWtZU2xPWEUtUWRnWDByNE1pb3ZoNVQtcHNTdWExMjFRRGk1d0xpelk2WGpRODNXYXVSbEFuUGc1bklsV25jbkRxWTBQb2tGcW1xeEpkWnlSMTJUeGZyaDN0RzN1MjhRdWhWQQ?oc=5",
+        "domain": "Adnkronos",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Criminalità in Italia, nel 2025 in calo dell'1,8% rispetto 2024. Milano città con più denunce - Adnkronos",
+      "summary": "Criminalità in Italia, nel 2025 in calo dell'1,8% rispetto 2024. Milano città con più denunce Adnkronos",
+      "statistical_claims": [
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "1,8%",
+          "verified": false
+        },
+        {
+          "raw_value": "2024",
+          "verified": false
+        },
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "1,8%",
+          "verified": false
+        },
+        {
+          "raw_value": "2024",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "milano"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-D3112828B7A2A997",
+      "story_fingerprint": "d3112828b7a2a997e2dc279c",
+      "published_at": "2026-10-12T05:50:00+00:00",
+      "last_seen_at": "2026-10-12T09:14:51.141655+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 54,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiwwJBVV95cUxPUG9ueE1ibTJoQmVqOHFLQnZrU25ITlM5MGJRa3UtVkNjT1BYTmQtb0c4dk1HaUdQUHdLM3gydGJkNHZ3d2l0dkxtajRtT1pTbGJnSUstNjZMS0loSXRNWW4zcnE2WnBMbDBYeUh6MGZJcFF6elVhLTc4QVRwblBLR3BIUThibmYxOE9pYzBsVUp5VldUUlFkZUFwQ3RQZmE5aEQ5YmpRX0hnVllHYTVwZ0E0N2lEMHJqcV9PNWVQZmhMbU5lLVMyRGFZZ0gyOExlb2Yyd1dTWG9Sb1oxME1nemFqakoyMVo5V1RmTGUyNnVPZy1WR1Z2bFNGc1JnaEdXUjBSXzVDckxpN3ZDTkJRaWF4MFIwU3VsZ29ncUVVT3M0Um1yWGh6WUF3RUlMZWY2aktSaWY4eF9RM3R5M1ZXUmZIY9IByAJBVV95cUxOMzdDUGJidWlWUzZHaDhUa0tZS1ZYejNuOEhvS19qOUN5ZVF3dkZWRlNUaE8ycTFLUGMwZ1pNM0ZtNzhhRXVDYXR4c1hyeWZ5Tl9PNGlqM0xkSXhaMmlFem01REdLanUzcTRsZzdnQUFKdGRqZ00tRzVnTVhFeThZLThuLVY3NGhDSHo5VzdrRW55S1Bmd1c3cE5uZXk5bjBTeHp3VGtKVDl4ZWcwMXBBVzUzZEpiZ2pXM3pVbHFMVG95U2NPOHNKNzVUeERnSjRfb1V1azRJZDhoUHhJYkVfZS1RWGw0RWRURGFKbnJWUThDRzVKRm1XU3VzRzZWYWdnYk5aS2ZEVXplM0tQR2E5UDFnY2h4bGFFREkxSlljUGlFVGFKOUlTeUdOZTJYTkFxemlyckZWQzdBcDJRS25UdmloOW9FTFlw?oc=5",
+        "domain": "Corriere Torino",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Giovanni Potenza: «Il mio record di corsa a 82 anni su e giù per il Grattacielo Piemonte. Gli avversari? Al massimo 60enni». A Torino gli eroi del towerrunning - Corriere Torino",
+      "summary": "Giovanni Potenza: «Il mio record di corsa a 82 anni su e giù per il Grattacielo Piemonte. Gli avversari? Al massimo 60enni». A Torino gli eroi del towerrunning Corriere Torino",
+      "statistical_claims": [
+        {
+          "raw_value": "82 ",
+          "verified": false
+        },
+        {
+          "raw_value": "60",
+          "verified": false
+        },
+        {
+          "raw_value": "82 ",
+          "verified": false
+        },
+        {
+          "raw_value": "60",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "piemonte",
+        "torino"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-EFA0829D3356B411",
+      "story_fingerprint": "efa0829d3356b41132aa3ec4",
+      "published_at": "2026-10-12T05:26:15+00:00",
+      "last_seen_at": "2026-10-12T09:14:51.141655+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 60,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxONUZoSXN2TkUyQXVoVjZkQXVJTlRoRmt4b0FST3JwQ2REYU9PenNQYm9YWmFKQ1MwYkpFU1BNQ19FSzh4d3h5RVM1bjk0N05iemRFeFoyVUxPckFZcFhjWV85LVNVU1g0RHdNYlZxTGxXVzJVdi1VOUY1ZmRLazBxWlk1bS01NmhXbG12SFJzdjBhS00?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Copernicus: 2 September 2026 was the second hottest on record - Il Sole 24 ORE",
+      "summary": "Copernicus: 2 September 2026 was the second hottest on record Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "2 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
     {
       "id": "PULSE-6589F8C83D3432EC",
       "story_fingerprint": "6589f8c83d3432eca2f7a675",
@@ -62,6 +247,141 @@
         "status": "requires_primary_geodata"
       },
       "editorial_status": "verified_primary_match",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-9A2785AEA780F8F4",
+      "story_fingerprint": "9a2785aea780f8f4a03f4853",
+      "published_at": "2026-10-12T03:20:46+00:00",
+      "last_seen_at": "2026-10-12T09:14:51.141655+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 45,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNZlVDRlRmWU5hMG1XQlEwTXRHQlo1emdoNFBnRzQ5bVZmVkFoRm5FX2xsQ1gyWkp1M0FoVnBzdHBTRFFmdU1zMTNHREpvQm9tanpkZmVJWHgxVGVPQ3ZkdHg3T0RNalowaEhaUExNaHc1STJNbXM0TXROYXVlTjlkc0FmTW10ZjhZT3lzZ1ZIbXlnRGU3cDQ4ZHR4Vm8?oc=5",
+        "domain": "L'eco del sud",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "In Italia 2,2 milioni di famiglie in povertà assoluta 14/10/2025 - L'eco del sud",
+      "summary": "In Italia 2,2 milioni di famiglie in povertà assoluta 14/10/2025 L'eco del sud",
+      "statistical_claims": [
+        {
+          "raw_value": "2,2 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "14",
+          "verified": false
+        },
+        {
+          "raw_value": "10",
+          "verified": false
+        },
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2,2 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "14",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-1928BE07B747D74E",
+      "story_fingerprint": "1928be07b747d74e58fffa09",
+      "published_at": "2026-10-12T03:00:05+00:00",
+      "last_seen_at": "2026-10-12T09:14:51.141655+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 74,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQNm1VaU4wcGwwakV2NnBNbjB2QUx5amplaG85TXprVF9hNnZwbFAxdkVmempvNUZRdnB1cWNzUEI4bGdqOGJRUXJFdEFXM0M5Q2tuZTRhblJaVnczdkg0bmVMX3RDMkU4TTh6OEIxSnpOVFhsQl9DUVJIUVJ5UnpZeWJhRV9TVEVQRWh2OV9lcFV1YVRwRWotTmJ3a25tdERxTmMyV3kzWlJDV1pTMy1vZ05Cak9WYnRJNmgyOGhxb3JSY0J4SFNJ0gHMAUFVX3lxTE1zSF9UVUN0c2dndnV0UUd6SmdjNDN1VF9oVTBBS1dha0ZweGJ2WE41cGJRUTB1bFlBWEtWVlFjdFptQXFVeGQ1eFY0MVRCVHpHZ1F2Y01ZaGZhQkU4ZW0wZ1NkNVhQMFMxUUpqZ3R1aHhrY3p2UXVIeHFJeWxSVjdNTXljVnZsUWhoTlg1SUZYLUZMVmtOclQyR3Y4RldDUVN1OWhXTy1jdVFOVkdPdENMTFFNMGU4cldQR0xzNXZHZkk1cXJwVE92Qm04Mw?oc=5",
+        "domain": "Quotidiano Di Puglia",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Prezzi troppo alti e i pugliesi tagliano sulla spesa: calo record, -18,7% dal 2019 - Quotidiano Di Puglia",
+      "summary": "Prezzi troppo alti e i pugliesi tagliano sulla spesa: calo record, -18,7% dal 2019 Quotidiano Di Puglia",
+      "statistical_claims": [
+        {
+          "raw_value": "-18,7%",
+          "verified": false
+        },
+        {
+          "raw_value": "2019 ",
+          "verified": false
+        },
+        {
+          "raw_value": "-18,7%",
+          "verified": false
+        },
+        {
+          "raw_value": "2019 ",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "puglia"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-0BAC7EF41CD079BC",
+      "story_fingerprint": "0bac7ef41cd079bc792ff3de",
+      "published_at": "2026-10-12T00:06:22+00:00",
+      "last_seen_at": "2026-10-12T09:14:51.141655+00:00",
+      "topic": "SALUTE",
+      "pulse_score": 60,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNMHhpdi00UjcxZW9IcDZsb01tZlJFU0c4LXFsSHVKcWhoQ3Y5c0NOSFZJbFYwS1pZT3hxeTV3Rzgzc0ZuUmdTZHNkWDUzRllzUFI5S1gzaGx3emZpU2dYOTliTDVYdzR1aXkyVDFOaUk1RFpRVlpkZE5ZU2gwc0t1MzhXZzZDeFpnVWJjckpDeWZIZjNlZ3dOXzJmbzdzNEZibmpPUWRyZFFrbm4zYzNRblA0eVdvV2pGWUUwX0pMdw?oc=5",
+        "domain": "L'eco del sud",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Caldo record sull'Italia: ospedali sotto pressione e cresce il rischio incendi 04/08/2026 - L'eco del sud",
+      "summary": "Caldo record sull'Italia: ospedali sotto pressione e cresce il rischio incendi 04/08/2026 L'eco del sud",
+      "statistical_claims": [
+        {
+          "raw_value": "04",
+          "verified": false
+        },
+        {
+          "raw_value": "08",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "04",
+          "verified": false
+        },
+        {
+          "raw_value": "08",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
       "publication_status": "published"
     },
     {
@@ -311,7 +631,7 @@
       "id": "PULSE-01865C03BDC6C04F",
       "story_fingerprint": "01865c03bdc6c04fc4d8cf5f",
       "published_at": "2026-10-10T22:30:16+00:00",
-      "last_seen_at": "2026-10-12T04:13:35.226515+00:00",
+      "last_seen_at": "2026-10-12T09:14:51.141655+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 54,
       "patterns": [],
@@ -550,7 +870,7 @@
       "id": "PULSE-F6A0C16B1B412DDD",
       "story_fingerprint": "f6a0c16b1b412dddf8e4ebe8",
       "published_at": "2026-10-09T21:44:20+00:00",
-      "last_seen_at": "2026-10-12T04:13:35.226515+00:00",
+      "last_seen_at": "2026-10-12T09:14:51.141655+00:00",
       "topic": "ALTRO",
       "pulse_score": 47,
       "patterns": [],
@@ -583,7 +903,7 @@
       "id": "PULSE-A906182DEEF86950",
       "story_fingerprint": "a906182deef86950a8d9e139",
       "published_at": "2026-10-09T20:54:03+00:00",
-      "last_seen_at": "2026-10-12T04:13:35.226515+00:00",
+      "last_seen_at": "2026-10-12T09:14:51.141655+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 49,
       "patterns": [],
@@ -622,7 +942,7 @@
       "id": "PULSE-B182FF9FDFA394B0",
       "story_fingerprint": "b182ff9fdfa394b0f1fbf95e",
       "published_at": "2026-10-09T19:13:32+00:00",
-      "last_seen_at": "2026-10-12T04:13:35.226515+00:00",
+      "last_seen_at": "2026-10-12T09:14:51.141655+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 45,
       "patterns": [],
@@ -669,7 +989,7 @@
       "id": "PULSE-432037A7AA2FBA88",
       "story_fingerprint": "432037a7aa2fba88035c0cf3",
       "published_at": "2026-10-09T19:12:34+00:00",
-      "last_seen_at": "2026-10-12T04:13:35.226515+00:00",
+      "last_seen_at": "2026-10-12T09:14:51.141655+00:00",
       "topic": "ALTRO",
       "pulse_score": 49,
       "patterns": [],
@@ -703,6 +1023,45 @@
       "territories": [
         "torino"
       ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-033B5F693DD0ACA2",
+      "story_fingerprint": "033b5f693dd0aca265062c89",
+      "published_at": "2026-10-09T17:33:55+00:00",
+      "last_seen_at": "2026-10-12T09:14:51.141655+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 54,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPYnJCYkRYLTRPQkVaRmFFVWZBc252bWRxNThaYy1WQ2JpODJWMEd1YkxzOHRXR2M4RWFGR2o2cW03MjM1ZkNTYlZ5Z3BxSVNwSVFOTWt1aTVub3VzNExyYmdBWEphd3ZmUEd0TGk3ZFRiVGNDZXNIbkZzZXdLN040OHcxR25yQU9rN3NvSjlHYlhwVkhBQThxa2cxVTRmMmkxaE52RTlvTk01bEU?oc=5",
+        "domain": "inITALY",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Pordenonelegge 2026: record di 190mila presenze e impatto economico - inITALY",
+      "summary": "Pordenonelegge 2026: record di 190mila presenze e impatto economico inITALY",
+      "statistical_claims": [
+        {
+          "raw_value": "2026",
+          "verified": false
+        },
+        {
+          "raw_value": "190mila",
+          "verified": false
+        },
+        {
+          "raw_value": "2026",
+          "verified": false
+        },
+        {
+          "raw_value": "190mila",
+          "verified": false
+        }
+      ],
+      "territories": [],
       "editorial_status": "journalistic_attributed",
       "publication_status": "published"
     },
@@ -804,7 +1163,7 @@
       "id": "PULSE-7DD7B8E2BE256506",
       "story_fingerprint": "7dd7b8e2be256506049325cd",
       "published_at": "2026-10-09T11:10:37+00:00",
-      "last_seen_at": "2026-10-12T04:13:35.226515+00:00",
+      "last_seen_at": "2026-10-12T09:14:51.141655+00:00",
       "topic": "LAVORO",
       "pulse_score": 47,
       "patterns": [],
