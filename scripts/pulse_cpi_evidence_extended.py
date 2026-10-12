@@ -232,6 +232,17 @@ def add_to_research_packet(packet: dict, supplement: dict) -> dict:
     original=stories[0]["facts"]
     if len(original)!=3 or set(x["verified_structured_data"]["price_index_code"] for x in original)!={"NIC","IPCA","FOI"}:
         raise ValueError("Baseline three distinct indices not verified")
+    # Prospetto 1 explicitly calls FOI "senza tabacchi"; cover text says
+    # NIC "al lordo dei tabacchi". These source-specific population/basket
+    # qualifiers are part of the pinned official original, not model claims.
+    for f in original:
+        code=f["verified_structured_data"]["price_index_code"]
+        f["verified_structured_data"]["tobacco_treatment"]={
+            "NIC":"including_tobacco",
+            "IPCA":"harmonized_not_specified_by_prospetto1",
+            "FOI":"excluding_tobacco",
+        }[code]
+        f["verified_structured_data"]["official_source_table"]="Prospetto 1"
     add=supplement.get("facts")
     if not isinstance(add,list) or len(add)!=10:
         raise ValueError("Expected ten independent supplement evidence records")
