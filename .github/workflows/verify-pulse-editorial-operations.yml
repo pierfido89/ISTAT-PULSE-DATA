@@ -1,0 +1,32 @@
+name: PULSE editorial operations — costs, queue, 3h badge (no APK)
+
+on:
+  push:
+    branches: [feat/pulse-editorial-ai-1.0]
+    paths:
+      - 'scripts/pulse_editorial_operations.py'
+      - 'tests/test_pulse_editorial_operations.py'
+      - '.github/workflows/verify-pulse-editorial-operations.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-planning-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test costs, retries, event ids, archival priority, NEW badge
+        run: python -m unittest discover -s tests -p 'test_pulse_editorial_operations.py' -v
+      - name: Simulate 60, 90, 300 and 1000 articles against five-dollar budget
+        run: |
+          for n in 60 90 300 1000; do
+            python scripts/pulse_editorial_operations.py --articles "$n" --budget-usd 5
+          done
+      - name: No paid requests, app publishing or APK
+        run: 'echo "Pure offline math and queue tests: OpenAI and publishing disabled."'

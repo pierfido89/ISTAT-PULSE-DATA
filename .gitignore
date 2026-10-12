@@ -1,0 +1,13 @@
+# Keep local source PDFs, draft articles, and private results OFF this public repo.
+workbench/
+**/__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+*.dpapi
+*.token
+*.pem
+*.pfx
+*.key

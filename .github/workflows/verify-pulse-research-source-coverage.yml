@@ -1,0 +1,59 @@
+name: PULSE Research — official source coverage and protections
+
+on:
+  push:
+    branches: [feat/pulse-editorial-ai-1.0]
+    paths:
+      - 'scripts/pulse_research_source_coverage.py'
+      - 'tests/test_pulse_research_source_coverage.py'
+      - 'data/research/chatgpt_evidence_packet.json'
+      - '.github/workflows/verify-pulse-research-source-coverage.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  source-contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run source coverage regression tests
+        run: python -m unittest discover -s tests -p 'test_pulse_research_source_coverage.py' -v
+      - name: Build research source inventory without publishing new values
+        run: |
+          python scripts/pulse_research_source_coverage.py \
+            --catalog data/sources_catalog.json \
+            --packet data/research/chatgpt_evidence_packet.json \
+            --output /tmp/pulse-source-coverage.json
+          python - <<'PY'
+          import json
+          d=json.load(open('/tmp/pulse-source-coverage.json'))
+          assert d['schema_version']=='pulse-research-coverage-v1'
+          assert d['catalogue_official_sources'] >= 20
+          assert d['verified_primary_pdf_count'] == 6
+          assert d['verified_fact_count'] == 34
+          assert all(not x['numeric_research_verified'] for x in d['sources'])
+          assert d['auto_publish'] is False
+          print("Catalogue: ",d['catalogue_official_sources'], "Audited PDFs: ",d['verified_primary_pdf_count'])
+          PY
+      - name: Persist audited coverage inventory on experimental branch
+        run: |
+          set -euo pipefail
+          mkdir -p data/research
+          cp /tmp/pulse-source-coverage.json data/research/source_coverage.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/research/source_coverage.json
+          if git diff --cached --quiet; then
+            echo "Inventory unchanged"
+          else
+            git commit -m "research: refresh source catalogue coverage without promoting unverified figures"
+            git push origin HEAD:feat/pulse-editorial-ai-1.0
+          fi
+      - name: No APK or article publication
+        run: 'echo "Research inventory only: no app, article or release produced."'
