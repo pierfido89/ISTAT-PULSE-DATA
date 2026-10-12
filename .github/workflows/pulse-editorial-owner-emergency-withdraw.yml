@@ -41,8 +41,7 @@ jobs:
           test "$GITHUB_ACTOR" = "pierfido89"
           test "$USER_CONFIRM" = "RITIRA-ARTICOLO"
           [[ "$USER_ARTICLE_ID" =~ ^[A-Z0-9][A-Z0-9-]{4,70}$ ]]
-          test "$${{#noop}}" != "ignored" 2>/dev/null || true
-          test ${#USER_REASON} -ge 12
+          test "${#USER_REASON}" -ge 12
           test -n "$PRIVATE_TOKEN"
 
       - uses: actions/checkout@v4
