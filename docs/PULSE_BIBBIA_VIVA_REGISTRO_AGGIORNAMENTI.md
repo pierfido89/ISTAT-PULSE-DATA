@@ -76,3 +76,21 @@ Regola editoriale permanente: **Un errore si corregge, ma la storia delle correz
 - **Dettaglio:** docs/PULSE_PROBLEMA_10_PUSH_FCM_E_PRIVACY.md.
 
 - **Pull request problema 10:** DATA https://github.com/pierfido89/ISTAT-PULSE-DATA/pull/16 e Android https://github.com/pierfido89/ISTAT-PULSE/pull/38, in bozza verso i rami che già contengono i problemi 11 e 12. I 135 fogli originali e aggiornamenti precedenti della Bibbia master rimangono preservati nel PDF 142 pagine.
+
+## 12 ottobre 2026 — Problema 9 (priorità ALTA), QA completa e ripristino grafico
+
+**Segnalazione del progettista:** l'APK di prova dei problemi 10-11-12 era peggiorata: loghi vecchi contenenti ISTAT invece di PULSE, P del launcher non centrata, Home/Oggi duplicate, PULSE LIVE assente in Ieri, Pubblicazioni GREEN e positive vuote, loghi delle fonti rimpiccioliti nelle schede Pubblicazioni.
+
+**Recupero dei file autentici:** Git blob di logo PULSE, splash e P solo dai rami approvati `pulse-apk-preview-20261011` e `feat/pulse-brand-polish-20261011`. Lo script `generate_branding.py` centra la P usando il bounding box alfa senza sovrascrivere le immagini originali.
+
+**Interfaccia:** Home Notizie editoriale, Oggi elenco completo, Ieri con LIVE, Pubblicazioni con logo ufficiale 62dp e denominazioni riconosciute, brand PULSE senza ISTAT salvo nomi di enti.
+
+**GREEN:** distinzione fra pubblicazioni ufficiali e articoli PULSE del Radar; fallback su archivio incorporato se la cache Observer è corrotta; note trasparenti per classifiche positive senza risultati nel periodo e ultimi positivi verificati fuori classifica, con data reale. Lo script `scripts/qa_pulse_content.py` nell'app impedisce build con archivio GREEN ufficiale o Radar completamente vuoti, sui dati esatti incorporati nel pacchetto.
+
+**Test problema 9:** nuovi casi Robolectric su JSON malformati, archivio Observer, memoria (1.800 articoli), loghi delle fonti e date GREEN; test strumentali Android API35 di navigazione ripetuta su Notizie/Territori/Green/Pubblicazioni/Altro e sottoschede, telefono offline, memoria, icone e PDF multipagina. Workflow: `.github/workflows/pulse-p9-full-device-qa.yml` nel repo APP.
+
+**Correzioni rilevate in CI:** primo run ha segnalato un return mancante nel parser Observer, corretto; secondo run ha segnalato che il test si aspettava erroneamente una lista vuota quando il fallback incorporato recuperava correttamente le pubblicazioni, test corretto per richiedere l'archivio valido.
+
+**Stato:** ramo `fix/pulse-p9-ui-regression-full-qa-20261012` separato dalla produzione; collaudo dispositivo ancora in corso. NON distribuire un'altra APK fino a CI completamente verde e verifica visiva del proprietario. L'originale Bibbia di 142 pagine è stato conservato, con Allegato Z di 7 pagine aggiuntive (totale 149), file `PULSE_Bibbia_Tecnica_v4.3.6_Problemi_12_11_10_9_QA_2026-10-12.pdf`.
+
+Documentazione dettagliata nell'app: `docs/PULSE_PROBLEMA_9_QA_REGRESSIONI_VISIVE_20261012.md`. Nessun modello ha creato nuovi loghi: si riutilizzano quelli già approvati.
