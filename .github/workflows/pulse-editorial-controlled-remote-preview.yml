@@ -1,0 +1,110 @@
+name: PULSE reviewed editorial remote preview release
+on:
+  workflow_dispatch:
+    inputs:
+      private_pr:
+        description: "Private editorial results PR number"
+        required: true
+        type: string
+permissions:
+  contents: write
+concurrency:
+  group: pulse-editorial-preview-release
+  cancel-in-progress: false
+jobs:
+  release:
+    if: github.ref == 'refs/heads/main'
+    environment: pulse-editorial-preview
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      PRIVATE_TOKEN: ${{ secrets.PULSE_PRIVATE_READ_TOKEN }}
+      OPERATORS: ${{ vars.PULSE_ALLOWED_OPERATORS }}
+      REVIEWERS: ${{ vars.PULSE_ALLOWED_REVIEWERS }}
+      ENV_PROTECTED: ${{ vars.PULSE_ENV_PROTECTED }}
+    steps:
+      - name: Refuse unconfigured authentication
+        env:
+          PR_NUMBER: ${{ inputs.private_pr }}
+        run: |
+          set -euo pipefail
+          test "$ENV_PROTECTED" = true
+          test -n "$PRIVATE_TOKEN"
+          test -n "$OPERATORS"
+          test -n "$REVIEWERS"
+          [[ "$PR_NUMBER" =~ ^[1-9][0-9]{0,6}$ ]]
+          [[ ",$OPERATORS," == *",$GITHUB_ACTOR,"* ]]
+      - uses: actions/checkout@v4
+        with:
+          path: data
+          persist-credentials: false
+      - name: Obtain authenticated private PR reviews
+        env:
+          PR_NUMBER: ${{ inputs.private_pr }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/pulse-review
+          api="https://api.github.com/repos/pierfido89/ISTAT-PULSE-EDITORIAL-RESULTS"
+          curl -fsSL -H "Authorization: Bearer $PRIVATE_TOKEN" \
+            "$api/pulls/$PR_NUMBER" -o /tmp/pulse-review/pr.json
+          curl -fsSL -H "Authorization: Bearer $PRIVATE_TOKEN" \
+            "$api/pulls/$PR_NUMBER/reviews?per_page=100" -o /tmp/pulse-review/reviews.json
+          test "$(jq -r '.head.repo.full_name' /tmp/pulse-review/pr.json)" = "pierfido89/ISTAT-PULSE-EDITORIAL-RESULTS"
+          sha="$(jq -r '.head.sha' /tmp/pulse-review/pr.json)"
+          [[ "$sha" =~ ^[0-9a-f]{40}$ ]]
+          echo "REVIEWED_SHA=$sha" >> "$GITHUB_ENV"
+      - name: Check independent current-commit reviewer
+        working-directory: data
+        run: |
+          python - <<'PY'
+          import json,os
+          from scripts.pulse_editorial_remote_release import verified_github_review
+          pr=json.load(open('/tmp/pulse-review/pr.json'))
+          reviews=json.load(open('/tmp/pulse-review/reviews.json'))
+          verified_github_review(pr,reviews,os.environ["GITHUB_ACTOR"],
+              os.environ["OPERATORS"].split(","),os.environ["REVIEWERS"].split(","))
+          PY
+      - uses: actions/checkout@v4
+        with:
+          repository: pierfido89/ISTAT-PULSE-EDITORIAL-RESULTS
+          ref: ${{ env.REVIEWED_SHA }}
+          token: ${{ secrets.PULSE_PRIVATE_READ_TOKEN }}
+          path: private-reviewed
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: pierfido89/ISTAT-PULSE-DATA
+          ref: pulse-editorial-lifecycle-preview
+          path: remote-preview
+          token: ${{ github.token }}
+      - name: Verify approved ledger and build sealed publication
+        run: |
+          set -euo pipefail
+          test -s private-reviewed/state/editorial_lifecycle_ledger.json
+          PYTHONPATH="$GITHUB_WORKSPACE/data" python -m scripts.pulse_editorial_lifecycle \
+            verify --ledger private-reviewed/state/editorial_lifecycle_ledger.json
+          PYTHONPATH="$GITHUB_WORKSPACE/data" python -m scripts.pulse_editorial_lifecycle \
+            export --ledger private-reviewed/state/editorial_lifecycle_ledger.json \
+            --output-dir /tmp/pulse-reviewed-export
+      - name: Validate and stage atomic remote generation
+        working-directory: data
+        run: |
+          python -m scripts.pulse_editorial_remote_release \
+            --source-export /tmp/pulse-reviewed-export \
+            --target-checkout "$GITHUB_WORKSPACE/remote-preview" \
+            --github-pr-json /tmp/pulse-review/pr.json \
+            --github-reviews-json /tmp/pulse-review/reviews.json \
+            --actor "$GITHUB_ACTOR" --allowed-operators "$OPERATORS" \
+            --allowed-reviewers "$REVIEWERS"
+      - name: Publish to isolated PREVIEW branch only
+        working-directory: remote-preview
+        run: |
+          set -euo pipefail
+          git config user.name "PULSE editorial actions"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/editorial/lifecycle
+          if ! git diff --cached --quiet; then
+            git commit -m "PULSE reviewed editorial PREVIEW release"
+            git push origin HEAD:pulse-editorial-lifecycle-preview
+          fi
+          echo "Preview only: no Android APK, no main branch modification"
