@@ -7,6 +7,7 @@ from email.utils import parsedate_to_datetime
 from zoneinfo import ZoneInfo
 from pathlib import Path
 from bs4 import BeautifulSoup
+from scripts.pulse_new_badge import stamp_first_pulse_publication
 try:
     from scripts.pulse_editorial_evidence import enrich_all, source_metadata_from_text
 except ModuleNotFoundError:
@@ -937,6 +938,7 @@ def main():
                 article=article_from_curated(curated,cand,now,by_id.get(permanent_id))
                 article["story_fingerprint"]=story_fingerprint(
                     curated["source_url"],curated["topic"],curated["headline"],curated["verified_numbers"])
+                stamp_first_pulse_publication(article, by_id.get(article["id"]), now, item.get("published_raw"))
                 by_id[article["id"]]=article
                 continue
             if not resolved:
@@ -948,6 +950,7 @@ def main():
                         prior = by_id.get(article["id"])
                         if prior:
                             article["published_at"] = prior.get("published_at") or article["published_at"]
+                        stamp_first_pulse_publication(article, prior, now, item.get("published_raw"))
                         by_id[article["id"]] = article
                 continue
             verified_nums=resolved.get("matched_numbers",[])
@@ -978,6 +981,7 @@ def main():
               "editorial_status":"verified_primary_match",
               "publication_status":"published"
             }
+            stamp_first_pulse_publication(article, existing, now, item.get("published_raw"))
             by_id[aid]=article
 
     if runtime_exceeded():

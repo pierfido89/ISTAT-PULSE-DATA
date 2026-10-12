@@ -47,3 +47,16 @@ Regola editoriale permanente: **Un errore si corregge, ma la storia delle correz
 - Prove: 18 test ledger + 9 release/emergenza + 14 compatibilità + 4 Android = **45 test**, tutti superati. CI DATA https://github.com/pierfido89/ISTAT-PULSE-DATA/actions/runs/38229021236; CI Android https://github.com/pierfido89/ISTAT-PULSE/actions/runs/38227410169.
 - Documento PDF definitivo di lavoro: `PULSE_Bibbia_Tecnica_v4.3.6_Problema12_Governance_Proprietario_Unico_2026-10-12.pdf`; **131 pagine**, con 114 pagine storiche conservate e 17 pagine dell'Allegato W.
 - Nessuna attivazione produttiva, nessuna APK, nessuna news pubblicata. Necessaria configurazione GitHub da parte dell'owner e prova live su dispositivo prima di etichettare il sistema OPERATIVO.
+
+## 12 ottobre 2026 — Problema 11: distintivo NEW 180 minuti
+
+- **Problema:** badge NEW mancante nella UI; rischio false novità da cache, articoli d'archivio e timestamp della fonte.
+- **Soluzione dati:** nuovo `first_published_at_utc` registrato solo al primo ingresso di nuova notizia PULSE, se data originale RSS con timezone e non precedente oltre 24 ore; conservato senza reset ad ogni refresh. Le vecchie notizie senza primo timestamp restano prive del badge.
+- **Soluzione Android:** pill rossa `NEW` nelle notizie Radar, quattro card Home, dettagli e Preferiti; calcolo stretto `0 <= delta < 180 minuti`; timer UI ogni 15 secondi. Nessun badge per gli `ObserverArticle` storici.
+- **Codice DATA:** `scripts/pulse_new_badge.py`, `scripts/update_news_radar.py`, `tests/test_pulse_new_badge.py`.
+- **Codice Android:** `PulseNewBadge.kt`, `PulseModels.kt`, `PulseHome.kt`, `PulseApp.kt`, `PulseNewBadgeTest.kt`.
+- **Test eseguiti:** 12 test Python e 6 test Kotlin tutti verdi; compilazione Kotlin superata. CI DATA https://github.com/pierfido89/ISTAT-PULSE-DATA/actions/runs/38231088547 ; CI Android https://github.com/pierfido89/ISTAT-PULSE/actions/runs/38231083331 . Nessun APK, feed pubblico o app main modificati.
+- **Dossier PDF master:** `PULSE_Bibbia_Tecnica_v4.3.6_Problemi_12_11_NEW_2026-10-12.pdf`, 135 pagine. 131 pagine precedenti preservate senza modifiche ai flussi di contenuto e 4 nuove pagine Allegato X.
+- **Stato:** implementato e testato sui rami dedicati; non ancora distribuito alla release stabile installata. L'avvio produttivo segue la fase di integrazione controllata.
+- **Codice in revisione:** PR DATA [#15](https://github.com/pierfido89/ISTAT-PULSE-DATA/pull/15); PR Android [#37](https://github.com/pierfido89/ISTAT-PULSE/pull/37), entrambe in bozza e non integrate nel ramo principale.
+- **Specifiche approfondite:** `docs/PULSE_PROBLEMA_11_NEW_BADGE_180_MINUTI.md`.
