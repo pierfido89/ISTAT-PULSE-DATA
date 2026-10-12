@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-10-08T07:58:56.381201+00:00",
+  "generated_at": "2026-10-12T05:01:52.312506+00:00",
   "policy": {
     "official_only": true,
     "no_scraped_search_results_as_data": true,
@@ -27,8 +27,8 @@
   },
   "candidate_count": 39,
   "status_counts": {
-    "official_portal_reachable": 20,
-    "structured_endpoint_verified": 8,
+    "official_portal_reachable": 19,
+    "structured_endpoint_verified": 9,
     "blocked": 11
   },
   "sources": [
@@ -168,7 +168,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "16491",
+              "content_length": "16484",
               "reason": "html_or_unknown"
             },
             {
@@ -177,7 +177,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "16491",
+              "content_length": "16484",
               "reason": "html_or_unknown"
             },
             {
@@ -186,7 +186,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "16491",
+              "content_length": "16484",
               "reason": "html_or_unknown"
             }
           ]
@@ -214,7 +214,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "18160",
+              "content_length": "18159",
               "reason": "html_or_unknown"
             },
             {
@@ -223,7 +223,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "18160",
+              "content_length": "18159",
               "reason": "html_or_unknown"
             },
             {
@@ -232,7 +232,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "18160",
+              "content_length": "18159",
               "reason": "html_or_unknown"
             }
           ]
@@ -280,7 +280,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "16769",
+              "content_length": "16772",
               "reason": "html_or_unknown"
             }
           ]
@@ -324,7 +324,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "23692",
+              "content_length": "23712",
               "reason": "html_or_unknown"
             }
           ]
@@ -392,7 +392,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "application/rss+xml",
-              "content_length": "92848",
+              "content_length": "64750",
               "reason": "editorial_or_document_resource"
             },
             {
@@ -456,7 +456,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "application/rss+xml",
-              "content_length": "92848",
+              "content_length": "64750",
               "reason": "editorial_or_document_resource"
             },
             {
@@ -604,7 +604,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "17009",
+              "content_length": "17010",
               "reason": "html_or_unknown"
             }
           ]
@@ -671,7 +671,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "19340",
+              "content_length": "19345",
               "reason": "html_or_unknown"
             },
             {
@@ -680,7 +680,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "18927",
+              "content_length": "18925",
               "reason": "html_or_unknown"
             }
           ]
@@ -726,7 +726,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "20378",
+              "content_length": "20376",
               "reason": "html_or_unknown"
             },
             {
@@ -744,7 +744,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "20418",
+              "content_length": "20417",
               "reason": "html_or_unknown"
             }
           ]
@@ -775,7 +775,7 @@
           "ok": true,
           "http_status": 200,
           "content_type": "application/zip",
-          "content_length": "722465",
+          "content_length": "724382",
           "reason": "machine_readable_data"
         },
         {
@@ -796,7 +796,7 @@
           "ok": true,
           "http_status": 200,
           "content_type": "application/zip",
-          "content_length": "722465",
+          "content_length": "724382",
           "reason": "machine_readable_data"
         },
         {
@@ -842,7 +842,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "14724",
+              "content_length": "14722",
               "reason": "html_or_unknown"
             }
           ]
@@ -940,7 +940,7 @@
           "kind": "discovery",
           "url": "https://crea.gov.it",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7fa6a875af60>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7ff22a333620>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -948,7 +948,7 @@
           "kind": "discovery",
           "url": "https://crea.gov.it/opendata",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /opendata (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7fa6a459e030>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /opendata (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7ff220826840>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -956,7 +956,7 @@
           "kind": "discovery",
           "url": "https://crea.gov.it/open-data",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /open-data (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7fa694f32b10>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /open-data (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7ff20c8b2030>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -964,7 +964,7 @@
           "kind": "discovery",
           "url": "https://crea.gov.it/dati",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /dati (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7fa694f32c60>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /dati (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7ff2203a0c80>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -972,7 +972,7 @@
           "kind": "discovery",
           "url": "https://crea.gov.it/dataset",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /dataset (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7fa680ea80b0>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /dataset (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7ff220c87800>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         }
@@ -1513,30 +1513,70 @@
     {
       "institution": "INPS",
       "strategy": "known_ckan_api",
-      "status": "official_portal_reachable",
+      "status": "structured_endpoint_verified",
       "domains": [
         "inps.it",
         "opendata.inps.it"
       ],
-      "verified_resources": [],
+      "verified_resources": [
+        {
+          "url": "https://opendata.inps.it/opendata/api/3/action/package_list",
+          "final_url": "https://opendata.inps.it/opendata/api/3/action/package_list",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "application/json",
+          "content_length": "150872",
+          "reason": "machine_readable_data"
+        },
+        {
+          "url": "https://opendata.inps.it/opendata/api/3/action/group_list",
+          "final_url": "https://opendata.inps.it/opendata/api/3/action/group_list",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "application/json",
+          "content_length": "272",
+          "reason": "machine_readable_data"
+        },
+        {
+          "url": "https://opendata.inps.it/opendata/api/3/action/tag_list",
+          "final_url": "https://opendata.inps.it/opendata/api/3/action/tag_list",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "application/json",
+          "content_length": "3044",
+          "reason": "machine_readable_data"
+        }
+      ],
       "checks": [
         {
           "kind": "endpoint",
           "url": "https://opendata.inps.it/opendata/api/3/action/package_list",
-          "ok": false,
-          "reason": "ReadTimeout: HTTPSConnectionPool(host='opendata.inps.it', port=443): Read timed out. (read timeout=10)"
+          "final_url": "https://opendata.inps.it/opendata/api/3/action/package_list",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "application/json",
+          "content_length": "150872",
+          "reason": "machine_readable_data"
         },
         {
           "kind": "endpoint",
           "url": "https://opendata.inps.it/opendata/api/3/action/group_list",
-          "ok": false,
-          "reason": "HTTPError: 502 Server Error: Proxy Error for url: https://opendata.inps.it/opendata/api/3/action/group_list"
+          "final_url": "https://opendata.inps.it/opendata/api/3/action/group_list",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "application/json",
+          "content_length": "272",
+          "reason": "machine_readable_data"
         },
         {
           "kind": "endpoint",
           "url": "https://opendata.inps.it/opendata/api/3/action/tag_list",
-          "ok": false,
-          "reason": "ReadTimeout: HTTPSConnectionPool(host='opendata.inps.it', port=443): Read timed out. (read timeout=10)"
+          "final_url": "https://opendata.inps.it/opendata/api/3/action/tag_list",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "application/json",
+          "content_length": "3044",
+          "reason": "machine_readable_data"
         },
         {
           "kind": "discovery",
@@ -1560,17 +1600,21 @@
             {
               "url": "https://opendata.inps.it/opendata/api/3/action/package_show?id=%7bid-dataset%7d",
               "ok": false,
-              "reason": "ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+              "reason": "HTTPError: 404 Client Error: NOT FOUND for url: https://opendata.inps.it/opendata/api/3/action/package_show?id=%7Bid-dataset%7D"
             },
             {
               "url": "https://opendata.inps.it/opendata/api/3/action/group_list",
-              "ok": false,
-              "reason": "ReadTimeout: HTTPSConnectionPool(host='opendata.inps.it', port=443): Read timed out. (read timeout=10)"
+              "final_url": "https://opendata.inps.it/opendata/api/3/action/group_list",
+              "ok": true,
+              "http_status": 200,
+              "content_type": "application/json",
+              "content_length": "272",
+              "reason": "machine_readable_data"
             },
             {
               "url": "https://opendata.inps.it/opendata/api/3/action/group_show?id=%7Bid-group%7D",
               "ok": false,
-              "reason": "ReadTimeout: HTTPSConnectionPool(host='opendata.inps.it', port=443): Read timed out. (read timeout=10)"
+              "reason": "HTTPError: 404 Client Error: NOT FOUND for url: https://opendata.inps.it/opendata/api/3/action/group_show?id=%7Bid-group%7D"
             }
           ]
         }
@@ -1608,7 +1652,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "24754",
+              "content_length": "24750",
               "reason": "html_or_unknown"
             },
             {
@@ -1617,7 +1661,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "40079",
+              "content_length": "40082",
               "reason": "html_or_unknown"
             },
             {
@@ -1626,7 +1670,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "38695",
+              "content_length": "38704",
               "reason": "html_or_unknown"
             }
           ]
@@ -1668,7 +1712,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "38695",
+              "content_length": "38704",
               "reason": "html_or_unknown"
             },
             {
@@ -1677,7 +1721,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "38537",
+              "content_length": "38546",
               "reason": "html_or_unknown"
             },
             {
@@ -1686,7 +1730,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "38448",
+              "content_length": "38458",
               "reason": "html_or_unknown"
             }
           ]
@@ -1819,7 +1863,7 @@
           "ok": true,
           "http_status": 200,
           "content_type": "text/csv",
-          "content_length": "3574138",
+          "content_length": "3574545",
           "reason": "machine_readable_data"
         },
         {
@@ -1828,7 +1872,7 @@
           "ok": true,
           "http_status": 200,
           "content_type": "text/csv",
-          "content_length": "3937624",
+          "content_length": "3946245",
           "reason": "machine_readable_data"
         }
       ],
@@ -1867,7 +1911,7 @@
               "ok": true,
               "http_status": 200,
               "content_type": "text/csv",
-              "content_length": "3574138",
+              "content_length": "3574545",
               "reason": "machine_readable_data"
             },
             {
@@ -1876,7 +1920,7 @@
               "ok": true,
               "http_status": 200,
               "content_type": "text/csv",
-              "content_length": "3937624",
+              "content_length": "3946245",
               "reason": "machine_readable_data"
             }
           ]
@@ -1917,7 +1961,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "application/rss+xml",
-              "content_length": "1841",
+              "content_length": "1724",
               "reason": "editorial_or_document_resource"
             },
             {
@@ -1926,7 +1970,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13248",
+              "content_length": "13060",
               "reason": "html_or_unknown"
             },
             {
@@ -1935,7 +1979,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13050",
+              "content_length": "13046",
               "reason": "html_or_unknown"
             }
           ]
@@ -1965,7 +2009,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "application/rss+xml",
-              "content_length": "1841",
+              "content_length": "1724",
               "reason": "editorial_or_document_resource"
             },
             {
@@ -1974,7 +2018,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13248",
+              "content_length": "13060",
               "reason": "html_or_unknown"
             },
             {
@@ -1983,7 +2027,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13050",
+              "content_length": "13046",
               "reason": "html_or_unknown"
             }
           ]
@@ -2013,7 +2057,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "application/rss+xml",
-              "content_length": "1841",
+              "content_length": "1724",
               "reason": "editorial_or_document_resource"
             },
             {
@@ -2022,7 +2066,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13248",
+              "content_length": "13060",
               "reason": "html_or_unknown"
             },
             {
@@ -2031,7 +2075,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13050",
+              "content_length": "13046",
               "reason": "html_or_unknown"
             }
           ]
@@ -2061,7 +2105,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "application/rss+xml",
-              "content_length": "1841",
+              "content_length": "1724",
               "reason": "editorial_or_document_resource"
             },
             {
@@ -2070,7 +2114,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13248",
+              "content_length": "13060",
               "reason": "html_or_unknown"
             },
             {
@@ -2079,7 +2123,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13050",
+              "content_length": "13046",
               "reason": "html_or_unknown"
             }
           ]
@@ -2109,7 +2153,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "application/rss+xml",
-              "content_length": "1841",
+              "content_length": "1724",
               "reason": "editorial_or_document_resource"
             },
             {
@@ -2118,7 +2162,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13248",
+              "content_length": "13060",
               "reason": "html_or_unknown"
             },
             {
@@ -2127,7 +2171,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13050",
+              "content_length": "13046",
               "reason": "html_or_unknown"
             }
           ]
@@ -2296,17 +2340,17 @@
             {
               "url": "http://dati.ustat.miur.it/dataset/metadati",
               "ok": false,
-              "reason": "ConnectTimeout: HTTPConnectionPool(host='dati.ustat.miur.it', port=80): Max retries exceeded with url: /dataset/metadati (Caused by ConnectTimeoutError(<HTTPConnection(host='dati.ustat.miur.it', port=80) at 0x7fa6a8732750>, 'Connection to dati.ustat.miur.it timed out. (connect timeout=10)'))"
+              "reason": "ConnectTimeout: HTTPConnectionPool(host='dati.ustat.miur.it', port=80): Max retries exceeded with url: /dataset/metadati (Caused by ConnectTimeoutError(<HTTPConnection(host='dati.ustat.miur.it', port=80) at 0x7ff220352b70>, 'Connection to dati.ustat.miur.it timed out. (connect timeout=10)'))"
             },
             {
               "url": "http://dati.ustat.miur.it/organization/miur",
               "ok": false,
-              "reason": "ConnectTimeout: HTTPConnectionPool(host='dati.ustat.miur.it', port=80): Max retries exceeded with url: /organization/miur (Caused by ConnectTimeoutError(<HTTPConnection(host='dati.ustat.miur.it', port=80) at 0x7fa680f4ddc0>, 'Connection to dati.ustat.miur.it timed out. (connect timeout=10)'))"
+              "reason": "ConnectTimeout: HTTPConnectionPool(host='dati.ustat.miur.it', port=80): Max retries exceeded with url: /organization/miur (Caused by ConnectTimeoutError(<HTTPConnection(host='dati.ustat.miur.it', port=80) at 0x7ff220eadfd0>, 'Connection to dati.ustat.miur.it timed out. (connect timeout=10)'))"
             },
             {
               "url": "http://dati.ustat.miur.it/organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=AFAM&tags=Contribuzione%20e%20interventi",
               "ok": false,
-              "reason": "ConnectTimeout: HTTPConnectionPool(host='dati.ustat.miur.it', port=80): Max retries exceeded with url: /organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=AFAM&tags=Contribuzione%20e%20interventi (Caused by ConnectTimeoutError(<HTTPConnection(host='dati.ustat.miur.it', port=80) at 0x7fa694983440>, 'Connection to dati.ustat.miur.it timed out. (connect timeout=10)'))"
+              "reason": "ConnectTimeout: HTTPConnectionPool(host='dati.ustat.miur.it', port=80): Max retries exceeded with url: /organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=AFAM&tags=Contribuzione%20e%20interventi (Caused by ConnectTimeoutError(<HTTPConnection(host='dati.ustat.miur.it', port=80) at 0x7ff22a3c7aa0>, 'Connection to dati.ustat.miur.it timed out. (connect timeout=10)'))"
             }
           ]
         },
@@ -2314,7 +2358,7 @@
           "kind": "discovery",
           "url": "https://dati-ustat.mur.gov.it/dataset/2025-2029-personale-universitario",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/2025-2029-personale-universitario (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7fa6a45bc4d0>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/2025-2029-personale-universitario (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7ff20c8b2d50>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -2322,7 +2366,7 @@
           "kind": "discovery",
           "url": "https://dati-ustat.mur.gov.it/dataset/serie-storica-sul-personale-universitario",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/serie-storica-sul-personale-universitario (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7fa680f1a2a0>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/serie-storica-sul-personale-universitario (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7ff20cc097c0>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         }
