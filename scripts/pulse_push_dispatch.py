@@ -57,7 +57,18 @@ def authoritative_geo(article):
         if level in REGION_OR_NATIONAL and re.fullmatch(REGION_OR_NATIONAL[level], code):
             if level == "REGIONE" and code not in REGIONS.values():
                 return None
-            return {"level":level,"code":code}
+            result = {"level":level,"code":code}
+            # Parent codes are only accepted when explicitly supplied by
+            # the verified producer. Never derive region from a city name.
+            parent_region = explicit.get("region_code")
+            parent_province = explicit.get("province_code")
+            if (isinstance(parent_region, str) and
+                    parent_region in REGIONS.values()):
+                result["region_code"] = parent_region
+            if (isinstance(parent_province, str) and
+                    re.fullmatch(r"[0-9]{3}", parent_province)):
+                result["province_code"] = parent_province
+            return result
         return None
     territories = article.get("territories")
     if not isinstance(territories, list) or len(territories) != 1:
@@ -166,6 +177,8 @@ def push_data(article):
         "topic":canonical_topic(article.get("topic")),
         "territory_level":geo["level"],
         "territory_code":geo["code"],
+        "region_code":geo.get("region_code", ""),
+        "province_code":geo.get("province_code", ""),
         "publication_utc":article["first_published_at_utc"],
         "pulse_score":str(article["pulse_score"]),
     }
