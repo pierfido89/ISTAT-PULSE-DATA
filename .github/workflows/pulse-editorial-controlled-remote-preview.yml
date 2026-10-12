@@ -1,0 +1,126 @@
+name: PULSE controlled owner-only editorial preview release
+on:
+  workflow_dispatch:
+    inputs:
+      private_pr:
+        description: "Human-approved private editorial PR (not a draft)"
+        required: true
+        type: string
+      confirm_owner:
+        description: "Type PUBBLICA-ANTEPRIMA to confirm"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pulse-editorial-preview-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    if: github.ref == 'refs/heads/main' && github.actor == 'pierfido89'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    environment: pulse-editorial-preview
+    env:
+      PRIVATE_TOKEN: ${{ secrets.PULSE_PRIVATE_READ_TOKEN }}
+    steps:
+      - name: Require explicit human confirmation and authenticated owner
+        env:
+          PR_NUMBER: ${{ inputs.private_pr }}
+          CONFIRM: ${{ inputs.confirm_owner }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_ACTOR" = "pierfido89"
+          test "$CONFIRM" = "PUBBLICA-ANTEPRIMA"
+          [[ "$PR_NUMBER" =~ ^[1-9][0-9]{0,6}$ ]]
+          test -n "$PRIVATE_TOKEN"
+
+      - uses: actions/checkout@v4
+        with:
+          path: data
+          persist-credentials: false
+
+      - name: Retrieve exact proposed private commit from GitHub
+        env:
+          PR_NUMBER: ${{ inputs.private_pr }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/pulse-review
+          api="https://api.github.com/repos/pierfido89/ISTAT-PULSE-EDITORIAL-RESULTS"
+          curl --fail --silent --show-error --location \
+            -H "Authorization: Bearer $PRIVATE_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "$api/pulls/$PR_NUMBER" -o /tmp/pulse-review/pr.json
+          sha="$(jq -r '.head.sha' /tmp/pulse-review/pr.json)"
+          [[ "$sha" =~ ^[0-9a-f]{40}$ ]]
+          echo "REVIEWED_SHA=$sha" >> "$GITHUB_ENV"
+
+      - name: Reject other authors, drafts and untrusted PRs
+        working-directory: data
+        run: |
+          python - <<'PY'
+          import json,os
+          from scripts.pulse_editorial_remote_release import verified_single_owner
+          with open('/tmp/pulse-review/pr.json',encoding='utf-8') as f:
+              pr=json.load(f)
+          result=verified_single_owner(pr,os.environ["GITHUB_ACTOR"],confirmed=True)
+          print("Owner-confirmed private source PR",result["github_pr"])
+          PY
+
+      - uses: actions/checkout@v4
+        with:
+          repository: pierfido89/ISTAT-PULSE-EDITORIAL-RESULTS
+          ref: ${{ env.REVIEWED_SHA }}
+          token: ${{ secrets.PULSE_PRIVATE_READ_TOKEN }}
+          path: private-reviewed
+          persist-credentials: false
+
+      - uses: actions/checkout@v4
+        with:
+          repository: pierfido89/ISTAT-PULSE-DATA
+          ref: pulse-editorial-lifecycle-preview
+          path: remote-preview
+          token: ${{ github.token }}
+          persist-credentials: true
+
+      - name: Verify original ledger; export reviewed content and tombstones
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s private-reviewed/state/editorial_lifecycle_ledger.json
+          PYTHONPATH="$GITHUB_WORKSPACE/data" python -m scripts.pulse_editorial_lifecycle \
+            verify --ledger private-reviewed/state/editorial_lifecycle_ledger.json
+          PYTHONPATH="$GITHUB_WORKSPACE/data" python -m scripts.pulse_editorial_lifecycle \
+            export --ledger private-reviewed/state/editorial_lifecycle_ledger.json \
+            --output-dir /tmp/pulse-owner-export
+
+      - name: Prepare immutable generation after SHA and authorization checks
+        working-directory: data
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m scripts.pulse_editorial_remote_release \
+            --source-export /tmp/pulse-owner-export \
+            --target-checkout "$GITHUB_WORKSPACE/remote-preview" \
+            --github-pr-json /tmp/pulse-review/pr.json \
+            --actor "$GITHUB_ACTOR" \
+            --approval-mode single_owner_manual --confirm-owner
+
+      - name: Commit immutable preview in one Git push (NO APK or production)
+        working-directory: remote-preview
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "PULSE editorial actions"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/editorial/lifecycle
+          if ! git diff --cached --quiet; then
+            git commit -m "PULSE owner-confirmed editorial preview generation"
+            git push origin HEAD:pulse-editorial-lifecycle-preview
+          fi
+          echo "No release APK; no main data publication"
