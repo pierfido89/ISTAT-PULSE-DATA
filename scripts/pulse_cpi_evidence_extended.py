@@ -107,7 +107,11 @@ def table_rows(page_text: str, source_sha256: str, *, page_no=4) -> list[dict]:
         })
     if set(x["raw_label"] for x in pool)!=set(LABELS):
         raise ValueError("Missing official rows: "+
-                         str(set(LABELS)-{x["raw_label"] for x in pool}))
+                         str(set(LABELS)-{x["raw_label"] for x in pool})+
+                         " / relevant extracted table lines: "+repr([
+                             line[:145] for line in lines[start:stop]
+                             if "Componente" in line or "alimentari freschi" in line
+                         ][:6]))
     result=[]
     for i,(label,(code,title)) in enumerate(LABELS.items(),start=4):
         row=next(x for x in pool if x["raw_label"]==label)
