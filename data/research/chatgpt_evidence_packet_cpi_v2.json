@@ -444,7 +444,9 @@
               "basket": "NIC"
             },
             "reference_period": "2026-08",
-            "reference_comparison": "same_month_previous_year"
+            "reference_comparison": "same_month_previous_year",
+            "tobacco_treatment": "including_tobacco",
+            "official_source_table": "Prospetto 1"
           }
         },
         {
@@ -466,7 +468,9 @@
               "basket": "IPCA"
             },
             "reference_period": "2026-08",
-            "reference_comparison": "same_month_previous_year"
+            "reference_comparison": "same_month_previous_year",
+            "tobacco_treatment": "harmonized_not_specified_by_prospetto1",
+            "official_source_table": "Prospetto 1"
           }
         },
         {
@@ -488,7 +492,9 @@
               "basket": "FOI"
             },
             "reference_period": "2026-08",
-            "reference_comparison": "same_month_previous_year"
+            "reference_comparison": "same_month_previous_year",
+            "tobacco_treatment": "excluding_tobacco",
+            "official_source_table": "Prospetto 1"
           }
         },
         {
