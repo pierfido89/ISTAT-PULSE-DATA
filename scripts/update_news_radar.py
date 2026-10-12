@@ -950,6 +950,12 @@ def main():
         print("[RADAR] runtime budget reached; publishing partial verified results", flush=True)
 
     arts=sorted(by_id.values(),key=lambda x:x.get("published_at",""),reverse=True)
+    # Preserve any validated classification; annotate new/legacy articles conservatively.
+    try:
+        from scripts.pulse_taxonomy import enrich_articles
+    except ModuleNotFoundError:
+        from pulse_taxonomy import enrich_articles
+    enrich_articles(arts)
     # Safety gate: only verified articles may be publicly visible.
     public=[a for a in arts if a.get("publication_status")=="published" and a.get("editorial_status") in ("verified","verified_primary_match","journalistic_attributed")]
     idx={"generated_at":now.isoformat(),"counts":{},
