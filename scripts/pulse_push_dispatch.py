@@ -191,8 +191,11 @@ def reserve_once(db, uid, article, now):
             lock = row.get("reserved_at")
             if isinstance(lock, datetime) and now - lock.astimezone(timezone.utc) < timedelta(minutes=10):
                 return False
-        tx.set(ref, {"uid":uid, "article_id":article["id"],
-                     "status":"reserved","reserved_at":now})
+        # No plaintext device identity is stored in the delivery history:
+        # the document key is a SHA256 of uid + article, and expires in 30 days.
+        tx.set(ref, {"article_id":article["id"],
+                     "status":"reserved","reserved_at":now,
+                     "expires_at":now + timedelta(days=30)})
         return True
     return transaction_reserve(transaction)
 
