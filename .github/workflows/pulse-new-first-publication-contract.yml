@@ -1,0 +1,38 @@
+name: PULSE NEW badge first publication regression tests
+
+on:
+  push:
+    branches: [fix/pulse-new-first-published-contract-20261012]
+    paths:
+      - 'scripts/update_news_radar.py'
+      - 'tests/test_news_first_publication.py'
+      - '.github/workflows/pulse-new-first-publication-contract.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install existing Radar parser dependencies
+        run: python -m pip install --disable-pip-version-check beautifulsoup4 pypdf pdfplumber openpyxl xlrd
+      - name: Validate first publication contract without publishing or touching main
+        run: |
+          python -m unittest discover -s tests -p 'test_news_first_publication.py' -v
+          python -m py_compile scripts/update_news_radar.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          rows = json.loads(Path('data/news/articles.json').read_text())['articles']
+          assert rows, "Cannot check migration against an empty historical catalogue"
+          assert not any(x.get('first_published_at_utc') for x in rows), (
+              "Existing records already stamped: investigate before release")
+          print("Validated: historic articles will NOT become NEW automatically:", len(rows))
+          PY
