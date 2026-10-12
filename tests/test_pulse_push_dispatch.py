@@ -34,6 +34,16 @@ class PushTests(unittest.TestCase):
         self.assertFalse(eligible_recipient(a,subscription(territory={"level":"COMUNE","code":"058091"}),NOW))
         a["push_geo"]={"level":"COMUNE","code":"058091"}
         self.assertTrue(eligible_recipient(a,subscription(territory={"level":"COMUNE","code":"058091"}),NOW))
+    def test_verified_parent_codes_include_region_and_province_descendants(self):
+        a=article(push_geo={"level":"COMUNE","code":"058091",
+                             "region_code":"12","province_code":"058"})
+        self.assertTrue(eligible_recipient(a,subscription(),NOW))
+        self.assertTrue(eligible_recipient(a,subscription(
+            territory={"level":"PROVINCIA","code":"058"}),NOW))
+        self.assertFalse(eligible_recipient(a,subscription(
+            territory={"level":"PROVINCIA","code":"001"}),NOW))
+        self.assertEqual(push_data(a)["region_code"],"12")
+
     def test_national_news_are_opt_in_under_regional_filter(self):
         a=article(territories=["italia"])
         self.assertFalse(eligible_recipient(a,subscription(),NOW))
