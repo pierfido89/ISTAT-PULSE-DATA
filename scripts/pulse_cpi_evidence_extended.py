@@ -83,18 +83,26 @@ def table_rows(page_text: str, source_sha256: str, *, page_no=4) -> list[dict]:
     for lineno in range(start+1,stop):
         line=lines[lineno]
         if line.startswith("Indice generale al netto degli energetici e alimentari freschi"):
-            # ISTAT PDF: the long "Componente di fondo" label AND the
-            # numeric columns may occupy three independent extracted lines.
-            # Reconstruct only if the joined row matches the EXACT official
-            # label + weight + five numeric columns; never guess a value.
-            for width in (2, 3, 4):
-                if lineno+width > stop:
-                    break
-                candidate=" ".join(lines[lineno:lineno+width])
-                m=PATTERN.fullmatch(candidate)
-                if m and m.group("label") in LABELS:
-                    line=candidate
-                    break
+            # Actual pdfplumber order is three lines:
+            # LABEL; "825.043 <five figures>"; "(Componente di fondo)".
+            # The parentheses are placed AFTER numeric columns by the
+            # PDF text layer, not before. Require *all three* consecutive
+            # parts and rebuild exact table row without guessing values.
+            if (lineno+2 < stop and
+                    PATTERN.fullmatch(line+" "+lines[lineno+1]) and
+                    lines[lineno+2]=="(Componente di fondo)"):
+                line=line+" (Componente di fondo) "+lines[lineno+1]
+            else:
+                # Permits accessible PDFs where title and rows are joined
+                # normally; all paths still demand full, matching source row.
+                for width in (2,3,4):
+                    if lineno+width > stop:
+                        break
+                    candidate=" ".join(lines[lineno:lineno+width])
+                    m=PATTERN.fullmatch(candidate)
+                    if m and m.group("label") in LABELS:
+                        line=candidate
+                        break
         match=PATTERN.fullmatch(line)
         if not match:
             continue
