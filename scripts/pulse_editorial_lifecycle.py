@@ -307,7 +307,8 @@ def rollback(path, article_id, target_version, actor, reviewed_by, reason,
     if not confirmed:
         raise ValueError("Ripristino richiede conferma umana esplicita")
     actor = human_label(actor, "operatore")
-    reviewed_by = human_label(reviewed_by, "revisore")
+    reviewed_by = human_label(reviewed_by if reviewed_by is not None else actor,
+                            "revisore o proprietario")
     reason = reason_text(reason)
     def modify(state):
         rec = state["articles"].get(article_id)
@@ -332,7 +333,10 @@ def rollback(path, article_id, target_version, actor, reviewed_by, reason,
         return {"operation": "rollback", "article_id": article_id,
                 "revision": new_version, "previous_version": previous,
                 "restored_from_version": target_version, "actor": actor,
-                "reviewed_by": reviewed_by, "reason": reason,
+                "reviewed_by": reviewed_by,
+                "approval_mode": ("single_owner_self_review" if actor == reviewed_by
+                                  else "independent_human_review"),
+                "reason": reason,
                 "timestamp_utc": at, "content_sha256": rev["content_sha256"]}
     return _append(path, expected_generation, modify)
 
@@ -494,7 +498,7 @@ def main(argv=None):
             s.add_argument("--confirm-withdraw", action="store_true")
         if cmd == "rollback":
             s.add_argument("--target-version", type=int, required=True)
-            s.add_argument("--reviewed-by", required=True)
+            s.add_argument("--reviewed-by", help="Optional: defaults to operator (single-owner mode)")
             s.add_argument("--confirm-safe-target", action="store_true")
         if cmd == "export":
             s.add_argument("--output-dir", type=Path, required=True)
