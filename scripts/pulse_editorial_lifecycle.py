@@ -87,7 +87,8 @@ def atomic_bytes(path, data):
     path.parent.mkdir(parents=True, exist_ok=True)
     fd, name = tempfile.mkstemp(prefix=".pulse-", dir=str(path.parent))
     try:
-        os.fchmod(fd, 0o600)
+        if hasattr(os, 'fchmod'):
+            os.fchmod(fd, 0o600)
         with os.fdopen(fd, "wb") as output:
             output.write(data)
             output.flush()
@@ -347,6 +348,7 @@ def lifecycle_view(state):
             "unsafe_versions": sorted(rec["unsafe_versions"]),
             "versions": [{"version": x["version"], "sha256": x["content_sha256"],
                           "kind": x["kind"], "created_at_utc": x["created_at_utc"],
+                          "reason": x["reason"],
                           "restored_from_version": x["restored_from_version"]}
                          for x in rec["revisions"]],
         })
@@ -360,6 +362,13 @@ def _json_bytes(obj):
 
 
 def export_snapshot(ledger_path, output_dir):
+    """Export a coherent ledger generation; serialize with ledger writers."""
+    ledger_path = Path(ledger_path).resolve()
+    with file_lock(ledger_path):
+        return _export_snapshot_locked(ledger_path, output_dir)
+
+
+def _export_snapshot_locked(ledger_path, output_dir):
     """Offline only: immutable generation directory, atomic local pointer last."""
     ledger_path = Path(ledger_path).resolve()
     output_dir = Path(output_dir).resolve()
@@ -429,6 +438,22 @@ def export_snapshot(ledger_path, output_dir):
                 # Recreate a path owned by this process to atomically install
                 # this immutable local snapshot directory.
                 os.replace(work, snapshot)
+        # Fail closed even for a previously exported generation. An unchanged
+        # index alone does not prove the page bytes and tombstones still match.
+        try:
+            saved_lifecycle = (snapshot / "lifecycle.json").read_bytes()
+            if hashlib.sha256(saved_lifecycle).hexdigest() != index["lifecycle"]["sha256"]:
+                raise ValueError("Immutable lifecycle checksum mismatch")
+            for entry in archive["pages"]:
+                page_bytes = (snapshot / entry["url_path"]).read_bytes()
+                page = json.loads(page_bytes.decode("utf-8"))
+                expected_page_sha = hashlib.sha256(
+                    (json.dumps(page, ensure_ascii=False, sort_keys=True,
+                                separators=(",", ":")) + "\n").encode("utf-8")).hexdigest()
+                if expected_page_sha != entry["sha256"]:
+                    raise ValueError("Immutable page checksum mismatch")
+        except (OSError, json.JSONDecodeError, UnicodeDecodeError) as exc:
+            raise ValueError("Immutable export incomplete/corrupt") from exc
         pointer = {
             "schema_version": PUBLIC_SCHEMA,
             "generation": generation,
