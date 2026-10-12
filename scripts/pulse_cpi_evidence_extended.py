@@ -82,6 +82,7 @@ def table_rows(page_text: str, source_sha256: str, *, page_no=4) -> list[dict]:
     pool=[]
     for lineno in range(start+1,stop):
         line=lines[lineno]
+        source_row_lines=[lineno+1]
         if line.startswith("Indice generale al netto degli energetici e alimentari freschi"):
             # Actual pdfplumber order is three lines:
             # LABEL; "825.043 <five figures>"; "(Componente di fondo)".
@@ -92,6 +93,7 @@ def table_rows(page_text: str, source_sha256: str, *, page_no=4) -> list[dict]:
                     PATTERN.fullmatch(line+" "+lines[lineno+1]) and
                     lines[lineno+2]=="(Componente di fondo)"):
                 line=line+" (Componente di fondo) "+lines[lineno+1]
+                source_row_lines=[lineno+1,lineno+2,lineno+3]
             else:
                 # Permits accessible PDFs where title and rows are joined
                 # normally; all paths still demand full, matching source row.
@@ -119,6 +121,7 @@ def table_rows(page_text: str, source_sha256: str, *, page_no=4) -> list[dict]:
         pool.append({
             "raw_label":label,
             "location":f"page:{page_no}:text:line:{lineno+1}",
+            "locations":[f"page:{page_no}:text:line:{n}" for n in source_row_lines],
             "values":values,
             "weight":match.group("weight")
         })
@@ -142,7 +145,7 @@ def table_rows(page_text: str, source_sha256: str, *, page_no=4) -> list[dict]:
             "evidence_id":f"E-{PRICE_STORY_ID}-{i:02d}",
             "source_url":SOURCE_URL,
             "source_sha256":source_sha256,
-            "source_locations":[row["location"]],
+            "source_locations":row["locations"],
             "verified_structured_data":{
                 "indicator":title,
                 "indicator_code":code,
