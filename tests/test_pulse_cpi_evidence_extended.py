@@ -100,6 +100,18 @@ class ExpandedCPITests(unittest.TestCase):
         with self.assertRaises(ValueError):
             add_to_research_packet(original,supplement)
 
+    def test_real_pdf_text_order_uses_label_numbers_then_parenthesized_suffix(self):
+        actual=PDF_TABLE.replace(
+            "Indice generale al netto degli energetici e alimentari freschi\\n"
+            "(Componente di fondo) 825.043 +0,2 +0,3 +1,5 +1,6 +1,9",
+            "Indice generale al netto degli energetici e alimentari freschi\\n"
+            "825.043 +0,2 +0,3 +1,5 +1,6 +1,9\\n"
+            "(Componente di fondo)")
+        self.assertEqual(len(table_rows(actual,PINNED_SOURCE_SHA256)),10)
+        missing=actual.replace("(Componente di fondo)", "(Componente mancante)")
+        with self.assertRaises(ValueError):
+            table_rows(missing,PINNED_SOURCE_SHA256)
+
     def test_invalid_pdf_never_returns_fake_evidence(self):
         with self.assertRaises(ValueError):
             from_original_pdf(b"Not a PDF")
