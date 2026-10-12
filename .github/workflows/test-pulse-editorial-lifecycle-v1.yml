@@ -7,6 +7,9 @@ on:
       - 'scripts/pulse_editorial_lifecycle.py'
       - 'tests/test_pulse_editorial_lifecycle.py'
       - 'scripts/pulse_editorial_remote_release.py'
+      - 'scripts/pulse_editorial_owner_emergency.py'
+      - '.github/workflows/pulse-editorial-owner-emergency-withdraw.yml'
+      - '.github/workflows/pulse-editorial-controlled-remote-preview.yml'
       - 'tests/test_pulse_editorial_remote_release.py'
       - '.github/workflows/test-pulse-editorial-lifecycle-v1.yml'
   workflow_dispatch:
