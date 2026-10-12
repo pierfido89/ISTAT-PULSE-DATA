@@ -195,6 +195,31 @@ class LifecycleTests(unittest.TestCase):
             other.write_text(json.dumps(older), encoding="utf-8")
             export_snapshot(other, self.export)
 
+    def test_corrupted_snapshot_is_not_reused_and_pointer_unchanged(self):
+        register(self.ledger, approved(), ACTOR, REASON)
+        export_snapshot(self.ledger, self.export)
+        pointer_before = (self.export / "current.json").read_bytes()
+        page = (self.export / "snapshots" / "generation_0000000001" /
+                "pages" / "page_00001.json")
+        self.assertTrue(page.exists())
+        page.write_text('{"tampered":true}', encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "checksum mismatch"):
+            export_snapshot(self.ledger, self.export)
+        self.assertEqual((self.export / "current.json").read_bytes(), pointer_before)
+
+    def test_single_command_withdraw_and_local_pointer_export(self):
+        from scripts.pulse_editorial_lifecycle import main
+        register(self.ledger, approved(), ACTOR, REASON)
+        export_snapshot(self.ledger, self.export)
+        self.assertEqual(main([
+            "withdraw", "--ledger", str(self.ledger), "--output-dir", str(self.export),
+            "--id", "PULSE-TEST-001", "--actor", ACTOR, "--reason", REASON,
+            "--confirm-withdraw"]), 0)
+        pointer = json.loads((self.export / "current.json").read_text())
+        self.assertEqual(pointer["generation"], 2)
+        index = json.loads((self.export / pointer["snapshot_index_url_path"]).read_text())
+        self.assertEqual(index["archive"]["article_count"], 0)
+
     def test_export_rejects_overwrite_of_private_ledger_area(self):
         register(self.ledger, approved(), ACTOR, REASON)
         with self.assertRaises(ValueError):
