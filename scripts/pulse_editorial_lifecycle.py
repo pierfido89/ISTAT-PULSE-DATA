@@ -455,6 +455,8 @@ def main(argv=None):
             s.add_argument("--article", type=Path, required=True,
                            help="Single previously human-approved JSON article")
         if cmd in ("register", "rectify", "withdraw", "rollback"):
+            s.add_argument("--output-dir", type=Path,
+                           help="Also refresh offline snapshot pointer after this event")
             s.add_argument("--actor", required=True)
             s.add_argument("--reason", required=True)
             s.add_argument("--expected-generation", type=int)
@@ -496,6 +498,10 @@ def main(argv=None):
                           expected_generation=args.expected_generation)
     else:
         result = export_snapshot(args.ledger, args.output_dir)
+    if args.cmd in ("register", "rectify", "withdraw", "rollback") and args.output_dir:
+        # If export fails after ledger mutation, exit nonzero and alert operator.
+        # The withdrawal remains durable in the ledger; do NOT hide a stale pointer.
+        result["offline_pointer"] = export_snapshot(args.ledger, args.output_dir)
     print(json.dumps(result, ensure_ascii=False, sort_keys=True))
     return 0
 
