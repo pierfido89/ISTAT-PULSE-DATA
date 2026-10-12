@@ -154,10 +154,59 @@ def verified_github_review(pull, reviews, actor, allowed_operators, allowed_revi
             "reviewed_head_sha": head_sha, "github_pr": pull.get("number")}
 
 
+def verified_single_owner(pull, actor, *, owner="pierfido89", confirmed=False):
+    """Owner-only preview mode; never claim an independent human review.
+
+    Caller MUST pass GITHUB_ACTOR from a trusted workflow_dispatch context and
+    pull metadata obtained directly from GitHub API (not a user-supplied file).
+    """
+    if not confirmed or actor != owner:
+        raise PermissionError("Manual owner confirmation required")
+    if pull.get("user", {}).get("login") != owner:
+        raise PermissionError("Only owner-authored editorial PR permitted")
+    if pull.get("head", {}).get("repo", {}).get("full_name") != (
+            "pierfido89/ISTAT-PULSE-EDITORIAL-RESULTS"):
+        raise PermissionError("Source repository does not match private editorial ledger")
+    sha = pull.get("head", {}).get("sha")
+    if not isinstance(sha, str) or not re.fullmatch(r"[0-9a-f]{40}", sha):
+        raise PermissionError("Missing exact source commit")
+    if pull.get("state") != "open" or pull.get("draft") is True:
+        raise PermissionError("PR must be opened for owner's manual release")
+    if type(pull.get("number")) is not int or pull["number"] < 1:
+        raise PermissionError("Missing source PR number")
+    return {"operator": owner, "reviewer": owner,
+            "reviewed_head_sha": sha, "github_pr": pull["number"],
+            "approval_mode": "single_owner_manual"}
+
+
+def verified_emergency_owner(actor, article_id, reason, *, owner="pierfido89",
+                             confirmed=False):
+    """Emergency withdrawal needs only the real authenticated owner, not PR review."""
+    if not confirmed or actor != owner:
+        raise PermissionError("Unauthorised emergency withdrawal")
+    if not isinstance(article_id, str) or not NAME_RE.fullmatch(article_id):
+        raise ValueError("Invalid withdrawal article ID")
+    if not isinstance(reason, str) or not 12 <= len(reason.strip()) <= 2000:
+        raise ValueError("Emergency reason is mandatory")
+    return {"operator": owner, "reviewer": owner,
+            "reviewed_head_sha": None, "github_pr": None,
+            "approval_mode": "single_owner_emergency"}
+
+
 def stage_release(source_dir, git_checkout, authorization, *, base=REMOTE_SUBDIR):
     """Stage file changes in a local git worktree, never push/merge on its own."""
-    if set(authorization) != {"operator", "reviewer", "reviewed_head_sha", "github_pr"}:
-        raise PermissionError("Verified GitHub approval contract required")
+    allowed = {"operator", "reviewer", "reviewed_head_sha", "github_pr"}
+    extended = allowed | {"approval_mode"}
+    if set(authorization) not in (allowed, extended):
+        raise PermissionError("Authenticated GitHub authorization required")
+    mode = authorization.get("approval_mode", "independent_review")
+    if mode not in {"independent_review", "single_owner_manual",
+                    "single_owner_emergency"}:
+        raise PermissionError("Unknown owner approval policy")
+    if mode.startswith("single_owner") and (
+            authorization["operator"] != "pierfido89"
+            or authorization["reviewer"] != "pierfido89"):
+        raise PermissionError("Owner-only mode cannot impersonate another operator")
     source = inspect_package(source_dir)
     checkout = Path(git_checkout).resolve()
     if not (checkout / ".git").exists():
@@ -198,7 +247,11 @@ def stage_release(source_dir, git_checkout, authorization, *, base=REMOTE_SUBDIR
     pointer = deepcopy(source["pointer"])
     pointer["network_deployed"] = True
     pointer["authenticated_operator"] = authorization["operator"]
-    pointer["independent_github_reviewer"] = authorization["reviewer"]
+    pointer["approval_mode"] = mode
+    if mode == "independent_review":
+        pointer["independent_github_reviewer"] = authorization["reviewer"]
+    else:
+        pointer["owner_confirmed_by"] = authorization["operator"]
     pointer["reviewed_head_sha"] = authorization["reviewed_head_sha"]
     pointer["reviewed_pr_number"] = authorization["github_pr"]
     pointer["staged_at_utc"] = datetime.now(timezone.utc).isoformat()
