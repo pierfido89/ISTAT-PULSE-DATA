@@ -1,11 +1,74 @@
 {
-  "generated_at": "2026-10-11T20:09:29.340632+00:00",
+  "generated_at": "2026-10-12T04:13:35.226515+00:00",
   "articles": [
+    {
+      "id": "PULSE-6589F8C83D3432EC",
+      "story_fingerprint": "6589f8c83d3432eca2f7a675",
+      "published_at": "2026-10-12T04:13:35.226515+00:00",
+      "last_seen_at": "2026-10-12T04:13:35.226515+00:00",
+      "topic": "LAVORO",
+      "pulse_score": 90,
+      "public_source": {
+        "url": "https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2026.09.carta-dedicata-a-te-modalit-operative-per-il-2026-2027.html",
+        "domain": "inps.it",
+        "role": "primary_statistical_source",
+        "verification_method": "named_or_topic_domain_search",
+        "verification_score": 79
+      },
+      "discovery": {
+        "visible": false,
+        "role": "hidden_radar"
+      },
+      "period_reference": null,
+      "latest_source_update": null,
+      "headline": "Lavoro, nuovo dato per Lazio: 2027 ",
+      "summary": "Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+      "statistical_claims": [
+        {
+          "raw_value": "2027 ",
+          "verified": true
+        },
+        {
+          "raw_value": "20 mila",
+          "verified": true
+        },
+        {
+          "raw_value": "100",
+          "verified": true
+        },
+        {
+          "raw_value": "200 ",
+          "verified": true
+        },
+        {
+          "raw_value": "400 ",
+          "verified": false
+        }
+      ],
+      "verified_series": [],
+      "territories": [
+        "lazio"
+      ],
+      "chart_spec": {
+        "type": "auto",
+        "status": "requires_primary_series",
+        "reason": "candidate_contains_multiple_numeric_values"
+      },
+      "map_spec": {
+        "level": "auto",
+        "territories": [
+          "lazio"
+        ],
+        "status": "requires_primary_geodata"
+      },
+      "editorial_status": "verified_primary_match",
+      "publication_status": "published"
+    },
     {
       "id": "PULSE-0F6C2DD430FC033E",
       "story_fingerprint": "0f6c2dd430fc033ec60be9df",
       "published_at": "2026-10-11T18:09:19+00:00",
-      "last_seen_at": "2026-10-11T20:09:29.340632+00:00",
+      "last_seen_at": "2026-10-12T04:13:35.226515+00:00",
       "topic": "ALTRO",
       "pulse_score": 54,
       "patterns": [],
@@ -83,7 +146,7 @@
       "id": "PULSE-D338B59F93614799",
       "story_fingerprint": "d338b59f936147997584e3c3",
       "published_at": "2026-10-11T09:11:15.704643+00:00",
-      "last_seen_at": "2026-10-11T09:11:15.704643+00:00",
+      "last_seen_at": "2026-10-12T04:13:35.226515+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 75,
       "public_source": {
@@ -142,7 +205,7 @@
       "id": "PULSE-C52756A5B41EA28B",
       "story_fingerprint": "c52756a5b41ea28bde903bbc",
       "published_at": "2026-10-11T09:11:15.704643+00:00",
-      "last_seen_at": "2026-10-11T09:11:15.704643+00:00",
+      "last_seen_at": "2026-10-12T04:13:35.226515+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 84,
       "public_source": {
@@ -248,7 +311,7 @@
       "id": "PULSE-01865C03BDC6C04F",
       "story_fingerprint": "01865c03bdc6c04fc4d8cf5f",
       "published_at": "2026-10-10T22:30:16+00:00",
-      "last_seen_at": "2026-10-11T20:09:29.340632+00:00",
+      "last_seen_at": "2026-10-12T04:13:35.226515+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 54,
       "patterns": [],
@@ -487,7 +550,7 @@
       "id": "PULSE-F6A0C16B1B412DDD",
       "story_fingerprint": "f6a0c16b1b412dddf8e4ebe8",
       "published_at": "2026-10-09T21:44:20+00:00",
-      "last_seen_at": "2026-10-11T20:09:29.340632+00:00",
+      "last_seen_at": "2026-10-12T04:13:35.226515+00:00",
       "topic": "ALTRO",
       "pulse_score": 47,
       "patterns": [],
@@ -520,7 +583,7 @@
       "id": "PULSE-A906182DEEF86950",
       "story_fingerprint": "a906182deef86950a8d9e139",
       "published_at": "2026-10-09T20:54:03+00:00",
-      "last_seen_at": "2026-10-11T20:09:29.340632+00:00",
+      "last_seen_at": "2026-10-12T04:13:35.226515+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 49,
       "patterns": [],
@@ -559,7 +622,7 @@
       "id": "PULSE-B182FF9FDFA394B0",
       "story_fingerprint": "b182ff9fdfa394b0f1fbf95e",
       "published_at": "2026-10-09T19:13:32+00:00",
-      "last_seen_at": "2026-10-11T04:11:27.539826+00:00",
+      "last_seen_at": "2026-10-12T04:13:35.226515+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 45,
       "patterns": [],
@@ -606,7 +669,7 @@
       "id": "PULSE-432037A7AA2FBA88",
       "story_fingerprint": "432037a7aa2fba88035c0cf3",
       "published_at": "2026-10-09T19:12:34+00:00",
-      "last_seen_at": "2026-10-11T20:09:29.340632+00:00",
+      "last_seen_at": "2026-10-12T04:13:35.226515+00:00",
       "topic": "ALTRO",
       "pulse_score": 49,
       "patterns": [],
@@ -741,7 +804,7 @@
       "id": "PULSE-7DD7B8E2BE256506",
       "story_fingerprint": "7dd7b8e2be256506049325cd",
       "published_at": "2026-10-09T11:10:37+00:00",
-      "last_seen_at": "2026-10-11T20:09:29.340632+00:00",
+      "last_seen_at": "2026-10-12T04:13:35.226515+00:00",
       "topic": "LAVORO",
       "pulse_score": 47,
       "patterns": [],
@@ -807,7 +870,7 @@
       "id": "PULSE-98228A3E851FCA4D",
       "story_fingerprint": "98228a3e851fca4d9244c71d",
       "published_at": "2026-10-09T09:08:00+00:00",
-      "last_seen_at": "2026-10-11T20:09:29.340632+00:00",
+      "last_seen_at": "2026-10-12T04:13:35.226515+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 64,
       "patterns": [],
@@ -885,7 +948,7 @@
       "id": "PULSE-6432FBBFD9EE664D",
       "story_fingerprint": "6432fbbfd9ee664d1c3a665d",
       "published_at": "2026-10-09T08:58:49+00:00",
-      "last_seen_at": "2026-10-11T20:09:29.340632+00:00",
+      "last_seen_at": "2026-10-12T04:13:35.226515+00:00",
       "topic": "MOBILITA",
       "pulse_score": 84,
       "public_source": {
@@ -991,7 +1054,7 @@
       "id": "PULSE-C545089630B8EEA5",
       "story_fingerprint": "c545089630b8eea51e9bdc3b",
       "published_at": "2026-10-09T08:00:00+00:00",
-      "last_seen_at": "2026-10-11T20:09:29.340632+00:00",
+      "last_seen_at": "2026-10-12T04:13:35.226515+00:00",
       "topic": "LAVORO",
       "pulse_score": 84,
       "public_source": {
@@ -1085,7 +1148,7 @@
       "id": "PULSE-3594B7F247349439",
       "story_fingerprint": "3594b7f24734943976b338b7",
       "published_at": "2026-10-09T07:42:00+00:00",
-      "last_seen_at": "2026-10-11T20:09:29.340632+00:00",
+      "last_seen_at": "2026-10-12T04:13:35.226515+00:00",
       "topic": "ALTRO",
       "pulse_score": 49,
       "patterns": [],
