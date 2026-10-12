@@ -16,7 +16,7 @@ Un **ritiro d'emergenza** porta l'articolo a WITHDRAWN, crea una tombstone pubbl
 
 Una **rettifica** crea una nuova versione senza sovrascrivere la precedente, registra la motivazione e richiede una nuova scheda già approvata da un revisore umano. Se il testo precedente contiene dati scorretti, l'opzione --invalidate-previous lo marca non sicuro e impedisce un successivo ripristino di quella versione.
 
-Un **rollback** richiede target di versione esistente, nuova conferma operativa, un revisore umano identificato e motivazione. Non sposta indietro il contatore delle versioni: crea invece una **nuova versione** che copia i contenuti della vecchia versione sicura, salvando restored_from_version. Non consente mai il recupero di una versione esplicitamente marcata come unsafe.
+Un **rollback** richiede target di versione esistente, nuova conferma operativa, un operatore umano identificato e motivazione. Non sposta indietro il contatore delle versioni: crea invece una **nuova versione** che copia i contenuti della vecchia versione sicura, salvando restored_from_version. Non consente mai il recupero di una versione esplicitamente marcata come unsafe.
 
 ## 2. Esportazione e contratto dati per il lettore
 
@@ -58,7 +58,7 @@ Le seguenti righe sono **esempi di CLI**, non una pubblicazione. Usare una direc
 
 ### Ripristinare una versione SICURA con nuova revisione
 
-    python -m scripts.pulse_editorial_lifecycle rollback --ledger /tmp/pulse-secure/ledger.json --id PULSE-TEST-001 --target-version 1 --actor "Responsabile editoriale" --reviewed-by "Revisore indipendente" --reason "Ripristino verificato della versione originale, fonte riconfermata" --confirm-safe-target --output-dir /tmp/pulse-export
+    python -m scripts.pulse_editorial_lifecycle rollback --ledger /tmp/pulse-secure/ledger.json --id PULSE-TEST-001 --target-version 1 --actor "Responsabile editoriale" --reviewed-by "Responsabile editoriale" --reason "Ripristino verificato della versione originale, fonte riconfermata" --confirm-safe-target --output-dir /tmp/pulse-export
 
 ### Controllare integrità della cronologia
 
@@ -69,7 +69,7 @@ Le operazioni non inviano richieste a GitHub, CDN, app, OpenAI o Firebase. Un er
 ## 4. Sicurezza e limiti espliciti
 
 - **Test di sicurezza**: rifiuto di bozze non autorizzate, hash degli eventi, individuazione manomissioni accidentali, lock di scrittura, controllo generation, ritiro in archivio vuoto, blocco rollback unsafe, paginazione oltre 40 articoli, importo e provenienza dei dati preapprovati.
-- **Autenticazione ancora assente**: actor e reviewed_by sono etichette audit, **non** identità crittograficamente provate. Prima del rilascio remoto servono ruoli server-side e autenticazione forte, idealmente approvazione a due persone per restore.
+- **Autenticazione ancora assente**: actor e reviewed_by sono etichette audit, **non** identità crittograficamente provate. Prima del rilascio remoto servono ruoli server-side e autenticazione forte, per la fase sperimentale, un solo proprietario autenticato GitHub e audit esplicito 'single_owner_self_review'; una seconda revisione umana potrà essere introdotta nella fase istituzionale.
 - **Non è una prova antimanomissione assoluta**: chi può riscrivere l'intero ledger può ricalcolare la catena hash. Per garanzia forte occorre ancorare hash e eventi su una piattaforma append-only protetta o con firma digitale.
 - **Non è rollback remoto immediato**: il prototipo aggiorna un puntatore locale in modo atomico. Distribuzione CDN, invalidazione delle cache, osservabilità, failover e versione Android compatibile non sono ancora integrate.
 - **Offline non garantibile**: un dispositivo scollegato non può essere aggiornato nell'istante di ritiro. Le versioni PULSE che adotteranno questo contratto dovranno progettare una politica fail-closed per contenuti non riconvalidati.
@@ -82,3 +82,30 @@ Test automatici: tests/test_pulse_editorial_lifecycle.py, integrati ai test orig
 Per dichiarare **definitivamente risolto il problema 12 in produzione** mancano: API di esercizio autenticata, persistenza remota transazionale e append-only, integrazione del puntatore nel feed reale, aggiornamento della app Android per lifecycle e cache, verifica della latenza di revoca end-to-end online/offline, e runbook di emergenza con monitoraggio ed esercitazioni. Eseguire test su più di un dispositivo e un rollback reale non distruttivo in staging.
 
 **Conclusione:** realizzato e testato il motore indipendente del ciclo di vita. Il sistema LIVE non è ancora stato attivato e non viene dichiarato protetto finché backend remoto e client non sono connessi.
+
+
+## 6. DECISIONE DEL PROGETTISTA — OPERATORE UNICO (12 ottobre 2026)
+
+La decisione vigente è utilizzare **esclusivamente l'account GitHub autenticato pierfido89** come responsabile, senza richiedere un secondo account nel prototipo. Questo **sostituisce** le istruzioni che prevedevano una review indipendente obbligatoria per il rilascio sperimentale.
+
+- **Rettifiche e rilascio ordinario in PREVIEW:** PR privata non in bozza con commit esatto; avvio manuale owner-only; digitazione della conferma PUBBLICA-ANTEPRIMA; l'identità deriva da GitHub Actions github.actor e dall'autore della PR, non da un campo JSON.
+- **Ritiro d'emergenza PREVIEW:** workflow manuale owner-only; ID articolo, motivazione pubblica (almeno 12 caratteri) e conferma RITIRA-ARTICOLO. **Nessuna attesa di revisore**: il ledger privato riceve l'evento di ritiro, viene generata una tombstone e il nuovo snapshot viene inviato al ramo di prova.
+- **Rollback:** occorre il controllo versione precedente sicura, motivazione e conferma. Nel registro l'evento indica single_owner_self_review se operatore e revisore sono la stessa persona; mai dichiarare una revisione indipendente inesistente.
+- **Persistenza dell'incidente:** il workflow di emergenza scrive **prima** il ledger privato e **poi** la versione remota. Se il secondo push fallisce, un successivo avvio del comando riprende senza alterare lo stato già ritirato. Non dichiarare completata la propagazione prima della verifica remota.
+- **Sicurezza:** le vecchie versioni unsafe non possono essere ripubblicate con rollback; ogni evento resta nella catena hash. Solo gli articoli redatti da PULSE con editorial_lifecycle_managed=true sono sottoposti alle regole Android.
+- **Distinzione di modalità:** independent_review resta disponibile nel codice come possibile upgrade futuro, ma il percorso operativo desiderato attualmente è single_owner_manual / single_owner_emergency.
+
+### Codice dei due comandi GitHub
+
+- .github/workflows/pulse-editorial-controlled-remote-preview.yml — rilascio ordinario solo da main, account pierfido89, secret PULSE_PRIVATE_READ_TOKEN con **sola lettura** repository privato.
+- .github/workflows/pulse-editorial-owner-emergency-withdraw.yml — ritiro d'emergenza solo da main, account pierfido89, secret PULSE_PRIVATE_WRITE_TOKEN con permesso Contents Read/Write **solo** sul repository EDITORIAL-RESULTS.
+- In entrambi i casi è necessario consentire al github.token del repository DATA la scrittura **solo** sul ramo di anteprima; il ramo main e i repository Android non sono destinazioni del deploy.
+- Ambiente GitHub: pulse-editorial-preview. Nel modello ad amministratore unico **non** è prevista la configurazione di un altro utente come revisore obbligatorio. Mantenere protetto l'accesso all'account con passkey/2FA e verificare le autorizzazioni dei token.
+
+**Queste configurazioni non sono state create automaticamente**. I workflow sono in un ramo di sviluppo e diventeranno accessibili tramite Actions dopo l'integrazione autorizzata nel ramo default del repository DATA. Non usarli sul ramo principale senza prima verificare le protezioni e il comportamento sul ramo di prova.
+
+### Differenza fra completamento tecnico e servizio realmente attivo
+
+Tutte le procedure backend e i controlli Android interessati sono realizzati e collaudati a livello unitario. Non è ancora attestato un ritiro effettivo verificato su dispositivo installato dopo un push remoto: mancano le credenziali owner, il rollout controllato e le prove di latenza/cache GitHub Raw. La release v4.3.6 e i file di notizie attuali non sono stati modificati. Non si promettono rollback istantanei su telefoni offline o copie PDF già condivise.
+
+**Regola vincolante: un errore si corregge, ma la storia delle correzioni non si cancella mai.**
