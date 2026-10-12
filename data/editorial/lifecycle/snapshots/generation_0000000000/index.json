@@ -1,0 +1,24 @@
+{
+  "archive": {
+    "article_count": 0,
+    "auto_publish_enabled": false,
+    "page_count": 0,
+    "page_size": 25,
+    "pages": [],
+    "publication_allowed_by_this_script": false,
+    "schema_version": "pulse-editorial-archive-v2"
+  },
+  "consumer_contract": {
+    "must_revalidate_pointer_online": true,
+    "never_display_cached_data_before_lifecycle_check": true,
+    "on_rectification": "replace cached version by higher revision",
+    "on_withdrawn": "remove cached full body, show withdrawn tombstone"
+  },
+  "generation": 0,
+  "lifecycle": {
+    "sha256": "e70853362a817a61a0d7a017caf4d3c50f53f2fe1fa59a3dcbb8ded58ac96103",
+    "url_path": "lifecycle.json"
+  },
+  "published_to_network": false,
+  "schema_version": "pulse-editorial-lifecycle-export-v1"
+}
