@@ -1,0 +1,29 @@
+name: PULSE lifecycle v1 — versioning, correction, withdrawal and rollback
+on:
+  push:
+    branches:
+      - feat/pulse-editorial-revisions-withdraw-rollback-20261012
+    paths:
+      - 'scripts/pulse_editorial_lifecycle.py'
+      - 'tests/test_pulse_editorial_lifecycle.py'
+      - '.github/workflows/test-pulse-editorial-lifecycle-v1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-lifecycle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Lifecycle tests - offline, no network required
+        run: python -m unittest tests.test_pulse_editorial_lifecycle -v
+      - name: Archive v2 compatibility regressions
+        run: python -m unittest tests.test_pulse_editorial_archive_v2 tests.test_pulse_editorial_publication_gate -v
+      - name: No publication, no APK, no API billing
+        run: echo "OFFLINE TEST ONLY. No live publication or public feed changed."
