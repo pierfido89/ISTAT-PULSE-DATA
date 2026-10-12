@@ -125,5 +125,68 @@ class DeliveryTests(unittest.TestCase):
             stage_release(self.exports, self.checkout, self.auth())
 
 
+    def test_owner_only_release_with_real_source_pr_and_manual_confirmation(self):
+        from scripts.pulse_editorial_remote_release import verified_single_owner
+        pull = dict(PR, user={"login": "pierfido89"},
+                    head={"sha": SHA, "repo": {"full_name":
+                          "pierfido89/ISTAT-PULSE-EDITORIAL-RESULTS"}})
+        with self.assertRaises(PermissionError):
+            verified_single_owner(pull, "pierfido89", confirmed=False)
+        with self.assertRaises(PermissionError):
+            verified_single_owner(pull, "unauthorized-user", confirmed=True)
+        bad = copy.deepcopy(pull)
+        bad["user"]["login"] = "unauthorized-user"
+        with self.assertRaises(PermissionError):
+            verified_single_owner(bad, "pierfido89", confirmed=True)
+        bad = copy.deepcopy(pull)
+        bad["draft"] = True
+        with self.assertRaises(PermissionError):
+            verified_single_owner(bad, "pierfido89", confirmed=True)
+        good = verified_single_owner(pull, "pierfido89", confirmed=True)
+        self.assertEqual(good["approval_mode"], "single_owner_manual")
+        register(self.ledger, approved(), ACTOR, REASON)
+        export_snapshot(self.ledger, self.exports)
+        stage_release(self.exports, self.checkout, good)
+        ptr = json.loads((self.checkout / REMOTE_SUBDIR / "current.json").read_text())
+        self.assertEqual(ptr["approval_mode"], "single_owner_manual")
+        self.assertEqual(ptr["owner_confirmed_by"], "pierfido89")
+        self.assertNotIn("independent_github_reviewer", ptr)
+
+    def test_emergency_no_second_reviewer_and_idempotent_recovery(self):
+        from scripts.pulse_editorial_owner_emergency import prepare_emergency
+        from scripts.pulse_editorial_remote_release import verified_emergency_owner
+        with self.assertRaises(PermissionError):
+            verified_emergency_owner("someone-else", "PULSE-TEST-001", REASON,
+                                     confirmed=True)
+        with self.assertRaises(PermissionError):
+            verified_emergency_owner("pierfido89", "PULSE-TEST-001", REASON,
+                                     confirmed=False)
+        register(self.ledger, approved(), ACTOR, REASON)
+        result = prepare_emergency(self.ledger, self.exports, self.checkout,
+                                   "PULSE-TEST-001", REASON, "pierfido89",
+                                   confirmed=True)
+        self.assertTrue(result["new_withdrawal"])
+        self.assertEqual(result["public_active_count"], 0)
+        self.assertEqual(result["public_withdrawn_count"], 1)
+        remote = self.checkout / REMOTE_SUBDIR
+        ptr = json.loads((remote / "current.json").read_text())
+        self.assertEqual(ptr["approval_mode"], "single_owner_emergency")
+        self.assertNotIn("independent_github_reviewer", ptr)
+        self.assertEqual(inspect_package(remote)["withdrawn"], 1)
+        retry = prepare_emergency(self.ledger, self.root / "retry-export",
+                                  self.checkout, "PULSE-TEST-001", REASON,
+                                  "pierfido89", confirmed=True)
+        self.assertFalse(retry["new_withdrawal"])
+        self.assertEqual(retry["generation"], result["generation"])
+
+    def test_emergency_rejects_unknown_article_without_exposing_new_content(self):
+        from scripts.pulse_editorial_owner_emergency import prepare_emergency
+        with self.assertRaises(ValueError):
+            prepare_emergency(self.ledger, self.exports, self.checkout,
+                              "PULSE-UNKNOWN-999", REASON, "pierfido89",
+                              confirmed=True)
+        self.assertFalse((self.checkout / REMOTE_SUBDIR / "current.json").exists())
+
+
 if __name__ == "__main__":
     unittest.main()
