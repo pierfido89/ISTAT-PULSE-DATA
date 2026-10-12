@@ -1,0 +1,27 @@
+name: PULSE FCM push privacy, territory and idempotency tests
+on:
+  push:
+    branches: [feat/pulse-real-push-fcm-20261012]
+    paths:
+      - 'scripts/pulse_push_dispatch.py'
+      - 'tests/test_pulse_push_dispatch.py'
+      - 'firebase/firestore.rules'
+      - '.github/workflows/pulse-push-security-tests.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  local-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate push matcher, consent and geographies, without credentials
+        run: python -m unittest tests.test_pulse_push_dispatch -v
+      - name: Verify code has no parsing errors
+        run: python -m py_compile scripts/pulse_push_dispatch.py
+      - name: No live service, no push and no spending
+        run: echo "Offline matcher tests only; no FCM messages, API credentials or billing."
