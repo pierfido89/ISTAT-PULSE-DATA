@@ -6,6 +6,8 @@ on:
     paths:
       - 'scripts/pulse_editorial_lifecycle.py'
       - 'tests/test_pulse_editorial_lifecycle.py'
+      - 'scripts/pulse_editorial_remote_release.py'
+      - 'tests/test_pulse_editorial_remote_release.py'
       - '.github/workflows/test-pulse-editorial-lifecycle-v1.yml'
   workflow_dispatch:
 
@@ -23,6 +25,8 @@ jobs:
           python-version: '3.12'
       - name: Lifecycle tests - offline, no network required
         run: python -m unittest tests.test_pulse_editorial_lifecycle -v
+      - name: Authenticated remote-delivery dry-run regressions
+        run: python -m unittest tests.test_pulse_editorial_remote_release -v
       - name: Archive v2 compatibility regressions
         run: python -m unittest tests.test_pulse_editorial_archive_v2 tests.test_pulse_editorial_publication_gate -v
       - name: No publication, no APK, no API billing
