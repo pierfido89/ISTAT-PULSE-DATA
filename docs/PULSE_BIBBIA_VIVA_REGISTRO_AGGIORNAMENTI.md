@@ -60,3 +60,17 @@ Regola editoriale permanente: **Un errore si corregge, ma la storia delle correz
 - **Stato:** implementato e testato sui rami dedicati; non ancora distribuito alla release stabile installata. L'avvio produttivo segue la fase di integrazione controllata.
 - **Codice in revisione:** PR DATA [#15](https://github.com/pierfido89/ISTAT-PULSE-DATA/pull/15); PR Android [#37](https://github.com/pierfido89/ISTAT-PULSE/pull/37), entrambe in bozza e non integrate nel ramo principale.
 - **Specifiche approfondite:** `docs/PULSE_PROBLEMA_11_NEW_BADGE_180_MINUTI.md`.
+
+## 12 ottobre 2026 — Problema 10: vere push Firebase Cloud Messaging
+
+- **Difetto:** WorkManager ogni 2 ore: polling lato telefono, non push.
+- **Risoluzione:** backend FCM HTTP v1 avviato dal workflow di aggiornamento Radar, client Android FirebaseMessagingService data-only e disattivazione del polling legacy.
+- **Utenti e consenso:** OFF di default, nessuna migrazione automatica del consenso vecchio, Firebase Auth anonima, permesso POST_NOTIFICATIONS quando necessario, revoca locale immediata e richiesta cancellazione token/Firestore.
+- **Filtri:** topic, PULSE Score minimo, ITALIA/REGIONE/PROVINCIA/COMUNE con codici ISTAT e scelta esplicita delle news nazionali; non interpretare titoli liberi come coordinate geografiche. Precisione provinciale/comunale limitata a feed con metadati codice.
+- **Dedup:** ricevuta backend hash(uid,id) con lease Firestore, più idempotenza sul telefono. Firestore TTL expires_at 30 giorni da abilitare manualmente.
+- **Privacy:** Firestore rules per UID, niente GPS e niente chiavi amministrative in app; informativa e verifica GDPR prima del rilascio pubblico.
+- **Particolarità GitHub risolta:** il GITHUB_TOKEN con cui il Radar aggiorna main non lancia un altro workflow su push; FCM è invocato direttamente nello stesso refresh-news-radar.yml dopo il push.
+- **Prove tecniche:** 15 test backend e 10 Android; compilazione Kotlin verde; link CI DATA https://github.com/pierfido89/ISTAT-PULSE-DATA/actions/runs/38233999953 e Android https://github.com/pierfido89/ISTAT-PULSE/actions/runs/38233957161 . Zero APK, zero messaggi veri, zero servizi a pagamento attivati.
+- **Bibbia master:** PULSE_Bibbia_Tecnica_v4.3.6_Problemi_12_11_10_PUSH_FCM_2026-10-12.pdf; 142 pagine. 135 pagine precedenti preservate e Allegato Y di 7 pagine; compatibile con gli Allegati W e X.
+- **Limite esterno dichiarato:** il progetto Firebase e le credenziali proprietario non esistono nel repo; senza configurazione FCM non può inviare. Per dichiarare il problema CHIUSO OPERATIVO serve prova su telefono dopo collegamento Firebase. Le quattro finestre giornaliere di raccolta Radar restano in vigore.
+- **Dettaglio:** docs/PULSE_PROBLEMA_10_PUSH_FCM_E_PRIVACY.md.
