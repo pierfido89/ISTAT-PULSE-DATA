@@ -1,0 +1,48 @@
+name: PULSE — real FCM push on new news publication
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/news/articles.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pulse-fcm-delivery
+  cancel-in-progress: false
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    environment: pulse-fcm-delivery
+    env:
+      PULSE_FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.PULSE_FIREBASE_SERVICE_ACCOUNT_JSON }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Require authorized server identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$PULSE_FIREBASE_SERVICE_ACCOUNT_JSON"
+          # Service account JSON must never be printed or written into git
+          printf '%s' "$PULSE_FIREBASE_SERVICE_ACCOUNT_JSON" > /tmp/pulse-fcm-service-account.json
+          chmod 600 /tmp/pulse-fcm-service-account.json
+          echo "GOOGLE_APPLICATION_CREDENTIALS=/tmp/pulse-fcm-service-account.json" >> "$GITHUB_ENV"
+      - name: Install official Firebase Admin SDK
+        run: python -m pip install --disable-pip-version-check firebase-admin==7.1.0
+      - name: Dispatch filtered push and persist recipient dedup
+        run: python -m scripts.pulse_push_dispatch --feed data/news/articles.json --max-sends 500
+      - name: Cleanup server-only key file
+        if: always()
+        run: rm -f /tmp/pulse-fcm-service-account.json
+
+  # No scheduled polling on devices; notifications are sent when a fresh feed
+  # is committed on main. Runtime may be delayed by upstream ingestion/Actions.
