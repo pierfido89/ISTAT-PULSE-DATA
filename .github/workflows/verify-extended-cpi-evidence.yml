@@ -1,0 +1,67 @@
+name: PULSE — original ISTAT CPI evidence & strict claim expansion
+
+on:
+  push:
+    branches: [feat/pulse-editorial-ai-1.0]
+    paths:
+      - 'scripts/pulse_cpi_evidence_extended.py'
+      - 'tests/test_pulse_cpi_evidence_extended.py'
+      - '.github/workflows/verify-extended-cpi-evidence.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pulse-extended-cpi-evidence
+  cancel-in-progress: false
+
+jobs:
+  independently-verify-original-pdf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/pulse-editorial-ai-1.0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install offline PDF parsing dependency
+        run: python -m pip install --disable-pip-version-check pdfplumber
+      - name: Strict unit tests, false data MUST be rejected
+        run: python -m unittest discover -s tests -p 'test_pulse_cpi_evidence_extended.py' -v
+      - name: Download original official ISTAT PDF and verify 10 distinct source rows
+        run: |
+          python -m scripts.pulse_cpi_evidence_extended \
+            --input-packet data/research/chatgpt_evidence_packet.json \
+            --output /tmp/pulse-cpi-aug2026-additional-facts.json \
+            --merged-output /tmp/pulse-cpi-aug2026-research-packet.json
+          python - <<'PY'
+          import json
+          supplement=json.load(open('/tmp/pulse-cpi-aug2026-additional-facts.json'))
+          merged=json.load(open('/tmp/pulse-cpi-aug2026-research-packet.json'))
+          assert supplement["numeric_fact_count"]==10
+          assert len(merged["stories"])==16
+          prices=[s for s in merged["stories"] if s["domain"]=="prices"]
+          assert len(prices)==1 and len(prices[0]["facts"])==13
+          assert all(f["source_sha256"]==supplement["source_sha256"] for f in prices[0]["facts"])
+          assert merged["publication_allowed"] is False
+          print("REAL OFFICIAL PDF VERIFIED; 10 additional facts, 3 original, no publication")
+          PY
+      - name: Save source-provenance facts to experimental DATA branch only
+        run: |
+          set -euo pipefail
+          cp /tmp/pulse-cpi-aug2026-additional-facts.json data/research/cpi_aug2026_extended_evidence.json
+          cp /tmp/pulse-cpi-aug2026-research-packet.json data/research/chatgpt_evidence_packet_cpi_v2.json
+          git add data/research/cpi_aug2026_extended_evidence.json data/research/chatgpt_evidence_packet_cpi_v2.json
+          if git diff --cached --quiet; then
+            echo "Already verified; no change"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "research: store verified CPI energy/core/goods/FOI evidence, source pinned"
+            git push origin HEAD:feat/pulse-editorial-ai-1.0
+          fi
+      - name: Strict prohibition of any publication or APK
+        run: 'echo "Evidence only; no article promotion, no release, no Android build."'
