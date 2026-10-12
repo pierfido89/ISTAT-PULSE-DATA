@@ -76,3 +76,13 @@ Regola editoriale permanente: **Un errore si corregge, ma la storia delle correz
 - **Dettaglio:** docs/PULSE_PROBLEMA_10_PUSH_FCM_E_PRIVACY.md.
 
 - **Pull request problema 10:** DATA https://github.com/pierfido89/ISTAT-PULSE-DATA/pull/16 e Android https://github.com/pierfido89/ISTAT-PULSE/pull/38, in bozza verso i rami che già contengono i problemi 11 e 12. I 135 fogli originali e aggiornamenti precedenti della Bibbia master rimangono preservati nel PDF 142 pagine.
+
+## 12 ottobre 2026 — Addendum AA: Notizie in tre sottoschede e sticky PULSE compatto
+
+- **Decisione:** eliminata la sottoscheda Home duplicata. NOTIZIE presenta solo Oggi / Ieri / Archivio. L'eventuale stato salvato Home viene ricondotto a Oggi.
+- **Oggi:** PULSE LIVE, quattro evidenze esclusive selezionate da pulseSelectTodayHighlights, elenco delle ulteriori notizie con esclusione degli ID gia' in evidenza (nessuna card ripetuta).
+- **Ieri:** PULSE LIVE riferito alla giornata precedente e rispettivo elenco; **Archivio** isolato dalla giornata attiva.
+- **Sticky per ogni scheda:** componente condiviso PulseStickyByline per BY e logo PULSE; originale approvato invariato, generazione della sola derivazione senza margini trasparenti, spaziatura 1 dp.
+- **Collaudi:** nuovi unit test sulla scelta delle quattro evidenze e feed corti, aggiornati test Android di navigazione e UI di condivisione, QA di build per marchio e rimozione Home. La verifica strumentale su emulatore va valutata separatamente.
+- **Branch:** https://github.com/pierfido89/ISTAT-PULSE/tree/fix/pulse-p9-ui-regression-full-qa-20261012 ; PR https://github.com/pierfido89/ISTAT-PULSE/pull/39 . Main invariato e nessuna nuova APK richiesta.
+- **Master PDF Bibbia:** PULSE_Bibbia_Tecnica_v4.3.6_Aggiornamento_Notizie_Sticky_2026-10-12.pdf, 148 pagine: tutte le 146 precedenti preservate e due nuove pagine di Allegato AA, che prevale sull'assetto Home/Oggi del precedente Allegato Z.
