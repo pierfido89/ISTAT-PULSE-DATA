@@ -164,7 +164,9 @@
       "source_url": "https://www.istat.it/wp-content/uploads/2026/09/CS_Prezzi-al-consumo_Def_Agosto2026.pdf",
       "source_sha256": "d3647dade0220cfe1525be8e69166d691b4b89c5c48303ff6624fd7d76bd7024",
       "source_locations": [
-        "page:4:text:line:44"
+        "page:4:text:line:44",
+        "page:4:text:line:45",
+        "page:4:text:line:46"
       ],
       "verified_structured_data": {
         "indicator": "Inflazione di fondo (senza energia e alimentari freschi)",
