@@ -1,0 +1,110 @@
+name: PULSE OWNER - emergency withdraw editorial article (preview)
+on:
+  workflow_dispatch:
+    inputs:
+      article_id:
+        description: "Exact PULSE article ID to withdraw"
+        required: true
+        type: string
+      reason:
+        description: "Public reason, minimum 12 characters"
+        required: true
+        type: string
+      confirm:
+        description: "Type RITIRA-ARTICOLO"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pulse-editorial-preview-release
+  cancel-in-progress: false
+
+jobs:
+  withdraw:
+    if: github.ref == 'refs/heads/main' && github.actor == 'pierfido89'
+    runs-on: ubuntu-latest
+    environment: pulse-editorial-preview
+    timeout-minutes: 12
+    steps:
+      - name: Confirm authenticated owner and emergency operation
+        env:
+          USER_ARTICLE_ID: ${{ inputs.article_id }}
+          USER_REASON: ${{ inputs.reason }}
+          USER_CONFIRM: ${{ inputs.confirm }}
+          PRIVATE_TOKEN: ${{ secrets.PULSE_PRIVATE_WRITE_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_ACTOR" = "pierfido89"
+          test "$USER_CONFIRM" = "RITIRA-ARTICOLO"
+          [[ "$USER_ARTICLE_ID" =~ ^[A-Z0-9][A-Z0-9-]{4,70}$ ]]
+          test "$${{#noop}}" != "ignored" 2>/dev/null || true
+          test ${#USER_REASON} -ge 12
+          test -n "$PRIVATE_TOKEN"
+
+      - uses: actions/checkout@v4
+        with:
+          path: data
+          persist-credentials: false
+
+      - uses: actions/checkout@v4
+        with:
+          repository: pierfido89/ISTAT-PULSE-EDITORIAL-RESULTS
+          ref: main
+          token: ${{ secrets.PULSE_PRIVATE_WRITE_TOKEN }}
+          path: private-ledger
+          persist-credentials: true
+
+      - uses: actions/checkout@v4
+        with:
+          repository: pierfido89/ISTAT-PULSE-DATA
+          ref: pulse-editorial-lifecycle-preview
+          path: remote-preview
+          token: ${{ github.token }}
+          persist-credentials: true
+
+      - name: Record withdrawal and prepare new immutable preview snapshot
+        env:
+          ARTICLE_ID: ${{ inputs.article_id }}
+          REASON: ${{ inputs.reason }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s private-ledger/state/editorial_lifecycle_ledger.json
+          PYTHONPATH="$GITHUB_WORKSPACE/data" python -m scripts.pulse_editorial_owner_emergency \
+            --ledger private-ledger/state/editorial_lifecycle_ledger.json \
+            --output-dir /tmp/pulse-emergency-export \
+            --remote-checkout "$GITHUB_WORKSPACE/remote-preview" \
+            --article-id "$ARTICLE_ID" --reason "$REASON" \
+            --actor "$GITHUB_ACTOR" --confirm-emergency
+
+      - name: Preserve authoritative immutable history in PRIVATE repository first
+        shell: bash
+        working-directory: private-ledger
+        run: |
+          set -euo pipefail
+          git config user.name "PULSE owner emergency audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state/editorial_lifecycle_ledger.json
+          if ! git diff --cached --quiet; then
+            git commit -m "PULSE emergency withdrawal - hash chained private ledger"
+            git push origin HEAD:main
+          fi
+
+      - name: Publish tombstone and revised archive to preview in one Git commit
+        shell: bash
+        working-directory: remote-preview
+        run: |
+          set -euo pipefail
+          git config user.name "PULSE owner emergency audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/editorial/lifecycle
+          if ! git diff --cached --quiet; then
+            git commit -m "PULSE emergency withdrawal - immutable preview lifecycle"
+            git push origin HEAD:pulse-editorial-lifecycle-preview
+          fi
+          echo "The preview pointer was updated. No APK or main data feed was changed."
+          echo "Re-run this workflow to retry remote publication if the private commit succeeded but the preview push failed."
