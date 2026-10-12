@@ -192,7 +192,7 @@ class LifecycleTests(unittest.TestCase):
             other = self.root / "old.json"
             older = self.read()
             older["generation"] = 1
-            json.dump(older, other.open("w"))
+            other.write_text(json.dumps(older), encoding="utf-8")
             export_snapshot(other, self.export)
 
     def test_export_rejects_overwrite_of_private_ledger_area(self):
@@ -220,7 +220,7 @@ class LifecycleTests(unittest.TestCase):
         export_snapshot(self.ledger, self.export)
         archive = (self.export / "snapshots" / "generation_0000000002")
         self.assertFalse(list((archive / "pages").glob("*.json"))
-                         if (archive / "pages").exists() else True)
+                         if (archive / "pages").exists() else [])
 
     def test_store_requires_version_and_approval_no_synthetic_ai_shortcut(self):
         x = approved()
