@@ -1,0 +1,47 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // The app may write/read/delete ONLY the anonymous Firebase Auth UID
+    // registered on this device; other users' FCM tokens are never visible.
+    match /push_subscriptions/{uid} {
+      function owner() {
+        return request.auth != null && request.auth.uid == uid;
+      }
+      function correctShape() {
+        let d = request.resource.data;
+        return d.keys().hasOnly([
+            'enabled','token','consent_version','consent_at','topics',
+            'min_score','territory','include_national','updated_at'
+          ]) &&
+          d.keys().hasAll([
+            'enabled','token','consent_version','consent_at','topics',
+            'min_score','territory','include_national'
+          ]) &&
+          d.enabled == true &&
+          d.token is string && d.token.size() >= 24 && d.token.size() <= 4096 &&
+          d.consent_version == 'pulse-push-consent-v1' &&
+          d.consent_at is string && d.consent_at.size() <= 40 &&
+          d.topics is list && d.topics.size() > 0 && d.topics.size() <= 12 &&
+          d.min_score is int && d.min_score >= 50 && d.min_score <= 100 &&
+          d.territory is map &&
+          d.territory.keys().hasAll(['level','code']) &&
+          d.territory.keys().hasOnly(['level','code']) &&
+          d.territory.level in ['ITALIA','REGIONE','PROVINCIA','COMUNE'] &&
+          d.territory.code is string && d.territory.code.size() <= 6 &&
+          d.include_national is bool;
+      }
+      allow get: if owner();
+      allow list: if false;
+      allow create, update: if owner() && correctShape();
+      allow delete: if owner();
+    }
+    // The dispatcher uses Firebase Admin credentials; no client may read,
+    // claim, rewrite or erase delivery receipts (anti-spam/anti-replay).
+    match /push_delivery_receipts/{receipt} {
+      allow read, write: if false;
+    }
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
