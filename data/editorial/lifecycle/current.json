@@ -1,0 +1,9 @@
+{
+  "generation": 0,
+  "http_required_cache_control": "no-store",
+  "last_event_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "network_deployed": false,
+  "schema_version": "pulse-editorial-lifecycle-pointer-v1",
+  "sha256": "b76d6995f18e61b362b553f30a4bc5e2a8a825eca479ed97e48badd6922e3eff",
+  "snapshot_index_url_path": "snapshots/generation_0000000000/index.json"
+}
