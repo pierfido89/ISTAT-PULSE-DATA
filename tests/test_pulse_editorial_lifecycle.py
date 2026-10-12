@@ -84,6 +84,19 @@ class LifecycleTests(unittest.TestCase):
         self.assertIn(2, rec["unsafe_versions"])
         self.assertEqual(self.read()["generation"], 3)
 
+    def test_owner_self_review_is_explicit_not_fake_second_person(self):
+        register(self.ledger, approved(), ACTOR, REASON)
+        rectify(self.ledger, approved(headline="Versione successiva approvata"),
+                ACTOR, REASON)
+        rollback(self.ledger, "PULSE-TEST-001", 1, "pierfido89", None, REASON,
+                 confirmed=True)
+        state = self.read()
+        event = state["events"][-1]
+        self.assertEqual(event["reviewed_by"], "pierfido89")
+        self.assertEqual(event["approval_mode"], "single_owner_self_review")
+        self.assertEqual(event["revision"], 3)
+        self.assertTrue(verify(state)["valid"])
+
     def test_incorrect_older_revision_cannot_rollback(self):
         register(self.ledger, approved(), ACTOR, REASON)
         rectify(self.ledger, approved(headline="Testo statistico rettificato definitivo"),
