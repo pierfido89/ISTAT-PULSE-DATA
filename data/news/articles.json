@@ -1,6 +1,807 @@
 {
-  "generated_at": "2026-10-12T14:18:30.988457+00:00",
+  "generated_at": "2026-10-13T20:06:01.231243+00:00",
   "articles": [
+    {
+      "id": "PULSE-F5C4990C59D29A8F",
+      "story_fingerprint": "f5c4990c59d29a8f87c97ffe",
+      "published_at": "2026-10-13T20:06:01.231243+00:00",
+      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 89,
+      "public_source": {
+        "url": "https://www.istat.it/",
+        "domain": "istat.it",
+        "role": "primary_statistical_source",
+        "verification_method": "named_or_topic_domain_search",
+        "verification_score": 71
+      },
+      "discovery": {
+        "visible": false,
+        "role": "hidden_radar"
+      },
+      "period_reference": null,
+      "latest_source_update": null,
+      "headline": "Dati, nuovo dato per Liguria: 100 ",
+      "summary": "Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+      "statistical_claims": [
+        {
+          "raw_value": "283 ",
+          "verified": false
+        },
+        {
+          "raw_value": "100 ",
+          "verified": true
+        },
+        {
+          "raw_value": "283 ",
+          "verified": false
+        },
+        {
+          "raw_value": "100 ",
+          "verified": true
+        }
+      ],
+      "verified_series": [],
+      "territories": [
+        "liguria"
+      ],
+      "chart_spec": {
+        "type": "auto",
+        "status": "requires_primary_series",
+        "reason": "candidate_contains_multiple_numeric_values"
+      },
+      "map_spec": {
+        "level": "auto",
+        "territories": [
+          "liguria"
+        ],
+        "status": "requires_primary_geodata"
+      },
+      "editorial_status": "verified_primary_match",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-E7F790B5FC9726BB",
+      "story_fingerprint": "e7f790b5fc9726bb4be0f1bc",
+      "published_at": "2026-10-13T18:30:00+00:00",
+      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "topic": "SALUTE",
+      "pulse_score": 50,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPVzI3UEtpaEFQMl90b1Zvb0ptRTY4NE9Oc1Q4Sl8yZVpaWGRTNFd5NUFsbHVOc1hKalVxVExDcFRZYklHOXNsUkFRM3kxeGhZY0xKVUVqX3ZNcWpqa2pWWmZtZnJSNWt1M0VFN3dHb0VzREhNSXZoTFdiSnRGRTdvdGxiOFNJYTMyenItbkdGTzQzZVNNMTVKY3ZuZjQ2OG00Sm9WaTBBUnZrQjJrVzVFMW96cl9WSGFuT1l0a0JHdEpDZjFRVUlqT3VISnhVWUczeDZPZnltMGlXbW04S3dBZk5YMVY?oc=5",
+        "domain": "Mondosanità",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Demenza, ogni anno si apre una nuova città di 11 milioni di malati. Nel 2050 saranno quasi 25 milioni - Mondosanità",
+      "summary": "Demenza, ogni anno si apre una nuova città di 11 milioni di malati. Nel 2050 saranno quasi 25 milioni Mondosanità",
+      "statistical_claims": [
+        {
+          "raw_value": "11 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "2050 ",
+          "verified": false
+        },
+        {
+          "raw_value": "25 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "11 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "2050 ",
+          "verified": false
+        },
+        {
+          "raw_value": "25 milioni",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-FB9CC61A0DE2C582",
+      "story_fingerprint": "fb9cc61a0de2c582942120f1",
+      "published_at": "2026-10-13T17:25:28+00:00",
+      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxONmx2a1ZCaWxMamRxcFpfMHdwZ2FlU3VQVk5WZUJrb0IzejRaNzNtOUh4UkczY2V1Rmw0R2JzRi1oVDhHWVhBNEw4OTVMV0Q0QW81NTRELU13MDc5MUtFWTl4RXFsQlJHRlNjLTlRaVJCaldIaHBJMGp1dkFpaE1Ua082cng5dm5FMUdKc1dETkQyZFo4d1JQN21ZRXo3S2N5Rl9Zdkd1ZF9kYlh6REVnQk5fd3pKWWEwSHFlSEN3?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Global Blue: estate record a Capri, spesa Tax Free cresce dell'11% - Il Sole 24 ORE",
+      "summary": "Global Blue: estate record a Capri, spesa Tax Free cresce dell'11% Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "11%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "11%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-BBEA26E372E974EB",
+      "story_fingerprint": "bbea26e372e974eb456d04c3",
+      "published_at": "2026-10-13T16:13:00+00:00",
+      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "topic": "SALUTE",
+      "pulse_score": 70,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi0wJBVV95cUxPNmFwQWZUS01nakt0NmYwWGlGVzBXMTNkYndSMFpEd1kydDUwNzdpSVZ1d0xWY0E1UzRWbnlzZVgyUzZHOE45V3pRY2UtNE41dXY2aE5yTnJKVnJETDFwMXVQV21PR3hnc3FtQVhkUWtMR2Iyb0hDX2I4QTFheDdPOVAtcDZwY0Rzd3QyNld2bkVhcmUzT3FlMnZheUNXTXVaSkVWUlhhc3VSREg0Wk10dkEzcUZpR21rdDNFck5rbDBCWWxFUXJxYldHWDV1RU1CbWN2eGloblNzUFR1aTQ4M3NyRzlnN1ZOeXBWWFkyRDBJVmxVUEVfV1lOZFRocHZJbUlrcjg1Wm5ZS0JPei1BVWhWOGtNRF9Tdlp2cjc3bXQwcTlqT0s4VTJaaks0TEFWbTEtUXBOaW0zbzM4WnhIUllRWkZvdWRuTmFTOXBIelZCMWs?oc=5",
+        "domain": "Quotidiano Sanità",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Caldo record. Tra gli over 85 mortalità aumentata del 10% ma Italia meglio di altri Paesi Ue. Schillaci: “Sistema ha retto. Il Piano diventa strutturale, 8 milioni per il prossimo biennio” - Quotidiano Sanità",
+      "summary": "Caldo record. Tra gli over 85 mortalità aumentata del 10% ma Italia meglio di altri Paesi Ue. Schillaci: “Sistema ha retto. Il Piano diventa strutturale, 8 milioni per il prossimo biennio” Quotidiano Sanità",
+      "statistical_claims": [
+        {
+          "raw_value": "85 ",
+          "verified": false
+        },
+        {
+          "raw_value": "10%",
+          "verified": false
+        },
+        {
+          "raw_value": "8 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "85 ",
+          "verified": false
+        },
+        {
+          "raw_value": "10%",
+          "verified": false
+        },
+        {
+          "raw_value": "8 milioni",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-8DFAD381A714D9EB",
+      "story_fingerprint": "8dfad381a714d9ebe9e8c3dd",
+      "published_at": "2026-10-13T14:00:00+00:00",
+      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 65,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNSl9uNnRwcm5PS3FvYWpsQUlNZnZZUW9pVDlneTJmMnh3eHZrNVU0WDFobGM4MWlTQW5hXzBxelRCV1F1WmlkODZmdEJqeUQtZnNkY0hoQmxlSUwwc01IVGU4THlvVHZFQU9uOEhlRjdBOU5zcWdkZ1MwZ2I1aWowVEF3Xzlfejh1UmVRTHdRVDVGYm82Y2VYalJxRTNOZnV4YklCRTk4VG1wUUNpVGZ3am9LZURyWm1qNXJSZ1BVeHpSQWRQUHVUeFpWNGVMRzFodVdZVU9VMW5mOVVjX0hJdHZnYXg3WURKXzd6aDg4em5NQQ?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "La crisi spinge il debito dei Farmer Usa al record di 605 miliardi di dollari nel 2026 - Il Sole 24 ORE",
+      "summary": "La crisi spinge il debito dei Farmer Usa al record di 605 miliardi di dollari nel 2026 Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "605 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "605 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-696A6DB33699DBD8",
+      "story_fingerprint": "696a6db33699dbd81752ce7f",
+      "published_at": "2026-10-13T11:49:06+00:00",
+      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "topic": "ENERGIA",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxOb19Cb3oyMWg4YlVSMkEzanhSQ1J5cHI0SmhmMlowNVByM1k4U3d4U2pJdHd6dXVDUlZmU0lJODBWVE00b2QtcG5ZUUtUYXVnWWZKZTZMNnkzWkpNT1g5VXRTVzhmMTRTUHFIVjBtV3poYUUtWWx4Sm5lNzhrazVhZzhEemdWMnhtTDdMcEcxLXZ2MWpFNHBBekpHMHNaTkhGN1VheEhpdV95dFBTZXZlQkNpSEE2eU5RTHdBNEU5czZwSm9lblBxNjU1U1VyZGtQVzN2WHJoOHNELWM5a2twQmV4MUNOVkRkQkR6TmloTEdYTUgwNk8wZ0lXTW54QXAzU3Y4VURxLWRVLU9KcGfSAY4CQVVfeXFMTm9fQm96MjFoOGJVUjJBM2p4UkNSeXByNEpoZjJaMDVQcjNZOFN3eFNqSXR3enV1Q1JWZlNJSTgwVlRNNG9kLXBuWVFLVGF1Z1lmSmU2TDZ5M1pKTU9YOVV0U1c4ZjE0U1BxSFYwbVd6aGFFLVlseEpuZTc4a2s1YWc4RHpnVjJ4bUw3THBHMS12djFqRTRwQXpKRzBzWk5IRjdVYXhIaXVfeXRQU2V2ZUJDaUhBNnlOUUx3QTRFOXM2cEpvZW5QcTY1NVNVcmRrUFczdlhyaDhzRC1jOWtrcEJleDFDTlZEZEJEek5paExHWE1IMDZPMGdJV01ueEFwM1N2OFVEcS1kVS1PSnBn?oc=5",
+        "domain": "ANSA",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Studio, nel 2024 dipendenza energia Italia dall'estero 16,6% in più a media europea - ANSA",
+      "summary": "Studio, nel 2024 dipendenza energia Italia dall'estero 16,6% in più a media europea ANSA",
+      "statistical_claims": [
+        {
+          "raw_value": "2024 ",
+          "verified": false
+        },
+        {
+          "raw_value": "16,6%",
+          "verified": false
+        },
+        {
+          "raw_value": "2024 ",
+          "verified": false
+        },
+        {
+          "raw_value": "16,6%",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-C8F0FFF79B6F957F",
+      "story_fingerprint": "c8f0fff79b6f957fa0dfa405",
+      "published_at": "2026-10-13T11:21:07+00:00",
+      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "topic": "LAVORO",
+      "pulse_score": 47,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.repubblica.it/economia/2026/10/13/news/inflazione_istat_100_anni_prezzi_casa_alimenti_utenze-425644656/?rss",
+        "domain": "repubblica.it",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "La corsa dell’inflazione: dal 2000 i prezzi sono aumentati del 63%. E la casa costa il doppio",
+      "summary": "A spingere al rialzo anche il costo di utenze, alcolici e tabacchi, mentre calano servizi d’istruzione, sanità e informazione",
+      "statistical_claims": [
+        {
+          "raw_value": "2000 ",
+          "verified": false
+        },
+        {
+          "raw_value": "63%",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "lazio"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-E408542FC9F9D4B0",
+      "story_fingerprint": "e408542fc9f9d4b00b1a203e",
+      "published_at": "2026-10-13T10:33:07+00:00",
+      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 45,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9yNFlqTnlsTGR6SzFONjVFNUtfMDJFRUJNSHN6MjduTnMzQ2lJY1U3QjV2R1N5WHUwck1IZlNoLWtmMU5zQWZ2ODRwX0lXeFI5Z3I0dHRsdThMZHRNSFhxSHI2ck5nWndNRmxSOTJ1QVpVdTA?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "BTp: assegnati 2,5 mld triennali, rendimento al top dal 2023 a 3,69% (RCO) - Il Sole 24 ORE",
+      "summary": "BTp: assegnati 2,5 mld triennali, rendimento al top dal 2023 a 3,69% (RCO) Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "2,5 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2023 ",
+          "verified": false
+        },
+        {
+          "raw_value": "3,69%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2,5 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2023 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-2F6205EC3B24F7B2",
+      "story_fingerprint": "2f6205ec3b24f7b2d7dabb20",
+      "published_at": "2026-10-13T09:50:29+00:00",
+      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 54,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.repubblica.it/economia/rapporti/energitalia/sostenibilita/2026/10/13/news/energia_la_bei_investe_9_miliardi_nei_paesi_partner_priorita_al_clima-425644535/?rss",
+        "domain": "repubblica.it",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Energia, la Bei investe 9 miliardi nei Paesi partner: priorità al clima",
+      "summary": "Nel 2025 Eib Global ha firmato finanziamenti per 119 progetti, destinando il 57% delle risorse all'azione climatica e alla sostenibilità ambientale. Rinnovabili e reti elettriche al centro degli interventi per rafforzare la sicurezza energetica e le relazioni economiche...",
+      "statistical_claims": [
+        {
+          "raw_value": "9 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "119 ",
+          "verified": false
+        },
+        {
+          "raw_value": "57%",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "lazio",
+        "roma"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-871B931CC2FE3666",
+      "story_fingerprint": "871b931cc2fe366612c6cedd",
+      "published_at": "2026-10-13T09:50:00+00:00",
+      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "topic": "SALUTE",
+      "pulse_score": 59,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNR250OUw2MEZJbVVCN2hyM2ZSR3BDb2pxRFJHdThVWW41bk5XVlRBVGNUVGl0VG1qaXl5c1dUemYxZ3RIam9vLXVDT1F1VEFLTDgtZjJjVGRQN28wOEUtSzNkd0JRSUttUjE5ZjBOaVY3TlF3MXQ1d3dxSW9hN1lfc3Z4ZGY1XzFFX3FIb3lmRnBGNUU3MmZlSG45ZnpST0dmeVlKVFZUcWlGUjNHelBHU0ZJNmZoZGRoa0xMdm5TOUNpWHRxTW1weTlFNlhZTk9iRFAxdG0tbXlSRjZxZlFYaXhEYkxQYUdL?oc=5",
+        "domain": "Vivere Fermo",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Rapporto salute mentale 2026 (SIEP), Marche 15esime. Sintomi depressivi in crescita, superata la media nazionale - Vivere Fermo",
+      "summary": "Rapporto salute mentale 2026 (SIEP), Marche 15esime. Sintomi depressivi in crescita, superata la media nazionale Vivere Fermo",
+      "statistical_claims": [
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "15",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "15",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "marche"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-F324476E807F228D",
+      "story_fingerprint": "f324476e807f228dd83bfa69",
+      "published_at": "2026-10-13T09:27:19+00:00",
+      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "topic": "ISTRUZIONE",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQQncyUWc4UXRPTGNQRTZTUzFMOVJseHBMWjJfdE9KdlRqa29qQlZFSEVEbDA0d0pPVFBsY0VvQ3EtczduUTJQd0d1YzdHanRFcnI4WXpBZlhsT2VtNG1SX0VTa0VpdTBRaGFUeEJCZHZxZDB2TzAwdWxtVjVEaGluQkVFRkFyS2Izb2JXbmhJcVZvYk90UXNGOXZwTmJ4Zk5ZZXVIYzRmMFg0M0VvOVBCb3hsdHU4aUpKSXBuS2F0eTBuNDdybHdEUzBtdFVGTERkaXpBMDdHUG8?oc=5",
+        "domain": "Orizzonte Scuola Notizie",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Rapporto OCSE 2026, Valditara: “Risultato storico, l'abbandono scolastico scende all'8,2% con cinque anni di anticipo” - Orizzonte Scuola Notizie",
+      "summary": "Rapporto OCSE 2026, Valditara: “Risultato storico, l'abbandono scolastico scende all'8,2% con cinque anni di anticipo” Orizzonte Scuola Notizie",
+      "statistical_claims": [
+        {
+          "raw_value": "2026",
+          "verified": false
+        },
+        {
+          "raw_value": "8,2%",
+          "verified": false
+        },
+        {
+          "raw_value": "2026",
+          "verified": false
+        },
+        {
+          "raw_value": "8,2%",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-D8F7BB7C72FC4EC0",
+      "story_fingerprint": "d8f7bb7c72fc4ec013abccf2",
+      "published_at": "2026-10-13T06:00:00+00:00",
+      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "topic": "LAVORO",
+      "pulse_score": 60,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.repubblica.it/economia/dossier/manovra-finanziaria-legge-di-bilancio/2026/10/13/news/pensioni_risparmio_1_miliardo_stretta_anticipate_corte_conti-425644417/?rss",
+        "domain": "repubblica.it",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Pensioni, Corte dei Conti: “Nel 2025 non spesi 1,2 miliardi”. La stretta sulle uscite fa risparmiare",
+      "summary": "Domande più che dimezzate in due anni. Nel 2026 i nuovi assegni calano del 7,4%. Ma l’inflazione fa salire il conto complessivo a 366,5 miliardi nel 2027",
+      "statistical_claims": [
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "1,2 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "7,4%",
+          "verified": false
+        },
+        {
+          "raw_value": "366,5 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "2027",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "lazio"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-23F0F8B5AEC02032",
+      "story_fingerprint": "23f0f8b5aec02032f19fe443",
+      "published_at": "2026-10-13T02:41:00+00:00",
+      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 55,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOQnRlVDNENTBBM3J4em0yazNlQ25Oa1kxenU3YzJ2ZmdvTmtpLXh0ZEItR2RpOFRlRGtiQzJMMDFoVDdvdFh4enRfTkFPMk1MdWktSzJGUEFiZUZrZlFVT2trd0VuTkw3MWFuNVVsMmp5Z3BlY2lzbmlDbWJkd2ZhWFBLZHhBRHRYaHVQLW1vMnRoRG9lWms4TFN4dVJMVUxoRWhGbkxwMnJSRXNvT1VWakNoVzNKWXNOcGR6ckt0WThlZXfSAcgBQVVfeXFMTjJlWjZUR19YWjhmVnhjaTBwMnZzTy13REMwaWpXRzRoNjVIUGY5MmFOZ0Q4a0VjUGRWYnBDa0VGakJCWU4ydm9EaHNSTHBpcUZBXzl5N0puWGZUV3VPVUhMRlZJVG9fNS02cnowb0lYNlgtOG9zVDNmeFZ6QTRFOEVLcDE4enB6R2ZtbWJqMjlNQzZ2MjM5dG5nWlg0TnlzUDdCbXVXQmR0eE1qSkJRMlVLODJHeDNnWWRXUy0wTUVzb3lfWUktOHc?oc=5",
+        "domain": "RaiNews",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Fmi rivede al rialzo Pil Italia, +0.8% nel 2026 e inflazione al 3,3% - RaiNews",
+      "summary": "Fmi rivede al rialzo Pil Italia, +0.8% nel 2026 e inflazione al 3,3% RaiNews",
+      "statistical_claims": [
+        {
+          "raw_value": "+0.8%",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "3,3%",
+          "verified": false
+        },
+        {
+          "raw_value": "+0.8%",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "3,3%",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "lazio"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-A2AD4E31722D0E37",
+      "story_fingerprint": "a2ad4e31722d0e37b8700337",
+      "published_at": "2026-10-13T02:00:00+00:00",
+      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 55,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOTmhDTy1SX1dJTzl1V0hZSEJ4M1FBZnNJdjZUOFBjNmpnUEZQd0wzT2xnclZubmV6aWlYSWRMUlhIRU5GZW9BdlpvOGhGYUx4by1DYi1hdzkxNnViTHlIUmFBYmZ2dVY5WmlXMl9lenJEUFY0WUEwYjZkWW9KWTRSUEx3QVZadUxMSkZMZ3VXcldNdTJvcm1YZWQtWS1WUkhDdVdReWtVVkY3VkJVajFQMzM4OURHaTF4UkFxaUlFZExfdDYzbUZNLXN6Q1A5QXBZMWRUSGphZTJhWm9paW5lX2poYnQteUoySk9PXzd1YXk?oc=5",
+        "domain": "ANSA",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Fmi, nel 2026 in Italia inflazione al 3,3%, area euro al 3,1%, Usa al 3,6% - ANSA",
+      "summary": "Fmi, nel 2026 in Italia inflazione al 3,3%, area euro al 3,1%, Usa al 3,6% ANSA",
+      "statistical_claims": [
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "3,3%",
+          "verified": false
+        },
+        {
+          "raw_value": "3,1%",
+          "verified": false
+        },
+        {
+          "raw_value": "3,6%",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "3,3%",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "lazio"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-EC79B2D231B8C578",
+      "story_fingerprint": "ec79b2d231b8c5788e9b3a7f",
+      "published_at": "2026-10-12T16:31:00+00:00",
+      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 54,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQX25ISWc2Zy00QzIwd0dlSFdCU3Q3SjlmOFU3Sk9QUk5majNqckxKbGJBSDRQYk9hb2RhcU9VNW13NXAwUFVZRkZNUGFQd1dLcnB2eC1ZZDkyMWJjVlFJZFAzcWZ2bnZDQmRLR20wU3ctSDVodlJIakxvMFBQMTBZMV9OcjFsb1lHcTVjakpZT3RYRDgwRXJadVBIZGhTZFgxbk9aMVdwQV9zREcwQ3B2WDZaRWZabkZBSGoxV2d3SFVLQQ?oc=5",
+        "domain": "SoldiOnline.it",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Crociere, estate record in Italia: 6,1 milioni di passeggeri e +14,9% toccate - SoldiOnline.it",
+      "summary": "Crociere, estate record in Italia: 6,1 milioni di passeggeri e +14,9% toccate SoldiOnline.it",
+      "statistical_claims": [
+        {
+          "raw_value": "6,1 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "+14,9%",
+          "verified": false
+        },
+        {
+          "raw_value": "6,1 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "+14,9%",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-50D362D9483A052E",
+      "story_fingerprint": "50d362d9483a052e57735022",
+      "published_at": "2026-10-12T14:44:19+00:00",
+      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 75,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPZGNIZ2Uya0ZGMXZFTVczb2tFY00xMGJFLWtLZEJxQWcwQldHY2ZKQWs1OEZjY25jMTdWdzBHZWZIdXBHQzhfUF9kTEl4YW5qS2duLW94Z0R3ODFrVFZHOTJWaXlTeVBuRE1oQU9QZTBQRzZMMGtpc09XZ0luT1pGY0p1Q3J6cVE5UE9jUDdHeVc4SUdpSXBaRV94S09KRXRlOWk0cEFUa3pmbVhwVmkxZU92RQ?oc=5",
+        "domain": "Abitare A Roma",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Atlante delle Foreste: in Italia un 2025 da record, quasi 3,7 milioni di alberi piantati (+17%) - Abitare A Roma",
+      "summary": "Atlante delle Foreste: in Italia un 2025 da record, quasi 3,7 milioni di alberi piantati (+17%) Abitare A Roma",
+      "statistical_claims": [
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "3,7 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "+17%",
+          "verified": false
+        },
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "3,7 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "+17%",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "roma"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-B4EC459A47E7F54E",
+      "story_fingerprint": "b4ec459a47e7f54e1d456f55",
+      "published_at": "2026-10-12T14:20:37+00:00",
+      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 45,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNWkRMR0FIVU9wczFVZE1zaVplZ0tiMnBnU2NyeTBsek5QcnJSaXh6VVZnOTFWSjVpZC1JT1hrbFdHRFJWTjE1RWRyZ2xCNG1RbndJZTVUdGxsQm83T2FVNnY5R3o5RUFSRFQtWkhfY2duTENkYV9xUEowelRvNkhENFpaMjRKWmNOR0g0THZydEpDYnlYcDBhaEpEcTd2OTVKa0xJ?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Crociere, crescono i passeggeri in Italia: previsto un +4,3% sul 2025 - Il Sole 24 ORE",
+      "summary": "Crociere, crescono i passeggeri in Italia: previsto un +4,3% sul 2025 Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "+4,3%",
+          "verified": false
+        },
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "+4,3%",
+          "verified": false
+        },
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-B992BF2C981E59B1",
+      "story_fingerprint": "b992bf2c981e59b191f448a2",
+      "published_at": "2026-10-12T12:20:21+00:00",
+      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 59,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxNbHJCWTdrME15QVota1R1eFBzeV9mdUFERThTcnNZVncybzU5Vm9ubk5uQndiTHg3ejlEeXNQNEo1NTRpZ0k2d0paNEFTSW9ndWQxOTFqa3R6ZHRmbGc0RG5kdG9uVk1VUnNSVlBlUnhGSEhfQjdVVXYwTmpnNzdmRTlfX2ItWFpaTEx2QkxKeG1WZTMweGhxZTJ4UFZRN05BU2pySFVEVXpCem9nTjFfaWZOaHhUaF9oSWhLc21BRUdOeE11Y2FhQWhhZWJMQmtrbGlweDh4Y0t5aW1ZNTgtUFlSTjNBb2RncUtYSGxCc0k5M19JQzZQemYxdXBzaVdqQjIwNk8wclhReXhkT1lFMW1vRHdIVHcyQmVCdWxwWFh2MVY5NlVMWF9Wbkdmai1oMlHSAbICQVVfeXFMTWxyQlk3azBNeUFaLWtUdXhQc3lfZnVBREU4U3JzWVZ3Mm81OVZvbm5ObkJ3Ykx4N3o5RHlzUDRKNTU0aWdJNndKWjRBU0lvZ3VkMTkxamt0emR0ZmxnNERuZHRvblZNVVJzUlZQZVJ4RkhIX0I3VVV2ME5qZzc3ZkU5X19iLVhaWkxMdkJMSnhtVmUzMHhocWUyeFBWUTdOQVNqckhVRFV6QnpvZ04xX2lmTmh4VGhfaEloS3NtQUVHTnhNdWNhYUFoYWViTEJra2xpcHg4eGNLeWltWTU4LVBZUk4zQW9kZ3FLWEhsQnNJOTNfSUM2UHpmMXVwc2lXakIyMDZPMHJYUXl4ZE9ZRTFtb0R3SFR3MkJlQnVscFhYdjFWOTZVTFhfVm5HZmotaDJR?oc=5",
+        "domain": "Corriere della Sera",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Italia delle foreste da record nel 2025: piantati quasi 3,7 milioni di alberi. Ma preoccupa il dopo Pnrr - Corriere della Sera",
+      "summary": "Italia delle foreste da record nel 2025: piantati quasi 3,7 milioni di alberi. Ma preoccupa il dopo Pnrr Corriere della Sera",
+      "statistical_claims": [
+        {
+          "raw_value": "2025",
+          "verified": false
+        },
+        {
+          "raw_value": "3,7 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "2025",
+          "verified": false
+        },
+        {
+          "raw_value": "3,7 milioni",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
     {
       "id": "PULSE-612EE3EA966AACDF",
       "story_fingerprint": "612ee3ea966aacdfb3c822f6",
@@ -52,7 +853,7 @@
       "id": "PULSE-1F896026BE2D4C90",
       "story_fingerprint": "1f896026be2d4c90c6cc7142",
       "published_at": "2026-10-12T10:05:08+00:00",
-      "last_seen_at": "2026-10-12T14:18:30.988457+00:00",
+      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
       "topic": "ALTRO",
       "pulse_score": 60,
       "patterns": [],
@@ -133,6 +934,53 @@
       "territories": [
         "firenze"
       ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-784B8783F77C6A91",
+      "story_fingerprint": "784b8783f77c6a91837b5b6d",
+      "published_at": "2026-10-12T08:56:46+00:00",
+      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "topic": "AMBIENTE",
+      "pulse_score": 45,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNR2xnSlJwS0R1T1JWYVRocWtLeG0zeXl5T0dxTzdQNjVPOERFZGdxUWM4cXBOeGhtQVd1OU1uZXNCTm5OMWlRdnlHYm95Vzhlak14WHd2eDY1SkRLN2Q2UUt5aXhrVDJlV2d5STJuTmR6VjI2Ymt0Y3FsS1kyaEtoUkduV0JsbnBsMjBxalN6QVpHMEZYSWhtLTVva2JpNk0?oc=5",
+        "domain": "solo musica italiana",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Ambiente, in Italia nel 2025 quasi 3,7 mln di alberi piantati (+17%) - Radio Studio90 Italia - solo musica italiana",
+      "summary": "Ambiente, in Italia nel 2025 quasi 3,7 mln di alberi piantati (+17%) Radio Studio90 Italia - solo musica italiana",
+      "statistical_claims": [
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "3,7 ",
+          "verified": false
+        },
+        {
+          "raw_value": "+17%",
+          "verified": false
+        },
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "3,7 ",
+          "verified": false
+        },
+        {
+          "raw_value": "+17%",
+          "verified": false
+        }
+      ],
+      "territories": [],
       "editorial_status": "journalistic_attributed",
       "publication_status": "published"
     },
@@ -234,7 +1082,7 @@
       "id": "PULSE-F3491533A527D0B8",
       "story_fingerprint": "f3491533a527d0b8f55089b5",
       "published_at": "2026-10-12T07:48:00+00:00",
-      "last_seen_at": "2026-10-12T14:18:30.988457+00:00",
+      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
       "topic": "ALTRO",
       "pulse_score": 55,
       "patterns": [],
@@ -283,7 +1131,7 @@
       "id": "PULSE-D3112828B7A2A997",
       "story_fingerprint": "d3112828b7a2a997e2dc279c",
       "published_at": "2026-10-12T05:50:00+00:00",
-      "last_seen_at": "2026-10-12T14:18:30.988457+00:00",
+      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
       "topic": "ALTRO",
       "pulse_score": 54,
       "patterns": [],
@@ -325,7 +1173,7 @@
       "id": "PULSE-EFA0829D3356B411",
       "story_fingerprint": "efa0829d3356b41132aa3ec4",
       "published_at": "2026-10-12T05:26:15+00:00",
-      "last_seen_at": "2026-10-12T14:18:30.988457+00:00",
+      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
       "topic": "ALTRO",
       "pulse_score": 60,
       "patterns": [],
@@ -570,7 +1418,7 @@
       "id": "PULSE-0F6C2DD430FC033E",
       "story_fingerprint": "0f6c2dd430fc033ec60be9df",
       "published_at": "2026-10-11T18:09:19+00:00",
-      "last_seen_at": "2026-10-12T14:18:30.988457+00:00",
+      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
       "topic": "ALTRO",
       "pulse_score": 54,
       "patterns": [],
