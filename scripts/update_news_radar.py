@@ -949,6 +949,11 @@ def main():
     if runtime_exceeded():
         print("[RADAR] runtime budget reached; publishing partial verified results", flush=True)
 
+    # Primary-source RSS publication lane runs independently of journalistic
+    # discovery and never invents a numerical PULSE pattern or release date.
+    from pulse_primary_rss_daily import add_first_party_publications
+    add_first_party_publications(by_id, now, rss_items)
+
     arts=sorted(by_id.values(),key=lambda x:x.get("published_at",""),reverse=True)
     # Safety gate: only verified articles may be publicly visible.
     public=[a for a in arts if a.get("publication_status")=="published" and a.get("editorial_status") in ("verified","verified_primary_match","journalistic_attributed")]
