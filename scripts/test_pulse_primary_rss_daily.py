@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """No-network regression QA for primary institutional RSS ingestion."""
 from datetime import datetime, timedelta, timezone
-from scripts.pulse_primary_rss_daily import (
+from pulse_primary_rss_daily import (
     add_first_party_publications, actual_published_at, canonical, first_party
 )
 assert actual_published_at("Mon, 14 Oct 2024 10:00:00 GMT").year == 2024
