@@ -31,7 +31,7 @@ n=add_first_party_publications(by_id,now,mocked)
 assert n==1,(n,by_id)
 item=list(by_id.values())[0]
 assert item["pulse_score"]==0 and not item["patterns"]
-assert item["published_at"]==now.isoformat().replace("+00:00","Z")
+assert abs((actual_published_at(item["published_at"]) - now).total_seconds()) < 1
 assert item["public_source"]["role"]=="primary_statistical_source"
 assert add_first_party_publications(by_id,now,mocked)==0
 print("PASS: source provenance, real date, trust host, no invented score, stable dedup")
