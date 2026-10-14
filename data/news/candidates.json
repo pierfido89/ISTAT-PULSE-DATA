@@ -1,11 +1,28 @@
 {
-  "generated_at": "2026-10-13T20:06:01.231243+00:00",
+  "generated_at": "2026-10-14T09:18:29.771666+00:00",
   "candidates": [
+    {
+      "radar": "Google News - statistiche Italia",
+      "discovery_url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxOalNWV29TRWtOM2xlTFhScURZbTFUdDNhYy02Z2ZHWnBGVWFlMTJpNXR4d3JyRVFyQW55OUVhNkdxdExBblZFejFZaEVpdkNtb2Y2R01yNU1jMlVUU3BsZ2cyTEhaRS1BQVpnSDdUSlJma2pEZTBTeWF0N3pKUEtTQWk2U1lDbW9jcUM0X3RpLWxNak5CMjBFaTRtMS1pSDJJNzRkbjYzWjhqeEZlUFc4aV9QYzdYeDFsOUxzSTR2TEloX2ExRWhxR0dOTHdGVHZ1ZGotR3VUallMZW5VdExaS013VzZWZ3dLaGluM21pZXB3VFpyX1h1cQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Export agroalimentare, il Made in Italy supera i 72 miliardi: record storico nonostante dazi e tensioni globali - TeatroNaturale.it",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
+      "score_discovery": 42,
+      "topic": "ECONOMIA",
+      "numbers_detected": [
+        "72 miliardi",
+        "72 miliardi"
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
     {
       "radar": "Google News - statistiche Italia",
       "discovery_url": "https://news.google.com/rss/articles/CBMi0wJBVV95cUxPNmFwQWZUS01nakt0NmYwWGlGVzBXMTNkYndSMFpEd1kydDUwNzdpSVZ1d0xWY0E1UzRWbnlzZVgyUzZHOE45V3pRY2UtNE41dXY2aE5yTnJKVnJETDFwMXVQV21PR3hnc3FtQVhkUWtMR2Iyb0hDX2I4QTFheDdPOVAtcDZwY0Rzd3QyNld2bkVhcmUzT3FlMnZheUNXTXVaSkVWUlhhc3VSREg0Wk10dkEzcUZpR21rdDNFck5rbDBCWWxFUXJxYldHWDV1RU1CbWN2eGloblNzUFR1aTQ4M3NyRzlnN1ZOeXBWWFkyRDBJVmxVUEVfV1lOZFRocHZJbUlrcjg1Wm5ZS0JPei1BVWhWOGtNRF9Tdlp2cjc3bXQwcTlqT0s4VTJaaks0TEFWbTEtUXBOaW0zbzM4WnhIUllRWkZvdWRuTmFTOXBIelZCMWs?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Caldo record. Tra gli over 85 mortalità aumentata del 10% ma Italia meglio di altri Paesi Ue. Schillaci: “Sistema ha retto. Il Piano diventa strutturale, 8 milioni per il prossimo biennio” - Quotidiano Sanità",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 70,
       "topic": "SALUTE",
       "numbers_detected": [
@@ -26,7 +43,7 @@
       "radar": "Google News - statistiche Italia",
       "discovery_url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1qbzlmNnJ6Y0NlMnR3TWFzUkswdzJnbkdXczBWU3o2WlNDU1RPdmVwS1MxZnh6c0Rpdlp6MUlaNS10UE5hZHVZZE52dkpuY3lIV3RSVF9VQ2tBalJUSExtSDMwY196WEFxdXpWY3FfQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Criminalità in Italia in calo, meno furti e più truffe online: a Milano record di denunce, i dati - Geopop",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 35,
       "topic": "ALTRO",
       "numbers_detected": [],
@@ -38,45 +55,9 @@
     },
     {
       "radar": "Google News - statistiche Italia",
-      "discovery_url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQeC1SbFVqSENna29pRGpTZ09lSGtRWkN4NEZGRGlEWlNTamNBU1BOT3FfSFFQbDRzYmVRQ0NXQmF5aVRtN0RRSDN5Z3M2azVKa1NHbEtsT1Y3ZW55RmZvczRTMW56SzYza3NfTmNEOUp5YWMwQVZ0VGh3TlNFWEJ1c25INGxkSlVGLTdTUGljd1JJVFdacXdubFhn?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Risposte Turismo: 6,1 milioni di crocieristi nell'estate 2026 - Economia del Mare",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
-      "score_discovery": 39,
-      "topic": "ALTRO",
-      "numbers_detected": [
-        "6,1 milioni",
-        "2026 ",
-        "6,1 milioni",
-        "2026 "
-      ],
-      "official_links": [],
-      "official_domain_hints": [],
-      "primary_resolution": null,
-      "editorial_excluded": false,
-      "status": "needs_primary_source"
-    },
-    {
-      "radar": "Google News - statistiche Italia",
-      "discovery_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxObEhRbkJWQ0N4MmhQN0wwVWRjNDZSQ1NRamdJZ3hrdUxsX1ZLRUZSX2UwZ1B3blF5SlJ0YzlLbUFaaHg4bEdVLUlZZGNSTGdhZmNJYURCYWtENGdVVGplQk5YdE00cXhfMEVqdk9PUUJ6NEFYNElDbjYyX1FobzVScDV5SUR1aHVrRExEbnQyUUZMU2NsTWR1c3VOc2NpVTZwQmVJLdIBrAFBVV95cUxOOENkXzd4SHczeHhGQzBybUFKblJRdkFmeUtiN21tQzFKMjRaYWJWNGlUd1R5Y2I3TmdKRzRNbl9oT1RMVmc2LU1zQnBlMG1mREtqY0J6enIyWndzQUdZTTlnTWxZdFF3WTF4MHBvMmlfT3F5VW5sZTdTN0ZoUktCc2hkWHRKbjd2eklvZmlfeS1BZDlmUFNaWmszUjkyYjRGdnNxWDRTUzIxS1hF?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Cosa propone il Record Store Day per il Black Friday 2026 - Rockol",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
-      "score_discovery": 42,
-      "topic": "ALTRO",
-      "numbers_detected": [
-        "2026 ",
-        "2026 "
-      ],
-      "official_links": [],
-      "official_domain_hints": [],
-      "primary_resolution": null,
-      "editorial_excluded": false,
-      "status": "needs_primary_source"
-    },
-    {
-      "radar": "Google News - statistiche Italia",
-      "discovery_url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNX2VpVHVIMWc4eGpmdUJRc21FQ2VwX2xsdE5hOW1QaFJnWTRQSUY1WXZNM2tMR096OVFEMXVnT2JmTFdkS2tMdmtlSWczbXo1UnNPQmIwc0ZYdVhOUUowYmRIc2RsaHVnczRUZ1VHLXRLTFRSX2JCV0I1bWtGbEdIdDNOeFl0MUdiZEpqa1FrT2JiRTdRTFBrWFZKWGQwbXZyS0Q2MUtCcEg5S3RySFdJa2t4VTBNbGFyeng3ZEtwMTYwM1A0Zlk3Uk1qYk1mT2xZdnlhVXRMVzFfdldnRzVIa0Zjc1daRDQ3bkFmdDJCbjIwUF9LTVlYRGdWSHLSAYICQVVfeXFMTjNFeXNHNW5FNXZOajdLRTNSazRzSnE0TWtpMElNNW1SZ0pxTTJ2aVMzRDR1LU13ekc0T3hsZnFLcE9vSU1KRDJPRzZIdEFGa29Na1d1N3BnczZNeDNhbXM0cDNuQnBMR2NwUzY5RWVEV1hvZ1B2a2FJd2Z2WXFCcVZmemJWUDN2c1BrMnA2OVdUSFdKbU1nbDJ3V3pRYUZlTC1iMndEc0NNajM4Z1NLeGc3OHRwTjdsZ09vSEVhVFo2Um1WOUNaLWJmOG1tc003Rk5DQXV1VWllemZVRUd1b2RoWk8tU2MxQnNJc2tnaWlYVi1LN01XVTdzQzlmVkVUb2tB?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPUWFUWjlWbFd1OF9ieWNPRUFkT0VHandpWXN4UkRoVWhoa1c1bkJ1aGxrUFFjTnZzUzFxTlYtXzBkWE03dUhVcXk5eEFjbVRVUndnNmhhQWYybTJkQ0FUZWxJcnlxZTRuSjRLajAyc0U1QUJoamtHZ3ZPUVlFTWVBSi00elVzSVNpTVJ3QzU1MzBIWFJxR0hiRm5xa1E2amJYNDk1NUE1X0tVeFhrX1R2LW5qeF91dEFfZXR6ZnRwYUVVQl9rVU1sZURhZkdhY3Q2Ty1TWXdpenB3RG9ZZ0ZpWjZpdzUxN2xlT3Z5Z3FBM09IRjli0gH6AUFVX3lxTE9fZ1YzVVVGSzJLZExqbTlRcncxbk45MmUyV25RelVMZW9nRUpQc0J2clF4S2lKQjFQRU9kejBMbjZDOWlFV210RHJzQXdqbWUxTFFTSC12amNCdTJPYV9mamhTVmQ3T0xTVmxZTWxTMFUwVlVjRUktbXBYeVl1djRpaDZrSjNyTW91MXdTUlhNS0pVMGpnOW9QTzhhaExrWUQ0TG9wSVdnY25SYjdSMzRvQmowSnJhUVZLM1ZQMW9DdEUxaURtUml5aUNHbWdBUG5fWjdWVDFTYzFoRlJReEI2eTExTGRRMXE2UEV6WWJMbm1FbjF1a3VlaUE?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Estate record per le crociere in Italia, 6,1 milioni passeggeri movimentati - ANSA",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 37,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -91,28 +72,9 @@
     },
     {
       "radar": "Google News - statistiche Italia",
-      "discovery_url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPVk5oSnllem9tVU9sWWtqOTBmd3BqdTF4QUxWd243X1lwcmZYQWpHejRpV0wwZlcxcXVoRW9wVkJ2MlVsVW16Y3hFS0xJeWdQdXdNbE1LcG9TWGdaQTdvSXpZUW1zQlBKUGkxdHp6MWRLOWJzaDFycUdWTHk2TnIwbF9qTDVHbkxzSV9UUWcza0UydWs2UkV4c1RLa2RqZzFJOF9hMDBoMTNScnJKZW05VGpia2tMU1RZc3BXLWdHNUdyajJJQ18tcFZmME56Q1lvdk9WY1dYN2FpQV93TUJoNjV0STJhVjNWbmlrMDJheS0?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Scherma in carrozzina, Europei di Cardiff 2026: Italia da record con 15 medaglie - Comitato Italiano Paralimpico",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
-      "score_discovery": 54,
-      "topic": "ALTRO",
-      "numbers_detected": [
-        "2026",
-        "15 ",
-        "2026",
-        "15 "
-      ],
-      "official_links": [],
-      "official_domain_hints": [],
-      "primary_resolution": null,
-      "editorial_excluded": false,
-      "status": "needs_primary_source"
-    },
-    {
-      "radar": "Google News - statistiche Italia",
       "discovery_url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBpV19BTUhRZ1ZVV25hQjgzMk5RNWYwNkZPMmkxeERtSWRYV1RwengwNFdCaXdMM00xeWhvMG02MVJXWHlwNlZpQ3I0OEpBUkdpamwtRzZELVBTZHN1SDlpZjlVbUFjSFg0cFZYZTFnNjRpTXg3Q25aTw?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Indice della Criminalità, Milano è prima in Italia per denunce: record di furti e rapine nei dati del Viminale - MilanoToday",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 35,
       "topic": "ALTRO",
       "numbers_detected": [],
@@ -126,7 +88,7 @@
       "radar": "Google News - statistiche Italia",
       "discovery_url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQX25ISWc2Zy00QzIwd0dlSFdCU3Q3SjlmOFU3Sk9QUk5majNqckxKbGJBSDRQYk9hb2RhcU9VNW13NXAwUFVZRkZNUGFQd1dLcnB2eC1ZZDkyMWJjVlFJZFAzcWZ2bnZDQmRLR20wU3ctSDVodlJIakxvMFBQMTBZMV9OcjFsb1lHcTVjakpZT3RYRDgwRXJadVBIZGhTZFgxbk9aMVdwQV9zREcwQ3B2WDZaRWZabkZBSGoxV2d3SFVLQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Crociere, estate record in Italia: 6,1 milioni di passeggeri e +14,9% toccate - SoldiOnline.it",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 54,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -145,7 +107,7 @@
       "radar": "Google News - statistiche Italia",
       "discovery_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNdGpLTVhxY2FOb1RYcEQ4SWZ6WGFwYnlYSHhEUXExdzFzc0J1bk5UbUF1aEhDSmVhQzBWUjV1ZFBrWGh1Qzc0V3pGSno5ZmRJNzJvZzJtQ0l3My1penJUS1NRRHhjRWxDTTdXMm11cGxWZjFJZHJnbWlSbXdad0hRZDhWcUhaUk1WQmo4MUdUWld5TTBlWExmWFlCT0ttQXJDMHJCSVBKWkdYMmVFTnBLaElpdXE?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Crociere, estate da record in Italia: oltre 6,1 milioni di passeggeri in tre mesi - Messaggero Marittimo",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 37,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -160,9 +122,26 @@
     },
     {
       "radar": "Google News - statistiche Italia",
+      "discovery_url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPQVl5amRlQzE0bk9JMlZkcjJIOUJDai1xMWwtS3JxeFpHT1pQX0NoTWxUNFR2TktUZ2VVN0FNenUzbm14VVhyd3JHVFM5eTVXVzFGYzdUUE15RlJaZGlrV1dpNjhOWklYTkR6dm9sRE9GV1pHTXJwSkQxdFlMMUZFenlqSXBnM1FweTJKTFktODM2TVVGTFJQVkhlLUZNRWpndkNqRWFuOFJOMWJ2RXpiRjh2OEwtNE5abWFvODdaaHMzRDRiNmJYbk4tQ196djR2UFV1X0JLSG8xVmZoUVZvaU1tTDliX2FjancwM3NGVXJ0VjJPX3IwLTZlYy1WZTR0Mks3Yg?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Indice di criminalità 2026: trend in calo, ma Firenze è seconda in Italia per reati denunciati. Tre province toscane tra le prime dieci - La Nazione",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
+      "score_discovery": 37,
+      "topic": "ALTRO",
+      "numbers_detected": [
+        "2026",
+        "2026"
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - statistiche Italia",
       "discovery_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNSW9TMzlMRTFRSFpsTnYzMDhib0FhemIxQUJGck5MeE1iQ3lFV3NZSXozcXdzb0FqempkaWtuUTRJRVpMT09aWnZQSmJoRjY5dWh3NVJhZVRqbnB3aHJUaW9Mc09lRjRRa1RkNVBKZWdua1NhbGgxQlJ4OXZXYTBkSlNXWjNMSzFvMlJfWkZ2U2tzdDNmUzFDWVZzY2ptRUx6SmpTNmZvOGg3eDNOUXk0ZQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Box office Italia, Mammina da record: suo il miglior debutto per un horror nel 2026 - https://boxofficebiz.it/",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 42,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -179,7 +158,7 @@
       "radar": "Google News - statistiche Italia",
       "discovery_url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxNbHJCWTdrME15QVota1R1eFBzeV9mdUFERThTcnNZVncybzU5Vm9ubk5uQndiTHg3ejlEeXNQNEo1NTRpZ0k2d0paNEFTSW9ndWQxOTFqa3R6ZHRmbGc0RG5kdG9uVk1VUnNSVlBlUnhGSEhfQjdVVXYwTmpnNzdmRTlfX2ItWFpaTEx2QkxKeG1WZTMweGhxZTJ4UFZRN05BU2pySFVEVXpCem9nTjFfaWZOaHhUaF9oSWhLc21BRUdOeE11Y2FhQWhhZWJMQmtrbGlweDh4Y0t5aW1ZNTgtUFlSTjNBb2RncUtYSGxCc0k5M19JQzZQemYxdXBzaVdqQjIwNk8wclhReXhkT1lFMW1vRHdIVHcyQmVCdWxwWFh2MVY5NlVMWF9Wbkdmai1oMlHSAbICQVVfeXFMTWxyQlk3azBNeUFaLWtUdXhQc3lfZnVBREU4U3JzWVZ3Mm81OVZvbm5ObkJ3Ykx4N3o5RHlzUDRKNTU0aWdJNndKWjRBU0lvZ3VkMTkxamt0emR0ZmxnNERuZHRvblZNVVJzUlZQZVJ4RkhIX0I3VVV2ME5qZzc3ZkU5X19iLVhaWkxMdkJMSnhtVmUzMHhocWUyeFBWUTdOQVNqckhVRFV6QnpvZ04xX2lmTmh4VGhfaEloS3NtQUVHTnhNdWNhYUFoYWViTEJra2xpcHg4eGNLeWltWTU4LVBZUk4zQW9kZ3FLWEhsQnNJOTNfSUM2UHpmMXVwc2lXakIyMDZPMHJYUXl4ZE9ZRTFtb0R3SFR3MkJlQnVscFhYdjFWOTZVTFhfVm5HZmotaDJR?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Italia delle foreste da record nel 2025: piantati quasi 3,7 milioni di alberi. Ma preoccupa il dopo Pnrr - Corriere della Sera",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 59,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -196,14 +175,14 @@
     },
     {
       "radar": "Google News - statistiche Italia",
-      "discovery_url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOOTg4eGlNU2FNZnBVakpyVVFGai1hYnJ2bzYyaU1EU29OcHVaMGVwSFNtekFmU1A1Y3FuNmxzQnF4VWs4cnpOX3N6ckFZckNLMmNodGNNY2RUemRaR2FMMV93Q1U4TFFJN0h5bmhaSkp5UFVKN01DQ3NFdlhrSVFfVUh0eFFjNmh2aFplZU0tMXVSZ28?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Crociere, estate record in Italia: +4,5% di passeggeri - AdriaPorts",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
-      "score_discovery": 37,
+      "discovery_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxObEhRbkJWQ0N4MmhQN0wwVWRjNDZSQ1NRamdJZ3hrdUxsX1ZLRUZSX2UwZ1B3blF5SlJ0YzlLbUFaaHg4bEdVLUlZZGNSTGdhZmNJYURCYWtENGdVVGplQk5YdE00cXhfMEVqdk9PUUJ6NEFYNElDbjYyX1FobzVScDV5SUR1aHVrRExEbnQyUUZMU2NsTWR1c3VOc2NpVTZwQmVJLdIBrAFBVV95cUxOOENkXzd4SHczeHhGQzBybUFKblJRdkFmeUtiN21tQzFKMjRaYWJWNGlUd1R5Y2I3TmdKRzRNbl9oT1RMVmc2LU1zQnBlMG1mREtqY0J6enIyWndzQUdZTTlnTWxZdFF3WTF4MHBvMmlfT3F5VW5sZTdTN0ZoUktCc2hkWHRKbjd2eklvZmlfeS1BZDlmUFNaWmszUjkyYjRGdnNxWDRTUzIxS1hF?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Cosa propone il Record Store Day per il Black Friday 2026 - Rockol",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
+      "score_discovery": 42,
       "topic": "ALTRO",
       "numbers_detected": [
-        "+4,5%",
-        "+4,5%"
+        "2026 ",
+        "2026 "
       ],
       "official_links": [],
       "official_domain_hints": [],
@@ -212,15 +191,19 @@
       "status": "needs_primary_source"
     },
     {
-      "radar": "Google News - statistiche Italia",
-      "discovery_url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPQVl5amRlQzE0bk9JMlZkcjJIOUJDai1xMWwtS3JxeFpHT1pQX0NoTWxUNFR2TktUZ2VVN0FNenUzbm14VVhyd3JHVFM5eTVXVzFGYzdUUE15RlJaZGlrV1dpNjhOWklYTkR6dm9sRE9GV1pHTXJwSkQxdFlMMUZFenlqSXBnM1FweTJKTFktODM2TVVGTFJQVkhlLUZNRWpndkNqRWFuOFJOMWJ2RXpiRjh2OEwtNE5abWFvODdaaHMzRDRiNmJYbk4tQ196djR2UFV1X0JLSG8xVmZoUVZvaU1tTDliX2FjancwM3NGVXJ0VjJPX3IwLTZlYy1WZTR0Mks3Yg?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Indice di criminalità 2026: trend in calo, ma Firenze è seconda in Italia per reati denunciati. Tre province toscane tra le prime dieci - La Nazione",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
-      "score_discovery": 37,
-      "topic": "ALTRO",
+      "radar": "Google News - economia lavoro",
+      "discovery_url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQTVpjSTd0VXVNeGpNN24wY0wxVGl5eUJIMGg3WGYtNmozM25QYTR5NnNFYm1TZm1jaUctR1FLa2h0MWI1d3NVY1dxTG41akc0YndrNFJjNjF6ZXV3bkdHMHdDdGd2TTNnSkE5Tmd4QlI1ZVY0U2ZSRVJjNzluVmJkTlNTUWNFZWlXcGk3a0VQS2R2cEVNM3h4RHdVS0tqNk9JMEp0bE1CbG9qbklZc2hnUUR1b0ZIOGkx?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Rapporto di previsione CSC: PIL all’1% nel 2026, ma l’energia frena la crescita nel 2027 - Confindustria",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
+      "score_discovery": 60,
+      "topic": "ECONOMIA",
       "numbers_detected": [
+        "1%",
         "2026",
-        "2026"
+        "2027 ",
+        "1%",
+        "2026",
+        "2027 "
       ],
       "official_links": [],
       "official_domain_hints": [],
@@ -229,19 +212,36 @@
       "status": "needs_primary_source"
     },
     {
-      "radar": "Google News - statistiche Italia",
-      "discovery_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPZGNIZ2Uya0ZGMXZFTVczb2tFY00xMGJFLWtLZEJxQWcwQldHY2ZKQWs1OEZjY25jMTdWdzBHZWZIdXBHQzhfUF9kTEl4YW5qS2duLW94Z0R3ODFrVFZHOTJWaXlTeVBuRE1oQU9QZTBQRzZMMGtpc09XZ0luT1pGY0p1Q3J6cVE5UE9jUDdHeVc4SUdpSXBaRV94S09KRXRlOWk0cEFUa3pmbVhwVmkxZU92RQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Atlante delle Foreste: in Italia un 2025 da record, quasi 3,7 milioni di alberi piantati (+17%) - Abitare A Roma",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
-      "score_discovery": 75,
-      "topic": "ALTRO",
+      "radar": "Google News - economia lavoro",
+      "discovery_url": "https://news.google.com/rss/articles/CBMiyAJBVV95cUxPWUk3aXVqNWsxVWNvLVY1SnZ0TW9KdDhSajJPRWVMbjRKYW9ERUNON1ZkdGZXSWE1XzNtZS1LbVpheEtqRnpEVm9PZVdHeTdhVjczQVZrTlQzREx1bFFFSEtkcUtPTW9iWmcyNFRsZTdtWTF0UEhuLTZIQVFVbC1Welg1RkMyY0JLbEZ2VGJrM250VWxSdlEwV2NMYnJGLVhvNUdwVjBsVnpuVFlOSENqaUViQjgyMWM5YmQ1WGJQZHNycXU4YTgzQ05kQWpJMUNiX2NmVXVtUElZUVlWdTVKLVk3WTdXRUJNY1lOSkZDQm8tYTJnc3pyTFhseVJhcGJkLVRCcHpxWXZ4bzF3Q3JGZEE4VG1talJJWE1zZWE1aEh4aFBCOHEtTHZfWDBnRGFhX2ZsdWhZOUpINmJEN05JZXIwWjNkUDhE0gHOAkFVX3lxTE9HSEF6clBVNlJXZEd4bDlISG1XemxDbWdVeGdOYmxHX2NzcHhMTWl5Q24xM3Bfa0tGd253N0IxcTZXa3dGcGo3TTlpbjM3dm5wanNTRm42WkxhVTYwWmFFQzktOW5pM3pGUmdSNjNVWkZ0VURZeFMxcnVodmhXVDYzWG1XMEE3YVNxeHdNOEI1TXBaS3hnemdkeWtLUkZWaUs0dTR5UW9oQjBvUkhndnQycjZFUlhXYm9waWp6bU1pUnFDRUR4aHpqS2lkTGtMdXI5NS1naE40UklRY044NjZNRHI5d1dhZ1BLdERUMzZ6S3FzVHRQNDl6dDlNdEl6QTRyMHltYi1ZT0VvVmpPZ04wN1BzaVJaMUtQbUZObER1M0cxdThsOXluV20ybFNHWWg4M0Q5UUEzTFdoc0sweUs1RGNOXzFlYllpSFVzSEE?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Confindustria alza le stime sul Pil 2026 all'1%, ma l'allarme energia può azzerare la crescita: lo scenario se Hormuz resta chiuso - Corriere della Sera",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
+      "score_discovery": 49,
+      "topic": "ECONOMIA",
       "numbers_detected": [
-        "2025 ",
-        "3,7 milioni",
-        "+17%",
-        "2025 ",
-        "3,7 milioni",
-        "+17%"
+        "2026 ",
+        "1%",
+        "2026 ",
+        "1%"
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - economia lavoro",
+      "discovery_url": "https://news.google.com/rss/articles/CBMipgJBVV95cUxNbUJ4WmU4bDlaZVBEenFyRFVvSWFOWExSa2ozN2xWVHhtbWlGV1NjSU8wMk80VWtVWTZfaEdqeFdDNEo3ZGZtN0o1WjZ5Z0JMZ1Q4Qk5yZVA4YzhzZFpQYlFmTVhnRjBCdGNXQXh2ejJrR1d0MGpKNzFUZmJfMEZmR3N2UnFNdDF5ZUhFeWV1X0hfZnQ0T3hTcWRiSEowMnRidUdfUTFxaDVrZmR3RGRDM2MyamdjakszN3RpbVEyak13bWFZU2dqRjE0VUNnRi1zNlRIOVlWbkJpYTE1OGpHRGZOc21QVzFTVUs3YnlkUmNmZTg1eXVNbC1ROU9lWGoxV1RRNXAzSDg4YjgxUVEzV1pQMm9JRjRzWHYxZHNSQVJiYmhxSlHSAasCQVVfeXFMUDZiaGI4bFQ3Nm8zRUt3YkcwZVZtMHZza2xDaXpGb21lVXJTWk5ZbGZxc0V5SUtnRkR2eE1Lb2pSN3lBaVcwZllYZVBZQ1ZFVkRBNkdtemxYUVgtTFhobFhiOS1fZjNiVWVCMTh4ZjdhN2Y2ZEhza3VWMHp6dTA2Ykdqd09PUk9jZktLUWdKZUNXZHdBYng1SS1OUnRuYjBKaC0takhhUXRrNXkwZGc2ZU5GdzJHbExFeDdCSld3eUdLWjRveXlmTUd2bEpKMWpJU3dzWF81a3RwNGJnbFJaeWJrdHpnd1BQdnVVNHpFNTZFUUVGMmFld3ZaSEZyUUVraUNzd2xvWk5NeUo0Sy01eGFwdWtFOTM1azRKYUhIZW96WUI3MW1ZSkRBUlk?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Risparmi, Tamburi: «500 miliardi dai conti correnti alle imprese». Il 70% degli italiani pronto a investire - Corriere della Sera",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
+      "score_discovery": 39,
+      "topic": "ECONOMIA",
+      "numbers_detected": [
+        "500 miliardi",
+        "70%",
+        "500 miliardi",
+        "70%"
       ],
       "official_links": [],
       "official_domain_hints": [],
@@ -253,7 +253,7 @@
       "radar": "Google News - economia lavoro",
       "discovery_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQUDcwS0V0OXROTEluZ3BBUzRrb0RzajNZcHlmMWxLTUhtZnB6UXUyT0FhUzA4WXo2emFOdlBsWE5rbGNlbUgxOFVtX2JaYXpvcFEtUWkxUUcybTIyVDNfZjJjbFZPMVQtOVBoYVlMazJHSU5LUUVjQ3V6b2FCYWRhMWRoUm1aN3ZUUFRLdzFPOWF6Nk5UakQySjNMc21PUE9DcUlKZGppUV9IZmZsc2IxalhxVFZPR1lIUFE4Ql9sWQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "La prima mappa delle imprese di Ai in Italia: sono 15 mila e tre quarti sono nate dopo il 2021 - il Nord Est",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 39,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -272,7 +272,7 @@
       "radar": "Google News - economia lavoro",
       "discovery_url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNdzVXTmtudmNWdlpsTG8xZUc2bU9DbHNfOUVtRlNNWTFpY0QyMjhKTXNJVnRoZlZadHlVMFJZUlFZSE9fRklNLWZuc0tDdFJ1YjZoYWtud0tkUzl6TkdGYkxuU0RjMGk2RG9pS0JTN3hjNUlzdmpuUnhWczZpYmZhQWh6M0puamZIRUZWR0k2Z2hBcHpwaE5iRkxvSkl0bmZkTUJkbkZPaHVWWEpXSHdGaEVVX0dXMkxGeXZN?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Società Benefit, Puglia ottava in Italia: 281 imprese e crescita del 19,57% - Corriere dell'Economia",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 44,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -289,47 +289,9 @@
     },
     {
       "radar": "Google News - economia lavoro",
-      "discovery_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOby1TdnRUTWxuQTFIa294cldCNHJBZVYycmk0aHlvYWthYkVzYjZUMXMyb09YbDFjeTgzVVZZeFhnZzN2WnhTVUNWY1hQSEJtMjRoQjNSc2VYam1RUkpQWTlzUDkwWERBUmw2QlY0d2dVd2NDTXJGcEV2aWVHdVd2TGdlNA?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Report Valoritalia: dati di sintesi sul mercato italiano dei vini 2025-26 - Beverfood.com",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
-      "score_discovery": 39,
-      "topic": "ALTRO",
-      "numbers_detected": [
-        "2025",
-        "26 ",
-        "2025",
-        "26 "
-      ],
-      "official_links": [],
-      "official_domain_hints": [],
-      "primary_resolution": null,
-      "editorial_excluded": false,
-      "status": "needs_primary_source"
-    },
-    {
-      "radar": "Google News - economia lavoro",
-      "discovery_url": "https://news.google.com/rss/articles/CBMipgJBVV95cUxNbUJ4WmU4bDlaZVBEenFyRFVvSWFOWExSa2ozN2xWVHhtbWlGV1NjSU8wMk80VWtVWTZfaEdqeFdDNEo3ZGZtN0o1WjZ5Z0JMZ1Q4Qk5yZVA4YzhzZFpQYlFmTVhnRjBCdGNXQXh2ejJrR1d0MGpKNzFUZmJfMEZmR3N2UnFNdDF5ZUhFeWV1X0hfZnQ0T3hTcWRiSEowMnRidUdfUTFxaDVrZmR3RGRDM2MyamdjakszN3RpbVEyak13bWFZU2dqRjE0VUNnRi1zNlRIOVlWbkJpYTE1OGpHRGZOc21QVzFTVUs3YnlkUmNmZTg1eXVNbC1ROU9lWGoxV1RRNXAzSDg4YjgxUVEzV1pQMm9JRjRzWHYxZHNSQVJiYmhxSlHSAasCQVVfeXFMUDZiaGI4bFQ3Nm8zRUt3YkcwZVZtMHZza2xDaXpGb21lVXJTWk5ZbGZxc0V5SUtnRkR2eE1Lb2pSN3lBaVcwZllYZVBZQ1ZFVkRBNkdtemxYUVgtTFhobFhiOS1fZjNiVWVCMTh4ZjdhN2Y2ZEhza3VWMHp6dTA2Ykdqd09PUk9jZktLUWdKZUNXZHdBYng1SS1OUnRuYjBKaC0takhhUXRrNXkwZGc2ZU5GdzJHbExFeDdCSld3eUdLWjRveXlmTUd2bEpKMWpJU3dzWF81a3RwNGJnbFJaeWJrdHpnd1BQdnVVNHpFNTZFUUVGMmFld3ZaSEZyUUVraUNzd2xvWk5NeUo0Sy01eGFwdWtFOTM1azRKYUhIZW96WUI3MW1ZSkRBUlk?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Risparmi, Tamburi: «500 miliardi dai conti correnti alle imprese». Il 70% degli italiani pronto a investire - Corriere della Sera",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
-      "score_discovery": 39,
-      "topic": "ECONOMIA",
-      "numbers_detected": [
-        "500 miliardi",
-        "70%",
-        "500 miliardi",
-        "70%"
-      ],
-      "official_links": [],
-      "official_domain_hints": [],
-      "primary_resolution": null,
-      "editorial_excluded": false,
-      "status": "needs_primary_source"
-    },
-    {
-      "radar": "Google News - economia lavoro",
       "discovery_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQR2ltTFVKb1A0TUdRZ3M2X1Y1dnJNdWlUQ2NDZEFNc3JtSGdwRnV1a01Va2xiTUd2R3U3aDVPZUZzeTgyRlR1d1NDVFRMZE5KRDh3OExYNWNEMkI4NzJWYmpRckdKSkE3bnRsQmFWRkNiaDJDWFR0UzdlaTF6N00wdldpVHJ3TUtJc3J4YS1oQldFbUNLdTg5b1FEM2tHcnB0SGZRd1l1Q2g2YWZUSkNlOGxKak5EbFl3bkE4WjNnU0E?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Imprese straniere in Puglia, oltre 22.500 attività: il 6% del totale regionale - Corriere dell'Economia",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 39,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -345,17 +307,17 @@
       "status": "needs_primary_source"
     },
     {
-      "radar": "Google News - salute scuola ambiente",
-      "discovery_url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNR250OUw2MEZJbVVCN2hyM2ZSR3BDb2pxRFJHdThVWW41bk5XVlRBVGNUVGl0VG1qaXl5c1dUemYxZ3RIam9vLXVDT1F1VEFLTDgtZjJjVGRQN28wOEUtSzNkd0JRSUttUjE5ZjBOaVY3TlF3MXQ1d3dxSW9hN1lfc3Z4ZGY1XzFFX3FIb3lmRnBGNUU3MmZlSG45ZnpST0dmeVlKVFZUcWlGUjNHelBHU0ZJNmZoZGRoa0xMdm5TOUNpWHRxTW1weTlFNlhZTk9iRFAxdG0tbXlSRjZxZlFYaXhEYkxQYUdL?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Rapporto salute mentale 2026 (SIEP), Marche 15esime. Sintomi depressivi in crescita, superata la media nazionale - Vivere Fermo",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
-      "score_discovery": 59,
-      "topic": "SALUTE",
+      "radar": "Google News - economia lavoro",
+      "discovery_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOby1TdnRUTWxuQTFIa294cldCNHJBZVYycmk0aHlvYWthYkVzYjZUMXMyb09YbDFjeTgzVVZZeFhnZzN2WnhTVUNWY1hQSEJtMjRoQjNSc2VYam1RUkpQWTlzUDkwWERBUmw2QlY0d2dVd2NDTXJGcEV2aWVHdVd2TGdlNA?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Report Valoritalia: dati di sintesi sul mercato italiano dei vini 2025-26 - Beverfood.com",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
+      "score_discovery": 39,
+      "topic": "ALTRO",
       "numbers_detected": [
-        "2026 ",
-        "15",
-        "2026 ",
-        "15"
+        "2025",
+        "26 ",
+        "2025",
+        "26 "
       ],
       "official_links": [],
       "official_domain_hints": [],
@@ -367,7 +329,7 @@
       "radar": "Google News - salute scuola ambiente",
       "discovery_url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQQncyUWc4UXRPTGNQRTZTUzFMOVJseHBMWjJfdE9KdlRqa29qQlZFSEVEbDA0d0pPVFBsY0VvQ3EtczduUTJQd0d1YzdHanRFcnI4WXpBZlhsT2VtNG1SX0VTa0VpdTBRaGFUeEJCZHZxZDB2TzAwdWxtVjVEaGluQkVFRkFyS2Izb2JXbmhJcVZvYk90UXNGOXZwTmJ4Zk5ZZXVIYzRmMFg0M0VvOVBCb3hsdHU4aUpKSXBuS2F0eTBuNDdybHdEUzBtdFVGTERkaXpBMDdHUG8?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Rapporto OCSE 2026, Valditara: “Risultato storico, l'abbandono scolastico scende all'8,2% con cinque anni di anticipo” - Orizzonte Scuola Notizie",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 49,
       "topic": "ISTRUZIONE",
       "numbers_detected": [
@@ -384,18 +346,37 @@
     },
     {
       "radar": "Google News - salute scuola ambiente",
-      "discovery_url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPVzI3UEtpaEFQMl90b1Zvb0ptRTY4NE9Oc1Q4Sl8yZVpaWGRTNFd5NUFsbHVOc1hKalVxVExDcFRZYklHOXNsUkFRM3kxeGhZY0xKVUVqX3ZNcWpqa2pWWmZtZnJSNWt1M0VFN3dHb0VzREhNSXZoTFdiSnRGRTdvdGxiOFNJYTMyenItbkdGTzQzZVNNMTVKY3ZuZjQ2OG00Sm9WaTBBUnZrQjJrVzVFMW96cl9WSGFuT1l0a0JHdEpDZjFRVUlqT3VISnhVWUczeDZPZnltMGlXbW04S3dBZk5YMVY?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Demenza, ogni anno si apre una nuova città di 11 milioni di malati. Nel 2050 saranno quasi 25 milioni - Mondosanità",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
-      "score_discovery": 50,
+      "discovery_url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNR250OUw2MEZJbVVCN2hyM2ZSR3BDb2pxRFJHdThVWW41bk5XVlRBVGNUVGl0VG1qaXl5c1dUemYxZ3RIam9vLXVDT1F1VEFLTDgtZjJjVGRQN28wOEUtSzNkd0JRSUttUjE5ZjBOaVY3TlF3MXQ1d3dxSW9hN1lfc3Z4ZGY1XzFFX3FIb3lmRnBGNUU3MmZlSG45ZnpST0dmeVlKVFZUcWlGUjNHelBHU0ZJNmZoZGRoa0xMdm5TOUNpWHRxTW1weTlFNlhZTk9iRFAxdG0tbXlSRjZxZlFYaXhEYkxQYUdL?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Rapporto salute mentale 2026 (SIEP), Marche 15esime. Sintomi depressivi in crescita, superata la media nazionale - Vivere Fermo",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
+      "score_discovery": 59,
       "topic": "SALUTE",
       "numbers_detected": [
-        "11 milioni",
-        "2050 ",
-        "25 milioni",
-        "11 milioni",
-        "2050 ",
-        "25 milioni"
+        "2026 ",
+        "15",
+        "2026 ",
+        "15"
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - salute scuola ambiente",
+      "discovery_url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNV3JLWW40VldCSjNPTzJrUVR6T284VXVZZlRZTFFXUHJrMzA0MDZ3WWNoTTdSMGZGc0c5ZXJXNm8zWnhiUmtza3hwVEQ1bVJ3Ul94UUdLZTRHT1ZFaS1OMnpLa0VIZDBkb0NGUTB6YVpSUWpHWlB2Szh5QmJrd1hxNks3ZzVFNnB4MDFFYzdaM2dGY0VWRmJlWkUwZWxEalg5NE45SElLVnd2TTJVT0xxczd0dWt5X19ZdEZrZ1M3TWsxbTN2Wl80SzZZUmZIVUVINlpabkt3?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Diabete in Italia: 3,8 milioni di persone, crescita del 23% in 20 anni e bisogno di cure integrate - My-personaltrainer",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
+      "score_discovery": 45,
+      "topic": "ALTRO",
+      "numbers_detected": [
+        "3,8 milioni",
+        "23%",
+        "20 ",
+        "3,8 milioni",
+        "23%",
+        "20 "
       ],
       "official_links": [],
       "official_domain_hints": [],
@@ -407,7 +388,7 @@
       "radar": "Google News - salute scuola ambiente",
       "discovery_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNR2xnSlJwS0R1T1JWYVRocWtLeG0zeXl5T0dxTzdQNjVPOERFZGdxUWM4cXBOeGhtQVd1OU1uZXNCTm5OMWlRdnlHYm95Vzhlak14WHd2eDY1SkRLN2Q2UUt5aXhrVDJlV2d5STJuTmR6VjI2Ymt0Y3FsS1kyaEtoUkduV0JsbnBsMjBxalN6QVpHMEZYSWhtLTVva2JpNk0?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Ambiente, in Italia nel 2025 quasi 3,7 mln di alberi piantati (+17%) - Radio Studio90 Italia - solo musica italiana",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 45,
       "topic": "AMBIENTE",
       "numbers_detected": [
@@ -425,100 +406,14 @@
       "status": "needs_primary_source"
     },
     {
-      "radar": "Google News - salute scuola ambiente",
-      "discovery_url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQY092VWY3cmRTSnZVWU1EZWdaMnk0SlVxYl9DdlB1WXhaeDJpQjkwaFFlMWEwMHA1b3pwUHpwZ2V1a2hQenQ3ZkJaZnJfajRERXR0Vi1WRnlKR2F1Y2VKR1VzeEdMQXdzeURyeHJSUUZGQXNCMUFKXzNLMS1CaEtsMnRLa0F5NTl3UFhSUXlpa1BfWkdPZ1pyRVd3M2l2MFpvR0Jxdno4SlktNnp5cGVWeDhJRVEtVjFEckhmMHpPekQ4TTA?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Dispersione scolastica in Italia, dal 2022 recuperati oltre 520mila studenti - Teleborsa",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
-      "score_discovery": 39,
-      "topic": "ISTRUZIONE",
-      "numbers_detected": [
-        "2022 ",
-        "520mila",
-        "2022 ",
-        "520mila"
-      ],
-      "official_links": [],
-      "official_domain_hints": [],
-      "primary_resolution": null,
-      "editorial_excluded": false,
-      "status": "needs_primary_source"
-    },
-    {
       "radar": "Repubblica Economia",
-      "discovery_url": "https://www.repubblica.it/economia/rapporti/energitalia/trasformazione/2026/10/13/news/la_transizione_energetica_frena_nonostante_il_boom_delle_rinnovabili-425644839/?rss",
-      "discovery_title": "La transizione energetica frena, nonostante il boom delle rinnovabili",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
-      "score_discovery": 43,
-      "topic": "ECONOMIA",
-      "numbers_detected": [
-        "38,2 ",
-        "2050 ",
-        "10 mila"
-      ],
-      "official_links": [],
-      "official_domain_hints": [
-        "aci.it",
-        "iss.it",
-        "terna.it"
-      ],
-      "primary_resolution": null,
-      "editorial_excluded": false,
-      "status": "needs_primary_source"
-    },
-    {
-      "radar": "Repubblica Economia",
-      "discovery_url": "https://www.repubblica.it/economia/2026/10/13/news/inflazione_istat_100_anni_prezzi_casa_alimenti_utenze-425644656/?rss",
-      "discovery_title": "La corsa dell’inflazione: dal 2000 i prezzi sono aumentati del 63%. E la casa costa il doppio",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
-      "score_discovery": 47,
+      "discovery_url": "https://www.repubblica.it/economia/2026/10/14/news/cina_record_dell_avanzo_commerciale_settembre-425646979/?rss",
+      "discovery_title": "Cina, record dell’avanzo commerciale. E volano le esportazioni verso gli Usa",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
+      "score_discovery": 36,
       "topic": "LAVORO",
       "numbers_detected": [
-        "2000 ",
-        "63%"
-      ],
-      "official_links": [],
-      "official_domain_hints": [],
-      "primary_resolution": null,
-      "editorial_excluded": false,
-      "status": "needs_primary_source"
-    },
-    {
-      "radar": "Repubblica Economia",
-      "discovery_url": "https://www.repubblica.it/economia/rapporti/energitalia/sostenibilita/2026/10/13/news/energia_la_bei_investe_9_miliardi_nei_paesi_partner_priorita_al_clima-425644535/?rss",
-      "discovery_title": "Energia, la Bei investe 9 miliardi nei Paesi partner: priorità al clima",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
-      "score_discovery": 54,
-      "topic": "ECONOMIA",
-      "numbers_detected": [
-        "9 miliardi",
-        "2025 ",
-        "119 ",
-        "57%"
-      ],
-      "official_links": [],
-      "official_domain_hints": [
-        "aci.it",
-        "iss.it",
-        "terna.it"
-      ],
-      "primary_resolution": null,
-      "editorial_excluded": false,
-      "status": "needs_primary_source"
-    },
-    {
-      "radar": "Repubblica Economia",
-      "discovery_url": "https://www.repubblica.it/economia/dossier/manovra-finanziaria-legge-di-bilancio/2026/10/13/news/pensioni_risparmio_1_miliardo_stretta_anticipate_corte_conti-425644417/?rss",
-      "discovery_title": "Pensioni, Corte dei Conti: “Nel 2025 non spesi 1,2 miliardi”. La stretta sulle uscite fa risparmiare",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
-      "score_discovery": 60,
-      "topic": "LAVORO",
-      "numbers_detected": [
-        "2025 ",
-        "1,2 miliardi",
-        "2026 ",
-        "7,4%",
-        "366,5 miliardi",
-        "2027"
+        "25,3%"
       ],
       "official_links": [],
       "official_domain_hints": [],
@@ -528,9 +423,9 @@
     },
     {
       "radar": "Google News - ANSA dati e statistiche",
-      "discovery_url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQTllkSk5GSVlHa0l2dXRiYjdmd1lndFhoODBYT3FVVW1fd1hYNzBWOHo1Mjl3cUtsZXZ0eTZ3Vl9RWkRURzVHZlFqck5aOVBPZEJ2TDRMeEVadjhTYm5aRk84d0xPRlNIa0lnRXlXcUtYdHNVVTNxb09scWhKNzFyQXp3RmV4U2Y5UnN4TlprT0hiMHo0UURYVFBTOHdqZnB5ZkRfREtwVHZ5eFAxcTI2TkJ5ZFdrLW5iN0doTG5YU1hSdTRrM05xRnZQTHRQYUZGeXpUcVY4UGdQWm1RWi1WN1BQZkxpSnBIQTRWX25lVm9aQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQNkUzSFYwSjRTQVhnOE9IbzBYWFJzNTVZMDJTdmI1S1JrYl9LcVY1U2drMi1HSGk0ZHdMSVdpcVAwZTJ2WTk1SmoxU1RZc1piazZJcXZiZ0RzTy1tZG9HN3RheXFBemVJWUxmUUZuM1NMTzBhRmVQWnE0aWNmQ1poRHNnNFF2MTc4MFFqVkRYbDFzX2o2RkxEQV8yLXExcE9FQjVtRDViWEdZSlktWS1GUTduOGhFMmltVzhDNm9vcDgzckNTN0RDM1Z6dy1NZVlWcjltMURGN2YzcUtsdHdGTWwyOC1Rb0VaRGZXMmQ2Z3lnODBSNzlsLVViUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Shakira da record, oltre 500 milioni di dollari di incassi dal tour - ANSA",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 37,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -545,9 +440,9 @@
     },
     {
       "radar": "Google News - ANSA dati e statistiche",
-      "discovery_url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQd3VlNTIwU096Y3V5c0ZKVGlWQy01VXdpUEdELUgyRFNEb3BtdnNJOUxGMUd3MFdhTHdxM1RrNHJ4LWFsZ2RSOVpKVzI3a0d2TEg4aU9rSHZUX25IRFIyM1JsaFlMbTBEemJhUkZrcHVGTGVLRjNiakxNb0dXbl91WkFxay1rdGdaQ21aZ0VGR0ZxWnJpRWxOSFBiQVN5cDhIcy1XRTRSeWNOMGlWUTR0N0Y1SXM3Z1Z0ZzRScnQ3WXF3MnFydndGYkk3Z00zaTBRcTl0QXBnXzJadUkzVGxlektrejdyVUZ0MVZPN1Vn?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQd3VlNTIwU096Y3V5c0ZKVGlWQy01VXdpUEdELUgyRFNEb3BtdnNJOUxGMUd3MFdhTHdxM1RrNHJ4LWFsZ2RSOVpKVzI3a0d2TEg4aU9rSHZUX25IRFIyM1JsaFlMbTBEemJhUkZrcHVGTGVLRjNiakxNb0dXbl91WkFxay1rdGdaQ21aZ0VGR0ZxWnJpRWxOSFBiQVN5cDhIcy1XRTRSeWNOMGlWUTR0N0Y1SXM3Z1Z0ZzRScnQ3WXF3MnFydndGYkk3Z00zaTBRcTl0QXBnXzJadUkzVGxlektrejdyVUZ0MVZPN1Vn0gHzAUFVX3lxTE1EaUNYTUJaRjl1OU8zV0NJZGJWTzhqV0RaaHBWaGpLU2tqZy01a09wYkZCa3psRTJndUoybExTMWhYYU96OUFSdmxNYjJsNkdIQTNKTXVjdXNoZmFiNlpQSTNuRXk3VVdid0tXbDZEV3dpOEhsX2Zxem9WVGV1anN3TmRGb01PU0FTT2VUMDl5ZnRYd0ttM3NLSEF4QVJlZkgtQ0JhM0pQMXNZdjdBWVJwckEwTmhaSWFzWHJmMGUzVmhRSklNUzVTTG90SDVzY0pEenJSWm1BaERiWVctSXJkcXd5aE82MXFnUzVjOWpmM0JDWQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Istat, Liguria tocca record di 283 anziani ogni 100 giovani - ANSA",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 49,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -592,9 +487,26 @@
     },
     {
       "radar": "Google News - ANSA dati e statistiche",
+      "discovery_url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNcEdzN2ZWemtEZDRIeXZYUFJ6Zi1qZnBTc3ladVdZWEZ4a1ZqcjJHUmwxQVNJVlAzclJMQUtvTXNxbXljQU5ya2lwckNCaHU3dzBTamVyZ0hFbmFmZEMwMjFBbDgzY0dMLTE1aGQwRVhrMVhuUEQzakpQejdzYjM2Z0szRVV2S1N3T3ctVHJtLWU4YXp6bUV3Skg1eXd3anJDb0stZ0YzVm8tenJ4Yk9JaEJyMjdieUJsdFlUWVBYUGh1QlJkQ2NPM0FBeUhsYjhNQmYzMFNTSlI3YkpkRk9hcUs3SUI3enFWTzBlVkxoSVpjQdIB9wFBVV95cUxPaEQ0Vmpyb2NEalQzM3pNXzM3NTAwODVMelBkck1tUUI3ZnV3TFZBWkJvUUhzb0pKdHlTdEh1V0RKQlJidi1iUXNzd3AxNjJxd2RGb1NpM3E1Wk9pOWRjRUhzWVJGTWN2VWFnRWYxQzM5WV9RUndpZ1QzTV9INWdrUXYwSlE1bjE5NVU4UnVGTVVJXzBuZjItczNBd2txWjUwWjJVbmlVdld6MnlMZWdVT2VpRnVjaVdRdGFtQTdoaGVQenNXd21CYXRqYmxOdFRKQW5vMC0wUnBrd0hDaDllV0RYRHlHbUxZdm15WXFBc1NtaC1JdHJj?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Record per le Giornate Fai d'autunno nelle Marche, oltre 35mila visitatori - ANSA",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
+      "score_discovery": 37,
+      "topic": "ALTRO",
+      "numbers_detected": [
+        "35mila",
+        "35mila"
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - ANSA dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMimgJBVV95cUxQdDZWQ0JBVTkxWlJlLWVpdjVBRmEzOE9zVVdTbjNacGdZY1pMWkpxb0QzN3dtOFlYMVhQWlZ0R09QNzhUQjlVanZxRExySDREVXRqWV80N2tVdDdkX1pGdnFzT29majN2bzBKVmpaWmpIbjlqeENCcTM0SUZ6OWxKZGRCS0NsTEpsN2xUOVZWLWg3Q2xKN09EN3NIcDdmZzREaExlVEM5UGxKR1Fjb0E3RDZjMmNfZWdVMldtNVRPclZSU2s1b3dVQklMR04wVGRfVE4zMThDUENxUURJUEtvOEJwYXNTMmJ1ZHEyYkMtWndhRlFrWHlNdUoyRUR0eUxadDR6MGdTNFBJV1VlRU41MDhZOHBabGNEZ0HSAZoCQVVfeXFMUHQ2VkNCQVU5MVpSZS1laXY1QUZhMzhPc1VXU24zWnBnWWNaTFpKcW9EMzd3bThZWDFYUFpWdEdPUDc4VEI5VWp2cURMckg0RFV0allfNDdrVXQ3ZF9aRnZxc09vZmozdm8wSlZqWlpqSG45anhDQnEzNElGejlsSmRkQktDbExKbDdsVDlWVi1oN0NsSjdPRDdzSHA3Zmc0RGhMZVRDOVBsSkdRY29BN0Q2YzJjX2VnVTJXbTVUT3JWUlNrNW93VUJJTEdOMFRkX1ROMzE4Q1BDcVFESVBLbzhCcGFzUzJidWRxMmJDLVp3YUZRa1h5TXVKMkVEdHlMWnQ0ejBnUzRQSVdVZUVONTA4WThwWmxjRGdB?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Fao, proposta record 20,6 miliardi di dollari di investimenti agroalimentari - ANSA",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 37,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -611,7 +523,7 @@
       "radar": "Google News - ANSA dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOQldQNnNHRGZQTkZDOTlHd3I2S2ZWamU0X3RpMHJNNDFlNlJnUzRSWkp1bjk0d0MtR2Q3VHNNcEVqWEJmbVozdWN1Ykg0MnVSUUVrUVFQYVVoQXBkS1pBNFUtRjlVWFlKTEU1Q3I2VHJPQ0kxd1A0RzJ2dXNsbTdScks4WTJqUXFlTmI0cDk0OHNERlAwV01aQllFWU1uVjB1ZzJVbGJvZFRud1ptUW5lU1l4UVF6V1lueU9ibWt0T2JDTzZQS1ZOZGRrTVJrY2hkbFRxQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Etf, terzo trimestre record: raccolta a 127,4 miliardi (+12%), l’oro supera i 10 miliardi di afflussi - ANSA",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 60,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -630,26 +542,9 @@
     },
     {
       "radar": "Google News - ANSA dati e statistiche",
-      "discovery_url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNcEdzN2ZWemtEZDRIeXZYUFJ6Zi1qZnBTc3ladVdZWEZ4a1ZqcjJHUmwxQVNJVlAzclJMQUtvTXNxbXljQU5ya2lwckNCaHU3dzBTamVyZ0hFbmFmZEMwMjFBbDgzY0dMLTE1aGQwRVhrMVhuUEQzakpQejdzYjM2Z0szRVV2S1N3T3ctVHJtLWU4YXp6bUV3Skg1eXd3anJDb0stZ0YzVm8tenJ4Yk9JaEJyMjdieUJsdFlUWVBYUGh1QlJkQ2NPM0FBeUhsYjhNQmYzMFNTSlI3YkpkRk9hcUs3SUI3enFWTzBlVkxoSVpjQdIB9wFBVV95cUxPaEQ0Vmpyb2NEalQzM3pNXzM3NTAwODVMelBkck1tUUI3ZnV3TFZBWkJvUUhzb0pKdHlTdEh1V0RKQlJidi1iUXNzd3AxNjJxd2RGb1NpM3E1Wk9pOWRjRUhzWVJGTWN2VWFnRWYxQzM5WV9RUndpZ1QzTV9INWdrUXYwSlE1bjE5NVU4UnVGTVVJXzBuZjItczNBd2txWjUwWjJVbmlVdld6MnlMZWdVT2VpRnVjaVdRdGFtQTdoaGVQenNXd21CYXRqYmxOdFRKQW5vMC0wUnBrd0hDaDllV0RYRHlHbUxZdm15WXFBc1NtaC1JdHJj?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Record per le Giornate Fai d'autunno nelle Marche, oltre 35mila visitatori - ANSA",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
-      "score_discovery": 37,
-      "topic": "ALTRO",
-      "numbers_detected": [
-        "35mila",
-        "35mila"
-      ],
-      "official_links": [],
-      "official_domain_hints": [],
-      "primary_resolution": null,
-      "editorial_excluded": false,
-      "status": "needs_primary_source"
-    },
-    {
-      "radar": "Google News - ANSA dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxNcUtadjkyYTNOeVJuWjFSSEl5MVhBM2lLRWZYYktmUTZBbl9yLU56MlRDVkdyb0FIcjd1SEVvRDhOU29oSW1aU3JrTWdpdW5JR0Zrbk1ZWnBDZWVWRy1HMUhSTG12dGhnNE0tdElxbGdmdUdDZmtuYUtpdVBxbWQ0eHhoR01aRFdWUmRaUUVKcGNmWUlNekZzU0p1N2g2b000NkhDdmxUa0VWMUdjdmZQaWh5Y1VuQjFhNjdBak54ZW16Y1FiYWdpYmxBX2RmdjNzT3p3aUliam12YURqMGR1VTF3UlJ0bFAxVkpqTXRvNHJPR0UtR2ZnNkZjTURlUdIB_gFBVV95cUxNcUtadjkyYTNOeVJuWjFSSEl5MVhBM2lLRWZYYktmUTZBbl9yLU56MlRDVkdyb0FIcjd1SEVvRDhOU29oSW1aU3JrTWdpdW5JR0Zrbk1ZWnBDZWVWRy1HMUhSTG12dGhnNE0tdElxbGdmdUdDZmtuYUtpdVBxbWQ0eHhoR01aRFdWUmRaUUVKcGNmWUlNekZzU0p1N2g2b000NkhDdmxUa0VWMUdjdmZQaWh5Y1VuQjFhNjdBak54ZW16Y1FiYWdpYmxBX2RmdjNzT3p3aUliam12YURqMGR1VTF3UlJ0bFAxVkpqTXRvNHJPR0UtR2ZnNkZjTURlUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Greca 28enne salvata con un trapianto record alle Molinette di Torino - ANSA",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 37,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -664,16 +559,16 @@
     },
     {
       "radar": "Google News - ANSA dati e statistiche",
-      "discovery_url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxOb19Cb3oyMWg4YlVSMkEzanhSQ1J5cHI0SmhmMlowNVByM1k4U3d4U2pJdHd6dXVDUlZmU0lJODBWVE00b2QtcG5ZUUtUYXVnWWZKZTZMNnkzWkpNT1g5VXRTVzhmMTRTUHFIVjBtV3poYUUtWWx4Sm5lNzhrazVhZzhEemdWMnhtTDdMcEcxLXZ2MWpFNHBBekpHMHNaTkhGN1VheEhpdV95dFBTZXZlQkNpSEE2eU5RTHdBNEU5czZwSm9lblBxNjU1U1VyZGtQVzN2WHJoOHNELWM5a2twQmV4MUNOVkRkQkR6TmloTEdYTUgwNk8wZ0lXTW54QXAzU3Y4VURxLWRVLU9KcGfSAY4CQVVfeXFMTm9fQm96MjFoOGJVUjJBM2p4UkNSeXByNEpoZjJaMDVQcjNZOFN3eFNqSXR3enV1Q1JWZlNJSTgwVlRNNG9kLXBuWVFLVGF1Z1lmSmU2TDZ5M1pKTU9YOVV0U1c4ZjE0U1BxSFYwbVd6aGFFLVlseEpuZTc4a2s1YWc4RHpnVjJ4bUw3THBHMS12djFqRTRwQXpKRzBzWk5IRjdVYXhIaXVfeXRQU2V2ZUJDaUhBNnlOUUx3QTRFOXM2cEpvZW5QcTY1NVNVcmRrUFczdlhyaDhzRC1jOWtrcEJleDFDTlZEZEJEek5paExHWE1IMDZPMGdJV01ueEFwM1N2OFVEcS1kVS1PSnBn?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Studio, nel 2024 dipendenza energia Italia dall'estero 16,6% in più a media europea - ANSA",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
-      "score_discovery": 49,
-      "topic": "ENERGIA",
+      "discovery_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNaUZQMUIzMWVOVDU2VG9EMlgtRHRZQjFzSFFsdEgzaGFQR1hNLXE4SFZzOW45dXRKaEhHZVg1LWl5WW9mTS1rS0dJUHRRYWgxQ2hYcHFNLU1KdnJsRXhjOG9rWEFCTEx5OTNDa0hRUm16SWtCMVFnRF9NOUxlZm94MVFjcWRGZUNVeVduTHAtdEw0MEVTZVlFeTFsX2Fxb20ybnJ4TElkaGVwaVl6NFpFUU1pX1EwRUwyd0JFTUZyVQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Dispersione scolastica in Italia, dal 2022 recuperati oltre 520mila studenti - ANSA",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
+      "score_discovery": 39,
+      "topic": "ISTRUZIONE",
       "numbers_detected": [
-        "2024 ",
-        "16,6%",
-        "2024 ",
-        "16,6%"
+        "2022 ",
+        "520mila",
+        "2022 ",
+        "520mila"
       ],
       "official_links": [],
       "official_domain_hints": [],
@@ -685,7 +580,7 @@
       "radar": "Google News - Adnkronos dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNaUxNaGFqYnJmZkl3c2VhWUd2T1J5MVYyU3M4ZUFBNXI3QUJQajhzTVNhWkpDU1JxOU1BUmpQbC1qUXNDZkpVUjcwMTF3SHR1TnN1UGZUZndyalFZWExjNko2ZWU3MWpXWkhvUk9LMzh3YVdrdU9oY3owUFdSdE1XRy1TMjNybjZtQ0JVT1ZtVjdyNlN3c3B5ODZLM0ZfSkZ4TkJiTjhSMnl1OTZTVWlwYW1oLU03Sk5Cb3JJMGhEYVJRS3JaNVFZNGRB?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Otto anni fa vinsero 2 milioni e mezzo alla lotteria, oggi un altro incasso record: è la coppia più fortunata del mondo? La storia - Adnkronos",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 37,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -702,7 +597,7 @@
       "radar": "Google News - Adnkronos dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPUmQtT0pKUXhxbUNuYWRKNVNtYzVmU1dqYkRuVlNLMG10dV90b04zckdUVXBQTFdvajZmTTJVVk1teFlKZ2tEelFDRU9IaFctUmRfVS1oQy1fa2RDMkRvcG96eHRaUGJMYVRHTkxVcXNJbE85bGo3ekFxUnQzOW1BMTM0bWdpOWFkZGw4TjdHalVHVE9fbllrSklYZkFJVDFi?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Settembre 2026 il secondo più caldo di sempre, valori record per temperature oceani - Adnkronos",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 42,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -719,7 +614,7 @@
       "radar": "Google News - Adnkronos dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOQVZDOTFFY25nVmN3MGpxUG5SdGJnUkFzN0tTdTVFMmEtWnA5N1pRQWtZU2xPWEUtUWRnWDByNE1pb3ZoNVQtcHNTdWExMjFRRGk1d0xpelk2WGpRODNXYXVSbEFuUGc1bklsV25jbkRxWTBQb2tGcW1xeEpkWnlSMTJUeGZyaDN0RzN1MjhRdWhWQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Criminalità in Italia, nel 2025 in calo dell'1,8% rispetto 2024. Milano città con più denunce - Adnkronos",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 55,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -738,9 +633,28 @@
     },
     {
       "radar": "Google News - Sole 24 Ore dati e statistiche",
+      "discovery_url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE04cmQyVDFjNUdPQ3g1NUJHbjYyRXIyX05seGNhYmdCT0tiZWVoaG5GVzRnZVBsR1d4d2xBdHB0TWlhSFowMVd1aFdsNC05Y2xHUVYzTE0yVG5YTUMwWmJjcml6cVhoMzVPSTBOLTJtQWNKMHhO?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Borsa Tokyo: chiude in lieve calo (-0,05%) aspettando dati inflazione Usa - Il Sole 24 ORE",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
+      "score_discovery": 49,
+      "topic": "ECONOMIA",
+      "numbers_detected": [
+        "-0,05%",
+        "24 ",
+        "-0,05%",
+        "24 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - Sole 24 Ore dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxONmx2a1ZCaWxMamRxcFpfMHdwZ2FlU3VQVk5WZUJrb0IzejRaNzNtOUh4UkczY2V1Rmw0R2JzRi1oVDhHWVhBNEw4OTVMV0Q0QW81NTRELU13MDc5MUtFWTl4RXFsQlJHRlNjLTlRaVJCaldIaHBJMGp1dkFpaE1Ua082cng5dm5FMUdKc1dETkQyZFo4d1JQN21ZRXo3S2N5Rl9Zdkd1ZF9kYlh6REVnQk5fd3pKWWEwSHFlSEN3?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Global Blue: estate record a Capri, spesa Tax Free cresce dell'11% - Il Sole 24 ORE",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 49,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -759,7 +673,7 @@
       "radar": "Google News - Sole 24 Ore dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNSl9uNnRwcm5PS3FvYWpsQUlNZnZZUW9pVDlneTJmMnh3eHZrNVU0WDFobGM4MWlTQW5hXzBxelRCV1F1WmlkODZmdEJqeUQtZnNkY0hoQmxlSUwwc01IVGU4THlvVHZFQU9uOEhlRjdBOU5zcWdkZ1MwZ2I1aWowVEF3Xzlfejh1UmVRTHdRVDVGYm82Y2VYalJxRTNOZnV4YklCRTk4VG1wUUNpVGZ3am9LZURyWm1qNXJSZ1BVeHpSQWRQUHVUeFpWNGVMRzFodVdZVU9VMW5mOVVjX0hJdHZnYXg3WURKXzd6aDg4em5NQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "La crisi spinge il debito dei Farmer Usa al record di 605 miliardi di dollari nel 2026 - Il Sole 24 ORE",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 65,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -778,9 +692,30 @@
     },
     {
       "radar": "Google News - Sole 24 Ore dati e statistiche",
+      "discovery_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPUHh6UDN4dTRqbjliQWlNQk44SVNiR2ljdl8zSUREUHJQa3FMM3JfemczV2hTX2lfYnRWR0NFUVN3T0dBWlhsakh6QkpTTDlZcjJIZFFqRzRhdEFqbzBOaEMtVHJJcnRuTnc4Z0l0R1JodVlubWt2WjBzNV84ZzUwMGwtRkt6R0xHNVV5VjJVbnl5bG5fa0llTWtvYWdncWJiNWlicXYxZjIxMkJ5aXZlNzNhOVVTS1NubFdUeHAwUjI?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "L’inflazione record per i costi dell’abitare: in 25 anni +119% - Il Sole 24 ORE",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
+      "score_discovery": 65,
+      "topic": "ECONOMIA",
+      "numbers_detected": [
+        "25 ",
+        "+119%",
+        "24 ",
+        "25 ",
+        "+119%",
+        "24 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - Sole 24 Ore dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxONUZoSXN2TkUyQXVoVjZkQXVJTlRoRmt4b0FST3JwQ2REYU9PenNQYm9YWmFKQ1MwYkpFU1BNQ19FSzh4d3h5RVM1bjk0N05iemRFeFoyVUxPckFZcFhjWV85LVNVU1g0RHdNYlZxTGxXVzJVdi1VOUY1ZmRLazBxWlk1bS01NmhXbG12SFJzdjBhS00?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Copernicus: 2 September 2026 was the second hottest on record - Il Sole 24 ORE",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 60,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -801,7 +736,7 @@
       "radar": "Google News - Sole 24 Ore dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNd0h5c3NyUjRMY2hGNHowWWYxZ3pQaWFwempEYmtIaC11T29ZcDFsdDUyQkY3ZC1vZVFieTZSYXRxTWpQZmRVeWdPNDZxR0lyZUdadFlpcVVUTUVHQ3hTUlpJNHVWd0ZzbnN1SE1ESEdyVUdZM2U1TVU1Y3FRY0F3YlpGa295TXRPY2NsajM2TkVUc19MYnhEclBGbVhFYVFncklNd1FqSFo2anZ5?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Borse, Europa positiva nonostante rialzo petrolio. Milano +0,6%, WS +0,38% - Il Sole 24 ORE",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 40,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -810,50 +745,6 @@
         "24 ",
         "+0,6%",
         "+0,38%",
-        "24 "
-      ],
-      "official_links": [],
-      "official_domain_hints": [],
-      "primary_resolution": null,
-      "editorial_excluded": false,
-      "status": "needs_primary_source"
-    },
-    {
-      "radar": "Google News - Sole 24 Ore dati e statistiche",
-      "discovery_url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOWlFRSW50UWNxbVpIQXBHRFY2X2tzMVdpLUFubXRJZVJ0M0FuQ3UyZndCM1lDYmR0U2xpenNGZ09MOUttQjh3TUNkSjYtM01aUFU5NlI0dldNSjNFRVBPM29ORU0zTFhaVWdTYVFQaEI4RHB2NEZ0bnljRnRlYkxjNlV3?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "IL PUNTO FISCALE | 12 OTTOBRE 2026 - Il Sole 24 ORE",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
-      "score_discovery": 40,
-      "topic": "ALTRO",
-      "numbers_detected": [
-        "12 ",
-        "2026 ",
-        "24 ",
-        "12 ",
-        "2026 ",
-        "24 "
-      ],
-      "official_links": [],
-      "official_domain_hints": [],
-      "primary_resolution": null,
-      "editorial_excluded": false,
-      "status": "needs_primary_source"
-    },
-    {
-      "radar": "Google News - Sole 24 Ore dati e statistiche",
-      "discovery_url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9yNFlqTnlsTGR6SzFONjVFNUtfMDJFRUJNSHN6MjduTnMzQ2lJY1U3QjV2R1N5WHUwck1IZlNoLWtmMU5zQWZ2ODRwX0lXeFI5Z3I0dHRsdThMZHRNSFhxSHI2ck5nWndNRmxSOTJ1QVpVdTA?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "BTp: assegnati 2,5 mld triennali, rendimento al top dal 2023 a 3,69% (RCO) - Il Sole 24 ORE",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
-      "score_discovery": 45,
-      "topic": "ALTRO",
-      "numbers_detected": [
-        "2,5 ",
-        "2023 ",
-        "3,69%",
-        "24 ",
-        "2,5 ",
-        "2023 ",
-        "3,69%",
         "24 "
       ],
       "official_links": [],
@@ -866,7 +757,7 @@
       "radar": "Google News - Sole 24 Ore dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNWkRMR0FIVU9wczFVZE1zaVplZ0tiMnBnU2NyeTBsek5QcnJSaXh6VVZnOTFWSjVpZC1JT1hrbFdHRFJWTjE1RWRyZ2xCNG1RbndJZTVUdGxsQm83T2FVNnY5R3o5RUFSRFQtWkhfY2duTENkYV9xUEowelRvNkhENFpaMjRKWmNOR0g0THZydEpDYnlYcDBhaEpEcTd2OTVKa0xJ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Crociere, crescono i passeggeri in Italia: previsto un +4,3% sul 2025 - Il Sole 24 ORE",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 45,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -885,9 +776,74 @@
     },
     {
       "radar": "Google News - Sole 24 Ore dati e statistiche",
+      "discovery_url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOWlFRSW50UWNxbVpIQXBHRFY2X2tzMVdpLUFubXRJZVJ0M0FuQ3UyZndCM1lDYmR0U2xpenNGZ09MOUttQjh3TUNkSjYtM01aUFU5NlI0dldNSjNFRVBPM29ORU0zTFhaVWdTYVFQaEI4RHB2NEZ0bnljRnRlYkxjNlV3?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "IL PUNTO FISCALE | 12 OTTOBRE 2026 - Il Sole 24 ORE",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
+      "score_discovery": 40,
+      "topic": "ALTRO",
+      "numbers_detected": [
+        "12 ",
+        "2026 ",
+        "24 ",
+        "12 ",
+        "2026 ",
+        "24 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - Sole 24 Ore dati e statistiche",
+      "discovery_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOSjFwNWd6WThfbS1FZGswSDhKVDZfTWd4NWNUejd6NTlUVTdYaVROdVppRmhaOHR4b2R2Sm5ERVZuNUZ1SFU2aUVzOEhqZzhjaC01eW1ibWN0SVdIY19LYW1SX1BkRXVmWUk1UTFFbmpkaVN1WTRJVU0tTXMyRlFpbk1tU2dZYXRzaTlndUtxMGNlN3JZYUpQX01EVnM?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Reati, furti, rapine: scopri l’indice della criminalità 2025 della tua provincia | Il Sole 24 ORE - Lab24 - Sole 24 ORE",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
+      "score_discovery": 45,
+      "topic": "ALTRO",
+      "numbers_detected": [
+        "2025 ",
+        "24 ",
+        "24 ",
+        "2025 ",
+        "24 ",
+        "24 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - Sole 24 Ore dati e statistiche",
+      "discovery_url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9yNFlqTnlsTGR6SzFONjVFNUtfMDJFRUJNSHN6MjduTnMzQ2lJY1U3QjV2R1N5WHUwck1IZlNoLWtmMU5zQWZ2ODRwX0lXeFI5Z3I0dHRsdThMZHRNSFhxSHI2ck5nWndNRmxSOTJ1QVpVdTA?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "BTp: assegnati 2,5 mld triennali, rendimento al top dal 2023 a 3,69% (RCO) - Il Sole 24 ORE",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
+      "score_discovery": 45,
+      "topic": "ALTRO",
+      "numbers_detected": [
+        "2,5 ",
+        "2023 ",
+        "3,69%",
+        "24 ",
+        "2,5 ",
+        "2023 ",
+        "3,69%",
+        "24 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - Sole 24 Ore dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPVFFfbXZWZ3pKNlZlSTlCcUJfRmREWDdUaUdubFRacldDVU0yLXNNUlNVVEw5T3pxNlVMV3Z4Q1ExTXZSZXZsam9GaXZRYlJITUtyM1F4WUJCTktJRXhwRndPQ0l5ZkhyT0p3VlF5U3UzT2RJY2RqV1I2M1I0Rld0bVgwYVpvV1l3T2R0a092bXo4Mm9GVEFvTXY3ZF9VQndFY0UzVVBWek16WmhOYlpONlBDbXJOQm80?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Case, in Italia servono 151mila alloggi l’anno: a Roma e Milano il fabbisogno più alto - Il Sole 24 ORE",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 44,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -904,15 +860,19 @@
     },
     {
       "radar": "Google News - Sole 24 Ore dati e statistiche",
-      "discovery_url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPZmV5STBLNlBIWnRLUEhSWmRGRm9TUDBmTWVWenBfenRWOVZuY0kydURQVHhlRnBhMWtLUkFxR1AxQnZiMloweDRDZEFJSTQ0aWFWelA3eElYeXV2SlZaU3RqTy1lakJ0QUFlSUtPM2c4bTAwZlF2b3NiT0VCa1ZOSkZLbTNYNGotck9iUjBZbHlzZ3MwaWRlTkV0Y193SlBsbzJERXNvY3pwSXBFcHRiTm12emlkRk9YZlhOXzJacE5LeGF1NTJodGYydTFMdnc?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "In Italia servono 151mila case l’anno: a Roma e Milano il fabbisogno più alto - Il Sole 24 ORE",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
-      "score_discovery": 44,
+      "discovery_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQZy0wdVFoZ3ZtWk1GYTRxZU1zcDdkOG1aX1U1MFp3bzNKNWFjRUdJYWRmdHZwZkxTRFJKNFc0b3F6Y1h3eDE1eGNkbjE4aW1QWVhUbC1mdmVpQlI1M2J4QV84SDhsMENJR2JXMVBFX3pNYVNHeHlRdUNuV0pydGtobF9tWUxJNlFhWW5ta3pIbUVSLTJuSHZPWm1wd19sd3lwa3lFb2FaZW44TTRMaER4aWJrLS1abGhwN05JbFFn?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Microsoft, Maia 200 entra in produzione: i nuovi chip Maia 300 arriveranno nel 2027 - Il Sole 24 ORE",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
+      "score_discovery": 40,
       "topic": "ALTRO",
       "numbers_detected": [
-        "151mila",
+        "200 ",
+        "300 ",
+        "2027 ",
         "24 ",
-        "151mila",
+        "200 ",
+        "300 ",
+        "2027 ",
         "24 "
       ],
       "official_links": [],
@@ -925,7 +885,7 @@
       "radar": "Google News - Repubblica dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPVjlfN1BYbnk4ajhkSG1fQWEybzg5TFVMenFCWmRvQXJHQW9tdTdIUU5UWDd0OUw0RFc2VThmVGE1S21uYkdqc3F2RC04ZUc0eWhxMy1QNXNUOTZodVRKWXhBNUtVa3ZHaXpvZVhOVk1tTFZLX3RleGFCWDdmYjA4aGVzRjRVTU56VmVtcUdIT2Y1WVE1eDRhZXhGSDc0T2djZUFVU3pFVjctQlNZWk1qeUZIRUdvNWJydVJ4cnVOX3ZFbXYzaEh3SUVFSjdXUjN6WF9uRW4zcXBldUtBeTVJc3VYdW1peU91?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Private Banking, a giugno masse crescono oltre le attese a 1.524 miliardi, già oltre target di fine 2026 - la Repubblica",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 39,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -941,29 +901,10 @@
       "status": "needs_primary_source"
     },
     {
-      "radar": "Google News - Repubblica dati e statistiche",
-      "discovery_url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQYVdQUXF3bmpoUlp0OEcxb0JUU3FXUDJxb1Z3VHlOdnZrMDJuN0sxSkFYZTdXdGdyUzFyQzZPNVN5QkdpNWN2WVR3RElsWGs2TElEcTFiS0l6LUJ1VlpaejZiN1BJSU9KZ1R5NGtLXzRLXzEwc3N5VTFjLVYyVjVzN010MGl3TUVRRzA3OG85eFB0dl9EUFl0VlRfeTlaTzdoODhNbnFwLUtFUGtlYzZqVXhta2dGa291OVV3LTBCR0NfYjRZcW9DdmpwZEc5a1ZQc0dUUEtiYWRsMU8xTkRyUWtmcHhkdHV1?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Germania, inflazione di settembre conferma accelerazione allo 0,6% su mese e al 3,3% annuo - la Repubblica",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
-      "score_discovery": 39,
-      "topic": "ECONOMIA",
-      "numbers_detected": [
-        "0,6%",
-        "3,3%",
-        "0,6%",
-        "3,3%"
-      ],
-      "official_links": [],
-      "official_domain_hints": [],
-      "primary_resolution": null,
-      "editorial_excluded": false,
-      "status": "needs_primary_source"
-    },
-    {
       "radar": "Google News - Corriere dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPQ3BVUWwzTWhjNlN1SGNHMERqLTd2WWFEcHRJOHc5S0pVMUo5Q28xd3ZIMVhhN2tDWlJwYWxrRWt4VElKdzFfOUg2UjVOVkppSU4yOVQ3cTcxeTlzdG5HRHA0ZnNqZEJBWXNYZFhEVlRVRXpZWEhVdnRhR01DOXRrVmlRTnNGYml2dk5wbHJ1SExKNDlGQ1FORFNwSDlFQ1RQR09zY3FHSVlNRlRHUkHSAbMBQVVfeXFMT1pDSDZ6VW5GNURHazFkV1BMekFGWlVBdm0wM3gxa203QzFQcHlfc0pqdlR1Q29zTzFjazktLThGT2J0V2prUnVJa3U3Qm5LQ29jR3ZNbHlpZGRtbjZGY25xd1pYcm5xQWYzSEotb08wS0pJX1FwTTlMWDJqT045TWNQWFZ4ekY2c0YtTHg1OVpWVjRBZVNrQ0t3UkJ1dmJtMlBaZ3NHOGxuVzEzbHZZTlMtZ3M?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Overtime Festival 2026 chiude da record: da Materazzi a Buffa, a Macerata il trionfo del racconto sportivo - Corriere della Sera",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 42,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -980,7 +921,7 @@
       "radar": "Google News - Corriere dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMiwAJBVV95cUxPTHVQQ2t6QklMV3U1T0VsVjBhNHktLXE3S0RER2NSazBURzAwNE5UZ2w3RDNUNTBySXpqY1Z2WnhKcldab0NRcUgybmJTOFlMWWlqOEx3bm82WGdBVHN5aTVudzdLMThRMTFFWGF2VzRLY2c2U1BobGFmRkJ5Nm83dmdKOGtNc2FzUkdoUUJzb1cycmdLRmhIQzhMbEVmS2E1MzFpS0FwMlBIQ2hqcFJ3eWN6d0l5QTlfQU1wZVlSTEZBZWJfOFNLZ0RnNlBwZ3Fna0U0M3NKTFVlcE1vN3pxeWMxOHBlN1dVcWxRWFBHRS1KNkRhNG9MTDB2elM4MXJoZzNyNmtpTHhKX3A4c0xWMUp0YzRSa1VCc191RGNPRkNjNmNQYk5WXy11Z0E1Wjhwd2dwUjR6WUZYZXQ5c2dGa9IBxgJBVV95cUxPWEd2eFN0S2o1Ujg2RHprYlhBOENKTzJYRXB6a3o0a2RFcWFmMjlGdlVnZl9RVEpnTGxMTjlXZVc1UjlESkozQkxyVVgxRWd0eUxWWmF3TlZzT19BMGdiZE1PMm12YkhXX21vRjJ2WTRyNDFaMWhhTmxpTHJuSk1PRTd1TExHRDRrdy13NjhqZWswU0dPRTBqZk1YbzRKX2ZZTFg2OTFCaXhpdDE0djk1eG1HTm9DMEtKU2kxMFZlZkJwU3BMWHNGekhBRnc2NGVSOEFLVDlER2FTYk5VLXc3ZDBVWWs4NEdBNUFsU3oxbk1VU25KT1BndldfbE1xYjJYUlFWV3NoYkp3LVVCN1BuYnZONTVLTmhWLUcyUi1HTV9VSXVfMDZEVkNhUWVsX0xRYVZaeG96TlU5d19adVJwUnFIcDVQUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "La Finanza di Brescia coordina sequestro record di cocaina nell'Atlantico (vale 750 milioni); un morto nello speronamento - Corriere Brescia",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 37,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -995,9 +936,28 @@
     },
     {
       "radar": "Google News - Corriere dati e statistiche",
+      "discovery_url": "https://news.google.com/rss/articles/CBMirAJBVV95cUxNaGs4LXdObnlMUmRvcE1QdVNlWEdvUGppN3RtLWttMTMxUTVWU2FrRFdLZVVYMDQwRkFHWjZUMVJyRElOemtxckVsX2Y5RGM5WElqY3VnNmhQaFF5RUlyclpHZTgwZW5PaWlIZ1ZUbjZjSUFIVEdKR3daY1JYRC1GOW5RUU85akhBaFkwQWVUQVpFYk51YVVoUUQ3dGVpaTBmUDFsb0RLSWk2NEJ4SkxudXNhcG5rNGVlUjhoQXIxb2V3LXlSUmNaU042X1dyaHYyUnNBd2F6a19zajRLTU1QcXBDcDFfWDlfR1FmY3hGRGx6N09BeG0zbGc5OUlDcWpoTTBsSEE2UjAwdnU3RlpXTzNEQ3dfUzhqTjhFWWFRUkszMGpBc05ZQllKRU_SAawCQVVfeXFMTWhrOC13Tm55TFJkb3BNUHVTZVhHb1BqaTd0bS1rbTEzMVE1VlNha0RXS2VVWDA0MEZBR1o2VDFSckRJTnprcXJFbF9mOURjOVhJamN1ZzZoUGhReUVJcnJaR2U4MGVuT2lpSGdWVG42Y0lBSFRHSkd3WmNSWEQtRjluUVFPOWpIQWhZMEFlVEFaRWJOdWFVaFFEN3RlaWkwZlAxbG9ES0lpNjRCeEpMbnVzYXBuazRlZVI4aEFyMW9ldy15UlJjWlNONl9Xcmh2MlJzQXdhemtfc2o0S01NUHFwQ3AxX1g5X0dRZmN4RkRsejdPQXhtM2xnOTlJQ3FqaE0wbEhBNlIwMHZ1N0ZaV08zREN3X1M4ak44RVlhUVJLMzBqQXNOWUJZSkVP?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Torino e l'estate del caldo record, 190 morti in eccessoe e temperature fino a 4,6 gradi sopra la norma - Corriere Torino",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
+      "score_discovery": 49,
+      "topic": "ALTRO",
+      "numbers_detected": [
+        "190 ",
+        "4,6 ",
+        "190 ",
+        "4,6 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - Corriere dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOcHVRdERweExQMnNxc1NPWWF5SGU3d0VDWTlRVDZqRUYtM1NTRmNjOHM3enhrXzRJMGt2c0hBbXFvcTdwc2xJTGFLWDg5V3BBaE1BdWlBaXRiU1BOX2RrSjZqa3hUaXFlaUtHWkRVX3hCUEw4LXRoZzJ5UUNrTmFYTWJhM1BFMFpSREdCWml3ZG54WDZvSFJSQmtaUDZpTXhOLVZFSGRVc1A2eHpteDE4bkpxMmJRSG1sZkhUUVdLb9IBxAFBVV95cUxQN0RUeEZHckROeTFnVGRCNXR3QUhmRXpOTnh1TEZ0dUR5cFpIMktvWFp6bVQ1X2ZlNGUtTWYybUJoQTZMRXNpYkhZU3dJcGNwWEdpQXU1YUREendORTlDV0lFTnhVT1hBdV9IUURfbTJQRWVjbzJUcTAtUjFRbnBQamttQjhuNmNzVFBSYUgtenpyNHRrMUlBM3JBMG9MSTU2T3FqX0s5eUVfcEZRT1gtZDlyb0dFTUdfQktFYXhBSWpncXlv?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Nba, asta record per la figurina di Cooper Flagg: venduta a 8 milioni di dollari - Corriere della Sera",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 37,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -1011,36 +971,19 @@
       "status": "needs_primary_source"
     },
     {
-      "radar": "Google News - Corriere dati e statistiche",
-      "discovery_url": "https://news.google.com/rss/articles/CBMiqgJBVV95cUxOb1ZvZmpSOHN4YkxlNHVKbFk5RXFSZjAyR01fR0Vyc0VBVWVHaVlkOHJpQk8tMmJaMlVxd3pTbWtZd0x6NTFlZTVIY1NoY0FaYmNCeGdscXUxZEd0bHREVFpqc0t5RGdOYTZuSlp6bWhzVVRVbXVpWHdyS0J1SEV3OXdYLVRxOGlFS2ozOEloVFotdWgwaVp5OVQ0VjU2Ymx3NU5Hb2NfazV0SG9ieGxBSGhINU5BVkkzRlFUcERBZExtT2JHalVObks3T0RteUoxcHZrUEM1UXNxS2U2ZzV0endoVUVhaDZkMjkzS3ZMT25fSjczUFZsUEt5cWY3cDBHUjNGVTgtYWhQd1lEbnY3VnZDQjZtazgxU19tX2tubjdhdl9naHBWcTZB?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Bergamo, le violenze sessuali crescono del 104%: provincia al 39eismo posto per rapporto tra reati e popolazione - Corriere Bergamo",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
-      "score_discovery": 39,
-      "topic": "DEMOGRAFIA",
+      "radar": "Google News - Italia economia e famiglie",
+      "discovery_url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxPSTg4WDBjTi1VQzk5T3prY29Gc0dWNmk1R0hlY0JiS01RX2hySVpqSjdHeTM5emQyUnFlWHVUWmFkWlNoQUdZb05MNVo4RlRkcl9NMVFST1QtNDJsbzBxbm9seHl1aHo3NFV4NG8taVBJcWZDN3F6YW1hTkRWalQwV0V4RHlIS3FxNGxWV2ZsRzl6TXFicjNWdjRJYjlQdnBiUDM5X2xxbUpoZnFJVGhlbFV4TE45cUg1c3o1dS1CQWU4enAxSDY3bnFpemdJR1BmdkJENUtLc2JvNGNCWWl0X0R3cFljYTM2cFlqdVVWNE9oSFdDWERuNkNBamo2WUc3Z1FadGd2UUJoZ3RvWVNlUmRwZUVFS25a0gGeAkFVX3lxTE4wblNaQnc3YXhBZVp1NTBKZ1gtU0VUWF9MUjBXWE5SQXNXLVR4bjExZnY4ZE9tc3BZVlhkSTItT3lLUUZWcmlHam12R3lIbDJ0T3hLUWRteThUWXJtTFZGZnRFR0RvY3U3YVlFOWlYOGMwZEtETnQtb0xBQUV5SzVNQUZjMzBLa0xOWjdCbVpGNzZrTUIzUFBKMXBySFpRRGZRenlYbUZNSk5Fbm1VYWgteWo3WHh6YTVZb3ppTHR6WkhheFNrelVhaFZ1Q2hnb0NCbDRaRUw3eDJhcnI3QTlRVThSNmdjQlFvWFpXSHF5WWhhQnBYZkpOT3pGTmdISWhNaXJtUHltVTVwM0NlZkxzSks3ZXFiZjJmU2YyS2c?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Inflazione Italia 2000-2025, i prezzi di casa e bollette sono più che raddoppiati in 25 anni - Corriere della Sera",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
+      "score_discovery": 55,
+      "topic": "ECONOMIA",
       "numbers_detected": [
-        "104%",
-        "39",
-        "104%",
-        "39"
-      ],
-      "official_links": [],
-      "official_domain_hints": [],
-      "primary_resolution": null,
-      "editorial_excluded": false,
-      "status": "needs_primary_source"
-    },
-    {
-      "radar": "Google News - Corriere dati e statistiche",
-      "discovery_url": "https://news.google.com/rss/articles/CBMiwwJBVV95cUxPUG9ueE1ibTJoQmVqOHFLQnZrU25ITlM5MGJRa3UtVkNjT1BYTmQtb0c4dk1HaUdQUHdLM3gydGJkNHZ3d2l0dkxtajRtT1pTbGJnSUstNjZMS0loSXRNWW4zcnE2WnBMbDBYeUh6MGZJcFF6elVhLTc4QVRwblBLR3BIUThibmYxOE9pYzBsVUp5VldUUlFkZUFwQ3RQZmE5aEQ5YmpRX0hnVllHYTVwZ0E0N2lEMHJqcV9PNWVQZmhMbU5lLVMyRGFZZ0gyOExlb2Yyd1dTWG9Sb1oxME1nemFqakoyMVo5V1RmTGUyNnVPZy1WR1Z2bFNGc1JnaEdXUjBSXzVDckxpN3ZDTkJRaWF4MFIwU3VsZ29ncUVVT3M0Um1yWGh6WUF3RUlMZWY2aktSaWY4eF9RM3R5M1ZXUmZIY9IByAJBVV95cUxOMzdDUGJidWlWUzZHaDhUa0tZS1ZYejNuOEhvS19qOUN5ZVF3dkZWRlNUaE8ycTFLUGMwZ1pNM0ZtNzhhRXVDYXR4c1hyeWZ5Tl9PNGlqM0xkSXhaMmlFem01REdLanUzcTRsZzdnQUFKdGRqZ00tRzVnTVhFeThZLThuLVY3NGhDSHo5VzdrRW55S1Bmd1c3cE5uZXk5bjBTeHp3VGtKVDl4ZWcwMXBBVzUzZEpiZ2pXM3pVbHFMVG95U2NPOHNKNzVUeERnSjRfb1V1azRJZDhoUHhJYkVfZS1RWGw0RWRURGFKbnJWUThDRzVKRm1XU3VzRzZWYWdnYk5aS2ZEVXplM0tQR2E5UDFnY2h4bGFFREkxSlljUGlFVGFKOUlTeUdOZTJYTkFxemlyckZWQzdBcDJRS25UdmloOW9FTFlw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Giovanni Potenza: «Il mio record di corsa a 82 anni su e giù per il Grattacielo Piemonte. Gli avversari? Al massimo 60enni». A Torino gli eroi del towerrunning - Corriere Torino",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
-      "score_discovery": 54,
-      "topic": "ALTRO",
-      "numbers_detected": [
-        "82 ",
-        "60",
-        "82 ",
-        "60"
+        "2000",
+        "2025",
+        "25 ",
+        "2000",
+        "2025",
+        "25 "
       ],
       "official_links": [],
       "official_domain_hints": [],
@@ -1052,7 +995,7 @@
       "radar": "Google News - Italia economia e famiglie",
       "discovery_url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOQnRlVDNENTBBM3J4em0yazNlQ25Oa1kxenU3YzJ2ZmdvTmtpLXh0ZEItR2RpOFRlRGtiQzJMMDFoVDdvdFh4enRfTkFPMk1MdWktSzJGUEFiZUZrZlFVT2trd0VuTkw3MWFuNVVsMmp5Z3BlY2lzbmlDbWJkd2ZhWFBLZHhBRHRYaHVQLW1vMnRoRG9lWms4TFN4dVJMVUxoRWhGbkxwMnJSRXNvT1VWakNoVzNKWXNOcGR6ckt0WThlZXfSAcgBQVVfeXFMTjJlWjZUR19YWjhmVnhjaTBwMnZzTy13REMwaWpXRzRoNjVIUGY5MmFOZ0Q4a0VjUGRWYnBDa0VGakJCWU4ydm9EaHNSTHBpcUZBXzl5N0puWGZUV3VPVUhMRlZJVG9fNS02cnowb0lYNlgtOG9zVDNmeFZ6QTRFOEVLcDE4enB6R2ZtbWJqMjlNQzZ2MjM5dG5nWlg0TnlzUDdCbXVXQmR0eE1qSkJRMlVLODJHeDNnWWRXUy0wTUVzb3lfWUktOHc?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Fmi rivede al rialzo Pil Italia, +0.8% nel 2026 e inflazione al 3,3% - RaiNews",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 55,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -1071,9 +1014,68 @@
     },
     {
       "radar": "Google News - Italia economia e famiglie",
+      "discovery_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPLUFoQ0FxRF81aGtGU0trTjM2SEtkU2NTaXJGWTNvSU56QVdDbWhxeWZneGV1TFhURVJaYWJDSHhmZDdCY2tad1g3b1JDUkpOWEhLZU1aRGtIWFBEOTAxdTE1UkoybWlpRzZic1JUVDBaeEtQMEl4YTdUbUZncUdLN1VFNXRwSUczdDF1UVZSRFNIVGdCNUdqTkFWMXMzdFlMemlGeXNUbDBxcV9yU2Jham4zWGtRUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Istat: in 25 anni prezzi cresciuti del 63% ma per la casa oltre 100% in più - Il Sole 24 ORE",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
+      "score_discovery": 40,
+      "topic": "ECONOMIA",
+      "numbers_detected": [
+        "25 ",
+        "63%",
+        "100%",
+        "24 ",
+        "25 ",
+        "63%",
+        "100%",
+        "24 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": {
+        "url": "https://www.istat.it/",
+        "domain": "istat.it",
+        "matched_numbers": [
+          "25 ",
+          "100%",
+          "24 ",
+          "25 ",
+          "100%",
+          "24 "
+        ],
+        "matched_non_year_numbers": [
+          "25 ",
+          "100%",
+          "24 ",
+          "25 ",
+          "100%",
+          "24 "
+        ],
+        "matched_keywords": [
+          "istat",
+          "prezzi"
+        ],
+        "verification_score": 71,
+        "text_excerpt": "Istat Vai al menù della testata Vai al menù principale Vai al contenuto principale Vai al modulo di ricerca Vai ai contenuti in evidenza English Homepage Informazioni sulle rilevazioni Attività e servizi per tipo di utenti Per tutti Sportelli sul territorio European data support Biblioteca Archivio storico Giornalisti Appuntamenti Embargo Articoli e interviste Istat in breve Storia Rispondenti Informazioni sulle rilevazioni e questionari Elenco soggetti esterni trattamento dati Sanzioni amministrative Ricercatori Eventi segnalati dalle società scientifiche Laboratorio ADELE Promozione della ricerca Studenti e docenti Master EMOS Statistica e Cittadinanza Formazione per docenti Progetti per le scuole Pacchetti didattici Competizioni e premi Enti del Sistan English HomePage Imposta Lingua Language Settings Per favore conferma la tua preferenza. Please confirm your preference. SWITCH TO ENG",
+        "verified_series": [],
+        "method": "named_or_topic_domain_search",
+        "search_domain": "istat.it",
+        "attempts": [
+          {
+            "stage": "domain_search",
+            "domain": "istat.it",
+            "query": "site:istat.it \"istat prezzi cresciuti casa sole\" 25  63% 100%",
+            "results": 8
+          }
+        ]
+      },
+      "editorial_excluded": false,
+      "status": "primary_statistical_source_verified"
+    },
+    {
+      "radar": "Google News - Italia economia e famiglie",
       "discovery_url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOTmhDTy1SX1dJTzl1V0hZSEJ4M1FBZnNJdjZUOFBjNmpnUEZQd0wzT2xnclZubmV6aWlYSWRMUlhIRU5GZW9BdlpvOGhGYUx4by1DYi1hdzkxNnViTHlIUmFBYmZ2dVY5WmlXMl9lenJEUFY0WUEwYjZkWW9KWTRSUEx3QVZadUxMSkZMZ3VXcldNdTJvcm1YZWQtWS1WUkhDdVdReWtVVkY3VkJVajFQMzM4OURHaTF4UkFxaUlFZExfdDYzbUZNLXN6Q1A5QXBZMWRUSGphZTJhWm9paW5lX2poYnQteUoySk9PXzd1YXk?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Fmi, nel 2026 in Italia inflazione al 3,3%, area euro al 3,1%, Usa al 3,6% - ANSA",
-      "detected_at": "2026-10-13T20:06:01.231243+00:00",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
       "score_discovery": 55,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -1085,6 +1087,29 @@
         "3,3%",
         "3,1%",
         "3,6%"
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - Italia economia e famiglie",
+      "discovery_url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQdEVsSkFMZVlYV2xRRGNsZlg5NU5hekZ3b0E5ekFoMEx0RG9XSTkxLXNmcHVNQmFaNUpKR1V0bk1UV0NiMVVaT21OYll6UjVkWXd6cUdQUndHdE00TXh5akpLTXZObXExUk8yM2w2YjJCU3c0NXRNazZmYy1relJkZ212VUJPT2RmUFRPZUtQcEtJMi11cS01cWVWN1NaWTZQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Inflazione +63% in 25 anni: cosa si comprava con 5€ nel 1926? - Il Fatto Quotidiano",
+      "detected_at": "2026-10-14T09:18:29.771666+00:00",
+      "score_discovery": 45,
+      "topic": "ECONOMIA",
+      "numbers_detected": [
+        "+63%",
+        "25 ",
+        "5",
+        "192",
+        "+63%",
+        "25 ",
+        "5",
+        "192"
       ],
       "official_links": [],
       "official_domain_hints": [],

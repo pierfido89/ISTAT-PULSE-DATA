@@ -1,11 +1,295 @@
 {
-  "generated_at": "2026-10-13T20:06:01.231243+00:00",
+  "generated_at": "2026-10-14T09:18:29.771666+00:00",
   "articles": [
+    {
+      "id": "PULSE-ECD5BA28ED8C106C",
+      "story_fingerprint": "ecd5ba28ed8c106c9260ac17",
+      "published_at": "2026-10-14T09:18:29.771666+00:00",
+      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 75,
+      "public_source": {
+        "url": "https://www.istat.it/",
+        "domain": "istat.it",
+        "role": "primary_statistical_source",
+        "verification_method": "named_or_topic_domain_search",
+        "verification_score": 71
+      },
+      "discovery": {
+        "visible": false,
+        "role": "hidden_radar"
+      },
+      "period_reference": null,
+      "latest_source_update": null,
+      "headline": "Economia, nuovo dato per Italia: 25 ",
+      "summary": "Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+      "statistical_claims": [
+        {
+          "raw_value": "25 ",
+          "verified": true
+        },
+        {
+          "raw_value": "63%",
+          "verified": false
+        },
+        {
+          "raw_value": "100%",
+          "verified": true
+        },
+        {
+          "raw_value": "24 ",
+          "verified": true
+        },
+        {
+          "raw_value": "25 ",
+          "verified": true
+        },
+        {
+          "raw_value": "63%",
+          "verified": false
+        },
+        {
+          "raw_value": "100%",
+          "verified": true
+        },
+        {
+          "raw_value": "24 ",
+          "verified": true
+        }
+      ],
+      "verified_series": [],
+      "territories": [],
+      "chart_spec": {
+        "type": "auto",
+        "status": "requires_primary_series",
+        "reason": "candidate_contains_multiple_numeric_values"
+      },
+      "map_spec": null,
+      "editorial_status": "verified_primary_match",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-F787DB8094E68FDA",
+      "story_fingerprint": "f787db8094e68fdad0c5b584",
+      "published_at": "2026-10-14T09:05:32+00:00",
+      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 60,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQTVpjSTd0VXVNeGpNN24wY0wxVGl5eUJIMGg3WGYtNmozM25QYTR5NnNFYm1TZm1jaUctR1FLa2h0MWI1d3NVY1dxTG41akc0YndrNFJjNjF6ZXV3bkdHMHdDdGd2TTNnSkE5Tmd4QlI1ZVY0U2ZSRVJjNzluVmJkTlNTUWNFZWlXcGk3a0VQS2R2cEVNM3h4RHdVS0tqNk9JMEp0bE1CbG9qbklZc2hnUUR1b0ZIOGkx?oc=5",
+        "domain": "Confindustria",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Rapporto di previsione CSC: PIL all’1% nel 2026, ma l’energia frena la crescita nel 2027 - Confindustria",
+      "summary": "Rapporto di previsione CSC: PIL all’1% nel 2026, ma l’energia frena la crescita nel 2027 Confindustria",
+      "statistical_claims": [
+        {
+          "raw_value": "1%",
+          "verified": false
+        },
+        {
+          "raw_value": "2026",
+          "verified": false
+        },
+        {
+          "raw_value": "2027 ",
+          "verified": false
+        },
+        {
+          "raw_value": "1%",
+          "verified": false
+        },
+        {
+          "raw_value": "2026",
+          "verified": false
+        },
+        {
+          "raw_value": "2027 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-29669920787E180B",
+      "story_fingerprint": "29669920787e180ba5a31ff3",
+      "published_at": "2026-10-14T08:19:00+00:00",
+      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiyAJBVV95cUxPWUk3aXVqNWsxVWNvLVY1SnZ0TW9KdDhSajJPRWVMbjRKYW9ERUNON1ZkdGZXSWE1XzNtZS1LbVpheEtqRnpEVm9PZVdHeTdhVjczQVZrTlQzREx1bFFFSEtkcUtPTW9iWmcyNFRsZTdtWTF0UEhuLTZIQVFVbC1Welg1RkMyY0JLbEZ2VGJrM250VWxSdlEwV2NMYnJGLVhvNUdwVjBsVnpuVFlOSENqaUViQjgyMWM5YmQ1WGJQZHNycXU4YTgzQ05kQWpJMUNiX2NmVXVtUElZUVlWdTVKLVk3WTdXRUJNY1lOSkZDQm8tYTJnc3pyTFhseVJhcGJkLVRCcHpxWXZ4bzF3Q3JGZEE4VG1talJJWE1zZWE1aEh4aFBCOHEtTHZfWDBnRGFhX2ZsdWhZOUpINmJEN05JZXIwWjNkUDhE0gHOAkFVX3lxTE9HSEF6clBVNlJXZEd4bDlISG1XemxDbWdVeGdOYmxHX2NzcHhMTWl5Q24xM3Bfa0tGd253N0IxcTZXa3dGcGo3TTlpbjM3dm5wanNTRm42WkxhVTYwWmFFQzktOW5pM3pGUmdSNjNVWkZ0VURZeFMxcnVodmhXVDYzWG1XMEE3YVNxeHdNOEI1TXBaS3hnemdkeWtLUkZWaUs0dTR5UW9oQjBvUkhndnQycjZFUlhXYm9waWp6bU1pUnFDRUR4aHpqS2lkTGtMdXI5NS1naE40UklRY044NjZNRHI5d1dhZ1BLdERUMzZ6S3FzVHRQNDl6dDlNdEl6QTRyMHltYi1ZT0VvVmpPZ04wN1BzaVJaMUtQbUZObER1M0cxdThsOXluV20ybFNHWWg4M0Q5UUEzTFdoc0sweUs1RGNOXzFlYllpSFVzSEE?oc=5",
+        "domain": "Corriere della Sera",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Confindustria alza le stime sul Pil 2026 all'1%, ma l'allarme energia può azzerare la crescita: lo scenario se Hormuz resta chiuso - Corriere della Sera",
+      "summary": "Confindustria alza le stime sul Pil 2026 all'1%, ma l'allarme energia può azzerare la crescita: lo scenario se Hormuz resta chiuso Corriere della Sera",
+      "statistical_claims": [
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "1%",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "1%",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-306325C658237F05",
+      "story_fingerprint": "306325c658237f052948043c",
+      "published_at": "2026-10-14T07:20:31+00:00",
+      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE04cmQyVDFjNUdPQ3g1NUJHbjYyRXIyX05seGNhYmdCT0tiZWVoaG5GVzRnZVBsR1d4d2xBdHB0TWlhSFowMVd1aFdsNC05Y2xHUVYzTE0yVG5YTUMwWmJjcml6cVhoMzVPSTBOLTJtQWNKMHhO?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Borsa Tokyo: chiude in lieve calo (-0,05%) aspettando dati inflazione Usa - Il Sole 24 ORE",
+      "summary": "Borsa Tokyo: chiude in lieve calo (-0,05%) aspettando dati inflazione Usa Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "-0,05%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "-0,05%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "lazio"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-684138A856481057",
+      "story_fingerprint": "684138a856481057861f4941",
+      "published_at": "2026-10-14T05:49:00+00:00",
+      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 55,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxPSTg4WDBjTi1VQzk5T3prY29Gc0dWNmk1R0hlY0JiS01RX2hySVpqSjdHeTM5emQyUnFlWHVUWmFkWlNoQUdZb05MNVo4RlRkcl9NMVFST1QtNDJsbzBxbm9seHl1aHo3NFV4NG8taVBJcWZDN3F6YW1hTkRWalQwV0V4RHlIS3FxNGxWV2ZsRzl6TXFicjNWdjRJYjlQdnBiUDM5X2xxbUpoZnFJVGhlbFV4TE45cUg1c3o1dS1CQWU4enAxSDY3bnFpemdJR1BmdkJENUtLc2JvNGNCWWl0X0R3cFljYTM2cFlqdVVWNE9oSFdDWERuNkNBamo2WUc3Z1FadGd2UUJoZ3RvWVNlUmRwZUVFS25a0gGeAkFVX3lxTE4wblNaQnc3YXhBZVp1NTBKZ1gtU0VUWF9MUjBXWE5SQXNXLVR4bjExZnY4ZE9tc3BZVlhkSTItT3lLUUZWcmlHam12R3lIbDJ0T3hLUWRteThUWXJtTFZGZnRFR0RvY3U3YVlFOWlYOGMwZEtETnQtb0xBQUV5SzVNQUZjMzBLa0xOWjdCbVpGNzZrTUIzUFBKMXBySFpRRGZRenlYbUZNSk5Fbm1VYWgteWo3WHh6YTVZb3ppTHR6WkhheFNrelVhaFZ1Q2hnb0NCbDRaRUw3eDJhcnI3QTlRVThSNmdjQlFvWFpXSHF5WWhhQnBYZkpOT3pGTmdISWhNaXJtUHltVTVwM0NlZkxzSks3ZXFiZjJmU2YyS2c?oc=5",
+        "domain": "Corriere della Sera",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Inflazione Italia 2000-2025, i prezzi di casa e bollette sono più che raddoppiati in 25 anni - Corriere della Sera",
+      "summary": "Inflazione Italia 2000-2025, i prezzi di casa e bollette sono più che raddoppiati in 25 anni Corriere della Sera",
+      "statistical_claims": [
+        {
+          "raw_value": "2000",
+          "verified": false
+        },
+        {
+          "raw_value": "2025",
+          "verified": false
+        },
+        {
+          "raw_value": "25 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2000",
+          "verified": false
+        },
+        {
+          "raw_value": "2025",
+          "verified": false
+        },
+        {
+          "raw_value": "25 ",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "lazio"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-56C0D124FAE1349E",
+      "story_fingerprint": "56c0d124fae1349e2d79580f",
+      "published_at": "2026-10-14T03:30:12+00:00",
+      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMirAJBVV95cUxNaGs4LXdObnlMUmRvcE1QdVNlWEdvUGppN3RtLWttMTMxUTVWU2FrRFdLZVVYMDQwRkFHWjZUMVJyRElOemtxckVsX2Y5RGM5WElqY3VnNmhQaFF5RUlyclpHZTgwZW5PaWlIZ1ZUbjZjSUFIVEdKR3daY1JYRC1GOW5RUU85akhBaFkwQWVUQVpFYk51YVVoUUQ3dGVpaTBmUDFsb0RLSWk2NEJ4SkxudXNhcG5rNGVlUjhoQXIxb2V3LXlSUmNaU042X1dyaHYyUnNBd2F6a19zajRLTU1QcXBDcDFfWDlfR1FmY3hGRGx6N09BeG0zbGc5OUlDcWpoTTBsSEE2UjAwdnU3RlpXTzNEQ3dfUzhqTjhFWWFRUkszMGpBc05ZQllKRU_SAawCQVVfeXFMTWhrOC13Tm55TFJkb3BNUHVTZVhHb1BqaTd0bS1rbTEzMVE1VlNha0RXS2VVWDA0MEZBR1o2VDFSckRJTnprcXJFbF9mOURjOVhJamN1ZzZoUGhReUVJcnJaR2U4MGVuT2lpSGdWVG42Y0lBSFRHSkd3WmNSWEQtRjluUVFPOWpIQWhZMEFlVEFaRWJOdWFVaFFEN3RlaWkwZlAxbG9ES0lpNjRCeEpMbnVzYXBuazRlZVI4aEFyMW9ldy15UlJjWlNONl9Xcmh2MlJzQXdhemtfc2o0S01NUHFwQ3AxX1g5X0dRZmN4RkRsejdPQXhtM2xnOTlJQ3FqaE0wbEhBNlIwMHZ1N0ZaV08zREN3X1M4ak44RVlhUVJLMzBqQXNOWUJZSkVP?oc=5",
+        "domain": "Corriere Torino",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Torino e l'estate del caldo record, 190 morti in eccessoe e temperature fino a 4,6 gradi sopra la norma - Corriere Torino",
+      "summary": "Torino e l'estate del caldo record, 190 morti in eccessoe e temperature fino a 4,6 gradi sopra la norma Corriere Torino",
+      "statistical_claims": [
+        {
+          "raw_value": "190 ",
+          "verified": false
+        },
+        {
+          "raw_value": "4,6 ",
+          "verified": false
+        },
+        {
+          "raw_value": "190 ",
+          "verified": false
+        },
+        {
+          "raw_value": "4,6 ",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "torino"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
     {
       "id": "PULSE-F5C4990C59D29A8F",
       "story_fingerprint": "f5c4990c59d29a8f87c97ffe",
       "published_at": "2026-10-13T20:06:01.231243+00:00",
-      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
       "topic": "ALTRO",
       "pulse_score": 89,
       "public_source": {
@@ -61,6 +345,55 @@
       "publication_status": "published"
     },
     {
+      "id": "PULSE-4E288033966F74DB",
+      "story_fingerprint": "4e288033966f74db98a4fac2",
+      "published_at": "2026-10-13T19:55:00+00:00",
+      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 65,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPUHh6UDN4dTRqbjliQWlNQk44SVNiR2ljdl8zSUREUHJQa3FMM3JfemczV2hTX2lfYnRWR0NFUVN3T0dBWlhsakh6QkpTTDlZcjJIZFFqRzRhdEFqbzBOaEMtVHJJcnRuTnc4Z0l0R1JodVlubWt2WjBzNV84ZzUwMGwtRkt6R0xHNVV5VjJVbnl5bG5fa0llTWtvYWdncWJiNWlicXYxZjIxMkJ5aXZlNzNhOVVTS1NubFdUeHAwUjI?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "L’inflazione record per i costi dell’abitare: in 25 anni +119% - Il Sole 24 ORE",
+      "summary": "L’inflazione record per i costi dell’abitare: in 25 anni +119% Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "25 ",
+          "verified": false
+        },
+        {
+          "raw_value": "+119%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "25 ",
+          "verified": false
+        },
+        {
+          "raw_value": "+119%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "lazio"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
       "id": "PULSE-E7F790B5FC9726BB",
       "story_fingerprint": "e7f790b5fc9726bb4be0f1bc",
       "published_at": "2026-10-13T18:30:00+00:00",
@@ -108,10 +441,57 @@
       "publication_status": "published"
     },
     {
+      "id": "PULSE-43D140256475BE75",
+      "story_fingerprint": "43d140256475be752e0fec7b",
+      "published_at": "2026-10-13T17:32:08+00:00",
+      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 45,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNV3JLWW40VldCSjNPTzJrUVR6T284VXVZZlRZTFFXUHJrMzA0MDZ3WWNoTTdSMGZGc0c5ZXJXNm8zWnhiUmtza3hwVEQ1bVJ3Ul94UUdLZTRHT1ZFaS1OMnpLa0VIZDBkb0NGUTB6YVpSUWpHWlB2Szh5QmJrd1hxNks3ZzVFNnB4MDFFYzdaM2dGY0VWRmJlWkUwZWxEalg5NE45SElLVnd2TTJVT0xxczd0dWt5X19ZdEZrZ1M3TWsxbTN2Wl80SzZZUmZIVUVINlpabkt3?oc=5",
+        "domain": "My-personaltrainer",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Diabete in Italia: 3,8 milioni di persone, crescita del 23% in 20 anni e bisogno di cure integrate - My-personaltrainer",
+      "summary": "Diabete in Italia: 3,8 milioni di persone, crescita del 23% in 20 anni e bisogno di cure integrate My-personaltrainer",
+      "statistical_claims": [
+        {
+          "raw_value": "3,8 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "23%",
+          "verified": false
+        },
+        {
+          "raw_value": "20 ",
+          "verified": false
+        },
+        {
+          "raw_value": "3,8 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "23%",
+          "verified": false
+        },
+        {
+          "raw_value": "20 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
       "id": "PULSE-FB9CC61A0DE2C582",
       "story_fingerprint": "fb9cc61a0de2c582942120f1",
       "published_at": "2026-10-13T17:25:28+00:00",
-      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
       "topic": "ALTRO",
       "pulse_score": 49,
       "patterns": [],
@@ -150,7 +530,7 @@
       "id": "PULSE-BBEA26E372E974EB",
       "story_fingerprint": "bbea26e372e974eb456d04c3",
       "published_at": "2026-10-13T16:13:00+00:00",
-      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
       "topic": "SALUTE",
       "pulse_score": 70,
       "patterns": [],
@@ -197,7 +577,7 @@
       "id": "PULSE-8DFAD381A714D9EB",
       "story_fingerprint": "8dfad381a714d9ebe9e8c3dd",
       "published_at": "2026-10-13T14:00:00+00:00",
-      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
       "topic": "ALTRO",
       "pulse_score": 65,
       "patterns": [],
@@ -237,6 +617,55 @@
         }
       ],
       "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-61EFAFCA932647EA",
+      "story_fingerprint": "61efafca932647ea3db07e8a",
+      "published_at": "2026-10-13T12:31:42+00:00",
+      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 45,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQdEVsSkFMZVlYV2xRRGNsZlg5NU5hekZ3b0E5ekFoMEx0RG9XSTkxLXNmcHVNQmFaNUpKR1V0bk1UV0NiMVVaT21OYll6UjVkWXd6cUdQUndHdE00TXh5akpLTXZObXExUk8yM2w2YjJCU3c0NXRNazZmYy1relJkZ212VUJPT2RmUFRPZUtQcEtJMi11cS01cWVWN1NaWTZQ?oc=5",
+        "domain": "Il Fatto Quotidiano",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Inflazione +63% in 25 anni: cosa si comprava con 5€ nel 1926? - Il Fatto Quotidiano",
+      "summary": "Inflazione +63% in 25 anni: cosa si comprava con 5€ nel 1926? Il Fatto Quotidiano",
+      "statistical_claims": [
+        {
+          "raw_value": "+63%",
+          "verified": false
+        },
+        {
+          "raw_value": "25 ",
+          "verified": false
+        },
+        {
+          "raw_value": "5",
+          "verified": false
+        },
+        {
+          "raw_value": "192",
+          "verified": false
+        },
+        {
+          "raw_value": "+63%",
+          "verified": false
+        },
+        {
+          "raw_value": "25 ",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "lazio"
+      ],
       "editorial_status": "journalistic_attributed",
       "publication_status": "published"
     },
@@ -316,7 +745,7 @@
       "id": "PULSE-E408542FC9F9D4B0",
       "story_fingerprint": "e408542fc9f9d4b00b1a203e",
       "published_at": "2026-10-13T10:33:07+00:00",
-      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
       "topic": "ALTRO",
       "pulse_score": 45,
       "patterns": [],
@@ -405,7 +834,7 @@
       "id": "PULSE-871B931CC2FE3666",
       "story_fingerprint": "871b931cc2fe366612c6cedd",
       "published_at": "2026-10-13T09:50:00+00:00",
-      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
       "topic": "SALUTE",
       "pulse_score": 59,
       "patterns": [],
@@ -446,7 +875,7 @@
       "id": "PULSE-F324476E807F228D",
       "story_fingerprint": "f324476e807f228dd83bfa69",
       "published_at": "2026-10-13T09:27:19+00:00",
-      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
       "topic": "ISTRUZIONE",
       "pulse_score": 49,
       "patterns": [],
@@ -534,7 +963,7 @@
       "id": "PULSE-23F0F8B5AEC02032",
       "story_fingerprint": "23f0f8b5aec02032f19fe443",
       "published_at": "2026-10-13T02:41:00+00:00",
-      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 55,
       "patterns": [],
@@ -583,7 +1012,7 @@
       "id": "PULSE-A2AD4E31722D0E37",
       "story_fingerprint": "a2ad4e31722d0e37b8700337",
       "published_at": "2026-10-13T02:00:00+00:00",
-      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 55,
       "patterns": [],
@@ -632,7 +1061,7 @@
       "id": "PULSE-EC79B2D231B8C578",
       "story_fingerprint": "ec79b2d231b8c5788e9b3a7f",
       "published_at": "2026-10-12T16:31:00+00:00",
-      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
       "topic": "ALTRO",
       "pulse_score": 54,
       "patterns": [],
@@ -720,7 +1149,7 @@
       "id": "PULSE-B4EC459A47E7F54E",
       "story_fingerprint": "b4ec459a47e7f54e1d456f55",
       "published_at": "2026-10-12T14:20:37+00:00",
-      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
       "topic": "ALTRO",
       "pulse_score": 45,
       "patterns": [],
@@ -767,7 +1196,7 @@
       "id": "PULSE-B992BF2C981E59B1",
       "story_fingerprint": "b992bf2c981e59b191f448a2",
       "published_at": "2026-10-12T12:20:21+00:00",
-      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
       "topic": "ALTRO",
       "pulse_score": 59,
       "patterns": [],
@@ -853,7 +1282,7 @@
       "id": "PULSE-1F896026BE2D4C90",
       "story_fingerprint": "1f896026be2d4c90c6cc7142",
       "published_at": "2026-10-12T10:05:08+00:00",
-      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
       "topic": "ALTRO",
       "pulse_score": 60,
       "patterns": [],
@@ -941,7 +1370,7 @@
       "id": "PULSE-784B8783F77C6A91",
       "story_fingerprint": "784b8783f77c6a91837b5b6d",
       "published_at": "2026-10-12T08:56:46+00:00",
-      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
       "topic": "AMBIENTE",
       "pulse_score": 45,
       "patterns": [],
@@ -988,7 +1417,7 @@
       "id": "PULSE-9BC23572EDBC8D56",
       "story_fingerprint": "9bc23572edbc8d563e343e15",
       "published_at": "2026-10-12T08:56:32+00:00",
-      "last_seen_at": "2026-10-12T14:18:30.988457+00:00",
+      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
       "topic": "ALTRO",
       "pulse_score": 45,
       "patterns": [],
@@ -1082,7 +1511,7 @@
       "id": "PULSE-F3491533A527D0B8",
       "story_fingerprint": "f3491533a527d0b8f55089b5",
       "published_at": "2026-10-12T07:48:00+00:00",
-      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
       "topic": "ALTRO",
       "pulse_score": 55,
       "patterns": [],
@@ -1173,7 +1602,7 @@
       "id": "PULSE-EFA0829D3356B411",
       "story_fingerprint": "efa0829d3356b41132aa3ec4",
       "published_at": "2026-10-12T05:26:15+00:00",
-      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
       "topic": "ALTRO",
       "pulse_score": 60,
       "patterns": [],
