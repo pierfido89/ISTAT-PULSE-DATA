@@ -790,6 +790,39 @@ def bucket_date(iso, now):
     if d==local_now-timedelta(days=1): return "IERI"
     return "ARCHIVIO"
 
+def mark_first_pulse_publications(articles, previous, now):
+    """Record genuine PULSE first publication; never age-reset historical content.
+
+    The public feed's `published_at` is a discovery/source clock and may predate
+    PULSE publication. NEW uses `first_published_at_utc` ONLY if PULSE publishes
+    a *new* story into a previously populated collection.
+
+    Already indexed legacy news without this field deliberately remains unbadged.
+    Initial empty-catalog bootstraps are also unbadged, preventing historical
+    bulk imports from falsely appearing NEW on every user's phone.
+    """
+    original = {a.get("id"): a for a in previous if a.get("id")}
+    stamp = now.astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
+    eligible = {"verified", "verified_primary_match", "journalistic_attributed"}
+    for article in articles:
+        aid = article.get("id")
+        before = original.get(aid)
+        if before is not None:
+            first = before.get("first_published_at_utc")
+            if first:
+                article["first_published_at_utc"] = first
+            else:
+                # Existing legacy news: there is no defensible first-PULSE timestamp.
+                article.pop("first_published_at_utc", None)
+        elif original and article.get("publication_status") == "published" and (
+            article.get("editorial_status") in eligible
+        ):
+            article["first_published_at_utc"] = stamp
+        else:
+            article.pop("first_published_at_utc", None)
+    return articles
+
+
 def main():
     started=time.monotonic()
     def runtime_exceeded():
@@ -817,6 +850,9 @@ def main():
         x=dict(x); x["id"]=permanent_id; x["story_fingerprint"]=fp
         prev=migrated.get(fp)
         if prev:
+            originals=[d for d in (prev.get("first_published_at_utc"),
+                                    x.get("first_published_at_utc")) if d]
+            earliest_first_pulse=min(originals) if originals else None
             dates=[d for d in (prev.get("published_at"),x.get("published_at")) if d]
             if dates: prev["published_at"]=min(dates)
             last=[d for d in (prev.get("last_seen_at"),x.get("last_seen_at"),x.get("published_at")) if d]
@@ -828,9 +864,13 @@ def main():
                 migrated[fp]=x
                 migrated[fp]["published_at"]=first or x.get("published_at")
                 migrated[fp]["last_seen_at"]=max([d for d in (latest,x.get("last_seen_at"),x.get("published_at")) if d] or [""])
+            if earliest_first_pulse:
+                migrated[fp]["first_published_at_utc"] = earliest_first_pulse
         else:
             migrated[fp]=x
     cleaned_articles=list(migrated.values())
+    # Snapshot before this scan: the NEW badge must never be reborn on refresh.
+    previous_articles=[dict(x) for x in cleaned_articles]
     by_id={x.get("id"):x for x in cleaned_articles if x.get("id")}
     candidates=[]
     seen_story_keys=set()
@@ -950,6 +990,7 @@ def main():
         print("[RADAR] runtime budget reached; publishing partial verified results", flush=True)
 
     arts=sorted(by_id.values(),key=lambda x:x.get("published_at",""),reverse=True)
+    mark_first_pulse_publications(arts, previous_articles, now)
     # Safety gate: only verified articles may be publicly visible.
     public=[a for a in arts if a.get("publication_status")=="published" and a.get("editorial_status") in ("verified","verified_primary_match","journalistic_attributed")]
     idx={"generated_at":now.isoformat(),"counts":{},
