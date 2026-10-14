@@ -1,6 +1,163 @@
 {
-  "generated_at": "2026-10-14T09:18:29.771666+00:00",
+  "generated_at": "2026-10-14T14:53:50.467005+00:00",
   "articles": [
+    {
+      "id": "PULSE-610703BE86F8CC4D",
+      "story_fingerprint": "610703be86f8cc4d0b85f2b0",
+      "published_at": "2026-10-14T14:53:50.467005+00:00",
+      "last_seen_at": "2026-10-14T14:53:50.467005+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 72,
+      "public_source": {
+        "url": "https://www.epicentro.iss.it/sorveglianza02anni/indagine-2025-allattamento",
+        "domain": "iss.it",
+        "role": "primary_statistical_source",
+        "verification_method": "broad_primary_search",
+        "verification_score": 95
+      },
+      "discovery": {
+        "visible": false,
+        "role": "hidden_radar"
+      },
+      "period_reference": null,
+      "latest_source_update": null,
+      "headline": "Dati, nuovo dato per Italia: 39,3%",
+      "summary": "Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+      "statistical_claims": [
+        {
+          "raw_value": "39,3%",
+          "verified": true
+        },
+        {
+          "raw_value": "4",
+          "verified": true
+        },
+        {
+          "raw_value": "5 ",
+          "verified": true
+        },
+        {
+          "raw_value": "39,3%",
+          "verified": true
+        },
+        {
+          "raw_value": "4",
+          "verified": true
+        },
+        {
+          "raw_value": "5 ",
+          "verified": true
+        }
+      ],
+      "verified_series": [],
+      "territories": [],
+      "chart_spec": {
+        "type": "auto",
+        "status": "requires_primary_series",
+        "reason": "candidate_contains_multiple_numeric_values"
+      },
+      "map_spec": null,
+      "editorial_status": "verified_primary_match",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-24D13B3AEB419E92",
+      "story_fingerprint": "24d13b3aeb419e921dc10d3a",
+      "published_at": "2026-10-14T12:58:12+00:00",
+      "last_seen_at": "2026-10-14T14:53:50.467005+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 50,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPalZaaHJ1X3hPMUZxNmhrRk16SUJRYkx1dExTdVVESHl4cmw5NnpTTXJ3OFpTMGc3REhENkxVSHBIV2ZHMFRUNGw3ekJmUnllVklxbDVKN2x5emI4YXAwNEcwYXp3Zk1JQjNyWDhaZWVGZVBPazJvQVV6MDA3RzB4c282TFBZT1BVWkY5RjFYbVp5YlV0VkdraGEtaHhLbTFqVWQtaElMYXBRZmJJUkJZc2h1UC03T1BIOEJ1Z043NGxkbGU2NUw2TEY1U0lvSjIwT3ZwQlVkTnZ4V1FlWkRWejJzZ0hZNE04VWhGRHI3SdIB7wFBVV95cUxPalZaaHJ1X3hPMUZxNmhrRk16SUJRYkx1dExTdVVESHl4cmw5NnpTTXJ3OFpTMGc3REhENkxVSHBIV2ZHMFRUNGw3ekJmUnllVklxbDVKN2x5emI4YXAwNEcwYXp3Zk1JQjNyWDhaZWVGZVBPazJvQVV6MDA3RzB4c282TFBZT1BVWkY5RjFYbVp5YlV0VkdraGEtaHhLbTFqVWQtaElMYXBRZmJJUkJZc2h1UC03T1BIOEJ1Z043NGxkbGU2NUw2TEY1U0lvSjIwT3ZwQlVkTnZ4V1FlWkRWejJzZ0hZNE04VWhGRHI3SQ?oc=5",
+        "domain": "ANSA",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Turismo, 18 milioni di presenze in Puglia nei primi 8 mesi del 2026 - ANSA",
+      "summary": "Turismo, 18 milioni di presenze in Puglia nei primi 8 mesi del 2026 ANSA",
+      "statistical_claims": [
+        {
+          "raw_value": "18 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "8 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "18 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "8 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "puglia"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-B92666D727290828",
+      "story_fingerprint": "b92666d727290828af9c3e63",
+      "published_at": "2026-10-14T12:36:48+00:00",
+      "last_seen_at": "2026-10-14T14:53:50.467005+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 45,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNNG1aLTFER1pmT0VxdGRYUHJSTkwtWWVjcC13RTlVcGx0ZWNoaVBCYXh0SF9wYWU0QVNWblBDMGRic1VLQXdIVEFiRFp3T2I5ZlQ3am1vMFM2UU1mS2JPMU9VZjNIZEI3SG1tZG81VXdLU3lSeTdyOHhJSFZpRWhtMEhCUHljT3IyaDN5VGNncUp4cW1DYjdRaWVFN0cyZmp2dnZ1OWVMekM1MzUxWTRQcA?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Usa: inflazione Cpi +0,6% a settembre, +3,7% annuale, sopra stime - Il Sole 24 ORE",
+      "summary": "Usa: inflazione Cpi +0,6% a settembre, +3,7% annuale, sopra stime Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "+0,6%",
+          "verified": false
+        },
+        {
+          "raw_value": "+3,7%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "+0,6%",
+          "verified": false
+        },
+        {
+          "raw_value": "+3,7%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "lazio"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
     {
       "id": "PULSE-ECD5BA28ED8C106C",
       "story_fingerprint": "ecd5ba28ed8c106c9260ac17",
@@ -72,7 +229,7 @@
       "id": "PULSE-F787DB8094E68FDA",
       "story_fingerprint": "f787db8094e68fdad0c5b584",
       "published_at": "2026-10-14T09:05:32+00:00",
-      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
+      "last_seen_at": "2026-10-14T14:53:50.467005+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 60,
       "patterns": [],
@@ -155,6 +312,53 @@
       "publication_status": "published"
     },
     {
+      "id": "PULSE-B85C4D3A86F6727E",
+      "story_fingerprint": "b85c4d3a86f6727e6fd7894f",
+      "published_at": "2026-10-14T08:13:42+00:00",
+      "last_seen_at": "2026-10-14T14:53:50.467005+00:00",
+      "topic": "LAVORO",
+      "pulse_score": 55,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPVjNpZHF1VUtxQmNoMkxCOXk5YklqRmZtU2gta0pMS2tlUkdSQmVTUkhQbnpXRV9PekVBWHB4dFZPZ1N2RjllSmxGaDRVOFdJNnlIMlJDc3lqMVNpU0JLMEIxcEJNWFl1bE8tVTVxdDEyOG8xY2s1MEs5WkRScDA4aW80N3FSMnRWTGdUcnVpMU1SOHRhbS1YdEFXZU1zVFZUY01ZOGF1YjJRd20yWnppel9ibEVUQjNTTHVieks0LTh1TjVtejV0UHZvWGNGT2ptblNMRGk1LWZmbUxuaC04ZGoyTzJFaEhXeFBJUENNRENlUGc?oc=5",
+        "domain": "Il Diario del Lavoro",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Rapporto Confindustria: effetto Hormuz sull'economia, pesano energia, Ets e guerra nel Golfo. Nel 2026 Pil 1%, ma nel 2027 scende a 0,6% - Il Diario del Lavoro",
+      "summary": "Rapporto Confindustria: effetto Hormuz sull'economia, pesano energia, Ets e guerra nel Golfo. Nel 2026 Pil 1%, ma nel 2027 scende a 0,6% Il Diario del Lavoro",
+      "statistical_claims": [
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "1%",
+          "verified": false
+        },
+        {
+          "raw_value": "2027 ",
+          "verified": false
+        },
+        {
+          "raw_value": "0,6%",
+          "verified": false
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "1%",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
       "id": "PULSE-306325C658237F05",
       "story_fingerprint": "306325c658237f052948043c",
       "published_at": "2026-10-14T07:20:31+00:00",
@@ -164,6 +368,47 @@
       "patterns": [],
       "public_source": {
         "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE04cmQyVDFjNUdPQ3g1NUJHbjYyRXIyX05seGNhYmdCT0tiZWVoaG5GVzRnZVBsR1d4d2xBdHB0TWlhSFowMVd1aFdsNC05Y2xHUVYzTE0yVG5YTUMwWmJjcml6cVhoMzVPSTBOLTJtQWNKMHhO?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Borsa Tokyo: chiude in lieve calo (-0,05%) aspettando dati inflazione Usa - Il Sole 24 ORE",
+      "summary": "Borsa Tokyo: chiude in lieve calo (-0,05%) aspettando dati inflazione Usa Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "-0,05%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "-0,05%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "lazio"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-C9725D64FC12B20F",
+      "story_fingerprint": "c9725d64fc12b20fcace98e2",
+      "published_at": "2026-10-14T06:56:54+00:00",
+      "last_seen_at": "2026-10-14T14:53:50.467005+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOWDNFNHlzV2lObVBsYzg0UXF2RG8wQ0o3MzlzWnpnWVNHTEF2dWZTbUJMdEVfVXN1VjgzT0cwX1M2S3VqZHpqRHdXWkpSSmdxSldJcl9rNzBoMDBXMFZwLVYtUFlPVE8yNFNfUkVjYmJTSW5GSTBpSUd3Ni1oem5hbm5GQW5WNjBXTzNuQzh0UzIxWEdyLTctM0JmN3ZHdUs5cFJJQjZEUHliYmdIb3RaczJzVQ?oc=5",
         "domain": "Il Sole 24 ORE",
         "role": "journalistic_source",
         "verification_method": "reported_statistical_figures_not_primary_verified",
@@ -286,10 +531,57 @@
       "publication_status": "published"
     },
     {
+      "id": "PULSE-CF861C8DA74DB23B",
+      "story_fingerprint": "cf861c8da74db23bbb3456c0",
+      "published_at": "2026-10-14T02:13:45+00:00",
+      "last_seen_at": "2026-10-14T14:53:50.467005+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 45,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNUXlRYmtZWU53ekJDRUwwRXhuSS11S0JPR3ZRRm9DZ0wzTmc2MmlFS3pZZTZUVHNVb3FYUjZ6ZzN5SjRCemVmRVRlZnVaSWJuc2FDVkxPMDF1SG81WW5vaTg1ZHc3YXE2bUVzZ290ZzVLOE9kR096cEI1UFRDd2JyeW9acVFiZkN5Qnhsd0NYeGhXTTVVS2ZzN2xhOGhEUVNoUF9xNzN3?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "BTp: assegnati 2,5 mld triennali, rendimento al top dal 2023 a 3,69% - Il Sole 24 ORE",
+      "summary": "BTp: assegnati 2,5 mld triennali, rendimento al top dal 2023 a 3,69% Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "2,5 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2023 ",
+          "verified": false
+        },
+        {
+          "raw_value": "3,69%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2,5 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2023 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
       "id": "PULSE-F5C4990C59D29A8F",
       "story_fingerprint": "f5c4990c59d29a8f87c97ffe",
       "published_at": "2026-10-13T20:06:01.231243+00:00",
-      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
+      "last_seen_at": "2026-10-14T14:53:50.467005+00:00",
       "topic": "ALTRO",
       "pulse_score": 89,
       "public_source": {
@@ -348,7 +640,7 @@
       "id": "PULSE-4E288033966F74DB",
       "story_fingerprint": "4e288033966f74db98a4fac2",
       "published_at": "2026-10-13T19:55:00+00:00",
-      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
+      "last_seen_at": "2026-10-14T14:53:50.467005+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 65,
       "patterns": [],
@@ -491,7 +783,7 @@
       "id": "PULSE-FB9CC61A0DE2C582",
       "story_fingerprint": "fb9cc61a0de2c582942120f1",
       "published_at": "2026-10-13T17:25:28+00:00",
-      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
+      "last_seen_at": "2026-10-14T14:53:50.467005+00:00",
       "topic": "ALTRO",
       "pulse_score": 49,
       "patterns": [],
@@ -530,7 +822,7 @@
       "id": "PULSE-BBEA26E372E974EB",
       "story_fingerprint": "bbea26e372e974eb456d04c3",
       "published_at": "2026-10-13T16:13:00+00:00",
-      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
+      "last_seen_at": "2026-10-14T14:53:50.467005+00:00",
       "topic": "SALUTE",
       "pulse_score": 70,
       "patterns": [],
@@ -577,7 +869,7 @@
       "id": "PULSE-8DFAD381A714D9EB",
       "story_fingerprint": "8dfad381a714d9ebe9e8c3dd",
       "published_at": "2026-10-13T14:00:00+00:00",
-      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
+      "last_seen_at": "2026-10-14T14:53:50.467005+00:00",
       "topic": "ALTRO",
       "pulse_score": 65,
       "patterns": [],
@@ -834,7 +1126,7 @@
       "id": "PULSE-871B931CC2FE3666",
       "story_fingerprint": "871b931cc2fe366612c6cedd",
       "published_at": "2026-10-13T09:50:00+00:00",
-      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
+      "last_seen_at": "2026-10-14T14:53:50.467005+00:00",
       "topic": "SALUTE",
       "pulse_score": 59,
       "patterns": [],
@@ -875,7 +1167,7 @@
       "id": "PULSE-F324476E807F228D",
       "story_fingerprint": "f324476e807f228dd83bfa69",
       "published_at": "2026-10-13T09:27:19+00:00",
-      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
+      "last_seen_at": "2026-10-14T14:53:50.467005+00:00",
       "topic": "ISTRUZIONE",
       "pulse_score": 49,
       "patterns": [],
@@ -1058,10 +1350,51 @@
       "publication_status": "published"
     },
     {
+      "id": "PULSE-74B8F81B61E8F872",
+      "story_fingerprint": "74b8f81b61e8f872c33581ec",
+      "published_at": "2026-10-12T17:18:00+00:00",
+      "last_seen_at": "2026-10-14T14:53:50.467005+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 59,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOTjljdGdOblR5c2pubnlRaUF2NkZTbTRjT0RFR2hjWXZTdmlSZmF2TVhfU1NVekg5azlodE1VXzBiWDdBZVFSTEU2dVNDcHU2cGdKMlZ2cEV1aWpjUXNfT21uWW5YTm5mZ2ljZmdBLWxJbmh0UU5FUG1FNFRRTFU2VklZaVRxVVh5Z3JpTg?oc=5",
+        "domain": "Adnkronos",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Atalanta-Venezia, Kessié da record: torna al gol dopo 4 anni, con la Dea mancava dal 2016 - Adnkronos",
+      "summary": "Atalanta-Venezia, Kessié da record: torna al gol dopo 4 anni, con la Dea mancava dal 2016 Adnkronos",
+      "statistical_claims": [
+        {
+          "raw_value": "4 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2016 ",
+          "verified": false
+        },
+        {
+          "raw_value": "4 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2016 ",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "venezia"
+      ],
+      "editorial_status": "journalistic_attributed",
+      "publication_status": "published"
+    },
+    {
       "id": "PULSE-EC79B2D231B8C578",
       "story_fingerprint": "ec79b2d231b8c5788e9b3a7f",
       "published_at": "2026-10-12T16:31:00+00:00",
-      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
+      "last_seen_at": "2026-10-14T14:53:50.467005+00:00",
       "topic": "ALTRO",
       "pulse_score": 54,
       "patterns": [],
@@ -1149,7 +1482,7 @@
       "id": "PULSE-B4EC459A47E7F54E",
       "story_fingerprint": "b4ec459a47e7f54e1d456f55",
       "published_at": "2026-10-12T14:20:37+00:00",
-      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
+      "last_seen_at": "2026-10-14T14:53:50.467005+00:00",
       "topic": "ALTRO",
       "pulse_score": 45,
       "patterns": [],
@@ -1282,7 +1615,7 @@
       "id": "PULSE-1F896026BE2D4C90",
       "story_fingerprint": "1f896026be2d4c90c6cc7142",
       "published_at": "2026-10-12T10:05:08+00:00",
-      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
+      "last_seen_at": "2026-10-14T14:53:50.467005+00:00",
       "topic": "ALTRO",
       "pulse_score": 60,
       "patterns": [],
@@ -1370,7 +1703,7 @@
       "id": "PULSE-784B8783F77C6A91",
       "story_fingerprint": "784b8783f77c6a91837b5b6d",
       "published_at": "2026-10-12T08:56:46+00:00",
-      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
+      "last_seen_at": "2026-10-14T14:53:50.467005+00:00",
       "topic": "AMBIENTE",
       "pulse_score": 45,
       "patterns": [],
@@ -1417,7 +1750,7 @@
       "id": "PULSE-9BC23572EDBC8D56",
       "story_fingerprint": "9bc23572edbc8d563e343e15",
       "published_at": "2026-10-12T08:56:32+00:00",
-      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
+      "last_seen_at": "2026-10-14T14:53:50.467005+00:00",
       "topic": "ALTRO",
       "pulse_score": 45,
       "patterns": [],
@@ -1511,7 +1844,7 @@
       "id": "PULSE-F3491533A527D0B8",
       "story_fingerprint": "f3491533a527d0b8f55089b5",
       "published_at": "2026-10-12T07:48:00+00:00",
-      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
+      "last_seen_at": "2026-10-14T14:53:50.467005+00:00",
       "topic": "ALTRO",
       "pulse_score": 55,
       "patterns": [],
@@ -1602,7 +1935,7 @@
       "id": "PULSE-EFA0829D3356B411",
       "story_fingerprint": "efa0829d3356b41132aa3ec4",
       "published_at": "2026-10-12T05:26:15+00:00",
-      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
+      "last_seen_at": "2026-10-14T14:53:50.467005+00:00",
       "topic": "ALTRO",
       "pulse_score": 60,
       "patterns": [],
@@ -1847,7 +2180,7 @@
       "id": "PULSE-0F6C2DD430FC033E",
       "story_fingerprint": "0f6c2dd430fc033ec60be9df",
       "published_at": "2026-10-11T18:09:19+00:00",
-      "last_seen_at": "2026-10-13T20:06:01.231243+00:00",
+      "last_seen_at": "2026-10-14T14:53:50.467005+00:00",
       "topic": "ALTRO",
       "pulse_score": 54,
       "patterns": [],

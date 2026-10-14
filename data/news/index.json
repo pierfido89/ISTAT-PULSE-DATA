@@ -1,19 +1,25 @@
 {
-  "generated_at": "2026-10-14T09:18:29.771666+00:00",
+  "generated_at": "2026-10-14T14:53:50.467005+00:00",
   "counts": {
-    "oggi": 6,
+    "oggi": 12,
     "ieri": 17,
-    "archivio": 96,
+    "archivio": 97,
     "withheld": 0,
-    "candidates": 55
+    "candidates": 52
   },
   "oggi": [
+    "PULSE-610703BE86F8CC4D",
+    "PULSE-24D13B3AEB419E92",
+    "PULSE-B92666D727290828",
     "PULSE-ECD5BA28ED8C106C",
     "PULSE-F787DB8094E68FDA",
     "PULSE-29669920787E180B",
+    "PULSE-B85C4D3A86F6727E",
     "PULSE-306325C658237F05",
+    "PULSE-C9725D64FC12B20F",
     "PULSE-684138A856481057",
-    "PULSE-56C0D124FAE1349E"
+    "PULSE-56C0D124FAE1349E",
+    "PULSE-CF861C8DA74DB23B"
   ],
   "ieri": [
     "PULSE-F5C4990C59D29A8F",
@@ -35,6 +41,7 @@
     "PULSE-A2AD4E31722D0E37"
   ],
   "archivio": [
+    "PULSE-74B8F81B61E8F872",
     "PULSE-EC79B2D231B8C578",
     "PULSE-50D362D9483A052E",
     "PULSE-B4EC459A47E7F54E",
