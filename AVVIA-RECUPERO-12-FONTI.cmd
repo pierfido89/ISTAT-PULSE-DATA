@@ -5,7 +5,7 @@ cd /d "%~dp0"
 echo PULSE - RECUPERO 12 FONTI UFFICIALI
 where py >nul 2>nul
 if errorlevel 1 (echo [ERRORE] Python Launcher non disponibile. & pause & exit /b 1)
-py -3 -m pip install --quiet requests beautifulsoup4 pytest
+py -3 -m pip install --quiet requests beautifulsoup4 pytest tzdata
 if errorlevel 1 (echo [ERRORE] installazione librerie. & pause & exit /b 1)
 py -3 -m pytest -q tests\test_observer_sources_12.py
 if errorlevel 1 (echo [ERRORE] test non passati. & pause & exit /b 1)
