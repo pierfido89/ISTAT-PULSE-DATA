@@ -80,3 +80,13 @@ def test_run_mocked_http(tmp_path):
     assert summary['total_sources']==12
     assert summary['dated_publications'] >= 1
     assert (tmp_path/'status.json').exists()
+
+def test_timezone_windows_missing_tzdata_fails_closed(monkeypatch):
+    """Regression: no ZoneInfoNotFoundError on Windows without IANA database."""
+    import scripts.repair_observer_sources_12 as mod
+    from zoneinfo import ZoneInfoNotFoundError
+    def without_tzdata(_):
+        raise ZoneInfoNotFoundError("Europe/Rome")
+    monkeypatch.setattr(mod, 'ZoneInfo', without_tzdata)
+    assert mod.parse_date('5 gennaio 2026') == '2026-01-05'
+    assert mod.parse_date('31/02/2026') is None
