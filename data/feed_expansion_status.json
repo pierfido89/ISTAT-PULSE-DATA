@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-10-12T05:01:52.312506+00:00",
+  "generated_at": "2026-10-15T05:10:12.586203+00:00",
   "policy": {
     "official_only": true,
     "no_scraped_search_results_as_data": true,
@@ -27,9 +27,9 @@
   },
   "candidate_count": 39,
   "status_counts": {
-    "official_portal_reachable": 19,
+    "official_portal_reachable": 17,
     "structured_endpoint_verified": 9,
-    "blocked": 11
+    "blocked": 13
   },
   "sources": [
     {
@@ -168,7 +168,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "16484",
+              "content_length": "16488",
               "reason": "html_or_unknown"
             },
             {
@@ -177,7 +177,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "16484",
+              "content_length": "16488",
               "reason": "html_or_unknown"
             },
             {
@@ -186,7 +186,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "16484",
+              "content_length": "16488",
               "reason": "html_or_unknown"
             }
           ]
@@ -214,7 +214,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "18159",
+              "content_length": "18152",
               "reason": "html_or_unknown"
             },
             {
@@ -223,7 +223,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "18159",
+              "content_length": "18152",
               "reason": "html_or_unknown"
             },
             {
@@ -232,7 +232,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "18159",
+              "content_length": "18152",
               "reason": "html_or_unknown"
             }
           ]
@@ -280,7 +280,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "16772",
+              "content_length": "16763",
               "reason": "html_or_unknown"
             }
           ]
@@ -324,7 +324,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "23712",
+              "content_length": "23699",
               "reason": "html_or_unknown"
             }
           ]
@@ -595,7 +595,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "14897",
+              "content_length": "15248",
               "reason": "html_or_unknown"
             },
             {
@@ -604,7 +604,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "17010",
+              "content_length": "17345",
               "reason": "html_or_unknown"
             }
           ]
@@ -671,7 +671,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "19345",
+              "content_length": "19354",
               "reason": "html_or_unknown"
             },
             {
@@ -680,7 +680,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "18925",
+              "content_length": "18927",
               "reason": "html_or_unknown"
             }
           ]
@@ -726,7 +726,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "20376",
+              "content_length": "20379",
               "reason": "html_or_unknown"
             },
             {
@@ -744,7 +744,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "20417",
+              "content_length": "20418",
               "reason": "html_or_unknown"
             }
           ]
@@ -940,7 +940,7 @@
           "kind": "discovery",
           "url": "https://crea.gov.it",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7ff22a333620>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f0c41e8b800>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -948,7 +948,7 @@
           "kind": "discovery",
           "url": "https://crea.gov.it/opendata",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /opendata (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7ff220826840>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /opendata (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f0c40d26690>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -956,7 +956,7 @@
           "kind": "discovery",
           "url": "https://crea.gov.it/open-data",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /open-data (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7ff20c8b2030>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /open-data (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f0c41e894c0>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -964,7 +964,7 @@
           "kind": "discovery",
           "url": "https://crea.gov.it/dati",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /dati (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7ff2203a0c80>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /dati (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f0c38a0c920>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -972,7 +972,7 @@
           "kind": "discovery",
           "url": "https://crea.gov.it/dataset",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /dataset (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7ff220c87800>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /dataset (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f0c406fd310>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         }
@@ -1192,11 +1192,21 @@
     {
       "institution": "FAO",
       "strategy": "api_discovery",
-      "status": "official_portal_reachable",
+      "status": "structured_endpoint_verified",
       "domains": [
         "fao.org"
       ],
-      "verified_resources": [],
+      "verified_resources": [
+        {
+          "url": "https://files-faostat.fao.org/production/FS/Descriptions_and_Metadata.xlsx",
+          "final_url": "https://files-faostat.fao.org/production/FS/Descriptions_and_Metadata.xlsx",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "binary/octet-stream",
+          "content_length": "325549",
+          "reason": "machine_readable_data"
+        }
+      ],
       "checks": [
         {
           "kind": "discovery",
@@ -1207,9 +1217,19 @@
           "content_type": "text/html",
           "reason": "official_page_scanned",
           "candidate_links": [
+            "https://files-faostat.fao.org/production/FS/Descriptions_and_Metadata.xlsx",
             "https://openknowledge.fao.org/server/api/core/bitstreams/208c1e64-63fc-4b8e-9d06-c3ad68c4a0c0/content"
           ],
           "verified_links": [
+            {
+              "url": "https://files-faostat.fao.org/production/FS/Descriptions_and_Metadata.xlsx",
+              "final_url": "https://files-faostat.fao.org/production/FS/Descriptions_and_Metadata.xlsx",
+              "ok": true,
+              "http_status": 200,
+              "content_type": "binary/octet-stream",
+              "content_length": "325549",
+              "reason": "machine_readable_data"
+            },
             {
               "url": "https://openknowledge.fao.org/server/api/core/bitstreams/208c1e64-63fc-4b8e-9d06-c3ad68c4a0c0/content",
               "final_url": "https://openknowledge.fao.org/server/api/core/bitstreams/208c1e64-63fc-4b8e-9d06-c3ad68c4a0c0/content",
@@ -1220,38 +1240,6 @@
               "reason": "editorial_or_document_resource"
             }
           ]
-        },
-        {
-          "kind": "discovery",
-          "url": "https://fao.org/opendata",
-          "ok": false,
-          "reason": "HTTPError: 404 Client Error: Not Found for url: https://www.fao.org/home/404",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://fao.org/open-data",
-          "ok": false,
-          "reason": "HTTPError: 404 Client Error: Not Found for url: https://www.fao.org/home/404",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://fao.org/dati",
-          "ok": false,
-          "reason": "HTTPError: 404 Client Error: Not Found for url: https://www.fao.org/home/404",
-          "candidate_links": [],
-          "verified_links": []
-        },
-        {
-          "kind": "discovery",
-          "url": "https://fao.org/dataset",
-          "ok": false,
-          "reason": "HTTPError: 404 Client Error: Not Found for url: https://www.fao.org/home/404",
-          "candidate_links": [],
-          "verified_links": []
         }
       ]
     },
@@ -1294,10 +1282,9 @@
           "candidate_links": [
             "https://www.mercatoelettrico.org/Portals/0/Documents/it-it/20180705rilevazione_capacita_dispobibile_modello_A_20180528.XLSX",
             "https://www.mercatoelettrico.org/Portals/0/Documents/it-it/20180705rilevazione_capacita_transito_modello_B_20180528.XLSX",
-            "https://www.mercatoelettrico.org/Portals/0/Documents/it-IT/20251015Manuale_Utente_API.pdf",
-            "https://www.mercatoelettrico.org/Portals/0/Documents/it-IT/20251015Manuale_tecnico_API.pdf",
-            "https://www.mercatoelettrico.org/it-IT/Home/InterfacciaAPI",
-            "https://www.mercatoelettrico.org/it-it/Home/InterfacciaAPI"
+            "https://www.mercatoelettrico.org/it-it/Home/InterfacciaAPI",
+            "https://www.mercatoelettrico.org/it-it/Home/MediaGME/ArchivioNews?id=7708",
+            "https://www.mercatoelettrico.org/it-it/Home/MediaGME/ArchivioNews?id=7710"
           ],
           "verified_links": [
             {
@@ -1319,13 +1306,13 @@
               "reason": "machine_readable_data"
             },
             {
-              "url": "https://www.mercatoelettrico.org/Portals/0/Documents/it-IT/20251015Manuale_Utente_API.pdf",
-              "final_url": "https://www.mercatoelettrico.org/Portals/0/Documents/it-IT/20251015Manuale_Utente_API.pdf",
+              "url": "https://www.mercatoelettrico.org/it-it/Home/InterfacciaAPI",
+              "final_url": "https://www.mercatoelettrico.org/it-it/Home/InterfacciaAPI",
               "ok": false,
               "http_status": 200,
-              "content_type": "application/pdf",
-              "content_length": "909177",
-              "reason": "editorial_or_document_resource"
+              "content_type": "text/html",
+              "content_length": "76022",
+              "reason": "html_or_unknown"
             }
           ]
         }
@@ -1652,7 +1639,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "24750",
+              "content_length": "24754",
               "reason": "html_or_unknown"
             },
             {
@@ -1661,7 +1648,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "40082",
+              "content_length": "40077",
               "reason": "html_or_unknown"
             },
             {
@@ -1670,7 +1657,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "38704",
+              "content_length": "38699",
               "reason": "html_or_unknown"
             }
           ]
@@ -1712,7 +1699,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "38704",
+              "content_length": "38699",
               "reason": "html_or_unknown"
             },
             {
@@ -1721,7 +1708,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "38546",
+              "content_length": "38542",
               "reason": "html_or_unknown"
             },
             {
@@ -1730,7 +1717,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "38458",
+              "content_length": "38451",
               "reason": "html_or_unknown"
             }
           ]
@@ -1843,87 +1830,27 @@
     {
       "institution": "MIMIT",
       "strategy": "known_csv_catalog",
-      "status": "structured_endpoint_verified",
+      "status": "blocked",
       "domains": [
         "mimit.gov.it"
       ],
-      "verified_resources": [
-        {
-          "url": "https://www.mimit.gov.it/images/stories/opendata/Prezzi_12_2022.zip",
-          "final_url": "https://www.mimit.gov.it/images/stories/opendata/Prezzi_12_2022.zip",
-          "ok": true,
-          "http_status": 200,
-          "content_type": "application/zip",
-          "content_length": "1498056",
-          "reason": "machine_readable_data"
-        },
-        {
-          "url": "https://www.mimit.gov.it/images/exportCSV/anagrafica_impianti_attivi.csv",
-          "final_url": "https://www.mimit.gov.it/images/exportCSV/anagrafica_impianti_attivi.csv",
-          "ok": true,
-          "http_status": 200,
-          "content_type": "text/csv",
-          "content_length": "3574545",
-          "reason": "machine_readable_data"
-        },
-        {
-          "url": "https://www.mimit.gov.it/images/exportCSV/prezzo_alle_8.csv",
-          "final_url": "https://www.mimit.gov.it/images/exportCSV/prezzo_alle_8.csv",
-          "ok": true,
-          "http_status": 200,
-          "content_type": "text/csv",
-          "content_length": "3946245",
-          "reason": "machine_readable_data"
-        }
-      ],
+      "verified_resources": [],
       "checks": [
         {
           "kind": "discovery",
           "url": "https://www.mimit.gov.it/it/open-data/elenco-dataset/carburanti-prezzi-praticati-e-anagrafica-degli-impianti",
-          "final_url": "https://www.mimit.gov.it/it/open-data/elenco-dataset/carburanti-prezzi-praticati-e-anagrafica-degli-impianti",
-          "ok": true,
-          "http_status": 200,
-          "content_type": "text/html",
-          "reason": "official_page_scanned",
-          "candidate_links": [
-            "https://www.mimit.gov.it/images/stories/opendata/Prezzi_12_2022.zip",
-            "https://www.mimit.gov.it/images/exportCSV/anagrafica_impianti_attivi.csv",
-            "https://www.mimit.gov.it/images/exportCSV/prezzo_alle_8.csv",
-            "https://www.mimit.gov.it/images/stories/documenti/allegati/prezzo_alle_8-20250111.zip",
-            "https://www.mimit.gov.it/images/stories/documenti/Metadati_prezzi_carburanti_20260128.pdf",
-            "https://www.mimit.gov.it/index.php/it/open-data/elenco-dataset/carburanti-archivio-prezzi",
-            "https://www.mimit.gov.it/it/open-data",
-            "https://www.mimit.gov.it/it/open-data/cosa-sono-gli-open-data"
-          ],
-          "verified_links": [
-            {
-              "url": "https://www.mimit.gov.it/images/stories/opendata/Prezzi_12_2022.zip",
-              "final_url": "https://www.mimit.gov.it/images/stories/opendata/Prezzi_12_2022.zip",
-              "ok": true,
-              "http_status": 200,
-              "content_type": "application/zip",
-              "content_length": "1498056",
-              "reason": "machine_readable_data"
-            },
-            {
-              "url": "https://www.mimit.gov.it/images/exportCSV/anagrafica_impianti_attivi.csv",
-              "final_url": "https://www.mimit.gov.it/images/exportCSV/anagrafica_impianti_attivi.csv",
-              "ok": true,
-              "http_status": 200,
-              "content_type": "text/csv",
-              "content_length": "3574545",
-              "reason": "machine_readable_data"
-            },
-            {
-              "url": "https://www.mimit.gov.it/images/exportCSV/prezzo_alle_8.csv",
-              "final_url": "https://www.mimit.gov.it/images/exportCSV/prezzo_alle_8.csv",
-              "ok": true,
-              "http_status": 200,
-              "content_type": "text/csv",
-              "content_length": "3946245",
-              "reason": "machine_readable_data"
-            }
-          ]
+          "ok": false,
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='www.mimit.gov.it', port=443): Max retries exceeded with url: /it/open-data/elenco-dataset/carburanti-prezzi-praticati-e-anagrafica-degli-impianti (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.mimit.gov.it', port=443) at 0x7f0c385a6060>, 'Connection to www.mimit.gov.it timed out. (connect timeout=10)'))",
+          "candidate_links": [],
+          "verified_links": []
+        },
+        {
+          "kind": "discovery",
+          "url": "https://www.mimit.gov.it/it/open-data/elenco-dataset/carburanti-archivio-prezzi",
+          "ok": false,
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='www.mimit.gov.it', port=443): Max retries exceeded with url: /it/open-data/elenco-dataset/carburanti-archivio-prezzi (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.mimit.gov.it', port=443) at 0x7f0c382723c0>, 'Connection to www.mimit.gov.it timed out. (connect timeout=10)'))",
+          "candidate_links": [],
+          "verified_links": []
         }
       ]
     },
@@ -1961,7 +1888,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "application/rss+xml",
-              "content_length": "1724",
+              "content_length": "1702",
               "reason": "editorial_or_document_resource"
             },
             {
@@ -1970,7 +1897,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13060",
+              "content_length": "13287",
               "reason": "html_or_unknown"
             },
             {
@@ -1979,7 +1906,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13046",
+              "content_length": "13047",
               "reason": "html_or_unknown"
             }
           ]
@@ -2009,7 +1936,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "application/rss+xml",
-              "content_length": "1724",
+              "content_length": "1702",
               "reason": "editorial_or_document_resource"
             },
             {
@@ -2018,7 +1945,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13060",
+              "content_length": "13287",
               "reason": "html_or_unknown"
             },
             {
@@ -2027,7 +1954,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13046",
+              "content_length": "13047",
               "reason": "html_or_unknown"
             }
           ]
@@ -2057,7 +1984,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "application/rss+xml",
-              "content_length": "1724",
+              "content_length": "1702",
               "reason": "editorial_or_document_resource"
             },
             {
@@ -2066,7 +1993,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13060",
+              "content_length": "13287",
               "reason": "html_or_unknown"
             },
             {
@@ -2075,7 +2002,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13046",
+              "content_length": "13047",
               "reason": "html_or_unknown"
             }
           ]
@@ -2105,7 +2032,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "application/rss+xml",
-              "content_length": "1724",
+              "content_length": "1702",
               "reason": "editorial_or_document_resource"
             },
             {
@@ -2114,7 +2041,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13060",
+              "content_length": "13287",
               "reason": "html_or_unknown"
             },
             {
@@ -2123,7 +2050,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13046",
+              "content_length": "13047",
               "reason": "html_or_unknown"
             }
           ]
@@ -2153,7 +2080,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "application/rss+xml",
-              "content_length": "1724",
+              "content_length": "1702",
               "reason": "editorial_or_document_resource"
             },
             {
@@ -2162,7 +2089,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13060",
+              "content_length": "13287",
               "reason": "html_or_unknown"
             },
             {
@@ -2171,7 +2098,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13046",
+              "content_length": "13047",
               "reason": "html_or_unknown"
             }
           ]
@@ -2340,17 +2267,17 @@
             {
               "url": "http://dati.ustat.miur.it/dataset/metadati",
               "ok": false,
-              "reason": "ConnectTimeout: HTTPConnectionPool(host='dati.ustat.miur.it', port=80): Max retries exceeded with url: /dataset/metadati (Caused by ConnectTimeoutError(<HTTPConnection(host='dati.ustat.miur.it', port=80) at 0x7ff220352b70>, 'Connection to dati.ustat.miur.it timed out. (connect timeout=10)'))"
+              "reason": "ConnectTimeout: HTTPConnectionPool(host='dati.ustat.miur.it', port=80): Max retries exceeded with url: /dataset/metadati (Caused by ConnectTimeoutError(<HTTPConnection(host='dati.ustat.miur.it', port=80) at 0x7f0c41eb2930>, 'Connection to dati.ustat.miur.it timed out. (connect timeout=10)'))"
             },
             {
               "url": "http://dati.ustat.miur.it/organization/miur",
               "ok": false,
-              "reason": "ConnectTimeout: HTTPConnectionPool(host='dati.ustat.miur.it', port=80): Max retries exceeded with url: /organization/miur (Caused by ConnectTimeoutError(<HTTPConnection(host='dati.ustat.miur.it', port=80) at 0x7ff220eadfd0>, 'Connection to dati.ustat.miur.it timed out. (connect timeout=10)'))"
+              "reason": "ConnectTimeout: HTTPConnectionPool(host='dati.ustat.miur.it', port=80): Max retries exceeded with url: /organization/miur (Caused by ConnectTimeoutError(<HTTPConnection(host='dati.ustat.miur.it', port=80) at 0x7f0c40ba7e90>, 'Connection to dati.ustat.miur.it timed out. (connect timeout=10)'))"
             },
             {
               "url": "http://dati.ustat.miur.it/organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=AFAM&tags=Contribuzione%20e%20interventi",
               "ok": false,
-              "reason": "ConnectTimeout: HTTPConnectionPool(host='dati.ustat.miur.it', port=80): Max retries exceeded with url: /organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=AFAM&tags=Contribuzione%20e%20interventi (Caused by ConnectTimeoutError(<HTTPConnection(host='dati.ustat.miur.it', port=80) at 0x7ff22a3c7aa0>, 'Connection to dati.ustat.miur.it timed out. (connect timeout=10)'))"
+              "reason": "ConnectTimeout: HTTPConnectionPool(host='dati.ustat.miur.it', port=80): Max retries exceeded with url: /organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=AFAM&tags=Contribuzione%20e%20interventi (Caused by ConnectTimeoutError(<HTTPConnection(host='dati.ustat.miur.it', port=80) at 0x7f0c38c96ed0>, 'Connection to dati.ustat.miur.it timed out. (connect timeout=10)'))"
             }
           ]
         },
@@ -2358,7 +2285,7 @@
           "kind": "discovery",
           "url": "https://dati-ustat.mur.gov.it/dataset/2025-2029-personale-universitario",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/2025-2029-personale-universitario (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7ff20c8b2d50>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/2025-2029-personale-universitario (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f0c38520110>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -2366,7 +2293,7 @@
           "kind": "discovery",
           "url": "https://dati-ustat.mur.gov.it/dataset/serie-storica-sul-personale-universitario",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/serie-storica-sul-personale-universitario (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7ff20cc097c0>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/serie-storica-sul-personale-universitario (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f0c40d9f650>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         }
@@ -2717,8 +2644,8 @@
             "https://unrae.it/dati-statistici/dati-di-settore",
             "https://unrae.it/dati-statistici/dati-storici",
             "https://unrae.it/dati-statistici/immatricolazioni",
-            "https://unrae.it/dati-statistici/immatricolazioni/7815/immatricolazioni-di-autovetture-per-gruppi-settembre-2026",
             "https://unrae.it/dati-statistici/immatricolazioni/7816/immatricolazioni-di-autovetture-per-marca-settembre-2026",
+            "https://unrae.it/dati-statistici/immatricolazioni/7824/immatricolazioni-veicoli-industriali-settembre-2026",
             "https://unrae.it/privacy/4210/informativa-trattamento-dati-personali"
           ],
           "verified_links": [
@@ -2803,19 +2730,19 @@
           "content_type": "text/html",
           "reason": "official_page_scanned",
           "candidate_links": [
+            "https://excelsior.unioncamere.net/index.php/raccolta-dati?destination=/excelsior-bts/geo/chooser/bollettini/year",
+            "https://excelsior.unioncamere.net/index.php/raccolta-dati?destination=/excelsior-xtm/geo/chooser/xtm",
+            "https://excelsior.unioncamere.net/index.php/raccolta-dati?destination=/professioni",
+            "https://excelsior.unioncamere.net/index.php/raccolta-dati?r_destination=https%3A//public.tableau.com/app/profile/unioncamere.anpal/viz/DashboardExcelsior/Home",
+            "https://excelsior.unioncamere.net/index.php/raccolta-dati?r_destination=https%3A//public.tableau.com/views/DashboardExcelsior-DipendentiStranieri/Home",
             "https://excelsior.unioncamere.net/raccolta-dati?destination=/excelsior-bts/geo/chooser/bollettini/month",
             "https://excelsior.unioncamere.net/raccolta-dati?destination=/excelsior-bts/geo/chooser/bollettini/year",
-            "https://excelsior.unioncamere.net/raccolta-dati?destination=/excelsior-xtm/geo/chooser/xt",
-            "https://excelsior.unioncamere.net/raccolta-dati?destination=/excelsior-xtm/geo/chooser/xtm",
-            "https://excelsior.unioncamere.net/raccolta-dati?destination=/previsioni-trimestrali/fabbisogni-professionali-e-formativi-degli-anni-precedenti-2009-2016",
-            "https://excelsior.unioncamere.net/raccolta-dati?destination=/professioni",
-            "https://excelsior.unioncamere.net/raccolta-dati?r_destination=https%3A//public.tableau.com/app/profile/unioncamere.anpal/viz/DashboardExcelsior/Home",
-            "https://excelsior.unioncamere.net/raccolta-dati?r_destination=https%3A//public.tableau.com/views/DashboardExcelsior-DipendentiStranieri/Home"
+            "https://excelsior.unioncamere.net/raccolta-dati?destination=/excelsior-xtm/geo/chooser/xt"
           ],
           "verified_links": [
             {
-              "url": "https://excelsior.unioncamere.net/raccolta-dati?destination=/excelsior-bts/geo/chooser/bollettini/month",
-              "final_url": "https://excelsior.unioncamere.net/raccolta-dati?destination=/excelsior-bts/geo/chooser/bollettini/month",
+              "url": "https://excelsior.unioncamere.net/index.php/raccolta-dati?destination=/excelsior-bts/geo/chooser/bollettini/year",
+              "final_url": "https://excelsior.unioncamere.net/index.php/raccolta-dati?destination=/excelsior-bts/geo/chooser/bollettini/year",
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
@@ -2823,8 +2750,8 @@
               "reason": "html_or_unknown"
             },
             {
-              "url": "https://excelsior.unioncamere.net/raccolta-dati?destination=/excelsior-bts/geo/chooser/bollettini/year",
-              "final_url": "https://excelsior.unioncamere.net/raccolta-dati?destination=/excelsior-bts/geo/chooser/bollettini/year",
+              "url": "https://excelsior.unioncamere.net/index.php/raccolta-dati?destination=/excelsior-xtm/geo/chooser/xtm",
+              "final_url": "https://excelsior.unioncamere.net/index.php/raccolta-dati?destination=/excelsior-xtm/geo/chooser/xtm",
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
@@ -2832,8 +2759,8 @@
               "reason": "html_or_unknown"
             },
             {
-              "url": "https://excelsior.unioncamere.net/raccolta-dati?destination=/excelsior-xtm/geo/chooser/xt",
-              "final_url": "https://excelsior.unioncamere.net/raccolta-dati?destination=/excelsior-xtm/geo/chooser/xt",
+              "url": "https://excelsior.unioncamere.net/index.php/raccolta-dati?destination=/professioni",
+              "final_url": "https://excelsior.unioncamere.net/index.php/raccolta-dati?destination=/professioni",
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
@@ -2931,7 +2858,7 @@
     {
       "institution": "CNR",
       "strategy": "official_catalog_discovery",
-      "status": "official_portal_reachable",
+      "status": "blocked",
       "domains": [
         "cnr.it"
       ],
@@ -2940,31 +2867,16 @@
         {
           "kind": "discovery",
           "url": "https://cnr.it",
-          "final_url": "https://www.cnr.it//",
-          "ok": true,
-          "http_status": 200,
-          "content_type": "text/html",
-          "reason": "official_page_scanned",
-          "candidate_links": [
-            "https://www.cnr.it/it/banche-dati-istituti"
-          ],
-          "verified_links": [
-            {
-              "url": "https://www.cnr.it/it/banche-dati-istituti",
-              "final_url": "https://www.cnr.it/it/banche-dati-istituti",
-              "ok": false,
-              "http_status": 200,
-              "content_type": "text/html",
-              "content_length": "",
-              "reason": "html_or_unknown"
-            }
-          ]
+          "ok": false,
+          "reason": "SSLError: HTTPSConnectionPool(host='cnr.it', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError(1, '[SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1010)')))",
+          "candidate_links": [],
+          "verified_links": []
         },
         {
           "kind": "discovery",
           "url": "https://cnr.it/opendata",
           "ok": false,
-          "reason": "HTTPError: 404 Client Error: Not Found for url: https://www.cnr.it//opendata",
+          "reason": "SSLError: HTTPSConnectionPool(host='cnr.it', port=443): Max retries exceeded with url: /opendata (Caused by SSLError(SSLError(1, '[SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1010)')))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -2972,7 +2884,7 @@
           "kind": "discovery",
           "url": "https://cnr.it/open-data",
           "ok": false,
-          "reason": "HTTPError: 404 Client Error: Not Found for url: https://www.cnr.it//open-data",
+          "reason": "SSLError: HTTPSConnectionPool(host='cnr.it', port=443): Max retries exceeded with url: /open-data (Caused by SSLError(SSLError(1, '[SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1010)')))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -2980,7 +2892,7 @@
           "kind": "discovery",
           "url": "https://cnr.it/dati",
           "ok": false,
-          "reason": "HTTPError: 404 Client Error: Not Found for url: https://www.cnr.it//dati",
+          "reason": "SSLError: HTTPSConnectionPool(host='cnr.it', port=443): Max retries exceeded with url: /dati (Caused by SSLError(SSLError(1, '[SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1010)')))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -2988,7 +2900,7 @@
           "kind": "discovery",
           "url": "https://cnr.it/dataset",
           "ok": false,
-          "reason": "HTTPError: 404 Client Error: Not Found for url: https://www.cnr.it//dataset",
+          "reason": "SSLError: HTTPSConnectionPool(host='cnr.it', port=443): Max retries exceeded with url: /dataset (Caused by SSLError(SSLError(1, '[SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1010)')))",
           "candidate_links": [],
           "verified_links": []
         }
