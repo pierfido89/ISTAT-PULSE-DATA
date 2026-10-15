@@ -13,7 +13,7 @@ import os
 import re
 import sys
 from datetime import date, datetime, timezone
-from zoneinfo import ZoneInfo
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 from pathlib import Path
 from urllib.parse import urljoin, urlsplit, urlunsplit
 from bs4 import BeautifulSoup
@@ -54,10 +54,23 @@ def safe_link(base: str, href: str, domain: str) -> str | None:
     return canonical if official_url(canonical, domain) else None
 
 
+def today_in_rome() -> date:
+    """Current Rome date; safe UTC fallback if Python Windows has no tzdata.
+
+    Near local midnight, UTC may be a day behind Rome: temporarily omitting
+    a valid record is safer than inventing an unverified future date.
+    """
+    try:
+        return datetime.now(ZoneInfo("Europe/Rome")).date()
+    except ZoneInfoNotFoundError:
+        return datetime.now(timezone.utc).date()
+
+
 def parse_date(raw: str, *, today: date | None = None) -> str | None:
     if not raw:
         return None
-    today = today or datetime.now(ZoneInfo("Europe/Rome")).date()
+    if today is None:
+        today = today_in_rome()
     match = ISO.search(raw)
     if match:
         parts = tuple(map(int, match.groups()))
