@@ -1,0 +1,18 @@
+{
+  "version": "2026-10-15.1",
+  "purpose": "PULSE: restore publication and official dataset discovery for the 12 pending sources from 6 October 2026",
+  "sources": [
+    {"id":"CNR","name":"CNR","domain":"cnr.it","url":"https://www.cnr.it/it/comunicati-stampa","type":"publications","keywords":["ricerca","studio","dati","comunicat","risultat","statistic","osservatorio"]},
+    {"id":"CONFCOMMERCIO","name":"Confcommercio","domain":"confcommercio.it","url":"https://www.confcommercio.it/","type":"publications","keywords":["congiuntura","consumi","ricerca","studi","pil","icc"]},
+    {"id":"SVIMEZ","name":"SVIMEZ","domain":"svimez.it","url":"https://www.svimez.it/","type":"publications","keywords":["rapporto","studio","mezzogiorno","ricerca","osservatorio"]},
+    {"id":"ENIT","name":"ENIT","domain":"enit.it","url":"https://www.enit.it/it/ufficio-studi","type":"publications","keywords":["turismo","monitoraggio","indagine","rapporto","ricerca","studio"]},
+    {"id":"GSE","name":"GSE","domain":"gse.it","url":"https://www.gse.it/dati-e-scenari/statistiche","type":"publications","keywords":["rinnovabil","rapporto","statistic","energia","fer","dati"]},
+    {"id":"ISMEA","name":"ISMEA","domain":"ismeamercati.it","url":"https://www.ismeamercati.it/dati-agroalimentare/indice-prezzi","type":"datasets","keywords":["indice","prezzi","mercati","rilevaz","dati","excel"]},
+    {"id":"MIN_SALUTE","name":"Ministero della Salute","domain":"dati.salute.gov.it","url":"https://www.dati.salute.gov.it/","type":"datasets","keywords":["dataset","csv","json","personale","posti letto","dati","download"]},
+    {"id":"MIM","name":"Ministero dell'Istruzione e del Merito","domain":"dati.istruzione.it","url":"https://dati.istruzione.it/opendata/opendata/catalogo/elements1/?area=Scuole","type":"datasets","keywords":["scuol","student","open data","anno scolastico","csv","dataset","anagrafic"]},
+    {"id":"MIT","name":"MIT","domain":"dati.mit.gov.it","url":"https://dati.mit.gov.it/catalog/dataset/","type":"datasets","keywords":["dataset","trasport","concession","infrastruttur","dati"]},
+    {"id":"OPENCOESIONE","name":"OpenCoesione","domain":"opencoesione.gov.it","url":"https://opencoesione.gov.it/it/opendata/dataset/progetti_esteso_fsc_2021-2027/","type":"datasets","keywords":["progett","pagament","fsc","coesione","dati","csv","scarica"]},
+    {"id":"SINAB","name":"SINAB","domain":"sinab.it","url":"https://sinab.it/bionovita/","type":"publications","keywords":["biologico","bio in cifre","rapporto","statistic","agricoltura","superfici"]},
+    {"id":"SNAM","name":"SNAM","domain":"snam.it","url":"https://www.snam.it/it/documenti.html","type":"publications","keywords":["relazione","bilancio","semestrale","risultati","gas","report","xlsx","excel"]}
+  ]
+}
