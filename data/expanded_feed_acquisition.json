@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T10:22:30.810906+00:00",
+  "generated_at": "2026-10-15T10:07:30.971676+00:00",
   "successful_connectors": 8,
   "failed_connectors": 2,
   "results": [
@@ -13,7 +13,7 @@
       "content_type": "application/zip",
       "bytes": 724382,
       "sha256": "645775d4611e3dbaca3a29853d39d154a13a4cdaba76b33c98fe00978d529c5a",
-      "checked_at": "2026-10-14T10:20:30.831541+00:00",
+      "checked_at": "2026-10-15T10:05:33.444127+00:00",
       "status": "ok",
       "files": [
         "ATECO100_IT.zip",
@@ -79,16 +79,16 @@
       "frequency": "daily",
       "http_status": 200,
       "content_type": "text/csv",
-      "bytes": 3936618,
-      "sha256": "0793691a2c76ec0379539ed4ec190eac549271b45e093fa1f7a1244566fa5bec",
-      "checked_at": "2026-10-14T10:20:35.594548+00:00",
+      "bytes": 3935297,
+      "sha256": "bf6305b647ebc6c685c8047f73afd0d1db202844d94cd2163cfc37e591e85919",
+      "checked_at": "2026-10-15T10:05:38.426003+00:00",
       "status": "ok",
-      "header": "Estrazione del 2026-10-13",
+      "header": "Estrazione del 2026-10-14",
       "sample_lines": [
-        "Estrazione del 2026-10-13",
+        "Estrazione del 2026-10-14",
         "idImpianto|descCarburante|prezzo|isSelf|dtComu",
-        "3464|Benzina|2.349|0|09/10/2026 19:30:07",
-        "3464|Benzina|1.999|1|09/10/2026 19:30:06"
+        "3464|Benzina|2.349|0|13/10/2026 20:00:07",
+        "3464|Benzina|1.999|1|13/10/2026 20:00:06"
       ],
       "snapshot": "data/expanded_feeds/mimit_carburanti_prezzi.csv"
     },
@@ -100,13 +100,13 @@
       "frequency": "daily",
       "http_status": 200,
       "content_type": "text/csv",
-      "bytes": 3574120,
-      "sha256": "93cfb42286723ebef6a70f21b7868acf505a1cab1ee4d5fc1eb19052d8ad03d8",
-      "checked_at": "2026-10-14T10:20:41.787879+00:00",
+      "bytes": 3573763,
+      "sha256": "f8ce104b9c27b3835ef872ae8519df726fc89edd556a4862fd9359326cddb153",
+      "checked_at": "2026-10-15T10:05:41.495740+00:00",
       "status": "ok",
-      "header": "Estrazione del 2026-10-13",
+      "header": "Estrazione del 2026-10-14",
       "sample_lines": [
-        "Estrazione del 2026-10-13",
+        "Estrazione del 2026-10-14",
         "idImpianto|Gestore|Bandiera|Tipo Impianto|Nome Impianto|Indirizzo|Comune|Provincia|Latitudine|Longitudine",
         "59183|ENIMOOV S.P.A.|Agip Eni|Stradale|19829 AGRIGENTO|SS.189 KM. 64+649 - C.DA SAN MICHELE  S.N.C  |AGRIGENTO|AG|37.333935|13.595533",
         "63381|ENIMOOV S.P.A.|Agip Eni|Stradale|19834\tMONTALLEGRO|SS.115 KM.158+302  S.N.  |AGRIGENTO|AG|37.38895|13.351206"
@@ -123,7 +123,7 @@
       "content_type": "text/csv",
       "bytes": 81,
       "sha256": "4e52bb012c14eb4c728f8cc27ea0087c7ec445d53e3ba0ebad44d3aec52df57f",
-      "checked_at": "2026-10-14T10:22:15.762518+00:00",
+      "checked_at": "2026-10-15T10:07:15.090593+00:00",
       "status": "ok",
       "header": "cc_cargo;cc_false;cc_true;cf_selezione cargo -DS;1",
       "sample_lines": [
@@ -142,7 +142,7 @@
       "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
       "bytes": 478630,
       "sha256": "53745dc7b7c5f44a56e0ff89f5e2c9026a86af33da1e9f9c4627212bacea0a96",
-      "checked_at": "2026-10-14T10:22:17.164029+00:00",
+      "checked_at": "2026-10-15T10:07:16.384221+00:00",
       "status": "ok",
       "worksheet_count": 50,
       "snapshot": "data/expanded_feeds/agcom_osservatorio_comunicazioni.xlsx"
@@ -157,7 +157,7 @@
       "content_type": "application/force-download",
       "bytes": 838288,
       "sha256": "fe5a76d246abfc544bf86be50e5e5f39de0f30cd0f5339737432aafe67ed375c",
-      "checked_at": "2026-10-14T10:22:18.753166+00:00",
+      "checked_at": "2026-10-15T10:07:17.826579+00:00",
       "status": "ok",
       "worksheet_count": 88,
       "snapshot": "data/expanded_feeds/ivass_relazione_annuale_tavole.xlsx"
@@ -172,7 +172,7 @@
       "content_type": "application/json",
       "bytes": 150872,
       "sha256": "741e82bd27b42eaa1b8cb8438c112332f39097993791498211b6f34b20c56392",
-      "checked_at": "2026-10-14T10:22:20.004222+00:00",
+      "checked_at": "2026-10-15T10:07:19.104905+00:00",
       "status": "ok",
       "json_keys": [
         "help",
@@ -195,7 +195,7 @@
       "bytes": 8155593,
       "sha256": "941be5c98879370934686715ebc86ad6349ddf9c982a4343f3402e4d3fc7e8a7",
       "snapshot": "data/expanded_feeds/inail_malattie_mensili.csv",
-      "checked_at": "2026-10-14T10:22:30.810637+00:00",
+      "checked_at": "2026-10-15T10:07:30.971389+00:00",
       "status": "ok",
       "sample_lines": [
         "DataRilevazione;DataProtocollo;SedeInailCompetente;IdentificativoLavoratore;Genere;LuogoNascita;ICD10denunciato;IdentificativoCaso;Gestione",
@@ -209,12 +209,12 @@
     {
       "institution": "Ministero dell'Università e della Ricerca",
       "id": "mur_personale_genere_qualifica",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/1775dfd1-5408-4970-95c2-97373b7a0016/resource/85c1ab95-c8db-484b-8898-56478c521721/download/docricxgenerequalifica_serie.csv (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7fc41a6e91f0>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=45)'))"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/1775dfd1-5408-4970-95c2-97373b7a0016/resource/85c1ab95-c8db-484b-8898-56478c521721/download/docricxgenerequalifica_serie.csv (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7ff2fff191c0>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=45)'))"
     },
     {
       "institution": "Ministero dell'Università e della Ricerca",
       "id": "mur_personale_eta_qualifica",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/1775dfd1-5408-4970-95c2-97373b7a0016/resource/a9cc23fc-785a-4969-af49-5e9378be582b/download/docricxclasseetaqualifica_serie.csv (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7fc41a6e96d0>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=45)'))"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/1775dfd1-5408-4970-95c2-97373b7a0016/resource/a9cc23fc-785a-4969-af49-5e9378be582b/download/docricxclasseetaqualifica_serie.csv (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7ff2fff195e0>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=45)'))"
     }
   ]
 }
