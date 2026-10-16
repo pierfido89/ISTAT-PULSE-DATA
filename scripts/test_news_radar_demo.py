@@ -47,6 +47,14 @@ class RadarDemoTests(unittest.TestCase):
         self.assertEqual(radar.classify_topic("Prezzi al consumo, settembre 2026"), "ECONOMIA")
         self.assertEqual(radar.classify_topic("Occupazione e disoccupazione"), "LAVORO")
 
+    def test_primary_match_rejects_coincidental_values(self):
+        false_match={"verification_score":55,"matched_numbers":["1%","2026"],
+                     "matched_keywords":[]}
+        valid_match={"verification_score":92,"matched_numbers":["1,5%"],
+                     "matched_keywords":["prezzi","consumo","settembre"]}
+        self.assertFalse(radar.strong_primary_match(false_match))
+        self.assertTrue(radar.strong_primary_match(valid_match))
+
     def test_unverified_media_stays_in_quarantine(self):
         from datetime import datetime, timezone
         now=datetime(2026,10,16,12,0,tzinfo=timezone.utc)
