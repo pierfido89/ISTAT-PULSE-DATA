@@ -865,6 +865,18 @@ def main():
                         continue
                 except (ValueError, TypeError, OverflowError):
                     continue
+            # The RSS publication time, not our crawler clock, defines NEWS freshness.
+            # Missing/naive dates never create new articles labelled today.
+            try:
+                item_dt = parsedate_to_datetime(item.get("published_raw", ""))
+                if item_dt.tzinfo is None:
+                    continue
+                item_dt = item_dt.astimezone(timezone.utc)
+                if not (timedelta(0) <= now - item_dt <= timedelta(days=3)):
+                    continue
+                item_published_at = item_dt.isoformat()
+            except (TypeError, ValueError, OverflowError):
+                continue
             editorial_excluded=looks_editorially_irrelevant(item["title"])
             discovery=(item["title"]+" "+item.get("summary",""))[:7000]
             s,nums=score_candidate(discovery)
@@ -932,7 +944,7 @@ def main():
             article={
               "id":aid,
               "story_fingerprint":story_fingerprint(primary,topic,headline,verified_nums),
-              "published_at":(existing or {}).get("published_at") or official_published_at or now.isoformat(),
+              "published_at":(existing or {}).get("published_at") or official_published_at or item_published_at,
               "last_seen_at":now.isoformat(),
               "topic":topic,"pulse_score":pulse,
               "public_source":{"url":primary,"domain":resolved.get("domain"),"role":"primary_statistical_source",
