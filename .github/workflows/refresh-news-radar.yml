@@ -51,6 +51,10 @@ jobs:
       - if: steps.slot.outputs.run == 'true'
         run: python -m pip install beautifulsoup4 pypdf pdfplumber openpyxl xlrd
 
+      - name: Offline regression tests for accurate headlines, geography and RSS URLs
+        if: steps.slot.outputs.run == 'true'
+        run: python -m unittest scripts.test_news_radar_demo -v
+
       - name: Validate source table comparison extraction
         if: steps.slot.outputs.run == 'true'
         run: |
