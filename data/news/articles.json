@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-16T20:41:26.232697+00:00",
+  "generated_at": "2026-10-16T20:48:20.307040+00:00",
   "articles": [
     {
       "id": "PULSE-687899EEC404640F",
       "story_fingerprint": "687899eec404640ffae978ef",
       "published_at": "2026-10-16T14:02:30+00:00",
-      "last_seen_at": "2026-10-16T20:41:26.232697+00:00",
+      "last_seen_at": "2026-10-16T20:48:20.307040+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 45,
       "patterns": [],
@@ -41,12 +41,12 @@
       "publication_status": "quarantined"
     },
     {
-      "id": "PULSE-597A5BEC89048E4A",
-      "story_fingerprint": "597a5bec89048e4a2570d4e2",
+      "id": "PULSE-80040D2A7CF4CC7E",
+      "story_fingerprint": "80040d2a7cf4cc7e08603465",
       "published_at": "2026-10-16T10:00:20+00:00",
-      "last_seen_at": "2026-10-16T20:41:26.232697+00:00",
+      "last_seen_at": "2026-10-16T20:48:20.307040+00:00",
       "topic": "ECONOMIA",
-      "pulse_score": 92,
+      "pulse_score": 82,
       "public_source": {
         "url": "https://www.istat.it/comunicato-stampa/commercio-con-lestero-e-prezzi-allimport-agosto-2026/",
         "domain": "istat.it",
@@ -62,16 +62,16 @@
       },
       "period_reference": null,
       "latest_source_update": null,
-      "headline": "Economia, nuovo dato per Lazio: 2026 ",
-      "summary": "Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+      "headline": "Commercio con l’estero e prezzi all’import – Agosto 2026",
+      "summary": "La pubblicazione «Commercio con l’estero e prezzi all’import – Agosto 2026» contiene dati riscontrati nel documento statistico originale. Valori individuati: -1,5%, -1,6%, +1,7%. Per associare ogni valore al suo indicatore, territorio e periodo di riferimento, consultare la fonte.",
       "statistical_claims": [
         {
           "raw_value": "2026 ",
-          "verified": true
+          "verified": false
         },
         {
           "raw_value": "2026 ",
-          "verified": true
+          "verified": false
         },
         {
           "raw_value": "-1,5%",
@@ -87,31 +87,23 @@
         }
       ],
       "verified_series": [],
-      "territories": [
-        "lazio"
-      ],
+      "territories": [],
       "chart_spec": {
         "type": "auto",
         "status": "requires_primary_series",
         "reason": "candidate_contains_multiple_numeric_values"
       },
-      "map_spec": {
-        "level": "auto",
-        "territories": [
-          "lazio"
-        ],
-        "status": "requires_primary_geodata"
-      },
+      "map_spec": null,
       "editorial_status": "verified_primary_match",
       "publication_status": "published"
     },
     {
-      "id": "PULSE-94FAD4D4575CD98F",
-      "story_fingerprint": "94fad4d4575cd98f04c555a8",
+      "id": "PULSE-5441F6051427CF6F",
+      "story_fingerprint": "5441f6051427cf6fbaee7bcd",
       "published_at": "2026-10-16T08:58:40+00:00",
-      "last_seen_at": "2026-10-16T20:41:26.232697+00:00",
-      "topic": "LAVORO",
-      "pulse_score": 89,
+      "last_seen_at": "2026-10-16T20:48:20.307040+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 79,
       "public_source": {
         "url": "https://www.istat.it/comunicato-stampa/prezzi-al-consumo-settembre-2026/",
         "domain": "istat.it",
@@ -127,16 +119,16 @@
       },
       "period_reference": null,
       "latest_source_update": null,
-      "headline": "Lavoro, nuovo dato per Lazio: 2026 ",
-      "summary": "Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+      "headline": "Prezzi al consumo – Settembre 2026",
+      "summary": "La pubblicazione «Prezzi al consumo – Settembre 2026» contiene dati riscontrati nel documento statistico originale. Valori individuati: +0,7%, +4,2%. Per associare ogni valore al suo indicatore, territorio e periodo di riferimento, consultare la fonte.",
       "statistical_claims": [
         {
           "raw_value": "2026 ",
-          "verified": true
+          "verified": false
         },
         {
           "raw_value": "2026",
-          "verified": true
+          "verified": false
         },
         {
           "raw_value": "+0,7%",
@@ -148,31 +140,23 @@
         }
       ],
       "verified_series": [],
-      "territories": [
-        "lazio"
-      ],
+      "territories": [],
       "chart_spec": {
         "type": "auto",
         "status": "requires_primary_series",
         "reason": "candidate_contains_multiple_numeric_values"
       },
-      "map_spec": {
-        "level": "auto",
-        "territories": [
-          "lazio"
-        ],
-        "status": "requires_primary_geodata"
-      },
+      "map_spec": null,
       "editorial_status": "verified_primary_match",
       "publication_status": "published"
     },
     {
-      "id": "PULSE-B37C4DCB2D21A13F",
-      "story_fingerprint": "b37c4dcb2d21a13fe110adb4",
+      "id": "PULSE-DB0078B91D901F7A",
+      "story_fingerprint": "db0078b91d901f7a20350cbc",
       "published_at": "2026-10-16T08:00:18+00:00",
-      "last_seen_at": "2026-10-16T20:41:26.232697+00:00",
-      "topic": "LAVORO",
-      "pulse_score": 90,
+      "last_seen_at": "2026-10-16T20:48:20.307040+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 80,
       "public_source": {
         "url": "https://www.istat.it/comunicato-stampa/economia-non-osservata-nei-conti-nazionali-anni-2021-2024/",
         "domain": "istat.it",
@@ -188,20 +172,20 @@
       },
       "period_reference": null,
       "latest_source_update": null,
-      "headline": "Lavoro, nuovo dato per Lazio: 2021",
-      "summary": "Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+      "headline": "Economia non osservata nei conti nazionali – Anni 2021-2024",
+      "summary": "La pubblicazione «Economia non osservata nei conti nazionali – Anni 2021-2024» contiene dati riscontrati nel documento statistico originale. Valori individuati: 218,2 miliardi, 9,9%. Per associare ogni valore al suo indicatore, territorio e periodo di riferimento, consultare la fonte.",
       "statistical_claims": [
         {
           "raw_value": "2021",
-          "verified": true
+          "verified": false
         },
         {
           "raw_value": "2024 ",
-          "verified": true
+          "verified": false
         },
         {
           "raw_value": "2024 ",
-          "verified": true
+          "verified": false
         },
         {
           "raw_value": "218,2 miliardi",
@@ -213,21 +197,13 @@
         }
       ],
       "verified_series": [],
-      "territories": [
-        "lazio"
-      ],
+      "territories": [],
       "chart_spec": {
         "type": "auto",
         "status": "requires_primary_series",
         "reason": "candidate_contains_multiple_numeric_values"
       },
-      "map_spec": {
-        "level": "auto",
-        "territories": [
-          "lazio"
-        ],
-        "status": "requires_primary_geodata"
-      },
+      "map_spec": null,
       "editorial_status": "verified_primary_match",
       "publication_status": "published"
     },
@@ -271,12 +247,51 @@
       "publication_status": "quarantined"
     },
     {
-      "id": "PULSE-52F679A30A34D02A",
-      "story_fingerprint": "52f679a30a34d02a769585b1",
+      "id": "PULSE-B42A42E8CBF0D196",
+      "story_fingerprint": "b42a42e8cbf0d19610cf46aa",
+      "published_at": "2026-10-15T11:47:53+00:00",
+      "last_seen_at": "2026-10-16T20:48:20.307040+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNaGU1SG9HVllNc2x3TXZTSERVVFM4eTUxWmJkdTR1eVUtRnMweEdkUHdrUXEweDZMWFdKa0RNZ19tUWZwZy02eUtVd0pmLVNzVUpvcm9xalFFQUViNzQzMHF1Ukd4Rl9lcmlMQ2NWUVZjQzZ3NEpiREhrRWRfVE9mWUNRUmxYbnJlSG9nbTJsa0JpaFNhZHVjQXRfVzJjaW16RE9fWkdtUQ?oc=5",
+        "domain": "Borsa Corriere",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Charles Schwab, ricavi trimestrali record di 7,2 miliardi di dollari e asset clienti a 13,3 trilioni - Borsa Corriere",
+      "summary": "Charles Schwab, ricavi trimestrali record di 7,2 miliardi di dollari e asset clienti a 13,3 trilioni Borsa Corriere",
+      "statistical_claims": [
+        {
+          "raw_value": "7,2 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "13,3 ",
+          "verified": false
+        },
+        {
+          "raw_value": "7,2 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "13,3 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-4C865309AE624033",
+      "story_fingerprint": "4c865309ae6240336f2de34a",
       "published_at": "2026-10-15T09:00:07+00:00",
-      "last_seen_at": "2026-10-16T20:41:26.232697+00:00",
-      "topic": "LAVORO",
-      "pulse_score": 89,
+      "last_seen_at": "2026-10-16T20:48:20.307040+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 79,
       "public_source": {
         "url": "https://www.istat.it/comunicato-stampa/conti-economici-delle-imprese-e-dei-gruppi-di-impresa-anno-2024/",
         "domain": "istat.it",
@@ -292,16 +307,16 @@
       },
       "period_reference": null,
       "latest_source_update": null,
-      "headline": "Lavoro, nuovo dato per Lazio: 2024 ",
-      "summary": "Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+      "headline": "Conti economici delle imprese e dei gruppi di impresa – Anno 2024",
+      "summary": "La pubblicazione «Conti economici delle imprese e dei gruppi di impresa – Anno 2024» contiene dati riscontrati nel documento statistico originale. Valori individuati: +0,5%, 4,5 milioni. Per associare ogni valore al suo indicatore, territorio e periodo di riferimento, consultare la fonte.",
       "statistical_claims": [
         {
           "raw_value": "2024 ",
-          "verified": true
+          "verified": false
         },
         {
           "raw_value": "2024",
-          "verified": true
+          "verified": false
         },
         {
           "raw_value": "+0,5%",
@@ -313,21 +328,13 @@
         }
       ],
       "verified_series": [],
-      "territories": [
-        "lazio"
-      ],
+      "territories": [],
       "chart_spec": {
         "type": "auto",
         "status": "requires_primary_series",
         "reason": "candidate_contains_multiple_numeric_values"
       },
-      "map_spec": {
-        "level": "auto",
-        "territories": [
-          "lazio"
-        ],
-        "status": "requires_primary_geodata"
-      },
+      "map_spec": null,
       "editorial_status": "verified_primary_match",
       "publication_status": "published"
     },
@@ -335,7 +342,7 @@
       "id": "PULSE-305DF8AC0ED5C736",
       "story_fingerprint": "305df8ac0ed5c736b6209527",
       "published_at": "2026-10-15T08:15:00+00:00",
-      "last_seen_at": "2026-10-16T20:41:26.232697+00:00",
+      "last_seen_at": "2026-10-16T20:48:20.307040+00:00",
       "topic": "LAVORO",
       "pulse_score": 50,
       "patterns": [],
@@ -379,10 +386,49 @@
       "publication_status": "quarantined"
     },
     {
+      "id": "PULSE-9129721D32962D4A",
+      "story_fingerprint": "9129721d32962d4a7c395b6b",
+      "published_at": "2026-10-15T04:45:00+00:00",
+      "last_seen_at": "2026-10-16T20:48:20.307040+00:00",
+      "topic": "DEMOGRAFIA",
+      "pulse_score": 50,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOMXJGZTB2R2pxbW1scWFPd0c3UkVTdjJDMHZKTk9HWUVOTXBubTNnQWt3SGMweWxzNHhvWVMta25OS0FHMFB3MTZQWmt2WkRZSGowNko1OGVWT1UzbVBiSXVPaFV0aXhMY3N0THBpNm1XOXIzUmhzODUwSHc2Nzc5dzFxdE9OYWpfd1QyRDZvNUFYZDZwUkJCcU44aE80RzF1NWc5TQ?oc=5",
+        "domain": "CentroPagina",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Estate 2026, mortalità contenuta nonostante il caldo: +2% in Italia, +4% al centro. Ad Ancona decessi sotto l'atteso - CentroPagina",
+      "summary": "Estate 2026, mortalità contenuta nonostante il caldo: +2% in Italia, +4% al centro. Ad Ancona decessi sotto l'atteso CentroPagina",
+      "statistical_claims": [
+        {
+          "raw_value": "+2%",
+          "verified": false
+        },
+        {
+          "raw_value": "+4%",
+          "verified": false
+        },
+        {
+          "raw_value": "+2%",
+          "verified": false
+        },
+        {
+          "raw_value": "+4%",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
       "id": "PULSE-35E9F7C65D46E01A",
       "story_fingerprint": "35e9f7c65d46e01aebe02ea2",
       "published_at": "2026-10-14T16:12:00+00:00",
-      "last_seen_at": "2026-10-16T20:41:26.232697+00:00",
+      "last_seen_at": "2026-10-16T20:48:20.307040+00:00",
       "topic": "ALTRO",
       "pulse_score": 60,
       "patterns": [],
@@ -679,6 +725,67 @@
       "territories": [],
       "editorial_status": "needs_primary_source",
       "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-C3335DEEE103D926",
+      "story_fingerprint": "c3335deee103d926bd713144",
+      "published_at": "2026-10-14T09:05:32+00:00",
+      "last_seen_at": "2026-10-16T20:48:20.307040+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 85,
+      "public_source": {
+        "url": "https://www.bancaditalia.it/pubblicazioni/proiezioni-macroeconomiche/index.html",
+        "domain": "bancaditalia.it",
+        "role": "primary_statistical_source",
+        "verification_method": "named_or_topic_domain_search",
+        "verification_score": 55
+      },
+      "discovery": {
+        "visible": false,
+        "role": "journalistic_radar",
+        "outlet": "Google News - economia lavoro",
+        "original_url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQTVpjSTd0VXVNeGpNN24wY0wxVGl5eUJIMGg3WGYtNmozM25QYTR5NnNFYm1TZm1jaUctR1FLa2h0MWI1d3NVY1dxTG41akc0YndrNFJjNjF6ZXV3bkdHMHdDdGd2TTNnSkE5Tmd4QlI1ZVY0U2ZSRVJjNzluVmJkTlNTUWNFZWlXcGk3a0VQS2R2cEVNM3h4RHdVS0tqNk9JMEp0bE1CbG9qbklZc2hnUUR1b0ZIOGkx?oc=5"
+      },
+      "period_reference": null,
+      "latest_source_update": null,
+      "headline": "Rapporto di previsione CSC: PIL all’1% nel 2026, ma l’energia frena la crescita nel 2027",
+      "summary": "La pubblicazione «Rapporto di previsione CSC: PIL all’1% nel 2026, ma l’energia frena la crescita nel 2027» contiene dati riscontrati nel documento statistico originale. Valori individuati: 1%, 1%. Per associare ogni valore al suo indicatore, territorio e periodo di riferimento, consultare la fonte.",
+      "statistical_claims": [
+        {
+          "raw_value": "1%",
+          "verified": true
+        },
+        {
+          "raw_value": "2026",
+          "verified": false
+        },
+        {
+          "raw_value": "2027 ",
+          "verified": false
+        },
+        {
+          "raw_value": "1%",
+          "verified": true
+        },
+        {
+          "raw_value": "2026",
+          "verified": false
+        },
+        {
+          "raw_value": "2027 ",
+          "verified": false
+        }
+      ],
+      "verified_series": [],
+      "territories": [],
+      "chart_spec": {
+        "type": "auto",
+        "status": "requires_primary_series",
+        "reason": "candidate_contains_multiple_numeric_values"
+      },
+      "map_spec": null,
+      "editorial_status": "verified_primary_match",
+      "publication_status": "published"
     },
     {
       "id": "PULSE-29669920787E180B",
