@@ -56,6 +56,8 @@ GEO={"abruzzo","basilicata","calabria","campania","emilia-romagna","friuli-venez
 "palermo","bologna","firenze","genova","venezia","bari"}
 
 def fetch(url, timeout=12, max_bytes=700000):
+    # Python's Request requires ASCII percent-encoded URLs.
+    url=urllib.parse.quote(url, safe=":/?&=%#,+-._~@!$'()*;[]")
     req=urllib.request.Request(url,headers={"User-Agent":UA,"Accept":"text/html,application/rss+xml,application/xml;q=0.9,*/*;q=0.5"})
     with urllib.request.urlopen(req,timeout=timeout) as r:
         return r.read(max_bytes),r.geturl(),r.headers.get("Content-Type","")
@@ -733,7 +735,7 @@ def classify_topic(text):
 
 def detect_geo(text):
     low=text.lower()
-    hits=[g for g in sorted(GEO) if g in low]
+    hits=[g for g in sorted(GEO) if re.search(r"(?<!\w)"+re.escape(g)+r"(?!\w)", low)]
     return hits[:12]
 
 def make_visual_specs(topic, geos, numbers):
@@ -884,7 +886,8 @@ def main():
             processed_in_feed += 1
             probe=article_probe(item["url"],cfg.get("official_domains",[]),cfg.get("entity_domain_hints",{}))
             combined=(discovery+" "+probe.get("text",""))[:35000]
-            topic=classify_topic(combined); geos=detect_geo(combined)
+            # Classify original headline/summary only; no footer noise.
+            topic=classify_topic(discovery); geos=detect_geo(discovery)
             story_key=semantic_key(item["title"],topic,nums)
             if story_key in seen_story_keys: continue
             seen_story_keys.add(story_key)
@@ -934,13 +937,27 @@ def main():
                             article["published_at"] = prior.get("published_at") or article["published_at"]
                         by_id[article["id"]] = article
                 continue
-            verified_nums=resolved.get("matched_numbers",[])
+            verified_nums=[n for n in resolved.get("matched_numbers",[])
+                           if not re.fullmatch(r"20\d{2}", normalize_number_token(n))]
             if not verified_nums: continue
             pulse=min(100,50+s//2+(10 if geos else 0)+(5 if len(verified_nums)>=2 else 0))
             chart,map_spec=make_visual_specs(topic,geos,verified_nums)
-            headline=derive_headline(topic,resolved,geos,verified_nums)
+            # Preserve the actual reported title, never infer a region/year.
+            headline=clean_text(item["title"]).strip()
+            if not primary_feed and " - " in headline:
+                headline=headline.rsplit(" - ",1)[0].strip()
+            headline=headline[:220]
+            if len(headline)<15: continue
             aid=stable_id(primary,topic,headline,verified_nums)
             existing=by_id.get(aid)
+            legacy=[(old_id,old) for old_id,old in by_id.items()
+                if old_id!=aid
+                and canonical_story_url((old.get("public_source") or {}).get("url"))==canonical_story_url(primary)
+                and re.match(r"^(?:Dati|Lavoro|Economia|Salute|Istruzione|Ambiente|Energia|Mobilit.|Casa|Demografia), nuovo dato per ",old.get("headline",""))]
+            if legacy and not existing:
+                existing=min((old for _,old in legacy),
+                             key=lambda x:x.get("published_at") or "9999")
+            for old_id,_ in legacy: by_id.pop(old_id,None)
             article={
               "id":aid,
               "story_fingerprint":story_fingerprint(primary,topic,headline,verified_nums),
@@ -953,7 +970,13 @@ def main():
                            "outlet":feed.get("name", ""), "original_url":item.get("url", "")},
               "period_reference":None,"latest_source_update":None,
               "headline":headline,
-              "summary":"Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+              "summary":(
+                  "La pubblicazione «" + headline + "» contiene dati "
+                  "riscontrati nel documento statistico originale. "
+                  "Valori individuati: " + ", ".join(verified_nums[:4]) +
+                  ". Per associare ogni valore al suo indicatore, territorio "
+                  "e periodo di riferimento, consultare la fonte."
+              ),
               "statistical_claims":[{"raw_value":n,"verified":n in verified_nums} for n in nums],
               "verified_series": resolved.get("verified_series", []),
               "territories":geos,
