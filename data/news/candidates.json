@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-16T20:48:20.307040+00:00",
+  "generated_at": "2026-10-16T20:52:13.778331+00:00",
   "candidates": [
     {
       "radar": "Google News - economia lavoro",
       "discovery_url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQTVpjSTd0VXVNeGpNN24wY0wxVGl5eUJIMGg3WGYtNmozM25QYTR5NnNFYm1TZm1jaUctR1FLa2h0MWI1d3NVY1dxTG41akc0YndrNFJjNjF6ZXV3bkdHMHdDdGd2TTNnSkE5Tmd4QlI1ZVY0U2ZSRVJjNzluVmJkTlNTUWNFZWlXcGk3a0VQS2R2cEVNM3h4RHdVS0tqNk9JMEp0bE1CbG9qbklZc2hnUUR1b0ZIOGkx?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Rapporto di previsione CSC: PIL all’1% nel 2026, ma l’energia frena la crescita nel 2027 - Confindustria",
-      "detected_at": "2026-10-16T20:48:20.307040+00:00",
+      "detected_at": "2026-10-16T20:52:13.778331+00:00",
       "score_discovery": 60,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -19,41 +19,42 @@
       "official_links": [],
       "official_domain_hints": [],
       "primary_resolution": {
-        "url": "https://www.bancaditalia.it/pubblicazioni/proiezioni-macroeconomiche/index.html",
-        "domain": "bancaditalia.it",
+        "url": "https://www.istat.it/wp-content/uploads/2026/06/Prospettive-per-leconomia-italiana.pdf",
+        "domain": "istat.it",
         "matched_numbers": [
           "1%",
           "2026",
+          "2027 ",
           "1%",
-          "2026"
+          "2026",
+          "2027 "
         ],
         "matched_non_year_numbers": [
           "1%",
           "1%"
         ],
-        "matched_keywords": [],
-        "verification_score": 55,
-        "text_excerpt": "Banca d'Italia - Proiezioni macroeconomiche per l'Italia Vai al contenuto principale Apri menu di navigazione Home page Menu Chiudi IT EN Go to english version Chi siamo Chi siamo La Banca d'Italia è la banca centrale della Repubblica italiana e persegue finalità d'interesse generale nel settore monetario e finanziario. È parte dell'Eurosistema, composto dalle banche centrali nazionali dell'area euro e dalla Banca centrale europea. Vai alla pagina Chi siamo Visite a Palazzo Koch (si apre in una nuova finestra) In questa sezione Storia Funzioni e governance Organizzazione Eurosistema Personale Lavorare in Banca d'Italia La Banca d'Italia e la sostenibilità ambientale e sociale La Banca d'Italia per la cybersicurezza Etica e prevenzione corruzione Patrimonio immobiliare della Banca d'Italia Archivio storico Biblioteca Bilancio e situazioni contabili mensili Procedimenti amministrativi e di",
+        "matched_keywords": [
+          "previsione",
+          "energia",
+          "frena",
+          "crescita"
+        ],
+        "verification_score": 87,
+        "text_excerpt": " UFFICIO STAMPA tel. +39 06 4673.2243/44 ufficiostampa@istat.it CONTACT CENTRE contact.istat.it Le prospettive per l’economia italiana nel 2026-2027  Il Pil italiano è atteso in crescita dello 0,7% sia nel 2026 sia nel 2027, dopo essere aumentato dello 0,5% nel 2025 (Prospetto 1). L’aumento del Pil, nel biennio di previsione, verrebbe sostenuto interamente dalla domanda interna al netto delle scorte (+0,9 e +0,5 punti percentuali rispettivamente) ; la domanda estera netta, condizionata in negativo dagli effetti del conflitto in Medio Oriente e dal conseguente aumento dei prezzi energetici, fornirebbe un contributo negativo nel 2026 (-0,2 p.p.) e nullo nel 2027.  Nel 2026 i consumi delle famiglie e delle ISP sono previsti in decelerazione rispetto all’anno precedente (+ 0,6% rispetto al +1,1% nel 2025 ) frenati dall’attenuazione della dinamica positiva delle retribuzioni pro capite e da",
         "verified_series": [],
         "method": "named_or_topic_domain_search",
-        "search_domain": "mef.gov.it",
+        "search_domain": "bancaditalia.it",
         "attempts": [
           {
             "stage": "domain_search",
             "domain": "istat.it",
             "query": "site:istat.it \"previsione energia frena crescita confindustria\" 1% 2026 2027",
-            "results": 6
+            "results": 0
           },
           {
             "stage": "domain_search",
             "domain": "bancaditalia.it",
             "query": "site:bancaditalia.it \"previsione energia frena crescita confindustria\" 1% 2026 2027",
-            "results": 0
-          },
-          {
-            "stage": "domain_search",
-            "domain": "mef.gov.it",
-            "query": "site:mef.gov.it \"previsione energia frena crescita confindustria\" 1% 2026 2027",
             "results": 6
           }
         ]
@@ -65,7 +66,7 @@
       "radar": "Google News - Sole 24 Ore dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNTG1zcFRLeFZ3XzFVblRqN3hEVmpxTG9fdDFVWmVLZjdLLVJrTWRLN2loM3UzTTQ2bmxRejEwaDhLdWIzOGFUdXZJaXpnam14NVloaGtVOFpvb1JOLVptMHFrT2VFOHl6UlNCbmhSMG9TdWpZVklGYlF3dURiOWxmWjJDbE0ycWF5M080R2VmWnVFdHdlWE1YSFVUTlJkMmRXWmFlUVYzdXE1RGdweDF4RzB1RDBWOTdaaHhPUmZTZnM0WENDQmtXOWdDMlVRRFh0MlpaVWZyZmNBbGlWZGxPdDN3RzV0TXhl?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Estate 2026: secondo i dati Cleanbnb soggiorni in calo dell’8% ma incassi in crescita dell’1,5% - Il Sole 24 ORE",
-      "detected_at": "2026-10-16T20:48:20.307040+00:00",
+      "detected_at": "2026-10-16T20:52:13.778331+00:00",
       "score_discovery": 60,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -85,10 +86,29 @@
       "status": "needs_primary_source"
     },
     {
+      "radar": "Google News - Repubblica dati e statistiche",
+      "discovery_url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPZm1IZHBYeF91REVENmFuSGQ5QktJOUVydGtwNTg0ci1icmpmc0hrMmxFM09LX3N6OVdQdWZQY05RZ3Y2QUlsaHQtTTlMUklTb0t0bWhiR280cFRaLWZqWE1veS1HMTZJNXJSc3A5UGxLdnk0ZENYdzEyaGtqZ2c4YUFlMWNsMGdnSGVYakF5a01LNXIwalBNSmd4eElxS295ZzAyZEI2T3NUNG5Gb294Z3pXMEJ4RXBPVWpUYndpb3BmYnJGWXNIZ3h0Nkc5YWV2aWduT1V5V1pOWmkyNHFWczlaaFNnbHFBcFRVVndB?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Charles Schwab, ricavi trimestrali record di 7,2 miliardi di dollari e asset clienti a 13,3 trilioni - la Repubblica",
+      "detected_at": "2026-10-16T20:52:13.778331+00:00",
+      "score_discovery": 49,
+      "topic": "ALTRO",
+      "numbers_detected": [
+        "7,2 miliardi",
+        "13,3 ",
+        "7,2 miliardi",
+        "13,3 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
       "radar": "Google News - Corriere dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxOTWFnQ3hmbWdmcUh0eF9TZXdpb1lLY1NwZFo5cmFHNHZOYjRyMFJ4QnNiamdSbE4xNFYyZjVvVXdKUXFrLWY5X0hPUUVhYWsxaVBCUjBGSWZvUnMxQmlsTjFDVmx1NFNBMmk1cXlRbXlMamVOUXc0ajI4b2hOUlNOS0RmYkFCMlBHcERDaEU0em0yLTF4SGd5NUNNUnl3ZU05cEVWUHlWVlM2djhfeXdtMm56VnpSMFQydzRDUEdCd2NWWjQ2TlR2MzRVeGEwek1NbDNSYTJYUmFMakM5Q0J3aWR4SVhNcThzN295SER4MUlJUDRHZThUMFltQ0ZJZTJ6eVN6Smh5bTRZZWc1YlR5LXRNYlNmcTBFTFYwS1NFUzRxRnVnaXREU3dETdIBsAJBVV95cUxOM1Z5T1c2b01BSkc2Tnpfb0ExbGZUWHFaMVJRVzQ1WVdGb1BHVkdOWGpibllYUXV0YlhGY0dNWUk5cjhlMHFoRHl5SEdPYlZoUXNZZmFrN05qVnR3dGd4MjNSZkU4eGE4aVRlRVpVMFM5V3M0T2dnR2hSaWhWblY0aGhRdG8ta0pkWTloYy11NGs5MzF2VWIwM3ZvWXktUDk5X3ZNUExEUkR3aVNkMW1fdW94SnF0U3hBSVNvXzVxam5xcHZsblVXLUZaVE85QmdBblFnTHlHaURucjdockxFRXJ6VFNTUFZUai1YVFhLRTdzNlM4NkhqMU5yN05tNC04UUEtTERFSGE3T29KQ25CYTh3N1RsWUpaNXF6alI5SmNZbGFFWDRYU0t3S0kyYmdI?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "L'abito da record di Céline Dion a Parigi: 1.380 ore di lavoro per realizzarlo, oltre 6 mila cristalli e 5 mila perline - Corriere della Sera",
-      "detected_at": "2026-10-16T20:48:20.307040+00:00",
+      "detected_at": "2026-10-16T20:52:13.778331+00:00",
       "score_discovery": 50,
       "topic": "LAVORO",
       "numbers_detected": [
@@ -106,29 +126,10 @@
       "status": "needs_primary_source"
     },
     {
-      "radar": "Google News - Corriere dati e statistiche",
-      "discovery_url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNaGU1SG9HVllNc2x3TXZTSERVVFM4eTUxWmJkdTR1eVUtRnMweEdkUHdrUXEweDZMWFdKa0RNZ19tUWZwZy02eUtVd0pmLVNzVUpvcm9xalFFQUViNzQzMHF1Ukd4Rl9lcmlMQ2NWUVZjQzZ3NEpiREhrRWRfVE9mWUNRUmxYbnJlSG9nbTJsa0JpaFNhZHVjQXRfVzJjaW16RE9fWkdtUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Charles Schwab, ricavi trimestrali record di 7,2 miliardi di dollari e asset clienti a 13,3 trilioni - Borsa Corriere",
-      "detected_at": "2026-10-16T20:48:20.307040+00:00",
-      "score_discovery": 49,
-      "topic": "ALTRO",
-      "numbers_detected": [
-        "7,2 miliardi",
-        "13,3 ",
-        "7,2 miliardi",
-        "13,3 "
-      ],
-      "official_links": [],
-      "official_domain_hints": [],
-      "primary_resolution": null,
-      "editorial_excluded": false,
-      "status": "needs_primary_source"
-    },
-    {
       "radar": "Google News - Italia economia e famiglie",
       "discovery_url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5wSXFmZ0hyTUtKaHUzeWd1dWF4TDRLck5JZXRFRV9CdlNJYUpaY2kyZkg4bEVqS2hRU1dkVzZ0cUJTOXZSbDBzUVZpMXQxd3VheG0tSENjVF82QjJOMlJncjNzLU5uaUR3UUJEN0pDaV9IaVoyd1lDS0dEU2c?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Pil Italia allo 0,9% nel 2026, +0,7% nel 2027. Le stime di Bankitalia - Sky TG24",
-      "detected_at": "2026-10-16T20:48:20.307040+00:00",
+      "detected_at": "2026-10-16T20:52:13.778331+00:00",
       "score_discovery": 45,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -151,7 +152,7 @@
       "radar": "Google News - Italia popolazione e territori",
       "discovery_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOMXJGZTB2R2pxbW1scWFPd0c3UkVTdjJDMHZKTk9HWUVOTXBubTNnQWt3SGMweWxzNHhvWVMta25OS0FHMFB3MTZQWmt2WkRZSGowNko1OGVWT1UzbVBiSXVPaFV0aXhMY3N0THBpNm1XOXIzUmhzODUwSHc2Nzc5dzFxdE9OYWpfd1QyRDZvNUFYZDZwUkJCcU44aE80RzF1NWc5TQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Estate 2026, mortalità contenuta nonostante il caldo: +2% in Italia, +4% al centro. Ad Ancona decessi sotto l'atteso - CentroPagina",
-      "detected_at": "2026-10-16T20:48:20.307040+00:00",
+      "detected_at": "2026-10-16T20:52:13.778331+00:00",
       "score_discovery": 50,
       "topic": "DEMOGRAFIA",
       "numbers_detected": [
@@ -172,7 +173,7 @@
       "radar": "ISTAT - Aggiornamenti ufficiali",
       "discovery_url": "https://www.istat.it/comunicato-stampa/commercio-con-lestero-e-prezzi-allimport-agosto-2026/",
       "discovery_title": "Commercio con l’estero e prezzi all’import – Agosto 2026",
-      "detected_at": "2026-10-16T20:48:20.307040+00:00",
+      "detected_at": "2026-10-16T20:52:13.778331+00:00",
       "score_discovery": 55,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -236,7 +237,7 @@
       "radar": "ISTAT - Aggiornamenti ufficiali",
       "discovery_url": "https://www.istat.it/comunicato-stampa/prezzi-al-consumo-settembre-2026/",
       "discovery_title": "Prezzi al consumo – Settembre 2026",
-      "detected_at": "2026-10-16T20:48:20.307040+00:00",
+      "detected_at": "2026-10-16T20:52:13.778331+00:00",
       "score_discovery": 49,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -297,7 +298,7 @@
       "radar": "ISTAT - Aggiornamenti ufficiali",
       "discovery_url": "https://www.istat.it/comunicato-stampa/economia-non-osservata-nei-conti-nazionali-anni-2021-2024/",
       "discovery_title": "Economia non osservata nei conti nazionali – Anni 2021-2024",
-      "detected_at": "2026-10-16T20:48:20.307040+00:00",
+      "detected_at": "2026-10-16T20:52:13.778331+00:00",
       "score_discovery": 50,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -359,7 +360,7 @@
       "radar": "ISTAT - Comunicati stampa ufficiali",
       "discovery_url": "https://www.istat.it/comunicato-stampa/conti-economici-delle-imprese-e-dei-gruppi-di-impresa-anno-2024/",
       "discovery_title": "Conti economici delle imprese e dei gruppi di impresa – Anno 2024",
-      "detected_at": "2026-10-16T20:48:20.307040+00:00",
+      "detected_at": "2026-10-16T20:52:13.778331+00:00",
       "score_discovery": 49,
       "topic": "ECONOMIA",
       "numbers_detected": [

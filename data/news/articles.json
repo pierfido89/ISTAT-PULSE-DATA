@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-16T20:48:20.307040+00:00",
+  "generated_at": "2026-10-16T20:52:13.778331+00:00",
   "articles": [
     {
       "id": "PULSE-687899EEC404640F",
       "story_fingerprint": "687899eec404640ffae978ef",
       "published_at": "2026-10-16T14:02:30+00:00",
-      "last_seen_at": "2026-10-16T20:48:20.307040+00:00",
+      "last_seen_at": "2026-10-16T20:52:13.778331+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 45,
       "patterns": [],
@@ -44,7 +44,7 @@
       "id": "PULSE-80040D2A7CF4CC7E",
       "story_fingerprint": "80040d2a7cf4cc7e08603465",
       "published_at": "2026-10-16T10:00:20+00:00",
-      "last_seen_at": "2026-10-16T20:48:20.307040+00:00",
+      "last_seen_at": "2026-10-16T20:52:13.778331+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 82,
       "public_source": {
@@ -58,7 +58,8 @@
         "visible": false,
         "role": "direct_official",
         "outlet": "ISTAT - Aggiornamenti ufficiali",
-        "original_url": "https://www.istat.it/comunicato-stampa/commercio-con-lestero-e-prezzi-allimport-agosto-2026/"
+        "original_url": "https://www.istat.it/comunicato-stampa/commercio-con-lestero-e-prezzi-allimport-agosto-2026/",
+        "evidence_gate": "official_release"
       },
       "period_reference": null,
       "latest_source_update": null,
@@ -101,7 +102,7 @@
       "id": "PULSE-5441F6051427CF6F",
       "story_fingerprint": "5441f6051427cf6fbaee7bcd",
       "published_at": "2026-10-16T08:58:40+00:00",
-      "last_seen_at": "2026-10-16T20:48:20.307040+00:00",
+      "last_seen_at": "2026-10-16T20:52:13.778331+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 79,
       "public_source": {
@@ -115,7 +116,8 @@
         "visible": false,
         "role": "direct_official",
         "outlet": "ISTAT - Aggiornamenti ufficiali",
-        "original_url": "https://www.istat.it/comunicato-stampa/prezzi-al-consumo-settembre-2026/"
+        "original_url": "https://www.istat.it/comunicato-stampa/prezzi-al-consumo-settembre-2026/",
+        "evidence_gate": "official_release"
       },
       "period_reference": null,
       "latest_source_update": null,
@@ -154,7 +156,7 @@
       "id": "PULSE-DB0078B91D901F7A",
       "story_fingerprint": "db0078b91d901f7a20350cbc",
       "published_at": "2026-10-16T08:00:18+00:00",
-      "last_seen_at": "2026-10-16T20:48:20.307040+00:00",
+      "last_seen_at": "2026-10-16T20:52:13.778331+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 80,
       "public_source": {
@@ -168,7 +170,8 @@
         "visible": false,
         "role": "direct_official",
         "outlet": "ISTAT - Aggiornamenti ufficiali",
-        "original_url": "https://www.istat.it/comunicato-stampa/economia-non-osservata-nei-conti-nazionali-anni-2021-2024/"
+        "original_url": "https://www.istat.it/comunicato-stampa/economia-non-osservata-nei-conti-nazionali-anni-2021-2024/",
+        "evidence_gate": "official_release"
       },
       "period_reference": null,
       "latest_source_update": null,
@@ -211,7 +214,7 @@
       "id": "PULSE-4E42D6EF4FEC7BBE",
       "story_fingerprint": "4e42d6ef4fec7bbef26c4961",
       "published_at": "2026-10-15T11:52:00+00:00",
-      "last_seen_at": "2026-10-16T20:41:26.232697+00:00",
+      "last_seen_at": "2026-10-16T20:52:13.778331+00:00",
       "topic": "ALTRO",
       "pulse_score": 49,
       "patterns": [],
@@ -289,7 +292,7 @@
       "id": "PULSE-4C865309AE624033",
       "story_fingerprint": "4c865309ae6240336f2de34a",
       "published_at": "2026-10-15T09:00:07+00:00",
-      "last_seen_at": "2026-10-16T20:48:20.307040+00:00",
+      "last_seen_at": "2026-10-16T20:52:13.778331+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 79,
       "public_source": {
@@ -303,7 +306,8 @@
         "visible": false,
         "role": "direct_official",
         "outlet": "ISTAT - Comunicati stampa ufficiali",
-        "original_url": "https://www.istat.it/comunicato-stampa/conti-economici-delle-imprese-e-dei-gruppi-di-impresa-anno-2024/"
+        "original_url": "https://www.istat.it/comunicato-stampa/conti-economici-delle-imprese-e-dei-gruppi-di-impresa-anno-2024/",
+        "evidence_gate": "official_release"
       },
       "period_reference": null,
       "latest_source_update": null,
@@ -342,7 +346,7 @@
       "id": "PULSE-305DF8AC0ED5C736",
       "story_fingerprint": "305df8ac0ed5c736b6209527",
       "published_at": "2026-10-15T08:15:00+00:00",
-      "last_seen_at": "2026-10-16T20:48:20.307040+00:00",
+      "last_seen_at": "2026-10-16T20:52:13.778331+00:00",
       "topic": "LAVORO",
       "pulse_score": 50,
       "patterns": [],
@@ -389,7 +393,7 @@
       "id": "PULSE-9129721D32962D4A",
       "story_fingerprint": "9129721d32962d4a7c395b6b",
       "published_at": "2026-10-15T04:45:00+00:00",
-      "last_seen_at": "2026-10-16T20:48:20.307040+00:00",
+      "last_seen_at": "2026-10-16T20:52:13.778331+00:00",
       "topic": "DEMOGRAFIA",
       "pulse_score": 50,
       "patterns": [],
@@ -428,7 +432,7 @@
       "id": "PULSE-35E9F7C65D46E01A",
       "story_fingerprint": "35e9f7c65d46e01aebe02ea2",
       "published_at": "2026-10-14T16:12:00+00:00",
-      "last_seen_at": "2026-10-16T20:48:20.307040+00:00",
+      "last_seen_at": "2026-10-16T20:52:13.778331+00:00",
       "topic": "ALTRO",
       "pulse_score": 60,
       "patterns": [],
@@ -745,6 +749,68 @@
         "role": "journalistic_radar",
         "outlet": "Google News - economia lavoro",
         "original_url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQTVpjSTd0VXVNeGpNN24wY0wxVGl5eUJIMGg3WGYtNmozM25QYTR5NnNFYm1TZm1jaUctR1FLa2h0MWI1d3NVY1dxTG41akc0YndrNFJjNjF6ZXV3bkdHMHdDdGd2TTNnSkE5Tmd4QlI1ZVY0U2ZSRVJjNzluVmJkTlNTUWNFZWlXcGk3a0VQS2R2cEVNM3h4RHdVS0tqNk9JMEp0bE1CbG9qbklZc2hnUUR1b0ZIOGkx?oc=5"
+      },
+      "period_reference": null,
+      "latest_source_update": null,
+      "headline": "Rapporto di previsione CSC: PIL all’1% nel 2026, ma l’energia frena la crescita nel 2027",
+      "summary": "La pubblicazione «Rapporto di previsione CSC: PIL all’1% nel 2026, ma l’energia frena la crescita nel 2027» contiene dati riscontrati nel documento statistico originale. Valori individuati: 1%, 1%. Per associare ogni valore al suo indicatore, territorio e periodo di riferimento, consultare la fonte.",
+      "statistical_claims": [
+        {
+          "raw_value": "1%",
+          "verified": true
+        },
+        {
+          "raw_value": "2026",
+          "verified": false
+        },
+        {
+          "raw_value": "2027 ",
+          "verified": false
+        },
+        {
+          "raw_value": "1%",
+          "verified": true
+        },
+        {
+          "raw_value": "2026",
+          "verified": false
+        },
+        {
+          "raw_value": "2027 ",
+          "verified": false
+        }
+      ],
+      "verified_series": [],
+      "territories": [],
+      "chart_spec": {
+        "type": "auto",
+        "status": "requires_primary_series",
+        "reason": "candidate_contains_multiple_numeric_values"
+      },
+      "map_spec": null,
+      "editorial_status": "verified_primary_match",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-C83742A96A0CB784",
+      "story_fingerprint": "c83742a96a0cb784878c252b",
+      "published_at": "2026-10-14T09:05:32+00:00",
+      "last_seen_at": "2026-10-16T20:52:13.778331+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 85,
+      "public_source": {
+        "url": "https://www.istat.it/wp-content/uploads/2026/06/Prospettive-per-leconomia-italiana.pdf",
+        "domain": "istat.it",
+        "role": "primary_statistical_source",
+        "verification_method": "named_or_topic_domain_search",
+        "verification_score": 87
+      },
+      "discovery": {
+        "visible": false,
+        "role": "journalistic_radar",
+        "outlet": "Google News - economia lavoro",
+        "original_url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQTVpjSTd0VXVNeGpNN24wY0wxVGl5eUJIMGg3WGYtNmozM25QYTR5NnNFYm1TZm1jaUctR1FLa2h0MWI1d3NVY1dxTG41akc0YndrNFJjNjF6ZXV3bkdHMHdDdGd2TTNnSkE5Tmd4QlI1ZVY0U2ZSRVJjNzluVmJkTlNTUWNFZWlXcGk3a0VQS2R2cEVNM3h4RHdVS0tqNk9JMEp0bE1CbG9qbklZc2hnUUR1b0ZIOGkx?oc=5",
+        "evidence_gate": "strong_primary_match"
       },
       "period_reference": null,
       "latest_source_update": null,
