@@ -416,7 +416,7 @@ def journalistic_statistical_article(item, feed, now, topic, geos, nums, score, 
     title = clean_text(item.get("title", ""))
     description = clean_text(item.get("summary", ""))
     # Numeric substance beyond year labels required; no generic, promotional or sports pages.
-    meaningful = [n for n in nums if not re.fullmatch(r"20\\d{2}", normalize_number_token(n))]
+    meaningful = [n for n in nums if not re.fullmatch(r"20\d{2}", normalize_number_token(n))]
     if not meaningful or score < 45 or len(title) < 24:
         return None
     if not any(term in (title + " " + description).lower() for term in STAT_TERMS):
