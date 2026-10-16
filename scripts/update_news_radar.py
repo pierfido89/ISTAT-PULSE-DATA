@@ -402,6 +402,14 @@ def looks_editorially_irrelevant(title):
          "sarà a industria italiana summit","summit 2026")
     return any(x in low for x in bad)
 
+def strong_primary_match(resolved):
+    """A press report is never verified by coincidental dates/percentages alone."""
+    if not resolved:
+        return False
+    return (int(resolved.get("verification_score") or 0) >= 80
+            and len(set(resolved.get("matched_keywords") or [])) >= 2)
+
+
 def journalistic_statistical_article(item, feed, now, topic, geos, nums, score, existing=None):
     """Publish factual news with numeric evidence attributed to the reporting outlet.
     This is NOT a primary-source-verified statistical series or PULSE pattern.
@@ -904,6 +912,10 @@ def main():
             )
             if primary_feed and resolved:
                 resolved["method"] = "direct_official_rss"
+            # A coincidental matching year or generic percentage in another
+            # institution's PDF is not evidence for a newspaper's specific claim.
+            if not primary_feed and resolved and not strong_primary_match(resolved):
+                resolved=None
             primary=curated["source_url"] if curated else (resolved.get("url") if resolved else None)
             cand={
               "radar":feed.get("name"),"discovery_url":probe.get("final_url") or item["url"],
@@ -967,7 +979,8 @@ def main():
               "public_source":{"url":primary,"domain":resolved.get("domain"),"role":"primary_statistical_source",
                                "verification_method":resolved.get("method"),"verification_score":resolved.get("verification_score")},
               "discovery":{"visible":False,"role":"journalistic_radar" if not primary_feed else "direct_official",
-                           "outlet":feed.get("name", ""), "original_url":item.get("url", "")},
+                           "outlet":feed.get("name", ""), "original_url":item.get("url", ""),
+                           "evidence_gate":"strong_primary_match" if not primary_feed else "official_release"},
               "period_reference":None,"latest_source_update":None,
               "headline":headline,
               "summary":(
@@ -993,7 +1006,9 @@ def main():
     # Safety gate: only verified articles may be publicly visible.
     public=[a for a in arts if a.get("publication_status")=="published"
             and a.get("editorial_status") in ("verified","verified_primary_match")
-            and (a.get("public_source") or {}).get("role")=="primary_statistical_source"]
+            and (a.get("public_source") or {}).get("role")=="primary_statistical_source"
+            and ((a.get("discovery") or {}).get("role")!="journalistic_radar"
+                 or (a.get("discovery") or {}).get("evidence_gate")=="strong_primary_match")]
     # Prioritise media-discovered, primary-verified stories within the same
     # publication day. If there are too few verified stories, do not invent
     # material to force an arbitrary 99% media quota.
