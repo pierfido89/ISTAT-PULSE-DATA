@@ -1,6 +1,430 @@
 {
-  "generated_at": "2026-10-14T14:53:50.467005+00:00",
+  "generated_at": "2026-10-16T20:41:26.232697+00:00",
   "articles": [
+    {
+      "id": "PULSE-687899EEC404640F",
+      "story_fingerprint": "687899eec404640ffae978ef",
+      "published_at": "2026-10-16T14:02:30+00:00",
+      "last_seen_at": "2026-10-16T20:41:26.232697+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 45,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5wSXFmZ0hyTUtKaHUzeWd1dWF4TDRLck5JZXRFRV9CdlNJYUpaY2kyZkg4bEVqS2hRU1dkVzZ0cUJTOXZSbDBzUVZpMXQxd3VheG0tSENjVF82QjJOMlJncjNzLU5uaUR3UUJEN0pDaV9IaVoyd1lDS0dEU2c?oc=5",
+        "domain": "Sky TG24",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Pil Italia allo 0,9% nel 2026, +0,7% nel 2027. Le stime di Bankitalia - Sky TG24",
+      "summary": "Pil Italia allo 0,9% nel 2026, +0,7% nel 2027. Le stime di Bankitalia Sky TG24",
+      "statistical_claims": [
+        {
+          "raw_value": "0,9%",
+          "verified": false
+        },
+        {
+          "raw_value": "+0,7%",
+          "verified": false
+        },
+        {
+          "raw_value": "0,9%",
+          "verified": false
+        },
+        {
+          "raw_value": "+0,7%",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-597A5BEC89048E4A",
+      "story_fingerprint": "597a5bec89048e4a2570d4e2",
+      "published_at": "2026-10-16T10:00:20+00:00",
+      "last_seen_at": "2026-10-16T20:41:26.232697+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 92,
+      "public_source": {
+        "url": "https://www.istat.it/comunicato-stampa/commercio-con-lestero-e-prezzi-allimport-agosto-2026/",
+        "domain": "istat.it",
+        "role": "primary_statistical_source",
+        "verification_method": "direct_official_rss",
+        "verification_score": 95
+      },
+      "discovery": {
+        "visible": false,
+        "role": "direct_official",
+        "outlet": "ISTAT - Aggiornamenti ufficiali",
+        "original_url": "https://www.istat.it/comunicato-stampa/commercio-con-lestero-e-prezzi-allimport-agosto-2026/"
+      },
+      "period_reference": null,
+      "latest_source_update": null,
+      "headline": "Economia, nuovo dato per Lazio: 2026 ",
+      "summary": "Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+      "statistical_claims": [
+        {
+          "raw_value": "2026 ",
+          "verified": true
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": true
+        },
+        {
+          "raw_value": "-1,5%",
+          "verified": true
+        },
+        {
+          "raw_value": "-1,6%",
+          "verified": true
+        },
+        {
+          "raw_value": "+1,7%",
+          "verified": true
+        }
+      ],
+      "verified_series": [],
+      "territories": [
+        "lazio"
+      ],
+      "chart_spec": {
+        "type": "auto",
+        "status": "requires_primary_series",
+        "reason": "candidate_contains_multiple_numeric_values"
+      },
+      "map_spec": {
+        "level": "auto",
+        "territories": [
+          "lazio"
+        ],
+        "status": "requires_primary_geodata"
+      },
+      "editorial_status": "verified_primary_match",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-94FAD4D4575CD98F",
+      "story_fingerprint": "94fad4d4575cd98f04c555a8",
+      "published_at": "2026-10-16T08:58:40+00:00",
+      "last_seen_at": "2026-10-16T20:41:26.232697+00:00",
+      "topic": "LAVORO",
+      "pulse_score": 89,
+      "public_source": {
+        "url": "https://www.istat.it/comunicato-stampa/prezzi-al-consumo-settembre-2026/",
+        "domain": "istat.it",
+        "role": "primary_statistical_source",
+        "verification_method": "direct_official_rss",
+        "verification_score": 95
+      },
+      "discovery": {
+        "visible": false,
+        "role": "direct_official",
+        "outlet": "ISTAT - Aggiornamenti ufficiali",
+        "original_url": "https://www.istat.it/comunicato-stampa/prezzi-al-consumo-settembre-2026/"
+      },
+      "period_reference": null,
+      "latest_source_update": null,
+      "headline": "Lavoro, nuovo dato per Lazio: 2026 ",
+      "summary": "Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+      "statistical_claims": [
+        {
+          "raw_value": "2026 ",
+          "verified": true
+        },
+        {
+          "raw_value": "2026",
+          "verified": true
+        },
+        {
+          "raw_value": "+0,7%",
+          "verified": true
+        },
+        {
+          "raw_value": "+4,2%",
+          "verified": true
+        }
+      ],
+      "verified_series": [],
+      "territories": [
+        "lazio"
+      ],
+      "chart_spec": {
+        "type": "auto",
+        "status": "requires_primary_series",
+        "reason": "candidate_contains_multiple_numeric_values"
+      },
+      "map_spec": {
+        "level": "auto",
+        "territories": [
+          "lazio"
+        ],
+        "status": "requires_primary_geodata"
+      },
+      "editorial_status": "verified_primary_match",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-B37C4DCB2D21A13F",
+      "story_fingerprint": "b37c4dcb2d21a13fe110adb4",
+      "published_at": "2026-10-16T08:00:18+00:00",
+      "last_seen_at": "2026-10-16T20:41:26.232697+00:00",
+      "topic": "LAVORO",
+      "pulse_score": 90,
+      "public_source": {
+        "url": "https://www.istat.it/comunicato-stampa/economia-non-osservata-nei-conti-nazionali-anni-2021-2024/",
+        "domain": "istat.it",
+        "role": "primary_statistical_source",
+        "verification_method": "direct_official_rss",
+        "verification_score": 95
+      },
+      "discovery": {
+        "visible": false,
+        "role": "direct_official",
+        "outlet": "ISTAT - Aggiornamenti ufficiali",
+        "original_url": "https://www.istat.it/comunicato-stampa/economia-non-osservata-nei-conti-nazionali-anni-2021-2024/"
+      },
+      "period_reference": null,
+      "latest_source_update": null,
+      "headline": "Lavoro, nuovo dato per Lazio: 2021",
+      "summary": "Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+      "statistical_claims": [
+        {
+          "raw_value": "2021",
+          "verified": true
+        },
+        {
+          "raw_value": "2024 ",
+          "verified": true
+        },
+        {
+          "raw_value": "2024 ",
+          "verified": true
+        },
+        {
+          "raw_value": "218,2 miliardi",
+          "verified": true
+        },
+        {
+          "raw_value": "9,9%",
+          "verified": true
+        }
+      ],
+      "verified_series": [],
+      "territories": [
+        "lazio"
+      ],
+      "chart_spec": {
+        "type": "auto",
+        "status": "requires_primary_series",
+        "reason": "candidate_contains_multiple_numeric_values"
+      },
+      "map_spec": {
+        "level": "auto",
+        "territories": [
+          "lazio"
+        ],
+        "status": "requires_primary_geodata"
+      },
+      "editorial_status": "verified_primary_match",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-4E42D6EF4FEC7BBE",
+      "story_fingerprint": "4e42d6ef4fec7bbef26c4961",
+      "published_at": "2026-10-15T11:52:00+00:00",
+      "last_seen_at": "2026-10-16T20:41:26.232697+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPZm1IZHBYeF91REVENmFuSGQ5QktJOUVydGtwNTg0ci1icmpmc0hrMmxFM09LX3N6OVdQdWZQY05RZ3Y2QUlsaHQtTTlMUklTb0t0bWhiR280cFRaLWZqWE1veS1HMTZJNXJSc3A5UGxLdnk0ZENYdzEyaGtqZ2c4YUFlMWNsMGdnSGVYakF5a01LNXIwalBNSmd4eElxS295ZzAyZEI2T3NUNG5Gb294Z3pXMEJ4RXBPVWpUYndpb3BmYnJGWXNIZ3h0Nkc5YWV2aWduT1V5V1pOWmkyNHFWczlaaFNnbHFBcFRVVndB?oc=5",
+        "domain": "la Repubblica",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Charles Schwab, ricavi trimestrali record di 7,2 miliardi di dollari e asset clienti a 13,3 trilioni - la Repubblica",
+      "summary": "Charles Schwab, ricavi trimestrali record di 7,2 miliardi di dollari e asset clienti a 13,3 trilioni la Repubblica",
+      "statistical_claims": [
+        {
+          "raw_value": "7,2 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "13,3 ",
+          "verified": false
+        },
+        {
+          "raw_value": "7,2 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "13,3 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-52F679A30A34D02A",
+      "story_fingerprint": "52f679a30a34d02a769585b1",
+      "published_at": "2026-10-15T09:00:07+00:00",
+      "last_seen_at": "2026-10-16T20:41:26.232697+00:00",
+      "topic": "LAVORO",
+      "pulse_score": 89,
+      "public_source": {
+        "url": "https://www.istat.it/comunicato-stampa/conti-economici-delle-imprese-e-dei-gruppi-di-impresa-anno-2024/",
+        "domain": "istat.it",
+        "role": "primary_statistical_source",
+        "verification_method": "direct_official_rss",
+        "verification_score": 95
+      },
+      "discovery": {
+        "visible": false,
+        "role": "direct_official",
+        "outlet": "ISTAT - Comunicati stampa ufficiali",
+        "original_url": "https://www.istat.it/comunicato-stampa/conti-economici-delle-imprese-e-dei-gruppi-di-impresa-anno-2024/"
+      },
+      "period_reference": null,
+      "latest_source_update": null,
+      "headline": "Lavoro, nuovo dato per Lazio: 2024 ",
+      "summary": "Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+      "statistical_claims": [
+        {
+          "raw_value": "2024 ",
+          "verified": true
+        },
+        {
+          "raw_value": "2024",
+          "verified": true
+        },
+        {
+          "raw_value": "+0,5%",
+          "verified": true
+        },
+        {
+          "raw_value": "4,5 milioni",
+          "verified": true
+        }
+      ],
+      "verified_series": [],
+      "territories": [
+        "lazio"
+      ],
+      "chart_spec": {
+        "type": "auto",
+        "status": "requires_primary_series",
+        "reason": "candidate_contains_multiple_numeric_values"
+      },
+      "map_spec": {
+        "level": "auto",
+        "territories": [
+          "lazio"
+        ],
+        "status": "requires_primary_geodata"
+      },
+      "editorial_status": "verified_primary_match",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-305DF8AC0ED5C736",
+      "story_fingerprint": "305df8ac0ed5c736b6209527",
+      "published_at": "2026-10-15T08:15:00+00:00",
+      "last_seen_at": "2026-10-16T20:41:26.232697+00:00",
+      "topic": "LAVORO",
+      "pulse_score": 50,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxOTWFnQ3hmbWdmcUh0eF9TZXdpb1lLY1NwZFo5cmFHNHZOYjRyMFJ4QnNiamdSbE4xNFYyZjVvVXdKUXFrLWY5X0hPUUVhYWsxaVBCUjBGSWZvUnMxQmlsTjFDVmx1NFNBMmk1cXlRbXlMamVOUXc0ajI4b2hOUlNOS0RmYkFCMlBHcERDaEU0em0yLTF4SGd5NUNNUnl3ZU05cEVWUHlWVlM2djhfeXdtMm56VnpSMFQydzRDUEdCd2NWWjQ2TlR2MzRVeGEwek1NbDNSYTJYUmFMakM5Q0J3aWR4SVhNcThzN295SER4MUlJUDRHZThUMFltQ0ZJZTJ6eVN6Smh5bTRZZWc1YlR5LXRNYlNmcTBFTFYwS1NFUzRxRnVnaXREU3dETdIBsAJBVV95cUxOM1Z5T1c2b01BSkc2Tnpfb0ExbGZUWHFaMVJRVzQ1WVdGb1BHVkdOWGpibllYUXV0YlhGY0dNWUk5cjhlMHFoRHl5SEdPYlZoUXNZZmFrN05qVnR3dGd4MjNSZkU4eGE4aVRlRVpVMFM5V3M0T2dnR2hSaWhWblY0aGhRdG8ta0pkWTloYy11NGs5MzF2VWIwM3ZvWXktUDk5X3ZNUExEUkR3aVNkMW1fdW94SnF0U3hBSVNvXzVxam5xcHZsblVXLUZaVE85QmdBblFnTHlHaURucjdockxFRXJ6VFNTUFZUai1YVFhLRTdzNlM4NkhqMU5yN05tNC04UUEtTERFSGE3T29KQ25CYTh3N1RsWUpaNXF6alI5SmNZbGFFWDRYU0t3S0kyYmdI?oc=5",
+        "domain": "Corriere della Sera",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "L'abito da record di Céline Dion a Parigi: 1.380 ore di lavoro per realizzarlo, oltre 6 mila cristalli e 5 mila perline - Corriere della Sera",
+      "summary": "L'abito da record di Céline Dion a Parigi: 1.380 ore di lavoro per realizzarlo, oltre 6 mila cristalli e 5 mila perline Corriere della Sera",
+      "statistical_claims": [
+        {
+          "raw_value": "1.380 ",
+          "verified": false
+        },
+        {
+          "raw_value": "6 mila",
+          "verified": false
+        },
+        {
+          "raw_value": "5 mila",
+          "verified": false
+        },
+        {
+          "raw_value": "1.380 ",
+          "verified": false
+        },
+        {
+          "raw_value": "6 mila",
+          "verified": false
+        },
+        {
+          "raw_value": "5 mila",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-35E9F7C65D46E01A",
+      "story_fingerprint": "35e9f7c65d46e01aebe02ea2",
+      "published_at": "2026-10-14T16:12:00+00:00",
+      "last_seen_at": "2026-10-16T20:41:26.232697+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 60,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNTG1zcFRLeFZ3XzFVblRqN3hEVmpxTG9fdDFVWmVLZjdLLVJrTWRLN2loM3UzTTQ2bmxRejEwaDhLdWIzOGFUdXZJaXpnam14NVloaGtVOFpvb1JOLVptMHFrT2VFOHl6UlNCbmhSMG9TdWpZVklGYlF3dURiOWxmWjJDbE0ycWF5M080R2VmWnVFdHdlWE1YSFVUTlJkMmRXWmFlUVYzdXE1RGdweDF4RzB1RDBWOTdaaHhPUmZTZnM0WENDQmtXOWdDMlVRRFh0MlpaVWZyZmNBbGlWZGxPdDN3RzV0TXhl?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Estate 2026: secondo i dati Cleanbnb soggiorni in calo dell’8% ma incassi in crescita dell’1,5% - Il Sole 24 ORE",
+      "summary": "Estate 2026: secondo i dati Cleanbnb soggiorni in calo dell’8% ma incassi in crescita dell’1,5% Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "8%",
+          "verified": false
+        },
+        {
+          "raw_value": "1,5%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "8%",
+          "verified": false
+        },
+        {
+          "raw_value": "1,5%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
     {
       "id": "PULSE-610703BE86F8CC4D",
       "story_fingerprint": "610703be86f8cc4d0b85f2b0",
@@ -229,7 +653,7 @@
       "id": "PULSE-F787DB8094E68FDA",
       "story_fingerprint": "f787db8094e68fdad0c5b584",
       "published_at": "2026-10-14T09:05:32+00:00",
-      "last_seen_at": "2026-10-14T14:53:50.467005+00:00",
+      "last_seen_at": "2026-10-16T20:41:26.232697+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 60,
       "patterns": [],
@@ -248,29 +672,13 @@
           "verified": false
         },
         {
-          "raw_value": "2026",
-          "verified": false
-        },
-        {
-          "raw_value": "2027 ",
-          "verified": false
-        },
-        {
           "raw_value": "1%",
-          "verified": false
-        },
-        {
-          "raw_value": "2026",
-          "verified": false
-        },
-        {
-          "raw_value": "2027 ",
           "verified": false
         }
       ],
       "territories": [],
-      "editorial_status": "journalistic_attributed",
-      "publication_status": "published"
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
     },
     {
       "id": "PULSE-29669920787E180B",
