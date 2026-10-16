@@ -28,8 +28,8 @@ CANDIDATES=ROOT/"candidates.json"
 INDEX=ROOT/"index.json"
 UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/154 Safari/537.36 ISTAT-PULSE-NewsRadar/1.2"
 MAX_RUNTIME_SECONDS=720
-MAX_ITEMS_PER_FEED=40
-MAX_CANDIDATES_TOTAL=180
+MAX_ITEMS_PER_FEED=18
+MAX_CANDIDATES_TOTAL=100
 
 TOPIC_DOMAINS={
  "LAVORO":["istat.it","inps.it","inail.it","unioncamere.gov.it"],
@@ -416,7 +416,7 @@ def journalistic_statistical_article(item, feed, now, topic, geos, nums, score, 
     title = clean_text(item.get("title", ""))
     description = clean_text(item.get("summary", ""))
     # Numeric substance beyond year labels required; no generic, promotional or sports pages.
-    meaningful = [n for n in nums if not re.fullmatch(r"20\\d{2}", normalize_number_token(n))]
+    meaningful = [n for n in nums if not re.fullmatch(r"20\d{2}", normalize_number_token(n))]
     if not meaningful or score < 45 or len(title) < 24:
         return None
     if not any(term in (title + " " + description).lower() for term in STAT_TERMS):
@@ -451,8 +451,8 @@ def journalistic_statistical_article(item, feed, now, topic, geos, nums, score, 
         "summary": description[:600] or "Notizia con dati numerici riportati dalla testata indicata. I valori non sono ancora verificati sulla fonte statistica primaria.",
         "statistical_claims": [{"raw_value": n, "verified": False} for n in meaningful[:6]],
         "territories": geos,
-        "editorial_status": "journalistic_attributed",
-        "publication_status": "published"
+        "editorial_status": "needs_primary_source",
+        "publication_status": "quarantined"
     }
 
 
@@ -490,15 +490,15 @@ def resolve_primary(discovery_title, discovery_text, topic, numbers, direct_link
         if d not in candidates: candidates.append(d)
     qwords=" ".join(kws[:6])
     nums=" ".join(numbers[:3])
-    for dom in candidates[:10]:
+    for dom in candidates[:3]:
         local_allowed=list(dict.fromkeys(allowed+[dom]))
         queries=[
           f'site:{dom} "{qwords}" {nums}'.strip(),
           f'site:{dom} {qwords} {nums}'.strip(),
           f'site:{dom} "{discovery_title[:110]}"'.strip()
         ]
-        for query in queries:
-            results=multi_search(query,limit=8)
+        for query in queries[:1]:
+            results=multi_search(query,limit=6)
             attempts.append({"stage":"domain_search","domain":dom,"query":query,"results":len(results)})
             for rr in results:
                 v=verify_primary_page(rr["url"],numbers,kws,local_allowed)
@@ -511,8 +511,8 @@ def resolve_primary(discovery_title, discovery_text, topic, numbers, direct_link
       f'{qwords} {nums} rapporto studio',
       f'{qwords} {nums}'
     ]
-    for query in broad_queries:
-        results=multi_search(query,limit=12)
+    for query in broad_queries[:1]:
+        results=multi_search(query,limit=8)
         attempts.append({"stage":"broad_search","query":query,"results":len(results)})
         for rr in results:
             host=canonical_host(rr["url"])
@@ -837,7 +837,9 @@ def main():
     now=datetime.now(timezone.utc)
     today=now.astimezone(ROME).date().isoformat()
 
-    for feed in cfg.get("feeds",[]):
+    # Newspaper/agency discovery first. Official RSS remains a validated fallback.
+    feeds = sorted(cfg.get("feeds", []), key=lambda f: bool(f.get("primary_source", False)))
+    for feed in feeds:
         if runtime_exceeded() or len(candidates) >= MAX_CANDIDATES_TOTAL:
             break
         print(f"[RADAR] feed={feed.get('name')} candidates={len(candidates)}", flush=True)
@@ -845,8 +847,9 @@ def main():
         except Exception as e:
             candidates.append({"radar":feed.get("name"),"status":"radar_error","error":str(e)[:180]})
             continue
+        processed_in_feed = 0
         for item in items:
-            if runtime_exceeded() or len(candidates) >= MAX_CANDIDATES_TOTAL:
+            if runtime_exceeded() or len(candidates) >= MAX_CANDIDATES_TOTAL or processed_in_feed >= 5:
                 break
             primary_feed = feed.get("primary_source", False)
             official_published_at = None
@@ -862,10 +865,23 @@ def main():
                         continue
                 except (ValueError, TypeError, OverflowError):
                     continue
+            # The RSS publication time, not our crawler clock, defines NEWS freshness.
+            # Missing/naive dates never create new articles labelled today.
+            try:
+                item_dt = parsedate_to_datetime(item.get("published_raw", ""))
+                if item_dt.tzinfo is None:
+                    continue
+                item_dt = item_dt.astimezone(timezone.utc)
+                if not (timedelta(0) <= now - item_dt <= timedelta(days=3)):
+                    continue
+                item_published_at = item_dt.isoformat()
+            except (TypeError, ValueError, OverflowError):
+                continue
             editorial_excluded=looks_editorially_irrelevant(item["title"])
             discovery=(item["title"]+" "+item.get("summary",""))[:7000]
             s,nums=score_candidate(discovery)
-            if s<35: continue
+            if s<45: continue
+            processed_in_feed += 1
             probe=article_probe(item["url"],cfg.get("official_domains",[]),cfg.get("entity_domain_hints",{}))
             combined=(discovery+" "+probe.get("text",""))[:35000]
             topic=classify_topic(combined); geos=detect_geo(combined)
@@ -928,12 +944,13 @@ def main():
             article={
               "id":aid,
               "story_fingerprint":story_fingerprint(primary,topic,headline,verified_nums),
-              "published_at":(existing or {}).get("published_at") or official_published_at or now.isoformat(),
+              "published_at":(existing or {}).get("published_at") or official_published_at or item_published_at,
               "last_seen_at":now.isoformat(),
               "topic":topic,"pulse_score":pulse,
               "public_source":{"url":primary,"domain":resolved.get("domain"),"role":"primary_statistical_source",
                                "verification_method":resolved.get("method"),"verification_score":resolved.get("verification_score")},
-              "discovery":{"visible":False,"role":"hidden_radar"},
+              "discovery":{"visible":False,"role":"journalistic_radar" if not primary_feed else "direct_official",
+                           "outlet":feed.get("name", ""), "original_url":item.get("url", "")},
               "period_reference":None,"latest_source_update":None,
               "headline":headline,
               "summary":"Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
@@ -951,7 +968,16 @@ def main():
 
     arts=sorted(by_id.values(),key=lambda x:x.get("published_at",""),reverse=True)
     # Safety gate: only verified articles may be publicly visible.
-    public=[a for a in arts if a.get("publication_status")=="published" and a.get("editorial_status") in ("verified","verified_primary_match","journalistic_attributed")]
+    public=[a for a in arts if a.get("publication_status")=="published"
+            and a.get("editorial_status") in ("verified","verified_primary_match")
+            and (a.get("public_source") or {}).get("role")=="primary_statistical_source"]
+    # Prioritise media-discovered, primary-verified stories within the same
+    # publication day. If there are too few verified stories, do not invent
+    # material to force an arbitrary 99% media quota.
+    public.sort(key=lambda a:(
+        (a.get("published_at") or "")[:10],
+        (a.get("discovery") or {}).get("role")=="journalistic_radar",
+        a.get("published_at") or ""), reverse=True)
     idx={"generated_at":now.isoformat(),"counts":{},
          "oggi":[],"ieri":[],"archivio":[]}
     bucket_seen=set()
