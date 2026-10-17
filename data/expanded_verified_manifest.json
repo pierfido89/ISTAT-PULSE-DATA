@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T11:14:59.913004+00:00",
+  "generated_at": "2026-10-17T10:33:51.982269+00:00",
   "verified_sources_seen": 9,
   "materialized_sources": 8,
   "failed_sources": 1,
@@ -11,7 +11,7 @@
       "bytes": 194241,
       "sha256": "31eea76a6d27865bd4456cddd67080bc45a0f57fc1ec9266e16ca2d59eef2f0f",
       "snapshot": "data/expanded_verified/agenzia-delle-dogane-e-dei-monopoli.zip",
-      "checked_at": "2026-10-16T11:14:47.851490+00:00",
+      "checked_at": "2026-10-17T10:33:39.464520+00:00",
       "archive_files": [
         "[Content_Types].xml",
         "_rels/.rels",
@@ -50,7 +50,7 @@
       "bytes": 478630,
       "sha256": "53745dc7b7c5f44a56e0ff89f5e2c9026a86af33da1e9f9c4627212bacea0a96",
       "snapshot": "data/expanded_verified/agcom.xlsx",
-      "checked_at": "2026-10-16T11:14:49.827783+00:00",
+      "checked_at": "2026-10-17T10:33:41.287855+00:00",
       "archive_files": [
         "[Content_Types].xml",
         "_rels/.rels",
@@ -164,7 +164,7 @@
       "bytes": 724382,
       "sha256": "645775d4611e3dbaca3a29853d39d154a13a4cdaba76b33c98fe00978d529c5a",
       "snapshot": "data/expanded_verified/banca-d-italia.zip",
-      "checked_at": "2026-10-16T11:14:52.205762+00:00",
+      "checked_at": "2026-10-17T10:33:43.997987+00:00",
       "archive_files": [
         "ATECO100_IT.zip",
         "OPM0100_IT.zip",
@@ -225,7 +225,7 @@
       "bytes": 325549,
       "sha256": "e75ad008fd40da28be90d13f230eb7191127cceab559dbb1ff4ca3a08bc097c2",
       "snapshot": "data/expanded_verified/fao.xlsx",
-      "checked_at": "2026-10-16T11:14:53.302691+00:00",
+      "checked_at": "2026-10-17T10:33:44.848800+00:00",
       "archive_files": [
         "[Content_Types].xml",
         "_rels/.rels",
@@ -339,7 +339,7 @@
       "bytes": 19658,
       "sha256": "3003685d35f05430505c2c70cd3840e314c2b2a05fe95b2b3e4b2341cc5edaac",
       "snapshot": "data/expanded_verified/gme.xlsx",
-      "checked_at": "2026-10-16T11:14:54.656380+00:00",
+      "checked_at": "2026-10-17T10:33:46.752824+00:00",
       "archive_files": [
         "[Content_Types].xml",
         "_rels/.rels",
@@ -370,7 +370,7 @@
       "bytes": 85,
       "sha256": "e16c157716fd6142c5a9e99117b536fccb24adc235d8932039751e8bbb56b118",
       "snapshot": "data/expanded_verified/inail.dat",
-      "checked_at": "2026-10-16T11:14:57.331200+00:00",
+      "checked_at": "2026-10-17T10:33:49.189967+00:00",
       "detected_format": "xml",
       "sample": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>{\"Errore\": \"Il campo Regione e' obbligatorio.\"}"
     },
@@ -381,7 +381,7 @@
       "bytes": 150872,
       "sha256": "741e82bd27b42eaa1b8cb8438c112332f39097993791498211b6f34b20c56392",
       "snapshot": "data/expanded_verified/inps.json",
-      "checked_at": "2026-10-16T11:14:59.004505+00:00",
+      "checked_at": "2026-10-17T10:33:50.995457+00:00",
       "detected_format": "json",
       "json_keys": [
         "help",
@@ -397,7 +397,7 @@
       "bytes": 92104,
       "sha256": "1b116ef29219250fdda0f3b6bd36c10ade3a3b432ddb44c1b27323f67916e69b",
       "snapshot": "data/expanded_verified/ivass.rdf",
-      "checked_at": "2026-10-16T11:14:59.912975+00:00",
+      "checked_at": "2026-10-17T10:33:51.982242+00:00",
       "detected_format": "rdf",
       "sample": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n\r\n  <rdf:RDF xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:skos=\"http://www.w3.org/2004/02/skos/core#\" xmlns:locn=\"http://www.w3.org/ns/locn#\" xmlns:hydra=\"http://www.w3.org/ns/hydra/core#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:dcat=\"http://www.w3.org/ns/dcat#\" xmlns:dct=\"http://purl.org/dc/terms/\" xmlns:dcatapit=\"http://dati.gov.it/onto/dcatapit#\" xmlns:vcard=\"http://www.w3.org/2006/vcard/"
     }
