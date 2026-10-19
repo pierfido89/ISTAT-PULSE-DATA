@@ -1,11 +1,255 @@
 {
-  "generated_at": "2026-10-16T20:52:13.778331+00:00",
+  "generated_at": "2026-10-19T09:37:02.869075+00:00",
   "articles": [
+    {
+      "id": "PULSE-72C9419213290799",
+      "story_fingerprint": "72c94192132907998dd33761",
+      "published_at": "2026-10-19T07:55:38+00:00",
+      "last_seen_at": "2026-10-19T09:37:02.869075+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 54,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOSWtPNmwtTVVJdHdzd2UzNzdUSkZNbGRRZUhZeC14blhGdkR6bTJFend0cHc3ajdwblJ0NEp5WlJmZ3BSa0c2dzctMGFCUEQ0c1VOV3V6THhDb0RXa3NZWnR3dzRRakJ6OS1JNUZCSG5DY0VFb3daMVJwUUdsSWRlZGNwNm05NHl6MjQ4cnNsM3oyVUd6RkJPdWswLXJtUnBXbnhN?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "La formula Uniqlo macina record. E nel 2027 un quinto negozio in Italia - Il Sole 24 ORE",
+      "summary": "La formula Uniqlo macina record. E nel 2027 un quinto negozio in Italia Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-22C729C416ED9749",
+      "story_fingerprint": "22c729c416ed97495e3d85d4",
+      "published_at": "2026-10-19T06:11:23+00:00",
+      "last_seen_at": "2026-10-19T09:37:02.869075+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNRHgzUFhYMHRPc05KbUFtOUQ3RzFNSTgyOEgyV1E1Wlh6V09ybXFMcXZ5eWpVeXVQa0xFakRPWGhHV0tyNFpxYktGWDZ6eWVMdkgzUUY4UXo1X2xhZllNUWhfeV9QMkduQS1vZkU3bkNobTF5bVZMV2kyRS1NNDN3c1JaT05sQ20zQXM2dFBuUkpOS2NSajJnTHcxMFZUdW5xN21GZGlacTJVNFlLazhYSDdEQ1hrVk0ydjVYZkFuU1RGS3NueS10ZkY0OHRnUQ?oc=5",
+        "domain": "Agricultura.it",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Ritchie Bros, è asta record in Italia. A Caorso 3.652 lotti venduti per oltre 20 milioni di euro - Agricultura.it",
+      "summary": "Ritchie Bros, è asta record in Italia. A Caorso 3.652 lotti venduti per oltre 20 milioni di euro Agricultura.it",
+      "statistical_claims": [
+        {
+          "raw_value": "3.652 ",
+          "verified": false
+        },
+        {
+          "raw_value": "20 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "3.652 ",
+          "verified": false
+        },
+        {
+          "raw_value": "20 milioni",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-9E81B77361E08B8F",
+      "story_fingerprint": "9e81b77361e08b8fb41b2f08",
+      "published_at": "2026-10-18T08:46:01+00:00",
+      "last_seen_at": "2026-10-19T09:37:02.869075+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 50,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOYlFUZzlLVnJXSlFRWEU0NzE1eFVDazFkT2tld3o2YWROWFJuNmNpNTRvbTdQdnJ2M0FPd3hyRnZjdEFRT1VoN0lkcnJFM2VpVmhoUkhjVE5LLU9Nc1lhSmdoYjBjSThoTE4taWhFUHpBZmM2R3lvckJ6Tzc1aGtWX194NWRaWW5ZOFZMOU1oaTlNQjhOX3c0ZkNSMVJnOTVQa1hrZmRpdWVUNGxm?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "L’orologio atomico al Lutezio-176 è da record. Ma quello al Torio-229 lo insegue - Il Sole 24 ORE",
+      "summary": "L’orologio atomico al Lutezio-176 è da record. Ma quello al Torio-229 lo insegue Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "176 ",
+          "verified": false
+        },
+        {
+          "raw_value": "229 ",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "176 ",
+          "verified": false
+        },
+        {
+          "raw_value": "229 ",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-50E395CACEF6542A",
+      "story_fingerprint": "50e395cacef6542aa74d05ab",
+      "published_at": "2026-10-18T07:50:00+00:00",
+      "last_seen_at": "2026-10-19T09:37:02.869075+00:00",
+      "topic": "MOBILITA",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi5AJBVV95cUxNWndiRzJ4SmFfZ2g4UUVIQ2dyWE1GbFZsTklJcmRrR2hnSDJPY1FIajR4eDBKMWt0YUx2UEl5eTFueHRscDZNMklsSnVWaWNUSTJJRTEwanplYVFQM0VHaUhvX0RBZkFhUzBjeFFRVk5IMzVDZGowMUxBeFRZc3NWRXFhSVJFWlJnLXFMZFktWmgxMUM1RzlxbmQ2Q1Z6QWRuaUFtRy13bExfd05WdndON1RySFZJUXlWWkp1MTd0ZGN5UGFlNnFQekMtS05KSkEwTWFmNjZHSFdYWjJyb2kyRU5ZSkhYODlaeGh3MHhBaUY4c08yMjlhYW1yRjFfNFJ4b2RkUy12S3E3UlY0dHE0OHpqeXpXdGg0cllnZEZrYzkzbUxCZzRmOUR2WDZSMEw1UlhnMkd5d19zZ1l5WmY1WVRBRVI1TjVPRXBqM0REVFlOSkVUUkwzMG00Z3RwYmo3dGlPMNIB6gJBVV95cUxPd0NpanREWTBCZ2hmemw5MDFxcWNJRm1tektmdXlqM25tbktQbTV1ZnBKWE5FaXIwT3Y1NjRZYW9UOUFWRjdEcF9CLW5RVHdVNnpKRnJOYk4zUlRTR2VVTVBRSUNJN0l1NzJxcVp4Y1I2ZTRkdEY0SUZjOTNxeDBTWnhwbkh5d3BnYXZDY3UxSjFWNFBkd2ppdU53WG5fY2E3YmZEb1ptMGVQeEZRZ3VBaGpUbVdsaWZMVHo3NWlBRjZaeHlYWmpUQWxKcXllZldPVTJ3amJPT2hRaUlvakNCWFA0S2hGQjZBV3htcHRrSnBwTGVHWkxKdUNpcnkxQUREWlNPV3UybFJNeEF5Z0dpTkxvdG1ZVDdYeWpYc01PUWYxdGZoZ0xBdjM0eVBxM0MwYkdNYV9WZnhUWHJnWmZrQVlPNlI4UVNCVWlLNGtYNVZpU3dEQzU5eGRSa3hxQ01iX1A0UXFBTm9EUQ?oc=5",
+        "domain": "Corriere del Veneto",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Il collezionista record di Star Wars: «Ho 15 mila oggetti tra giocattoli, autografi, astronavi e costumi: qualche pezzo vale 30 mila euro. Non vendo nulla: ho rifiutato assegni in bianco» - Corriere del Veneto",
+      "summary": "Il collezionista record di Star Wars: «Ho 15 mila oggetti tra giocattoli, autografi, astronavi e costumi: qualche pezzo vale 30 mila euro. Non vendo nulla: ho rifiutato assegni in bianco» Corriere del Veneto",
+      "statistical_claims": [
+        {
+          "raw_value": "15 mila",
+          "verified": false
+        },
+        {
+          "raw_value": "30 mila",
+          "verified": false
+        },
+        {
+          "raw_value": "15 mila",
+          "verified": false
+        },
+        {
+          "raw_value": "30 mila",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "veneto"
+      ],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-CE6493CF681AFF65",
+      "story_fingerprint": "ce6493cf681aff65c26e0ee1",
+      "published_at": "2026-10-17T14:45:00+00:00",
+      "last_seen_at": "2026-10-19T09:37:02.869075+00:00",
+      "topic": "ISTRUZIONE",
+      "pulse_score": 50,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOdTJGVXBCakh3MlN5OWJ1cDF5ZlFGSXBaTE5WVzViVzdWSHF3Qnh0UDFlLVM3SUFWQUgtTm9SdU5LeGlxTXQ0dEF1TGsxYXAyc01SU2tVcU9UUVphQ084SVFJNWFpZ0FZT2g3T3k1M2dYTkkzbmRrdlVSX3ZhcEpBWlhpVXBNSmdIazRQNU1panlDVm_SAZMBQVVfeXFMTnUyRlVwQmpIdzJTeTlidXAxeWZRRklwWkxOVlc1Ylc3Vkhxd0J4dFAxZS1TN0lBVkFILU5vUnVOS3hpcU10NHRBdUxrMWFwMnNNUlNrVXFPVFFaYUNPOElRSTVhaWdBWU9oN095NTNnWE5JM25ka3ZVUl92YXBKQVpYaVVwTUpnSGs0UDVNaWp5Q1Zv?oc=5",
+        "domain": "News Istruzione",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Scuola cattolica: il Rapporto 2026 conta 7.345 istituti e 500mila alunni - News Istruzione",
+      "summary": "Scuola cattolica: il Rapporto 2026 conta 7.345 istituti e 500mila alunni News Istruzione",
+      "statistical_claims": [
+        {
+          "raw_value": "7.345 ",
+          "verified": false
+        },
+        {
+          "raw_value": "500mila",
+          "verified": false
+        },
+        {
+          "raw_value": "7.345 ",
+          "verified": false
+        },
+        {
+          "raw_value": "500mila",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-E68AB1830A805A67",
+      "story_fingerprint": "e68ab1830a805a672d096fce",
+      "published_at": "2026-10-17T06:38:10+00:00",
+      "last_seen_at": "2026-10-19T09:37:02.869075+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 60,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNemVQUUFnb0w3bWZMQlJQOUQ4OUF3NXNWc21oc05xWm1qM3U4NkEtY051SEdqUlByeXU3SDBLT3lieThKX1VuRXpoTlJSOHF6UjhZTGtWVWhvaWY5bWx0d3hmMDVrNTZVYnJuRWpQaUNNTEpvUXBUbjBkQWxBQUw5X2ZuSkpvUy1RNzd6SktCOFg0bVJFbVhsSFo5VExZVlBZay1lQzVhbWM?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Turismo, boom di presenze nei primi nove mesi: 523,7 milioni (+4,7%). Mazzi: verso nuovo record - Il Sole 24 ORE",
+      "summary": "Turismo, boom di presenze nei primi nove mesi: 523,7 milioni (+4,7%). Mazzi: verso nuovo record Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "523,7 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "+4,7%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "523,7 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "+4,7%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
     {
       "id": "PULSE-687899EEC404640F",
       "story_fingerprint": "687899eec404640ffae978ef",
       "published_at": "2026-10-16T14:02:30+00:00",
-      "last_seen_at": "2026-10-16T20:52:13.778331+00:00",
+      "last_seen_at": "2026-10-19T09:37:02.869075+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 45,
       "patterns": [],
@@ -44,7 +288,7 @@
       "id": "PULSE-80040D2A7CF4CC7E",
       "story_fingerprint": "80040d2a7cf4cc7e08603465",
       "published_at": "2026-10-16T10:00:20+00:00",
-      "last_seen_at": "2026-10-16T20:52:13.778331+00:00",
+      "last_seen_at": "2026-10-19T09:37:02.869075+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 82,
       "public_source": {

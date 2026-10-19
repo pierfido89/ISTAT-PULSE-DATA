@@ -1,82 +1,76 @@
 {
-  "generated_at": "2026-10-16T20:52:13.778331+00:00",
+  "generated_at": "2026-10-19T09:37:02.869075+00:00",
   "candidates": [
     {
-      "radar": "Google News - economia lavoro",
-      "discovery_url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQTVpjSTd0VXVNeGpNN24wY0wxVGl5eUJIMGg3WGYtNmozM25QYTR5NnNFYm1TZm1jaUctR1FLa2h0MWI1d3NVY1dxTG41akc0YndrNFJjNjF6ZXV3bkdHMHdDdGd2TTNnSkE5Tmd4QlI1ZVY0U2ZSRVJjNzluVmJkTlNTUWNFZWlXcGk3a0VQS2R2cEVNM3h4RHdVS0tqNk9JMEp0bE1CbG9qbklZc2hnUUR1b0ZIOGkx?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Rapporto di previsione CSC: PIL all’1% nel 2026, ma l’energia frena la crescita nel 2027 - Confindustria",
-      "detected_at": "2026-10-16T20:52:13.778331+00:00",
-      "score_discovery": 60,
-      "topic": "ECONOMIA",
+      "radar": "Google News - statistiche Italia",
+      "discovery_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1WTmRHR1RlTjJCWjJZTEc4UEwyY0xoV1RMbWdYMGtYaC1PYVk2Y1FtNmhGdEpaRG9pTkpEUnVlREdLWlNqN25OT2dIajQ5TmRSMEJSdzdvclRsQXZX?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "\"Italia economia del turismo\": dati record nel 2026 - Confcommercio",
+      "detected_at": "2026-10-19T09:37:02.869075+00:00",
+      "score_discovery": 47,
+      "topic": "ALTRO",
       "numbers_detected": [
-        "1%",
-        "2026",
-        "2027 ",
-        "1%",
-        "2026",
-        "2027 "
+        "2026 ",
+        "2026 "
       ],
       "official_links": [],
       "official_domain_hints": [],
-      "primary_resolution": {
-        "url": "https://www.istat.it/wp-content/uploads/2026/06/Prospettive-per-leconomia-italiana.pdf",
-        "domain": "istat.it",
-        "matched_numbers": [
-          "1%",
-          "2026",
-          "2027 ",
-          "1%",
-          "2026",
-          "2027 "
-        ],
-        "matched_non_year_numbers": [
-          "1%",
-          "1%"
-        ],
-        "matched_keywords": [
-          "previsione",
-          "energia",
-          "frena",
-          "crescita"
-        ],
-        "verification_score": 87,
-        "text_excerpt": " UFFICIO STAMPA tel. +39 06 4673.2243/44 ufficiostampa@istat.it CONTACT CENTRE contact.istat.it Le prospettive per l’economia italiana nel 2026-2027  Il Pil italiano è atteso in crescita dello 0,7% sia nel 2026 sia nel 2027, dopo essere aumentato dello 0,5% nel 2025 (Prospetto 1). L’aumento del Pil, nel biennio di previsione, verrebbe sostenuto interamente dalla domanda interna al netto delle scorte (+0,9 e +0,5 punti percentuali rispettivamente) ; la domanda estera netta, condizionata in negativo dagli effetti del conflitto in Medio Oriente e dal conseguente aumento dei prezzi energetici, fornirebbe un contributo negativo nel 2026 (-0,2 p.p.) e nullo nel 2027.  Nel 2026 i consumi delle famiglie e delle ISP sono previsti in decelerazione rispetto all’anno precedente (+ 0,6% rispetto al +1,1% nel 2025 ) frenati dall’attenuazione della dinamica positiva delle retribuzioni pro capite e da",
-        "verified_series": [],
-        "method": "named_or_topic_domain_search",
-        "search_domain": "bancaditalia.it",
-        "attempts": [
-          {
-            "stage": "domain_search",
-            "domain": "istat.it",
-            "query": "site:istat.it \"previsione energia frena crescita confindustria\" 1% 2026 2027",
-            "results": 0
-          },
-          {
-            "stage": "domain_search",
-            "domain": "bancaditalia.it",
-            "query": "site:bancaditalia.it \"previsione energia frena crescita confindustria\" 1% 2026 2027",
-            "results": 6
-          }
-        ]
-      },
+      "primary_resolution": null,
       "editorial_excluded": false,
-      "status": "primary_statistical_source_verified"
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - statistiche Italia",
+      "discovery_url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNRHgzUFhYMHRPc05KbUFtOUQ3RzFNSTgyOEgyV1E1Wlh6V09ybXFMcXZ5eWpVeXVQa0xFakRPWGhHV0tyNFpxYktGWDZ6eWVMdkgzUUY4UXo1X2xhZllNUWhfeV9QMkduQS1vZkU3bkNobTF5bVZMV2kyRS1NNDN3c1JaT05sQ20zQXM2dFBuUkpOS2NSajJnTHcxMFZUdW5xN21GZGlacTJVNFlLazhYSDdEQ1hrVk0ydjVYZkFuU1RGS3NueS10ZkY0OHRnUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Ritchie Bros, è asta record in Italia. A Caorso 3.652 lotti venduti per oltre 20 milioni di euro - Agricultura.it",
+      "detected_at": "2026-10-19T09:37:02.869075+00:00",
+      "score_discovery": 49,
+      "topic": "ALTRO",
+      "numbers_detected": [
+        "3.652 ",
+        "20 milioni",
+        "3.652 ",
+        "20 milioni"
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - salute scuola ambiente",
+      "discovery_url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOdTJGVXBCakh3MlN5OWJ1cDF5ZlFGSXBaTE5WVzViVzdWSHF3Qnh0UDFlLVM3SUFWQUgtTm9SdU5LeGlxTXQ0dEF1TGsxYXAyc01SU2tVcU9UUVphQ084SVFJNWFpZ0FZT2g3T3k1M2dYTkkzbmRrdlVSX3ZhcEpBWlhpVXBNSmdIazRQNU1panlDVm_SAZMBQVVfeXFMTnUyRlVwQmpIdzJTeTlidXAxeWZRRklwWkxOVlc1Ylc3Vkhxd0J4dFAxZS1TN0lBVkFILU5vUnVOS3hpcU10NHRBdUxrMWFwMnNNUlNrVXFPVFFaYUNPOElRSTVhaWdBWU9oN095NTNnWE5JM25ka3ZVUl92YXBKQVpYaVVwTUpnSGs0UDVNaWp5Q1Zv?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Scuola cattolica: il Rapporto 2026 conta 7.345 istituti e 500mila alunni - News Istruzione",
+      "detected_at": "2026-10-19T09:37:02.869075+00:00",
+      "score_discovery": 50,
+      "topic": "ISTRUZIONE",
+      "numbers_detected": [
+        "2026 ",
+        "7.345 ",
+        "500mila",
+        "2026 ",
+        "7.345 ",
+        "500mila"
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
     },
     {
       "radar": "Google News - Sole 24 Ore dati e statistiche",
-      "discovery_url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNTG1zcFRLeFZ3XzFVblRqN3hEVmpxTG9fdDFVWmVLZjdLLVJrTWRLN2loM3UzTTQ2bmxRejEwaDhLdWIzOGFUdXZJaXpnam14NVloaGtVOFpvb1JOLVptMHFrT2VFOHl6UlNCbmhSMG9TdWpZVklGYlF3dURiOWxmWjJDbE0ycWF5M080R2VmWnVFdHdlWE1YSFVUTlJkMmRXWmFlUVYzdXE1RGdweDF4RzB1RDBWOTdaaHhPUmZTZnM0WENDQmtXOWdDMlVRRFh0MlpaVWZyZmNBbGlWZGxPdDN3RzV0TXhl?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Estate 2026: secondo i dati Cleanbnb soggiorni in calo dell’8% ma incassi in crescita dell’1,5% - Il Sole 24 ORE",
-      "detected_at": "2026-10-16T20:52:13.778331+00:00",
+      "discovery_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNemVQUUFnb0w3bWZMQlJQOUQ4OUF3NXNWc21oc05xWm1qM3U4NkEtY051SEdqUlByeXU3SDBLT3lieThKX1VuRXpoTlJSOHF6UjhZTGtWVWhvaWY5bWx0d3hmMDVrNTZVYnJuRWpQaUNNTEpvUXBUbjBkQWxBQUw5X2ZuSkpvUy1RNzd6SktCOFg0bVJFbVhsSFo5VExZVlBZay1lQzVhbWM?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Turismo, boom di presenze nei primi nove mesi: 523,7 milioni (+4,7%). Mazzi: verso nuovo record - Il Sole 24 ORE",
+      "detected_at": "2026-10-19T09:37:02.869075+00:00",
       "score_discovery": 60,
       "topic": "ALTRO",
       "numbers_detected": [
-        "2026",
-        "8%",
-        "1,5%",
+        "523,7 milioni",
+        "+4,7%",
         "24 ",
-        "2026",
-        "8%",
-        "1,5%",
+        "523,7 milioni",
+        "+4,7%",
         "24 "
       ],
       "official_links": [],
@@ -86,17 +80,38 @@
       "status": "needs_primary_source"
     },
     {
-      "radar": "Google News - Repubblica dati e statistiche",
-      "discovery_url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPZm1IZHBYeF91REVENmFuSGQ5QktJOUVydGtwNTg0ci1icmpmc0hrMmxFM09LX3N6OVdQdWZQY05RZ3Y2QUlsaHQtTTlMUklTb0t0bWhiR280cFRaLWZqWE1veS1HMTZJNXJSc3A5UGxLdnk0ZENYdzEyaGtqZ2c4YUFlMWNsMGdnSGVYakF5a01LNXIwalBNSmd4eElxS295ZzAyZEI2T3NUNG5Gb294Z3pXMEJ4RXBPVWpUYndpb3BmYnJGWXNIZ3h0Nkc5YWV2aWduT1V5V1pOWmkyNHFWczlaaFNnbHFBcFRVVndB?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Charles Schwab, ricavi trimestrali record di 7,2 miliardi di dollari e asset clienti a 13,3 trilioni - la Repubblica",
-      "detected_at": "2026-10-16T20:52:13.778331+00:00",
-      "score_discovery": 49,
+      "radar": "Google News - Sole 24 Ore dati e statistiche",
+      "discovery_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOSWtPNmwtTVVJdHdzd2UzNzdUSkZNbGRRZUhZeC14blhGdkR6bTJFend0cHc3ajdwblJ0NEp5WlJmZ3BSa0c2dzctMGFCUEQ0c1VOV3V6THhDb0RXa3NZWnR3dzRRakJ6OS1JNUZCSG5DY0VFb3daMVJwUUdsSWRlZGNwNm05NHl6MjQ4cnNsM3oyVUd6RkJPdWswLXJtUnBXbnhN?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "La formula Uniqlo macina record. E nel 2027 un quinto negozio in Italia - Il Sole 24 ORE",
+      "detected_at": "2026-10-19T09:37:02.869075+00:00",
+      "score_discovery": 54,
       "topic": "ALTRO",
       "numbers_detected": [
-        "7,2 miliardi",
-        "13,3 ",
-        "7,2 miliardi",
-        "13,3 "
+        "2027 ",
+        "24 ",
+        "2027 ",
+        "24 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - Sole 24 Ore dati e statistiche",
+      "discovery_url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOYlFUZzlLVnJXSlFRWEU0NzE1eFVDazFkT2tld3o2YWROWFJuNmNpNTRvbTdQdnJ2M0FPd3hyRnZjdEFRT1VoN0lkcnJFM2VpVmhoUkhjVE5LLU9Nc1lhSmdoYjBjSThoTE4taWhFUHpBZmM2R3lvckJ6Tzc1aGtWX194NWRaWW5ZOFZMOU1oaTlNQjhOX3c0ZkNSMVJnOTVQa1hrZmRpdWVUNGxm?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "L’orologio atomico al Lutezio-176 è da record. Ma quello al Torio-229 lo insegue - Il Sole 24 ORE",
+      "detected_at": "2026-10-19T09:37:02.869075+00:00",
+      "score_discovery": 50,
+      "topic": "ALTRO",
+      "numbers_detected": [
+        "176 ",
+        "229 ",
+        "24 ",
+        "176 ",
+        "229 ",
+        "24 "
       ],
       "official_links": [],
       "official_domain_hints": [],
@@ -106,18 +121,16 @@
     },
     {
       "radar": "Google News - Corriere dati e statistiche",
-      "discovery_url": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxOTWFnQ3hmbWdmcUh0eF9TZXdpb1lLY1NwZFo5cmFHNHZOYjRyMFJ4QnNiamdSbE4xNFYyZjVvVXdKUXFrLWY5X0hPUUVhYWsxaVBCUjBGSWZvUnMxQmlsTjFDVmx1NFNBMmk1cXlRbXlMamVOUXc0ajI4b2hOUlNOS0RmYkFCMlBHcERDaEU0em0yLTF4SGd5NUNNUnl3ZU05cEVWUHlWVlM2djhfeXdtMm56VnpSMFQydzRDUEdCd2NWWjQ2TlR2MzRVeGEwek1NbDNSYTJYUmFMakM5Q0J3aWR4SVhNcThzN295SER4MUlJUDRHZThUMFltQ0ZJZTJ6eVN6Smh5bTRZZWc1YlR5LXRNYlNmcTBFTFYwS1NFUzRxRnVnaXREU3dETdIBsAJBVV95cUxOM1Z5T1c2b01BSkc2Tnpfb0ExbGZUWHFaMVJRVzQ1WVdGb1BHVkdOWGpibllYUXV0YlhGY0dNWUk5cjhlMHFoRHl5SEdPYlZoUXNZZmFrN05qVnR3dGd4MjNSZkU4eGE4aVRlRVpVMFM5V3M0T2dnR2hSaWhWblY0aGhRdG8ta0pkWTloYy11NGs5MzF2VWIwM3ZvWXktUDk5X3ZNUExEUkR3aVNkMW1fdW94SnF0U3hBSVNvXzVxam5xcHZsblVXLUZaVE85QmdBblFnTHlHaURucjdockxFRXJ6VFNTUFZUai1YVFhLRTdzNlM4NkhqMU5yN05tNC04UUEtTERFSGE3T29KQ25CYTh3N1RsWUpaNXF6alI5SmNZbGFFWDRYU0t3S0kyYmdI?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "L'abito da record di Céline Dion a Parigi: 1.380 ore di lavoro per realizzarlo, oltre 6 mila cristalli e 5 mila perline - Corriere della Sera",
-      "detected_at": "2026-10-16T20:52:13.778331+00:00",
-      "score_discovery": 50,
-      "topic": "LAVORO",
+      "discovery_url": "https://news.google.com/rss/articles/CBMi5AJBVV95cUxNWndiRzJ4SmFfZ2g4UUVIQ2dyWE1GbFZsTklJcmRrR2hnSDJPY1FIajR4eDBKMWt0YUx2UEl5eTFueHRscDZNMklsSnVWaWNUSTJJRTEwanplYVFQM0VHaUhvX0RBZkFhUzBjeFFRVk5IMzVDZGowMUxBeFRZc3NWRXFhSVJFWlJnLXFMZFktWmgxMUM1RzlxbmQ2Q1Z6QWRuaUFtRy13bExfd05WdndON1RySFZJUXlWWkp1MTd0ZGN5UGFlNnFQekMtS05KSkEwTWFmNjZHSFdYWjJyb2kyRU5ZSkhYODlaeGh3MHhBaUY4c08yMjlhYW1yRjFfNFJ4b2RkUy12S3E3UlY0dHE0OHpqeXpXdGg0cllnZEZrYzkzbUxCZzRmOUR2WDZSMEw1UlhnMkd5d19zZ1l5WmY1WVRBRVI1TjVPRXBqM0REVFlOSkVUUkwzMG00Z3RwYmo3dGlPMNIB6gJBVV95cUxPd0NpanREWTBCZ2hmemw5MDFxcWNJRm1tektmdXlqM25tbktQbTV1ZnBKWE5FaXIwT3Y1NjRZYW9UOUFWRjdEcF9CLW5RVHdVNnpKRnJOYk4zUlRTR2VVTVBRSUNJN0l1NzJxcVp4Y1I2ZTRkdEY0SUZjOTNxeDBTWnhwbkh5d3BnYXZDY3UxSjFWNFBkd2ppdU53WG5fY2E3YmZEb1ptMGVQeEZRZ3VBaGpUbVdsaWZMVHo3NWlBRjZaeHlYWmpUQWxKcXllZldPVTJ3amJPT2hRaUlvakNCWFA0S2hGQjZBV3htcHRrSnBwTGVHWkxKdUNpcnkxQUREWlNPV3UybFJNeEF5Z0dpTkxvdG1ZVDdYeWpYc01PUWYxdGZoZ0xBdjM0eVBxM0MwYkdNYV9WZnhUWHJnWmZrQVlPNlI4UVNCVWlLNGtYNVZpU3dEQzU5eGRSa3hxQ01iX1A0UXFBTm9EUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Il collezionista record di Star Wars: «Ho 15 mila oggetti tra giocattoli, autografi, astronavi e costumi: qualche pezzo vale 30 mila euro. Non vendo nulla: ho rifiutato assegni in bianco» - Corriere del Veneto",
+      "detected_at": "2026-10-19T09:37:02.869075+00:00",
+      "score_discovery": 49,
+      "topic": "MOBILITA",
       "numbers_detected": [
-        "1.380 ",
-        "6 mila",
-        "5 mila",
-        "1.380 ",
-        "6 mila",
-        "5 mila"
+        "15 mila",
+        "30 mila",
+        "15 mila",
+        "30 mila"
       ],
       "official_links": [],
       "official_domain_hints": [],
@@ -129,7 +142,7 @@
       "radar": "Google News - Italia economia e famiglie",
       "discovery_url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5wSXFmZ0hyTUtKaHUzeWd1dWF4TDRLck5JZXRFRV9CdlNJYUpaY2kyZkg4bEVqS2hRU1dkVzZ0cUJTOXZSbDBzUVZpMXQxd3VheG0tSENjVF82QjJOMlJncjNzLU5uaUR3UUJEN0pDaV9IaVoyd1lDS0dEU2c?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Pil Italia allo 0,9% nel 2026, +0,7% nel 2027. Le stime di Bankitalia - Sky TG24",
-      "detected_at": "2026-10-16T20:52:13.778331+00:00",
+      "detected_at": "2026-10-19T09:37:02.869075+00:00",
       "score_discovery": 45,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -149,31 +162,10 @@
       "status": "needs_primary_source"
     },
     {
-      "radar": "Google News - Italia popolazione e territori",
-      "discovery_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOMXJGZTB2R2pxbW1scWFPd0c3UkVTdjJDMHZKTk9HWUVOTXBubTNnQWt3SGMweWxzNHhvWVMta25OS0FHMFB3MTZQWmt2WkRZSGowNko1OGVWT1UzbVBiSXVPaFV0aXhMY3N0THBpNm1XOXIzUmhzODUwSHc2Nzc5dzFxdE9OYWpfd1QyRDZvNUFYZDZwUkJCcU44aE80RzF1NWc5TQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Estate 2026, mortalità contenuta nonostante il caldo: +2% in Italia, +4% al centro. Ad Ancona decessi sotto l'atteso - CentroPagina",
-      "detected_at": "2026-10-16T20:52:13.778331+00:00",
-      "score_discovery": 50,
-      "topic": "DEMOGRAFIA",
-      "numbers_detected": [
-        "2026",
-        "+2%",
-        "+4%",
-        "2026",
-        "+2%",
-        "+4%"
-      ],
-      "official_links": [],
-      "official_domain_hints": [],
-      "primary_resolution": null,
-      "editorial_excluded": false,
-      "status": "needs_primary_source"
-    },
-    {
       "radar": "ISTAT - Aggiornamenti ufficiali",
       "discovery_url": "https://www.istat.it/comunicato-stampa/commercio-con-lestero-e-prezzi-allimport-agosto-2026/",
       "discovery_title": "Commercio con l’estero e prezzi all’import – Agosto 2026",
-      "detected_at": "2026-10-16T20:52:13.778331+00:00",
+      "detected_at": "2026-10-19T09:37:02.869075+00:00",
       "score_discovery": 55,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -227,190 +219,6 @@
         ],
         "verification_score": 95,
         "text_excerpt": "Commercio con l’estero e prezzi all’import – Agosto 2026 – Istat Vai al menù della testata Vai al menù principale Vai al contenuto principale Vai al menù laterale Vai al contenuto di pagina English Homepage Home Informazioni sulle rilevazioni Attività e servizi per tipo di utenti Per tutti Sportelli sul territorio European data support Biblioteca Archivio storico Giornalisti Appuntamenti Embargo Articoli e interviste Istat in breve Storia Rispondenti Informazioni sulle rilevazioni e questionari Elenco soggetti esterni trattamento dati Sanzioni amministrative Ricercatori Eventi segnalati dalle società scientifiche Laboratorio ADELE Promozione della ricerca Studenti e docenti Master EMOS Statistica e Cittadinanza Formazione per docenti Progetti per le scuole Pacchetti didattici Competizioni e premi Enti del Sistan English This Page HomePage Imposta Lingua Language Settings Per favore confe",
-        "verified_series": [],
-        "method": "direct_official_rss"
-      },
-      "editorial_excluded": false,
-      "status": "primary_statistical_source_verified"
-    },
-    {
-      "radar": "ISTAT - Aggiornamenti ufficiali",
-      "discovery_url": "https://www.istat.it/comunicato-stampa/prezzi-al-consumo-settembre-2026/",
-      "discovery_title": "Prezzi al consumo – Settembre 2026",
-      "detected_at": "2026-10-16T20:52:13.778331+00:00",
-      "score_discovery": 49,
-      "topic": "ECONOMIA",
-      "numbers_detected": [
-        "2026 ",
-        "2026",
-        "+0,7%",
-        "+4,2%"
-      ],
-      "official_links": [
-        "https://www.istat.it/wp-content/uploads/2026/10/Prezzi-al-consumo-def-Set2026-1.pdf",
-        "https://www.istat.it/wp-content/uploads/2026/10/serie09_2026.xlsx",
-        "https://contact.istat.it/s/piu-sportello-per-i-media?language=it",
-        "https://contact.istat.it",
-        "https://www.istat.it/it/archivio/30440",
-        "http://rivaluta.istat.it/",
-        "https://www.istat.it/statistiche-per-temi/economia/prezzi/",
-        "https://www.istat.it/?tag=consumi",
-        "https://www.istat.it/?tag=foi",
-        "https://www.istat.it/?tag=inflazione",
-        "https://www.istat.it/?tag=ipca",
-        "https://www.istat.it/?tag=nic"
-      ],
-      "official_domain_hints": [
-        "istat.it"
-      ],
-      "primary_resolution": {
-        "url": "https://www.istat.it/comunicato-stampa/prezzi-al-consumo-settembre-2026/",
-        "domain": "istat.it",
-        "matched_numbers": [
-          "2026 ",
-          "2026",
-          "+0,7%",
-          "+4,2%"
-        ],
-        "matched_non_year_numbers": [
-          "+0,7%",
-          "+4,2%"
-        ],
-        "matched_keywords": [
-          "prezzi",
-          "consumo",
-          "settembre",
-          "indice",
-          "nazionale",
-          "intera",
-          "collettività",
-          "agosto"
-        ],
-        "verification_score": 95,
-        "text_excerpt": "Prezzi al consumo – Settembre 2026 – Istat Vai al menù della testata Vai al menù principale Vai al contenuto principale Vai al menù laterale Vai al contenuto di pagina English Homepage Home Informazioni sulle rilevazioni Attività e servizi per tipo di utenti Per tutti Sportelli sul territorio European data support Biblioteca Archivio storico Giornalisti Appuntamenti Embargo Articoli e interviste Istat in breve Storia Rispondenti Informazioni sulle rilevazioni e questionari Elenco soggetti esterni trattamento dati Sanzioni amministrative Ricercatori Eventi segnalati dalle società scientifiche Laboratorio ADELE Promozione della ricerca Studenti e docenti Master EMOS Statistica e Cittadinanza Formazione per docenti Progetti per le scuole Pacchetti didattici Competizioni e premi Enti del Sistan English This Page HomePage Imposta Lingua Language Settings Per favore conferma la tua preferenza.",
-        "verified_series": [],
-        "method": "direct_official_rss"
-      },
-      "editorial_excluded": false,
-      "status": "primary_statistical_source_verified"
-    },
-    {
-      "radar": "ISTAT - Aggiornamenti ufficiali",
-      "discovery_url": "https://www.istat.it/comunicato-stampa/economia-non-osservata-nei-conti-nazionali-anni-2021-2024/",
-      "discovery_title": "Economia non osservata nei conti nazionali – Anni 2021-2024",
-      "detected_at": "2026-10-16T20:52:13.778331+00:00",
-      "score_discovery": 50,
-      "topic": "ECONOMIA",
-      "numbers_detected": [
-        "2021",
-        "2024 ",
-        "2024 ",
-        "218,2 miliardi",
-        "9,9%"
-      ],
-      "official_links": [
-        "https://www.istat.it/wp-content/uploads/2026/10/Econonomia-non-osservata-2024.pdf",
-        "https://contact.istat.it/s/piu-sportello-per-i-media?language=it",
-        "https://contact.istat.it/",
-        "https://www.istat.it/statistiche-per-temi/economia/conti-nazionali/",
-        "https://www.istat.it/?tag=economia",
-        "https://www.istat.it/?tag=lavoro",
-        "https://www.istat.it/?tag=pil",
-        "https://www.istat.it/?tag=sommerso",
-        "https://www.istat.it/?tag=comunicati-annuali",
-        "https://www.istat.it/?tag=valore-aggiunto",
-        "https://www.istat.it/?s=&filter_category[]=4085",
-        "https://www.istat.it/comunicato-stampa/economia-non-osservata-nei-conti-nazionali-anni-2021-2024/"
-      ],
-      "official_domain_hints": [
-        "istat.it"
-      ],
-      "primary_resolution": {
-        "url": "https://www.istat.it/comunicato-stampa/economia-non-osservata-nei-conti-nazionali-anni-2021-2024/",
-        "domain": "istat.it",
-        "matched_numbers": [
-          "2021",
-          "2024 ",
-          "2024 ",
-          "218,2 miliardi",
-          "9,9%"
-        ],
-        "matched_non_year_numbers": [
-          "218,2 miliardi",
-          "9,9%"
-        ],
-        "matched_keywords": [
-          "economia",
-          "osservata",
-          "conti",
-          "nazionali",
-          "sommersa",
-          "attività",
-          "illegali"
-        ],
-        "verification_score": 95,
-        "text_excerpt": "Economia non osservata nei conti nazionali – Anni 2021-2024 – Istat Vai al menù della testata Vai al menù principale Vai al contenuto principale Vai al menù laterale Vai al contenuto di pagina English Homepage Home Informazioni sulle rilevazioni Attività e servizi per tipo di utenti Per tutti Sportelli sul territorio European data support Biblioteca Archivio storico Giornalisti Appuntamenti Embargo Articoli e interviste Istat in breve Storia Rispondenti Informazioni sulle rilevazioni e questionari Elenco soggetti esterni trattamento dati Sanzioni amministrative Ricercatori Eventi segnalati dalle società scientifiche Laboratorio ADELE Promozione della ricerca Studenti e docenti Master EMOS Statistica e Cittadinanza Formazione per docenti Progetti per le scuole Pacchetti didattici Competizioni e premi Enti del Sistan English This Page HomePage Imposta Lingua Language Settings Per favore co",
-        "verified_series": [],
-        "method": "direct_official_rss"
-      },
-      "editorial_excluded": false,
-      "status": "primary_statistical_source_verified"
-    },
-    {
-      "radar": "ISTAT - Comunicati stampa ufficiali",
-      "discovery_url": "https://www.istat.it/comunicato-stampa/conti-economici-delle-imprese-e-dei-gruppi-di-impresa-anno-2024/",
-      "discovery_title": "Conti economici delle imprese e dei gruppi di impresa – Anno 2024",
-      "detected_at": "2026-10-16T20:52:13.778331+00:00",
-      "score_discovery": 49,
-      "topic": "ECONOMIA",
-      "numbers_detected": [
-        "2024 ",
-        "2024",
-        "+0,5%",
-        "4,5 milioni"
-      ],
-      "official_links": [
-        "https://www.istat.it/wp-content/uploads/2026/10/Conti-economici-imprese-e-gruppi-2024.pdf",
-        "https://www.istat.it/wp-content/uploads/2026/10/Tavole-conti-economici-imprese-2024.xlsx",
-        "https://contact.istat.it/s/piu-sportello-per-i-media?language=it",
-        "https://contact.istat.it/",
-        "https://www.istat.it/statistiche-per-temi/economia/conti-nazionali/",
-        "https://www.istat.it/statistiche-per-temi/economia/imprese/",
-        "https://www.istat.it/statistiche-per-temi/economia/servizi/",
-        "https://www.istat.it/?tag=attivita-economica",
-        "https://www.istat.it/?tag=fatturato",
-        "https://www.istat.it/?tag=imprese",
-        "https://www.istat.it/?tag=industria",
-        "https://www.istat.it/?tag=ore-lavorate"
-      ],
-      "official_domain_hints": [
-        "istat.it"
-      ],
-      "primary_resolution": {
-        "url": "https://www.istat.it/comunicato-stampa/conti-economici-delle-imprese-e-dei-gruppi-di-impresa-anno-2024/",
-        "domain": "istat.it",
-        "matched_numbers": [
-          "2024 ",
-          "2024",
-          "+0,5%",
-          "4,5 milioni"
-        ],
-        "matched_non_year_numbers": [
-          "+0,5%",
-          "4,5 milioni"
-        ],
-        "matched_keywords": [
-          "conti",
-          "economici",
-          "imprese",
-          "gruppi",
-          "impresa",
-          "numero",
-          "industriali",
-          "servizi"
-        ],
-        "verification_score": 95,
-        "text_excerpt": "Conti economici delle imprese e dei gruppi di impresa – Anno 2024 – Istat Vai al menù della testata Vai al menù principale Vai al contenuto principale Vai al menù laterale Vai al contenuto di pagina English Homepage Home Informazioni sulle rilevazioni Attività e servizi per tipo di utenti Per tutti Sportelli sul territorio European data support Biblioteca Archivio storico Giornalisti Appuntamenti Embargo Articoli e interviste Istat in breve Storia Rispondenti Informazioni sulle rilevazioni e questionari Elenco soggetti esterni trattamento dati Sanzioni amministrative Ricercatori Eventi segnalati dalle società scientifiche Laboratorio ADELE Promozione della ricerca Studenti e docenti Master EMOS Statistica e Cittadinanza Formazione per docenti Progetti per le scuole Pacchetti didattici Competizioni e premi Enti del Sistan English This Page HomePage Imposta Lingua Language Settings Per fav",
         "verified_series": [],
         "method": "direct_official_rss"
       },
