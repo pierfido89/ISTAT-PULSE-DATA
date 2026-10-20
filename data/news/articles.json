@@ -1,11 +1,112 @@
 {
-  "generated_at": "2026-10-20T09:09:26.639075+00:00",
+  "generated_at": "2026-10-20T14:41:40.606859+00:00",
   "articles": [
+    {
+      "id": "PULSE-5CE3AB3FC48B26B3",
+      "story_fingerprint": "5ce3ab3fc48b26b3d5794de9",
+      "published_at": "2026-10-20T13:06:54+00:00",
+      "last_seen_at": "2026-10-20T14:41:40.606859+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 59,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxQTVdDazZUUkNKZTAteHRpMlEtZjZubTI3eHoyN0dydVFaSkNPYktYaXZxbXBPdVFxLTBUSWk1WHZ6ZDhkbEItdjVhbkNPSVBnVmpvRnRyNG5YTldkNDV2ckt6a3Z3TXBGOWVxVFdXazUzVmFZTThXUm13cUlmRmdXSW0tSUxJUU9fSDVNa29CdDVSOXpzejVRS3dvN2d1LVFiMVpUQ01nWkI2bmdTQVdYck1qbnZ1a0VLSVZab0NfY1N6THFqNC1idVllWExJTWptNUxScjBwMWhweFJ3Z0YzUW45NWxsbEhNdlVCQmxxV0cxYXdBZS1FQTBZTzk0QXdNRWduVQ?oc=5",
+        "domain": "ANSA",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Spesa per il welfare record a 693 miliardi, nel 2037 potrebbe superare i mille - ANSA",
+      "summary": "Spesa per il welfare record a 693 miliardi, nel 2037 potrebbe superare i mille ANSA",
+      "statistical_claims": [
+        {
+          "raw_value": "693 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "693 miliardi",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-714A1E9B13E632EC",
+      "story_fingerprint": "714a1e9b13e632ecc8f54af6",
+      "published_at": "2026-10-20T10:27:21+00:00",
+      "last_seen_at": "2026-10-20T14:41:40.606859+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 65,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNSnpqZTU1SnhEaWpQYzN0NUJIWEpxa0RiOHF5WXFoVERlUUZydEpXcG5XME1aUF9rY0lZbFBILU84bVpzd0FOVDdWbFBmbzdEeHNpdTQ0R1hROXlwZk51aFR1Vm1lVGtQYUtPR3c1MnBmZVNua21PWjEwdXZUbG0yZGJuV2lNQVp0SGxMemE1elhDY1ZNbUh0NmdiTFZBSUhFS25iQXlkemJNb1JzQVc4?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "O’Leary (Ryanair): «Aumenti record delle tariffe aeree, fino al 20% in più nel 2027» - Il Sole 24 ORE",
+      "summary": "O’Leary (Ryanair): «Aumenti record delle tariffe aeree, fino al 20% in più nel 2027» Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "20%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "20%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-F965400155D0470E",
+      "story_fingerprint": "f965400155d0470e5f4d92cb",
+      "published_at": "2026-10-20T09:29:00+00:00",
+      "last_seen_at": "2026-10-20T14:41:40.606859+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 54,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQclFkZjJ6MjAyVF93ZDlTak1PdDZpUDhicWxQQlYxTGpTQkRydFBGcFUwbjN2bjEyOHMtZzlLeE5DTmI2RjBhR3dkRTJfRC1LVnpfTEdDOHVmeDNfTTk3cGY4UW9hcUJzajhOelk1YVRmZTJfSzJkR2txaml1RHJnOHlEU1dUVzV3NXh6Z1JxYVVIMnRibmotVjFhVUJNR09jQkE2dVd0N2FDTWxtVWx3VVpfREhGRWtNNTF4OEpyUnY4TEZvaFVKLUx4TFpTZWN6bjNzcnhGaGRGbS1GdVA2TGppV0tmcUVBVExnV3pB0gHzAUFVX3lxTE5oMHN3TFcwbkgzMk5fbVVBcU56bmo5dDJUQmNlcjR3SjhyRXVlZmZEem5xYjQxR185ZWQtY0ktYThZWXlGVV81MGc2eFN6cFA1LURmN28zVDFsOXNnSlNpT1JsM3RqMzJaTjJnMWdVeWJFVGZndUdxTmx0dUZhanc1ZEhjd25KQVY2NDBETGREWkstei03LTMtemFuczl0YVlRMDFRRXJjdnhKcUhjcHI0azFZenN4Sjc3dVZoWWI3dXRucGplV1NDNzR4T045cUFvUlJIeWdTdlVPS1VfeElSRzRLQ2NVUWEtYWtxRXZ2cnloaw?oc=5",
+        "domain": "ANSA",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Unipol-Teha, spesa welfare record a 692,8 mld, nel 2037 oltre mille - ANSA",
+      "summary": "Unipol-Teha, spesa welfare record a 692,8 mld, nel 2037 oltre mille ANSA",
+      "statistical_claims": [
+        {
+          "raw_value": "692,8 ",
+          "verified": false
+        },
+        {
+          "raw_value": "692,8 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
     {
       "id": "PULSE-854D498C6FC12129",
       "story_fingerprint": "854d498c6fc1212945055752",
       "published_at": "2026-10-20T07:35:00+00:00",
-      "last_seen_at": "2026-10-20T09:09:26.639075+00:00",
+      "last_seen_at": "2026-10-20T14:41:40.606859+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 59,
       "patterns": [],
@@ -36,7 +137,7 @@
       "id": "PULSE-5C44D41FCE75709E",
       "story_fingerprint": "5c44d41fce75709e29ab9072",
       "published_at": "2026-10-20T05:06:25+00:00",
-      "last_seen_at": "2026-10-20T09:09:26.639075+00:00",
+      "last_seen_at": "2026-10-20T14:41:40.606859+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 45,
       "patterns": [],
@@ -75,7 +176,7 @@
       "id": "PULSE-8EDB981A091A4785",
       "story_fingerprint": "8edb981a091a4785480d2664",
       "published_at": "2026-10-19T22:10:00+00:00",
-      "last_seen_at": "2026-10-20T09:09:26.639075+00:00",
+      "last_seen_at": "2026-10-20T14:41:40.606859+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 50,
       "patterns": [],
@@ -215,7 +316,7 @@
       "id": "PULSE-72C9419213290799",
       "story_fingerprint": "72c94192132907998dd33761",
       "published_at": "2026-10-19T07:55:38+00:00",
-      "last_seen_at": "2026-10-20T09:09:26.639075+00:00",
+      "last_seen_at": "2026-10-20T14:41:40.606859+00:00",
       "topic": "ALTRO",
       "pulse_score": 54,
       "patterns": [],
@@ -285,7 +386,7 @@
       "id": "PULSE-9E81B77361E08B8F",
       "story_fingerprint": "9e81b77361e08b8fb41b2f08",
       "published_at": "2026-10-18T08:46:01+00:00",
-      "last_seen_at": "2026-10-20T09:09:26.639075+00:00",
+      "last_seen_at": "2026-10-20T14:41:40.606859+00:00",
       "topic": "ALTRO",
       "pulse_score": 50,
       "patterns": [],
@@ -332,7 +433,7 @@
       "id": "PULSE-50E395CACEF6542A",
       "story_fingerprint": "50e395cacef6542aa74d05ab",
       "published_at": "2026-10-18T07:50:00+00:00",
-      "last_seen_at": "2026-10-20T09:09:26.639075+00:00",
+      "last_seen_at": "2026-10-20T14:41:40.606859+00:00",
       "topic": "MOBILITA",
       "pulse_score": 49,
       "patterns": [],
