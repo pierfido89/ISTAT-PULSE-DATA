@@ -1,89 +1,11 @@
 {
-  "generated_at": "2026-10-19T09:37:02.869075+00:00",
+  "generated_at": "2026-10-20T09:09:26.639075+00:00",
   "candidates": [
     {
       "radar": "Google News - statistiche Italia",
-      "discovery_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1WTmRHR1RlTjJCWjJZTEc4UEwyY0xoV1RMbWdYMGtYaC1PYVk2Y1FtNmhGdEpaRG9pTkpEUnVlREdLWlNqN25OT2dIajQ5TmRSMEJSdzdvclRsQXZX?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "\"Italia economia del turismo\": dati record nel 2026 - Confcommercio",
-      "detected_at": "2026-10-19T09:37:02.869075+00:00",
-      "score_discovery": 47,
-      "topic": "ALTRO",
-      "numbers_detected": [
-        "2026 ",
-        "2026 "
-      ],
-      "official_links": [],
-      "official_domain_hints": [],
-      "primary_resolution": null,
-      "editorial_excluded": false,
-      "status": "needs_primary_source"
-    },
-    {
-      "radar": "Google News - statistiche Italia",
-      "discovery_url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNRHgzUFhYMHRPc05KbUFtOUQ3RzFNSTgyOEgyV1E1Wlh6V09ybXFMcXZ5eWpVeXVQa0xFakRPWGhHV0tyNFpxYktGWDZ6eWVMdkgzUUY4UXo1X2xhZllNUWhfeV9QMkduQS1vZkU3bkNobTF5bVZMV2kyRS1NNDN3c1JaT05sQ20zQXM2dFBuUkpOS2NSajJnTHcxMFZUdW5xN21GZGlacTJVNFlLazhYSDdEQ1hrVk0ydjVYZkFuU1RGS3NueS10ZkY0OHRnUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Ritchie Bros, è asta record in Italia. A Caorso 3.652 lotti venduti per oltre 20 milioni di euro - Agricultura.it",
-      "detected_at": "2026-10-19T09:37:02.869075+00:00",
-      "score_discovery": 49,
-      "topic": "ALTRO",
-      "numbers_detected": [
-        "3.652 ",
-        "20 milioni",
-        "3.652 ",
-        "20 milioni"
-      ],
-      "official_links": [],
-      "official_domain_hints": [],
-      "primary_resolution": null,
-      "editorial_excluded": false,
-      "status": "needs_primary_source"
-    },
-    {
-      "radar": "Google News - salute scuola ambiente",
-      "discovery_url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOdTJGVXBCakh3MlN5OWJ1cDF5ZlFGSXBaTE5WVzViVzdWSHF3Qnh0UDFlLVM3SUFWQUgtTm9SdU5LeGlxTXQ0dEF1TGsxYXAyc01SU2tVcU9UUVphQ084SVFJNWFpZ0FZT2g3T3k1M2dYTkkzbmRrdlVSX3ZhcEpBWlhpVXBNSmdIazRQNU1panlDVm_SAZMBQVVfeXFMTnUyRlVwQmpIdzJTeTlidXAxeWZRRklwWkxOVlc1Ylc3Vkhxd0J4dFAxZS1TN0lBVkFILU5vUnVOS3hpcU10NHRBdUxrMWFwMnNNUlNrVXFPVFFaYUNPOElRSTVhaWdBWU9oN095NTNnWE5JM25ka3ZVUl92YXBKQVpYaVVwTUpnSGs0UDVNaWp5Q1Zv?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Scuola cattolica: il Rapporto 2026 conta 7.345 istituti e 500mila alunni - News Istruzione",
-      "detected_at": "2026-10-19T09:37:02.869075+00:00",
-      "score_discovery": 50,
-      "topic": "ISTRUZIONE",
-      "numbers_detected": [
-        "2026 ",
-        "7.345 ",
-        "500mila",
-        "2026 ",
-        "7.345 ",
-        "500mila"
-      ],
-      "official_links": [],
-      "official_domain_hints": [],
-      "primary_resolution": null,
-      "editorial_excluded": false,
-      "status": "needs_primary_source"
-    },
-    {
-      "radar": "Google News - Sole 24 Ore dati e statistiche",
-      "discovery_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNemVQUUFnb0w3bWZMQlJQOUQ4OUF3NXNWc21oc05xWm1qM3U4NkEtY051SEdqUlByeXU3SDBLT3lieThKX1VuRXpoTlJSOHF6UjhZTGtWVWhvaWY5bWx0d3hmMDVrNTZVYnJuRWpQaUNNTEpvUXBUbjBkQWxBQUw5X2ZuSkpvUy1RNzd6SktCOFg0bVJFbVhsSFo5VExZVlBZay1lQzVhbWM?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Turismo, boom di presenze nei primi nove mesi: 523,7 milioni (+4,7%). Mazzi: verso nuovo record - Il Sole 24 ORE",
-      "detected_at": "2026-10-19T09:37:02.869075+00:00",
-      "score_discovery": 60,
-      "topic": "ALTRO",
-      "numbers_detected": [
-        "523,7 milioni",
-        "+4,7%",
-        "24 ",
-        "523,7 milioni",
-        "+4,7%",
-        "24 "
-      ],
-      "official_links": [],
-      "official_domain_hints": [],
-      "primary_resolution": null,
-      "editorial_excluded": false,
-      "status": "needs_primary_source"
-    },
-    {
-      "radar": "Google News - Sole 24 Ore dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOSWtPNmwtTVVJdHdzd2UzNzdUSkZNbGRRZUhZeC14blhGdkR6bTJFend0cHc3ajdwblJ0NEp5WlJmZ3BSa0c2dzctMGFCUEQ0c1VOV3V6THhDb0RXa3NZWnR3dzRRakJ6OS1JNUZCSG5DY0VFb3daMVJwUUdsSWRlZGNwNm05NHl6MjQ4cnNsM3oyVUd6RkJPdWswLXJtUnBXbnhN?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "La formula Uniqlo macina record. E nel 2027 un quinto negozio in Italia - Il Sole 24 ORE",
-      "detected_at": "2026-10-19T09:37:02.869075+00:00",
+      "detected_at": "2026-10-20T09:09:26.639075+00:00",
       "score_discovery": 54,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -99,10 +21,141 @@
       "status": "needs_primary_source"
     },
     {
+      "radar": "Google News - statistiche Italia",
+      "discovery_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1WTmRHR1RlTjJCWjJZTEc4UEwyY0xoV1RMbWdYMGtYaC1PYVk2Y1FtNmhGdEpaRG9pTkpEUnVlREdLWlNqN25OT2dIajQ5TmRSMEJSdzdvclRsQXZX?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "\"Italia economia del turismo\", dati record nel 2026 - Confcommercio",
+      "detected_at": "2026-10-20T09:09:26.639075+00:00",
+      "score_discovery": 47,
+      "topic": "ALTRO",
+      "numbers_detected": [
+        "2026 ",
+        "2026 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - statistiche Italia",
+      "discovery_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPQ1pvVkZQcXdMY0JRUk9iMTY0di1zeUtkUm42R1hjZUNwN0xCLURWb2hfVDBnSW1sa095MHRvR3ZFcm5YOHpTallSenVNTld2RVcyRFJVYUs3bW5hWVVSNHNQSjNWVjlKa0hZTWJCcE5aTFZBc2lwOEczU3Etbm1UcU1VSW9ERGxuVGstYXY4YXlqdVduMkxyaWJnM0hIN3dqaURkM0tWSmp2Y0lzSUxteWx2Y25lTXpnbWc?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Virus del Nilo occidentale, record di contagi in Europa: 1.715 casi e 748 in Italia - Panorama della Sanità",
+      "detected_at": "2026-10-20T09:09:26.639075+00:00",
+      "score_discovery": 49,
+      "topic": "SALUTE",
+      "numbers_detected": [
+        "1.715 ",
+        "748 ",
+        "1.715 ",
+        "748 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - economia lavoro",
+      "discovery_url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE95WGVFYS1NT1hNOEVkdEhxdGlPdW5XYmd2MDVzeHQtQWc3aktodjc3UlJaa0dNemhkZFVOWmxHSEN0Q19KS0tHZVFfZFVwT3VMOVE2Y3pvbzc5T29HQjV2dFdmUjgxRnk4REpRSmpsemxudFhHXzNFcVdFbmM?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Focus sulle 700mila imprese guidate da stranieri in Italia, in crescita di oltre 16mila nei primi sei mesi del 2026 - In Terris",
+      "detected_at": "2026-10-20T09:09:26.639075+00:00",
+      "score_discovery": 50,
+      "topic": "ECONOMIA",
+      "numbers_detected": [
+        "700mila",
+        "16mila",
+        "2026 ",
+        "700mila",
+        "16mila",
+        "2026 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - salute scuola ambiente",
+      "discovery_url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNQzFTQUFkS2JZdE1Ib0M1Z3pRakJEb2tGQ2RBT0k3X2ViUzFlTzJuUTU0WHZENjV2OFdmczlFNTltSEJBbkVvTldLWl9oRVFTalZsZTRkTUR0LU5CRnB4OVpubXB1UFBQQ0ttYkt6YjFXN0NfOXJUanVYYjRDLVBSSXJmMlBNbjdsSXRzX25TM1FGWFhVQ3FvYXcxLXAycWRDMll6Wnl1OElLdkl0Zms0TDg2Z3NYbmpqYlcwaGR4NXVwR2tOS3VXdHpLdDQ0Y25qMUxZZDFiYW0?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Cardiologia interventistica, oltre 520 mila procedure nel 2025: i dati diventano una risorsa per la salute - Panorama della Sanità",
+      "detected_at": "2026-10-20T09:09:26.639075+00:00",
+      "score_discovery": 49,
+      "topic": "SALUTE",
+      "numbers_detected": [
+        "520 mila",
+        "2025",
+        "520 mila",
+        "2025"
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - ANSA dati e statistiche",
+      "discovery_url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxOQ1dsM0V4UGZFZHgxMGRORWFfMlVDYzZLQ0Z1aU5lU2REMHVmdjVUQUFyZXpoWk12amNhdGVXTU85bFd2VEVLS0dXTHJzT0RvZ0JMQWxOQUhfc0N5M1Rhenp2U2dSa3BXeHA0LW8zak9hT1dOckVGN3RRYWlCSXpBSVZKTS1zRTJubXJCWDNMaDl0MV93eUxVM0lreXJPQWpmelE3MG90N0ZmRHhRYktnQjJ6ZWFJbUNaaVhJT0diLXBiVFR0MVBJb1pWREl6eUJGX0NoYjZOeGZsSFpLdHRMV3dBd3BFemdaUjBKWW9yLUlEdE43NmFUY2pR0gH_AUFVX3lxTE40T0pVVmtHUVRNd1ZpaF9TQktMWHpKbWZaenN5V0RXc2ZOLUFYRzFydkVJUUQ1UFJvR2lzb2xCSm1UaXFlcTJ4Tnk2Y0FVNTVaNENjaE11OVlSN2plM2lwY3BIZ1NiSVF3N010Q19WRl9aVXQ1YzJvUUxFdDhrTFNuaGUzWUgzWDNmSTdvUWMyNURkNktHS2ZPc0J5VHBFUmZpZi1wTTdwTS1EdnR1QU12Yi1sUk1tQzQ2MTFpaXhReVZKSG5KdHowOFNiSzlObDVKbTJUSW9KMEg0RVRzMFF3NUVQaEU5dDBwMnBPcjA4NnMxYzhiRFlYVDRPZ3QtTQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Kallas, 'record dei prezzi cereali dal 2022, tempesta perfetta' - ANSA",
+      "detected_at": "2026-10-20T09:09:26.639075+00:00",
+      "score_discovery": 47,
+      "topic": "ECONOMIA",
+      "numbers_detected": [
+        "2022",
+        "2022"
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - ANSA dati e statistiche",
+      "discovery_url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxPY3ktemFXWmtuNEZibmd6aHJXaWRlYmRfZnM0cl8ycDUzemFJVjh0cWVOSzVqYndwZVJCYmREU1duVUdvc2hUZWQyRVk5UDhyR3g3SUlFSUtoaWxRSy1PLUQzYnJsSWF6dUlPbV9JYW9jS2dWaWFLUGtRVEJHa0ZDc2xCZ2U4WXNIOURQTnQ1Rjh5MVRYZEVSRnFIRi1jd2JGVzdKM0p4QXpZdTZzUjU3UEdpU0R3SEtwSzljb3VrQ0RMVGFJWXNPa3BfX1djazFvajduSXhGNzNhTXE5WW9HWHJ3eFphZ0pXeHpFUEFfNUFQdHUwSnJsYUlFNkvSAYICQVVfeXFMTjBzeUxKZm1ZNV9DbTZpRk1LX3JnTEpJNUVQRnNzMVNFQm14aHdhSmRBTGpaUHg2VFNvZnRCOVpmTERMY0djZVRWTHI2a1Y5WDN1SFdab2RMZVA4eTZZQWIxREs1dnNCeVp5SHBRZlFfMU02Z292VXRHbkRmdE1COEN3aW1KbUZPYVZwbGNTTGZkbXNKZ1pzdHFWdHpDTGhuQkhzY1g3R1RCRm1HWXBYV241WENWQnZEQjZlV05EQXhSR3UwVHNnREFkSFJuUThYZkl0NTlncjF4eVc3bUpTdFdXN04zMU1fcXNxa0swX2ZQZFVoZV84YVcyLXE3aFNYUVNR?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Kallas, 'record dei prezzi cereali dal 2022, tempesta perfetta' (2) - ANSA",
+      "detected_at": "2026-10-20T09:09:26.639075+00:00",
+      "score_discovery": 59,
+      "topic": "ECONOMIA",
+      "numbers_detected": [
+        "2022",
+        "2",
+        "2022",
+        "2"
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - ANSA dati e statistiche",
+      "discovery_url": "https://news.google.com/rss/articles/CBMiqgJBVV95cUxPMWtvU016TW1seFVOZ1N4UG56VmNlSU5Oc2pjWXpEeFpSaXJaajZ5QlZpcF9qR3NWci01TG1hMGdIR0MyTWFYaktxTngxbTc3U2tFZTBneV9ZS2NIRXdXb2p2bDFLa3pBSnNabmhrWlo2S3lhRVhIOTkzeXdsY2hET0djZnBrOERvUDEtUW1fR0MwaDE3NXdIcUNmUWMxZTU0dFVrMm83Z2xBNGtfM3VfZmpMUzgwYWJ3c1cyMlZaenlDX0dMdTMwY2cwMWF5ZnlsQmMtM1ZuSlQwblAyNENacFlSWkYxbmJpWXJvZl9odHNzdDlYa1pRdi1TMnhDcHQ2Smk2M2NTZDY0eVdYMEh3eWp5LWd4SGUtSkgxY0c1c1N0SnlNX093ZzZ30gGvAkFVX3lxTE5MUXc1cFNOY2FTWHF6MzAwbDliY2gwRE9kMGRDY0FBZHE0Mi11SEtyY0lJbWNzalVPNWR3TzVWbjJjeEc5QmpSaDNuc3VNWllnQVRxNGxBR0FabmVXLWxFMzhmZGFYdVVuazdpeGJDZVpod2tTZmx0aW5IcGxxeTZSejExOGRleE10Wjd2bXdpTGhPeWlMbnFLWXdTRVBfX1hOR3pGOGpvTmdUa1V4eEpEbkRsTWFOU09ma21SdnBBM2ZmV0VKdnlQR05yS1JHa2NiZ1g1Mk5VaWFBSHRGSTkyUzlXdkdTLUNuajNsVzJVbG1ETVkzbTJKNUtuaTl1V1BQZS1hbUNzbFUxdWlxN0ZBQWQtQUhWa3hzdV83MnU1LThOMUpyUGlLemg3aldjVQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "A Melbourne l'Italia è da record, oltre 150mila presenze alla Festa Italiana 2026 - ANSA",
+      "detected_at": "2026-10-20T09:09:26.639075+00:00",
+      "score_discovery": 54,
+      "topic": "ALTRO",
+      "numbers_detected": [
+        "150mila",
+        "2026 ",
+        "150mila",
+        "2026 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
       "radar": "Google News - Sole 24 Ore dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOYlFUZzlLVnJXSlFRWEU0NzE1eFVDazFkT2tld3o2YWROWFJuNmNpNTRvbTdQdnJ2M0FPd3hyRnZjdEFRT1VoN0lkcnJFM2VpVmhoUkhjVE5LLU9Nc1lhSmdoYjBjSThoTE4taWhFUHpBZmM2R3lvckJ6Tzc1aGtWX194NWRaWW5ZOFZMOU1oaTlNQjhOX3c0ZkNSMVJnOTVQa1hrZmRpdWVUNGxm?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "L’orologio atomico al Lutezio-176 è da record. Ma quello al Torio-229 lo insegue - Il Sole 24 ORE",
-      "detected_at": "2026-10-19T09:37:02.869075+00:00",
+      "detected_at": "2026-10-20T09:09:26.639075+00:00",
       "score_discovery": 50,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -123,7 +176,7 @@
       "radar": "Google News - Corriere dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMi5AJBVV95cUxNWndiRzJ4SmFfZ2g4UUVIQ2dyWE1GbFZsTklJcmRrR2hnSDJPY1FIajR4eDBKMWt0YUx2UEl5eTFueHRscDZNMklsSnVWaWNUSTJJRTEwanplYVFQM0VHaUhvX0RBZkFhUzBjeFFRVk5IMzVDZGowMUxBeFRZc3NWRXFhSVJFWlJnLXFMZFktWmgxMUM1RzlxbmQ2Q1Z6QWRuaUFtRy13bExfd05WdndON1RySFZJUXlWWkp1MTd0ZGN5UGFlNnFQekMtS05KSkEwTWFmNjZHSFdYWjJyb2kyRU5ZSkhYODlaeGh3MHhBaUY4c08yMjlhYW1yRjFfNFJ4b2RkUy12S3E3UlY0dHE0OHpqeXpXdGg0cllnZEZrYzkzbUxCZzRmOUR2WDZSMEw1UlhnMkd5d19zZ1l5WmY1WVRBRVI1TjVPRXBqM0REVFlOSkVUUkwzMG00Z3RwYmo3dGlPMNIB6gJBVV95cUxPd0NpanREWTBCZ2hmemw5MDFxcWNJRm1tektmdXlqM25tbktQbTV1ZnBKWE5FaXIwT3Y1NjRZYW9UOUFWRjdEcF9CLW5RVHdVNnpKRnJOYk4zUlRTR2VVTVBRSUNJN0l1NzJxcVp4Y1I2ZTRkdEY0SUZjOTNxeDBTWnhwbkh5d3BnYXZDY3UxSjFWNFBkd2ppdU53WG5fY2E3YmZEb1ptMGVQeEZRZ3VBaGpUbVdsaWZMVHo3NWlBRjZaeHlYWmpUQWxKcXllZldPVTJ3amJPT2hRaUlvakNCWFA0S2hGQjZBV3htcHRrSnBwTGVHWkxKdUNpcnkxQUREWlNPV3UybFJNeEF5Z0dpTkxvdG1ZVDdYeWpYc01PUWYxdGZoZ0xBdjM0eVBxM0MwYkdNYV9WZnhUWHJnWmZrQVlPNlI4UVNCVWlLNGtYNVZpU3dEQzU5eGRSa3hxQ01iX1A0UXFBTm9EUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Il collezionista record di Star Wars: «Ho 15 mila oggetti tra giocattoli, autografi, astronavi e costumi: qualche pezzo vale 30 mila euro. Non vendo nulla: ho rifiutato assegni in bianco» - Corriere del Veneto",
-      "detected_at": "2026-10-19T09:37:02.869075+00:00",
+      "detected_at": "2026-10-20T09:09:26.639075+00:00",
       "score_discovery": 49,
       "topic": "MOBILITA",
       "numbers_detected": [
@@ -139,91 +192,25 @@
       "status": "needs_primary_source"
     },
     {
-      "radar": "Google News - Italia economia e famiglie",
-      "discovery_url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5wSXFmZ0hyTUtKaHUzeWd1dWF4TDRLck5JZXRFRV9CdlNJYUpaY2kyZkg4bEVqS2hRU1dkVzZ0cUJTOXZSbDBzUVZpMXQxd3VheG0tSENjVF82QjJOMlJncjNzLU5uaUR3UUJEN0pDaV9IaVoyd1lDS0dEU2c?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Pil Italia allo 0,9% nel 2026, +0,7% nel 2027. Le stime di Bankitalia - Sky TG24",
-      "detected_at": "2026-10-19T09:37:02.869075+00:00",
+      "radar": "Google News - Italia lavoro e imprese",
+      "discovery_url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9xaVROMElfNW9FNkFpbS1yREgxUlctNDhVVGR5VXhtbWRGd0s1TDZrRC12OTZYRW9JalhJNnFBeHJHSnMxU3ZTUDBhZThLSWd6elJwempqY0ZubV9yZWhUT0ZJeW5xRUJlU2xmWHBPM2NUVFU?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "SIAL Paris 2026, l’Italia protagonista con 700 aziende e 218 imprese nella collettiva ICE - Beverfood.com",
+      "detected_at": "2026-10-20T09:09:26.639075+00:00",
       "score_discovery": 45,
       "topic": "ECONOMIA",
       "numbers_detected": [
-        "0,9%",
         "2026",
-        "+0,7%",
-        "2027",
-        "0,9%",
+        "700 ",
+        "218 ",
         "2026",
-        "+0,7%",
-        "2027"
+        "700 ",
+        "218 "
       ],
       "official_links": [],
       "official_domain_hints": [],
       "primary_resolution": null,
       "editorial_excluded": false,
       "status": "needs_primary_source"
-    },
-    {
-      "radar": "ISTAT - Aggiornamenti ufficiali",
-      "discovery_url": "https://www.istat.it/comunicato-stampa/commercio-con-lestero-e-prezzi-allimport-agosto-2026/",
-      "discovery_title": "Commercio con l’estero e prezzi all’import – Agosto 2026",
-      "detected_at": "2026-10-19T09:37:02.869075+00:00",
-      "score_discovery": 55,
-      "topic": "ECONOMIA",
-      "numbers_detected": [
-        "2026 ",
-        "2026 ",
-        "-1,5%",
-        "-1,6%",
-        "+1,7%"
-      ],
-      "official_links": [
-        "https://www.istat.it/wp-content/uploads/2026/10/Commercio-estero-e-prezzi-import-082026.pdf",
-        "https://www.istat.it/wp-content/uploads/2026/10/Elenco-tavole-Geoateco.pdf",
-        "https://www.istat.it/wp-content/uploads/2026/10/Serie-geoateco-082026.xlsx",
-        "https://www.istat.it/wp-content/uploads/2026/10/Serie-Prezzi-import-082026.xlsx",
-        "https://www.istat.it/wp-content/uploads/2026/10/Serie-Mondo-082026.xlsx",
-        "https://www.istat.it/wp-content/uploads/2026/10/Grafici-aggiuntivi-082026.xlsx",
-        "https://www.istat.it/wp-content/uploads/2026/09/NotaInformativa_PREIMP_20-marzo_2026.pdf",
-        "https://www.istat.it/wp-content/uploads/2026/09/NotaInformativa_Import_Intra_Ue_20_marzo_2026.pdf",
-        "https://contact.istat.it/s/piu-sportello-per-i-media?language=it",
-        "https://contact.istat.it",
-        "https://www.istat.it/it/archivio/bilancia+commerciale",
-        "https://www.istat.it/it/archivio/prezzi+importazione"
-      ],
-      "official_domain_hints": [
-        "istat.it"
-      ],
-      "primary_resolution": {
-        "url": "https://www.istat.it/comunicato-stampa/commercio-con-lestero-e-prezzi-allimport-agosto-2026/",
-        "domain": "istat.it",
-        "matched_numbers": [
-          "2026 ",
-          "2026 ",
-          "-1,5%",
-          "-1,6%",
-          "+1,7%"
-        ],
-        "matched_non_year_numbers": [
-          "-1,5%",
-          "-1,6%",
-          "+1,7%"
-        ],
-        "matched_keywords": [
-          "commercio",
-          "estero",
-          "prezzi",
-          "import",
-          "agosto",
-          "stima",
-          "flessione",
-          "congiunturale"
-        ],
-        "verification_score": 95,
-        "text_excerpt": "Commercio con l’estero e prezzi all’import – Agosto 2026 – Istat Vai al menù della testata Vai al menù principale Vai al contenuto principale Vai al menù laterale Vai al contenuto di pagina English Homepage Home Informazioni sulle rilevazioni Attività e servizi per tipo di utenti Per tutti Sportelli sul territorio European data support Biblioteca Archivio storico Giornalisti Appuntamenti Embargo Articoli e interviste Istat in breve Storia Rispondenti Informazioni sulle rilevazioni e questionari Elenco soggetti esterni trattamento dati Sanzioni amministrative Ricercatori Eventi segnalati dalle società scientifiche Laboratorio ADELE Promozione della ricerca Studenti e docenti Master EMOS Statistica e Cittadinanza Formazione per docenti Progetti per le scuole Pacchetti didattici Competizioni e premi Enti del Sistan English This Page HomePage Imposta Lingua Language Settings Per favore confe",
-        "verified_series": [],
-        "method": "direct_official_rss"
-      },
-      "editorial_excluded": false,
-      "status": "primary_statistical_source_verified"
     }
   ]
 }
