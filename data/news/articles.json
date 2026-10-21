@@ -1,6 +1,495 @@
 {
-  "generated_at": "2026-10-20T14:41:40.606859+00:00",
+  "generated_at": "2026-10-21T09:08:19.674431+00:00",
   "articles": [
+    {
+      "id": "PULSE-A5C82B1BC8DCCA5A",
+      "story_fingerprint": "a5c82b1bc8dcca5a2c763fde",
+      "published_at": "2026-10-21T09:01:44+00:00",
+      "last_seen_at": "2026-10-21T09:08:19.674431+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 80,
+      "public_source": {
+        "url": "https://www.istat.it/comunicato-stampa/notifica-dellindebitamento-netto-e-del-debito-delle-amministrazioni-pubbliche-secondo-il-trattato-di-maastricht-anni-2022-2025-2/",
+        "domain": "istat.it",
+        "role": "primary_statistical_source",
+        "verification_method": "direct_official_rss",
+        "verification_score": 95
+      },
+      "discovery": {
+        "visible": false,
+        "role": "direct_official",
+        "outlet": "ISTAT - Aggiornamenti ufficiali",
+        "original_url": "https://www.istat.it/comunicato-stampa/notifica-dellindebitamento-netto-e-del-debito-delle-amministrazioni-pubbliche-secondo-il-trattato-di-maastricht-anni-2022-2025-2/",
+        "evidence_gate": "official_release"
+      },
+      "period_reference": null,
+      "latest_source_update": null,
+      "headline": "Notifica dell’indebitamento netto e del debito delle Amministrazioni Pubbliche secondo il Trattato di Maastricht – Anni 2022-2025",
+      "summary": "La pubblicazione «Notifica dell’indebitamento netto e del debito delle Amministrazioni Pubbliche secondo il Trattato di Maastricht – Anni 2022-2025» contiene dati riscontrati nel documento statistico originale. Valori individuati: -69.736 milioni, -3,1%. Per associare ogni valore al suo indicatore, territorio e periodo di riferimento, consultare la fonte.",
+      "statistical_claims": [
+        {
+          "raw_value": "2022",
+          "verified": false
+        },
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "-69.736 milioni",
+          "verified": true
+        },
+        {
+          "raw_value": "-3,1%",
+          "verified": true
+        }
+      ],
+      "verified_series": [],
+      "territories": [],
+      "chart_spec": {
+        "type": "auto",
+        "status": "requires_primary_series",
+        "reason": "candidate_contains_multiple_numeric_values"
+      },
+      "map_spec": null,
+      "editorial_status": "verified_primary_match",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-7475D7538C38FDCC",
+      "story_fingerprint": "7475d7538c38fdcc0f9ed15e",
+      "published_at": "2026-10-21T08:43:00+00:00",
+      "last_seen_at": "2026-10-21T09:08:19.674431+00:00",
+      "topic": "SALUTE",
+      "pulse_score": 50,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxOYURZQ1A5RU9SWWpFYTFJcVpDSTduOWJ5emticGhKaV9ERERmWmZHRVFjX0wtbk9ZOWVWV0hTSU52Z3VhLTJyTm1zamdjb25VWHo2Vm9JLXlZQmsxYmhfODUxMWhHdkxiSzFIZDhna01LbEtyRGNfTzdjVDU5cFB6MWtZV05pMWE3M2NCWnlBallPamhKNWxoTDRSNGRFU3JkSUh0UllpN05OQXFiZXhRU1ZTV1BBMHY4b25ta0VxR040VHIwVG1DVzlHN2V6c1B6ZlVBU3hHdGhwWDFfYU5tMG5ZVEpGREs0T045RlJWcTU1YkJ2eGwzbUFBVUVJR2tmQUwtTm1RcjhmdktOSV91Wg?oc=5",
+        "domain": "Quotidiano Sanità",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "L’inverno demografico non si ferma. In Italia sempre meno bambini: nel 2025 appena 355mila nascite. E il 2026 va ancora peggio. I dati Istat - Quotidiano Sanità",
+      "summary": "L’inverno demografico non si ferma. In Italia sempre meno bambini: nel 2025 appena 355mila nascite. E il 2026 va ancora peggio. I dati Istat Quotidiano Sanità",
+      "statistical_claims": [
+        {
+          "raw_value": "355mila",
+          "verified": false
+        },
+        {
+          "raw_value": "355mila",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-B850422CE6805AC7",
+      "story_fingerprint": "b850422ce6805ac79b6b45c4",
+      "published_at": "2026-10-21T08:37:19+00:00",
+      "last_seen_at": "2026-10-21T09:08:19.674431+00:00",
+      "topic": "DEMOGRAFIA",
+      "pulse_score": 50,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNSk9sMWtoRHJXallVQnlYd0J3TkVubDRuaWxSd0JLOE9tekdtS1k0T0YwRGxnSHVWZGhheDNnLXFOZkFES0RmSlQtTDd5dDNLZzVscTJXc3R0QmtRR2VteVJqdEM1SHA0SGhKcUZGOGN3ZU1DMEF5UUhJVl9mMTRZa2hNa3o3bm5Deno0LTYzY3BHV2ZHNFBBVVhQa3FIcDBySl9rTnE3QnotV3I2T3FVMw?oc=5",
+        "domain": "Askanews",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Nascite ancora in calo, nel 2025 a -3,8%: sono state 355.772, sei ogni mille abitanti - Askanews",
+      "summary": "Nascite ancora in calo, nel 2025 a -3,8%: sono state 355.772, sei ogni mille abitanti Askanews",
+      "statistical_claims": [
+        {
+          "raw_value": "-3,8%",
+          "verified": false
+        },
+        {
+          "raw_value": "355.772",
+          "verified": false
+        },
+        {
+          "raw_value": "-3,8%",
+          "verified": false
+        },
+        {
+          "raw_value": "355.772",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-FB76B2A56DF8957B",
+      "story_fingerprint": "fb76b2a56df8957b32374f81",
+      "published_at": "2026-10-21T08:34:36+00:00",
+      "last_seen_at": "2026-10-21T09:08:19.674431+00:00",
+      "topic": "AMBIENTE",
+      "pulse_score": 45,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.repubblica.it/economia/rapporti/energitalia/trasformazione/2026/10/21/news/industrie_energivore_la_transizione_rischia_di_restare_senza_fondi-425661935/?rss",
+        "domain": "repubblica.it",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Industrie energivore, la transizione rischia di restare senza fondi",
+      "summary": "L’Agenzia europea dell’ambiente: per decarbonizzare la produzione industriale potrebbero mancare fino a 80 miliardi di euro l’anno nel 2030, 250 miliardi nel 2040 e 340 nel 2050. Acciaio, cemento e chimica ancora dipendenti dai combustibili fossili",
+      "statistical_claims": [
+        {
+          "raw_value": "80 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "250 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "340 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-CF6F581FF603CAEA",
+      "story_fingerprint": "cf6f581ff603caea2dc5f9c4",
+      "published_at": "2026-10-21T08:00:15+00:00",
+      "last_seen_at": "2026-10-21T09:08:19.674431+00:00",
+      "topic": "DEMOGRAFIA",
+      "pulse_score": 87,
+      "public_source": {
+        "url": "https://www.istat.it/comunicato-stampa/natalita-e-fecondita-della-popolazione-residente-anno-2025/",
+        "domain": "istat.it",
+        "role": "primary_statistical_source",
+        "verification_method": "direct_official_rss",
+        "verification_score": 95
+      },
+      "discovery": {
+        "visible": false,
+        "role": "direct_official",
+        "outlet": "ISTAT - Aggiornamenti ufficiali",
+        "original_url": "https://www.istat.it/comunicato-stampa/natalita-e-fecondita-della-popolazione-residente-anno-2025/",
+        "evidence_gate": "official_release"
+      },
+      "period_reference": null,
+      "latest_source_update": null,
+      "headline": "Natalità e fecondità della popolazione residente – Anno 2025",
+      "summary": "La pubblicazione «Natalità e fecondità della popolazione residente – Anno 2025» contiene dati riscontrati nel documento statistico originale. Valori individuati: 355.772, 3,8%, -14mila. Per associare ogni valore al suo indicatore, territorio e periodo di riferimento, consultare la fonte.",
+      "statistical_claims": [
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2025 ",
+          "verified": false
+        },
+        {
+          "raw_value": "355.772",
+          "verified": true
+        },
+        {
+          "raw_value": "3,8%",
+          "verified": true
+        },
+        {
+          "raw_value": "2024 ",
+          "verified": false
+        },
+        {
+          "raw_value": "-14mila",
+          "verified": true
+        }
+      ],
+      "verified_series": [],
+      "territories": [],
+      "chart_spec": {
+        "type": "auto",
+        "status": "requires_primary_series",
+        "reason": "candidate_contains_multiple_numeric_values"
+      },
+      "map_spec": null,
+      "editorial_status": "verified_primary_match",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-BDF2A2EF4E088D22",
+      "story_fingerprint": "bdf2a2ef4e088d2218790b06",
+      "published_at": "2026-10-21T08:00:00+00:00",
+      "last_seen_at": "2026-10-21T09:08:19.674431+00:00",
+      "topic": "DEMOGRAFIA",
+      "pulse_score": 80,
+      "public_source": {
+        "url": "https://www.istat.it/sistema-informativo-6/bilancio-demografico-mensile-luglio-2026/",
+        "domain": "istat.it",
+        "role": "primary_statistical_source",
+        "verification_method": "direct_official_rss",
+        "verification_score": 95
+      },
+      "discovery": {
+        "visible": false,
+        "role": "direct_official",
+        "outlet": "ISTAT - Aggiornamenti ufficiali",
+        "original_url": "https://www.istat.it/sistema-informativo-6/bilancio-demografico-mensile-luglio-2026/",
+        "evidence_gate": "official_release"
+      },
+      "period_reference": null,
+      "latest_source_update": null,
+      "headline": "Bilancio demografico mensile – luglio 2026",
+      "summary": "La pubblicazione «Bilancio demografico mensile – luglio 2026» contiene dati riscontrati nel documento statistico originale. Valori individuati: 31 , 58.949, 500 , 7mila. Per associare ogni valore al suo indicatore, territorio e periodo di riferimento, consultare la fonte.",
+      "statistical_claims": [
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "31 ",
+          "verified": true
+        },
+        {
+          "raw_value": "2026 ",
+          "verified": false
+        },
+        {
+          "raw_value": "58.949",
+          "verified": true
+        },
+        {
+          "raw_value": "500 ",
+          "verified": true
+        },
+        {
+          "raw_value": "7mila",
+          "verified": true
+        }
+      ],
+      "verified_series": [],
+      "territories": [],
+      "chart_spec": {
+        "type": "auto",
+        "status": "requires_primary_series",
+        "reason": "candidate_contains_multiple_numeric_values"
+      },
+      "map_spec": null,
+      "editorial_status": "verified_primary_match",
+      "publication_status": "published"
+    },
+    {
+      "id": "PULSE-E6F913389E9A1D41",
+      "story_fingerprint": "e6f913389e9a1d4174939849",
+      "published_at": "2026-10-21T06:33:00+00:00",
+      "last_seen_at": "2026-10-21T09:08:19.674431+00:00",
+      "topic": "AMBIENTE",
+      "pulse_score": 59,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPWXB2T0tXZ2o4bHZ4OXIyLTB1N2NjeUN3ZzA4NXZiVkpYMkxXSTNQM1Jrd3l4MkpEYXBYYjRvR0xtZ1p5dkEtTHJ0MUFabXA5bGFpMTd0MnMwb1RkeDN6VWwzSUNZTXZrYlhyNUloOW9UdVFaenZJTnNvdXJkYWVlQXo0Q19TMDI3U0t1SXFta1Axam5pOXFRSEJEOHVHUzVDWU92TmpJMDBFY09kWXNPcG5zYVVjMzVnT2FUeDV1bUtRRHd0V0xuS0ZqQVllakJwZDBfeG5rZ3lCei0wRUNNZWtnZUjSAeoBQVVfeXFMTl9JZ1I2ME9UMC04V19CdWJQMUpRNGgxNEpORXJwNjg3ZjVLZnl2WXNHVXVsSW5vMFN1VkZuekM1RFFCZjIxN3RiLVFmSl9wdWxUQjBsWXJmeVlFanlfdlFHWV84dDhvYnpqRjBSQ2MwYXp6NFlTbjNzWDBmZzVGM2NxWU9hMlRmVGluOE1PSVRyeDVhRm9tMFR0NUF2Zm5abFNJSnJnVzMwNG92NTZEUmpUWkxWMjJxTHdaMnV2S2hWTVZRMWV5QjBNaWlnUl9aa2FNZFo0dk9SUHpxT1loNE55M05vZmNnM0Vn?oc=5",
+        "domain": "ANSA",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Report clima Onu, 'nel 2025 emissioni record, verso +2,6°C entro fine secolo' - ANSA",
+      "summary": "Report clima Onu, 'nel 2025 emissioni record, verso +2,6°C entro fine secolo' ANSA",
+      "statistical_claims": [
+        {
+          "raw_value": "+2,6",
+          "verified": false
+        },
+        {
+          "raw_value": "+2,6",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-6D2C0AB75412293E",
+      "story_fingerprint": "6d2c0ab75412293e9ae49ed6",
+      "published_at": "2026-10-21T05:22:00+00:00",
+      "last_seen_at": "2026-10-21T09:08:19.674431+00:00",
+      "topic": "AMBIENTE",
+      "pulse_score": 59,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPeWJWUWVOOHo4czh0anBfTFJNQlVsWnlicXJDM0tuMWtvakpEOVJUTF9iQTQ1ZDdmWXB6cjZsYUxqTEhYc21KcVhWeG1fbDQyRkhRRk9EZElxYWRfNGVWMzVYVXlBUDMzdUUwN2dwdWVqV3pvX29TaW1ZTXVnQ1VJN3lvZjYzcFNwWlhiTFROdkNYTlhMTEpaVy1SNWFVQVNDWHZBOWlGejVsa3V4WW1PbGVBM2t0Y05fZnhaWE9xZzhhZlVnWWprd0g3Wm9kVXNvWTdiYTlpU0JrSUlwV2hhbmdB0gHnAUFVX3lxTE1zTGJ5aHNrUVpnSDVuTXo4VDZiSjhlM2kwOEIxbFlubU9PLThrZTFmMl9NQUF2OVRJMWZWWFdVS1FlUV84SVQyalRtLXU2RnhHQ19RZWpvQVJnTERySzF0cHBESWZaZC01S0xFMzh2aTBWTVk0YUxFdnJKS2U2Y181ZTdxdWV5QllmT0JibE9vRFlEOE5tc0d0NVN4MHhSbTRZb3QzYnNna3lxemRCZDViODdtZ3hWWVVsOElGWmtvd1B3S3FhcjdCRDZRNVdlZ2s5QkpZTDMwWkU0RF9VTzZDVkFOa3JYZw?oc=5",
+        "domain": "ANSA",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Report dell'Onu sul clima: 'Nel 2025 emissioni record, verso +2,6°C entro fine secolo' - ANSA",
+      "summary": "Report dell'Onu sul clima: 'Nel 2025 emissioni record, verso +2,6°C entro fine secolo' ANSA",
+      "statistical_claims": [
+        {
+          "raw_value": "+2,6",
+          "verified": false
+        },
+        {
+          "raw_value": "+2,6",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-F7322ACB35E9E953",
+      "story_fingerprint": "f7322acb35e9e9538169b9ba",
+      "published_at": "2026-10-21T05:18:04+00:00",
+      "last_seen_at": "2026-10-21T09:08:19.674431+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 55,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNM0FWa3E5ZVY1emNXdnBJWmN3Y3h4QmJVRFpwSEdXZ3JFSEI1ZHhVN0pCZmlLeVNuZS13RDNRc3NOYnF0YWZtWFJHdmhiMXczOFFsRmpGeDcwbmVQaWRZQkx4NVJZbExvTFp6VnRzTnI3QTVkRERYRVBXa01FRkpFWDFGQnZlcVd2NkQxUWJjN01pbUc5YzJmNG92R2NZcVFla1A5dEp1N3p2SVZpMU1qMGpLVXZFT0ZGSXNpTFdWdVVmaU8wZ3cw?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Blog | Ghiaccio artico, minimo a 4,6 milioni di km²: cosa raccontano i dati del 2026 - Info Data - Il Sole 24 ORE",
+      "summary": "Blog | Ghiaccio artico, minimo a 4,6 milioni di km²: cosa raccontano i dati del 2026 - Info Data Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "4,6 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "4,6 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-E45FEFA0E470AC94",
+      "story_fingerprint": "e45fefa0e470ac94cf9c7f65",
+      "published_at": "2026-10-21T04:10:00+00:00",
+      "last_seen_at": "2026-10-21T09:08:19.674431+00:00",
+      "topic": "SALUTE",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQWTZmVGhfZ3pKNUlTamFDSTdFMUp5ak55d2lkVGxnU0NPNXRvUml5VE5SRUZUQW8yanlOeXlhYlNTa2R1WHlmbnVsRWQ2WE5uZ3JOVng1RWlfak41ZWx3bnVRWnJNYVlYMldvdjZsakQzRmF0LUxEZkdJZVpLT1VjYjlTWV9UMVI3WXlvVnJCUnZnQzdMbGxQOGF6RllOb19ncnIxbER1S3BnTG1zQWlWVE9jZkF0cDA?oc=5",
+        "domain": "TrendSanità",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Trapianti 2025, +3,5% nel mondo. I dati dell'Italia - TrendSanità",
+      "summary": "Trapianti 2025, +3,5% nel mondo. I dati dell'Italia TrendSanità",
+      "statistical_claims": [
+        {
+          "raw_value": "+3,5%",
+          "verified": false
+        },
+        {
+          "raw_value": "+3,5%",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-F580996CC1A4605D",
+      "story_fingerprint": "f580996cc1a4605de119e087",
+      "published_at": "2026-10-20T23:18:58+00:00",
+      "last_seen_at": "2026-10-21T09:08:19.674431+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 65,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOUE05bjNRajB3ZXZRMnk5a3BkOFJ3MENhenNVY3VkV1BnTDhsZmg2a3RUU185djVURlhUd0FLMUpiR1B6OGRkRGV4RFRqN0tENzRVZDUyNTlKeHhvanVUWlJKZjNhMVptTkU2aEpGTXJ0UFFWNWhfZDlZQXgxaV94MnloRllvS0ZJdWM0djZDcjdzT3R3N2VWVmFfa1pyeExOeTBfMzFyZnIxSVByU0QzOGRmb1NpRTBN?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Spesa per il welfare record a 693 miliardi, nel 2037 può superare i mille - Il Sole 24 ORE",
+      "summary": "Spesa per il welfare record a 693 miliardi, nel 2037 può superare i mille Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "693 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "693 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-DAAF7B339C1329C9",
+      "story_fingerprint": "daaf7b339c1329c9cd8720c4",
+      "published_at": "2026-10-20T15:23:00+00:00",
+      "last_seen_at": "2026-10-21T09:08:19.674431+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 59,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQb0xoX0k2cmYzSHdGZGlYYlJsU21HRkM4SnBIZDh5YVdVNEtmdFNfZGtSVHhaaVMwT0pic0M3MjdWWWJyMUktMDB3UmFzT2tUM2hyVUtJTWRFWlNiUGNtVWVhbURDSWplZzk3SVNia2ktUkVnMU1wU0ZycXltX096eEhxVUF6eDRWNEIwT3V0MDV3Sm1xNnNxYmF6Q3cwaGZHWWpBVDBMZzhzMW1VbEM5OWtfSXNQNGFMS3A2cUlFVFc4Rk9RcHd4NXlUNDhRR2EyRlNsYWxlcTN6M2lzemxTdDAtNHY0OFJ2dGpZUg?oc=5",
+        "domain": "ANSA",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Spesa per il welfare record a 693 miliardi, nel 2037 può superare i mille - ANSA",
+      "summary": "Spesa per il welfare record a 693 miliardi, nel 2037 può superare i mille ANSA",
+      "statistical_claims": [
+        {
+          "raw_value": "693 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "693 miliardi",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
     {
       "id": "PULSE-5CE3AB3FC48B26B3",
       "story_fingerprint": "5ce3ab3fc48b26b3d5794de9",
@@ -36,7 +525,7 @@
       "id": "PULSE-714A1E9B13E632EC",
       "story_fingerprint": "714a1e9b13e632ecc8f54af6",
       "published_at": "2026-10-20T10:27:21+00:00",
-      "last_seen_at": "2026-10-20T14:41:40.606859+00:00",
+      "last_seen_at": "2026-10-21T09:08:19.674431+00:00",
       "topic": "ALTRO",
       "pulse_score": 65,
       "patterns": [],
@@ -176,7 +665,7 @@
       "id": "PULSE-8EDB981A091A4785",
       "story_fingerprint": "8edb981a091a4785480d2664",
       "published_at": "2026-10-19T22:10:00+00:00",
-      "last_seen_at": "2026-10-20T14:41:40.606859+00:00",
+      "last_seen_at": "2026-10-21T09:08:19.674431+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 50,
       "patterns": [],
@@ -316,7 +805,7 @@
       "id": "PULSE-72C9419213290799",
       "story_fingerprint": "72c94192132907998dd33761",
       "published_at": "2026-10-19T07:55:38+00:00",
-      "last_seen_at": "2026-10-20T14:41:40.606859+00:00",
+      "last_seen_at": "2026-10-21T09:08:19.674431+00:00",
       "topic": "ALTRO",
       "pulse_score": 54,
       "patterns": [],
@@ -1188,73 +1677,6 @@
       "publication_status": "published"
     },
     {
-      "id": "PULSE-ECD5BA28ED8C106C",
-      "story_fingerprint": "ecd5ba28ed8c106c9260ac17",
-      "published_at": "2026-10-14T09:18:29.771666+00:00",
-      "last_seen_at": "2026-10-14T09:18:29.771666+00:00",
-      "topic": "ECONOMIA",
-      "pulse_score": 75,
-      "public_source": {
-        "url": "https://www.istat.it/",
-        "domain": "istat.it",
-        "role": "primary_statistical_source",
-        "verification_method": "named_or_topic_domain_search",
-        "verification_score": 71
-      },
-      "discovery": {
-        "visible": false,
-        "role": "hidden_radar"
-      },
-      "period_reference": null,
-      "latest_source_update": null,
-      "headline": "Economia, nuovo dato per Italia: 25 ",
-      "summary": "Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
-      "statistical_claims": [
-        {
-          "raw_value": "25 ",
-          "verified": true
-        },
-        {
-          "raw_value": "63%",
-          "verified": false
-        },
-        {
-          "raw_value": "100%",
-          "verified": true
-        },
-        {
-          "raw_value": "24 ",
-          "verified": true
-        },
-        {
-          "raw_value": "25 ",
-          "verified": true
-        },
-        {
-          "raw_value": "63%",
-          "verified": false
-        },
-        {
-          "raw_value": "100%",
-          "verified": true
-        },
-        {
-          "raw_value": "24 ",
-          "verified": true
-        }
-      ],
-      "verified_series": [],
-      "territories": [],
-      "chart_spec": {
-        "type": "auto",
-        "status": "requires_primary_series",
-        "reason": "candidate_contains_multiple_numeric_values"
-      },
-      "map_spec": null,
-      "editorial_status": "verified_primary_match",
-      "publication_status": "published"
-    },
-    {
       "id": "PULSE-F787DB8094E68FDA",
       "story_fingerprint": "f787db8094e68fdad0c5b584",
       "published_at": "2026-10-14T09:05:32+00:00",
@@ -1714,61 +2136,64 @@
       "publication_status": "published"
     },
     {
-      "id": "PULSE-F5C4990C59D29A8F",
-      "story_fingerprint": "f5c4990c59d29a8f87c97ffe",
+      "id": "PULSE-1A7677047EA018C6",
+      "story_fingerprint": "1a7677047ea018c65f08137f",
       "published_at": "2026-10-13T20:06:01.231243+00:00",
-      "last_seen_at": "2026-10-14T14:53:50.467005+00:00",
-      "topic": "ALTRO",
-      "pulse_score": 89,
+      "last_seen_at": "2026-10-21T09:08:19.674431+00:00",
+      "topic": "DEMOGRAFIA",
+      "pulse_score": 77,
       "public_source": {
         "url": "https://www.istat.it/",
         "domain": "istat.it",
         "role": "primary_statistical_source",
         "verification_method": "named_or_topic_domain_search",
-        "verification_score": 71
+        "verification_score": 95
       },
       "discovery": {
         "visible": false,
-        "role": "hidden_radar"
+        "role": "journalistic_radar",
+        "outlet": "Google News - Italia popolazione e territori",
+        "original_url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNYlJuMExlVmNQQ1VDWVp3OGYxQ0lQNkdLNjlIVkxWQnFiSmpBSGtNQlh5dEotN1VwNHE4WnNrRlFGR2VWOXJEQjA0ckxKQUVPZjlKRkZwQjZqckZEVUdXVTVRbWd3cXNJYjlCNW1YUmo2ZVN3V05ULXlTR256d1RVMkFSeHRGSXloR3ln?oc=5",
+        "evidence_gate": "strong_primary_match"
       },
       "period_reference": null,
       "latest_source_update": null,
-      "headline": "Dati, nuovo dato per Liguria: 100 ",
-      "summary": "Dato intercettato dal News Radar e riscontrato sulla fonte primaria che ha prodotto o pubblicato la statistica. La formulazione editoriale completa richiede ancora serie storica e contesto.",
+      "headline": "Istat: nascite ancora in calo, nel 2025 14mila in meno",
+      "summary": "La pubblicazione «Istat: nascite ancora in calo, nel 2025 14mila in meno» contiene dati riscontrati nel documento statistico originale. Valori individuati: 14mila, 24 , 14mila, 24 . Per associare ogni valore al suo indicatore, territorio e periodo di riferimento, consultare la fonte.",
       "statistical_claims": [
         {
-          "raw_value": "283 ",
+          "raw_value": "2025 ",
           "verified": false
         },
         {
-          "raw_value": "100 ",
+          "raw_value": "14mila",
           "verified": true
         },
         {
-          "raw_value": "283 ",
+          "raw_value": "24 ",
+          "verified": true
+        },
+        {
+          "raw_value": "2025 ",
           "verified": false
         },
         {
-          "raw_value": "100 ",
+          "raw_value": "14mila",
+          "verified": true
+        },
+        {
+          "raw_value": "24 ",
           "verified": true
         }
       ],
       "verified_series": [],
-      "territories": [
-        "liguria"
-      ],
+      "territories": [],
       "chart_spec": {
         "type": "auto",
         "status": "requires_primary_series",
         "reason": "candidate_contains_multiple_numeric_values"
       },
-      "map_spec": {
-        "level": "auto",
-        "territories": [
-          "liguria"
-        ],
-        "status": "requires_primary_geodata"
-      },
+      "map_spec": null,
       "editorial_status": "verified_primary_match",
       "publication_status": "published"
     },
