@@ -1,6 +1,470 @@
 {
-  "generated_at": "2026-10-21T09:08:19.674431+00:00",
+  "generated_at": "2026-10-21T14:52:23.520485+00:00",
   "articles": [
+    {
+      "id": "PULSE-5BEBC3259730F2CE",
+      "story_fingerprint": "5bebc3259730f2ce1ef57c8d",
+      "published_at": "2026-10-21T13:37:00+00:00",
+      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 50,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPQWgxNDgtTzllNE5uU1pBc1VZYk5HSmxxUzNGN0k1TUtMQUhBTVdJdnMzYzVXZnlGU1FXQXM3SDhiNEpva3Q0OWpjaU51bW1HUnBwZDFHOGFveGc1SzNRQkxfLXQtYlVXYTdMWmdDS3I1bkRjMk50ekZtZHBtNk9qdzVDMzdBMnBPWnVwcmpubFFZTTFoNVJMRW9RNllUVE9JMHY5WVdtMTBZOE01SGxWSVE4bEpLYWxOSTYzZkZhX0NSQmlhZVE?oc=5",
+        "domain": "Adnkronos",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Rapporto Aiam, nel 2025 12.632 concerti con 2,5 milioni di spettatori - Adnkronos",
+      "summary": "Rapporto Aiam, nel 2025 12.632 concerti con 2,5 milioni di spettatori Adnkronos",
+      "statistical_claims": [
+        {
+          "raw_value": "12.632 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2,5 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "12.632 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2,5 milioni",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-C12957FA80D6FDF4",
+      "story_fingerprint": "c12957fa80d6fdf4c5cd6d50",
+      "published_at": "2026-10-21T13:07:30+00:00",
+      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
+      "topic": "DEMOGRAFIA",
+      "pulse_score": 60,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1qN0NHNDNoNWozNC1zUzJlZVZjenFCdjRWMk01SHYxOFljYm1PQk8weWRPeE1nZWRaT2NBbHExOU1rZ3ZYVUEwMGJzU05NWGdBUk9HZ1dFV3ZvOEtBVTA3enBTZkxKcGthN0FDZ1ZjcjVGTGFyZlRSeGduenc?oc=5",
+        "domain": "Nostrofiglio.it",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Nascite in Italia, 2025 da record negativo: 14mila bimbi in meno e quasi 1 su 2 fuori dal matrimonio - Nostrofiglio.it",
+      "summary": "Nascite in Italia, 2025 da record negativo: 14mila bimbi in meno e quasi 1 su 2 fuori dal matrimonio Nostrofiglio.it",
+      "statistical_claims": [
+        {
+          "raw_value": "14mila",
+          "verified": false
+        },
+        {
+          "raw_value": "1 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2 ",
+          "verified": false
+        },
+        {
+          "raw_value": "14mila",
+          "verified": false
+        },
+        {
+          "raw_value": "1 ",
+          "verified": false
+        },
+        {
+          "raw_value": "2 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-FCF705B8BEBE299C",
+      "story_fingerprint": "fcf705b8bebe299c4fe42347",
+      "published_at": "2026-10-21T12:24:53+00:00",
+      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
+      "topic": "ENERGIA",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.repubblica.it/economia/2026/10/21/news/trasporti_aumento_costi_carburante_elettricita-425662011/?rss",
+        "domain": "repubblica.it",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Trasporti, dal 2019 a oggi costi del gasolio saliti del 30%. Per l’elettricità impennata del 73%",
+      "summary": "Sono i numeri del rapporto di Conftrasporto-Confcommercio. E c’è anche il costo della congestione stradale, stimato in 5 miliardi l’anno. Il settore chiede incentivi per la digitalizzazione",
+      "statistical_claims": [
+        {
+          "raw_value": "30%",
+          "verified": false
+        },
+        {
+          "raw_value": "73%",
+          "verified": false
+        },
+        {
+          "raw_value": "5 miliardi",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-3D19D8A24CE8EFF3",
+      "story_fingerprint": "3d19d8a24ce8eff3549e5dac",
+      "published_at": "2026-10-21T11:24:48+00:00",
+      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 59,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOTVc3c3FzVVFCWjNzWDBxcXB0LWNXci02LW55TVhzWDVXZ1N2UlJMLW5tcERfVWplYjJSQjRWUXRJRjA4Y20yeTRRN0pQckotN0VjOFlFZEpRNjhzemxoM0VnN0VfY3lOZUxQT0pkN05TOE1FQ2JYaUN3NkhJVHVETWpBY0w2Ri1lV2FVTUpXQzJEUXRtWWd2LUdQbVh3M0ZBeFRIT05FdlBDWElUWDV1R0lZZ0ZCM2FnUU9wOWR0TUc?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Blog | Tatuaggi e piercing: crescita record di imprese, il 160% in più in dieci anni - Info Data - Il Sole 24 ORE",
+      "summary": "Blog | Tatuaggi e piercing: crescita record di imprese, il 160% in più in dieci anni - Info Data Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "160%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "160%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-FD95A68022BD82EB",
+      "story_fingerprint": "fd95a68022bd82eb4e56b2d8",
+      "published_at": "2026-10-21T10:51:18+00:00",
+      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
+      "topic": "DEMOGRAFIA",
+      "pulse_score": 45,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPV3R5NlVMckRpdWtXaW1PeDY2bWFRb2syVndzU0dJZmk3QWVtbnhNaXpPX1hVeUltX2ZkWERvSmcwclFHN01iUW5Vd0p0SWlRMm5vWV9DcXMxdVdMSlYxTjQxdzdfVEUtRHAwWW9LVkNmX0t3UlFOUE8td1IwWjd5TdIBgAFBVV95cUxPV3R5NlVMckRpdWtXaW1PeDY2bWFRb2syVndzU0dJZmk3QWVtbnhNaXpPX1hVeUltX2ZkWERvSmcwclFHN01iUW5Vd0p0SWlRMm5vWV9DcXMxdVdMSlYxTjQxdzdfVEUtRHAwWW9LVkNmX0t3UlFOUE8td1IwWjd5TQ?oc=5",
+        "domain": "Leggo.it",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Culle vuote, nascite ancora in calo in Italia: nel 2025 14mila bambini in meno. E diminuiranno anche nel 2026 - Leggo.it",
+      "summary": "Culle vuote, nascite ancora in calo in Italia: nel 2025 14mila bambini in meno. E diminuiranno anche nel 2026 Leggo.it",
+      "statistical_claims": [
+        {
+          "raw_value": "14mila",
+          "verified": false
+        },
+        {
+          "raw_value": "14mila",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-A30715E8CFDEB562",
+      "story_fingerprint": "a30715e8cfdeb5626e5971e5",
+      "published_at": "2026-10-21T10:48:00+00:00",
+      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 69,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPV2lOVUs5SFU0TWZMOXRtTHQ3NkpiOWpqR0N4VUZnLW56NVdkNWw3WVkzWERlQzduTUFNZzRRVTBxTkREQ1h5aXhmeERyR2cyRWVDdlN3cHZ4UWdPUFk5NVVaRG5TeE8waFE0UGl5WlhxM1llNlg1ZDI5bDIxd3JobG1kdWlaVmZva2FJY1JjN1JYR19XZWlLNXRIZWJTdTh0M0JhS1hFRF9ndFktcm1ES3pyaWEtSERiV2J0UThzT3dnREpw?oc=5",
+        "domain": "la Repubblica",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Terna, consumi elettrici in crescita: a settembre +6,5%, record dal 2014 - la Repubblica",
+      "summary": "Terna, consumi elettrici in crescita: a settembre +6,5%, record dal 2014 la Repubblica",
+      "statistical_claims": [
+        {
+          "raw_value": "+6,5%",
+          "verified": false
+        },
+        {
+          "raw_value": "+6,5%",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-D70CE0B59F63FB14",
+      "story_fingerprint": "d70ce0b59f63fb14a7a4e506",
+      "published_at": "2026-10-21T10:36:03+00:00",
+      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
+      "topic": "AMBIENTE",
+      "pulse_score": 64,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNeThsOWt1TjhrcmkyazU1YjJQek00MlRtTGU3cG9qYnItX19lZE12TlQxcUY3ZFMxZ1FYYzNBVVZET1Bfd0xGMXVCS2tGQ25ZOEZrLXhFaGFtVGJlM1FfbGJvRXRudHExTngtT2l4QjlndWJpMGpzMVgybDJFZFAwc1RfNnBYcjBXLV85clpVd1lraEUtZVg0Qnp2WXhrNXZPdS1kMUotUFlNa2ZobGJua2V3X3l0cTTSAbwBQVVfeXFMUEVQSFdTZEdyb3h1VVR2NFJ5cXVZZDF6S3JsVEc2QlJPMHVPMEc4NU5lX2hnMkpBV1d2RGt1WFlrSm01MnZTdncwOVZabkxwcHYtOVNpR1pVOVV0U3BtRXJqVXNMb2ZvMlAzeURTNEtodnlDTEdOWDVXWDVBeG81Q0NDV1FGdG5WZmZrRlRrbHROTUZsZExrSkFpVjdRTEtfRG5vc0VodE5nYnhCQVV5ODI5ZkM2MFA2SWVKZms?oc=5",
+        "domain": "la Repubblica",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Onu: “Emissioni record, verso un punto di non ritorno se non riduciamo del 18% entro il 2030” - la Repubblica",
+      "summary": "Onu: “Emissioni record, verso un punto di non ritorno se non riduciamo del 18% entro il 2030” la Repubblica",
+      "statistical_claims": [
+        {
+          "raw_value": "18%",
+          "verified": false
+        },
+        {
+          "raw_value": "18%",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-37297E862E4A7A99",
+      "story_fingerprint": "37297e862e4a7a9900c4aba4",
+      "published_at": "2026-10-21T10:01:40+00:00",
+      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 50,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxObmlxMTc5ZzEwSlJ0d3hFY0JpeklBbjZUc25ERVZyUVFwNnY1NFRNRl9vajdNdWd1dDdUMmVGRnctbkN2NWgtOTBvaUl1RE9BRENJNktPSWhmQzlCNV9tRWdTQVMzLWh3ZGtTOERTSjIyU3UxMjZvTkFfUkdBOEN5Vy1kZXFxQU9EME5XRDl1S1l2XzlSTnRtaVlGVjBLRXJweFFBdG9jMW1veUdqSHc?oc=5",
+        "domain": "IndexBox",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Italia, il deficit scende al 3,1% del PIL nel 2025 e il debito sale al 136,7% - Notizie e Statistiche - IndexBox",
+      "summary": "Italia, il deficit scende al 3,1% del PIL nel 2025 e il debito sale al 136,7% - Notizie e Statistiche IndexBox",
+      "statistical_claims": [
+        {
+          "raw_value": "3,1%",
+          "verified": false
+        },
+        {
+          "raw_value": "136,7%",
+          "verified": false
+        },
+        {
+          "raw_value": "3,1%",
+          "verified": false
+        },
+        {
+          "raw_value": "136,7%",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-71AB21366A27AF88",
+      "story_fingerprint": "71ab21366a27af880c9564f6",
+      "published_at": "2026-10-21T09:52:25+00:00",
+      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 60,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1FblJvRF9TUll0ejFTS25henNfLThQbTV2bUQ5clFyMzdUc3NoUWx4cm8wYjhuMTl0bFhxUUdBMF9qQXBQNkp1Z2U4QWRXVWo5b3JYZEJrQWh1WWU5dmFwMW83bm1wcGRQWWI5UzV2d3RPeHFa?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "***Consumi elettrici: Terna, +6,5% annuo a settembre, record da 12 anni - Il Sole 24 ORE",
+      "summary": "***Consumi elettrici: Terna, +6,5% annuo a settembre, record da 12 anni Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "+6,5%",
+          "verified": false
+        },
+        {
+          "raw_value": "12 ",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "+6,5%",
+          "verified": false
+        },
+        {
+          "raw_value": "12 ",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-DADCA5F52EADCF74",
+      "story_fingerprint": "dadca5f52eadcf74b1d5de4c",
+      "published_at": "2026-10-21T09:33:34+00:00",
+      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 50,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.repubblica.it/economia/rapporti/energitalia/2026/10/21/news/elettricita_a_settembre_domanda_ai_massimi_dal_2014_65-425662146/?rss",
+        "domain": "repubblica.it",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Elettricità, a settembre domanda ai massimi dal 2014: +6,5%",
+      "summary": "I consumi crescono per il tredicesimo mese consecutivo, raggiungendo 27,8 TWh. Nei primi nove mesi del 2026 la domanda aumenta del 5,2%. Le rinnovabili coprono il 42,1% del fabbisogno nazionale",
+      "statistical_claims": [
+        {
+          "raw_value": "+6,5%",
+          "verified": false
+        },
+        {
+          "raw_value": "27,8 ",
+          "verified": false
+        },
+        {
+          "raw_value": "5,2%",
+          "verified": false
+        },
+        {
+          "raw_value": "42,1%",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-0940051272A60647",
+      "story_fingerprint": "0940051272a606471be9ffd2",
+      "published_at": "2026-10-21T09:32:32+00:00",
+      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
+      "topic": "DEMOGRAFIA",
+      "pulse_score": 50,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNYlJuMExlVmNQQ1VDWVp3OGYxQ0lQNkdLNjlIVkxWQnFiSmpBSGtNQlh5dEotN1VwNHE4WnNrRlFGR2VWOXJEQjA0ckxKQUVPZjlKRkZwQjZqckZEVUdXVTVRbWd3cXNJYjlCNW1YUmo2ZVN3V05ULXlTR256d1RVMkFSeHRGSXloR3ln?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "In Italia nascite ancora in calo, nel 2025 14mila in meno: il 44,1% fuori dal matrimonio - Il Sole 24 ORE",
+      "summary": "In Italia nascite ancora in calo, nel 2025 14mila in meno: il 44,1% fuori dal matrimonio Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "14mila",
+          "verified": false
+        },
+        {
+          "raw_value": "44,1%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "14mila",
+          "verified": false
+        },
+        {
+          "raw_value": "44,1%",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-7318F2D74EE83625",
+      "story_fingerprint": "7318f2d74ee83625aa416b62",
+      "published_at": "2026-10-21T09:32:19+00:00",
+      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
+      "topic": "DEMOGRAFIA",
+      "pulse_score": 45,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOd0tZcl96eTNENjFSZTNDS3c0NVUyRnctLUdldS1jcVE4RVE0TG9vNGFyenFKVmpwVGNXYUJJeGxyMlAxQ1NRRGl0SU1jWEdaYklEX2Z6MXY5UTZ0TWpjUHh0NUFiYUNKYnVwdFRNUVJGdmdheGpiVHVsOHVPVFRMT0Z4SmpLcTdiMkFlYXV6ZjVMYWFMRlFiczUtcDVkd09jdm1QZV9YMFEtNzBQaC1qb3V2eFQ5ejVRLU1KQm53U0JXa2lkOWgtSXlBcXpNR1Nf?oc=5",
+        "domain": "My-personaltrainer",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Natalità in Italia: nel 2025 355.772 nascite e nel 2026 nuova flessione, con fecondità a 1,14 - My-personaltrainer",
+      "summary": "Natalità in Italia: nel 2025 355.772 nascite e nel 2026 nuova flessione, con fecondità a 1,14 My-personaltrainer",
+      "statistical_claims": [
+        {
+          "raw_value": "355.772 ",
+          "verified": false
+        },
+        {
+          "raw_value": "1,14 ",
+          "verified": false
+        },
+        {
+          "raw_value": "355.772 ",
+          "verified": false
+        },
+        {
+          "raw_value": "1,14 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
     {
       "id": "PULSE-A5C82B1BC8DCCA5A",
       "story_fingerprint": "a5c82b1bc8dcca5a2c763fde",
@@ -58,6 +522,45 @@
       "map_spec": null,
       "editorial_status": "verified_primary_match",
       "publication_status": "published"
+    },
+    {
+      "id": "PULSE-94484DE01339588C",
+      "story_fingerprint": "94484de01339588c2483c30b",
+      "published_at": "2026-10-21T08:56:45+00:00",
+      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
+      "topic": "LAVORO",
+      "pulse_score": 75,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNdmVfU2QtTV90ckpHNWVHZUZJNFFwa2MteEVSbm5TeFRSZkRxMmI1T2pmcnFLZEJSTjJPNDF4OWlvOXlDTzBuOW1XNElhMElQcVlZcmtvbklTSWR5bFNINzVGb0RYaXlaMDMxSWQ3Ymx3WEtrekRHdXBtYmcxQmtSbFVjd3FfQlF3VGx5MkVVUmJZcHlFdmt6YXVPYlBwRDY1X1o0X19rWElYOU16OVVKQ0Z5c3FPek1GeVdyYmpsSkVDUUQ1X1R4SkIzSHg?oc=5",
+        "domain": "Il Diario del Lavoro",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Natalità, nuovo minimo storico per l'Italia: nel 2025 solo 1,14 figli per donna. Nascite in calo del 3,8% - Il Diario del Lavoro",
+      "summary": "Natalità, nuovo minimo storico per l'Italia: nel 2025 solo 1,14 figli per donna. Nascite in calo del 3,8% Il Diario del Lavoro",
+      "statistical_claims": [
+        {
+          "raw_value": "1,14 ",
+          "verified": false
+        },
+        {
+          "raw_value": "3,8%",
+          "verified": false
+        },
+        {
+          "raw_value": "1,14 ",
+          "verified": false
+        },
+        {
+          "raw_value": "3,8%",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
     },
     {
       "id": "PULSE-7475D7538C38FDCC",
@@ -133,7 +636,7 @@
       "id": "PULSE-FB76B2A56DF8957B",
       "story_fingerprint": "fb76b2a56df8957b32374f81",
       "published_at": "2026-10-21T08:34:36+00:00",
-      "last_seen_at": "2026-10-21T09:08:19.674431+00:00",
+      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
       "topic": "AMBIENTE",
       "pulse_score": 45,
       "patterns": [],
@@ -292,7 +795,7 @@
       "id": "PULSE-E6F913389E9A1D41",
       "story_fingerprint": "e6f913389e9a1d4174939849",
       "published_at": "2026-10-21T06:33:00+00:00",
-      "last_seen_at": "2026-10-21T09:08:19.674431+00:00",
+      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
       "topic": "AMBIENTE",
       "pulse_score": 59,
       "patterns": [],
@@ -393,7 +896,7 @@
       "id": "PULSE-E45FEFA0E470AC94",
       "story_fingerprint": "e45fefa0e470ac94cf9c7f65",
       "published_at": "2026-10-21T04:10:00+00:00",
-      "last_seen_at": "2026-10-21T09:08:19.674431+00:00",
+      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
       "topic": "SALUTE",
       "pulse_score": 49,
       "patterns": [],
@@ -421,10 +924,49 @@
       "publication_status": "quarantined"
     },
     {
+      "id": "PULSE-277BB4C1020F2DC1",
+      "story_fingerprint": "277bb4c1020f2dc1ee999749",
+      "published_at": "2026-10-21T03:00:00+00:00",
+      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 50,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.repubblica.it/economia/2026/10/21/news/pensioni_2027_taglio_assegno_calcolo_coefficienti_simulazione-425661239/?rss",
+        "domain": "repubblica.it",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Pensioni più basse dal 2027, gli assegni tagliati fino al 2%. Cgil: “Con il 2025 si arriva al 4,1%”",
+      "summary": "L’aumento della speranza di vita riduce i coefficienti di calcolo: 284 euro lordi annui in meno dal 2027. La Cgil calcola l’effetto del doppio taglio: fino a 11 mila euro persi nell’intero pensionamento",
+      "statistical_claims": [
+        {
+          "raw_value": "2%",
+          "verified": false
+        },
+        {
+          "raw_value": "4,1%",
+          "verified": false
+        },
+        {
+          "raw_value": "284 ",
+          "verified": false
+        },
+        {
+          "raw_value": "11 mila",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
       "id": "PULSE-F580996CC1A4605D",
       "story_fingerprint": "f580996cc1a4605de119e087",
       "published_at": "2026-10-20T23:18:58+00:00",
-      "last_seen_at": "2026-10-21T09:08:19.674431+00:00",
+      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
       "topic": "ALTRO",
       "pulse_score": 65,
       "patterns": [],
@@ -463,7 +1005,7 @@
       "id": "PULSE-DAAF7B339C1329C9",
       "story_fingerprint": "daaf7b339c1329c9cd8720c4",
       "published_at": "2026-10-20T15:23:00+00:00",
-      "last_seen_at": "2026-10-21T09:08:19.674431+00:00",
+      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
       "topic": "ALTRO",
       "pulse_score": 59,
       "patterns": [],
@@ -494,7 +1036,7 @@
       "id": "PULSE-5CE3AB3FC48B26B3",
       "story_fingerprint": "5ce3ab3fc48b26b3d5794de9",
       "published_at": "2026-10-20T13:06:54+00:00",
-      "last_seen_at": "2026-10-20T14:41:40.606859+00:00",
+      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
       "topic": "ALTRO",
       "pulse_score": 59,
       "patterns": [],
@@ -525,7 +1067,7 @@
       "id": "PULSE-714A1E9B13E632EC",
       "story_fingerprint": "714a1e9b13e632ecc8f54af6",
       "published_at": "2026-10-20T10:27:21+00:00",
-      "last_seen_at": "2026-10-21T09:08:19.674431+00:00",
+      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
       "topic": "ALTRO",
       "pulse_score": 65,
       "patterns": [],

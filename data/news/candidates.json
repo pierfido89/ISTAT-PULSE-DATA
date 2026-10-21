@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-21T09:08:19.674431+00:00",
+  "generated_at": "2026-10-21T14:52:23.520485+00:00",
   "candidates": [
     {
       "radar": "Google News - statistiche Italia",
       "discovery_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQWTZmVGhfZ3pKNUlTamFDSTdFMUp5ak55d2lkVGxnU0NPNXRvUml5VE5SRUZUQW8yanlOeXlhYlNTa2R1WHlmbnVsRWQ2WE5uZ3JOVng1RWlfak41ZWx3bnVRWnJNYVlYMldvdjZsakQzRmF0LUxEZkdJZVpLT1VjYjlTWV9UMVI3WXlvVnJCUnZnQzdMbGxQOGF6RllOb19ncnIxbER1S3BnTG1zQWlWVE9jZkF0cDA?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Trapianti 2025, +3,5% nel mondo. I dati dell'Italia - TrendSanità",
-      "detected_at": "2026-10-21T09:08:19.674431+00:00",
+      "detected_at": "2026-10-21T14:52:23.520485+00:00",
       "score_discovery": 49,
       "topic": "SALUTE",
       "numbers_detected": [
@@ -22,9 +22,30 @@
     },
     {
       "radar": "Google News - statistiche Italia",
+      "discovery_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxObmlxMTc5ZzEwSlJ0d3hFY0JpeklBbjZUc25ERVZyUVFwNnY1NFRNRl9vajdNdWd1dDdUMmVGRnctbkN2NWgtOTBvaUl1RE9BRENJNktPSWhmQzlCNV9tRWdTQVMzLWh3ZGtTOERTSjIyU3UxMjZvTkFfUkdBOEN5Vy1kZXFxQU9EME5XRDl1S1l2XzlSTnRtaVlGVjBLRXJweFFBdG9jMW1veUdqSHc?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Italia, il deficit scende al 3,1% del PIL nel 2025 e il debito sale al 136,7% - Notizie e Statistiche - IndexBox",
+      "detected_at": "2026-10-21T14:52:23.520485+00:00",
+      "score_discovery": 50,
+      "topic": "ECONOMIA",
+      "numbers_detected": [
+        "3,1%",
+        "2025 ",
+        "136,7%",
+        "3,1%",
+        "2025 ",
+        "136,7%"
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - economia lavoro",
       "discovery_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1WTmRHR1RlTjJCWjJZTEc4UEwyY0xoV1RMbWdYMGtYaC1PYVk2Y1FtNmhGdEpaRG9pTkpEUnVlREdLWlNqN25OT2dIajQ5TmRSMEJSdzdvclRsQXZX?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "\"Italia economia del turismo\", dati record nel 2026 - Confcommercio",
-      "detected_at": "2026-10-21T09:08:19.674431+00:00",
+      "detected_at": "2026-10-21T14:52:23.520485+00:00",
       "score_discovery": 47,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -38,38 +59,42 @@
       "status": "needs_primary_source"
     },
     {
-      "radar": "Google News - statistiche Italia",
-      "discovery_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOSWtPNmwtTVVJdHdzd2UzNzdUSkZNbGRRZUhZeC14blhGdkR6bTJFend0cHc3ajdwblJ0NEp5WlJmZ3BSa0c2dzctMGFCUEQ0c1VOV3V6THhDb0RXa3NZWnR3dzRRakJ6OS1JNUZCSG5DY0VFb3daMVJwUUdsSWRlZGNwNm05NHl6MjQ4cnNsM3oyVUd6RkJPdWswLXJtUnBXbnhN?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "La formula Uniqlo macina record. E nel 2027 un quinto negozio in Italia - Il Sole 24 ORE",
-      "detected_at": "2026-10-21T09:08:19.674431+00:00",
-      "score_discovery": 54,
-      "topic": "ALTRO",
+      "radar": "Repubblica Economia",
+      "discovery_url": "https://www.repubblica.it/economia/rapporti/energitalia/2026/10/21/news/elettricita_a_settembre_domanda_ai_massimi_dal_2014_65-425662146/?rss",
+      "discovery_title": "Elettricità, a settembre domanda ai massimi dal 2014: +6,5%",
+      "detected_at": "2026-10-21T14:52:23.520485+00:00",
+      "score_discovery": 50,
+      "topic": "ECONOMIA",
       "numbers_detected": [
-        "2027 ",
-        "24 ",
-        "2027 ",
-        "24 "
+        "2014",
+        "+6,5%",
+        "27,8 ",
+        "2026 ",
+        "5,2%",
+        "42,1%"
       ],
       "official_links": [],
-      "official_domain_hints": [],
+      "official_domain_hints": [
+        "aci.it",
+        "iss.it",
+        "terna.it"
+      ],
       "primary_resolution": null,
       "editorial_excluded": false,
       "status": "needs_primary_source"
     },
     {
-      "radar": "Google News - economia lavoro",
-      "discovery_url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE95WGVFYS1NT1hNOEVkdEhxdGlPdW5XYmd2MDVzeHQtQWc3aktodjc3UlJaa0dNemhkZFVOWmxHSEN0Q19KS0tHZVFfZFVwT3VMOVE2Y3pvbzc5T29HQjV2dFdmUjgxRnk4REpRSmpsemxudFhHXzNFcVdFbmM?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Focus sulle 700mila imprese guidate da stranieri in Italia, in crescita di oltre 16mila nei primi sei mesi del 2026 - In Terris",
-      "detected_at": "2026-10-21T09:08:19.674431+00:00",
-      "score_discovery": 50,
-      "topic": "ECONOMIA",
+      "radar": "Repubblica Economia",
+      "discovery_url": "https://www.repubblica.it/economia/2026/10/21/news/trasporti_aumento_costi_carburante_elettricita-425662011/?rss",
+      "discovery_title": "Trasporti, dal 2019 a oggi costi del gasolio saliti del 30%. Per l’elettricità impennata del 73%",
+      "detected_at": "2026-10-21T14:52:23.520485+00:00",
+      "score_discovery": 49,
+      "topic": "ENERGIA",
       "numbers_detected": [
-        "700mila",
-        "16mila",
-        "2026 ",
-        "700mila",
-        "16mila",
-        "2026 "
+        "2019 ",
+        "30%",
+        "73%",
+        "5 miliardi"
       ],
       "official_links": [],
       "official_domain_hints": [],
@@ -81,7 +106,7 @@
       "radar": "Repubblica Economia",
       "discovery_url": "https://www.repubblica.it/economia/rapporti/energitalia/trasformazione/2026/10/21/news/industrie_energivore_la_transizione_rischia_di_restare_senza_fondi-425661935/?rss",
       "discovery_title": "Industrie energivore, la transizione rischia di restare senza fondi",
-      "detected_at": "2026-10-21T09:08:19.674431+00:00",
+      "detected_at": "2026-10-21T14:52:23.520485+00:00",
       "score_discovery": 45,
       "topic": "AMBIENTE",
       "numbers_detected": [
@@ -104,17 +129,20 @@
       "status": "needs_primary_source"
     },
     {
-      "radar": "Google News - ANSA dati e statistiche",
-      "discovery_url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPeWJWUWVOOHo4czh0anBfTFJNQlVsWnlicXJDM0tuMWtvakpEOVJUTF9iQTQ1ZDdmWXB6cjZsYUxqTEhYc21KcVhWeG1fbDQyRkhRRk9EZElxYWRfNGVWMzVYVXlBUDMzdUUwN2dwdWVqV3pvX29TaW1ZTXVnQ1VJN3lvZjYzcFNwWlhiTFROdkNYTlhMTEpaVy1SNWFVQVNDWHZBOWlGejVsa3V4WW1PbGVBM2t0Y05fZnhaWE9xZzhhZlVnWWprd0g3Wm9kVXNvWTdiYTlpU0JrSUlwV2hhbmdB0gHnAUFVX3lxTE1zTGJ5aHNrUVpnSDVuTXo4VDZiSjhlM2kwOEIxbFlubU9PLThrZTFmMl9NQUF2OVRJMWZWWFdVS1FlUV84SVQyalRtLXU2RnhHQ19RZWpvQVJnTERySzF0cHBESWZaZC01S0xFMzh2aTBWTVk0YUxFdnJKS2U2Y181ZTdxdWV5QllmT0JibE9vRFlEOE5tc0d0NVN4MHhSbTRZb3QzYnNna3lxemRCZDViODdtZ3hWWVVsOElGWmtvd1B3S3FhcjdCRDZRNVdlZ2s5QkpZTDMwWkU0RF9VTzZDVkFOa3JYZw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Report dell'Onu sul clima: 'Nel 2025 emissioni record, verso +2,6°C entro fine secolo' - ANSA",
-      "detected_at": "2026-10-21T09:08:19.674431+00:00",
-      "score_discovery": 59,
-      "topic": "AMBIENTE",
+      "radar": "Repubblica Economia",
+      "discovery_url": "https://www.repubblica.it/economia/2026/10/21/news/pensioni_2027_taglio_assegno_calcolo_coefficienti_simulazione-425661239/?rss",
+      "discovery_title": "Pensioni più basse dal 2027, gli assegni tagliati fino al 2%. Cgil: “Con il 2025 si arriva al 4,1%”",
+      "detected_at": "2026-10-21T14:52:23.520485+00:00",
+      "score_discovery": 50,
+      "topic": "ALTRO",
       "numbers_detected": [
+        "2027",
+        "2%",
         "2025 ",
-        "+2,6",
-        "2025 ",
-        "+2,6"
+        "4,1%",
+        "284 ",
+        "2027",
+        "11 mila"
       ],
       "official_links": [],
       "official_domain_hints": [],
@@ -126,7 +154,7 @@
       "radar": "Google News - ANSA dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPWXB2T0tXZ2o4bHZ4OXIyLTB1N2NjeUN3ZzA4NXZiVkpYMkxXSTNQM1Jrd3l4MkpEYXBYYjRvR0xtZ1p5dkEtTHJ0MUFabXA5bGFpMTd0MnMwb1RkeDN6VWwzSUNZTXZrYlhyNUloOW9UdVFaenZJTnNvdXJkYWVlQXo0Q19TMDI3U0t1SXFta1Axam5pOXFRSEJEOHVHUzVDWU92TmpJMDBFY09kWXNPcG5zYVVjMzVnT2FUeDV1bUtRRHd0V0xuS0ZqQVllakJwZDBfeG5rZ3lCei0wRUNNZWtnZUjSAeoBQVVfeXFMTl9JZ1I2ME9UMC04V19CdWJQMUpRNGgxNEpORXJwNjg3ZjVLZnl2WXNHVXVsSW5vMFN1VkZuekM1RFFCZjIxN3RiLVFmSl9wdWxUQjBsWXJmeVlFanlfdlFHWV84dDhvYnpqRjBSQ2MwYXp6NFlTbjNzWDBmZzVGM2NxWU9hMlRmVGluOE1PSVRyeDVhRm9tMFR0NUF2Zm5abFNJSnJnVzMwNG92NTZEUmpUWkxWMjJxTHdaMnV2S2hWTVZRMWV5QjBNaWlnUl9aa2FNZFo0dk9SUHpxT1loNE55M05vZmNnM0Vn?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Report clima Onu, 'nel 2025 emissioni record, verso +2,6°C entro fine secolo' - ANSA",
-      "detected_at": "2026-10-21T09:08:19.674431+00:00",
+      "detected_at": "2026-10-21T14:52:23.520485+00:00",
       "score_discovery": 59,
       "topic": "AMBIENTE",
       "numbers_detected": [
@@ -145,7 +173,7 @@
       "radar": "Google News - ANSA dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPS2JGRHFRMkZhSWE0anI3Tm9adlEzVUwyX0pzdWZDMU9RUVpPRUFJM3pZWDZMVHBGSWNGWXhXX3BjWThaekcwQmJDZnE1YlZ1NFZ0OUxtQ0t2WXJmYzZaaVlfQV9aTEN1bnBSdlppaTYwak5RTlN1dElSVFYxRGZEdlBmQ1Bsd3VMc0l3U0JYb1lCMUxBUFdBZkVtUllJS0k0b2kwOFp2V0tBamIxR21kOTJKbkU4Q0FFeDZmTXN2ekRmYmVVOEVqV1hWNzE1V2E1bVRsdDJkMVFoUXlWTkRuYjF6eTF6dW50aVHSAe8BQVVfeXFMTnh4LUpVVWNGTGE3RTVDWk5YSVVZX2NYZEtGLXVDRXFGMDNlWHZTTURHMWNxUXVxSmJSOXRLeEVGTEY5dmpBZ1VjSlJYNEw2R3lRNHJHeVJ1TjhzV1gwN0F2VUtQaFF6YkpWVzNOZ2lwRklTSnA1Qk1rQlNsZENnS0YtNXhVWWtYNDM1NkNybTJCSTBsQ1hOUWh0OE5EM2pfdm5wSkVZMWhtWURsVEZqekFLbnRDTFVHczY5MW9MVUNvUFFSVFpDVmVEdlVyVEdZMFdkY1BuRjk4LV9tNTNlcy1iUk5DYlF4bG5Xc3RTNTA?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Kallas, 'record dei prezzi cereali dal 2022, tempesta perfetta' - ANSA",
-      "detected_at": "2026-10-21T09:08:19.674431+00:00",
+      "detected_at": "2026-10-21T14:52:23.520485+00:00",
       "score_discovery": 47,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -162,7 +190,7 @@
       "radar": "Google News - ANSA dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQb0xoX0k2cmYzSHdGZGlYYlJsU21HRkM4SnBIZDh5YVdVNEtmdFNfZGtSVHhaaVMwT0pic0M3MjdWWWJyMUktMDB3UmFzT2tUM2hyVUtJTWRFWlNiUGNtVWVhbURDSWplZzk3SVNia2ktUkVnMU1wU0ZycXltX096eEhxVUF6eDRWNEIwT3V0MDV3Sm1xNnNxYmF6Q3cwaGZHWWpBVDBMZzhzMW1VbEM5OWtfSXNQNGFMS3A2cUlFVFc4Rk9RcHd4NXlUNDhRR2EyRlNsYWxlcTN6M2lzemxTdDAtNHY0OFJ2dGpZUg?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Spesa per il welfare record a 693 miliardi, nel 2037 può superare i mille - ANSA",
-      "detected_at": "2026-10-21T09:08:19.674431+00:00",
+      "detected_at": "2026-10-21T14:52:23.520485+00:00",
       "score_discovery": 59,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -178,10 +206,50 @@
       "status": "needs_primary_source"
     },
     {
+      "radar": "Google News - ANSA dati e statistiche",
+      "discovery_url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxQTVdDazZUUkNKZTAteHRpMlEtZjZubTI3eHoyN0dydVFaSkNPYktYaXZxbXBPdVFxLTBUSWk1WHZ6ZDhkbEItdjVhbkNPSVBnVmpvRnRyNG5YTldkNDV2ckt6a3Z3TXBGOWVxVFdXazUzVmFZTThXUm13cUlmRmdXSW0tSUxJUU9fSDVNa29CdDVSOXpzejVRS3dvN2d1LVFiMVpUQ01nWkI2bmdTQVdYck1qbnZ1a0VLSVZab0NfY1N6THFqNC1idVllWExJTWptNUxScjBwMWhweFJ3Z0YzUW45NWxsbEhNdlVCQmxxV0cxYXdBZS1FQTBZTzk0QXdNRWduVQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Spesa per il welfare record a 693 miliardi, nel 2037 potrebbe superare i mille - ANSA",
+      "detected_at": "2026-10-21T14:52:23.520485+00:00",
+      "score_discovery": 59,
+      "topic": "ALTRO",
+      "numbers_detected": [
+        "693 miliardi",
+        "2037 ",
+        "693 miliardi",
+        "2037 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - Adnkronos dati e statistiche",
+      "discovery_url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPQWgxNDgtTzllNE5uU1pBc1VZYk5HSmxxUzNGN0k1TUtMQUhBTVdJdnMzYzVXZnlGU1FXQXM3SDhiNEpva3Q0OWpjaU51bW1HUnBwZDFHOGFveGc1SzNRQkxfLXQtYlVXYTdMWmdDS3I1bkRjMk50ekZtZHBtNk9qdzVDMzdBMnBPWnVwcmpubFFZTTFoNVJMRW9RNllUVE9JMHY5WVdtMTBZOE01SGxWSVE4bEpLYWxOSTYzZkZhX0NSQmlhZVE?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Rapporto Aiam, nel 2025 12.632 concerti con 2,5 milioni di spettatori - Adnkronos",
+      "detected_at": "2026-10-21T14:52:23.520485+00:00",
+      "score_discovery": 50,
+      "topic": "ALTRO",
+      "numbers_detected": [
+        "2025 ",
+        "12.632 ",
+        "2,5 milioni",
+        "2025 ",
+        "12.632 ",
+        "2,5 milioni"
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
       "radar": "Google News - Sole 24 Ore dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNSnpqZTU1SnhEaWpQYzN0NUJIWEpxa0RiOHF5WXFoVERlUUZydEpXcG5XME1aUF9rY0lZbFBILU84bVpzd0FOVDdWbFBmbzdEeHNpdTQ0R1hROXlwZk51aFR1Vm1lVGtQYUtPR3c1MnBmZVNua21PWjEwdXZUbG0yZGJuV2lNQVp0SGxMemE1elhDY1ZNbUh0NmdiTFZBSUhFS25iQXlkemJNb1JzQVc4?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "O’Leary (Ryanair): «Aumenti record delle tariffe aeree, fino al 20% in più nel 2027» - Il Sole 24 ORE",
-      "detected_at": "2026-10-21T09:08:19.674431+00:00",
+      "detected_at": "2026-10-21T14:52:23.520485+00:00",
       "score_discovery": 65,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -190,6 +258,46 @@
         "24 ",
         "20%",
         "2027",
+        "24 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - Sole 24 Ore dati e statistiche",
+      "discovery_url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1FblJvRF9TUll0ejFTS25henNfLThQbTV2bUQ5clFyMzdUc3NoUWx4cm8wYjhuMTl0bFhxUUdBMF9qQXBQNkp1Z2U4QWRXVWo5b3JYZEJrQWh1WWU5dmFwMW83bm1wcGRQWWI5UzV2d3RPeHFa?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "***Consumi elettrici: Terna, +6,5% annuo a settembre, record da 12 anni - Il Sole 24 ORE",
+      "detected_at": "2026-10-21T14:52:23.520485+00:00",
+      "score_discovery": 60,
+      "topic": "ECONOMIA",
+      "numbers_detected": [
+        "+6,5%",
+        "12 ",
+        "24 ",
+        "+6,5%",
+        "12 ",
+        "24 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - Sole 24 Ore dati e statistiche",
+      "discovery_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOTVc3c3FzVVFCWjNzWDBxcXB0LWNXci02LW55TVhzWDVXZ1N2UlJMLW5tcERfVWplYjJSQjRWUXRJRjA4Y20yeTRRN0pQckotN0VjOFlFZEpRNjhzemxoM0VnN0VfY3lOZUxQT0pkN05TOE1FQ2JYaUN3NkhJVHVETWpBY0w2Ri1lV2FVTUpXQzJEUXRtWWd2LUdQbVh3M0ZBeFRIT05FdlBDWElUWDV1R0lZZ0ZCM2FnUU9wOWR0TUc?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Blog | Tatuaggi e piercing: crescita record di imprese, il 160% in più in dieci anni - Info Data - Il Sole 24 ORE",
+      "detected_at": "2026-10-21T14:52:23.520485+00:00",
+      "score_discovery": 59,
+      "topic": "ECONOMIA",
+      "numbers_detected": [
+        "160%",
+        "24 ",
+        "160%",
         "24 "
       ],
       "official_links": [],
@@ -202,7 +310,7 @@
       "radar": "Google News - Sole 24 Ore dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOUE05bjNRajB3ZXZRMnk5a3BkOFJ3MENhenNVY3VkV1BnTDhsZmg2a3RUU185djVURlhUd0FLMUpiR1B6OGRkRGV4RFRqN0tENzRVZDUyNTlKeHhvanVUWlJKZjNhMVptTkU2aEpGTXJ0UFFWNWhfZDlZQXgxaV94MnloRllvS0ZJdWM0djZDcjdzT3R3N2VWVmFfa1pyeExOeTBfMzFyZnIxSVByU0QzOGRmb1NpRTBN?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Spesa per il welfare record a 693 miliardi, nel 2037 può superare i mille - Il Sole 24 ORE",
-      "detected_at": "2026-10-21T09:08:19.674431+00:00",
+      "detected_at": "2026-10-21T14:52:23.520485+00:00",
       "score_discovery": 65,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -220,19 +328,17 @@
       "status": "needs_primary_source"
     },
     {
-      "radar": "Google News - Sole 24 Ore dati e statistiche",
-      "discovery_url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNM0FWa3E5ZVY1emNXdnBJWmN3Y3h4QmJVRFpwSEdXZ3JFSEI1ZHhVN0pCZmlLeVNuZS13RDNRc3NOYnF0YWZtWFJHdmhiMXczOFFsRmpGeDcwbmVQaWRZQkx4NVJZbExvTFp6VnRzTnI3QTVkRERYRVBXa01FRkpFWDFGQnZlcVd2NkQxUWJjN01pbUc5YzJmNG92R2NZcVFla1A5dEp1N3p2SVZpMU1qMGpLVXZFT0ZGSXNpTFdWdVVmaU8wZ3cw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Blog | Ghiaccio artico, minimo a 4,6 milioni di km²: cosa raccontano i dati del 2026 - Info Data - Il Sole 24 ORE",
-      "detected_at": "2026-10-21T09:08:19.674431+00:00",
-      "score_discovery": 55,
-      "topic": "ALTRO",
+      "radar": "Google News - Repubblica dati e statistiche",
+      "discovery_url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPV2lOVUs5SFU0TWZMOXRtTHQ3NkpiOWpqR0N4VUZnLW56NVdkNWw3WVkzWERlQzduTUFNZzRRVTBxTkREQ1h5aXhmeERyR2cyRWVDdlN3cHZ4UWdPUFk5NVVaRG5TeE8waFE0UGl5WlhxM1llNlg1ZDI5bDIxd3JobG1kdWlaVmZva2FJY1JjN1JYR19XZWlLNXRIZWJTdTh0M0JhS1hFRF9ndFktcm1ES3pyaWEtSERiV2J0UThzT3dnREpw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Terna, consumi elettrici in crescita: a settembre +6,5%, record dal 2014 - la Repubblica",
+      "detected_at": "2026-10-21T14:52:23.520485+00:00",
+      "score_discovery": 69,
+      "topic": "ECONOMIA",
       "numbers_detected": [
-        "4,6 milioni",
-        "2026 ",
-        "24 ",
-        "4,6 milioni",
-        "2026 ",
-        "24 "
+        "+6,5%",
+        "2014 ",
+        "+6,5%",
+        "2014 "
       ],
       "official_links": [],
       "official_domain_hints": [],
@@ -241,19 +347,17 @@
       "status": "needs_primary_source"
     },
     {
-      "radar": "Google News - Italia popolazione e territori",
-      "discovery_url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxOYURZQ1A5RU9SWWpFYTFJcVpDSTduOWJ5emticGhKaV9ERERmWmZHRVFjX0wtbk9ZOWVWV0hTSU52Z3VhLTJyTm1zamdjb25VWHo2Vm9JLXlZQmsxYmhfODUxMWhHdkxiSzFIZDhna01LbEtyRGNfTzdjVDU5cFB6MWtZV05pMWE3M2NCWnlBallPamhKNWxoTDRSNGRFU3JkSUh0UllpN05OQXFiZXhRU1ZTV1BBMHY4b25ta0VxR040VHIwVG1DVzlHN2V6c1B6ZlVBU3hHdGhwWDFfYU5tMG5ZVEpGREs0T045RlJWcTU1YkJ2eGwzbUFBVUVJR2tmQUwtTm1RcjhmdktOSV91Wg?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "L’inverno demografico non si ferma. In Italia sempre meno bambini: nel 2025 appena 355mila nascite. E il 2026 va ancora peggio. I dati Istat - Quotidiano Sanità",
-      "detected_at": "2026-10-21T09:08:19.674431+00:00",
-      "score_discovery": 50,
-      "topic": "SALUTE",
+      "radar": "Google News - Repubblica dati e statistiche",
+      "discovery_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNeThsOWt1TjhrcmkyazU1YjJQek00MlRtTGU3cG9qYnItX19lZE12TlQxcUY3ZFMxZ1FYYzNBVVZET1Bfd0xGMXVCS2tGQ25ZOEZrLXhFaGFtVGJlM1FfbGJvRXRudHExTngtT2l4QjlndWJpMGpzMVgybDJFZFAwc1RfNnBYcjBXLV85clpVd1lraEUtZVg0Qnp2WXhrNXZPdS1kMUotUFlNa2ZobGJua2V3X3l0cTTSAbwBQVVfeXFMUEVQSFdTZEdyb3h1VVR2NFJ5cXVZZDF6S3JsVEc2QlJPMHVPMEc4NU5lX2hnMkpBV1d2RGt1WFlrSm01MnZTdncwOVZabkxwcHYtOVNpR1pVOVV0U3BtRXJqVXNMb2ZvMlAzeURTNEtodnlDTEdOWDVXWDVBeG81Q0NDV1FGdG5WZmZrRlRrbHROTUZsZExrSkFpVjdRTEtfRG5vc0VodE5nYnhCQVV5ODI5ZkM2MFA2SWVKZms?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Onu: “Emissioni record, verso un punto di non ritorno se non riduciamo del 18% entro il 2030” - la Repubblica",
+      "detected_at": "2026-10-21T14:52:23.520485+00:00",
+      "score_discovery": 64,
+      "topic": "AMBIENTE",
       "numbers_detected": [
-        "2025 ",
-        "355mila",
-        "2026 ",
-        "2025 ",
-        "355mila",
-        "2026 "
+        "18%",
+        "2030",
+        "18%",
+        "2030"
       ],
       "official_links": [],
       "official_domain_hints": [],
@@ -264,75 +368,107 @@
     {
       "radar": "Google News - Italia popolazione e territori",
       "discovery_url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNYlJuMExlVmNQQ1VDWVp3OGYxQ0lQNkdLNjlIVkxWQnFiSmpBSGtNQlh5dEotN1VwNHE4WnNrRlFGR2VWOXJEQjA0ckxKQUVPZjlKRkZwQjZqckZEVUdXVTVRbWd3cXNJYjlCNW1YUmo2ZVN3V05ULXlTR256d1RVMkFSeHRGSXloR3ln?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Istat: nascite ancora in calo, nel 2025 14mila in meno - Il Sole 24 ORE",
-      "detected_at": "2026-10-21T09:08:19.674431+00:00",
+      "discovery_title": "In Italia nascite ancora in calo, nel 2025 14mila in meno: il 44,1% fuori dal matrimonio - Il Sole 24 ORE",
+      "detected_at": "2026-10-21T14:52:23.520485+00:00",
+      "score_discovery": 50,
+      "topic": "DEMOGRAFIA",
+      "numbers_detected": [
+        "2025 ",
+        "14mila",
+        "44,1%",
+        "24 ",
+        "2025 ",
+        "14mila",
+        "44,1%",
+        "24 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - Italia popolazione e territori",
+      "discovery_url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOd0tZcl96eTNENjFSZTNDS3c0NVUyRnctLUdldS1jcVE4RVE0TG9vNGFyenFKVmpwVGNXYUJJeGxyMlAxQ1NRRGl0SU1jWEdaYklEX2Z6MXY5UTZ0TWpjUHh0NUFiYUNKYnVwdFRNUVJGdmdheGpiVHVsOHVPVFRMT0Z4SmpLcTdiMkFlYXV6ZjVMYWFMRlFiczUtcDVkd09jdm1QZV9YMFEtNzBQaC1qb3V2eFQ5ejVRLU1KQm53U0JXa2lkOWgtSXlBcXpNR1Nf?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Natalità in Italia: nel 2025 355.772 nascite e nel 2026 nuova flessione, con fecondità a 1,14 - My-personaltrainer",
+      "detected_at": "2026-10-21T14:52:23.520485+00:00",
+      "score_discovery": 45,
+      "topic": "DEMOGRAFIA",
+      "numbers_detected": [
+        "2025 ",
+        "355.772 ",
+        "2026 ",
+        "1,14 ",
+        "2025 ",
+        "355.772 ",
+        "2026 ",
+        "1,14 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - Italia popolazione e territori",
+      "discovery_url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNdmVfU2QtTV90ckpHNWVHZUZJNFFwa2MteEVSbm5TeFRSZkRxMmI1T2pmcnFLZEJSTjJPNDF4OWlvOXlDTzBuOW1XNElhMElQcVlZcmtvbklTSWR5bFNINzVGb0RYaXlaMDMxSWQ3Ymx3WEtrekRHdXBtYmcxQmtSbFVjd3FfQlF3VGx5MkVVUmJZcHlFdmt6YXVPYlBwRDY1X1o0X19rWElYOU16OVVKQ0Z5c3FPek1GeVdyYmpsSkVDUUQ1X1R4SkIzSHg?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Natalità, nuovo minimo storico per l'Italia: nel 2025 solo 1,14 figli per donna. Nascite in calo del 3,8% - Il Diario del Lavoro",
+      "detected_at": "2026-10-21T14:52:23.520485+00:00",
+      "score_discovery": 75,
+      "topic": "LAVORO",
+      "numbers_detected": [
+        "2025 ",
+        "1,14 ",
+        "3,8%",
+        "2025 ",
+        "1,14 ",
+        "3,8%"
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - Italia popolazione e territori",
+      "discovery_url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPV3R5NlVMckRpdWtXaW1PeDY2bWFRb2syVndzU0dJZmk3QWVtbnhNaXpPX1hVeUltX2ZkWERvSmcwclFHN01iUW5Vd0p0SWlRMm5vWV9DcXMxdVdMSlYxTjQxdzdfVEUtRHAwWW9LVkNmX0t3UlFOUE8td1IwWjd5TdIBgAFBVV95cUxPV3R5NlVMckRpdWtXaW1PeDY2bWFRb2syVndzU0dJZmk3QWVtbnhNaXpPX1hVeUltX2ZkWERvSmcwclFHN01iUW5Vd0p0SWlRMm5vWV9DcXMxdVdMSlYxTjQxdzdfVEUtRHAwWW9LVkNmX0t3UlFOUE8td1IwWjd5TQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Culle vuote, nascite ancora in calo in Italia: nel 2025 14mila bambini in meno. E diminuiranno anche nel 2026 - Leggo.it",
+      "detected_at": "2026-10-21T14:52:23.520485+00:00",
       "score_discovery": 45,
       "topic": "DEMOGRAFIA",
       "numbers_detected": [
         "2025 ",
         "14mila",
-        "24 ",
+        "2026 ",
         "2025 ",
         "14mila",
-        "24 "
+        "2026 "
       ],
       "official_links": [],
       "official_domain_hints": [],
-      "primary_resolution": {
-        "url": "https://www.istat.it/",
-        "domain": "istat.it",
-        "matched_numbers": [
-          "2025 ",
-          "14mila",
-          "24 ",
-          "2025 ",
-          "14mila",
-          "24 "
-        ],
-        "matched_non_year_numbers": [
-          "14mila",
-          "24 ",
-          "14mila",
-          "24 "
-        ],
-        "matched_keywords": [
-          "istat",
-          "nascite",
-          "ancora",
-          "calo",
-          "mila"
-        ],
-        "verification_score": 95,
-        "text_excerpt": "Istat Vai al menù della testata Vai al menù principale Vai al contenuto principale Vai al modulo di ricerca Vai ai contenuti in evidenza English Homepage Informazioni sulle rilevazioni Attività e servizi per tipo di utenti Per tutti Sportelli sul territorio European data support Biblioteca Archivio storico Giornalisti Appuntamenti Embargo Articoli e interviste Istat in breve Storia Rispondenti Informazioni sulle rilevazioni e questionari Elenco soggetti esterni trattamento dati Sanzioni amministrative Ricercatori Eventi segnalati dalle società scientifiche Laboratorio ADELE Promozione della ricerca Studenti e docenti Master EMOS Statistica e Cittadinanza Formazione per docenti Progetti per le scuole Pacchetti didattici Competizioni e premi Enti del Sistan English HomePage Imposta Lingua Language Settings Per favore conferma la tua preferenza. Please confirm your preference. SWITCH TO ENG",
-        "verified_series": [],
-        "method": "named_or_topic_domain_search",
-        "search_domain": "istat.it",
-        "attempts": [
-          {
-            "stage": "domain_search",
-            "domain": "istat.it",
-            "query": "site:istat.it \"istat nascite ancora calo mila sole\" 2025  14mila 24",
-            "results": 6
-          }
-        ]
-      },
+      "primary_resolution": null,
       "editorial_excluded": false,
-      "status": "primary_statistical_source_verified"
+      "status": "needs_primary_source"
     },
     {
       "radar": "Google News - Italia popolazione e territori",
-      "discovery_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNSk9sMWtoRHJXallVQnlYd0J3TkVubDRuaWxSd0JLOE9tekdtS1k0T0YwRGxnSHVWZGhheDNnLXFOZkFES0RmSlQtTDd5dDNLZzVscTJXc3R0QmtRR2VteVJqdEM1SHA0SGhKcUZGOGN3ZU1DMEF5UUhJVl9mMTRZa2hNa3o3bm5Deno0LTYzY3BHV2ZHNFBBVVhQa3FIcDBySl9rTnE3QnotV3I2T3FVMw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Nascite ancora in calo, nel 2025 a -3,8%: sono state 355.772, sei ogni mille abitanti - Askanews",
-      "detected_at": "2026-10-21T09:08:19.674431+00:00",
-      "score_discovery": 50,
+      "discovery_url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1qN0NHNDNoNWozNC1zUzJlZVZjenFCdjRWMk01SHYxOFljYm1PQk8weWRPeE1nZWRaT2NBbHExOU1rZ3ZYVUEwMGJzU05NWGdBUk9HZ1dFV3ZvOEtBVTA3enBTZkxKcGthN0FDZ1ZjcjVGTGFyZlRSeGduenc?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Nascite in Italia, 2025 da record negativo: 14mila bimbi in meno e quasi 1 su 2 fuori dal matrimonio - Nostrofiglio.it",
+      "detected_at": "2026-10-21T14:52:23.520485+00:00",
+      "score_discovery": 60,
       "topic": "DEMOGRAFIA",
       "numbers_detected": [
         "2025 ",
-        "-3,8%",
-        "355.772",
+        "14mila",
+        "1 ",
+        "2 ",
         "2025 ",
-        "-3,8%",
-        "355.772"
+        "14mila",
+        "1 ",
+        "2 "
       ],
       "official_links": [],
       "official_domain_hints": [],
@@ -342,202 +478,13 @@
     },
     {
       "radar": "ISTAT - Aggiornamenti ufficiali",
-      "discovery_url": "https://www.istat.it/comunicato-stampa/notifica-dellindebitamento-netto-e-del-debito-delle-amministrazioni-pubbliche-secondo-il-trattato-di-maastricht-anni-2022-2025-2/",
-      "discovery_title": "Notifica dell’indebitamento netto e del debito delle Amministrazioni Pubbliche secondo il Trattato di Maastricht – Anni 2022-2025",
-      "detected_at": "2026-10-21T09:08:19.674431+00:00",
-      "score_discovery": 50,
-      "topic": "ECONOMIA",
-      "numbers_detected": [
-        "2022",
-        "2025 ",
-        "2025 ",
-        "-69.736 milioni",
-        "-3,1%"
-      ],
-      "official_links": [
-        "https://www.istat.it/wp-content/uploads/2026/10/Notifica_21_10_2026.pdf",
-        "https://www.istat.it/wp-content/uploads/2026/10/SItavole_PDE_21-10_2026.xls",
-        "https://contact.istat.it/s/piu-sportello-per-i-media?language=it",
-        "https://contact.istat.it/",
-        "https://www.istat.it/statistiche-per-temi/economia/conti-nazionali/",
-        "https://www.istat.it/statistiche-per-temi/societa-e-istituzioni/pubbliche-amministrazioni-e-istituzioni-private/",
-        "https://www.istat.it/?tag=debito-pubblico",
-        "https://www.istat.it/?tag=indebitamento",
-        "https://www.istat.it/?tag=note-informative",
-        "https://www.istat.it/?tag=notifica-pde",
-        "https://www.istat.it/?tag=pil",
-        "https://www.istat.it/?tag=pil-e-indebitamento"
-      ],
-      "official_domain_hints": [
-        "ec.europa.eu",
-        "iss.it",
-        "istat.it"
-      ],
-      "primary_resolution": {
-        "url": "https://www.istat.it/comunicato-stampa/notifica-dellindebitamento-netto-e-del-debito-delle-amministrazioni-pubbliche-secondo-il-trattato-di-maastricht-anni-2022-2025-2/",
-        "domain": "istat.it",
-        "matched_numbers": [
-          "2022",
-          "2025 ",
-          "2025 ",
-          "-69.736 milioni",
-          "-3,1%"
-        ],
-        "matched_non_year_numbers": [
-          "-69.736 milioni",
-          "-3,1%"
-        ],
-        "matched_keywords": [
-          "notifica",
-          "dell",
-          "indebitamento",
-          "netto",
-          "debito",
-          "amministrazioni",
-          "pubbliche",
-          "trattato"
-        ],
-        "verification_score": 95,
-        "text_excerpt": "Notifica dell’indebitamento netto e del debito delle Amministrazioni Pubbliche secondo il Trattato di Maastricht – Anni 2022-2025 – Istat Vai al menù della testata Vai al menù principale Vai al contenuto principale Vai al menù laterale Vai al contenuto di pagina English Homepage Home Informazioni sulle rilevazioni Attività e servizi per tipo di utenti Per tutti Sportelli sul territorio European data support Biblioteca Archivio storico Giornalisti Appuntamenti Embargo Articoli e interviste Istat in breve Storia Rispondenti Informazioni sulle rilevazioni e questionari Elenco soggetti esterni trattamento dati Sanzioni amministrative Ricercatori Eventi segnalati dalle società scientifiche Laboratorio ADELE Promozione della ricerca Studenti e docenti Master EMOS Statistica e Cittadinanza Formazione per docenti Progetti per le scuole Pacchetti didattici Competizioni e premi Enti del Sistan Eng",
-        "verified_series": [],
-        "method": "direct_official_rss"
-      },
-      "editorial_excluded": false,
-      "status": "primary_statistical_source_verified"
+      "status": "radar_error",
+      "error": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1010)>"
     },
     {
-      "radar": "ISTAT - Aggiornamenti ufficiali",
-      "discovery_url": "https://www.istat.it/comunicato-stampa/natalita-e-fecondita-della-popolazione-residente-anno-2025/",
-      "discovery_title": "Natalità e fecondità della popolazione residente –  Anno 2025",
-      "detected_at": "2026-10-21T09:08:19.674431+00:00",
-      "score_discovery": 65,
-      "topic": "DEMOGRAFIA",
-      "numbers_detected": [
-        "2025 ",
-        "2025 ",
-        "355.772",
-        "3,8%",
-        "2024 ",
-        "-14mila"
-      ],
-      "official_links": [
-        "https://www.istat.it/wp-content/uploads/2026/10/Natalita-e-fecondita-popolazione-residente-2025.pdf",
-        "https://www.istat.it/wp-content/uploads/2026/10/Tavole-natalita-2025.xlsx",
-        "https://contact.istat.it/s/piu-sportello-per-i-media?language=it",
-        "https://contact.istat.it/",
-        "https://www.istat.it/statistiche-per-temi/popolazione/popolazione-e-famiglie/",
-        "https://www.istat.it/?tag=anagrafe",
-        "https://www.istat.it/?tag=fecondita",
-        "https://www.istat.it/?tag=genitori",
-        "https://www.istat.it/?tag=madri",
-        "https://www.istat.it/?tag=madri-straniere",
-        "https://www.istat.it/?tag=nascite",
-        "https://www.istat.it/?tag=natalita-e-fecondita"
-      ],
-      "official_domain_hints": [
-        "istat.it",
-        "terna.it"
-      ],
-      "primary_resolution": {
-        "url": "https://www.istat.it/comunicato-stampa/natalita-e-fecondita-della-popolazione-residente-anno-2025/",
-        "domain": "istat.it",
-        "matched_numbers": [
-          "2025 ",
-          "2025 ",
-          "355.772",
-          "3,8%",
-          "2024 ",
-          "-14mila"
-        ],
-        "matched_non_year_numbers": [
-          "355.772",
-          "3,8%",
-          "-14mila"
-        ],
-        "matched_keywords": [
-          "natalità",
-          "fecondità",
-          "popolazione",
-          "residente",
-          "nascite",
-          "ancora",
-          "calo",
-          "state"
-        ],
-        "verification_score": 95,
-        "text_excerpt": "Natalità e fecondità della popolazione residente – Anno 2025 – Istat Vai al menù della testata Vai al menù principale Vai al contenuto principale Vai al menù laterale Vai al contenuto di pagina English Homepage Home Informazioni sulle rilevazioni Attività e servizi per tipo di utenti Per tutti Sportelli sul territorio European data support Biblioteca Archivio storico Giornalisti Appuntamenti Embargo Articoli e interviste Istat in breve Storia Rispondenti Informazioni sulle rilevazioni e questionari Elenco soggetti esterni trattamento dati Sanzioni amministrative Ricercatori Eventi segnalati dalle società scientifiche Laboratorio ADELE Promozione della ricerca Studenti e docenti Master EMOS Statistica e Cittadinanza Formazione per docenti Progetti per le scuole Pacchetti didattici Competizioni e premi Enti del Sistan English HomePage Imposta Lingua Language Settings Per favore conferma la",
-        "verified_series": [],
-        "method": "direct_official_rss"
-      },
-      "editorial_excluded": false,
-      "status": "primary_statistical_source_verified"
-    },
-    {
-      "radar": "ISTAT - Aggiornamenti ufficiali",
-      "discovery_url": "https://www.istat.it/sistema-informativo-6/bilancio-demografico-mensile-luglio-2026/",
-      "discovery_title": "Bilancio demografico mensile – luglio 2026",
-      "detected_at": "2026-10-21T09:08:19.674431+00:00",
-      "score_discovery": 50,
-      "topic": "DEMOGRAFIA",
-      "numbers_detected": [
-        "2026 ",
-        "31 ",
-        "2026 ",
-        "58.949",
-        "500 ",
-        "7mila"
-      ],
-      "official_links": [
-        "https://www.istat.it/statistiche-per-temi/popolazione/popolazione-e-famiglie/",
-        "https://www.istat.it/?tag=anagrafe",
-        "https://www.istat.it/?tag=bilancio-demografico",
-        "https://www.istat.it/?tag=comuni",
-        "https://www.istat.it/?tag=decessi",
-        "https://www.istat.it/?tag=demografia",
-        "https://www.istat.it/?tag=migrazioni",
-        "https://www.istat.it/?tag=nascite",
-        "https://www.istat.it/?tag=popolazione",
-        "https://www.istat.it/?tag=popolazione-residente",
-        "https://www.istat.it/?tag=trasferimenti",
-        "https://www.istat.it/?s=&filter_category[]=4107"
-      ],
-      "official_domain_hints": [
-        "istat.it"
-      ],
-      "primary_resolution": {
-        "url": "https://www.istat.it/sistema-informativo-6/bilancio-demografico-mensile-luglio-2026/",
-        "domain": "istat.it",
-        "matched_numbers": [
-          "2026 ",
-          "31 ",
-          "2026 ",
-          "58.949",
-          "500 ",
-          "7mila"
-        ],
-        "matched_non_year_numbers": [
-          "31 ",
-          "58.949",
-          "500 ",
-          "7mila"
-        ],
-        "matched_keywords": [
-          "bilancio",
-          "demografico",
-          "mensile",
-          "luglio",
-          "popolazione",
-          "residente",
-          "ammonta",
-          "unità"
-        ],
-        "verification_score": 95,
-        "text_excerpt": "Bilancio demografico mensile – luglio 2026 – Istat Vai al menù della testata Vai al menù principale Vai al contenuto principale Vai al menù laterale Vai al contenuto di pagina English Homepage Home Informazioni sulle rilevazioni Attività e servizi per tipo di utenti Per tutti Sportelli sul territorio European data support Biblioteca Archivio storico Giornalisti Appuntamenti Embargo Articoli e interviste Istat in breve Storia Rispondenti Informazioni sulle rilevazioni e questionari Elenco soggetti esterni trattamento dati Sanzioni amministrative Ricercatori Eventi segnalati dalle società scientifiche Laboratorio ADELE Promozione della ricerca Studenti e docenti Master EMOS Statistica e Cittadinanza Formazione per docenti Progetti per le scuole Pacchetti didattici Competizioni e premi Enti del Sistan English HomePage Imposta Lingua Language Settings Per favore conferma la tua preferenza. P",
-        "verified_series": [],
-        "method": "direct_official_rss"
-      },
-      "editorial_excluded": false,
-      "status": "primary_statistical_source_verified"
+      "radar": "ISTAT - Comunicati stampa ufficiali",
+      "status": "radar_error",
+      "error": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1010)>"
     }
   ]
 }
