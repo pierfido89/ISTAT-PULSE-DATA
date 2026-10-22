@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-10-21T14:52:23.520485+00:00",
+  "generated_at": "2026-10-22T09:10:36.318419+00:00",
   "counts": {
-    "oggi": 3,
-    "ieri": 0,
+    "oggi": 0,
+    "ieri": 3,
     "archivio": 29,
-    "withheld": 146,
-    "candidates": 25
+    "withheld": 151,
+    "candidates": 19
   },
-  "oggi": [
+  "oggi": [],
+  "ieri": [
     "PULSE-A5C82B1BC8DCCA5A",
     "PULSE-CF6F581FF603CAEA",
     "PULSE-BDF2A2EF4E088D22"
   ],
-  "ieri": [],
   "archivio": [
     "PULSE-80040D2A7CF4CC7E",
     "PULSE-5441F6051427CF6F",

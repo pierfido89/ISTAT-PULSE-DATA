@@ -1,11 +1,114 @@
 {
-  "generated_at": "2026-10-21T14:52:23.520485+00:00",
+  "generated_at": "2026-10-22T09:10:36.318419+00:00",
   "articles": [
+    {
+      "id": "PULSE-EA24ED9929F8081F",
+      "story_fingerprint": "ea24ed9929f8081fadc0dc9b",
+      "published_at": "2026-10-21T22:23:37+00:00",
+      "last_seen_at": "2026-10-22T09:10:36.318419+00:00",
+      "topic": "DEMOGRAFIA",
+      "pulse_score": 45,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5DZmN6WHBmZW1uOWtlY2xsbkVRbXBMcWVZbExYazZGM3dSb1lrcElEQVd3SDlpeHFRWWFMT2t3VHd4ei1ERkpCdDZoUkhQYXNRYmYtaDJzOVBNeHhEaldFcU1GYjNtak9LYlBLOHN3?oc=5",
+        "domain": "La Discussione",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Nascite, l’Italia perde altri 14mila bambini nel 2025. E il calo prosegue nel 2026 - La Discussione",
+      "summary": "Nascite, l’Italia perde altri 14mila bambini nel 2025. E il calo prosegue nel 2026 La Discussione",
+      "statistical_claims": [
+        {
+          "raw_value": "14mila",
+          "verified": false
+        },
+        {
+          "raw_value": "14mila",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-3FE225D0B6081BB6",
+      "story_fingerprint": "3fe225d0b6081bb686a3af3d",
+      "published_at": "2026-10-21T17:13:00+00:00",
+      "last_seen_at": "2026-10-22T09:10:36.318419+00:00",
+      "topic": "MOBILITA",
+      "pulse_score": 50,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQei1wcEN6QWxOZUxQUnVaMldTei0weDE5VHczY3hrNFFnT2MzZDh4UGMxZlQ1X2hXenZwM2xEMk0wTmszQm92cTNnZTNpdjNiUkpQZnVDbF91UVNTYVZ0NS0zaW45OEJUTzBaRlVzMlVmQ1QxWlgwQy1xRGdIakt2R1htdVZ3ZUNjMGxXUnVjZ0x0cmRta1owdHBKUnFkTGdGMHRWelloaUdwZDFlVVJ3T20xUlRDaUt1SV9HMms4akhIMDJmT0JPSA?oc=5",
+        "domain": "la Repubblica",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Componentistica auto, nel 2025 in Italia fatturato a 53,5 miliardi (-3,0%) - la Repubblica",
+      "summary": "Componentistica auto, nel 2025 in Italia fatturato a 53,5 miliardi (-3,0%) la Repubblica",
+      "statistical_claims": [
+        {
+          "raw_value": "53,5 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "-3,0%",
+          "verified": false
+        },
+        {
+          "raw_value": "53,5 miliardi",
+          "verified": false
+        },
+        {
+          "raw_value": "-3,0%",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-F7E4B7BEE2D8F09F",
+      "story_fingerprint": "f7e4b7bee2d8f09fad55a0b9",
+      "published_at": "2026-10-21T15:17:00+00:00",
+      "last_seen_at": "2026-10-22T09:10:36.318419+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 69,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOYkk0ZzdpVmc3djBndjZ1SWt3cF9aVUNybGEzclZIaTFLNEYyQmVLN3lESkZ5RXlobVpMWWhXUHY5R0hqNzZMX1o5MFRpMWFhZDVLVXdxY2xobHk0Sm5PYUpKSlh2MDVSdVpKbENDM1NlajVWQjIwMnRHYXVYVGdKaXZGaDRnc0tzZk9lNmhiMUNyd0lwdHMyNEx3ZlktUS1qbEtnb01oUDFlR1ZyV3lMbzE1QmdzNG5leUk2dkFUSi1kOER1Z1I0TjVJVHNyZDRkb2NabkJENEJtY0RPR29XSmhHdjZIdVMxQVHSAe8BQVVfeXFMT3pEaTVnRlpqRjM4N1dIZDV5LTdfNlk5YzdFT29WSHU2TXJ1cVZzMGh1a3M1Q1Nnd0hYcVctQVVTZ250RFJNMWFkeXltb19YSnNBOUUzUXdOODRQVC1FWXlmVEJleEZiNkxwR0h1aFdaeXF3bkdFbHd2YmFLOURkUkR5XzVQY0g0YmtaVFVXREotVGZzZnJsQ1lrVExyRHhnTFJjM3B0anlMY1Vsenczd3dEbk5uc2xyMkU1djlRWk43aVJXcFkyd3ExeEpvRVM4czVrZ3NUU21vVWU0NVVweDZIT1A2Xy1hai1EVWQzSEU?oc=5",
+        "domain": "ANSA",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Raccolta differenziata, nel 2025 in Piemonte quota record del 69,4% - ANSA",
+      "summary": "Raccolta differenziata, nel 2025 in Piemonte quota record del 69,4% ANSA",
+      "statistical_claims": [
+        {
+          "raw_value": "69,4%",
+          "verified": false
+        },
+        {
+          "raw_value": "69,4%",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "piemonte"
+      ],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
     {
       "id": "PULSE-5BEBC3259730F2CE",
       "story_fingerprint": "5bebc3259730f2ce1ef57c8d",
       "published_at": "2026-10-21T13:37:00+00:00",
-      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
+      "last_seen_at": "2026-10-22T09:10:36.318419+00:00",
       "topic": "ALTRO",
       "pulse_score": 50,
       "patterns": [],
@@ -33,6 +136,53 @@
         },
         {
           "raw_value": "2,5 milioni",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-0FF45CF3034404CC",
+      "story_fingerprint": "0ff45cf3034404cc9f47e7ce",
+      "published_at": "2026-10-21T13:17:31+00:00",
+      "last_seen_at": "2026-10-22T09:10:36.318419+00:00",
+      "topic": "DEMOGRAFIA",
+      "pulse_score": 50,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPS0NjSVlpdTJKT245cUpOWTVvUW1zZG1JV09OeDlQb21TOXd6MWFIX1NmcUdCZkl0SGhIRkRvbEszVk5QRExRVVFsZ3dFWlYxNkR5RWx2SWNVcmF4OG5hVVViTi14QW9iWkp0eTZGalRNekk3VkdxNG5WNjNpWHAzbTI1XzVWeEpYc2lUZWxCSmV2cy1KQkRHSUZaTDBzNlNWclBRc212QktCaXRTYlNqOVdvM1dWRGE0U1lReDM3Rmc5VVlsZ0xEYi1TQi1ITzNhUFdWaQ?oc=5",
+        "domain": "Facebook",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "RaiNews. . Nel 2025 i nati residenti in Italia sono 355.772, sei ogni 1.000 abitanti. Rispetto al 2024 le nascite diminuiscono del 3,8%, circa 14mila unità in meno, ma dal 2008, anno nel quale si è registrato il numero massimo di nati vivi degli anni Duemila (oltr - Facebook",
+      "summary": "RaiNews. . Nel 2025 i nati residenti in Italia sono 355.772, sei ogni 1.000 abitanti. Rispetto al 2024 le nascite diminuiscono del 3,8%, circa 14mila unità in meno, ma dal 2008, anno nel quale si è registrato il numero massimo di nati vivi degli anni Duemila (oltr Facebook",
+      "statistical_claims": [
+        {
+          "raw_value": "355.772",
+          "verified": false
+        },
+        {
+          "raw_value": "1.000 ",
+          "verified": false
+        },
+        {
+          "raw_value": "3,8%",
+          "verified": false
+        },
+        {
+          "raw_value": "14mila",
+          "verified": false
+        },
+        {
+          "raw_value": "355.772",
+          "verified": false
+        },
+        {
+          "raw_value": "1.000 ",
           "verified": false
         }
       ],
@@ -126,7 +276,7 @@
       "id": "PULSE-3D19D8A24CE8EFF3",
       "story_fingerprint": "3d19d8a24ce8eff3549e5dac",
       "published_at": "2026-10-21T11:24:48+00:00",
-      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
+      "last_seen_at": "2026-10-22T09:10:36.318419+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 59,
       "patterns": [],
@@ -196,7 +346,7 @@
       "id": "PULSE-A30715E8CFDEB562",
       "story_fingerprint": "a30715e8cfdeb5626e5971e5",
       "published_at": "2026-10-21T10:48:00+00:00",
-      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
+      "last_seen_at": "2026-10-22T09:10:36.318419+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 69,
       "patterns": [],
@@ -227,7 +377,7 @@
       "id": "PULSE-D70CE0B59F63FB14",
       "story_fingerprint": "d70ce0b59f63fb14a7a4e506",
       "published_at": "2026-10-21T10:36:03+00:00",
-      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
+      "last_seen_at": "2026-10-22T09:10:36.318419+00:00",
       "topic": "AMBIENTE",
       "pulse_score": 64,
       "patterns": [],
@@ -297,7 +447,7 @@
       "id": "PULSE-71AB21366A27AF88",
       "story_fingerprint": "71ab21366a27af880c9564f6",
       "published_at": "2026-10-21T09:52:25+00:00",
-      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
+      "last_seen_at": "2026-10-22T09:10:36.318419+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 60,
       "patterns": [],
@@ -383,7 +533,7 @@
       "id": "PULSE-0940051272A60647",
       "story_fingerprint": "0940051272a606471be9ffd2",
       "published_at": "2026-10-21T09:32:32+00:00",
-      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
+      "last_seen_at": "2026-10-22T09:10:36.318419+00:00",
       "topic": "DEMOGRAFIA",
       "pulse_score": 50,
       "patterns": [],
@@ -430,7 +580,7 @@
       "id": "PULSE-7318F2D74EE83625",
       "story_fingerprint": "7318f2d74ee83625aa416b62",
       "published_at": "2026-10-21T09:32:19+00:00",
-      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
+      "last_seen_at": "2026-10-22T09:10:36.318419+00:00",
       "topic": "DEMOGRAFIA",
       "pulse_score": 45,
       "patterns": [],
@@ -566,7 +716,7 @@
       "id": "PULSE-7475D7538C38FDCC",
       "story_fingerprint": "7475d7538c38fdcc0f9ed15e",
       "published_at": "2026-10-21T08:43:00+00:00",
-      "last_seen_at": "2026-10-21T09:08:19.674431+00:00",
+      "last_seen_at": "2026-10-22T09:10:36.318419+00:00",
       "topic": "SALUTE",
       "pulse_score": 50,
       "patterns": [],
@@ -795,7 +945,7 @@
       "id": "PULSE-E6F913389E9A1D41",
       "story_fingerprint": "e6f913389e9a1d4174939849",
       "published_at": "2026-10-21T06:33:00+00:00",
-      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
+      "last_seen_at": "2026-10-22T09:10:36.318419+00:00",
       "topic": "AMBIENTE",
       "pulse_score": 59,
       "patterns": [],
@@ -1005,7 +1155,7 @@
       "id": "PULSE-DAAF7B339C1329C9",
       "story_fingerprint": "daaf7b339c1329c9cd8720c4",
       "published_at": "2026-10-20T15:23:00+00:00",
-      "last_seen_at": "2026-10-21T14:52:23.520485+00:00",
+      "last_seen_at": "2026-10-22T09:10:36.318419+00:00",
       "topic": "ALTRO",
       "pulse_score": 59,
       "patterns": [],
@@ -1157,6 +1307,45 @@
         },
         {
           "raw_value": "2",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-A57ADED83F1BFB2E",
+      "story_fingerprint": "a57aded83f1bfb2e13d77c76",
+      "published_at": "2026-10-20T07:00:00+00:00",
+      "last_seen_at": "2026-10-22T09:10:36.318419+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 45,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQWlRmU3dIZHZiVFhmX245aU1XaDRURW5aQjRQcGJ3OHpSZVk3MVYycFJSWUZ0WXlHVjhiQVNoVzk3YVV3WHdyVzJhRDRNMGg2QndFQ3o2VkdlSXlERWwzOVR1RmFzNWJobzB2aUFKSTZUdnZTMW80aG5uUk8zeDhMcjJZOXhtT2F3VmptaFBUUERtZF9HMmtzazFTN2E?oc=5",
+        "domain": "Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Chi finanzia le elezioni di Midterm Usa 2026? Dati e grafici | Il Sole 24 Ore - Lab24 - Sole 24 ORE",
+      "summary": "Chi finanzia le elezioni di Midterm Usa 2026? Dati e grafici | Il Sole 24 Ore Lab24 - Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
           "verified": false
         }
       ],
