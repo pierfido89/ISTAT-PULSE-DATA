@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-10-19T10:20:42.218106+00:00",
+  "generated_at": "2026-10-22T09:41:50.011625+00:00",
   "policy": {
     "official_only": true,
     "no_scraped_search_results_as_data": true,
@@ -27,9 +27,9 @@
   },
   "candidate_count": 39,
   "status_counts": {
-    "official_portal_reachable": 18,
+    "official_portal_reachable": 19,
     "structured_endpoint_verified": 9,
-    "blocked": 12
+    "blocked": 11
   },
   "sources": [
     {
@@ -168,7 +168,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "16486",
+              "content_length": "17030",
               "reason": "html_or_unknown"
             },
             {
@@ -177,7 +177,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "16486",
+              "content_length": "17030",
               "reason": "html_or_unknown"
             },
             {
@@ -186,7 +186,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "16486",
+              "content_length": "17030",
               "reason": "html_or_unknown"
             }
           ]
@@ -214,7 +214,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "18155",
+              "content_length": "18147",
               "reason": "html_or_unknown"
             },
             {
@@ -223,7 +223,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "18155",
+              "content_length": "18147",
               "reason": "html_or_unknown"
             },
             {
@@ -232,7 +232,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "18155",
+              "content_length": "18147",
               "reason": "html_or_unknown"
             }
           ]
@@ -280,7 +280,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "16767",
+              "content_length": "16759",
               "reason": "html_or_unknown"
             }
           ]
@@ -324,7 +324,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "23690",
+              "content_length": "23693",
               "reason": "html_or_unknown"
             }
           ]
@@ -392,7 +392,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "application/rss+xml",
-              "content_length": "66301",
+              "content_length": "109443",
               "reason": "editorial_or_document_resource"
             },
             {
@@ -456,7 +456,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "application/rss+xml",
-              "content_length": "66301",
+              "content_length": "109443",
               "reason": "editorial_or_document_resource"
             },
             {
@@ -595,7 +595,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "15249",
+              "content_length": "14896",
               "reason": "html_or_unknown"
             },
             {
@@ -604,7 +604,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "17342",
+              "content_length": "16904",
               "reason": "html_or_unknown"
             }
           ]
@@ -671,7 +671,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "19347",
+              "content_length": "19344",
               "reason": "html_or_unknown"
             },
             {
@@ -680,7 +680,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "18933",
+              "content_length": "18932",
               "reason": "html_or_unknown"
             }
           ]
@@ -726,7 +726,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "20379",
+              "content_length": "20378",
               "reason": "html_or_unknown"
             },
             {
@@ -735,7 +735,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "20766",
+              "content_length": "20771",
               "reason": "html_or_unknown"
             },
             {
@@ -810,12 +810,12 @@
           "candidate_links": [
             "https://www.bancaditalia.it/footer/open-data/Open_Data_BdI.rdf",
             "https://infostat.bancaditalia.it/inquiry/home",
+            "https://infostat.bancaditalia.it/inquiry/home?spyglass/taxo:CUBESET=&ITEMSELEZ=&OPEN=/&ep:LC=IT&COMM=BANKITALIA&ENV=LIVE&CTX=DIFF&IDX=1&/view:CUBEIDS=",
+            "https://statistiche.bancaditalia.it/accedi-ai-dati/dati-granulari-research-data-center/research-data-center",
             "https://www.bancaditalia.it/chi-siamo/protezione-dati/index.html",
             "https://www.bancaditalia.it/chi-siamo/trasparenza/index.html",
             "https://www.bancaditalia.it/servizi-cittadino/servizi/accesso-cai/index.html",
-            "https://www.bancaditalia.it/servizi-cittadino/servizi/accesso-cr/index.html",
-            "https://www.bancaditalia.it/statistiche/basi-dati/bds/index.html",
-            "https://www.bancaditalia.it/statistiche/basi-dati/bds/index.html#bdi-cookie-en"
+            "https://www.bancaditalia.it/servizi-cittadino/servizi/accesso-cr/index.html"
           ],
           "verified_links": [
             {
@@ -837,12 +837,12 @@
               "reason": "html_or_unknown"
             },
             {
-              "url": "https://www.bancaditalia.it/chi-siamo/protezione-dati/index.html",
-              "final_url": "https://www.bancaditalia.it/chi-siamo/protezione-dati/index.html",
+              "url": "https://infostat.bancaditalia.it/inquiry/home?spyglass/taxo:CUBESET=&ITEMSELEZ=&OPEN=/&ep:LC=IT&COMM=BANKITALIA&ENV=LIVE&CTX=DIFF&IDX=1&/view:CUBEIDS=",
+              "final_url": "https://infostat.bancaditalia.it/inquiry/home?spyglass/taxo:CUBESET=&ITEMSELEZ=&OPEN=/&ep:LC=IT&COMM=BANKITALIA&ENV=LIVE&CTX=DIFF&IDX=1&/view:CUBEIDS=",
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "14719",
+              "content_length": "12310",
               "reason": "html_or_unknown"
             }
           ]
@@ -940,7 +940,7 @@
           "kind": "discovery",
           "url": "https://crea.gov.it",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f95519b1e50>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f09bc539f70>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -948,7 +948,7 @@
           "kind": "discovery",
           "url": "https://crea.gov.it/opendata",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /opendata (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f95389b08c0>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /opendata (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f09947d71d0>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -956,7 +956,7 @@
           "kind": "discovery",
           "url": "https://crea.gov.it/open-data",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /open-data (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f9538cd7c50>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /open-data (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f09a8817ad0>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -964,7 +964,7 @@
           "kind": "discovery",
           "url": "https://crea.gov.it/dati",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /dati (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f95389b0410>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /dati (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f09a8817080>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -972,7 +972,7 @@
           "kind": "discovery",
           "url": "https://crea.gov.it/dataset",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /dataset (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f95389b1880>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='crea.gov.it', port=443): Max retries exceeded with url: /dataset (Caused by ConnectTimeoutError(<HTTPSConnection(host='crea.gov.it', port=443) at 0x7f09947d65d0>, 'Connection to crea.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         }
@@ -1628,7 +1628,6 @@
             "https://serviziostatistico.invalsi.it/catalogo-dati/",
             "https://www.invalsi.it/biblioteca/banche-dati/",
             "https://www.invalsi.it/comunicazione-stampa/al-via-due-nuove-edizioni-del-corso-formativo-i-dati-invalsi-per-un-uso-informativo-formativo-e-per-il-miglioramento-a-s-2026-27/",
-            "https://www.invalsi.it/comunicazione-stampa/restituzione-alle-scuole-dei-dati-delle-rilevazioni-nazionali-invalsi-2026/",
             "https://www.invalsi.it/comunicazione-stampa/seminario-nazionale-qualas-usare-i-dati-per-migliorare-la-scuola-29-settembre-2026/",
             "https://www.invalsi.it/valutazione-scuole/eventi-seminari/eventi-convegni-seminari/i-seminario-dati-didattica/"
           ],
@@ -1639,7 +1638,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "24753",
+              "content_length": "25107",
               "reason": "html_or_unknown"
             },
             {
@@ -1648,7 +1647,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "40077",
+              "content_length": "40889",
               "reason": "html_or_unknown"
             },
             {
@@ -1657,7 +1656,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "38699",
+              "content_length": "39560",
               "reason": "html_or_unknown"
             }
           ]
@@ -1688,7 +1687,6 @@
           "reason": "official_page_scanned",
           "candidate_links": [
             "https://www.invalsi.it/comunicazione-stampa/al-via-due-nuove-edizioni-del-corso-formativo-i-dati-invalsi-per-un-uso-informativo-formativo-e-per-il-miglioramento-a-s-2026-27/",
-            "https://www.invalsi.it/comunicazione-stampa/restituzione-alle-scuole-dei-dati-delle-rilevazioni-nazionali-invalsi-2026/",
             "https://www.invalsi.it/comunicazione-stampa/seminario-nazionale-qualas-usare-i-dati-per-migliorare-la-scuola-29-settembre-2026/",
             "https://www.invalsi.it/dati-internazionali-scuola/#content"
           ],
@@ -1699,16 +1697,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "38699",
-              "reason": "html_or_unknown"
-            },
-            {
-              "url": "https://www.invalsi.it/comunicazione-stampa/restituzione-alle-scuole-dei-dati-delle-rilevazioni-nazionali-invalsi-2026/",
-              "final_url": "https://www.invalsi.it/comunicazione-stampa/restituzione-alle-scuole-dei-dati-delle-rilevazioni-nazionali-invalsi-2026/",
-              "ok": false,
-              "http_status": 200,
-              "content_type": "text/html",
-              "content_length": "38540",
+              "content_length": "39560",
               "reason": "html_or_unknown"
             },
             {
@@ -1717,7 +1706,16 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "38451",
+              "content_length": "39310",
+              "reason": "html_or_unknown"
+            },
+            {
+              "url": "https://www.invalsi.it/dati-internazionali-scuola/#content",
+              "final_url": "https://www.invalsi.it/dati-internazionali-scuola/#content",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "41904",
               "reason": "html_or_unknown"
             }
           ]
@@ -1735,7 +1733,7 @@
     {
       "institution": "ISMEA",
       "strategy": "official_catalog_discovery",
-      "status": "blocked",
+      "status": "official_portal_reachable",
       "domains": [
         "ismea.it"
       ],
@@ -1744,42 +1742,217 @@
         {
           "kind": "discovery",
           "url": "https://ismea.it",
-          "ok": false,
-          "reason": "SSLError: HTTPSConnectionPool(host='ismea.it', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))",
-          "candidate_links": [],
-          "verified_links": []
+          "final_url": "https://www.ismea.it/istituto-di-servizi-per-il-mercato-agricolo-alimentare",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "text/html",
+          "reason": "official_page_scanned",
+          "candidate_links": [
+            "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/10017",
+            "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9454",
+            "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9460"
+          ],
+          "verified_links": [
+            {
+              "url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/10017",
+              "final_url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/10017",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "",
+              "reason": "html_or_unknown"
+            },
+            {
+              "url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9454",
+              "final_url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9454",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "",
+              "reason": "html_or_unknown"
+            },
+            {
+              "url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9460",
+              "final_url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9460",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "",
+              "reason": "html_or_unknown"
+            }
+          ]
         },
         {
           "kind": "discovery",
           "url": "https://ismea.it/opendata",
-          "ok": false,
-          "reason": "SSLError: HTTPSConnectionPool(host='ismea.it', port=443): Max retries exceeded with url: /opendata (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))",
-          "candidate_links": [],
-          "verified_links": []
+          "final_url": "https://www.ismea.it/istituto-di-servizi-per-il-mercato-agricolo-alimentare",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "text/html",
+          "reason": "official_page_scanned",
+          "candidate_links": [
+            "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/10017",
+            "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9454",
+            "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9460"
+          ],
+          "verified_links": [
+            {
+              "url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/10017",
+              "final_url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/10017",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "",
+              "reason": "html_or_unknown"
+            },
+            {
+              "url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9454",
+              "final_url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9454",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "",
+              "reason": "html_or_unknown"
+            },
+            {
+              "url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9460",
+              "final_url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9460",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "",
+              "reason": "html_or_unknown"
+            }
+          ]
         },
         {
           "kind": "discovery",
           "url": "https://ismea.it/open-data",
-          "ok": false,
-          "reason": "SSLError: HTTPSConnectionPool(host='ismea.it', port=443): Max retries exceeded with url: /open-data (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))",
-          "candidate_links": [],
-          "verified_links": []
+          "final_url": "https://www.ismea.it/istituto-di-servizi-per-il-mercato-agricolo-alimentare",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "text/html",
+          "reason": "official_page_scanned",
+          "candidate_links": [
+            "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/10017",
+            "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9454",
+            "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9460"
+          ],
+          "verified_links": [
+            {
+              "url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/10017",
+              "final_url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/10017",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "",
+              "reason": "html_or_unknown"
+            },
+            {
+              "url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9454",
+              "final_url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9454",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "",
+              "reason": "html_or_unknown"
+            },
+            {
+              "url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9460",
+              "final_url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9460",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "",
+              "reason": "html_or_unknown"
+            }
+          ]
         },
         {
           "kind": "discovery",
           "url": "https://ismea.it/dati",
-          "ok": false,
-          "reason": "SSLError: HTTPSConnectionPool(host='ismea.it', port=443): Max retries exceeded with url: /dati (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))",
-          "candidate_links": [],
-          "verified_links": []
+          "final_url": "https://www.ismea.it/istituto-di-servizi-per-il-mercato-agricolo-alimentare",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "text/html",
+          "reason": "official_page_scanned",
+          "candidate_links": [
+            "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/10017",
+            "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9454",
+            "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9460"
+          ],
+          "verified_links": [
+            {
+              "url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/10017",
+              "final_url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/10017",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "",
+              "reason": "html_or_unknown"
+            },
+            {
+              "url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9454",
+              "final_url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9454",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "",
+              "reason": "html_or_unknown"
+            },
+            {
+              "url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9460",
+              "final_url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9460",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "",
+              "reason": "html_or_unknown"
+            }
+          ]
         },
         {
           "kind": "discovery",
           "url": "https://ismea.it/dataset",
-          "ok": false,
-          "reason": "SSLError: HTTPSConnectionPool(host='ismea.it', port=443): Max retries exceeded with url: /dataset (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))",
-          "candidate_links": [],
-          "verified_links": []
+          "final_url": "https://www.ismea.it/istituto-di-servizi-per-il-mercato-agricolo-alimentare",
+          "ok": true,
+          "http_status": 200,
+          "content_type": "text/html",
+          "reason": "official_page_scanned",
+          "candidate_links": [
+            "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/10017",
+            "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9454",
+            "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9460"
+          ],
+          "verified_links": [
+            {
+              "url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/10017",
+              "final_url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/10017",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "",
+              "reason": "html_or_unknown"
+            },
+            {
+              "url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9454",
+              "final_url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9454",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "",
+              "reason": "html_or_unknown"
+            },
+            {
+              "url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9460",
+              "final_url": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9460",
+              "ok": false,
+              "http_status": 200,
+              "content_type": "text/html",
+              "content_length": "",
+              "reason": "html_or_unknown"
+            }
+          ]
         }
       ]
     },
@@ -1840,7 +2013,7 @@
           "kind": "discovery",
           "url": "https://www.mimit.gov.it/it/open-data/elenco-dataset/carburanti-prezzi-praticati-e-anagrafica-degli-impianti",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='www.mimit.gov.it', port=443): Max retries exceeded with url: /it/open-data/elenco-dataset/carburanti-prezzi-praticati-e-anagrafica-degli-impianti (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.mimit.gov.it', port=443) at 0x7f9550848a10>, 'Connection to www.mimit.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='www.mimit.gov.it', port=443): Max retries exceeded with url: /it/open-data/elenco-dataset/carburanti-prezzi-praticati-e-anagrafica-degli-impianti (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.mimit.gov.it', port=443) at 0x7f09a8346b10>, 'Connection to www.mimit.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -1848,7 +2021,7 @@
           "kind": "discovery",
           "url": "https://www.mimit.gov.it/it/open-data/elenco-dataset/carburanti-archivio-prezzi",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='www.mimit.gov.it', port=443): Max retries exceeded with url: /it/open-data/elenco-dataset/carburanti-archivio-prezzi (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.mimit.gov.it', port=443) at 0x7f9548823a70>, 'Connection to www.mimit.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='www.mimit.gov.it', port=443): Max retries exceeded with url: /it/open-data/elenco-dataset/carburanti-archivio-prezzi (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.mimit.gov.it', port=443) at 0x7f09a8c2d7c0>, 'Connection to www.mimit.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         }
@@ -1888,7 +2061,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "application/rss+xml",
-              "content_length": "1724",
+              "content_length": "1825",
               "reason": "editorial_or_document_resource"
             },
             {
@@ -1897,7 +2070,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13098",
+              "content_length": "12814",
               "reason": "html_or_unknown"
             },
             {
@@ -1906,7 +2079,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13050",
+              "content_length": "13047",
               "reason": "html_or_unknown"
             }
           ]
@@ -1936,7 +2109,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "application/rss+xml",
-              "content_length": "1724",
+              "content_length": "1825",
               "reason": "editorial_or_document_resource"
             },
             {
@@ -1945,7 +2118,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13098",
+              "content_length": "12814",
               "reason": "html_or_unknown"
             },
             {
@@ -1954,7 +2127,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13050",
+              "content_length": "13047",
               "reason": "html_or_unknown"
             }
           ]
@@ -1984,7 +2157,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "application/rss+xml",
-              "content_length": "1724",
+              "content_length": "1825",
               "reason": "editorial_or_document_resource"
             },
             {
@@ -1993,7 +2166,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13098",
+              "content_length": "12814",
               "reason": "html_or_unknown"
             },
             {
@@ -2002,7 +2175,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13050",
+              "content_length": "13047",
               "reason": "html_or_unknown"
             }
           ]
@@ -2032,7 +2205,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "application/rss+xml",
-              "content_length": "1724",
+              "content_length": "1825",
               "reason": "editorial_or_document_resource"
             },
             {
@@ -2041,7 +2214,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13098",
+              "content_length": "12814",
               "reason": "html_or_unknown"
             },
             {
@@ -2050,7 +2223,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13050",
+              "content_length": "13047",
               "reason": "html_or_unknown"
             }
           ]
@@ -2080,7 +2253,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "application/rss+xml",
-              "content_length": "1724",
+              "content_length": "1825",
               "reason": "editorial_or_document_resource"
             },
             {
@@ -2089,7 +2262,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13098",
+              "content_length": "12814",
               "reason": "html_or_unknown"
             },
             {
@@ -2098,7 +2271,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "13050",
+              "content_length": "13047",
               "reason": "html_or_unknown"
             }
           ]
@@ -2133,7 +2306,7 @@
               "ok": false,
               "http_status": 200,
               "content_type": "text/html",
-              "content_length": "117832",
+              "content_length": "117525",
               "reason": "html_or_unknown"
             }
           ]
@@ -2346,30 +2519,30 @@
           "content_type": "text/html",
           "reason": "official_page_scanned",
           "candidate_links": [
-            "http://dati.ustat.miur.it/dataset/metadati",
-            "http://dati.ustat.miur.it/organization/miur",
-            "http://dati.ustat.miur.it/organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=AFAM&tags=Contribuzione%20e%20interventi",
-            "http://dati.ustat.miur.it/organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=AFAM&tags=Personale",
-            "http://dati.ustat.miur.it/organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=AFAM&tags=Studenti",
-            "http://dati.ustat.miur.it/organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=DSU&tags=Collegi%20universitari",
-            "http://dati.ustat.miur.it/organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=DSU&tags=Enti%20per%20il%20DSU",
-            "http://dati.ustat.miur.it/organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=Universit%C3%A0&tags=Studenti"
+            "https://dati-ustat.mur.gov.it/dataset/metadati",
+            "https://dati-ustat.mur.gov.it/organization/miur",
+            "https://dati-ustat.mur.gov.it/organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=AFAM&tags=Contribuzione%20e%20interventi",
+            "https://dati-ustat.mur.gov.it/organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=AFAM&tags=Personale",
+            "https://dati-ustat.mur.gov.it/organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=AFAM&tags=Studenti",
+            "https://dati-ustat.mur.gov.it/organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=DSU&tags=Collegi%20universitari",
+            "https://dati-ustat.mur.gov.it/organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=DSU&tags=Enti%20per%20il%20DSU",
+            "https://dati-ustat.mur.gov.it/organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=Universit%C3%A0&tags=Studenti"
           ],
           "verified_links": [
             {
-              "url": "http://dati.ustat.miur.it/dataset/metadati",
+              "url": "https://dati-ustat.mur.gov.it/dataset/metadati",
               "ok": false,
-              "reason": "ConnectTimeout: HTTPConnectionPool(host='dati.ustat.miur.it', port=80): Max retries exceeded with url: /dataset/metadati (Caused by ConnectTimeoutError(<HTTPConnection(host='dati.ustat.miur.it', port=80) at 0x7f955010f7a0>, 'Connection to dati.ustat.miur.it timed out. (connect timeout=10)'))"
+              "reason": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/metadati (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f09a8345850>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))"
             },
             {
-              "url": "http://dati.ustat.miur.it/organization/miur",
+              "url": "https://dati-ustat.mur.gov.it/organization/miur",
               "ok": false,
-              "reason": "ConnectTimeout: HTTPConnectionPool(host='dati.ustat.miur.it', port=80): Max retries exceeded with url: /organization/miur (Caused by ConnectTimeoutError(<HTTPConnection(host='dati.ustat.miur.it', port=80) at 0x7f9538cf5580>, 'Connection to dati.ustat.miur.it timed out. (connect timeout=10)'))"
+              "reason": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /organization/miur (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f09a83453a0>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))"
             },
             {
-              "url": "http://dati.ustat.miur.it/organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=AFAM&tags=Contribuzione%20e%20interventi",
+              "url": "https://dati-ustat.mur.gov.it/organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=AFAM&tags=Contribuzione%20e%20interventi",
               "ok": false,
-              "reason": "ConnectTimeout: HTTPConnectionPool(host='dati.ustat.miur.it', port=80): Max retries exceeded with url: /organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=AFAM&tags=Contribuzione%20e%20interventi (Caused by ConnectTimeoutError(<HTTPConnection(host='dati.ustat.miur.it', port=80) at 0x7f95389b04a0>, 'Connection to dati.ustat.miur.it timed out. (connect timeout=10)'))"
+              "reason": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /organization/ace58834-5a0b-40f6-9b0e-ed6c34ea8de0?tags=AFAM&tags=Contribuzione%20e%20interventi (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f09a8cc3bc0>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))"
             }
           ]
         },
@@ -2377,7 +2550,7 @@
           "kind": "discovery",
           "url": "https://dati-ustat.mur.gov.it/dataset/2025-2029-personale-universitario",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/2025-2029-personale-universitario (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f95389b1ac0>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/2025-2029-personale-universitario (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f09a8c2ff50>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         },
@@ -2385,7 +2558,7 @@
           "kind": "discovery",
           "url": "https://dati-ustat.mur.gov.it/dataset/serie-storica-sul-personale-universitario",
           "ok": false,
-          "reason": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/serie-storica-sul-personale-universitario (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f95389f7da0>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))",
+          "reason": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/serie-storica-sul-personale-universitario (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f09a861fa10>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))",
           "candidate_links": [],
           "verified_links": []
         }
