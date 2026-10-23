@@ -1,6 +1,322 @@
 {
-  "generated_at": "2026-10-22T14:52:45.028636+00:00",
+  "generated_at": "2026-10-23T09:07:32.898302+00:00",
   "articles": [
+    {
+      "id": "PULSE-DD10982F0957E642",
+      "story_fingerprint": "dd10982f0957e6423e7ca3e6",
+      "published_at": "2026-10-23T06:33:31+00:00",
+      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBlRlc4UUFxS215REplY0JVdmxJQnhrd1FxclhrbkNDWTRrd00wcnBlcE9pa0gxOHJ6czN0bVotVFY3cS1aT1FDbXhtQ1phLTJZNXdqalpwc1dMQkgtRlJTQnBiNmt6R1k3YzZDUFVpNA?oc=5",
+        "domain": "Sky TG24",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Inflazione, in 5 anni in Italia prezzi aumentati del 22,3%. I DATI - Sky TG24",
+      "summary": "Inflazione, in 5 anni in Italia prezzi aumentati del 22,3%. I DATI Sky TG24",
+      "statistical_claims": [
+        {
+          "raw_value": "5 ",
+          "verified": false
+        },
+        {
+          "raw_value": "22,3%",
+          "verified": false
+        },
+        {
+          "raw_value": "5 ",
+          "verified": false
+        },
+        {
+          "raw_value": "22,3%",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-31F94762ABFAF2BF",
+      "story_fingerprint": "31f94762abfaf2bfbdb489bc",
+      "published_at": "2026-10-23T05:50:10+00:00",
+      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 60,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOWVFLYnR4MnlERFQxWG01M1Rhb05BYW00a0tIR0hHZmRIdlo5SWRNSERodmRKVjIzQVZ5ZkpDRmRMVjhHSF9jQWVVZk5Sd3NLcHFPY0hNN2Z3NGVBRkp1RFhXakdNVzlHaV9aaUYwTUt4bi1zdXF1MnhEaGxONUUzdEhpeHF0eDAxX1JRMEZXM0FrdXpMVk5kZHh1N3ZZWm1uWWpMOExUTGREemZmUnV2YTRHZWZCWUZoUDVPYW00cEpUeUNXVVlSampLRks3dw?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Record-breaking heatwave in Europe: 50,000 deaths in the summer of 2026. Italia worst hit of all - Il Sole 24 ORE",
+      "summary": "Record-breaking heatwave in Europe: 50,000 deaths in the summer of 2026. Italia worst hit of all Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "50,000 ",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "50,000 ",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-CD27628BBC5B4D3C",
+      "story_fingerprint": "cd27628bbc5b4d3cd61a2052",
+      "published_at": "2026-10-23T05:49:59+00:00",
+      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 60,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNcjVOUnhGVC0yb2Z1czYyYjQ3VlpxZVY3UXVNOENLbVZRZ3RtMHNDWXVXSWhnXzFxcDU5cFVKajR6VE1Bdkh6NjRQMkFCVTVKVm1PRXlqeTYwS1dPQ0ZlT29hM2JIRnlKenRfLTJ1Y3BCSkVlNktjcU13OFZna2dYa0ZEOEQzNFE4Y0xFdXVlQXJFdEhFRzZ5cGxGLUJ6cmFHdkJxdWhBUngzYWh3cS13?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Caldo record in Europa: 50mila morti nell’estate 2026. Italia peggio di tutti - Il Sole 24 ORE",
+      "summary": "Caldo record in Europa: 50mila morti nell’estate 2026. Italia peggio di tutti Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "50mila",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "50mila",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-CC6C6BDCCA8A7587",
+      "story_fingerprint": "cc6c6bdcca8a75878cbb0e04",
+      "published_at": "2026-10-23T05:45:57+00:00",
+      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 65,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQLUt0T1RpTDJRck5QNnlFclQtd1ZZclRqZEowOVZuSWpwMVlMQWVQSTNJaVFPMGc3d1V2aXUzV0tGYUtCeUROZ2JhTDZOUFljSlhBTXFyQ0laZzVKanVuWjZTSDBQdE9DUm5jd21mZEtJYnkxclVnZHZFRjN6R3dMTU1iOTZRcVkxX2RSaFl0MUpNSkFJdHNHOWJhOElMNUlKbjZGOC1HNW53NTJGZXo2cV9XVmdhUEk?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Immigrati, record dei permessi di soggiorno: +47% nel 2025, il più alto degli ultimi 15 anni - Il Sole 24 ORE",
+      "summary": "Immigrati, record dei permessi di soggiorno: +47% nel 2025, il più alto degli ultimi 15 anni Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "+47%",
+          "verified": false
+        },
+        {
+          "raw_value": "15 ",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "+47%",
+          "verified": false
+        },
+        {
+          "raw_value": "15 ",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-D130FE9DAF5038D6",
+      "story_fingerprint": "d130fe9daf5038d6cc34ddfd",
+      "published_at": "2026-10-23T05:32:11+00:00",
+      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi1wJBVV95cUxPS1VRWVpUVzgwVHFLVVpkdms3ZkVwX1IxYi1MRUhXcWFGTmQ3aGdESnFtRmdpbllPSGVacDk0ZzBsQXRvQnp1LUZWZjlwMW9ubHROTndmSzRuRTA5ZzZoVWc1RVRGZkRRWWxCQWY5aGFjYWRGbmlEc1dTSGZ0Y0gwR3VkbEFqaHdocHVzLUQ0Z3h0TmJkdnc5OHgtSmNyVXdmLVJNS3dyVE1qQy1XdktDOTlHVTg1WTEwRVNwdE5NTHl6TUgzdXRidEVmaTNxZzlrZTVVTm5OckFUNFNidF96NUJkbXVabTYyRjFvM0dzY2tWd1F1LVlSeDhhZi11bk9xREhPMlNjS1hwRHVQUkhVMl94eEFvRGVWTVVSUGRqbnJVdS1IajBGWDY5N1h1MWRNYlFTbDlBTi1LYmtVb2lFajhHMTg0UjdhXzVoQlpvMkhJQW44QXhz0gHXAkFVX3lxTE9LVVFZWlRXODBUcUtVWmR2azdmRXBfUjFiLUxFSFdxYUZOZDdoZ0RKcW1GZ2luWU9IZVpwOTRnMGxBdG9CenUtRlZmOXAxb25sdE5Od2ZLNG5FMDlnNmhVZzVFVEZmRFFZbEJBZjloYWNhZEZuaURzV1NIZnRjSDBHdWRsQWpod2hwdXMtRDRneHROYmR2dzk4eC1KY3JVd2YtUk1Ld3JUTWpDLVd2S0M5OUdVODVZMTBFU3B0Tk1MeXpNSDN1dGJ0RWZpM3FnOWtlNVVObk5yQVQ0U2J0X3o1QmRtdVptNjJGMW8zR3Nja1Z3UXUtWVJ4OGFmLXVuT3FESE8yU2NLWHBEdVBSSFUyX3h4QW9EZVZNVVJQZGpuclV1LUhqMEZYNjk3WHUxZE1iUVNsOUFOLUtia1VvaUVqOEcxODRSN2FfNWhCWm8ySElBbjhBeHM?oc=5",
+        "domain": "Corriere Fiorentino",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Nuovi nati, la Toscana fa il record negativo: per la prima volta è sotto i 20 mila. E Giani promette 500 euro alle neomamme - Corriere Fiorentino",
+      "summary": "Nuovi nati, la Toscana fa il record negativo: per la prima volta è sotto i 20 mila. E Giani promette 500 euro alle neomamme Corriere Fiorentino",
+      "statistical_claims": [
+        {
+          "raw_value": "20 mila",
+          "verified": false
+        },
+        {
+          "raw_value": "500 ",
+          "verified": false
+        },
+        {
+          "raw_value": "20 mila",
+          "verified": false
+        },
+        {
+          "raw_value": "500 ",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "toscana"
+      ],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-8A58AD150F8AE8EF",
+      "story_fingerprint": "8a58ad150f8ae8ef9637a6f7",
+      "published_at": "2026-10-22T18:29:39+00:00",
+      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxON3hVVTNXY3ozR3o3NXI1aVhiQ0hMWWdncEVhX2dHUmhHUERsdVlwbHVxY2RYWHRZaVVHbXAydVh6dldGMVI5N21McDRlM3N1TDNUZzBGRkhwU0V3RERhR3RHUXFIbkItOEcxMVdrLUZMYTdvcmFVNzlJdlNySGRmVS03NElhaWdPMVU0cDNnLTliZjN6RVByN2lJa2h1RVU?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "“Iris” di Monet venduto per 50 milioni di euro a Parigi, record all’asta - Il Sole 24 ORE",
+      "summary": "“Iris” di Monet venduto per 50 milioni di euro a Parigi, record all’asta Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "50 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "50 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-16EED6310415C085",
+      "story_fingerprint": "16eed6310415c0857ff534f5",
+      "published_at": "2026-10-22T17:55:04+00:00",
+      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 59,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNV294TjRudGNUYTg0S0wwUVR4S0hucEpnc2hwUi1pQ2VTMUMySjNneDUxTXdudlAyNnRqNEdBVW0wZnoxWnRNWDcxZG9EcTZOR3R5Nnc5bnRGSXlrc3A0b0RzMFR2UERzZFIzVXhfNGVvZ28wcmhrTE42SlZWWURmSGljRE1vZXFIUkhXcl9tcEhlTVRNYjU5ekg4c0lTUlFoajJyRDl0Yw?oc=5",
+        "domain": "lmservizi.it",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Mammografia, record del 77% in Italia ma il dato crolla sotto il 50% in Calabria - lmservizi.it",
+      "summary": "Mammografia, record del 77% in Italia ma il dato crolla sotto il 50% in Calabria lmservizi.it",
+      "statistical_claims": [
+        {
+          "raw_value": "77%",
+          "verified": false
+        },
+        {
+          "raw_value": "50%",
+          "verified": false
+        },
+        {
+          "raw_value": "77%",
+          "verified": false
+        },
+        {
+          "raw_value": "50%",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "calabria"
+      ],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-CC3ED53479D9F000",
+      "story_fingerprint": "cc3ed53479d9f00069e055c2",
+      "published_at": "2026-10-22T16:47:01+00:00",
+      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 58,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.repubblica.it/economia/rapporti/obiettivo-capitale/mercati/2026/10/22/news/imprese_nel_terzo_trimestre_saldo_a_18403_il_piu_alto_dal_2021-425667806/?rss",
+        "domain": "repubblica.it",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Imprese, nel terzo trimestre saldo a +18.403: il più alto dal 2021",
+      "summary": "Il 79% della crescita arriva dalle società di capitali. Tornano in positivo commercio, agricoltura e manifattura. Lo rileva Movimprese, l'analisi trimestrale di Unioncamere e InfoCamere",
+      "statistical_claims": [
+        {
+          "raw_value": "+18.403",
+          "verified": false
+        },
+        {
+          "raw_value": "79%",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
     {
       "id": "PULSE-41C4C347DD46FB35",
       "story_fingerprint": "41c4c347dd46fb352d127b77",
@@ -85,7 +401,7 @@
       "id": "PULSE-CBDDAD37BBE64577",
       "story_fingerprint": "cbddad37bbe64577a3a1aa70",
       "published_at": "2026-10-22T12:45:44+00:00",
-      "last_seen_at": "2026-10-22T14:52:45.028636+00:00",
+      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
       "topic": "ALTRO",
       "pulse_score": 65,
       "patterns": [],
@@ -134,7 +450,7 @@
       "id": "PULSE-9B03DD8542EBED17",
       "story_fingerprint": "9b03dd8542ebed178a4841c1",
       "published_at": "2026-10-22T11:56:00+00:00",
-      "last_seen_at": "2026-10-22T14:52:45.028636+00:00",
+      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
       "topic": "ALTRO",
       "pulse_score": 84,
       "public_source": {
@@ -148,7 +464,7 @@
         "visible": false,
         "role": "journalistic_radar",
         "outlet": "Google News - Repubblica dati e statistiche",
-        "original_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPUGhwWTBNZ3JrZjQxaExiZ2FPdzlQRjJaaHFHLTBUa2ZlUFFXX3hBMkFNRWNTZXRxOW9pc0xuU1BLaExwSTcxYTEyVm8wU1VRREQzeXRabGppamo3TjFRVmZpa0FiM2ZmNEtacG1rSVVGWEdEQ25rNmo5RUFmd0VRcmh6LXdDVU82bC1qWTRXazltVVJrOFRMOHZQbERGSUIxcWRHbENYa043VllGQV8tVlNuSi1oM3pvRUE?oc=5",
+        "original_url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQUWNrZ0JWNktsakEtZFBYOV9MeTdkNEEyU3gya3pwLUlxOWxqTUlmSXVRS2g5ZUJwUnVOZmpFVzM2eWx3Q1lyNGJDbFZOOGZCTXNWZzFtYXM5dzdoTmltZGNHT1JiQTNZMlF4Z0c4WFFuYlYwdTVSNE1MRWJWbXlOSlJnM3NCUUV5bGFsZzZsU1oxanRuT3JXT1R4ZXh0c2xvek1wY0cwczAzTWQ2ZlFCdDdBTnhoMGNHQzYybk1kaDJZYmlGbHc?oc=5",
         "evidence_gate": "strong_primary_match"
       },
       "period_reference": null,
@@ -188,7 +504,7 @@
       "id": "PULSE-6BBBA8707BD08A2F",
       "story_fingerprint": "6bbba8707bd08a2f53b05b9f",
       "published_at": "2026-10-22T11:10:15+00:00",
-      "last_seen_at": "2026-10-22T14:52:45.028636+00:00",
+      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
       "topic": "ALTRO",
       "pulse_score": 70,
       "patterns": [],
@@ -224,10 +540,41 @@
       "publication_status": "quarantined"
     },
     {
+      "id": "PULSE-BBC23256467F9C15",
+      "story_fingerprint": "bbc23256467f9c15b405c1e6",
+      "published_at": "2026-10-22T10:58:08+00:00",
+      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 59,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNTGxhdG1wa1BCMnVVOGMtekp1LVhWTjAtcVNuU3p2cVpkT2ZVMUhQbVZyMFk1Tld6dV85V2g3SUlzZ1lKekFqZHZiQ3UxM3MzLWhjSVRXam00cG1tbDVETnlCcUo0LURfcUstOUpPM01JaVIwNHJMZE1qa2tQbTgwTGNXSVpOdGFVdlZUNmtUWWstVDNmeDc5YlBvQkdKQXRqZVNNbEVWZGRXenV6UHJtd1FScHN0R0VycEVyNUxnUlhFVkxjSE1pbTFZOHJ4T3MyZHE2NzlCY0FBaVNndHRSeFhMZjg2QdIB6wFBVV95cUxPajdRc1RHY3UwQXlBYko1UXkwa0o2Z0pJTS1xZmFLbEJBT0tmQUpmbGJqTW5fVjBrUnRiQ204U1VLSXJhVUp5eXhKZ2pPSDlMVUpjSGhsa0hsYm5SYS1hQTVJSVZiMXA1SkdHSWpyOW5YbzZNNkFNN3BfZ09qMmdMQWlzRUpGS1RnSVFnVWJVTVg1Sk1rd2l2aUVqRWI3RXdlcGFKSVljMnNwa1VQSEx2RURGR0VXMFE5S25EOGRsV1hnRDBQdDJsaW9yQWVycjJ2bkZKQzJvb3pyYWlETFdxTTZNeHlTUk12SmxV?oc=5",
+        "domain": "ANSA",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "L'Istat: 'Nel 2025 record dei permessi di soggiorno, su del 47%' - ANSA",
+      "summary": "L'Istat: 'Nel 2025 record dei permessi di soggiorno, su del 47%' ANSA",
+      "statistical_claims": [
+        {
+          "raw_value": "47%",
+          "verified": false
+        },
+        {
+          "raw_value": "47%",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
       "id": "PULSE-34DFAF8E1B8027FD",
       "story_fingerprint": "34dfaf8e1b8027fdef8739e3",
       "published_at": "2026-10-22T09:00:29+00:00",
-      "last_seen_at": "2026-10-22T14:52:45.028636+00:00",
+      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
       "topic": "LAVORO",
       "pulse_score": 77,
       "public_source": {
@@ -336,7 +683,7 @@
       "id": "PULSE-EA24ED9929F8081F",
       "story_fingerprint": "ea24ed9929f8081fadc0dc9b",
       "published_at": "2026-10-21T22:23:37+00:00",
-      "last_seen_at": "2026-10-22T14:52:45.028636+00:00",
+      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
       "topic": "DEMOGRAFIA",
       "pulse_score": 45,
       "patterns": [],
@@ -406,7 +753,7 @@
       "id": "PULSE-F7E4B7BEE2D8F09F",
       "story_fingerprint": "f7e4b7bee2d8f09fad55a0b9",
       "published_at": "2026-10-21T15:17:00+00:00",
-      "last_seen_at": "2026-10-22T14:52:45.028636+00:00",
+      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
       "topic": "ALTRO",
       "pulse_score": 69,
       "patterns": [],
@@ -439,7 +786,7 @@
       "id": "PULSE-5BEBC3259730F2CE",
       "story_fingerprint": "5bebc3259730f2ce1ef57c8d",
       "published_at": "2026-10-21T13:37:00+00:00",
-      "last_seen_at": "2026-10-22T14:52:45.028636+00:00",
+      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
       "topic": "ALTRO",
       "pulse_score": 50,
       "patterns": [],
@@ -478,7 +825,7 @@
       "id": "PULSE-0FF45CF3034404CC",
       "story_fingerprint": "0ff45cf3034404cc9f47e7ce",
       "published_at": "2026-10-21T13:17:31+00:00",
-      "last_seen_at": "2026-10-22T14:52:45.028636+00:00",
+      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
       "topic": "DEMOGRAFIA",
       "pulse_score": 50,
       "patterns": [],
@@ -572,7 +919,7 @@
       "id": "PULSE-951CD7555E25011C",
       "story_fingerprint": "951cd7555e25011c73e622ed",
       "published_at": "2026-10-21T12:43:59+00:00",
-      "last_seen_at": "2026-10-22T14:52:45.028636+00:00",
+      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
       "topic": "SALUTE",
       "pulse_score": 80,
       "public_source": {
@@ -739,7 +1086,7 @@
       "id": "PULSE-A30715E8CFDEB562",
       "story_fingerprint": "a30715e8cfdeb5626e5971e5",
       "published_at": "2026-10-21T10:48:00+00:00",
-      "last_seen_at": "2026-10-22T14:52:45.028636+00:00",
+      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 69,
       "patterns": [],
@@ -770,7 +1117,7 @@
       "id": "PULSE-D70CE0B59F63FB14",
       "story_fingerprint": "d70ce0b59f63fb14a7a4e506",
       "published_at": "2026-10-21T10:36:03+00:00",
-      "last_seen_at": "2026-10-22T14:52:45.028636+00:00",
+      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
       "topic": "AMBIENTE",
       "pulse_score": 64,
       "patterns": [],
@@ -988,7 +1335,7 @@
       "id": "PULSE-0940051272A60647",
       "story_fingerprint": "0940051272a606471be9ffd2",
       "published_at": "2026-10-21T09:32:32+00:00",
-      "last_seen_at": "2026-10-22T14:52:45.028636+00:00",
+      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
       "topic": "DEMOGRAFIA",
       "pulse_score": 50,
       "patterns": [],
@@ -1035,7 +1382,7 @@
       "id": "PULSE-7318F2D74EE83625",
       "story_fingerprint": "7318f2d74ee83625aa416b62",
       "published_at": "2026-10-21T09:32:19+00:00",
-      "last_seen_at": "2026-10-22T14:52:45.028636+00:00",
+      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
       "topic": "DEMOGRAFIA",
       "pulse_score": 45,
       "patterns": [],
@@ -1074,7 +1421,7 @@
       "id": "PULSE-A5C82B1BC8DCCA5A",
       "story_fingerprint": "a5c82b1bc8dcca5a2c763fde",
       "published_at": "2026-10-21T09:01:44+00:00",
-      "last_seen_at": "2026-10-22T14:52:45.028636+00:00",
+      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 80,
       "public_source": {
@@ -1276,7 +1623,7 @@
       "id": "PULSE-CF6F581FF603CAEA",
       "story_fingerprint": "cf6f581ff603caea2dc5f9c4",
       "published_at": "2026-10-21T08:00:15+00:00",
-      "last_seen_at": "2026-10-22T14:52:45.028636+00:00",
+      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
       "topic": "DEMOGRAFIA",
       "pulse_score": 87,
       "public_source": {
@@ -1338,7 +1685,7 @@
       "id": "PULSE-BDF2A2EF4E088D22",
       "story_fingerprint": "bdf2a2ef4e088d2218790b06",
       "published_at": "2026-10-21T08:00:00+00:00",
-      "last_seen_at": "2026-10-22T14:52:45.028636+00:00",
+      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
       "topic": "DEMOGRAFIA",
       "pulse_score": 80,
       "public_source": {
@@ -1431,7 +1778,7 @@
       "id": "PULSE-6D2C0AB75412293E",
       "story_fingerprint": "6d2c0ab75412293e9ae49ed6",
       "published_at": "2026-10-21T05:22:00+00:00",
-      "last_seen_at": "2026-10-21T09:08:19.674431+00:00",
+      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
       "topic": "AMBIENTE",
       "pulse_score": 59,
       "patterns": [],
