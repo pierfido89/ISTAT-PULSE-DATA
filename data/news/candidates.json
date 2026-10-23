@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-23T09:07:32.898302+00:00",
+  "generated_at": "2026-10-23T14:41:01.302543+00:00",
   "candidates": [
     {
       "radar": "Google News - statistiche Italia",
       "discovery_url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBlRlc4UUFxS215REplY0JVdmxJQnhrd1FxclhrbkNDWTRrd00wcnBlcE9pa0gxOHJ6czN0bVotVFY3cS1aT1FDbXhtQ1phLTJZNXdqalpwc1dMQkgtRlJTQnBiNmt6R1k3YzZDUFVpNA?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Inflazione, in 5 anni in Italia prezzi aumentati del 22,3%. I DATI - Sky TG24",
-      "detected_at": "2026-10-23T09:07:32.898302+00:00",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
       "score_discovery": 49,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -24,7 +24,7 @@
       "radar": "Google News - statistiche Italia",
       "discovery_url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNcjVOUnhGVC0yb2Z1czYyYjQ3VlpxZVY3UXVNOENLbVZRZ3RtMHNDWXVXSWhnXzFxcDU5cFVKajR6VE1Bdkh6NjRQMkFCVTVKVm1PRXlqeTYwS1dPQ0ZlT29hM2JIRnlKenRfLTJ1Y3BCSkVlNktjcU13OFZna2dYa0ZEOEQzNFE4Y0xFdXVlQXJFdEhFRzZ5cGxGLUJ6cmFHdkJxdWhBUngzYWh3cS13?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Caldo record in Europa: 50mila morti nell’estate 2026. Italia peggio di tutti - Il Sole 24 ORE",
-      "detected_at": "2026-10-23T09:07:32.898302+00:00",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
       "score_discovery": 60,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -43,9 +43,85 @@
     },
     {
       "radar": "Google News - statistiche Italia",
+      "discovery_url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNTjRkNkxkZ0dQVUdlQ05rNzh2MHZBMUFBc3JUTTdmeHZYV2VNc0djWkhOa2VBY2dldFFNdkVjMUhOMEw4aENBcDJabzd1dUdwLWpUOFFveS1zbm1NeFljZHJaNnhsMUFZOXozeXpMc05JOFVBM3VReWo5c0ZwXzZYZXJzRjhhckV3YzhDSEpjVWtpSjZzUVhkcXliV2w4ZWZsV1hxbXc0OTNaUWxSV0VNaVlnZTJPX2JSZ1dkVA?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "“Crociere, un 2027 da record per l’Italia”: tutti i dati dell’Italian Cruise Watch - GuidaViaggi",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
+      "score_discovery": 47,
+      "topic": "ALTRO",
+      "numbers_detected": [
+        "2027 ",
+        "2027 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - statistiche Italia",
+      "discovery_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNQjFibVplcXlpMGI0TGN0R2E0Y3kyaXdBMExYZXRhZXlua2Q5VjQtZTVTZnhza0Q1eWJWMUdUeDZyZGJaTzM0Vk1nZHZpUFk1WGsxUEFHRFlxSFNKZFZQWlBFb290elEtaG1Nd0hPa3FmUFhEaGc0WWtSN2hWRHdzNlFqczZaOEJyRm9xQkJmUkhZS092QW9iZDFjOV8tOGI2WFE?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Debiti record: 4 province toscane tra le prime 10 in Italia - Telegranducato di Toscana",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
+      "score_discovery": 49,
+      "topic": "ALTRO",
+      "numbers_detected": [
+        "4 ",
+        "10 ",
+        "4 ",
+        "10 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - statistiche Italia",
+      "discovery_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQVldDMkFhVlVfZXAtRHZHNzNVZ3E2bnFxaUNFSnpfVnFnY2NaQ3prQ3pJZEtLRS1VcXlLM1FaMHh2eXVaQzE1STRBMW9iMTJWdkF6U19CdWpySjZ6Vy1pOXR5TkNiV1NsQTZHUFFqNE02VUxWVU1jLVhtT2ZyQWVocklpS2Z1YkY2dXpZYlRCSVVwZ1EwdFBVTXd3N1pJRTZOYlow?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Caldo record in Europa: 50mila morti nell’estate 2026. Italia peggio di tutti - lmservizi.it",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
+      "score_discovery": 54,
+      "topic": "ALTRO",
+      "numbers_detected": [
+        "50mila",
+        "2026",
+        "50mila",
+        "2026"
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - economia lavoro",
+      "discovery_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOa2poYzFlQld2dEFIbDBUOEdUTGxaMGdwNEc0TXlLOGtDaWZSNEtuZ3RTUnRpS3U5MU5sTlpYelB1UzgyMnhTODI0dGtVUHJLTy04YVFoTTl1OV8zRDZ5Qkg2Zi14WUtHOElwVURFM1ZqU1piSXRoNnJBaDBpcWUyYmM5SjJzRzd6TEVaVmdEX3I3cmZrdmxSdjlQVWxJQVp1enF6MTc4U3BUdkx2dU0zTW9n?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Carovita, in Italia prezzi aumentati del 22,3% in cinque anni: salari in calo del 5,5% dal 2000 - AZ Informa",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
+      "score_discovery": 60,
+      "topic": "LAVORO",
+      "numbers_detected": [
+        "22,3%",
+        "5,5%",
+        "2000 ",
+        "22,3%",
+        "5,5%",
+        "2000 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - salute scuola ambiente",
       "discovery_url": "https://news.google.com/rss/articles/CBMikwJBVV95cUxNVFRGb3pDLTlVb1N4bnJOdl84UnFEbm1EeGRwNEFkcEJxby01RmZfNl80RWxpc0sxQUlNSXlDdWV6dTJmSTY1TFBLTkxVRkN0OEJkeWFDUWNlN2ZQSXY1Zm1zdXNHaFZQTnFYSlkxeFFtckRrdmlKcDFGRFI0M09BVmNVM1FVTEh4bDZwd1RVQ0JJNjRKeF9MZE5uZWNjbFJDYmF1QkFxa1JLMVJsQUUzN0FwRGZ2aU01OVBBenVfQmpYdXBtcmJiV2tWeERlSTZxNHcwbGdXSjlFdGlnUkJuZmVXU3BNZ08yWnhYOFliZHNnTU1EemRJU0dCX05abF80b0hUYU9RdTA1eUNjaTVVOW9jRQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "L’inverno demografico non si ferma. In Italia sempre meno bambini: nel 2025 appena 355mila nascite. E il 2026 va ancora peggio. I dati Istat - Quotidiano Sanità",
-      "detected_at": "2026-10-23T09:07:32.898302+00:00",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
       "score_discovery": 50,
       "topic": "SALUTE",
       "numbers_detected": [
@@ -58,84 +134,22 @@
       ],
       "official_links": [],
       "official_domain_hints": [],
-      "primary_resolution": {
-        "url": "https://www.istat.it/comunicato-stampa/indicatori-demografici-anno-2025/",
-        "domain": "istat.it",
-        "matched_numbers": [
-          "2025 ",
-          "355mila",
-          "2026 ",
-          "2025 ",
-          "355mila",
-          "2026 "
-        ],
-        "matched_non_year_numbers": [
-          "355mila",
-          "355mila"
-        ],
-        "matched_keywords": [
-          "demografico",
-          "ferma",
-          "appena",
-          "mila",
-          "nascite"
-        ],
-        "verification_score": 95,
-        "text_excerpt": "Indicatori demografici – Anno 2025 – Istat Vai al menù della testata Vai al menù principale Vai al contenuto principale Vai al menù laterale Vai al contenuto di pagina English Homepage Home Informazioni sulle rilevazioni Attività e servizi per tipo di utenti Per tutti Sportelli sul territorio European data support Biblioteca Archivio storico Giornalisti Appuntamenti Embargo Articoli e interviste Istat in breve Storia Rispondenti Informazioni sulle rilevazioni e questionari Elenco soggetti esterni trattamento dati Sanzioni amministrative Ricercatori Eventi segnalati dalle società scientifiche Laboratorio ADELE Promozione della ricerca Studenti e docenti Master EMOS Statistica e Cittadinanza Formazione per docenti Progetti per le scuole Pacchetti didattici Competizioni e premi Enti del Sistan English This Page HomePage Imposta Lingua Language Settings Per favore conferma la tua preferenza.",
-        "verified_series": [],
-        "method": "named_or_topic_domain_search",
-        "search_domain": "salute.gov.it",
-        "attempts": [
-          {
-            "stage": "domain_search",
-            "domain": "istat.it",
-            "query": "site:istat.it \"inverno demografico ferma sempre bambini appena\" 2025  355mila 2026",
-            "results": 0
-          },
-          {
-            "stage": "domain_search",
-            "domain": "salute.gov.it",
-            "query": "site:salute.gov.it \"inverno demografico ferma sempre bambini appena\" 2025  355mila 2026",
-            "results": 6
-          }
-        ]
-      },
-      "editorial_excluded": false,
-      "status": "primary_statistical_source_verified"
-    },
-    {
-      "radar": "Google News - statistiche Italia",
-      "discovery_url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNV294TjRudGNUYTg0S0wwUVR4S0hucEpnc2hwUi1pQ2VTMUMySjNneDUxTXdudlAyNnRqNEdBVW0wZnoxWnRNWDcxZG9EcTZOR3R5Nnc5bnRGSXlrc3A0b0RzMFR2UERzZFIzVXhfNGVvZ28wcmhrTE42SlZWWURmSGljRE1vZXFIUkhXcl9tcEhlTVRNYjU5ekg4c0lTUlFoajJyRDl0Yw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Mammografia, record del 77% in Italia ma il dato crolla sotto il 50% in Calabria - lmservizi.it",
-      "detected_at": "2026-10-23T09:07:32.898302+00:00",
-      "score_discovery": 59,
-      "topic": "ALTRO",
-      "numbers_detected": [
-        "77%",
-        "50%",
-        "77%",
-        "50%"
-      ],
-      "official_links": [],
-      "official_domain_hints": [],
       "primary_resolution": null,
       "editorial_excluded": false,
       "status": "needs_primary_source"
     },
     {
-      "radar": "Google News - statistiche Italia",
-      "discovery_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNTTVBLVhrTzdiRzVRdU5vMUZLX0RpeXBUV1dlWVkyRFlQdmwtRVloVE54S3BLenhxZWVSR0ZHVGJ5ellFNngtTXN5T2puTUdxTDBvTVBXczR5SDR5OXZudllIbUdXU1JweW5YOF9QSzh4M0NaMmlEU25FT3lvc2MtRUo4dmFQd0pBeHV6T0xVWFQxbDFneFZxV3JLN3JYaUVWem1aR2xRYzJLUWt5ZE1FbFJhOHlWRllEYnc?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Mammografia, record del 77% in Italia ma il dato crolla sotto il 50% in Calabria - Il Sole 24 ORE",
-      "detected_at": "2026-10-23T09:07:32.898302+00:00",
-      "score_discovery": 65,
-      "topic": "ALTRO",
+      "radar": "Repubblica Economia",
+      "discovery_url": "https://www.repubblica.it/economia/2026/10/23/news/inflazione_prezzi_trasporti_ortaggi_legumi_alimentari_ottobre_carburanti_inflazione_upb-425670201/?rss",
+      "discovery_title": "Volano i prezzi di trasporti, ortaggi e legumi a ottobre: “Primi effetti del caro-carburanti”",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
+      "score_discovery": 59,
+      "topic": "ECONOMIA",
       "numbers_detected": [
-        "77%",
-        "50%",
-        "24 ",
-        "77%",
-        "50%",
-        "24 "
+        "2021",
+        "2022",
+        "1%",
+        "2026"
       ],
       "official_links": [],
       "official_domain_hints": [],
@@ -145,21 +159,44 @@
     },
     {
       "radar": "Repubblica Economia",
-      "discovery_url": "https://www.repubblica.it/economia/rapporti/obiettivo-capitale/mercati/2026/10/22/news/imprese_nel_terzo_trimestre_saldo_a_18403_il_piu_alto_dal_2021-425667806/?rss",
-      "discovery_title": "Imprese, nel terzo trimestre saldo a +18.403: il più alto dal 2021",
-      "detected_at": "2026-10-23T09:07:32.898302+00:00",
-      "score_discovery": 58,
+      "discovery_url": "https://www.repubblica.it/economia/rapporti/energitalia/storie/2026/10/23/news/ora_legale_nel_2026_risparmiati_oltre_90_milioni_di_euro-425669856/?rss",
+      "discovery_title": "Ora legale, nel 2026 risparmiati oltre 90 milioni di euro",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
+      "score_discovery": 60,
       "topic": "ECONOMIA",
       "numbers_detected": [
-        "+18.403",
-        "2021 ",
-        "79%"
+        "2026 ",
+        "90 milioni",
+        "300 milioni",
+        "140 mila",
+        "2004 ",
+        "2,4 miliardi"
       ],
       "official_links": [],
       "official_domain_hints": [
-        "terna.it",
-        "unioncamere.gov.it"
+        "arera.it",
+        "iss.it",
+        "terna.it"
       ],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - ANSA dati e statistiche",
+      "discovery_url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxOV3ZRMmZQRFVpb2stRkpKNXRlbnd5SDlPdzNoVmFKYklEZHNpUzB4aHpNcFpxUm8zSHY5ckxReS15UU45dzlFeXJMY0RxcWVnVzRTckR3UzhoWmh6UjB5NTdJZ3Q1aEpoMjNyTFB1OHE2VHpyZVpHYXNwRjJUeG9mQmk4aExLOFd1U0JHQndTRUJfWjhkTEFUdEJmd2l3d01IYXZrel9IN2RnSUlKa1VRWGpoamNkSkZDYmh2Y0dpM3lYdkl2aDNlTXlHbjZ3NlpmejBRMkJEbW13VTNIYl92RWhhbURwZ3hEXzRULTdGRjYzXzFabmZTb0tvS0FDTUHSAYQCQVVfeXFMT1NSelVobG5OTTBFeWlFU3Yxb1M2TXVBUVptblNmSkgxcnBiRkp3MXR3TFdrSks3N19lbVVOMHM5WldXbU5vMlVGZG1fbVoyc3gzZWxjQXlSVF96SmFrZm1yMi1mSWF6M3RQV2toZ01nT2ZQODE4ajdvbS1DbzNFUnA3blBUclFZWS1SbjVNSl9nYkx5WHlqMkV5Q1gyenJnUzRlcEt4Zjl1bUN3N2h3QmdteUVIeE5OdkxoY2kxRWt5bHpEa081cnY5REsyR0pEa3JDMEdRNTIyN3pkUlBLLUFqZUJSVGdyWWQwR183cllYcjVsTmdoWVJVbUQ4dXJVN3Y3ckU?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "X Factor, record ascolti per primo live con 918mila spettatori e quasi 5 milioni voti - ANSA",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
+      "score_discovery": 49,
+      "topic": "ALTRO",
+      "numbers_detected": [
+        "918mila",
+        "5 milioni",
+        "918mila",
+        "5 milioni"
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
       "primary_resolution": null,
       "editorial_excluded": false,
       "status": "needs_primary_source"
@@ -168,7 +205,7 @@
       "radar": "Google News - ANSA dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNTGxhdG1wa1BCMnVVOGMtekp1LVhWTjAtcVNuU3p2cVpkT2ZVMUhQbVZyMFk1Tld6dV85V2g3SUlzZ1lKekFqZHZiQ3UxM3MzLWhjSVRXam00cG1tbDVETnlCcUo0LURfcUstOUpPM01JaVIwNHJMZE1qa2tQbTgwTGNXSVpOdGFVdlZUNmtUWWstVDNmeDc5YlBvQkdKQXRqZVNNbEVWZGRXenV6UHJtd1FScHN0R0VycEVyNUxnUlhFVkxjSE1pbTFZOHJ4T3MyZHE2NzlCY0FBaVNndHRSeFhMZjg2QdIB6wFBVV95cUxPajdRc1RHY3UwQXlBYko1UXkwa0o2Z0pJTS1xZmFLbEJBT0tmQUpmbGJqTW5fVjBrUnRiQ204U1VLSXJhVUp5eXhKZ2pPSDlMVUpjSGhsa0hsYm5SYS1hQTVJSVZiMXA1SkdHSWpyOW5YbzZNNkFNN3BfZ09qMmdMQWlzRUpGS1RnSVFnVWJVTVg1Sk1rd2l2aUVqRWI3RXdlcGFKSVljMnNwa1VQSEx2RURGR0VXMFE5S25EOGRsV1hnRDBQdDJsaW9yQWVycjJ2bkZKQzJvb3pyYWlETFdxTTZNeHlTUk12SmxV?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "L'Istat: 'Nel 2025 record dei permessi di soggiorno, su del 47%' - ANSA",
-      "detected_at": "2026-10-23T09:07:32.898302+00:00",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
       "score_discovery": 59,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -187,7 +224,7 @@
       "radar": "Google News - ANSA dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPeWJWUWVOOHo4czh0anBfTFJNQlVsWnlicXJDM0tuMWtvakpEOVJUTF9iQTQ1ZDdmWXB6cjZsYUxqTEhYc21KcVhWeG1fbDQyRkhRRk9EZElxYWRfNGVWMzVYVXlBUDMzdUUwN2dwdWVqV3pvX29TaW1ZTXVnQ1VJN3lvZjYzcFNwWlhiTFROdkNYTlhMTEpaVy1SNWFVQVNDWHZBOWlGejVsa3V4WW1PbGVBM2t0Y05fZnhaWE9xZzhhZlVnWWprd0g3Wm9kVXNvWTdiYTlpU0JrSUlwV2hhbmdB0gHnAUFVX3lxTE1zTGJ5aHNrUVpnSDVuTXo4VDZiSjhlM2kwOEIxbFlubU9PLThrZTFmMl9NQUF2OVRJMWZWWFdVS1FlUV84SVQyalRtLXU2RnhHQ19RZWpvQVJnTERySzF0cHBESWZaZC01S0xFMzh2aTBWTVk0YUxFdnJKS2U2Y181ZTdxdWV5QllmT0JibE9vRFlEOE5tc0d0NVN4MHhSbTRZb3QzYnNna3lxemRCZDViODdtZ3hWWVVsOElGWmtvd1B3S3FhcjdCRDZRNVdlZ2s5QkpZTDMwWkU0RF9VTzZDVkFOa3JYZw?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Report dell'Onu sul clima: 'Nel 2025 emissioni record, verso +2,6°C entro fine secolo' - ANSA",
-      "detected_at": "2026-10-23T09:07:32.898302+00:00",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
       "score_discovery": 59,
       "topic": "AMBIENTE",
       "numbers_detected": [
@@ -203,29 +240,10 @@
       "status": "needs_primary_source"
     },
     {
-      "radar": "Google News - ANSA dati e statistiche",
-      "discovery_url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOYkk0ZzdpVmc3djBndjZ1SWt3cF9aVUNybGEzclZIaTFLNEYyQmVLN3lESkZ5RXlobVpMWWhXUHY5R0hqNzZMX1o5MFRpMWFhZDVLVXdxY2xobHk0Sm5PYUpKSlh2MDVSdVpKbENDM1NlajVWQjIwMnRHYXVYVGdKaXZGaDRnc0tzZk9lNmhiMUNyd0lwdHMyNEx3ZlktUS1qbEtnb01oUDFlR1ZyV3lMbzE1QmdzNG5leUk2dkFUSi1kOER1Z1I0TjVJVHNyZDRkb2NabkJENEJtY0RPR29XSmhHdjZIdVMxQVHSAe8BQVVfeXFMT3pEaTVnRlpqRjM4N1dIZDV5LTdfNlk5YzdFT29WSHU2TXJ1cVZzMGh1a3M1Q1Nnd0hYcVctQVVTZ250RFJNMWFkeXltb19YSnNBOUUzUXdOODRQVC1FWXlmVEJleEZiNkxwR0h1aFdaeXF3bkdFbHd2YmFLOURkUkR5XzVQY0g0YmtaVFVXREotVGZzZnJsQ1lrVExyRHhnTFJjM3B0anlMY1Vsenczd3dEbk5uc2xyMkU1djlRWk43aVJXcFkyd3ExeEpvRVM4czVrZ3NUU21vVWU0NVVweDZIT1A2Xy1hai1EVWQzSEU?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Raccolta differenziata, nel 2025 in Piemonte quota record del 69,4% - ANSA",
-      "detected_at": "2026-10-23T09:07:32.898302+00:00",
-      "score_discovery": 69,
-      "topic": "ALTRO",
-      "numbers_detected": [
-        "2025 ",
-        "69,4%",
-        "2025 ",
-        "69,4%"
-      ],
-      "official_links": [],
-      "official_domain_hints": [],
-      "primary_resolution": null,
-      "editorial_excluded": false,
-      "status": "needs_primary_source"
-    },
-    {
       "radar": "Google News - Adnkronos dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPQWgxNDgtTzllNE5uU1pBc1VZYk5HSmxxUzNGN0k1TUtMQUhBTVdJdnMzYzVXZnlGU1FXQXM3SDhiNEpva3Q0OWpjaU51bW1HUnBwZDFHOGFveGc1SzNRQkxfLXQtYlVXYTdMWmdDS3I1bkRjMk50ekZtZHBtNk9qdzVDMzdBMnBPWnVwcmpubFFZTTFoNVJMRW9RNllUVE9JMHY5WVdtMTBZOE01SGxWSVE4bEpLYWxOSTYzZkZhX0NSQmlhZVE?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Rapporto Aiam, nel 2025 12.632 concerti con 2,5 milioni di spettatori - Adnkronos",
-      "detected_at": "2026-10-23T09:07:32.898302+00:00",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
       "score_discovery": 50,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -246,7 +264,7 @@
       "radar": "Google News - Sole 24 Ore dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQLUt0T1RpTDJRck5QNnlFclQtd1ZZclRqZEowOVZuSWpwMVlMQWVQSTNJaVFPMGc3d1V2aXUzV0tGYUtCeUROZ2JhTDZOUFljSlhBTXFyQ0laZzVKanVuWjZTSDBQdE9DUm5jd21mZEtJYnkxclVnZHZFRjN6R3dMTU1iOTZRcVkxX2RSaFl0MUpNSkFJdHNHOWJhOElMNUlKbjZGOC1HNW53NTJGZXo2cV9XVmdhUEk?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Immigrati, record dei permessi di soggiorno: +47% nel 2025, il più alto degli ultimi 15 anni - Il Sole 24 ORE",
-      "detected_at": "2026-10-23T09:07:32.898302+00:00",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
       "score_discovery": 65,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -267,9 +285,28 @@
     },
     {
       "radar": "Google News - Sole 24 Ore dati e statistiche",
+      "discovery_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPdDhOemp5cUdtTG55VE93VUxWbXFLMm93dGYxcnIwVVNCR2pQSzN3WUl2YmJvMm12RXhnYlh6UkdURUVRdUhKVnA5Vl9YcmlFZW56T2dESy1mdHRTYkxJMlZLZnQ1Z1oxb2o0THdaSWxLZkFJeUhQNEtHajhHMGFrd3ZBNlp5SnpGSzFDQm9jcjFGaFVxQmEtSGtnaUZRa3NaVnRldg?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Sri Lanka, dopo il record di turisti parte la sfida per il 2027 - Il Sole 24 ORE",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
+      "score_discovery": 54,
+      "topic": "ALTRO",
+      "numbers_detected": [
+        "2027 ",
+        "24 ",
+        "2027 ",
+        "24 "
+      ],
+      "official_links": [],
+      "official_domain_hints": [],
+      "primary_resolution": null,
+      "editorial_excluded": false,
+      "status": "needs_primary_source"
+    },
+    {
+      "radar": "Google News - Sole 24 Ore dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxON3hVVTNXY3ozR3o3NXI1aVhiQ0hMWWdncEVhX2dHUmhHUERsdVlwbHVxY2RYWHRZaVVHbXAydVh6dldGMVI5N21McDRlM3N1TDNUZzBGRkhwU0V3RERhR3RHUXFIbkItOEcxMVdrLUZMYTdvcmFVNzlJdlNySGRmVS03NElhaWdPMVU0cDNnLTliZjN6RVByN2lJa2h1RVU?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "“Iris” di Monet venduto per 50 milioni di euro a Parigi, record all’asta - Il Sole 24 ORE",
-      "detected_at": "2026-10-23T09:07:32.898302+00:00",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
       "score_discovery": 49,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -286,17 +323,15 @@
     },
     {
       "radar": "Google News - Sole 24 Ore dati e statistiche",
-      "discovery_url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOWVFLYnR4MnlERFQxWG01M1Rhb05BYW00a0tIR0hHZmRIdlo5SWRNSERodmRKVjIzQVZ5ZkpDRmRMVjhHSF9jQWVVZk5Sd3NLcHFPY0hNN2Z3NGVBRkp1RFhXakdNVzlHaV9aaUYwTUt4bi1zdXF1MnhEaGxONUUzdEhpeHF0eDAxX1JRMEZXM0FrdXpMVk5kZHh1N3ZZWm1uWWpMOExUTGREemZmUnV2YTRHZWZCWUZoUDVPYW00cEpUeUNXVVlSampLRks3dw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "discovery_title": "Record-breaking heatwave in Europe: 50,000 deaths in the summer of 2026. Italia worst hit of all - Il Sole 24 ORE",
-      "detected_at": "2026-10-23T09:07:32.898302+00:00",
-      "score_discovery": 60,
-      "topic": "ALTRO",
+      "discovery_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOWkNvQU1NclllbUQxLWN5UW4tYnJRSFpqYTd4MC1DSTR5NWxuSEZ0SnVreXJ4M3hWam41SHN0Y3RqZkU1am1XUTlxS2Q4RDk5QXVLSjloeHBmWjBtdlRZeTE4QVU4YnJjRTkzNmp3SU41QThLVXg0azFLWUtVQVZwNWlvMkFiM25VNW4zYzNkdngzTUUzb3Ytcnk4aDExeU1WY3NxRjJ2QTMteG9wc1dvakJrcEVMQV9SeFZ4cVBjVQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "discovery_title": "Costruzioni, saldo record di nuove imprese nel terzo trimestre 2026 - Il Sole 24 ORE",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
+      "score_discovery": 59,
+      "topic": "ECONOMIA",
       "numbers_detected": [
-        "50,000 ",
-        "2026",
+        "2026 ",
         "24 ",
-        "50,000 ",
-        "2026",
+        "2026 ",
         "24 "
       ],
       "official_links": [],
@@ -309,7 +344,7 @@
       "radar": "Google News - Repubblica dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQUWNrZ0JWNktsakEtZFBYOV9MeTdkNEEyU3gya3pwLUlxOWxqTUlmSXVRS2g5ZUJwUnVOZmpFVzM2eWx3Q1lyNGJDbFZOOGZCTXNWZzFtYXM5dzdoTmltZGNHT1JiQTNZMlF4Z0c4WFFuYlYwdTVSNE1MRWJWbXlOSlJnM3NCUUV5bGFsZzZsU1oxanRuT3JXT1R4ZXh0c2xvek1wY0cwczAzTWQ2ZlFCdDdBTnhoMGNHQzYybk1kaDJZYmlGbHc?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Istat, nel 2025 record di nuovi permessi di soggiorno (+47,2%) - la Repubblica",
-      "detected_at": "2026-10-23T09:07:32.898302+00:00",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
       "score_discovery": 59,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -360,7 +395,7 @@
       "radar": "Google News - Repubblica dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNeThsOWt1TjhrcmkyazU1YjJQek00MlRtTGU3cG9qYnItX19lZE12TlQxcUY3ZFMxZ1FYYzNBVVZET1Bfd0xGMXVCS2tGQ25ZOEZrLXhFaGFtVGJlM1FfbGJvRXRudHExTngtT2l4QjlndWJpMGpzMVgybDJFZFAwc1RfNnBYcjBXLV85clpVd1lraEUtZVg0Qnp2WXhrNXZPdS1kMUotUFlNa2ZobGJua2V3X3l0cTTSAbwBQVVfeXFMUEVQSFdTZEdyb3h1VVR2NFJ5cXVZZDF6S3JsVEc2QlJPMHVPMEc4NU5lX2hnMkpBV1d2RGt1WFlrSm01MnZTdncwOVZabkxwcHYtOVNpR1pVOVV0U3BtRXJqVXNMb2ZvMlAzeURTNEtodnlDTEdOWDVXWDVBeG81Q0NDV1FGdG5WZmZrRlRrbHROTUZsZExrSkFpVjdRTEtfRG5vc0VodE5nYnhCQVV5ODI5ZkM2MFA2SWVKZms?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Onu: “Emissioni record, verso un punto di non ritorno se non riduciamo del 18% entro il 2030” - la Repubblica",
-      "detected_at": "2026-10-23T09:07:32.898302+00:00",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
       "score_discovery": 64,
       "topic": "AMBIENTE",
       "numbers_detected": [
@@ -379,7 +414,7 @@
       "radar": "Google News - Repubblica dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPV2lOVUs5SFU0TWZMOXRtTHQ3NkpiOWpqR0N4VUZnLW56NVdkNWw3WVkzWERlQzduTUFNZzRRVTBxTkREQ1h5aXhmeERyR2cyRWVDdlN3cHZ4UWdPUFk5NVVaRG5TeE8waFE0UGl5WlhxM1llNlg1ZDI5bDIxd3JobG1kdWlaVmZva2FJY1JjN1JYR19XZWlLNXRIZWJTdTh0M0JhS1hFRF9ndFktcm1ES3pyaWEtSERiV2J0UThzT3dnREpw?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Terna, consumi elettrici in crescita: a settembre +6,5%, record dal 2014 - la Repubblica",
-      "detected_at": "2026-10-23T09:07:32.898302+00:00",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
       "score_discovery": 69,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -398,7 +433,7 @@
       "radar": "Google News - Corriere dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxOOFl1MXB1Z1FnQkFuYXMwV2wxZE5jOU9YUTAwUElWR2gyeE5ILUFrMlVUbXNZQ3JWZk5zemRkd00weXBDcWZoWDZPQzRoNVN0ckZIU1NZeW01WjZqQVNGZDg0cjgwaFIzOHBqVzdGSWgyYVk0dmp1OHc0X2ltcFFZVDZVd1lBN05zTFlTZ3F4b2gwR0lJYVZHN2dEZWJZY2dFS2ota2Mxa0o5STE1MTdNb2kxT3VSRXdyTG1Fb1VJMVFKWFlTZ0E1cVY4MngwcHFoQWpMQUdUMnRNTW0ybzVYc3Fsamo3QWFuSTE3dVFkcG9Xd2F1NUhXZ1ZBSTlJSzZXX01sMmpHekNDVlnSAZACQVVfeXFMTWNybXM3NzkzZFRtcFVZbHc3OGRKcFVnOElkN0pMZG5MclZHZ3hITkdiSHdfTlFQR0kycG9jTHhac19uSUhJQTRXeU9NaUYwazI0S1FFM3lBeEpPZmEzNnU3WThIYXJxalRWWGpiMXdPbG9Sd0tfVFJvcUc0c3VTZDdFUk1QNFQ5REU3SjUzclM3VDZOdW1tSWJXU0l3ejZWcENQTUc5M3ppZUJzWE9iUjVaSHZnSFFJTS0wVmU5cjdRUmtUV0VUbmVmdGItSzdvNHdnVXFTWW9ETGVnV2FEQk4zUTY3dVUtTWZFR2ZHS3JBbXJZWUJ2OUxLenZxRTE3RlBxUjUzUnBGaVp2dkE5ajQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Migranti, permessi di soggiorno record: +47% nel 2025. È il dato più alto degli ultimi 15 anni. - Corriere della Sera",
-      "detected_at": "2026-10-23T09:07:32.898302+00:00",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
       "score_discovery": 70,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -419,7 +454,7 @@
       "radar": "Google News - Corriere dati e statistiche",
       "discovery_url": "https://news.google.com/rss/articles/CBMi1wJBVV95cUxPS1VRWVpUVzgwVHFLVVpkdms3ZkVwX1IxYi1MRUhXcWFGTmQ3aGdESnFtRmdpbllPSGVacDk0ZzBsQXRvQnp1LUZWZjlwMW9ubHROTndmSzRuRTA5ZzZoVWc1RVRGZkRRWWxCQWY5aGFjYWRGbmlEc1dTSGZ0Y0gwR3VkbEFqaHdocHVzLUQ0Z3h0TmJkdnc5OHgtSmNyVXdmLVJNS3dyVE1qQy1XdktDOTlHVTg1WTEwRVNwdE5NTHl6TUgzdXRidEVmaTNxZzlrZTVVTm5OckFUNFNidF96NUJkbXVabTYyRjFvM0dzY2tWd1F1LVlSeDhhZi11bk9xREhPMlNjS1hwRHVQUkhVMl94eEFvRGVWTVVSUGRqbnJVdS1IajBGWDY5N1h1MWRNYlFTbDlBTi1LYmtVb2lFajhHMTg0UjdhXzVoQlpvMkhJQW44QXhz0gHXAkFVX3lxTE9LVVFZWlRXODBUcUtVWmR2azdmRXBfUjFiLUxFSFdxYUZOZDdoZ0RKcW1GZ2luWU9IZVpwOTRnMGxBdG9CenUtRlZmOXAxb25sdE5Od2ZLNG5FMDlnNmhVZzVFVEZmRFFZbEJBZjloYWNhZEZuaURzV1NIZnRjSDBHdWRsQWpod2hwdXMtRDRneHROYmR2dzk4eC1KY3JVd2YtUk1Ld3JUTWpDLVd2S0M5OUdVODVZMTBFU3B0Tk1MeXpNSDN1dGJ0RWZpM3FnOWtlNVVObk5yQVQ0U2J0X3o1QmRtdVptNjJGMW8zR3Nja1Z3UXUtWVJ4OGFmLXVuT3FESE8yU2NLWHBEdVBSSFUyX3h4QW9EZVZNVVJQZGpuclV1LUhqMEZYNjk3WHUxZE1iUVNsOUFOLUtia1VvaUVqOEcxODRSN2FfNWhCWm8ySElBbjhBeHM?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Nuovi nati, la Toscana fa il record negativo: per la prima volta è sotto i 20 mila. E Giani promette 500 euro alle neomamme - Corriere Fiorentino",
-      "detected_at": "2026-10-23T09:07:32.898302+00:00",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
       "score_discovery": 49,
       "topic": "ALTRO",
       "numbers_detected": [
@@ -438,7 +473,7 @@
       "radar": "Google News - Italia popolazione e territori",
       "discovery_url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNYlJuMExlVmNQQ1VDWVp3OGYxQ0lQNkdLNjlIVkxWQnFiSmpBSGtNQlh5dEotN1VwNHE4WnNrRlFGR2VWOXJEQjA0ckxKQUVPZjlKRkZwQjZqckZEVUdXVTVRbWd3cXNJYjlCNW1YUmo2ZVN3V05ULXlTR256d1RVMkFSeHRGSXloR3ln?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "In Italia nascite ancora in calo, nel 2025 14mila in meno: il 44,1% fuori dal matrimonio - Il Sole 24 ORE",
-      "detected_at": "2026-10-23T09:07:32.898302+00:00",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
       "score_discovery": 50,
       "topic": "DEMOGRAFIA",
       "numbers_detected": [
@@ -461,7 +496,7 @@
       "radar": "Google News - Italia popolazione e territori",
       "discovery_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5DZmN6WHBmZW1uOWtlY2xsbkVRbXBMcWVZbExYazZGM3dSb1lrcElEQVd3SDlpeHFRWWFMT2t3VHd4ei1ERkpCdDZoUkhQYXNRYmYtaDJzOVBNeHhEaldFcU1GYjNtak9LYlBLOHN3?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Nascite, l’Italia perde altri 14mila bambini nel 2025. E il calo prosegue nel 2026 - La Discussione",
-      "detected_at": "2026-10-23T09:07:32.898302+00:00",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
       "score_discovery": 45,
       "topic": "DEMOGRAFIA",
       "numbers_detected": [
@@ -482,7 +517,7 @@
       "radar": "Google News - Italia popolazione e territori",
       "discovery_url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPS0NjSVlpdTJKT245cUpOWTVvUW1zZG1JV09OeDlQb21TOXd6MWFIX1NmcUdCZkl0SGhIRkRvbEszVk5QRExRVVFsZ3dFWlYxNkR5RWx2SWNVcmF4OG5hVVViTi14QW9iWkp0eTZGalRNekk3VkdxNG5WNjNpWHAzbTI1XzVWeEpYc2lUZWxCSmV2cy1KQkRHSUZaTDBzNlNWclBRc212QktCaXRTYlNqOVdvM1dWRGE0U1lReDM3Rmc5VVlsZ0xEYi1TQi1ITzNhUFdWaQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "RaiNews. . Nel 2025 i nati residenti in Italia sono 355.772, sei ogni 1.000 abitanti. Rispetto al 2024 le nascite diminuiscono del 3,8%, circa 14mila unità in meno, ma dal 2008, anno nel quale si è registrato il numero massimo di nati vivi degli anni Duemila (oltr - Facebook",
-      "detected_at": "2026-10-23T09:07:32.898302+00:00",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
       "score_discovery": 50,
       "topic": "DEMOGRAFIA",
       "numbers_detected": [
@@ -509,7 +544,7 @@
       "radar": "Google News - Italia popolazione e territori",
       "discovery_url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOd0tZcl96eTNENjFSZTNDS3c0NVUyRnctLUdldS1jcVE4RVE0TG9vNGFyenFKVmpwVGNXYUJJeGxyMlAxQ1NRRGl0SU1jWEdaYklEX2Z6MXY5UTZ0TWpjUHh0NUFiYUNKYnVwdFRNUVJGdmdheGpiVHVsOHVPVFRMT0Z4SmpLcTdiMkFlYXV6ZjVMYWFMRlFiczUtcDVkd09jdm1QZV9YMFEtNzBQaC1qb3V2eFQ5ejVRLU1KQm53U0JXa2lkOWgtSXlBcXpNR1Nf?oc=5&hl=en-US&gl=US&ceid=US:en",
       "discovery_title": "Natalità in Italia: nel 2025 355.772 nascite e nel 2026 nuova flessione, con fecondità a 1,14 - My-personaltrainer",
-      "detected_at": "2026-10-23T09:07:32.898302+00:00",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
       "score_discovery": 45,
       "topic": "DEMOGRAFIA",
       "numbers_detected": [
@@ -532,7 +567,7 @@
       "radar": "ISTAT - Aggiornamenti ufficiali",
       "discovery_url": "https://www.istat.it/comunicato-stampa/cittadini-non-comunitari-in-italia-anno-2025/",
       "discovery_title": "Cittadini non comunitari in Italia – Anno 2025",
-      "detected_at": "2026-10-23T09:07:32.898302+00:00",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
       "score_discovery": 45,
       "topic": "LAVORO",
       "numbers_detected": [
@@ -606,7 +641,7 @@
       "radar": "ISTAT - Aggiornamenti ufficiali",
       "discovery_url": "https://www.istat.it/comunicato-stampa/notifica-dellindebitamento-netto-e-del-debito-delle-amministrazioni-pubbliche-secondo-il-trattato-di-maastricht-anni-2022-2025-2/",
       "discovery_title": "Notifica dell’indebitamento netto e del debito delle Amministrazioni Pubbliche secondo il Trattato di Maastricht – Anni 2022-2025",
-      "detected_at": "2026-10-23T09:07:32.898302+00:00",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
       "score_discovery": 50,
       "topic": "ECONOMIA",
       "numbers_detected": [
@@ -671,7 +706,7 @@
       "radar": "ISTAT - Aggiornamenti ufficiali",
       "discovery_url": "https://www.istat.it/comunicato-stampa/natalita-e-fecondita-della-popolazione-residente-anno-2025/",
       "discovery_title": "Natalità e fecondità della popolazione residente –  Anno 2025",
-      "detected_at": "2026-10-23T09:07:32.898302+00:00",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
       "score_discovery": 65,
       "topic": "DEMOGRAFIA",
       "numbers_detected": [
@@ -738,7 +773,7 @@
       "radar": "ISTAT - Aggiornamenti ufficiali",
       "discovery_url": "https://www.istat.it/sistema-informativo-6/bilancio-demografico-mensile-luglio-2026/",
       "discovery_title": "Bilancio demografico mensile – luglio 2026",
-      "detected_at": "2026-10-23T09:07:32.898302+00:00",
+      "detected_at": "2026-10-23T14:41:01.302543+00:00",
       "score_discovery": 50,
       "topic": "DEMOGRAFIA",
       "numbers_detected": [

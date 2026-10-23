@@ -1,11 +1,289 @@
 {
-  "generated_at": "2026-10-23T09:07:32.898302+00:00",
+  "generated_at": "2026-10-23T14:41:01.302543+00:00",
   "articles": [
+    {
+      "id": "PULSE-5C8BF096871F3FE0",
+      "story_fingerprint": "5c8bf096871f3fe051aa69c3",
+      "published_at": "2026-10-23T13:55:28+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 54,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPdDhOemp5cUdtTG55VE93VUxWbXFLMm93dGYxcnIwVVNCR2pQSzN3WUl2YmJvMm12RXhnYlh6UkdURUVRdUhKVnA5Vl9YcmlFZW56T2dESy1mdHRTYkxJMlZLZnQ1Z1oxb2o0THdaSWxLZkFJeUhQNEtHajhHMGFrd3ZBNlp5SnpGSzFDQm9jcjFGaFVxQmEtSGtnaUZRa3NaVnRldg?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Sri Lanka, dopo il record di turisti parte la sfida per il 2027 - Il Sole 24 ORE",
+      "summary": "Sri Lanka, dopo il record di turisti parte la sfida per il 2027 Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-187A3EB5A6CB06BE",
+      "story_fingerprint": "187a3eb5a6cb06beca4d5f98",
+      "published_at": "2026-10-23T13:30:08+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 59,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.repubblica.it/economia/2026/10/23/news/inflazione_prezzi_trasporti_ortaggi_legumi_alimentari_ottobre_carburanti_inflazione_upb-425670201/?rss",
+        "domain": "repubblica.it",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Volano i prezzi di trasporti, ortaggi e legumi a ottobre: “Primi effetti del caro-carburanti”",
+      "summary": "L’allarme dell’Ufficio parlamentare di bilancio (Upb). La trasmissione dell’inflazione, tuttavia, è ancora lenta rispetto alla crisi del 2021-2022. Conferma per il Pil in crescita dell’1% nel 2026",
+      "statistical_claims": [
+        {
+          "raw_value": "1%",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-02426328BE0E0FC8",
+      "story_fingerprint": "02426328be0e0fc866a33def",
+      "published_at": "2026-10-23T13:00:54+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNQjFibVplcXlpMGI0TGN0R2E0Y3kyaXdBMExYZXRhZXlua2Q5VjQtZTVTZnhza0Q1eWJWMUdUeDZyZGJaTzM0Vk1nZHZpUFk1WGsxUEFHRFlxSFNKZFZQWlBFb290elEtaG1Nd0hPa3FmUFhEaGc0WWtSN2hWRHdzNlFqczZaOEJyRm9xQkJmUkhZS092QW9iZDFjOV8tOGI2WFE?oc=5",
+        "domain": "Telegranducato di Toscana",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Debiti record: 4 province toscane tra le prime 10 in Italia - Telegranducato di Toscana",
+      "summary": "Debiti record: 4 province toscane tra le prime 10 in Italia Telegranducato di Toscana",
+      "statistical_claims": [
+        {
+          "raw_value": "4 ",
+          "verified": false
+        },
+        {
+          "raw_value": "10 ",
+          "verified": false
+        },
+        {
+          "raw_value": "4 ",
+          "verified": false
+        },
+        {
+          "raw_value": "10 ",
+          "verified": false
+        }
+      ],
+      "territories": [
+        "toscana"
+      ],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-D4FA47AD37A2FA48",
+      "story_fingerprint": "d4fa47ad37a2fa48e6f8a24d",
+      "published_at": "2026-10-23T11:16:08+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 60,
+      "patterns": [],
+      "public_source": {
+        "url": "https://www.repubblica.it/economia/rapporti/energitalia/storie/2026/10/23/news/ora_legale_nel_2026_risparmiati_oltre_90_milioni_di_euro-425669856/?rss",
+        "domain": "repubblica.it",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Ora legale, nel 2026 risparmiati oltre 90 milioni di euro",
+      "summary": "Secondo Terna, i sette mesi di ora legale hanno ridotto i consumi elettrici di 300 milioni di kWh e le emissioni di CO2 di 140 mila tonnellate. Dal 2004 il risparmio complessivo ha raggiunto i 2,4 miliardi di euro",
+      "statistical_claims": [
+        {
+          "raw_value": "90 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "300 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "140 mila",
+          "verified": false
+        },
+        {
+          "raw_value": "2,4 miliardi",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-B95E2551FBDCC864",
+      "story_fingerprint": "b95e2551fbdcc86471358598",
+      "published_at": "2026-10-23T09:16:05+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
+      "topic": "LAVORO",
+      "pulse_score": 60,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOa2poYzFlQld2dEFIbDBUOEdUTGxaMGdwNEc0TXlLOGtDaWZSNEtuZ3RTUnRpS3U5MU5sTlpYelB1UzgyMnhTODI0dGtVUHJLTy04YVFoTTl1OV8zRDZ5Qkg2Zi14WUtHOElwVURFM1ZqU1piSXRoNnJBaDBpcWUyYmM5SjJzRzd6TEVaVmdEX3I3cmZrdmxSdjlQVWxJQVp1enF6MTc4U3BUdkx2dU0zTW9n?oc=5",
+        "domain": "AZ Informa",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Carovita, in Italia prezzi aumentati del 22,3% in cinque anni: salari in calo del 5,5% dal 2000 - AZ Informa",
+      "summary": "Carovita, in Italia prezzi aumentati del 22,3% in cinque anni: salari in calo del 5,5% dal 2000 AZ Informa",
+      "statistical_claims": [
+        {
+          "raw_value": "22,3%",
+          "verified": false
+        },
+        {
+          "raw_value": "5,5%",
+          "verified": false
+        },
+        {
+          "raw_value": "22,3%",
+          "verified": false
+        },
+        {
+          "raw_value": "5,5%",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-22718909201FFEE8",
+      "story_fingerprint": "22718909201ffee8ee0a6ffc",
+      "published_at": "2026-10-23T09:15:00+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 49,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxOV3ZRMmZQRFVpb2stRkpKNXRlbnd5SDlPdzNoVmFKYklEZHNpUzB4aHpNcFpxUm8zSHY5ckxReS15UU45dzlFeXJMY0RxcWVnVzRTckR3UzhoWmh6UjB5NTdJZ3Q1aEpoMjNyTFB1OHE2VHpyZVpHYXNwRjJUeG9mQmk4aExLOFd1U0JHQndTRUJfWjhkTEFUdEJmd2l3d01IYXZrel9IN2RnSUlKa1VRWGpoamNkSkZDYmh2Y0dpM3lYdkl2aDNlTXlHbjZ3NlpmejBRMkJEbW13VTNIYl92RWhhbURwZ3hEXzRULTdGRjYzXzFabmZTb0tvS0FDTUHSAYQCQVVfeXFMT1NSelVobG5OTTBFeWlFU3Yxb1M2TXVBUVptblNmSkgxcnBiRkp3MXR3TFdrSks3N19lbVVOMHM5WldXbU5vMlVGZG1fbVoyc3gzZWxjQXlSVF96SmFrZm1yMi1mSWF6M3RQV2toZ01nT2ZQODE4ajdvbS1DbzNFUnA3blBUclFZWS1SbjVNSl9nYkx5WHlqMkV5Q1gyenJnUzRlcEt4Zjl1bUN3N2h3QmdteUVIeE5OdkxoY2kxRWt5bHpEa081cnY5REsyR0pEa3JDMEdRNTIyN3pkUlBLLUFqZUJSVGdyWWQwR183cllYcjVsTmdoWVJVbUQ4dXJVN3Y3ckU?oc=5",
+        "domain": "ANSA",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "X Factor, record ascolti per primo live con 918mila spettatori e quasi 5 milioni voti - ANSA",
+      "summary": "X Factor, record ascolti per primo live con 918mila spettatori e quasi 5 milioni voti ANSA",
+      "statistical_claims": [
+        {
+          "raw_value": "918mila",
+          "verified": false
+        },
+        {
+          "raw_value": "5 milioni",
+          "verified": false
+        },
+        {
+          "raw_value": "918mila",
+          "verified": false
+        },
+        {
+          "raw_value": "5 milioni",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-5A654DDB56BC5AD0",
+      "story_fingerprint": "5a654ddb56bc5ad058ee7d4a",
+      "published_at": "2026-10-23T08:29:12+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
+      "topic": "ALTRO",
+      "pulse_score": 54,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQVldDMkFhVlVfZXAtRHZHNzNVZ3E2bnFxaUNFSnpfVnFnY2NaQ3prQ3pJZEtLRS1VcXlLM1FaMHh2eXVaQzE1STRBMW9iMTJWdkF6U19CdWpySjZ6Vy1pOXR5TkNiV1NsQTZHUFFqNE02VUxWVU1jLVhtT2ZyQWVocklpS2Z1YkY2dXpZYlRCSVVwZ1EwdFBVTXd3N1pJRTZOYlow?oc=5",
+        "domain": "lmservizi.it",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Caldo record in Europa: 50mila morti nell’estate 2026. Italia peggio di tutti - lmservizi.it",
+      "summary": "Caldo record in Europa: 50mila morti nell’estate 2026. Italia peggio di tutti lmservizi.it",
+      "statistical_claims": [
+        {
+          "raw_value": "50mila",
+          "verified": false
+        },
+        {
+          "raw_value": "50mila",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
+      "id": "PULSE-39E09EF710483965",
+      "story_fingerprint": "39e09ef710483965a5d31af1",
+      "published_at": "2026-10-23T08:14:04+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
+      "topic": "SALUTE",
+      "pulse_score": 50,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMikwJBVV95cUxNVFRGb3pDLTlVb1N4bnJOdl84UnFEbm1EeGRwNEFkcEJxby01RmZfNl80RWxpc0sxQUlNSXlDdWV6dTJmSTY1TFBLTkxVRkN0OEJkeWFDUWNlN2ZQSXY1Zm1zdXNHaFZQTnFYSlkxeFFtckRrdmlKcDFGRFI0M09BVmNVM1FVTEh4bDZwd1RVQ0JJNjRKeF9MZE5uZWNjbFJDYmF1QkFxa1JLMVJsQUUzN0FwRGZ2aU01OVBBenVfQmpYdXBtcmJiV2tWeERlSTZxNHcwbGdXSjlFdGlnUkJuZmVXU3BNZ08yWnhYOFliZHNnTU1EemRJU0dCX05abF80b0hUYU9RdTA1eUNjaTVVOW9jRQ?oc=5",
+        "domain": "Quotidiano Sanità",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "L’inverno demografico non si ferma. In Italia sempre meno bambini: nel 2025 appena 355mila nascite. E il 2026 va ancora peggio. I dati Istat - Quotidiano Sanità",
+      "summary": "L’inverno demografico non si ferma. In Italia sempre meno bambini: nel 2025 appena 355mila nascite. E il 2026 va ancora peggio. I dati Istat Quotidiano Sanità",
+      "statistical_claims": [
+        {
+          "raw_value": "355mila",
+          "verified": false
+        },
+        {
+          "raw_value": "355mila",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
     {
       "id": "PULSE-DD10982F0957E642",
       "story_fingerprint": "dd10982f0957e6423e7ca3e6",
       "published_at": "2026-10-23T06:33:31+00:00",
-      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 49,
       "patterns": [],
@@ -83,7 +361,7 @@
       "id": "PULSE-CD27628BBC5B4D3C",
       "story_fingerprint": "cd27628bbc5b4d3cd61a2052",
       "published_at": "2026-10-23T05:49:59+00:00",
-      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
       "topic": "ALTRO",
       "pulse_score": 60,
       "patterns": [],
@@ -122,7 +400,7 @@
       "id": "PULSE-CC6C6BDCCA8A7587",
       "story_fingerprint": "cc6c6bdcca8a75878cbb0e04",
       "published_at": "2026-10-23T05:45:57+00:00",
-      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
       "topic": "ALTRO",
       "pulse_score": 65,
       "patterns": [],
@@ -169,7 +447,7 @@
       "id": "PULSE-D130FE9DAF5038D6",
       "story_fingerprint": "d130fe9daf5038d6cc34ddfd",
       "published_at": "2026-10-23T05:32:11+00:00",
-      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
       "topic": "ALTRO",
       "pulse_score": 49,
       "patterns": [],
@@ -207,10 +485,41 @@
       "publication_status": "quarantined"
     },
     {
+      "id": "PULSE-FDD3F332835BC701",
+      "story_fingerprint": "fdd3f332835bc701d38b3005",
+      "published_at": "2026-10-22T20:24:00+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
+      "topic": "ECONOMIA",
+      "pulse_score": 59,
+      "patterns": [],
+      "public_source": {
+        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOWkNvQU1NclllbUQxLWN5UW4tYnJRSFpqYTd4MC1DSTR5NWxuSEZ0SnVreXJ4M3hWam41SHN0Y3RqZkU1am1XUTlxS2Q4RDk5QXVLSjloeHBmWjBtdlRZeTE4QVU4YnJjRTkzNmp3SU41QThLVXg0azFLWUtVQVZwNWlvMkFiM25VNW4zYzNkdngzTUUzb3Ytcnk4aDExeU1WY3NxRjJ2QTMteG9wc1dvakJrcEVMQV9SeFZ4cVBjVQ?oc=5",
+        "domain": "Il Sole 24 ORE",
+        "role": "journalistic_source",
+        "verification_method": "reported_statistical_figures_not_primary_verified",
+        "verification_score": 0
+      },
+      "headline": "Costruzioni, saldo record di nuove imprese nel terzo trimestre 2026 - Il Sole 24 ORE",
+      "summary": "Costruzioni, saldo record di nuove imprese nel terzo trimestre 2026 Il Sole 24 ORE",
+      "statistical_claims": [
+        {
+          "raw_value": "24 ",
+          "verified": false
+        },
+        {
+          "raw_value": "24 ",
+          "verified": false
+        }
+      ],
+      "territories": [],
+      "editorial_status": "needs_primary_source",
+      "publication_status": "quarantined"
+    },
+    {
       "id": "PULSE-8A58AD150F8AE8EF",
       "story_fingerprint": "8a58ad150f8ae8ef9637a6f7",
       "published_at": "2026-10-22T18:29:39+00:00",
-      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
       "topic": "ALTRO",
       "pulse_score": 49,
       "patterns": [],
@@ -450,7 +759,7 @@
       "id": "PULSE-9B03DD8542EBED17",
       "story_fingerprint": "9b03dd8542ebed178a4841c1",
       "published_at": "2026-10-22T11:56:00+00:00",
-      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
       "topic": "ALTRO",
       "pulse_score": 84,
       "public_source": {
@@ -504,7 +813,7 @@
       "id": "PULSE-6BBBA8707BD08A2F",
       "story_fingerprint": "6bbba8707bd08a2f53b05b9f",
       "published_at": "2026-10-22T11:10:15+00:00",
-      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
       "topic": "ALTRO",
       "pulse_score": 70,
       "patterns": [],
@@ -543,7 +852,7 @@
       "id": "PULSE-BBC23256467F9C15",
       "story_fingerprint": "bbc23256467f9c15b405c1e6",
       "published_at": "2026-10-22T10:58:08+00:00",
-      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
       "topic": "ALTRO",
       "pulse_score": 59,
       "patterns": [],
@@ -574,7 +883,7 @@
       "id": "PULSE-34DFAF8E1B8027FD",
       "story_fingerprint": "34dfaf8e1b8027fdef8739e3",
       "published_at": "2026-10-22T09:00:29+00:00",
-      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
       "topic": "LAVORO",
       "pulse_score": 77,
       "public_source": {
@@ -683,7 +992,7 @@
       "id": "PULSE-EA24ED9929F8081F",
       "story_fingerprint": "ea24ed9929f8081fadc0dc9b",
       "published_at": "2026-10-21T22:23:37+00:00",
-      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
       "topic": "DEMOGRAFIA",
       "pulse_score": 45,
       "patterns": [],
@@ -786,7 +1095,7 @@
       "id": "PULSE-5BEBC3259730F2CE",
       "story_fingerprint": "5bebc3259730f2ce1ef57c8d",
       "published_at": "2026-10-21T13:37:00+00:00",
-      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
       "topic": "ALTRO",
       "pulse_score": 50,
       "patterns": [],
@@ -825,7 +1134,7 @@
       "id": "PULSE-0FF45CF3034404CC",
       "story_fingerprint": "0ff45cf3034404cc9f47e7ce",
       "published_at": "2026-10-21T13:17:31+00:00",
-      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
       "topic": "DEMOGRAFIA",
       "pulse_score": 50,
       "patterns": [],
@@ -1086,7 +1395,7 @@
       "id": "PULSE-A30715E8CFDEB562",
       "story_fingerprint": "a30715e8cfdeb5626e5971e5",
       "published_at": "2026-10-21T10:48:00+00:00",
-      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 69,
       "patterns": [],
@@ -1117,7 +1426,7 @@
       "id": "PULSE-D70CE0B59F63FB14",
       "story_fingerprint": "d70ce0b59f63fb14a7a4e506",
       "published_at": "2026-10-21T10:36:03+00:00",
-      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
       "topic": "AMBIENTE",
       "pulse_score": 64,
       "patterns": [],
@@ -1335,7 +1644,7 @@
       "id": "PULSE-0940051272A60647",
       "story_fingerprint": "0940051272a606471be9ffd2",
       "published_at": "2026-10-21T09:32:32+00:00",
-      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
       "topic": "DEMOGRAFIA",
       "pulse_score": 50,
       "patterns": [],
@@ -1382,7 +1691,7 @@
       "id": "PULSE-7318F2D74EE83625",
       "story_fingerprint": "7318f2d74ee83625aa416b62",
       "published_at": "2026-10-21T09:32:19+00:00",
-      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
       "topic": "DEMOGRAFIA",
       "pulse_score": 45,
       "patterns": [],
@@ -1421,7 +1730,7 @@
       "id": "PULSE-A5C82B1BC8DCCA5A",
       "story_fingerprint": "a5c82b1bc8dcca5a2c763fde",
       "published_at": "2026-10-21T09:01:44+00:00",
-      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
       "topic": "ECONOMIA",
       "pulse_score": 80,
       "public_source": {
@@ -1623,7 +1932,7 @@
       "id": "PULSE-CF6F581FF603CAEA",
       "story_fingerprint": "cf6f581ff603caea2dc5f9c4",
       "published_at": "2026-10-21T08:00:15+00:00",
-      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
       "topic": "DEMOGRAFIA",
       "pulse_score": 87,
       "public_source": {
@@ -1685,7 +1994,7 @@
       "id": "PULSE-BDF2A2EF4E088D22",
       "story_fingerprint": "bdf2a2ef4e088d2218790b06",
       "published_at": "2026-10-21T08:00:00+00:00",
-      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
       "topic": "DEMOGRAFIA",
       "pulse_score": 80,
       "public_source": {
@@ -1778,7 +2087,7 @@
       "id": "PULSE-6D2C0AB75412293E",
       "story_fingerprint": "6d2c0ab75412293e9ae49ed6",
       "published_at": "2026-10-21T05:22:00+00:00",
-      "last_seen_at": "2026-10-23T09:07:32.898302+00:00",
+      "last_seen_at": "2026-10-23T14:41:01.302543+00:00",
       "topic": "AMBIENTE",
       "pulse_score": 59,
       "patterns": [],
