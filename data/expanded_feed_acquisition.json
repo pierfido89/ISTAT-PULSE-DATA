@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T10:17:30.120878+00:00",
+  "generated_at": "2026-10-24T09:41:29.405776+00:00",
   "successful_connectors": 6,
   "failed_connectors": 4,
   "results": [
@@ -13,7 +13,7 @@
       "content_type": "application/zip",
       "bytes": 724382,
       "sha256": "645775d4611e3dbaca3a29853d39d154a13a4cdaba76b33c98fe00978d529c5a",
-      "checked_at": "2026-10-23T10:14:09.918732+00:00",
+      "checked_at": "2026-10-24T09:37:59.928646+00:00",
       "status": "ok",
       "files": [
         "ATECO100_IT.zip",
@@ -81,7 +81,7 @@
       "content_type": "text/csv",
       "bytes": 81,
       "sha256": "b557b3e428233ec9776aed175fdb45f9834eb94a1537f9b7ab68b572647788fd",
-      "checked_at": "2026-10-23T10:17:14.462565+00:00",
+      "checked_at": "2026-10-24T09:41:05.161051+00:00",
       "status": "ok",
       "header": "cc_cargo;cc_false;cc_true;cf_selezione cargo -DS;1",
       "sample_lines": [
@@ -100,7 +100,7 @@
       "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
       "bytes": 478630,
       "sha256": "53745dc7b7c5f44a56e0ff89f5e2c9026a86af33da1e9f9c4627212bacea0a96",
-      "checked_at": "2026-10-23T10:17:15.797748+00:00",
+      "checked_at": "2026-10-24T09:41:07.130466+00:00",
       "status": "ok",
       "worksheet_count": 50,
       "snapshot": "data/expanded_feeds/agcom_osservatorio_comunicazioni.xlsx"
@@ -115,7 +115,7 @@
       "content_type": "application/force-download",
       "bytes": 838288,
       "sha256": "fe5a76d246abfc544bf86be50e5e5f39de0f30cd0f5339737432aafe67ed375c",
-      "checked_at": "2026-10-23T10:17:17.387413+00:00",
+      "checked_at": "2026-10-24T09:41:09.598640+00:00",
       "status": "ok",
       "worksheet_count": 88,
       "snapshot": "data/expanded_feeds/ivass_relazione_annuale_tavole.xlsx"
@@ -130,7 +130,7 @@
       "content_type": "application/json",
       "bytes": 151116,
       "sha256": "03faa3b0975d2dcb02c5e85860ee816b25212bfd6eb66b650256a7e1ffd058f9",
-      "checked_at": "2026-10-23T10:17:18.508823+00:00",
+      "checked_at": "2026-10-24T09:41:13.303229+00:00",
       "status": "ok",
       "json_keys": [
         "help",
@@ -153,7 +153,7 @@
       "bytes": 8155593,
       "sha256": "941be5c98879370934686715ebc86ad6349ddf9c982a4343f3402e4d3fc7e8a7",
       "snapshot": "data/expanded_feeds/inail_malattie_mensili.csv",
-      "checked_at": "2026-10-23T10:17:30.120617+00:00",
+      "checked_at": "2026-10-24T09:41:29.405503+00:00",
       "status": "ok",
       "sample_lines": [
         "DataRilevazione;DataProtocollo;SedeInailCompetente;IdentificativoLavoratore;Genere;LuogoNascita;ICD10denunciato;IdentificativoCaso;Gestione",
@@ -167,22 +167,22 @@
     {
       "institution": "MIMIT",
       "id": "mimit_carburanti_prezzi",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.mimit.gov.it', port=443): Max retries exceeded with url: /images/exportCSV/prezzo_alle_8.csv (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.mimit.gov.it', port=443) at 0x7f97a4aa83e0>, 'Connection to www.mimit.gov.it timed out. (connect timeout=45)'))"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.mimit.gov.it', port=443): Max retries exceeded with url: /images/exportCSV/prezzo_alle_8.csv (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.mimit.gov.it', port=443) at 0x7f6ec89317c0>, 'Connection to www.mimit.gov.it timed out. (connect timeout=45)'))"
     },
     {
       "institution": "MIMIT",
       "id": "mimit_carburanti_impianti",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.mimit.gov.it', port=443): Max retries exceeded with url: /images/exportCSV/anagrafica_impianti_attivi.csv (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.mimit.gov.it', port=443) at 0x7f97a41f9430>, 'Connection to www.mimit.gov.it timed out. (connect timeout=45)'))"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.mimit.gov.it', port=443): Max retries exceeded with url: /images/exportCSV/anagrafica_impianti_attivi.csv (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.mimit.gov.it', port=443) at 0x7f6ec8931220>, 'Connection to www.mimit.gov.it timed out. (connect timeout=45)'))"
     },
     {
       "institution": "Ministero dell'Università e della Ricerca",
       "id": "mur_personale_genere_qualifica",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/1775dfd1-5408-4970-95c2-97373b7a0016/resource/85c1ab95-c8db-484b-8898-56478c521721/download/docricxgenerequalifica_serie.csv (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f97a41f9a60>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=45)'))"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/1775dfd1-5408-4970-95c2-97373b7a0016/resource/85c1ab95-c8db-484b-8898-56478c521721/download/docricxgenerequalifica_serie.csv (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f6ec89319a0>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=45)'))"
     },
     {
       "institution": "Ministero dell'Università e della Ricerca",
       "id": "mur_personale_eta_qualifica",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/1775dfd1-5408-4970-95c2-97373b7a0016/resource/a9cc23fc-785a-4969-af49-5e9378be582b/download/docricxclasseetaqualifica_serie.csv (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f97a41f9f10>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=45)'))"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /dataset/1775dfd1-5408-4970-95c2-97373b7a0016/resource/a9cc23fc-785a-4969-af49-5e9378be582b/download/docricxclasseetaqualifica_serie.csv (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f6ec8931e50>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=45)'))"
     }
   ]
 }
